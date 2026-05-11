@@ -56,6 +56,7 @@ export async function POST(request: Request) {
         message: message.trim(),
         stars,
         photo_url: typeof photo_url === "string" && photo_url ? photo_url : null,
+        approved: true,
       },
     ])
     .select()

@@ -38,7 +38,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
           {/* ── Column 1: Brand ──────────────────────────────────── */}
-          <div>
+          <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <p className="text-2xl font-bold text-white mb-2">
               Web<span className="text-brand-light">Craft</span>
             </p>
@@ -62,7 +62,7 @@ export default function Footer() {
           </div>
 
           {/* ── Column 2: Quick Links ─────────────────────────────── */}
-          <div>
+          <div className="text-center md:text-left">
             <h3 className="text-sm font-semibold text-white uppercase tracking-widest mb-4">
               Quick Links
             </h3>
@@ -85,7 +85,7 @@ export default function Footer() {
           </div>
 
           {/* ── Column 3: Contact ─────────────────────────────────── */}
-          <div>
+          <div className="text-center md:text-left">
             <h3 className="text-sm font-semibold text-white uppercase tracking-widest mb-4">
               Contact
             </h3>
@@ -110,7 +110,7 @@ export default function Footer() {
             </ul>
 
             {/* Social icons */}
-            <div className="flex gap-3 mt-5">
+            <div className="flex gap-3 mt-5 justify-center md:justify-start">
               <a
                 href="#"
                 aria-label="WhatsApp"

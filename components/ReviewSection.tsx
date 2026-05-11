@@ -96,6 +96,7 @@ export default function ReviewSection() {
   const [reviews, setReviews] = useState<Review[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isPaused, setIsPaused] = useState(false);
+  const [isLocked, setIsLocked] = useState(false);
 
   // ── Form toggle state
   const [isFormOpen, setIsFormOpen] = useState(false);
@@ -148,7 +149,7 @@ export default function ReviewSection() {
   };
 
   // ── Form submission
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!name.trim() || !message.trim()) {
@@ -180,10 +181,13 @@ export default function ReviewSection() {
         }),
       });
 
+      const data = await res.json();
       if (!res.ok) {
-        const data = await res.json();
         throw new Error(data.error || "Submission failed.");
       }
+
+      // Prepend the new review to the carousel immediately
+      setReviews((prev) => [data as Review, ...prev]);
 
       // Reset form
       setName("");
@@ -230,17 +234,18 @@ export default function ReviewSection() {
             </p>
           ) : (
             <div
-              className="flex gap-5 pb-2"
+              className={`flex gap-5 pb-2 ${canScroll ? "cursor-pointer select-none" : ""}`}
               style={
                 canScroll
                   ? {
                       animation: `infinite-scroll ${scrollDuration} linear infinite`,
-                      animationPlayState: isPaused ? "paused" : "running",
+                      animationPlayState: isPaused || isLocked ? "paused" : "running",
                     }
                   : {}
               }
               onMouseEnter={() => setIsPaused(true)}
               onMouseLeave={() => setIsPaused(false)}
+              onClick={() => canScroll && setIsLocked((v) => !v)}
             >
               {loopReviews.map((review, i) => (
                 <ReviewCard key={`${review.id}-${i}`} review={review} />
@@ -253,7 +258,7 @@ export default function ReviewSection() {
         <div className="mt-12 text-center">
           {success ? (
             <div className="inline-block bg-green-500/10 border border-green-500/30 text-green-400 rounded-xl px-6 py-4 text-sm">
-              🎉 Thank you! Your review will appear after approval.
+              🎉 Thank you! Your review is now live in the carousel.
             </div>
           ) : (
             <>
