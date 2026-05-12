@@ -90,10 +90,10 @@ export default function LoadingScreen() {
             color: "#ffffff",
             marginBottom: 10,
             lineHeight: 1,
-            fontFamily: "var(--font-geist, sans-serif)",
+            fontFamily: "var(--font-playfair, ui-serif, Georgia, serif)",
           }}
         >
-          Web<span style={{ color: "#f0cc6a" }}>Craft</span>
+          Folio<span style={{ color: "#f0cc6a" }}>Craft</span>
         </p>
 
         {/* Tagline */}
@@ -106,7 +106,7 @@ export default function LoadingScreen() {
             marginBottom: 56,
           }}
         >
-          Premium Web Templates
+          Premium Portfolio Templates
         </p>
 
         {/* Progress bar */}

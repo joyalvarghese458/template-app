@@ -24,37 +24,26 @@ const IG_ICON = (
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0a0a1a]">
-      {/* Gradient top border */}
-      <div
-        className="h-px"
-        style={{
-          background:
-            "linear-gradient(to right, #6366f1, #a78bfa, #3b82f6)",
-        }}
-      />
+    <footer className="bg-ink">
+      {/* Gold top border */}
+      <div className="h-px bg-brand/40" />
 
-      {/* Main grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
           {/* ── Column 1: Brand ──────────────────────────────────── */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            <p className="text-2xl font-bold text-white mb-2">
-              Web<span className="text-brand-light">Craft</span>
+            <p className="font-serif text-2xl text-canvas-bg mb-2">
+              Folio<span className="text-brand italic">Craft</span>
             </p>
-            <p className="text-sm text-gray-400 leading-relaxed mb-5">
-              Turning ideas into stunning websites
+            <p className="text-sm text-canvas-bg/60 leading-relaxed mb-5">
+              Crafting portfolios that get you hired.
             </p>
 
             <a
-              href="https://wa.me/971XXXXXXXXX"
+              href="https://wa.me/971501234567"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 text-white text-sm font-semibold rounded-full transition-all duration-200 hover:-translate-y-0.5"
-              style={{
-                background: "linear-gradient(135deg, #22c55e, #16a34a)",
-                boxShadow: "0 0 18px rgba(34,197,94,0.3)",
-              }}
+              className="inline-flex items-center gap-2 px-5 py-2.5 text-ink bg-canvas-bg hover:bg-canvas-bg/90 text-sm font-semibold rounded-md transition-all duration-200 hover:-translate-y-0.5"
             >
               {WA_ICON}
               WhatsApp Us
@@ -63,19 +52,20 @@ export default function Footer() {
 
           {/* ── Column 2: Quick Links ─────────────────────────────── */}
           <div className="text-center md:text-left">
-            <h3 className="text-sm font-semibold text-white uppercase tracking-widest mb-4">
+            <h3 className="text-xs font-semibold text-brand uppercase tracking-[0.22em] mb-4">
               Quick Links
             </h3>
             <ul className="space-y-3">
               {[
                 { href: "/", label: "Home" },
-                { href: "/templates", label: "Templates" },
-                { href: "/about", label: "About" },
+                { href: "#templates", label: "Templates" },
+                { href: "#about", label: "Features" },
+                { href: "#reviews", label: "Reviews" },
               ].map(({ href, label }) => (
-                <li key={href}>
+                <li key={label}>
                   <Link
                     href={href}
-                    className="text-sm text-gray-400 hover:text-white transition-colors duration-150"
+                    className="text-sm text-canvas-bg/70 hover:text-canvas-bg transition-colors duration-150"
                   >
                     {label}
                   </Link>
@@ -86,42 +76,41 @@ export default function Footer() {
 
           {/* ── Column 3: Contact ─────────────────────────────────── */}
           <div className="text-center md:text-left">
-            <h3 className="text-sm font-semibold text-white uppercase tracking-widest mb-4">
+            <h3 className="text-xs font-semibold text-brand uppercase tracking-[0.22em] mb-4">
               Contact
             </h3>
-            <ul className="space-y-3 text-sm text-gray-400">
-              <li>🇦🇪 UAE Based</li>
+            <ul className="space-y-3 text-sm text-canvas-bg/70">
+              <li>UAE Based</li>
               <li>
                 <a
-                  href="https://wa.me/971XXXXXXXXX"
-                  className="hover:text-white transition-colors"
+                  href="https://wa.me/971501234567"
+                  className="hover:text-canvas-bg transition-colors"
                 >
-                  WhatsApp: +971XXXXXXXXX
+                  WhatsApp: +971 50 123 4567
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:hello@webcraft.ae"
-                  className="hover:text-white transition-colors"
+                  href="mailto:hello@foliocraft.ae"
+                  className="hover:text-canvas-bg transition-colors"
                 >
-                  hello@webcraft.ae
+                  hello@foliocraft.ae
                 </a>
               </li>
             </ul>
 
-            {/* Social icons */}
             <div className="flex gap-3 mt-5 justify-center md:justify-start">
               <a
                 href="#"
                 aria-label="WhatsApp"
-                className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-green-500/20 text-gray-400 hover:text-green-400 transition-all duration-150"
+                className="w-9 h-9 flex items-center justify-center rounded-full bg-canvas-bg/10 hover:bg-brand/30 text-canvas-bg/70 hover:text-canvas-bg transition-all duration-150"
               >
                 {WA_ICON}
               </a>
               <a
                 href="#"
                 aria-label="Instagram"
-                className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-pink-500/20 text-gray-400 hover:text-pink-400 transition-all duration-150"
+                className="w-9 h-9 flex items-center justify-center rounded-full bg-canvas-bg/10 hover:bg-brand/30 text-canvas-bg/70 hover:text-canvas-bg transition-all duration-150"
               >
                 {IG_ICON}
               </a>
@@ -131,9 +120,9 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-white/[0.07] py-5 text-center">
-        <p className="text-xs text-gray-500">
-          © 2025 WebCraft. All rights reserved.
+      <div className="border-t border-canvas-bg/10 py-5 text-center">
+        <p className="text-xs text-canvas-bg/50">
+          © 2026 FolioCraft. All rights reserved.
         </p>
       </div>
     </footer>

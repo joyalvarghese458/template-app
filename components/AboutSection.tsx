@@ -4,19 +4,19 @@ import { useEffect, useRef, useState } from "react";
 
 const CARDS = [
   {
-    emoji: "🚀",
-    title: "Fast & Secure",
-    desc: "Blazing fast, mobile-optimised websites built with modern tech",
+    icon: "✦",
+    title: "Designed to Showcase You",
+    desc: "Every template is crafted to put your best work, story, and personality front-and-center",
   },
   {
-    emoji: "🤝",
+    icon: "✧",
+    title: "Mobile-First, Lightning Fast",
+    desc: "Portfolios that feel premium on every screen — optimised, accessible, and SEO-ready",
+  },
+  {
+    icon: "✦",
     title: "1 Year Free Support",
-    desc: "We stay with you after launch. Free support for 1 year (conditions apply)",
-  },
-  {
-    emoji: "💛",
-    title: "Your Fulfilment is Our Happiness",
-    desc: "We don't stop until you love what we built. Your smile is our success",
+    desc: "We stay with you long after launch. Tweaks, fixes, and guidance for a full year",
   },
 ];
 
@@ -44,64 +44,56 @@ export default function AboutSection() {
 
   return (
     <section
+      id="about"
       ref={sectionRef}
-      className="relative py-24 px-4"
-      style={{
-        // background-attachment:fixed is the CSS parallax trick
-        backgroundImage:
-          "url(https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1920&q=80)",
-        backgroundAttachment: "fixed",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
+      className="relative py-24 px-4 bg-canvas-bg"
     >
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/72" />
-
-      <div className="relative z-10 max-w-5xl mx-auto text-center text-white">
-        {/* Badge */}
-        <p
-          className={`text-xs font-semibold uppercase tracking-[0.2em] text-brand-light mb-4 transition-all duration-700 ${
+      <div className="relative z-10 max-w-5xl mx-auto text-center">
+        {/* Eyebrow with gold lines */}
+        <div
+          className={`flex items-center justify-center gap-4 mb-5 transition-all duration-700 ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
-          Who We Are
-        </p>
+          <span className="h-px w-8 bg-brand/60" aria-hidden="true" />
+          <p className="text-brand text-[10px] sm:text-xs font-semibold uppercase tracking-[0.28em]">
+            Who We Are
+          </p>
+          <span className="h-px w-8 bg-brand/60" aria-hidden="true" />
+        </div>
 
-        {/* Headline */}
         <h2
-          className={`text-4xl sm:text-5xl font-extrabold mb-4 transition-all duration-700 delay-100 ${
+          className={`font-serif text-4xl sm:text-5xl text-ink mb-4 transition-all duration-700 delay-100 ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
-          A Startup Built on Passion
+          Portfolios built on{" "}
+          <span className="italic text-brand">passion</span>
         </h2>
 
-        {/* Subheadline */}
         <p
-          className={`text-lg text-gray-300 max-w-2xl mx-auto mb-12 leading-relaxed transition-all duration-700 delay-200 ${
+          className={`text-lg text-ink-soft max-w-2xl mx-auto mb-14 leading-relaxed transition-all duration-700 delay-200 ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
-          We are a UAE-based web development team turning ideas into stunning,
-          fast websites
+          A UAE-based studio crafting beautiful portfolios for creators,
+          freelancers, and small studios who want to stand out.
         </p>
 
-        {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {CARDS.map(({ emoji, title, desc }, i) => (
+          {CARDS.map(({ icon, title, desc }, i) => (
             <div
               key={title}
-              className={`bg-white/10 backdrop-blur border border-white/20 rounded-2xl p-6 text-left transition-all duration-700 ${
+              className={`bg-canvas-bg border border-ink/10 rounded-2xl p-7 text-left shadow-[0_1px_2px_rgba(26,22,18,0.04)] hover:shadow-[0_10px_30px_-12px_rgba(26,22,18,0.18)] hover:-translate-y-1 transition-all duration-500 ${
                 visible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-10"
               }`}
               style={{ transitionDelay: `${300 + i * 120}ms` }}
             >
-              <div className="text-3xl mb-3">{emoji}</div>
-              <h3 className="font-bold text-lg mb-2">{title}</h3>
-              <p className="text-gray-300 text-sm leading-relaxed">{desc}</p>
+              <div className="text-brand text-2xl mb-4">{icon}</div>
+              <h3 className="font-serif text-xl text-ink mb-2">{title}</h3>
+              <p className="text-ink-soft text-sm leading-relaxed">{desc}</p>
             </div>
           ))}
         </div>

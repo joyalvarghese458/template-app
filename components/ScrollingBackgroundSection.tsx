@@ -1,8 +1,3 @@
-// Pure CSS crossfade + Ken Burns — no external libraries.
-// Each image fades in at 0→5% (1s), holds to 22.5% (3.5s), fades out to 27.5% (1s),
-// then stays hidden for the rest of the 20s cycle. Delays stagger each by 5s.
-// Keyframes `crossfade` and `kenBurns` are defined in globals.css.
-
 const IMAGES = [
   "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80",
   "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1920&q=80",
@@ -23,10 +18,9 @@ const WA_SVG = (
 
 export default function ScrollingBackgroundSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-ink">
       {/* ── Crossfading background images ────────────────────────── */}
       {IMAGES.map((src, i) => (
-        // Outer div controls opacity (crossfade)
         <div
           key={src}
           className="absolute inset-0"
@@ -34,7 +28,6 @@ export default function ScrollingBackgroundSection() {
             animation: `crossfade 20s ${i * 5}s infinite both`,
           }}
         >
-          {/* Inner div controls Ken Burns zoom */}
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
@@ -42,41 +35,37 @@ export default function ScrollingBackgroundSection() {
               animation: `kenBurns 8s ease-in-out alternate infinite`,
             }}
           />
-          {/* Per-image dark overlay */}
-          <div className="absolute inset-0 bg-black/55" />
+          {/* Warm dark overlay tinted toward ink */}
+          <div className="absolute inset-0 bg-ink/70" />
         </div>
       ))}
 
       {/* ── Content ──────────────────────────────────────────────── */}
       <div className="relative z-10 text-center px-6 max-w-3xl mx-auto">
-        <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight tracking-tight mb-6">
-          Your Website.
-          <br className="hidden sm:block" /> Your Brand.{" "}
-          <span
-            className="bg-clip-text text-transparent"
-            style={{
-              backgroundImage:
-                "linear-gradient(135deg, #6366f1 0%, #a5b4fc 100%)",
-            }}
-          >
-            Your Success.
-          </span>
+        <div className="flex items-center justify-center gap-4 mb-6">
+          <span className="h-px w-10 bg-brand/70" aria-hidden="true" />
+          <p className="text-brand text-[10px] sm:text-xs font-semibold uppercase tracking-[0.28em]">
+            Your Craft, Showcased
+          </p>
+          <span className="h-px w-10 bg-brand/70" aria-hidden="true" />
+        </div>
+
+        <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl text-canvas-bg leading-tight tracking-tight mb-6">
+          Your Story. Your Craft.
+          <br className="hidden sm:block" />{" "}
+          <span className="italic text-brand">Your Portfolio.</span>
         </h2>
 
-        <p className="text-base sm:text-lg text-gray-300 mb-10 leading-relaxed">
-          From portfolios to business sites — we craft every pixel with purpose
+        <p className="text-base sm:text-lg text-canvas-bg/80 mb-10 leading-relaxed">
+          From single-page resumes to flagship studios — we craft portfolios
+          that get you hired, booked, and remembered.
         </p>
 
         <a
-          href="https://wa.me/971XXXXXXXXX"
+          href="https://wa.me/971501234567"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-3 px-8 py-4 text-white font-semibold rounded-full text-base transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
-          style={{
-            background: "linear-gradient(135deg, #22c55e, #16a34a)",
-            boxShadow:
-              "0 0 30px rgba(34,197,94,0.4), 0 4px 16px rgba(34,197,94,0.25)",
-          }}
+          className="inline-flex items-center gap-3 px-8 py-4 text-ink bg-canvas-bg hover:bg-canvas-bg/90 font-semibold rounded-md text-base transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
         >
           {WA_SVG}
           Start Your Project on WhatsApp

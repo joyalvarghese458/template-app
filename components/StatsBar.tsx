@@ -3,13 +3,12 @@
 import { useEffect, useRef, useState } from "react";
 
 const STATS = [
-  { value: 100, suffix: "+", label: "Templates" },
-  { value: 50,  suffix: "+", label: "Happy Clients" },
+  { value: 30,  suffix: "+", label: "Portfolio Templates" },
+  { value: 120, suffix: "+", label: "Portfolios Delivered" },
   { value: 1,   suffix: "",  label: "Year Free Support" },
   { value: 5,   suffix: "★", label: "Average Rating" },
 ] as const;
 
-// rAF-based count-up with cubic ease-out
 function useCountUp(target: number, active: boolean, duration = 1800) {
   const [count, setCount] = useState(0);
   const rafRef = useRef<number>(0);
@@ -24,7 +23,7 @@ function useCountUp(target: number, active: boolean, duration = 1800) {
       if (!startRef.current) startRef.current = ts;
       const elapsed = ts - startRef.current;
       const progress = Math.min(elapsed / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
       setCount(Math.round(eased * target));
 
       if (progress < 1) {
@@ -55,23 +54,27 @@ function StatItem({
   const count = useCountUp(value, active);
 
   return (
-    <div className={`text-center py-10 px-6 ${border}`}>
-      <div className="text-4xl sm:text-5xl font-extrabold text-white mb-2 tabular-nums">
-        {count}
-        {suffix}
+    <div className={`flex items-center justify-center gap-3 py-6 px-6 ${border}`}>
+      <span className="text-brand text-lg leading-none" aria-hidden="true">
+        •
+      </span>
+      <div className="text-center">
+        <span className="text-2xl sm:text-3xl font-extrabold text-canvas-bg tabular-nums">
+          {count}
+          {suffix}
+        </span>
+        <span className="ml-2 text-[11px] sm:text-xs font-semibold text-canvas-bg/80 uppercase tracking-[0.18em]">
+          {label}
+        </span>
       </div>
-      <p className="text-xs sm:text-sm font-medium text-gray-400 uppercase tracking-widest">
-        {label}
-      </p>
     </div>
   );
 }
 
-// Border logic for 2×2 mobile grid → 4-column desktop row
 const BORDERS = [
-  "border-r border-b border-white/10 md:border-b-0",
-  "border-b border-white/10 md:border-b-0 md:border-r md:border-white/10",
-  "border-r border-white/10",
+  "border-r border-b border-canvas-bg/10 md:border-b-0",
+  "border-b border-canvas-bg/10 md:border-b-0 md:border-r md:border-canvas-bg/10",
+  "border-r border-canvas-bg/10",
   "",
 ];
 
@@ -98,21 +101,8 @@ export default function StatsBar() {
   }, []);
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative"
-      style={{
-        backgroundImage:
-          "url(https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1920&q=80)",
-        backgroundAttachment: "fixed",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      {/* Dark overlay — slightly lighter than AboutSection so stats pop */}
-      <div className="absolute inset-0 bg-black/65" />
-
-      <div className="relative z-10 max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4">
+    <section ref={sectionRef} className="bg-ink">
+      <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4">
         {STATS.map(({ value, suffix, label }, i) => (
           <StatItem
             key={label}

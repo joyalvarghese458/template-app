@@ -2,11 +2,15 @@
 
 /* ── Custom theme tokens ─────────────────────────────────────────── */
 @theme {
-  --color-brand:       #6366f1;
-  --color-brand-light: #a5b4fc;
-  --color-canvas-bg:   #06060f;
+  --color-brand:       #b89968;
+  --color-brand-light: #c9ab7c;
+  --color-brand-dark:  #8e7548;
+  --color-canvas-bg:   #faf7f0;
+  --color-ink:         #1a1612;
+  --color-ink-soft:    #5a5249;
 
-  --font-sans: var(--font-geist);
+  --font-sans:  var(--font-geist);
+  --font-serif: var(--font-playfair);
 
   --animate-fade-in-up: fadeInUp 0.9s ease-out both;
 }
@@ -60,6 +64,13 @@
 /* ── Global base ─────────────────────────────────────────────────── */
 :root {
   --navbar-height: 4rem;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--navbar-height);
+  background-color: var(--color-canvas-bg);
+  color: var(--color-ink);
 }
 
 *,
