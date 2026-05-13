@@ -62,6 +62,28 @@ export default function Home() {
             </a>
           </div>
         </div>
+
+        {/* ── Scroll-to-explore cue ──────────────────────────────── */}
+        <a
+          href="#templates"
+          aria-label="Scroll to explore"
+          className="absolute bottom-8 sm:bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-ink-soft hover:text-ink transition-colors duration-150"
+        >
+          <span className="text-xs sm:text-sm tracking-wide">Scroll to explore</span>
+          <svg
+            className="w-5 h-5 animate-scroll-bounce"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M12 5v14" />
+            <path d="M19 12l-7 7-7-7" />
+          </svg>
+        </a>
       </section>
 
       <StatsBar />

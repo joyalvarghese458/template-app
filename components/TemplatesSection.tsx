@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-type Template = { id: string; title: string; tag: string; badge: string; image?: string };
+type Template = { id: string; title: string; tag: string; image?: string };
 
 function templateImage(t: Template) {
   return t.image ?? `https://picsum.photos/seed/${t.id}/420/860`;
@@ -25,16 +25,16 @@ const TIERS: Tier[] = [
     accent: "from-[#0f1f17] via-[#0a1410] to-[#050a07]",
     badgeColor: "bg-brand/10 text-brand-dark border-brand/30",
     templates: [
-      { id: "s1", title: "Minimalist", tag: "Resume · Single page", badge: "Resume" },
-      { id: "s2", title: "Pure", tag: "Personal · Light", badge: "Personal" },
-      { id: "s3", title: "Cardstock", tag: "CV · Card layout", badge: "CV" },
-      { id: "s4", title: "Solo", tag: "Freelancer · Lite", badge: "Freelancer" },
-      { id: "s5", title: "Profile One", tag: "Personal brand", badge: "Brand" },
-      { id: "s6", title: "Classic", tag: "CV · Print-ready", badge: "Classic" },
-      { id: "s7", title: "Quill", tag: "Writer · Lite", badge: "Writer" },
-      { id: "s8", title: "Snap", tag: "Photo · Single page", badge: "Photo" },
-      { id: "s9", title: "Indie", tag: "Maker · Lite", badge: "Maker" },
-      { id: "s10", title: "Onefolio", tag: "Universal · Lite", badge: "Universal" },
+      { id: "s1", title: "Minimalist", tag: "Resume · Single page" },
+      { id: "s2", title: "Pure", tag: "Personal · Light" },
+      { id: "s3", title: "Cardstock", tag: "CV · Card layout" },
+      { id: "s4", title: "Solo", tag: "Freelancer · Lite" },
+      { id: "s5", title: "Profile One", tag: "Personal brand" },
+      { id: "s6", title: "Classic", tag: "CV · Print-ready" },
+      { id: "s7", title: "Quill", tag: "Writer · Lite" },
+      { id: "s8", title: "Snap", tag: "Photo · Single page" },
+      { id: "s9", title: "Indie", tag: "Maker · Lite" },
+      { id: "s10", title: "Onefolio", tag: "Universal · Lite" },
     ],
   },
   {
@@ -44,16 +44,16 @@ const TIERS: Tier[] = [
     accent: "from-[#1a3a2a] via-[#102a1d] to-[#08140e]",
     badgeColor: "bg-brand/15 text-brand-dark border-brand/40",
     templates: [
-      { id: "p1", title: "Designer Pro", tag: "Designer · Multi-page", badge: "Designer" },
-      { id: "p2", title: "DevHub", tag: "Developer · Projects grid", badge: "Developer" },
-      { id: "p3", title: "Gallery+", tag: "Photographer · Gallery", badge: "Photographer" },
-      { id: "p4", title: "Studio", tag: "Creative · Case studies", badge: "Creative" },
-      { id: "p5", title: "Architect", tag: "Architect · Project pages", badge: "Architect" },
-      { id: "p6", title: "Artisan", tag: "Artist · Collection", badge: "Artist" },
-      { id: "p7", title: "Consult", tag: "Consultant · Services", badge: "Consultant" },
-      { id: "p8", title: "Stage", tag: "Speaker · Talks", badge: "Speaker" },
-      { id: "p9", title: "Aura", tag: "Influencer · Press kit", badge: "Influencer" },
-      { id: "p10", title: "Brandmark", tag: "Brand · Identity", badge: "Brand" },
+      { id: "p1", title: "Designer Pro", tag: "Designer · Multi-page" },
+      { id: "p2", title: "DevHub", tag: "Developer · Projects grid" },
+      { id: "p3", title: "Gallery+", tag: "Photographer · Gallery" },
+      { id: "p4", title: "Studio", tag: "Creative · Case studies" },
+      { id: "p5", title: "Architect", tag: "Architect · Project pages" },
+      { id: "p6", title: "Artisan", tag: "Artist · Collection" },
+      { id: "p7", title: "Consult", tag: "Consultant · Services" },
+      { id: "p8", title: "Stage", tag: "Speaker · Talks" },
+      { id: "p9", title: "Aura", tag: "Influencer · Press kit" },
+      { id: "p10", title: "Brandmark", tag: "Brand · Identity" },
     ],
   },
   {
@@ -63,16 +63,16 @@ const TIERS: Tier[] = [
     accent: "from-[#10b981] via-[#059669] to-[#1a3a2a]",
     badgeColor: "bg-brand/20 text-brand-dark border-brand/50",
     templates: [
-      { id: "x1", title: "Atelier", tag: "Agency · Flagship", badge: "Agency" },
-      { id: "x2", title: "Reel", tag: "Director · Showreel", badge: "Director" },
-      { id: "x3", title: "Magnum", tag: "Photographer · Pro Max", badge: "Photographer" },
-      { id: "x4", title: "Blueprint", tag: "Architect · Premier", badge: "Architect" },
-      { id: "x5", title: "Founder", tag: "Executive · Suite", badge: "Executive" },
-      { id: "x6", title: "Maker Pro", tag: "Designer · Elite", badge: "Designer" },
-      { id: "x7", title: "Curate", tag: "Artist · Atelier", badge: "Artist" },
-      { id: "x8", title: "Atrium", tag: "Studio · Master", badge: "Studio" },
-      { id: "x9", title: "Beacon", tag: "Brand · Premier", badge: "Brand" },
-      { id: "x10", title: "Lumen", tag: "Editorial · Premium", badge: "Editorial" },
+      { id: "x1", title: "Atelier", tag: "Agency · Flagship" },
+      { id: "x2", title: "Reel", tag: "Director · Showreel" },
+      { id: "x3", title: "Magnum", tag: "Photographer · Pro Max" },
+      { id: "x4", title: "Blueprint", tag: "Architect · Premier" },
+      { id: "x5", title: "Founder", tag: "Executive · Suite" },
+      { id: "x6", title: "Maker Pro", tag: "Designer · Elite" },
+      { id: "x7", title: "Curate", tag: "Artist · Atelier" },
+      { id: "x8", title: "Atrium", tag: "Studio · Master" },
+      { id: "x9", title: "Beacon", tag: "Brand · Premier" },
+      { id: "x10", title: "Lumen", tag: "Editorial · Premium" },
     ],
   },
 ];
@@ -98,13 +98,11 @@ function PhoneCard({
   tier,
   price,
   accent,
-  badgeColor,
 }: {
   template: Template;
   tier: string;
   price: number;
   accent: string;
-  badgeColor: string;
 }) {
   return (
     <article className="snap-start shrink-0 w-[180px] sm:w-[210px] flex flex-col items-center select-none">
@@ -226,11 +224,6 @@ function PhoneCard({
         <p className="font-serif text-ink text-lg sm:text-xl tracking-tight">
           {template.title}
         </p>
-        <span
-          className={`inline-block text-[10px] font-semibold uppercase tracking-widest px-3 py-1 rounded-full border mt-2 ${badgeColor}`}
-        >
-          {template.badge}
-        </span>
         <p className="text-ink-soft text-xs mt-2">
           <span className="text-ink-soft/70">AED</span>{" "}
           <span className="font-semibold text-ink">{price}</span>
@@ -464,7 +457,6 @@ function TierCarousel({ tier }: { tier: Tier }) {
             tier={tier.label}
             price={tier.price}
             accent={tier.accent}
-            badgeColor={tier.badgeColor}
           />
         ))}
         <ViewMoreCard tier={tier} />
