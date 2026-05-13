@@ -56,16 +56,16 @@ export default function LoadingScreen() {
           left: 0,
           height: 2,
           width: `${progress}%`,
-          background: "linear-gradient(to right, #b8962e, #f0cc6a, #c9a84c)",
-          boxShadow: "0 0 12px rgba(240,204,106,0.6)",
+          background: "linear-gradient(to right, #059669, #34d399, #10b981)",
+          boxShadow: "0 0 12px rgba(52,211,153,0.6)",
         }}
       />
 
       {/* ── Corner brackets ──────────────────────────────────────── */}
-      <div style={{ position: "absolute", top: 24, left: 24, width: 44, height: 44, borderTop: "1px solid rgba(201,168,76,0.3)", borderLeft: "1px solid rgba(201,168,76,0.3)" }} />
-      <div style={{ position: "absolute", top: 24, right: 24, width: 44, height: 44, borderTop: "1px solid rgba(201,168,76,0.3)", borderRight: "1px solid rgba(201,168,76,0.3)" }} />
-      <div style={{ position: "absolute", bottom: 24, left: 24, width: 44, height: 44, borderBottom: "1px solid rgba(201,168,76,0.3)", borderLeft: "1px solid rgba(201,168,76,0.3)" }} />
-      <div style={{ position: "absolute", bottom: 24, right: 24, width: 44, height: 44, borderBottom: "1px solid rgba(201,168,76,0.3)", borderRight: "1px solid rgba(201,168,76,0.3)" }} />
+      <div style={{ position: "absolute", top: 24, left: 24, width: 44, height: 44, borderTop: "1px solid rgba(16,185,129,0.3)", borderLeft: "1px solid rgba(16,185,129,0.3)" }} />
+      <div style={{ position: "absolute", top: 24, right: 24, width: 44, height: 44, borderTop: "1px solid rgba(16,185,129,0.3)", borderRight: "1px solid rgba(16,185,129,0.3)" }} />
+      <div style={{ position: "absolute", bottom: 24, left: 24, width: 44, height: 44, borderBottom: "1px solid rgba(16,185,129,0.3)", borderLeft: "1px solid rgba(16,185,129,0.3)" }} />
+      <div style={{ position: "absolute", bottom: 24, right: 24, width: 44, height: 44, borderBottom: "1px solid rgba(16,185,129,0.3)", borderRight: "1px solid rgba(16,185,129,0.3)" }} />
 
       {/* ── Centre content (CSS entrance animation) ──────────────── */}
       <div className="loader-content">
@@ -74,9 +74,9 @@ export default function LoadingScreen() {
           style={{
             width: 10,
             height: 10,
-            background: "#c9a84c",
+            background: "#10b981",
             transform: "rotate(45deg)",
-            boxShadow: "0 0 20px rgba(201,168,76,0.8), 0 0 50px rgba(201,168,76,0.3)",
+            boxShadow: "0 0 20px rgba(16,185,129,0.8), 0 0 50px rgba(16,185,129,0.3)",
             marginBottom: 32,
           }}
         />
@@ -93,7 +93,7 @@ export default function LoadingScreen() {
             fontFamily: "var(--font-playfair, ui-serif, Georgia, serif)",
           }}
         >
-          Folio<span style={{ color: "#f0cc6a" }}>Craft</span>
+          Folio<span style={{ color: "#34d399" }}>Craft</span>
         </p>
 
         {/* Tagline */}
@@ -102,7 +102,7 @@ export default function LoadingScreen() {
             fontSize: "0.62rem",
             textTransform: "uppercase",
             letterSpacing: "0.28em",
-            color: "rgba(201,168,76,0.55)",
+            color: "rgba(52,211,153,0.65)",
             marginBottom: 56,
           }}
         >
@@ -126,8 +126,8 @@ export default function LoadingScreen() {
               left: 0,
               height: "100%",
               width: `${progress}%`,
-              background: "linear-gradient(to right, #9a7a28, #f0cc6a)",
-              boxShadow: "0 0 8px rgba(240,204,106,0.6)",
+              background: "linear-gradient(to right, #059669, #34d399)",
+              boxShadow: "0 0 8px rgba(52,211,153,0.6)",
             }}
           />
           {/* Glowing lead dot */}
@@ -140,8 +140,8 @@ export default function LoadingScreen() {
                 width: 7,
                 height: 7,
                 borderRadius: "50%",
-                background: "#f5d878",
-                boxShadow: "0 0 12px 4px rgba(240,204,106,0.9)",
+                background: "#6ee7b7",
+                boxShadow: "0 0 12px 4px rgba(110,231,183,0.9)",
                 transform: "translate(-50%, -50%)",
               }}
             />
@@ -154,7 +154,7 @@ export default function LoadingScreen() {
             marginTop: 20,
             fontSize: "0.68rem",
             fontFamily: "ui-monospace, SFMono-Regular, monospace",
-            color: "rgba(201,168,76,0.45)",
+            color: "rgba(52,211,153,0.55)",
             letterSpacing: "0.15em",
           }}
         >

@@ -62,7 +62,7 @@ export default function ScrollingBackgroundSection() {
         </p>
 
         <a
-          href="https://wa.me/971501234567"
+          href="https://wa.me/971568450406"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-3 px-8 py-4 text-ink bg-canvas-bg hover:bg-canvas-bg/90 font-semibold rounded-md text-base transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"

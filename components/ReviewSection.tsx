@@ -68,7 +68,7 @@ function Avatar({ name, photoUrl }: { name: string; photoUrl: string | null }) {
 
 function ReviewCard({ review }: { review: Review }) {
   return (
-    <article className="shrink-0 w-72 bg-canvas-bg border border-ink/10 rounded-2xl p-5 select-none shadow-[0_1px_2px_rgba(26,22,18,0.04)]">
+    <article className="shrink-0 w-72 bg-canvas-bg border border-ink/10 rounded-2xl p-5 select-none shadow-[0_1px_2px_rgba(0,0,0,0.4)]">
       <div className="flex items-center gap-3 mb-3">
         <Avatar name={review.name} photoUrl={review.photo_url} />
         <div className="min-w-0">
@@ -290,7 +290,7 @@ export default function ReviewSection() {
                 <form
                   onSubmit={handleSubmit}
                   noValidate
-                  className="max-w-lg mx-auto bg-canvas-bg border border-ink/10 rounded-2xl p-6 text-left space-y-5 shadow-[0_4px_24px_-12px_rgba(26,22,18,0.15)]"
+                  className="max-w-lg mx-auto bg-canvas-bg border border-ink/10 rounded-2xl p-6 text-left space-y-5 shadow-[0_4px_24px_-12px_rgba(0,0,0,0.6)]"
                 >
                   {error && (
                     <div className="bg-red-500/10 border border-red-500/30 text-red-700 rounded-lg px-4 py-3 text-sm">

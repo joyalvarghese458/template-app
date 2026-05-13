@@ -84,7 +84,7 @@ export default function AboutSection() {
           {CARDS.map(({ icon, title, desc }, i) => (
             <div
               key={title}
-              className={`bg-canvas-bg border border-ink/10 rounded-2xl p-7 text-left shadow-[0_1px_2px_rgba(26,22,18,0.04)] hover:shadow-[0_10px_30px_-12px_rgba(26,22,18,0.18)] hover:-translate-y-1 transition-all duration-500 ${
+              className={`bg-canvas-bg border border-ink/10 rounded-2xl p-7 text-left shadow-[0_1px_2px_rgba(0,0,0,0.4)] hover:shadow-[0_10px_30px_-12px_rgba(0,0,0,0.6)] hover:-translate-y-1 transition-all duration-500 ${
                 visible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-10"

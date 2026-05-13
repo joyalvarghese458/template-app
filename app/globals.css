@@ -2,12 +2,12 @@
 
 /* ── Custom theme tokens ─────────────────────────────────────────── */
 @theme {
-  --color-brand:       #b89968;
-  --color-brand-light: #c9ab7c;
-  --color-brand-dark:  #8e7548;
-  --color-canvas-bg:   #faf7f0;
-  --color-ink:         #1a1612;
-  --color-ink-soft:    #5a5249;
+  --color-brand:       #10b981;
+  --color-brand-light: #34d399;
+  --color-brand-dark:  #059669;
+  --color-canvas-bg:   #0a0f0c;
+  --color-ink:         #f8fafc;
+  --color-ink-soft:    #94a3b8;
 
   --font-sans:  var(--font-geist);
   --font-serif: var(--font-playfair);

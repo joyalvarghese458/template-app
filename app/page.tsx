@@ -16,7 +16,7 @@ export default function Home() {
           aria-hidden="true"
           style={{
             background:
-              "radial-gradient(ellipse 70% 55% at 50% 45%, rgba(184,153,104,0.10) 0%, transparent 70%)",
+              "radial-gradient(ellipse 70% 55% at 50% 45%, rgba(16,185,129,0.18) 0%, transparent 70%)",
           }}
         />
 
@@ -53,7 +53,7 @@ export default function Home() {
             </a>
 
             <a
-              href="https://wa.me/971501234567"
+              href="https://wa.me/971568450406"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center px-10 py-4 text-base font-semibold text-ink bg-canvas-bg border border-ink/25 rounded-md hover:border-ink/60 transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
@@ -65,8 +65,9 @@ export default function Home() {
       </section>
 
       <StatsBar />
-      <AboutSection />
+      
       <TemplatesSection />
+      <AboutSection />
       <ReviewSection />
       <ScrollingBackgroundSection />
       <Footer />
