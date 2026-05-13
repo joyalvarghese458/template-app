@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <main className="bg-canvas-bg">
       {/* ── Hero ──────────────────────────────────────────────────── */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-canvas-bg">
+      <section className="relative min-h-screen min-h-[100svh] flex items-center justify-center overflow-hidden bg-canvas-bg">
         {/* Soft radial highlight behind text */}
         <div
           className="absolute inset-0 pointer-events-none"
