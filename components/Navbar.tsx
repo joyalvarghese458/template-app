@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const NAV_LINKS = [
   { href: "#templates", label: "Templates" },
@@ -37,22 +38,27 @@ export default function Navbar() {
         </Link>
 
         {/* ── Desktop links ─────────────────────────────────────── */}
-        <ul className="hidden md:flex items-center gap-8">
-          {NAV_LINKS.map(({ href, label }) => (
-            <li key={label}>
-              <Link
-                href={href}
-                className="text-sm font-medium text-ink-soft hover:text-ink transition-colors duration-150"
-              >
-                {label}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <div className="hidden md:flex items-center gap-8">
+          <ul className="flex items-center gap-8">
+            {NAV_LINKS.map(({ href, label }) => (
+              <li key={label}>
+                <Link
+                  href={href}
+                  className="text-sm font-medium text-ink-soft hover:text-ink transition-colors duration-150"
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <ThemeToggle />
+        </div>
 
-        {/* ── Hamburger ─────────────────────────────────────────── */}
+        {/* ── Mobile: toggle + hamburger ───────────────────────── */}
+        <div className="md:hidden flex items-center gap-2">
+        <ThemeToggle />
         <button
-          className="md:hidden flex flex-col items-center justify-center w-10 h-10 gap-[5px] rounded-md hover:bg-ink/5 transition-colors"
+          className="flex flex-col items-center justify-center w-10 h-10 gap-[5px] rounded-md hover:bg-ink/5 transition-colors"
           onClick={() => setIsOpen((v) => !v)}
           aria-label={isOpen ? "Close menu" : "Open menu"}
           aria-expanded={isOpen}
@@ -73,6 +79,7 @@ export default function Navbar() {
             }`}
           />
         </button>
+        </div>
       </div>
 
       {/* ── Mobile drawer ───────────────────────────────────────── */}

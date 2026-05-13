@@ -153,7 +153,7 @@ function PhoneCard({
           <div className="absolute top-2 left-1/2 -translate-x-1/2 w-20 sm:w-24 h-[22px] sm:h-[26px] rounded-full bg-black/90 z-20" />
 
           {/* Status bar time */}
-          <div className="absolute top-[10px] left-4 text-canvas-bg text-[10px] font-semibold tracking-wide z-10 drop-shadow">
+          <div className="absolute top-[10px] left-4 text-white text-[10px] font-semibold tracking-wide z-10 drop-shadow">
             9:41
           </div>
 
@@ -162,10 +162,10 @@ function PhoneCard({
             <p className="text-brand text-[9px] sm:text-[10px] uppercase tracking-[0.28em] mb-1.5 drop-shadow">
               {tier} portfolio
             </p>
-            <p className="font-serif text-canvas-bg text-xl sm:text-2xl tracking-tight drop-shadow-md leading-tight">
+            <p className="font-serif text-white text-xl sm:text-2xl tracking-tight drop-shadow-md leading-tight">
               {template.title}
             </p>
-            <p className="text-canvas-bg/85 text-[10px] sm:text-[11px] mt-1 max-w-[20ch] mx-auto leading-snug drop-shadow">
+            <p className="text-white/85 text-[10px] sm:text-[11px] mt-1 max-w-[20ch] mx-auto leading-snug drop-shadow">
               {template.tag}
             </p>
           </div>
@@ -175,7 +175,7 @@ function PhoneCard({
             <div className="flex gap-1.5">
               <a
                 href={viewLink(template.id)}
-                className="flex-1 inline-flex items-center justify-center gap-1 px-2 py-2 text-[11px] sm:text-xs font-bold text-canvas-bg bg-canvas-bg/15 hover:bg-canvas-bg/25 backdrop-blur-md border border-canvas-bg/30 rounded-lg transition-all duration-200 active:scale-95"
+                className="flex-1 inline-flex items-center justify-center gap-1 px-2 py-2 text-[11px] sm:text-xs font-bold text-white bg-white/20 hover:bg-white/30 backdrop-blur-md border border-white/40 rounded-lg transition-all duration-200 active:scale-95"
               >
                 <svg
                   className="w-3 h-3 sm:w-3.5 sm:h-3.5"
@@ -217,7 +217,7 @@ function PhoneCard({
           </div>
 
           {/* Home indicator */}
-          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-20 h-1 rounded-full bg-canvas-bg/60 z-10" />
+          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-20 h-1 rounded-full bg-white/60 z-10" />
         </div>
       </div>
 

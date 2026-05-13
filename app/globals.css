@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* ── Custom theme tokens ─────────────────────────────────────────── */
+/* ── Custom theme tokens (dark is the default) ───────────────────── */
 @theme {
   --color-brand:       #10b981;
   --color-brand-light: #34d399;
@@ -13,6 +13,17 @@
   --font-serif: var(--font-playfair);
 
   --animate-fade-in-up: fadeInUp 0.9s ease-out both;
+}
+
+/* ── Light-mode overrides ────────────────────────────────────────── */
+:root[data-theme="light"] {
+  --color-brand:       #b8860b;
+  --color-brand-light: #d4a82e;
+  --color-brand-dark:  #8b6508;
+  --color-canvas-bg:   #ffffff;
+  --color-ink:         #000000;
+  --color-ink-soft:    #4a4a4a;
+  --hero-glow:         rgba(184, 134, 11, 0.22);
 }
 
 /* ── Keyframes ───────────────────────────────────────────────────── */
@@ -64,6 +75,12 @@
 /* ── Global base ─────────────────────────────────────────────────── */
 :root {
   --navbar-height: 4rem;
+  --hero-glow: rgba(16, 185, 129, 0.18);
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
 }
 
 html {

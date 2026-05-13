@@ -16,7 +16,7 @@ export default function Home() {
           aria-hidden="true"
           style={{
             background:
-              "radial-gradient(ellipse 70% 55% at 50% 45%, rgba(16,185,129,0.18) 0%, transparent 70%)",
+              "radial-gradient(ellipse 70% 55% at 50% 45%, var(--hero-glow) 0%, transparent 70%)",
           }}
         />
 
