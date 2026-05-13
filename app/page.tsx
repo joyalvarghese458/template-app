@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <main className="bg-canvas-bg">
       {/* ── Hero ──────────────────────────────────────────────────── */}
-      <section className="relative min-h-screen min-h-[100svh] flex items-center justify-center overflow-hidden bg-canvas-bg">
+      <section className="relative min-h-svh flex items-center justify-center overflow-hidden bg-canvas-bg">
         {/* Soft radial highlight behind text */}
         <div
           className="absolute inset-0 pointer-events-none"
@@ -23,7 +23,7 @@ export default function Home() {
         {/* Hero content */}
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto animate-fade-in-up">
           {/* Eyebrow with gold lines */}
-          <div className="flex items-center justify-center gap-4 mb-8">
+          <div className="flex items-center justify-center gap-4 mb-5 sm:mb-8">
             <span className="h-px w-10 bg-brand/60" aria-hidden="true" />
             <p className="text-brand text-[10px] sm:text-xs font-semibold uppercase tracking-[0.28em]">
               Crafted Digital Portfolios
@@ -31,14 +31,14 @@ export default function Home() {
             <span className="h-px w-10 bg-brand/60" aria-hidden="true" />
           </div>
 
-          <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl text-ink leading-[1.05] tracking-tight mb-7">
+          <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl text-ink leading-[1.05] tracking-tight mb-5 sm:mb-7">
             Your portfolio,
             <br />
             delivered{" "}
             <span className="italic text-brand font-medium">beautifully</span>
           </h1>
 
-          <p className="text-base sm:text-lg md:text-xl text-ink-soft max-w-2xl mx-auto mb-10 leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-ink-soft max-w-2xl mx-auto mb-7 sm:mb-10 leading-relaxed">
             Hand-crafted portfolio templates for designers, developers,
             photographers, and creators — pick a tier, launch in days.
           </p>
