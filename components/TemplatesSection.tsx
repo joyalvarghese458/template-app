@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-type Template = { id: string; title: string; tag: string; image?: string };
+type Template = { id: string; title: string; tag: string; image?: string; slug?: string };
 
 function templateImage(t: Template) {
   return t.image ?? `https://picsum.photos/seed/${t.id}/420/860`;
@@ -25,7 +25,7 @@ const TIERS: Tier[] = [
     accent: "from-[#0f1f17] via-[#0a1410] to-[#050a07]",
     badgeColor: "bg-brand/10 text-brand-dark border-brand/30",
     templates: [
-      { id: "s1", title: "Minimalist", tag: "Resume · Single page" },
+      { id: "s1", slug: "minimalist", title: "Minimalist", tag: "Resume · Single page" },
       { id: "s2", title: "Pure", tag: "Personal · Light" },
       { id: "s3", title: "Cardstock", tag: "CV · Card layout" },
       { id: "s4", title: "Solo", tag: "Freelancer · Lite" },
@@ -84,9 +84,8 @@ function waLink(tier: string, name: string, price: number) {
   return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
 }
 
-function viewLink(templateId: string) {
-  // TODO: replace with actual preview route once built
-  return `/templates/${templateId}`;
+function viewLink(template: Template) {
+  return `/templates/${template.slug ?? template.id}`;
 }
 
 // ────────────────────────────────────────────────────────────────────
@@ -172,7 +171,7 @@ function PhoneCard({
           <div className="absolute bottom-7 left-0 right-0 px-3 z-30">
             <div className="flex gap-1.5">
               <a
-                href={viewLink(template.id)}
+                href={viewLink(template)}
                 className="flex-1 inline-flex items-center justify-center gap-1 px-2 py-2 text-[11px] sm:text-xs font-bold text-white bg-white/20 hover:bg-white/30 backdrop-blur-md border border-white/40 rounded-lg transition-all duration-200 active:scale-95"
               >
                 <svg

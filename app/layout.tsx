@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Playfair_Display } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import LoadingScreen from "@/components/LoadingScreen";
 
 const geist = Geist({
   variable: "--font-geist",
@@ -34,8 +32,6 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
       <body className="font-sans antialiased bg-canvas-bg text-ink">
-        <LoadingScreen />
-        <Navbar />
         {children}
       </body>
     </html>
