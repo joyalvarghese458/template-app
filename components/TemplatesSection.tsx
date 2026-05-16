@@ -10,7 +10,7 @@ function templateImage(t: Template) {
 
 type Tier = {
   label: string;
-  subtitle: string;
+  // subtitle: string;
   price: number;
   accent: string;
   badgeColor: string;
@@ -20,7 +20,7 @@ type Tier = {
 const TIERS: Tier[] = [
   {
     label: "Starter",
-    subtitle: "Single-page essentials — for freelancers, students & first portfolios",
+    // subtitle: "Single-page essentials — for freelancers, students & first portfolios",
     price: 49,
     accent: "from-[#0f1f17] via-[#0a1410] to-[#050a07]",
     badgeColor: "bg-brand/10 text-brand-dark border-brand/30",
@@ -39,7 +39,7 @@ const TIERS: Tier[] = [
   },
   {
     label: "Pro",
-    subtitle: "Multi-page, animated portfolios with rich case-study layouts & blog support",
+    // subtitle: "Multi-page, animated portfolios with rich case-study layouts & blog support",
     price: 99,
     accent: "from-[#1a3a2a] via-[#102a1d] to-[#08140e]",
     badgeColor: "bg-brand/15 text-brand-dark border-brand/40",
@@ -58,7 +58,7 @@ const TIERS: Tier[] = [
   },
   {
     label: "Premium",
-    subtitle: "Flagship portfolios — custom animations, CMS-ready, e-commerce & SEO tuned",
+    // subtitle: "Flagship portfolios — custom animations, CMS-ready, e-commerce & SEO tuned",
     price: 149,
     accent: "from-[#10b981] via-[#059669] to-[#1a3a2a]",
     badgeColor: "bg-brand/20 text-brand-dark border-brand/50",
@@ -391,13 +391,7 @@ function TierCarousel({ tier }: { tier: Tier }) {
               {tier.price}
             </span>
           </h3>
-          <p className="text-ink-soft text-xs sm:text-sm mt-1.5 max-w-xl">
-            Templates 1–10 ·{" "}
-            <span className="italic text-ink-soft/70">Drag to slide</span>
-          </p>
-          <p className="text-ink-soft/80 text-xs mt-1 hidden sm:block">
-            {tier.subtitle}
-          </p>
+         
         </div>
 
         {/* Arrow buttons */}
