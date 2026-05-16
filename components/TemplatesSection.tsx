@@ -63,7 +63,7 @@ const TIERS: Tier[] = [
     accent: "from-[#10b981] via-[#059669] to-[#1a3a2a]",
     badgeColor: "bg-brand/20 text-brand-dark border-brand/50",
     templates: [
-      { id: "x1", title: "Atelier", tag: "Agency · Flagship" },
+      { id: "x1", slug: "atelier", title: "Atelier", tag: "Agency · Flagship" },
       { id: "x2", title: "Reel", tag: "Director · Showreel" },
       { id: "x3", title: "Magnum", tag: "Photographer · Pro Max" },
       { id: "x4", title: "Blueprint", tag: "Architect · Premier" },

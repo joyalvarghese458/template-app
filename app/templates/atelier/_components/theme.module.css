@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap");
+
+/* Shared design tokens for Atelier template.
+   Imported via a wrapping <div className={theme.root}> so we don't touch global CSS. */
+
+.root {
+  --atelier-bg: #08080a;
+  --atelier-bg-2: #0e0e11;
+  --atelier-ink: #f5f0e6;
+  --atelier-ink-dim: rgba(245, 240, 230, 0.7);
+  --atelier-ink-muted: rgba(245, 240, 230, 0.45);
+  --atelier-line: rgba(245, 240, 230, 0.1);
+  --atelier-accent: #e8d18b;
+  --atelier-accent-2: #6fcf97;
+
+  --atelier-display: "Cormorant Garamond", "Times New Roman", serif;
+  --atelier-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --atelier-mono: "JetBrains Mono", "Courier New", monospace;
+
+  background: var(--atelier-bg);
+  color: var(--atelier-ink);
+  font-family: var(--atelier-sans);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.root *,
+.root *::before,
+.root *::after {
+  box-sizing: border-box;
+}
+
+/* Film-grain overlay across all pages */
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 200;
+  opacity: 0.12;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.4 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  background-size: 200px 200px;
+}
+
+/* Animated vignette gradient */
+.vignette {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(232, 209, 139, 0.05) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 100% 100%, rgba(111, 207, 151, 0.04) 0%, transparent 60%),
+    radial-gradient(ellipse 100% 80% at 0% 50%, rgba(232, 209, 139, 0.03) 0%, transparent 60%);
+}
+
+/* Custom cursor wrapper (desktop only) */
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  border: 1px solid rgba(245, 240, 230, 0.6);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 999;
+  transform: translate(-50%, -50%);
+  transition: width 0.25s ease, height 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+  mix-blend-mode: difference;
+}
+
+.cursorDot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  background: #f5f0e6;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 999;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+}
+
+@media (hover: none), (max-width: 900px) {
+  .cursor, .cursorDot {
+    display: none;
+  }
+}

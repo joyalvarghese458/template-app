@@ -1,0 +1,291 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.25rem 2.5rem;
+  background: linear-gradient(
+    to bottom,
+    rgba(8, 8, 10, 0.85) 0%,
+    rgba(8, 8, 10, 0) 100%
+  );
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: padding 0.4s ease, background 0.4s ease, border-color 0.4s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.navScrolled {
+  padding: 0.85rem 2.5rem;
+  background: rgba(8, 8, 10, 0.78);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border-bottom: 1px solid rgba(245, 240, 230, 0.08);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.brandMark {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.brandMark span {
+  background: #f5f0e6;
+  border-radius: 1px;
+  animation: brandPulse 4s ease-in-out infinite;
+}
+.brandMark span:nth-child(2) { animation-delay: 0.3s; }
+.brandMark span:nth-child(3) { animation-delay: 0.6s; }
+.brandMark span:nth-child(4) { animation-delay: 0.9s; }
+
+@keyframes brandPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.88); }
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.brandPrimary {
+  font-family: var(--atelier-display);
+  font-size: 1.05rem;
+  letter-spacing: 0.18em;
+  font-weight: 500;
+  color: #f5f0e6;
+}
+
+.brandSecondary {
+  font-family: var(--atelier-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: rgba(245, 240, 230, 0.45);
+  margin-top: 0.35rem;
+}
+
+.navLinks {
+  display: flex;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.navLink {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.9rem;
+  text-decoration: none;
+  color: rgba(245, 240, 230, 0.6);
+  font-family: var(--atelier-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+  border-radius: 999px;
+}
+
+.navLink::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.navLink:hover {
+  color: #f5f0e6;
+}
+.navLink:hover::before {
+  border-color: rgba(245, 240, 230, 0.15);
+  background: rgba(245, 240, 230, 0.03);
+}
+
+.navLinkActive {
+  color: #f5f0e6;
+}
+.navLinkActive::before {
+  border-color: rgba(245, 240, 230, 0.2);
+  background: rgba(245, 240, 230, 0.04);
+}
+
+.navIndex {
+  font-size: 0.6rem;
+  color: rgba(245, 240, 230, 0.35);
+}
+
+.navLabel {
+  position: relative;
+}
+
+.navMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--atelier-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(245, 240, 230, 0.55);
+}
+
+.statusDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #6fcf97;
+  box-shadow: 0 0 12px rgba(111, 207, 151, 0.7);
+  animation: dotPulse 2.4s ease-in-out infinite;
+}
+
+@keyframes dotPulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 12px rgba(111, 207, 151, 0.7); }
+  50% { opacity: 0.55; box-shadow: 0 0 4px rgba(111, 207, 151, 0.3); }
+}
+
+.burger {
+  display: none;
+  width: 44px;
+  height: 44px;
+  background: rgba(245, 240, 230, 0.04);
+  border: 1px solid rgba(245, 240, 230, 0.12);
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  z-index: 110;
+}
+
+.burger span {
+  position: absolute;
+  left: 50%;
+  width: 18px;
+  height: 1.5px;
+  background: #f5f0e6;
+  transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1), opacity 0.3s ease;
+  transform-origin: center;
+}
+.burger span:nth-child(1) { top: 16px; transform: translateX(-50%); }
+.burger span:nth-child(2) { top: 21px; transform: translateX(-50%); }
+.burger span:nth-child(3) { top: 26px; transform: translateX(-50%); }
+
+.burgerOpen span:nth-child(1) {
+  top: 21px;
+  transform: translateX(-50%) rotate(45deg);
+}
+.burgerOpen span:nth-child(2) {
+  opacity: 0;
+}
+.burgerOpen span:nth-child(3) {
+  top: 21px;
+  transform: translateX(-50%) rotate(-45deg);
+}
+
+.mobileMenu {
+  position: fixed;
+  inset: 0;
+  z-index: 105;
+  background: #08080a;
+  pointer-events: none;
+  opacity: 0;
+  clip-path: circle(0% at calc(100% - 44px) 44px);
+  transition: clip-path 0.7s cubic-bezier(0.85, 0, 0.15, 1),
+              opacity 0.3s ease;
+}
+
+.mobileMenuOpen {
+  pointer-events: all;
+  opacity: 1;
+  clip-path: circle(150% at calc(100% - 44px) 44px);
+}
+
+.mobileMenuInner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 6rem 2rem 3rem;
+}
+
+.mobileMenuInner nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobileLink {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.9rem 0;
+  text-decoration: none;
+  color: #f5f0e6;
+  border-bottom: 1px solid rgba(245, 240, 230, 0.08);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease, color 0.3s ease;
+}
+
+.mobileMenuOpen .mobileLink {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mobileIndex {
+  font-family: var(--atelier-mono);
+  font-size: 0.7rem;
+  color: rgba(245, 240, 230, 0.4);
+  letter-spacing: 0.2em;
+}
+
+.mobileLabel {
+  font-family: var(--atelier-display);
+  font-size: 2.4rem;
+  letter-spacing: -0.01em;
+  font-weight: 400;
+}
+
+.mobileFooter {
+  font-family: var(--atelier-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(245, 240, 230, 0.5);
+  line-height: 2;
+}
+
+.mobileLocation {
+  color: rgba(245, 240, 230, 0.35);
+  margin-top: 1rem;
+}
+
+@media (max-width: 960px) {
+  .navLinks, .navMeta {
+    display: none;
+  }
+  .burger {
+    display: block;
+  }
+  .nav, .navScrolled {
+    padding: 1rem 1.25rem;
+    grid-template-columns: 1fr auto;
+  }
+}

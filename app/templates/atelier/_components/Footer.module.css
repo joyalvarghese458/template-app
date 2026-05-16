@@ -1,0 +1,172 @@
+.footer {
+  position: relative;
+  padding: 6rem 2.5rem 2rem;
+  background: #050505;
+  border-top: 1px solid rgba(245, 240, 230, 0.08);
+  overflow: hidden;
+}
+
+.marquee {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(245, 240, 230, 0.08);
+  background: linear-gradient(180deg, #0a0a0a 0%, #050505 100%);
+}
+
+.marqueeTrack {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee 40s linear infinite;
+  font-family: var(--atelier-display);
+  font-size: 2.6rem;
+  letter-spacing: -0.01em;
+  color: rgba(245, 240, 230, 0.06);
+  font-weight: 500;
+}
+
+.marqueeTrack span {
+  padding-right: 1rem;
+  flex-shrink: 0;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.grid {
+  margin-top: 6rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid rgba(245, 240, 230, 0.08);
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  font-family: var(--atelier-sans);
+  font-size: 0.95rem;
+  color: rgba(245, 240, 230, 0.75);
+}
+
+.colLabel {
+  font-family: var(--atelier-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(245, 240, 230, 0.4);
+  margin-bottom: 0.5rem;
+}
+
+.bigLink {
+  font-family: var(--atelier-display);
+  font-size: 1.5rem;
+  color: #f5f0e6;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.bigLink:hover {
+  color: #e8d18b;
+}
+
+.muted {
+  color: rgba(245, 240, 230, 0.45);
+  font-size: 0.85rem;
+}
+
+.smallLink {
+  color: rgba(245, 240, 230, 0.7);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.2rem 0;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.smallLink span {
+  font-size: 0.7rem;
+  opacity: 0.5;
+  transition: transform 0.3s ease;
+}
+.smallLink:hover {
+  color: #f5f0e6;
+}
+.smallLink:hover span {
+  transform: translate(3px, -3px);
+}
+
+.lockup {
+  margin-top: 3rem;
+  font-family: var(--atelier-display);
+  font-size: clamp(5rem, 22vw, 22rem);
+  letter-spacing: -0.04em;
+  line-height: 0.85;
+  font-weight: 500;
+  background: linear-gradient(180deg, rgba(245,240,230,0.15) 0%, rgba(245,240,230,0.02) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-align: center;
+  user-select: none;
+  pointer-events: none;
+}
+
+.bottom {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--atelier-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(245, 240, 230, 0.45);
+}
+.bottom > div {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #6fcf97;
+  box-shadow: 0 0 8px rgba(111, 207, 151, 0.6);
+}
+
+@media (max-width: 900px) {
+  .footer {
+    padding: 6rem 1.25rem 2rem;
+  }
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+  .bottom {
+    flex-direction: column;
+    gap: 0.8rem;
+    text-align: center;
+  }
+  .marqueeTrack {
+    font-size: 1.8rem;
+  }
+  .marquee {
+    height: 4.5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
