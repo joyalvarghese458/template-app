@@ -201,7 +201,7 @@ export default function Home() {
         <a
           href="#templates"
           aria-label="Scroll to explore"
-          className="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 z-10 hidden md:flex flex-col items-center gap-2 text-ink-soft hover:text-ink transition-colors duration-150"
+          className="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-ink-soft hover:text-ink transition-colors duration-150"
         >
           <span className="text-xs tracking-wide">Scroll to explore</span>
           <svg
