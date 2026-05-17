@@ -75,7 +75,7 @@ export default function Home() {
           {/* ── Copy column ───────────────────────────────────────── */}
           <div className="animate-fade-in-up text-center lg:text-left order-1">
             {/* Live status pill */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-brand/30 bg-brand/[0.08] backdrop-blur-sm mb-6">
+            <div className="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-brand/30 bg-brand/[0.08] backdrop-blur-sm mb-6">
               <span className="relative flex h-1.5 w-1.5">
                 <span className="absolute inset-0 rounded-full bg-brand animate-ping opacity-60" />
                 <span className="relative rounded-full bg-brand h-1.5 w-1.5" />
@@ -191,8 +191,30 @@ export default function Home() {
             </div>
           </div>
 
+          {/* ── Mobile-only scroll-to-explore cue (above preview) ── */}
+          <a
+            href="#templates"
+            aria-label="Scroll to explore"
+            className="order-2 md:hidden -mb-4 flex flex-col items-center gap-1 text-ink-soft hover:text-ink transition-colors duration-150"
+          >
+            <span className="text-xs tracking-wide">Scroll to explore</span>
+            <svg
+              className="w-5 h-5 animate-scroll-bounce"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M12 5v14" />
+              <path d="M19 12l-7 7-7-7" />
+            </svg>
+          </a>
+
           {/* ── Device showcase column ────────────────────────────── */}
-          <div className="relative order-2 animate-fade-in-up w-full">
+          <div className="relative order-3 lg:order-2 animate-fade-in-up w-full">
             <HeroPortfolioCarousel />
           </div>
         </div>
@@ -201,7 +223,7 @@ export default function Home() {
         <a
           href="#templates"
           aria-label="Scroll to explore"
-          className="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-ink-soft hover:text-ink transition-colors duration-150"
+          className="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 z-10 hidden md:flex flex-col items-center gap-2 text-ink-soft hover:text-ink transition-colors duration-150"
         >
           <span className="text-xs tracking-wide">Scroll to explore</span>
           <svg
