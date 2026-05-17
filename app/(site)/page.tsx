@@ -73,7 +73,7 @@ export default function Home() {
         {/* Hero content — single column on mobile, two columns on lg+ */}
         <div className="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 pt-20 pb-16 sm:pt-24 sm:pb-20 grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-12 sm:gap-14 lg:gap-12 items-center">
           {/* ── Copy column ───────────────────────────────────────── */}
-          <div className="animate-fade-in-up text-center lg:text-left order-2 lg:order-1">
+          <div className="animate-fade-in-up text-center lg:text-left order-1">
             {/* Live status pill */}
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-brand/30 bg-brand/[0.08] backdrop-blur-sm mb-6">
               <span className="relative flex h-1.5 w-1.5">
@@ -191,8 +191,8 @@ export default function Home() {
             </div>
           </div>
 
-          {/* ── Device showcase column (desktop only) ─────────────── */}
-          <div className="relative order-1 lg:order-2 animate-fade-in-up w-full hidden lg:block">
+          {/* ── Device showcase column ────────────────────────────── */}
+          <div className="relative order-2 animate-fade-in-up w-full">
             <HeroPortfolioCarousel />
           </div>
         </div>

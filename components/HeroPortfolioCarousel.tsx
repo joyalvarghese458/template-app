@@ -135,7 +135,7 @@ function MobileMockup() {
 export default function HeroPortfolioCarousel() {
   return (
     <div className="relative w-full max-w-[44rem] mx-auto lg:mx-0 lg:ml-auto">
-      <div className="relative w-full aspect-[2/1]">
+      <div className="relative w-full aspect-[4/3] sm:aspect-[3/2] lg:aspect-[2/1]">
         {/* ── Desktop preview (back layer) ── */}
         <div
           className="absolute top-1/2 -translate-y-1/2 right-0 w-[78%] rotate-[6deg] origin-bottom-right"
