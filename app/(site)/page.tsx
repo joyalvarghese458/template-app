@@ -85,7 +85,7 @@ export default function Home() {
               </span>
             </div>
 
-            <h1 className="font-serif font-bold text-[2.5rem] leading-[1.02] sm:text-6xl md:text-7xl xl:text-[5.25rem] text-ink tracking-[-0.025em] mb-5 sm:mb-7">
+            <h1 className="font-serif font-bold text-[2.5rem] leading-[1.02] sm:text-6xl md:text-7xl xl:text-[5.25rem] text-ink tracking-[-0.025em] mt-6 sm:mt-0 mb-5 sm:mb-7">
               Portfolios
               <br className="hidden sm:block" /> designed{" "}
               <span className="relative inline-block">
@@ -139,26 +139,6 @@ export default function Home() {
                 />
               </a>
 
-              <a
-                href="https://wa.me/971568450406"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-ink bg-ink/[0.04] border border-ink/15 rounded-full backdrop-blur-sm hover:bg-ink/[0.08] hover:border-ink/30 transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
-              >
-                <svg
-                  className="w-4 h-4"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <polygon points="5 3 19 12 5 21 5 3" />
-                </svg>
-                View Live Demo
-              </a>
             </div>
 
             {/* Trust strip */}
