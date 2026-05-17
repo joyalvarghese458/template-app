@@ -75,7 +75,7 @@ export default function Home() {
           {/* ── Copy column ───────────────────────────────────────── */}
           <div className="animate-fade-in-up text-center lg:text-left order-1">
             {/* Live status pill */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-brand/30 bg-brand/[0.08] backdrop-blur-sm mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-brand/30 bg-brand/[0.08] backdrop-blur-sm mt-6 sm:mt-0 mb-6">
               <span className="relative flex h-1.5 w-1.5">
                 <span className="absolute inset-0 rounded-full bg-brand animate-ping opacity-60" />
                 <span className="relative rounded-full bg-brand h-1.5 w-1.5" />
@@ -85,7 +85,7 @@ export default function Home() {
               </span>
             </div>
 
-            <h1 className="font-serif font-bold text-[2.5rem] leading-[1.02] sm:text-6xl md:text-7xl xl:text-[5.25rem] text-ink tracking-[-0.025em] mt-6 sm:mt-0 mb-5 sm:mb-7">
+            <h1 className="font-serif font-bold text-[2.5rem] leading-[1.02] sm:text-6xl md:text-7xl xl:text-[5.25rem] text-ink tracking-[-0.025em] mb-5 sm:mb-7">
               Portfolios
               <br className="hidden sm:block" /> designed{" "}
               <span className="relative inline-block">

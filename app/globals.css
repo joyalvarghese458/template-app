@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Custom variant: applies when [data-theme="light"] is set on <html> */
+@custom-variant light (&:where([data-theme="light"] *, [data-theme="light"]));
+
 /* ── Custom theme tokens (dark is the default) ───────────────────── */
 @theme {
   --color-brand:       #10b981;

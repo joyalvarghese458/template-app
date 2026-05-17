@@ -1,6 +1,7 @@
-// Hero preview: two overlapping light-themed device frames (mobile + desktop)
-// each containing a minimalist portfolio mockup with a hero image.
-// Hidden on small screens.
+// Hero preview: two overlapping device frames (mobile + desktop) containing
+// minimalist portfolio mockups. Default styling = light preview (for dark
+// site theme). When the site is in light mode (data-theme="light"), the
+// preview flips to a dark theme via the `light:` Tailwind variant.
 
 const DESKTOP_IMG = "https://picsum.photos/seed/foliocraft-desk/1200/750";
 const MOBILE_IMG = "https://picsum.photos/seed/foliocraft-mob/420/860";
@@ -12,16 +13,16 @@ const PROJECT_THUMBS = [
 
 function DesktopMockup() {
   return (
-    <div className="absolute inset-0 bg-white flex flex-col text-slate-800">
+    <div className="absolute inset-0 bg-white light:bg-slate-900 flex flex-col text-slate-800 light:text-slate-100">
       {/* Top nav */}
-      <div className="flex items-center justify-between px-4 py-3 border-b border-slate-200/80">
+      <div className="flex items-center justify-between px-4 py-3 border-b border-slate-200/80 light:border-white/10">
         <span className="text-[10px] font-bold tracking-tight">Studio.</span>
-        <div className="flex gap-3 text-[8px] text-slate-500 uppercase tracking-[0.2em]">
+        <div className="flex gap-3 text-[8px] text-slate-500 light:text-slate-400 uppercase tracking-[0.2em]">
           <span>Work</span>
           <span>About</span>
           <span>Contact</span>
         </div>
-        <span className="text-[8px] px-2 py-0.5 rounded-full bg-slate-900 text-white">
+        <span className="text-[8px] px-2 py-0.5 rounded-full bg-slate-900 light:bg-white text-white light:text-slate-900">
           Hire
         </span>
       </div>
@@ -29,23 +30,23 @@ function DesktopMockup() {
       {/* Hero split */}
       <div className="flex-1 grid grid-cols-2 gap-3 p-4">
         <div className="flex flex-col justify-center">
-          <p className="text-[7px] uppercase tracking-[0.25em] text-blue-500/80">
+          <p className="text-[7px] uppercase tracking-[0.25em] text-blue-500/80 light:text-emerald-300/90">
             Portfolio · 2026
           </p>
-          <h3 className="font-serif text-xl leading-[1] tracking-tight mt-1 text-slate-900">
+          <h3 className="font-serif text-xl leading-[1] tracking-tight mt-1 text-slate-900 light:text-white">
             Designing
             <br />
-            <span className="italic text-blue-600">with intent.</span>
+            <span className="italic text-blue-600 light:text-emerald-300">with intent.</span>
           </h3>
-          <p className="text-[8px] text-slate-500 mt-2 leading-snug">
+          <p className="text-[8px] text-slate-500 light:text-slate-400 mt-2 leading-snug">
             Independent designer crafting brand identities and product
             experiences for modern teams.
           </p>
           <div className="mt-3 flex gap-1.5">
-            <span className="text-[8px] px-2 py-1 rounded-full bg-blue-600 text-white font-semibold">
+            <span className="text-[8px] px-2 py-1 rounded-full bg-blue-600 light:bg-emerald-500 text-white light:text-slate-900 font-semibold">
               View work
             </span>
-            <span className="text-[8px] px-2 py-1 rounded-full border border-slate-300 text-slate-700">
+            <span className="text-[8px] px-2 py-1 rounded-full border border-slate-300 light:border-white/20 text-slate-700 light:text-slate-200">
               Resume
             </span>
           </div>
@@ -54,7 +55,7 @@ function DesktopMockup() {
         <img
           src={DESKTOP_IMG}
           alt=""
-          className="rounded-md object-cover w-full h-full ring-1 ring-slate-200"
+          className="rounded-md object-cover w-full h-full ring-1 ring-slate-200 light:ring-white/10"
           draggable={false}
         />
       </div>
@@ -67,7 +68,7 @@ function DesktopMockup() {
             key={src}
             src={src}
             alt=""
-            className="flex-1 aspect-[3/2] rounded-sm object-cover ring-1 ring-slate-200"
+            className="flex-1 aspect-[3/2] rounded-sm object-cover ring-1 ring-slate-200 light:ring-white/10"
             draggable={false}
           />
         ))}
@@ -78,18 +79,18 @@ function DesktopMockup() {
 
 function MobileMockup() {
   return (
-    <div className="absolute inset-0 bg-white flex flex-col text-slate-800">
+    <div className="absolute inset-0 bg-white light:bg-slate-900 flex flex-col text-slate-800 light:text-slate-100">
       {/* Status bar */}
       <div className="flex items-center justify-between px-3 pt-2 pb-1">
         <span className="text-[7px] font-semibold">9:41</span>
-        <span className="w-8 h-2 rounded-full bg-black" />
+        <span className="w-8 h-2 rounded-full bg-black light:bg-white/80" />
         <span className="text-[7px]">●●●</span>
       </div>
 
       {/* Compact nav */}
       <div className="flex items-center justify-between px-3 py-1.5">
         <span className="text-[8px] font-bold">Studio.</span>
-        <span className="text-[7px] text-slate-500">☰</span>
+        <span className="text-[7px] text-slate-500 light:text-slate-400">☰</span>
       </div>
 
       {/* Hero image */}
@@ -98,20 +99,20 @@ function MobileMockup() {
         <img
           src={MOBILE_IMG}
           alt=""
-          className="w-full aspect-[3/4] rounded-md object-cover ring-1 ring-slate-200"
+          className="w-full aspect-[3/4] rounded-md object-cover ring-1 ring-slate-200 light:ring-white/10"
           draggable={false}
         />
       </div>
 
       {/* Headline */}
       <div className="px-3 pt-2">
-        <p className="text-[6px] uppercase tracking-[0.25em] text-blue-500/80">
+        <p className="text-[6px] uppercase tracking-[0.25em] text-blue-500/80 light:text-emerald-300/90">
           Portfolio
         </p>
-        <h4 className="font-serif text-[11px] leading-tight mt-0.5 text-slate-900">
+        <h4 className="font-serif text-[11px] leading-tight mt-0.5 text-slate-900 light:text-white">
           Designing
           <br />
-          <span className="italic text-blue-600">with intent.</span>
+          <span className="italic text-blue-600 light:text-emerald-300">with intent.</span>
         </h4>
       </div>
 
@@ -123,7 +124,7 @@ function MobileMockup() {
             key={src}
             src={src}
             alt=""
-            className="aspect-square rounded-sm object-cover ring-1 ring-slate-200"
+            className="aspect-square rounded-sm object-cover ring-1 ring-slate-200 light:ring-white/10"
             draggable={false}
           />
         ))}
@@ -142,7 +143,7 @@ export default function HeroPortfolioCarousel() {
           style={{ filter: "drop-shadow(0 30px 50px rgba(15, 23, 42, 0.10))" }}
         >
           <div
-            className="relative aspect-[16/10] rounded-[1.75rem] overflow-hidden bg-white ring-1 ring-slate-200/80"
+            className="relative aspect-[16/10] rounded-[1.75rem] overflow-hidden bg-white light:bg-slate-900 ring-1 ring-slate-200/80 light:ring-white/10"
             aria-hidden="true"
           >
             <DesktopMockup />
@@ -155,7 +156,7 @@ export default function HeroPortfolioCarousel() {
           style={{ filter: "drop-shadow(0 25px 45px rgba(15, 23, 42, 0.12))" }}
         >
           <div
-            className="relative aspect-[9/19.5] rounded-[1.75rem] overflow-hidden bg-white ring-1 ring-slate-200/80"
+            className="relative aspect-[9/19.5] rounded-[1.75rem] overflow-hidden bg-white light:bg-slate-900 ring-1 ring-slate-200/80 light:ring-white/10"
             aria-hidden="true"
           >
             <MobileMockup />
