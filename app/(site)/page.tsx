@@ -75,7 +75,7 @@ export default function Home() {
           {/* ── Copy column ───────────────────────────────────────── */}
           <div className="animate-fade-in-up text-center lg:text-left order-1">
             {/* Live status pill */}
-            <div className="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-brand/30 bg-brand/[0.08] backdrop-blur-sm mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-brand/30 bg-brand/[0.08] backdrop-blur-sm mb-6">
               <span className="relative flex h-1.5 w-1.5">
                 <span className="absolute inset-0 rounded-full bg-brand animate-ping opacity-60" />
                 <span className="relative rounded-full bg-brand h-1.5 w-1.5" />
