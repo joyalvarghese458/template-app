@@ -4,62 +4,196 @@ import TemplatesSection from "@/components/TemplatesSection";
 import ReviewSection from "@/components/ReviewSection";
 import ScrollingBackgroundSection from "@/components/ScrollingBackgroundSection";
 import Footer from "@/components/Footer";
+import HeroPortfolioCarousel from "@/components/HeroPortfolioCarousel";
 
 export default function Home() {
   return (
     <main className="bg-canvas-bg">
       {/* ── Hero ──────────────────────────────────────────────────── */}
-      <section className="relative min-h-svh flex items-center justify-center overflow-hidden bg-canvas-bg">
-        {/* Soft radial highlight behind text */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          aria-hidden="true"
-          style={{
-            background:
-              "radial-gradient(ellipse 70% 55% at 50% 45%, var(--hero-glow) 0%, transparent 70%)",
-          }}
-        />
+      <section className="relative min-h-svh flex items-center overflow-hidden bg-canvas-bg">
+        {/* ── Ambient background: glow orbs + grid + noise ──────── */}
+        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+          {/* Top-left emerald orb */}
+          <div
+            className="absolute -top-32 -left-32 w-[28rem] h-[28rem] sm:w-[36rem] sm:h-[36rem] rounded-full blur-3xl"
+            style={{
+              background:
+                "radial-gradient(circle, var(--color-brand) 0%, transparent 60%)",
+              opacity: 0.35,
+              animation: "heroGlow 9s ease-in-out infinite",
+            }}
+          />
+          {/* Bottom-right emerald orb */}
+          <div
+            className="absolute -bottom-40 -right-32 w-[26rem] h-[26rem] sm:w-[40rem] sm:h-[40rem] rounded-full blur-3xl"
+            style={{
+              background:
+                "radial-gradient(circle, var(--color-brand-light) 0%, transparent 60%)",
+              opacity: 0.25,
+              animation: "heroGlow 11s ease-in-out infinite 2s",
+            }}
+          />
+          {/* Center vertical wash */}
+          <div
+            className="absolute inset-x-0 top-0 h-[60%]"
+            style={{
+              background:
+                "radial-gradient(ellipse 80% 60% at 50% 0%, var(--hero-glow) 0%, transparent 75%)",
+            }}
+          />
+          {/* Subtle grid */}
+          <div
+            className="absolute inset-0 opacity-[0.04]"
+            style={{
+              backgroundImage:
+                "linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px)",
+              backgroundSize: "44px 44px",
+              maskImage:
+                "radial-gradient(ellipse at center, black 30%, transparent 75%)",
+            }}
+          />
+          {/* Film grain */}
+          <svg
+            className="absolute inset-0 w-full h-full opacity-[0.05] mix-blend-overlay"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <filter id="hero-noise">
+              <feTurbulence
+                type="fractalNoise"
+                baseFrequency="0.9"
+                numOctaves="2"
+                stitchTiles="stitch"
+              />
+              <feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.8 0" />
+            </filter>
+            <rect width="100%" height="100%" filter="url(#hero-noise)" />
+          </svg>
+        </div>
 
-        {/* Hero content */}
-        <div className="relative z-10 text-center px-6 max-w-4xl mx-auto animate-fade-in-up">
-          {/* Eyebrow with gold lines */}
-          <div className="flex items-center justify-center gap-4 mb-5 sm:mb-8">
-            <span className="h-px w-10 bg-brand/60" aria-hidden="true" />
-            <p className="text-brand text-[10px] sm:text-xs font-semibold uppercase tracking-[0.28em]">
-              Crafted Digital Portfolios
+        {/* Hero content — single column on mobile, two columns on lg+ */}
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 pt-20 pb-16 sm:pt-24 sm:pb-20 grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-12 sm:gap-14 lg:gap-12 items-center">
+          {/* ── Copy column ───────────────────────────────────────── */}
+          <div className="animate-fade-in-up text-center lg:text-left order-2 lg:order-1">
+            {/* Live status pill */}
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-brand/30 bg-brand/[0.08] backdrop-blur-sm mb-6">
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="absolute inset-0 rounded-full bg-brand animate-ping opacity-60" />
+                <span className="relative rounded-full bg-brand h-1.5 w-1.5" />
+              </span>
+              <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.22em] text-brand">
+                FolioCraft · Live
+              </span>
+            </div>
+
+            <h1 className="font-serif font-bold text-[2.5rem] leading-[1.02] sm:text-6xl md:text-7xl xl:text-[5.25rem] text-ink tracking-[-0.025em] mb-5 sm:mb-7">
+              Portfolios
+              <br className="hidden sm:block" /> designed{" "}
+              <span className="relative inline-block">
+                <span className="italic font-medium bg-gradient-to-r from-brand via-brand-light to-brand bg-clip-text text-transparent">
+                  to stand out
+                </span>
+                <span
+                  className="absolute -inset-x-2 -inset-y-1 -z-10 blur-2xl opacity-50"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, var(--color-brand), var(--color-brand-light))",
+                  }}
+                  aria-hidden="true"
+                />
+              </span>
+              .
+            </h1>
+
+            <p className="text-base sm:text-lg md:text-xl text-ink-soft max-w-xl mx-auto lg:mx-0 mb-8 sm:mb-10 leading-relaxed">
+              Premium customizable portfolio templates for creators, agencies,
+              freelancers, and personal brands. Launch in days, not weeks.
             </p>
-            <span className="h-px w-10 bg-brand/60" aria-hidden="true" />
+
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start items-stretch sm:items-center">
+              <a
+                href="#templates"
+                className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-canvas-bg bg-brand rounded-full overflow-hidden shadow-[0_10px_40px_-10px_var(--color-brand)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_18px_50px_-10px_var(--color-brand)] active:translate-y-0"
+              >
+                <span className="relative z-10">Browse Templates</span>
+                <svg
+                  className="relative z-10 w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2.5}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M5 12h14" />
+                  <path d="M13 5l7 7-7 7" />
+                </svg>
+                <span
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, var(--color-brand-light), var(--color-brand))",
+                  }}
+                  aria-hidden="true"
+                />
+              </a>
+
+              <a
+                href="https://wa.me/971568450406"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-ink bg-ink/[0.04] border border-ink/15 rounded-full backdrop-blur-sm hover:bg-ink/[0.08] hover:border-ink/30 transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
+              >
+                <svg
+                  className="w-4 h-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <polygon points="5 3 19 12 5 21 5 3" />
+                </svg>
+                View Live Demo
+              </a>
+            </div>
+
+            {/* Trust strip */}
+            <div className="mt-8 sm:mt-10 flex flex-wrap items-center justify-center lg:justify-start gap-x-5 gap-y-2 text-xs text-ink-soft/80">
+              <span className="inline-flex items-center gap-1.5">
+                <svg
+                  className="w-3.5 h-3.5 text-brand"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path d="M12 2l2.4 7.4H22l-6.2 4.5L18.2 22 12 17.5 5.8 22l2.4-8.1L2 9.4h7.6z" />
+                </svg>
+                <span>
+                  <span className="text-ink font-semibold">4.9</span> · 280+ reviews
+                </span>
+              </span>
+              <span className="hidden sm:inline-block w-px h-3.5 bg-ink/15" />
+              <span className="inline-flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-brand" />
+                <span>
+                  <span className="text-ink font-semibold">30+</span> templates
+                </span>
+              </span>
+              <span className="hidden sm:inline-block w-px h-3.5 bg-ink/15" />
+              <span className="inline-flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-brand" />
+                <span>One-time payment · lifetime ownership</span>
+              </span>
+            </div>
           </div>
 
-          <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl text-ink leading-[1.05] tracking-tight mb-5 sm:mb-7">
-            Your portfolio,
-            <br />
-            delivered{" "}
-            <span className="italic text-brand font-medium">beautifully</span>
-          </h1>
-
-          <p className="text-base sm:text-lg md:text-xl text-ink-soft max-w-2xl mx-auto mb-7 sm:mb-10 leading-relaxed">
-            Hand-crafted portfolio templates for designers, developers,
-            photographers, and creators — pick a tier, launch in days.
-          </p>
-
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a
-              href="#templates"
-              className="w-full sm:w-auto inline-flex items-center justify-center px-10 py-4 text-base font-semibold text-canvas-bg bg-ink rounded-md transition-all duration-200 hover:bg-ink/90 hover:-translate-y-0.5 active:translate-y-0"
-            >
-              Explore Templates
-            </a>
-
-            <a
-              href="https://wa.me/971568450406"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center px-10 py-4 text-base font-semibold text-ink bg-canvas-bg border border-ink/25 rounded-md hover:border-ink/60 transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
-            >
-              See a Live Demo
-            </a>
+          {/* ── Device showcase column (desktop only) ─────────────── */}
+          <div className="relative order-1 lg:order-2 animate-fade-in-up w-full hidden lg:block">
+            <HeroPortfolioCarousel />
           </div>
         </div>
 
@@ -67,9 +201,9 @@ export default function Home() {
         <a
           href="#templates"
           aria-label="Scroll to explore"
-          className="absolute bottom-8 sm:bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-ink-soft hover:text-ink transition-colors duration-150"
+          className="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 z-10 hidden md:flex flex-col items-center gap-2 text-ink-soft hover:text-ink transition-colors duration-150"
         >
-          <span className="text-xs sm:text-sm tracking-wide">Scroll to explore</span>
+          <span className="text-xs tracking-wide">Scroll to explore</span>
           <svg
             className="w-5 h-5 animate-scroll-bounce"
             viewBox="0 0 24 24"

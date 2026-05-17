@@ -60,6 +60,47 @@
   100%   { opacity: 0; }
 }
 
+/* Hero preview crossfade — 3 slides @ 5s each = 15s loop (with scale-in) */
+@keyframes heroSlide {
+  0%   { opacity: 1; transform: scale(1); }
+  28%  { opacity: 1; transform: scale(1); }
+  33%  { opacity: 0; transform: scale(1.025); }
+  95%  { opacity: 0; transform: scale(1.025); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* Slide indicator — active pill expands and lights up in sync with heroSlide */
+@keyframes heroDot {
+  0%   { background-color: var(--color-brand); width: 1.5rem; }
+  28%  { background-color: var(--color-brand); width: 1.5rem; }
+  33%  { background-color: rgba(255,255,255,0.18); width: 0.5rem; }
+  95%  { background-color: rgba(255,255,255,0.18); width: 0.5rem; }
+  100% { background-color: var(--color-brand); width: 1.5rem; }
+}
+
+/* Gentle vertical float for floating mockups */
+@keyframes heroFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+
+@keyframes heroFloatSlow {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}
+
+/* Slow ambient glow pulse for background orbs */
+@keyframes heroGlow {
+  0%, 100% { opacity: 0.45; transform: scale(1); }
+  50%      { opacity: 0.7;  transform: scale(1.08); }
+}
+
+/* Live status dot pulse */
+@keyframes heroPulse {
+  0%, 100% { opacity: 1;   transform: scale(1); }
+  50%      { opacity: 0.5; transform: scale(0.85); }
+}
+
 /* Ken Burns subtle zoom on each background image */
 @keyframes kenBurns {
   from { transform: scale(1)    translate(0,    0);    }
