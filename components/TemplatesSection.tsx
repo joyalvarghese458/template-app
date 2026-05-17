@@ -22,7 +22,7 @@ const TIERS: Tier[] = [
     label: "Starter",
     // subtitle: "Single-page essentials — for freelancers, students & first portfolios",
     price: 49,
-    accent: "from-[#0f1f17] via-[#0a1410] to-[#050a07]",
+    accent: "from-[#0a1a3f] via-[#06122e] to-[#030814]",
     badgeColor: "bg-brand/10 text-brand-dark border-brand/30",
     templates: [
       { id: "s1", slug: "minimalist", title: "Minimalist", tag: "Resume · Single page" },
@@ -41,7 +41,7 @@ const TIERS: Tier[] = [
     label: "Pro",
     // subtitle: "Multi-page, animated portfolios with rich case-study layouts & blog support",
     price: 99,
-    accent: "from-[#1a3a2a] via-[#102a1d] to-[#08140e]",
+    accent: "from-[#1e3a8a] via-[#1d4ed8] to-[#1e3a8a]",
     badgeColor: "bg-brand/15 text-brand-dark border-brand/40",
     templates: [
       { id: "p1", title: "Designer Pro", tag: "Designer · Multi-page" },
@@ -60,7 +60,7 @@ const TIERS: Tier[] = [
     label: "Premium",
     // subtitle: "Flagship portfolios — custom animations, CMS-ready, e-commerce & SEO tuned",
     price: 149,
-    accent: "from-[#10b981] via-[#059669] to-[#1a3a2a]",
+    accent: "from-[#2563eb] via-[#1d4ed8] to-[#1e3a8a]",
     badgeColor: "bg-brand/20 text-brand-dark border-brand/50",
     templates: [
       { id: "x1", slug: "atelier", title: "Atelier", tag: "Agency · Flagship" },
@@ -142,7 +142,7 @@ function PhoneCard({
             aria-hidden="true"
             style={{
               backgroundImage:
-                "radial-gradient(circle at 25% 15%, rgba(52,211,153,0.55), transparent 55%), radial-gradient(circle at 80% 85%, rgba(0,0,0,0.6), transparent 60%)",
+                "radial-gradient(circle at 25% 15%, rgba(59,130,246,0.55), transparent 55%), radial-gradient(circle at 80% 85%, rgba(0,0,0,0.6), transparent 60%)",
             }}
           />
 
@@ -193,7 +193,7 @@ function PhoneCard({
                 href={waLink(tier, template.title, price)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 inline-flex items-center justify-center gap-1 px-2 py-2 text-[11px] sm:text-xs font-bold text-ink bg-brand hover:bg-brand/90 rounded-lg shadow-lg shadow-brand/30 transition-all duration-200 active:scale-95"
+                className="flex-1 inline-flex items-center justify-center gap-1 px-2 py-2 text-[11px] sm:text-xs font-bold text-canvas-bg bg-brand hover:bg-brand/90 rounded-lg shadow-lg shadow-brand/30 transition-all duration-200 active:scale-95"
               >
                 <svg
                   className="w-3 h-3 sm:w-3.5 sm:h-3.5"
@@ -504,7 +504,7 @@ export default function TemplatesSection() {
             href={`https://wa.me/${WA_NUMBER}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-3.5 text-sm font-semibold text-canvas-bg bg-ink hover:bg-ink/90 rounded-md transition-all duration-200 hover:-translate-y-0.5"
+            className="inline-flex items-center gap-2 px-8 py-3.5 text-sm font-semibold text-canvas-bg bg-brand hover:bg-brand/90 rounded-md transition-all duration-200 hover:-translate-y-0.5"
           >
             Talk to us on WhatsApp
           </a>

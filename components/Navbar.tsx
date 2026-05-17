@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import ThemeToggle from "@/components/ThemeToggle";
 
 const NAV_LINKS = [
   { href: "#templates", label: "Templates" },
@@ -51,12 +50,10 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
-          <ThemeToggle />
         </div>
 
-        {/* ── Mobile: toggle + hamburger ───────────────────────── */}
+        {/* ── Mobile: hamburger ────────────────────────────────── */}
         <div className="md:hidden flex items-center gap-2">
-        <ThemeToggle />
         <button
           className="flex flex-col items-center justify-center w-10 h-10 gap-[5px] rounded-md hover:bg-ink/5 transition-colors"
           onClick={() => setIsOpen((v) => !v)}

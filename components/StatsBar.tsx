@@ -55,7 +55,7 @@ function StatItem({
 
   return (
     <div className={`flex items-center justify-center gap-3 py-6 px-6 ${border}`}>
-      <span className="text-brand text-lg leading-none" aria-hidden="true">
+      <span className="text-canvas-bg text-lg leading-none" aria-hidden="true">
         •
       </span>
       <div className="text-center">
@@ -101,7 +101,7 @@ export default function StatsBar() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-ink">
+    <section ref={sectionRef} className="bg-brand">
       <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4">
         {STATS.map(({ value, suffix, label }, i) => (
           <StatItem

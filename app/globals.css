@@ -1,33 +1,19 @@
 @import "tailwindcss";
 
-/* Custom variant: applies when [data-theme="light"] is set on <html> */
-@custom-variant light (&:where([data-theme="light"] *, [data-theme="light"]));
-
-/* ── Custom theme tokens (dark is the default) ───────────────────── */
+/* ── Color theme: blue + white only ──────────────────────────────── */
 @theme {
-  --color-brand:       #10b981;
-  --color-brand-light: #34d399;
-  --color-brand-dark:  #059669;
-  --color-canvas-bg:   #0a0f0c;
-  --color-ink:         #f8fafc;
-  --color-ink-soft:    #94a3b8;
+  --color-brand:       #2563eb;
+  --color-brand-light: #3b82f6;
+  --color-brand-dark:  #1d4ed8;
+  --color-canvas-bg:   #ffffff;
+  --color-ink:         #000000;
+  --color-ink-soft:    #475569;
 
   --font-sans:  var(--font-geist);
   --font-serif: var(--font-playfair);
 
   --animate-fade-in-up: fadeInUp 0.9s ease-out both;
   --animate-scroll-bounce: scrollBounce 1.6s ease-in-out infinite;
-}
-
-/* ── Light-mode overrides ────────────────────────────────────────── */
-:root[data-theme="light"] {
-  --color-brand:       #b8860b;
-  --color-brand-light: #d4a82e;
-  --color-brand-dark:  #8b6508;
-  --color-canvas-bg:   #ffffff;
-  --color-ink:         #000000;
-  --color-ink-soft:    #4a4a4a;
-  --hero-glow:         rgba(184, 134, 11, 0.22);
 }
 
 /* ── Keyframes ───────────────────────────────────────────────────── */
@@ -76,8 +62,8 @@
 @keyframes heroDot {
   0%   { background-color: var(--color-brand); width: 1.5rem; }
   28%  { background-color: var(--color-brand); width: 1.5rem; }
-  33%  { background-color: rgba(255,255,255,0.18); width: 0.5rem; }
-  95%  { background-color: rgba(255,255,255,0.18); width: 0.5rem; }
+  33%  { background-color: rgba(0,0,0,0.18); width: 0.5rem; }
+  95%  { background-color: rgba(0,0,0,0.18); width: 0.5rem; }
   100% { background-color: var(--color-brand); width: 1.5rem; }
 }
 
@@ -126,11 +112,7 @@
 /* ── Global base ─────────────────────────────────────────────────── */
 :root {
   --navbar-height: 4rem;
-  --hero-glow: rgba(16, 185, 129, 0.18);
-  color-scheme: dark;
-}
-
-:root[data-theme="light"] {
+  --hero-glow: rgba(37, 99, 235, 0.18);
   color-scheme: light;
 }
 

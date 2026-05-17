@@ -18,7 +18,7 @@ const WA_SVG = (
 
 export default function ScrollingBackgroundSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-ink">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-brand">
       {/* ── Crossfading background images ────────────────────────── */}
       {IMAGES.map((src, i) => (
         <div
@@ -35,25 +35,25 @@ export default function ScrollingBackgroundSection() {
               animation: `kenBurns 8s ease-in-out alternate infinite`,
             }}
           />
-          {/* Warm dark overlay tinted toward ink */}
-          <div className="absolute inset-0 bg-ink/70" />
+          {/* Brand-blue overlay */}
+          <div className="absolute inset-0 bg-brand/75" />
         </div>
       ))}
 
       {/* ── Content ──────────────────────────────────────────────── */}
       <div className="relative z-10 text-center px-6 max-w-3xl mx-auto">
         <div className="flex items-center justify-center gap-4 mb-6">
-          <span className="h-px w-10 bg-brand/70" aria-hidden="true" />
-          <p className="text-brand text-[10px] sm:text-xs font-semibold uppercase tracking-[0.28em]">
+          <span className="h-px w-10 bg-canvas-bg/70" aria-hidden="true" />
+          <p className="text-canvas-bg text-[10px] sm:text-xs font-semibold uppercase tracking-[0.28em]">
             Your Craft, Showcased
           </p>
-          <span className="h-px w-10 bg-brand/70" aria-hidden="true" />
+          <span className="h-px w-10 bg-canvas-bg/70" aria-hidden="true" />
         </div>
 
         <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl text-canvas-bg leading-tight tracking-tight mb-6">
           Your Story. Your Craft.
           <br className="hidden sm:block" />{" "}
-          <span className="italic text-brand">Your Portfolio.</span>
+          <span className="italic">Your Portfolio.</span>
         </h2>
 
         <p className="text-base sm:text-lg text-canvas-bg/80 mb-10 leading-relaxed">
@@ -65,7 +65,7 @@ export default function ScrollingBackgroundSection() {
           href="https://wa.me/971568450406"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-3 px-8 py-4 text-ink bg-canvas-bg hover:bg-canvas-bg/90 font-semibold rounded-md text-base transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
+          className="inline-flex items-center gap-3 px-8 py-4 text-brand bg-canvas-bg hover:bg-canvas-bg/90 font-semibold rounded-md text-base transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
         >
           {WA_SVG}
           Start Your Project on WhatsApp

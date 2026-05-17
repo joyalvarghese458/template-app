@@ -46,33 +46,33 @@ export default function AboutSection() {
     <section
       id="about"
       ref={sectionRef}
-      className="relative py-24 px-4 bg-canvas-bg"
+      className="relative py-24 px-4 bg-brand"
     >
       <div className="relative z-10 max-w-5xl mx-auto text-center">
-        {/* Eyebrow with gold lines */}
+        {/* Eyebrow */}
         <div
           className={`flex items-center justify-center gap-4 mb-5 transition-all duration-700 ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
-          <span className="h-px w-8 bg-brand/60" aria-hidden="true" />
-          <p className="text-brand text-[10px] sm:text-xs font-semibold uppercase tracking-[0.28em]">
+          <span className="h-px w-8 bg-canvas-bg/60" aria-hidden="true" />
+          <p className="text-canvas-bg text-[10px] sm:text-xs font-semibold uppercase tracking-[0.28em]">
             Who We Are
           </p>
-          <span className="h-px w-8 bg-brand/60" aria-hidden="true" />
+          <span className="h-px w-8 bg-canvas-bg/60" aria-hidden="true" />
         </div>
 
         <h2
-          className={`font-serif text-4xl sm:text-5xl text-ink mb-4 transition-all duration-700 delay-100 ${
+          className={`font-serif text-4xl sm:text-5xl text-canvas-bg mb-4 transition-all duration-700 delay-100 ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
           Portfolios built on{" "}
-          <span className="italic text-brand">passion</span>
+          <span className="italic">passion</span>
         </h2>
 
         <p
-          className={`text-lg text-ink-soft max-w-2xl mx-auto mb-14 leading-relaxed transition-all duration-700 delay-200 ${
+          className={`text-lg text-canvas-bg/85 max-w-2xl mx-auto mb-14 leading-relaxed transition-all duration-700 delay-200 ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >

@@ -13,7 +13,7 @@ export default function Home() {
       <section className="relative min-h-svh flex items-center overflow-hidden bg-canvas-bg">
         {/* ── Ambient background: glow orbs + grid + noise ──────── */}
         <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-          {/* Top-left emerald orb */}
+          {/* Top-left brand orb */}
           <div
             className="absolute -top-32 -left-32 w-[28rem] h-[28rem] sm:w-[36rem] sm:h-[36rem] rounded-full blur-3xl"
             style={{
@@ -23,7 +23,7 @@ export default function Home() {
               animation: "heroGlow 9s ease-in-out infinite",
             }}
           />
-          {/* Bottom-right emerald orb */}
+          {/* Bottom-right brand orb */}
           <div
             className="absolute -bottom-40 -right-32 w-[26rem] h-[26rem] sm:w-[40rem] sm:h-[40rem] rounded-full blur-3xl"
             style={{
@@ -43,10 +43,10 @@ export default function Home() {
           />
           {/* Subtle grid */}
           <div
-            className="absolute inset-0 opacity-[0.04]"
+            className="absolute inset-0 opacity-[0.06]"
             style={{
               backgroundImage:
-                "linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px)",
+                "linear-gradient(rgba(0,0,0,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.6) 1px, transparent 1px)",
               backgroundSize: "44px 44px",
               maskImage:
                 "radial-gradient(ellipse at center, black 30%, transparent 75%)",

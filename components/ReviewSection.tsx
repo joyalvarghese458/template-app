@@ -367,7 +367,7 @@ export default function ReviewSection() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-3 rounded-md font-semibold text-canvas-bg bg-ink hover:bg-ink/90 text-sm transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed hover:-translate-y-0.5 active:translate-y-0"
+                    className="w-full py-3 rounded-md font-semibold text-canvas-bg bg-brand hover:bg-brand/90 text-sm transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed hover:-translate-y-0.5 active:translate-y-0"
                   >
                     {isSubmitting ? "Submitting…" : "Submit Review"}
                   </button>

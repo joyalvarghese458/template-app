@@ -24,16 +24,16 @@ const IG_ICON = (
 
 export default function Footer() {
   return (
-    <footer className="bg-ink">
-      {/* Gold top border */}
-      <div className="h-px bg-brand/40" />
+    <footer className="bg-brand">
+      {/* Top border */}
+      <div className="h-px bg-canvas-bg/30" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
           {/* ── Column 1: Brand ──────────────────────────────────── */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <p className="font-serif text-2xl text-canvas-bg mb-2">
-              Folio<span className="text-brand italic">Craft</span>
+              Folio<span className="italic">Craft</span>
             </p>
             <p className="text-sm text-canvas-bg/60 leading-relaxed mb-5">
               Crafting portfolios that get you hired.
@@ -43,7 +43,7 @@ export default function Footer() {
               href="https://wa.me/971568450406"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 text-ink bg-canvas-bg hover:bg-canvas-bg/90 text-sm font-semibold rounded-md transition-all duration-200 hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 px-5 py-2.5 text-brand bg-canvas-bg hover:bg-canvas-bg/90 text-sm font-semibold rounded-md transition-all duration-200 hover:-translate-y-0.5"
             >
               {WA_ICON}
               WhatsApp Us
@@ -52,7 +52,7 @@ export default function Footer() {
 
           {/* ── Column 2: Quick Links ─────────────────────────────── */}
           <div className="text-center md:text-left">
-            <h3 className="text-xs font-semibold text-brand uppercase tracking-[0.22em] mb-4">
+            <h3 className="text-xs font-semibold text-canvas-bg uppercase tracking-[0.22em] mb-4">
               Quick Links
             </h3>
             <ul className="space-y-3">
@@ -76,7 +76,7 @@ export default function Footer() {
 
           {/* ── Column 3: Contact ─────────────────────────────────── */}
           <div className="text-center md:text-left">
-            <h3 className="text-xs font-semibold text-brand uppercase tracking-[0.22em] mb-4">
+            <h3 className="text-xs font-semibold text-canvas-bg uppercase tracking-[0.22em] mb-4">
               Contact
             </h3>
             <ul className="space-y-3 text-sm text-canvas-bg/70">
@@ -103,14 +103,14 @@ export default function Footer() {
               <a
                 href="#"
                 aria-label="WhatsApp"
-                className="w-9 h-9 flex items-center justify-center rounded-full bg-canvas-bg/10 hover:bg-brand/30 text-canvas-bg/70 hover:text-canvas-bg transition-all duration-150"
+                className="w-9 h-9 flex items-center justify-center rounded-full bg-canvas-bg/15 hover:bg-canvas-bg/30 text-canvas-bg/80 hover:text-canvas-bg transition-all duration-150"
               >
                 {WA_ICON}
               </a>
               <a
                 href="#"
                 aria-label="Instagram"
-                className="w-9 h-9 flex items-center justify-center rounded-full bg-canvas-bg/10 hover:bg-brand/30 text-canvas-bg/70 hover:text-canvas-bg transition-all duration-150"
+                className="w-9 h-9 flex items-center justify-center rounded-full bg-canvas-bg/15 hover:bg-canvas-bg/30 text-canvas-bg/80 hover:text-canvas-bg transition-all duration-150"
               >
                 {IG_ICON}
               </a>
