@@ -26,7 +26,7 @@ const TIERS: Tier[] = [
     badgeColor: "bg-brand/10 text-brand-dark border-brand/30",
     templates: [
       { id: "s1", slug: "minimalist", title: "Minimalist", tag: "Resume · Single page" },
-      { id: "s2", title: "Pure", tag: "Personal · Light" },
+      { id: "s2", slug: "pure", title: "Pure", tag: "Personal · Light" },
       { id: "s3", title: "Cardstock", tag: "CV · Card layout" },
       { id: "s4", title: "Solo", tag: "Freelancer · Lite" },
       { id: "s5", title: "Profile One", tag: "Personal brand" },
@@ -80,7 +80,7 @@ const TIERS: Tier[] = [
 const WA_NUMBER = "971568450406";
 
 function waLink(tier: string, name: string, price: number) {
-  const msg = `Hi FolioCraft! I'd like to order the "${name}" (${tier} tier) portfolio template at AED ${price}.`;
+  const msg = `Hi itsMyfolio! I'd like to order the "${name}" (${tier} tier) portfolio template at AED ${price}.`;
   return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
 }
 

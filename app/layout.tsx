@@ -14,7 +14,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "FolioCraft — Professional Portfolio Templates",
+  title: "itsMyfolio — Professional Portfolio Templates",
   description:
     "Hand-crafted portfolio templates for designers, developers, photographers, and creators. Pick a tier from AED 49 and launch in days.",
 };

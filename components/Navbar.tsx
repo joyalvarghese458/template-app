@@ -31,9 +31,14 @@ export default function Navbar() {
         {/* ── Brand ─────────────────────────────────────────────── */}
         <Link
           href="/"
-          className="font-serif text-2xl tracking-tight text-ink select-none"
+          aria-label="itsMyfolio home"
+          className="group inline-flex items-baseline font-sans text-2xl font-black tracking-[-0.04em] text-ink select-none transition-transform duration-200 hover:-translate-y-0.5"
         >
-          Folio<span className="text-brand italic">Craft</span>
+          <span>its</span>
+          <span className="text-brand transition-colors duration-200 group-hover:text-brand-light">
+            M
+          </span>
+          <span>yfolio</span>
         </Link>
 
         {/* ── Desktop links ─────────────────────────────────────── */}

@@ -1,0 +1,375 @@
+/* ============================================================
+   Pure Portfolio — Contact page
+   ============================================================ */
+
+.banner {
+  position: relative;
+  background: linear-gradient(180deg, #0e0b2a 0%, #1a1545 60%, #0e0b2a 100%);
+  color: #fff;
+  padding: 160px 20px 220px;
+  text-align: center;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .banner {
+    padding: 200px 40px 240px;
+  }
+}
+
+.bannerGlow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(70vw, 600px);
+  height: min(70vw, 600px);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(108, 99, 255, 0.5), transparent 65%);
+  filter: blur(40px);
+  transform: translate(-50%, -50%);
+}
+
+.bannerOrb {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.bannerOrb1 {
+  top: 32%;
+  left: 18%;
+  width: 24px;
+  height: 24px;
+  background: #6c63ff;
+  opacity: 0.7;
+  animation: bob 6s ease-in-out infinite;
+}
+
+.bannerOrb2 {
+  bottom: 36%;
+  right: 22%;
+  width: 12px;
+  height: 12px;
+  background: #ff6b5b;
+  animation: bob 5s ease-in-out infinite reverse;
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+.bannerTitle {
+  font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+  font-size: clamp(2.5rem, 9vw, 6rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  background: linear-gradient(120deg, #fff4ec 0%, #b8a8ff 60%, #6c63ff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  margin: 0 0 32px;
+  opacity: 0;
+  animation: rise 1s 0.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.crumbs {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  opacity: 0;
+  animation: rise 0.9s 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.crumbs a {
+  color: #ff6b5b;
+}
+
+.crumbs svg {
+  width: 14px;
+  height: 14px;
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Contact cards (overlap banner) ────────────────── */
+
+.cards {
+  position: relative;
+  z-index: 2;
+  margin-top: -110px;
+  padding: 0 20px;
+}
+
+@media (min-width: 768px) {
+  .cards {
+    padding: 0 40px;
+  }
+}
+
+.cardsInner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+}
+
+@media (min-width: 768px) {
+  .cardsInner {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.card {
+  background: #fff;
+  padding: 24px 22px;
+  border-radius: 18px;
+  box-shadow: 0 30px 60px -24px rgba(20, 17, 45, 0.25);
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s;
+  opacity: 0;
+  transform: translateY(20px);
+  min-width: 0;
+}
+
+@media (min-width: 768px) {
+  .card {
+    padding: 30px;
+    gap: 22px;
+  }
+}
+
+.cardVisible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.5s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 36px 70px -24px rgba(108, 99, 255, 0.3);
+}
+
+.cardIcon {
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #e6e1ff, #c3b8ff);
+  display: grid;
+  place-items: center;
+  color: #6c63ff;
+  flex-shrink: 0;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (min-width: 768px) {
+  .cardIcon {
+    width: 70px;
+    height: 70px;
+    border-radius: 18px;
+  }
+}
+
+.card:hover .cardIcon {
+  transform: rotate(-12deg) scale(1.08);
+}
+
+.cardIcon svg {
+  width: 26px;
+  height: 26px;
+}
+
+@media (min-width: 768px) {
+  .cardIcon svg {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.cardTitle {
+  font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: #14112d;
+  margin: 0 0 4px;
+  letter-spacing: -0.02em;
+}
+
+.cardCopy {
+  color: #5a5677;
+  font-size: 13px;
+  margin: 0 0 10px;
+}
+
+.cardLink {
+  color: #ff6b5b;
+  font-weight: 700;
+  font-size: 14px;
+  border-bottom: 1px solid #ff6b5b;
+  padding-bottom: 2px;
+  transition: opacity 0.2s;
+}
+
+.cardLink:hover {
+  opacity: 0.75;
+}
+
+/* ── Form ──────────────────────────────────────────── */
+
+.formSection {
+  background: #f6f5fb;
+  padding: 100px 20px;
+}
+
+@media (min-width: 768px) {
+  .formSection {
+    padding: 140px 40px;
+  }
+}
+
+.formInner {
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.formHead {
+  margin-bottom: 40px;
+}
+
+.formTitle {
+  font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  color: #14112d;
+  margin: 0 0 12px;
+  letter-spacing: -0.025em;
+}
+
+.formIntro {
+  color: #5a5677;
+  font-size: 16px;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+@media (min-width: 640px) {
+  .form {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.fieldFull {
+  grid-column: 1 / -1;
+}
+
+.input,
+.select,
+.textarea {
+  width: 100%;
+  padding: 16px 18px;
+  background: #fff;
+  border: 1px solid rgba(20, 17, 45, 0.08);
+  border-radius: 14px;
+  color: #14112d;
+  font-family: inherit;
+  font-size: 15px;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2314112d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 18px center;
+  padding-right: 44px;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: rgba(20, 17, 45, 0.4);
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  outline: none;
+  border-color: #ff6b5b;
+  box-shadow: 0 0 0 4px rgba(255, 107, 91, 0.12);
+  transform: translateY(-2px);
+}
+
+.textarea {
+  min-height: 160px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.submitWrap {
+  grid-column: 1 / -1;
+  margin-top: 6px;
+}
+
+.submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #ff6b5b;
+  color: #fff;
+  padding: 18px 38px;
+  border: none;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 16px 32px -10px rgba(255, 107, 91, 0.5);
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s;
+}
+
+.submit:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 22px 40px -10px rgba(255, 107, 91, 0.65);
+}
+
+.submit:disabled {
+  background: #b5b3c1;
+  box-shadow: none;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.success {
+  grid-column: 1 / -1;
+  background: rgba(76, 175, 80, 0.1);
+  border: 1px solid rgba(76, 175, 80, 0.3);
+  color: #2d6b30;
+  padding: 16px 22px;
+  border-radius: 12px;
+  font-size: 14px;
+  animation: rise 0.5s ease forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bannerOrb1,
+  .bannerOrb2 {
+    animation: none;
+  }
+}

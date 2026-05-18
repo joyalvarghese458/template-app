@@ -74,14 +74,58 @@ export default function Home() {
         <div className="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 pt-20 pb-16 sm:pt-24 sm:pb-20 grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-12 sm:gap-14 lg:gap-12 items-center">
           {/* ── Copy column ───────────────────────────────────────── */}
           <div className="animate-fade-in-up text-center lg:text-left order-1">
-            {/* Live status pill */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-brand/30 bg-brand/[0.08] backdrop-blur-sm mt-6 sm:mt-0 mb-6">
-              <span className="relative flex h-1.5 w-1.5">
-                <span className="absolute inset-0 rounded-full bg-brand animate-ping opacity-60" />
-                <span className="relative rounded-full bg-brand h-1.5 w-1.5" />
+            {/* Rating pill — 4.5 / 5 blue stars */}
+            <div
+              className="group inline-flex items-center gap-2.5 pl-3 pr-4 py-2 rounded-full border border-brand/40 mt-6 sm:mt-0 mb-6 shadow-[0_4px_18px_-6px_rgba(37,99,235,0.35)] hover:shadow-[0_8px_24px_-8px_rgba(37,99,235,0.5)] hover:-translate-y-0.5 transition-all duration-300"
+              style={{
+                background:
+                  "linear-gradient(135deg, #eff6ff 0%, #ffffff 60%, #dbeafe 100%)",
+              }}
+            >
+              <span className="flex items-center gap-0.5" aria-label="4.5 out of 5 stars">
+                {[0, 1, 2, 3].map((i) => (
+                  <svg
+                    key={i}
+                    className="w-[15px] h-[15px] text-brand drop-shadow-[0_1px_1px_rgba(29,78,216,0.35)] transition-transform duration-300 group-hover:scale-110"
+                    style={{ transitionDelay: `${i * 40}ms` }}
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.78 1.401 8.169L12 19.243l-7.335 3.917 1.401-8.169L.132 9.211l8.2-1.193z" />
+                  </svg>
+                ))}
+                {/* Half star — blue left half over faded right half */}
+                <span className="relative inline-block w-[15px] h-[15px] transition-transform duration-300 group-hover:scale-110" style={{ transitionDelay: "160ms" }}>
+                  <svg
+                    className="absolute inset-0 w-[15px] h-[15px] text-brand/25"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.78 1.401 8.169L12 19.243l-7.335 3.917 1.401-8.169L.132 9.211l8.2-1.193z" />
+                  </svg>
+                  <svg
+                    className="absolute inset-0 w-[15px] h-[15px] text-brand drop-shadow-[0_1px_1px_rgba(29,78,216,0.35)]"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                    style={{ clipPath: "inset(0 50% 0 0)" }}
+                  >
+                    <path d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.78 1.401 8.169L12 19.243l-7.335 3.917 1.401-8.169L.132 9.211l8.2-1.193z" />
+                  </svg>
+                </span>
               </span>
-              <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.22em] text-brand">
-                FolioCraft · Live
+
+              <span className="h-3.5 w-px bg-brand/40" aria-hidden="true" />
+
+              <span className="flex items-baseline gap-1 leading-none">
+                <span className="text-sm sm:text-base font-bold text-brand-dark tabular-nums">
+                  4.5
+                </span>
+                <span className="text-[10px] font-semibold text-brand-dark/70 tracking-wide">
+                  / 5
+                </span>
               </span>
             </div>
 

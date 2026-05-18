@@ -32,8 +32,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
           {/* ── Column 1: Brand ──────────────────────────────────── */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            <p className="font-serif text-2xl text-canvas-bg mb-2">
-              Folio<span className="italic">Craft</span>
+            <p className="font-sans text-2xl font-black tracking-[-0.04em] text-canvas-bg mb-2">
+              its<span className="text-brand-light">M</span>yfolio
             </p>
             <p className="text-sm text-canvas-bg/60 leading-relaxed mb-5">
               Crafting portfolios that get you hired.
@@ -91,10 +91,10 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:hello@foliocraft.ae"
+                  href="mailto:hello@itsmyfolio.ae"
                   className="hover:text-canvas-bg transition-colors"
                 >
-                  hello@foliocraft.ae
+                  hello@itsmyfolio.ae
                 </a>
               </li>
             </ul>
@@ -122,7 +122,7 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-canvas-bg/10 py-5 text-center">
         <p className="text-xs text-canvas-bg/50">
-          © 2026 FolioCraft. All rights reserved.
+          © 2026 itsMyfolio. All rights reserved.
         </p>
       </div>
     </footer>
