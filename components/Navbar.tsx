@@ -32,7 +32,7 @@ export default function Navbar() {
         <Link
           href="/"
           aria-label="itsMyfolio home"
-          className="group inline-flex items-baseline font-sans text-2xl font-black tracking-[-0.04em] text-ink select-none transition-transform duration-200 hover:-translate-y-0.5"
+          className="group inline-flex items-baseline font-sans text-[22px] sm:text-[26px] font-black tracking-[-0.04em] text-ink select-none transition-transform duration-200 hover:-translate-y-0.5"
         >
           <span>its</span>
           <span className="text-brand transition-colors duration-200 group-hover:text-brand-light">
