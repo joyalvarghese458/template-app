@@ -2,6 +2,8 @@ import StatsBar from "@/components/StatsBar";
 import AboutSection from "@/components/AboutSection";
 import TemplatesSection from "@/components/TemplatesSection";
 import ReviewSection from "@/components/ReviewSection";
+import WhyChooseUs from "@/components/WhyChooseUs";
+import HowItWorks from "@/components/HowItWorks";
 import ScrollingBackgroundSection from "@/components/ScrollingBackgroundSection";
 import Footer from "@/components/Footer";
 import HeroPortfolioCarousel from "@/components/HeroPortfolioCarousel";
@@ -270,6 +272,8 @@ export default function Home() {
       
       <TemplatesSection />
       <AboutSection />
+      <WhyChooseUs />
+      <HowItWorks />
       <ReviewSection />
       <ScrollingBackgroundSection />
       <Footer />
