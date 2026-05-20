@@ -42,7 +42,7 @@ export default function OfferBanner() {
     <Link
       href="/templates?tier=premium"
       aria-label="Eid Special: up to 50% off on Premium tier portfolios"
-      className="group relative block overflow-hidden bg-gradient-to-r from-brand-dark via-brand to-brand-light"
+      className="group relative block overflow-hidden bg-gradient-to-r from-blue-900 via-blue-800 to-blue-700"
     >
       <div
         className="flex w-max"
@@ -57,11 +57,11 @@ export default function OfferBanner() {
 
       {/* Subtle edge fade so text isn't cut sharply at viewport edges */}
       <span
-        className="pointer-events-none absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-brand-dark to-transparent"
+        className="pointer-events-none absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-blue-900 to-transparent"
         aria-hidden="true"
       />
       <span
-        className="pointer-events-none absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-brand-light to-transparent"
+        className="pointer-events-none absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-blue-900 to-transparent"
         aria-hidden="true"
       />
     </Link>
