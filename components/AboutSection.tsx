@@ -67,8 +67,8 @@ export default function AboutSection() {
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
-          Portfolios built on{" "}
-          <span className="italic">passion</span>
+          Your work deserves a premium{" "}
+          <span className="italic">presentation</span>
         </h2>
 
         <p
@@ -76,8 +76,7 @@ export default function AboutSection() {
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
-          A UAE-based studio crafting beautiful portfolios for creators,
-          freelancers, and small studios who want to stand out.
+         A UAE-based creative studio designing modern portfolio websites for creators, freelancers, and brands who want to stand out online.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

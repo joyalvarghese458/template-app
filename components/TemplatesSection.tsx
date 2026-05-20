@@ -366,7 +366,7 @@ function TierCarousel({ tier }: { tier: TierWithTemplates }) {
 
       <div
         ref={scrollerRef}
-        className="flex gap-5 sm:gap-7 overflow-x-auto overflow-y-hidden snap-x snap-mandatory pb-6 -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+        className="flex gap-7 sm:gap-7 overflow-x-auto overflow-y-hidden snap-x snap-mandatory pb-6 -mx-4 px-6 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
       >
         {tier.templates.map((t) => (
           <PhoneCard
