@@ -4,11 +4,8 @@ import { useEffect, useState } from "react";
 
 // Progress-driven status words — feels varied without being chatty.
 const STATUS_WORDS = [
-  { until: 25, label: "Loading" },
-  { until: 55, label: "Crafting" },
-  { until: 80, label: "Polishing" },
-  { until: 96, label: "Almost there" },
-  { until: 101, label: "Ready" },
+  { until: 60, label: "Loading" },
+  { until: 101, label: "Almost there" },
 ];
 
 function statusFor(progress: number) {
