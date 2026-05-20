@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import OfferBanner from "@/components/OfferBanner";
 
 const NAV_LINKS = [
   { href: "#templates", label: "Templates" },
@@ -83,6 +84,9 @@ export default function Navbar() {
         </button>
         </div>
       </div>
+
+      {/* ── Auto-scrolling offer banner ─────────────────────────── */}
+      <OfferBanner />
 
       {/* ── Mobile drawer ───────────────────────────────────────── */}
       <div
