@@ -1,92 +1,23 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import {
+  TIERS,
+  TEMPLATES,
+  WA_NUMBER,
+  waLink,
+  templateImage,
+  templateHref,
+  type Template,
+  type TierMeta,
+} from "@/lib/templates";
 
-type Template = { id: string; title: string; tag: string; image?: string; slug?: string };
+type TierWithTemplates = TierMeta & { templates: Template[] };
 
-function templateImage(t: Template) {
-  return t.image ?? `https://picsum.photos/seed/${t.id}/420/860`;
-}
-
-type Tier = {
-  label: string;
-  // subtitle: string;
-  price: number;
-  accent: string;
-  badgeColor: string;
-  templates: Template[];
-};
-
-const TIERS: Tier[] = [
-  {
-    label: "Starter",
-    // subtitle: "Single-page essentials — for freelancers, students & first portfolios",
-    price: 49,
-    accent: "from-[#0a1a3f] via-[#06122e] to-[#030814]",
-    badgeColor: "bg-brand/10 text-brand-dark border-brand/30",
-    templates: [
-      { id: "s1", slug: "minimalist", title: "Minimalist", tag: "Resume · Single page" },
-      { id: "s2", slug: "pure", title: "Pure", tag: "Personal · Light" },
-      { id: "s3", title: "Cardstock", tag: "CV · Card layout" },
-      { id: "s4", title: "Solo", tag: "Freelancer · Lite" },
-      { id: "s5", title: "Profile One", tag: "Personal brand" },
-      { id: "s6", title: "Classic", tag: "CV · Print-ready" },
-      { id: "s7", title: "Quill", tag: "Writer · Lite" },
-      { id: "s8", title: "Snap", tag: "Photo · Single page" },
-      { id: "s9", title: "Indie", tag: "Maker · Lite" },
-      { id: "s10", title: "Onefolio", tag: "Universal · Lite" },
-    ],
-  },
-  {
-    label: "Pro",
-    // subtitle: "Multi-page, animated portfolios with rich case-study layouts & blog support",
-    price: 99,
-    accent: "from-[#1e3a8a] via-[#1d4ed8] to-[#1e3a8a]",
-    badgeColor: "bg-brand/15 text-brand-dark border-brand/40",
-    templates: [
-      { id: "p1", title: "Designer Pro", tag: "Designer · Multi-page" },
-      { id: "p2", title: "DevHub", tag: "Developer · Projects grid" },
-      { id: "p3", title: "Gallery+", tag: "Photographer · Gallery" },
-      { id: "p4", title: "Studio", tag: "Creative · Case studies" },
-      { id: "p5", title: "Architect", tag: "Architect · Project pages" },
-      { id: "p6", title: "Artisan", tag: "Artist · Collection" },
-      { id: "p7", title: "Consult", tag: "Consultant · Services" },
-      { id: "p8", title: "Stage", tag: "Speaker · Talks" },
-      { id: "p9", title: "Aura", tag: "Influencer · Press kit" },
-      { id: "p10", title: "Brandmark", tag: "Brand · Identity" },
-    ],
-  },
-  {
-    label: "Premium",
-    // subtitle: "Flagship portfolios — custom animations, CMS-ready, e-commerce & SEO tuned",
-    price: 149,
-    accent: "from-[#2563eb] via-[#1d4ed8] to-[#1e3a8a]",
-    badgeColor: "bg-brand/20 text-brand-dark border-brand/50",
-    templates: [
-      { id: "x1", slug: "atelier", title: "Atelier", tag: "Agency · Flagship" },
-      { id: "x2", title: "Reel", tag: "Director · Showreel" },
-      { id: "x3", title: "Magnum", tag: "Photographer · Pro Max" },
-      { id: "x4", title: "Blueprint", tag: "Architect · Premier" },
-      { id: "x5", title: "Founder", tag: "Executive · Suite" },
-      { id: "x6", title: "Maker Pro", tag: "Designer · Elite" },
-      { id: "x7", title: "Curate", tag: "Artist · Atelier" },
-      { id: "x8", title: "Atrium", tag: "Studio · Master" },
-      { id: "x9", title: "Beacon", tag: "Brand · Premier" },
-      { id: "x10", title: "Lumen", tag: "Editorial · Premium" },
-    ],
-  },
-];
-
-const WA_NUMBER = "971568450406";
-
-function waLink(tier: string, name: string, price: number) {
-  const msg = `Hi itsMyfolio! I'd like to order the "${name}" (${tier} tier) portfolio template at AED ${price}.`;
-  return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
-}
-
-function viewLink(template: Template) {
-  return `/templates/${template.slug ?? template.id}`;
-}
+const TIERS_WITH_TEMPLATES: TierWithTemplates[] = TIERS.map((tier) => ({
+  ...tier,
+  templates: TEMPLATES.filter((t) => t.tier === tier.id),
+}));
 
 // ────────────────────────────────────────────────────────────────────
 // Phone-mockup card
@@ -181,7 +112,7 @@ function PhoneCard({
         {/* ── Action buttons ─────────────────────────────────── */}
         <div className="mt-3 flex gap-1.5">
           <a
-            href={viewLink(template)}
+            href={templateHref(template)}
             className="flex-1 inline-flex items-center justify-center gap-1 px-2 py-2 text-[11px] sm:text-xs font-bold text-brand bg-canvas-bg border border-brand/40 hover:bg-brand/10 rounded-lg transition-all duration-200 active:scale-95"
           >
             <svg
@@ -230,11 +161,11 @@ function PhoneCard({
 // "View more" card — appended at the end of each tier scroller
 // ────────────────────────────────────────────────────────────────────
 
-function ViewMoreCard({ tier }: { tier: Tier }) {
+function ViewMoreCard({ tier }: { tier: TierWithTemplates }) {
   return (
     <article className="snap-start shrink-0 w-[180px] sm:w-[210px] flex flex-col items-center select-none">
       <a
-        href={`/templates?tier=${tier.label.toLowerCase()}`}
+        href={`/templates?tier=${tier.id}`}
         className="relative w-[180px] h-[370px] sm:w-[210px] sm:h-[430px] rounded-[34px] sm:rounded-[40px] bg-canvas-bg border-2 border-dashed border-ink/25 hover:border-brand hover:bg-brand/5 flex flex-col items-center justify-center gap-4 transition-all duration-300 hover:-translate-y-1 group"
       >
         <div className="w-16 h-16 rounded-full bg-brand/10 group-hover:bg-brand/20 border border-brand/30 flex items-center justify-center transition-all duration-300 group-hover:scale-110">
@@ -281,7 +212,7 @@ function ViewMoreCard({ tier }: { tier: Tier }) {
 // One horizontal scroller per tier
 // ────────────────────────────────────────────────────────────────────
 
-function TierCarousel({ tier }: { tier: Tier }) {
+function TierCarousel({ tier }: { tier: TierWithTemplates }) {
   const scrollerRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
@@ -483,9 +414,29 @@ export default function TemplatesSection() {
           </p>
         </div>
 
+        {/* Profession quick-filters */}
+        <div className="flex flex-wrap items-center justify-center gap-1.5 mb-12">
+          {[
+            { id: "designers", label: "Designers" },
+            { id: "developers", label: "Developers" },
+            { id: "photographers", label: "Photographers" },
+            { id: "creators", label: "Creators" },
+            { id: "founders", label: "Founders" },
+            { id: "agencies", label: "Agencies" },
+          ].map((a) => (
+            <a
+              key={a.id}
+              href={`/templates?audience=${a.id}`}
+              className="inline-flex items-center px-3 py-1.5 text-xs font-medium text-ink-soft hover:text-brand-dark bg-canvas-bg border border-ink/15 hover:border-brand/40 hover:bg-brand/5 rounded-full transition-colors"
+            >
+              {a.label}
+            </a>
+          ))}
+        </div>
+
         <div className="space-y-16 sm:space-y-20">
-          {TIERS.map((tier) => (
-            <TierCarousel key={tier.label} tier={tier} />
+          {TIERS_WITH_TEMPLATES.map((tier) => (
+            <TierCarousel key={tier.id} tier={tier} />
           ))}
         </div>
 
