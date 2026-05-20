@@ -272,8 +272,8 @@ export default function Home() {
       
       <TemplatesSection />
       <AboutSection />
-      <WhyChooseUs />
       <HowItWorks />
+      <WhyChooseUs />
       <ReviewSection />
       <ScrollingBackgroundSection />
       <Footer />
