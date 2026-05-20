@@ -2,10 +2,24 @@
 
 import { useEffect, useState } from "react";
 
+// Progress-driven status words — feels varied without being chatty.
+const STATUS_WORDS = [
+  { until: 25, label: "Loading" },
+  { until: 55, label: "Crafting" },
+  { until: 80, label: "Polishing" },
+  { until: 96, label: "Almost there" },
+  { until: 101, label: "Ready" },
+];
+
+function statusFor(progress: number) {
+  return STATUS_WORDS.find((s) => progress < s.until)?.label ?? "Loading";
+}
+
 export default function LoadingScreen() {
   const [progress, setProgress] = useState(0);
   const [exiting, setExiting] = useState(false);
   const [gone, setGone] = useState(false);
+  const [dots, setDots] = useState("");
 
   useEffect(() => {
     const DURATION = 2000; // exactly 2 seconds to fill
@@ -26,6 +40,14 @@ export default function LoadingScreen() {
     });
 
     return () => cancelAnimationFrame(id);
+  }, []);
+
+  // Trailing dot animation — "" → "." → ".." → "..." every 350ms.
+  useEffect(() => {
+    const id = setInterval(() => {
+      setDots((d) => (d.length >= 3 ? "" : d + "."));
+    }, 350);
+    return () => clearInterval(id);
   }, []);
 
   if (gone) return null;
@@ -81,19 +103,34 @@ export default function LoadingScreen() {
           }}
         />
 
-        {/* Brand name */}
+        {/* Animated status word — cycles with progress, dots animate independently */}
         <p
+          key={statusFor(progress)}
           style={{
-            fontSize: "clamp(2.5rem, 6vw, 3.5rem)",
-            fontWeight: 800,
-            letterSpacing: "-0.02em",
+            fontSize: "clamp(1.25rem, 2.8vw, 1.75rem)",
+            fontWeight: 600,
+            letterSpacing: "-0.01em",
             color: "#000000",
             marginBottom: 10,
-            lineHeight: 1,
+            lineHeight: 1.1,
             fontFamily: "var(--font-playfair, ui-serif, Georgia, serif)",
+            fontStyle: "italic",
+            animation: "loaderEnter 0.45s cubic-bezier(0.4, 0, 0.2, 1) both",
           }}
         >
-          Folio<span style={{ color: "#2563eb" }}>Craft</span>
+          {statusFor(progress)}
+          <span
+            aria-hidden="true"
+            style={{
+              display: "inline-block",
+              width: "0.9em",
+              textAlign: "left",
+              color: "#2563eb",
+              fontStyle: "normal",
+            }}
+          >
+            {dots}
+          </span>
         </p>
 
         {/* Tagline */}
