@@ -32,8 +32,6 @@ const PROFILE = {
   resumeUrl: "#",
 };
 
-const HERO_WORDS = ["Identities", "Brands", "Stories", "Visuals", "Campaigns"];
-
 const BRANDS = [
   "Nike", "Apple", "Spotify", "Airbnb", "Stripe",
   "Notion", "Figma", "Netflix", "Adobe", "Google",
@@ -139,18 +137,18 @@ const TESTIMONIALS = [
 ];
 
 const STATS = [
-  { value: "8+",   label: "Years of craft" },
+  { value: "8+", label: "Years of craft" },
   { value: "120+", label: "Projects shipped" },
-  { value: "30+",  label: "Brands transformed" },
-  { value: "4×",   label: "D&AD Nominee" },
+  { value: "30+", label: "Brands transformed" },
+  { value: "4×", label: "D&AD Nominee" },
 ];
 
 const NAV_LINKS = [
-  { href: "#work",       label: "Work" },
-  { href: "#about",      label: "About" },
+  { href: "#work", label: "Work" },
+  { href: "#about", label: "About" },
   { href: "#experience", label: "Experience" },
-  { href: "#skills",     label: "Skills" },
-  { href: "#contact",    label: "Contact" },
+  { href: "#skills", label: "Skills" },
+  { href: "#contact", label: "Contact" },
 ];
 
 // ── HOOKS ──────────────────────────────────────────────────────────
@@ -174,7 +172,6 @@ function useReveal<T extends Element = HTMLDivElement>(threshold = 0.12) {
 // ── COMPONENT ──────────────────────────────────────────────────────
 
 export default function SoloPortfolio() {
-  const [wordIdx, setWordIdx] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [slide, setSlide] = useState(0);
@@ -183,12 +180,6 @@ export default function SoloPortfolio() {
   const [theme, setTheme] = useState<"dark" | "light">("dark");
   const skillsRef = useRef<HTMLDivElement>(null);
   const autoplayRef = useRef<ReturnType<typeof setInterval> | null>(null);
-
-  // word cycling
-  useEffect(() => {
-    const id = setInterval(() => setWordIdx((i) => (i + 1) % HERO_WORDS.length), 2400);
-    return () => clearInterval(id);
-  }, []);
 
   // nav scroll state
   useEffect(() => {
@@ -249,13 +240,13 @@ export default function SoloPortfolio() {
   };
 
   // reveal hooks
-  const brandsReveal      = useReveal();
-  const workReveal        = useReveal();
-  const aboutReveal       = useReveal();
-  const expReveal         = useReveal();
-  const resumeReveal      = useReveal();
+  const brandsReveal = useReveal();
+  const workReveal = useReveal();
+  const aboutReveal = useReveal();
+  const expReveal = useReveal();
+  const resumeReveal = useReveal();
   const testimonialReveal = useReveal();
-  const contactReveal     = useReveal();
+  const contactReveal = useReveal();
 
   return (
     <div className={styles.page} data-theme={theme}>
@@ -336,79 +327,69 @@ export default function SoloPortfolio() {
       {/* ── HERO ────────────────────────────────────────── */}
       <section id="hero" className={styles.hero}>
 
-        {/* ── Mobile: photo strip at the top (face visible, no content overlap) */}
-        <div className={styles.heroBgPhoto} aria-hidden="true">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={PROFILE.avatar} alt="" />
-          {/* Overlay fades to var(--bg) — adapts to dark AND light mode */}
-          <div className={styles.heroBgPhotoOverlay} />
-        </div>
-
-        {/* ── Content body (solid var(--bg) on mobile → theme change is obvious) */}
-        <div className={styles.heroBody}>
-          {/* Decorative blobs — desktop only */}
-          <div className={styles.heroBlobA} aria-hidden="true" />
-          <div className={styles.heroBlobB} aria-hidden="true" />
-          <div className={styles.heroBlobC} aria-hidden="true" />
-          <div className={styles.heroNoise}  aria-hidden="true" />
-
-          <div className={styles.container}>
-            <div className={styles.heroGrid}>
-
-              {/* Left column — all text content */}
-              <div className={styles.heroContent}>
-                <h1 className={styles.heroTitle}>
-                  <span className={styles.heroTitleTop}>Designing</span>
-                  <span className={styles.heroWordWrap}>
-                    <span key={wordIdx} className={styles.heroWord} aria-live="polite">
-                      {HERO_WORDS[wordIdx]}
-                    </span>
-                  </span>
-                  <span className={styles.heroTitleBottom}>that Define You.</span>
-                </h1>
-
-                <p className={styles.heroLead}>{PROFILE.bio1}</p>
-
-                <div className={styles.heroActions}>
-                  <a href="#work" className={styles.btnPrimary}>
-                    View my work <ArrowIcon />
-                  </a>
-                  <a href="#contact" className={styles.btnGhost}>
-                    Start a project
-                  </a>
-                </div>
-
-                <div className={styles.heroStats}>
-                  {STATS.map((s) => (
-                    <div key={s.label} className={styles.heroStat}>
-                      <span className={styles.heroStatValue}>{s.value}</span>
-                      <span className={styles.heroStatLabel}>{s.label}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Right column — portrait (desktop only) */}
-              <div className={styles.heroVisual}>
-                <div className={styles.heroImgWrap}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={PROFILE.avatar} alt={PROFILE.name} className={styles.heroImg} />
-                  <div className={styles.heroImgGlow} aria-hidden="true" />
-                </div>
-                <div className={styles.heroFloatCard}>
-                  <span className={styles.heroFloatIcon}>✦</span>
-                  <div>
-                    <div className={styles.heroFloatTitle}>Creative Director</div>
-                    <div className={styles.heroFloatSub}>Brand · Type · Motion</div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
+        {/* ── Left: text content ──────────────────────── */}
+        <div className={styles.heroInner}>
+          {/* "✦ Hey There!" label */}
+          <div className={styles.heroLabel}>
+            <span className={styles.heroLabelStar}>✦</span>
+            Hey There!
           </div>
 
+          {/* Heading: "I'm Alex Rivera / Graphic Designer" */}
+          <h1 className={styles.heroTitle}>
+            <span className={styles.heroTitleName}>I&apos;m {PROFILE.name}</span>
+            <span className={styles.heroTitleRole}>
+              <span className={styles.heroTitleRoleAccent}>Graphic</span> Designer
+            </span>
+          </h1>
+
+          <p className={styles.heroLead}>{PROFILE.bio1}</p>
+
+          <div className={styles.heroActions}>
+            <a href={PROFILE.resumeUrl} className={styles.btnPrimary}>
+              Download CV <ArrowIcon />
+            </a>
+            <a href="#work" className={styles.btnReel}>
+              <span className={styles.btnReelIcon}>▶</span>
+              View Work
+            </a>
+          </div>
+        </div>
+
+        {/* ── Right: portrait (desktop only) ──────────── */}
+        <div className={styles.heroPortrait}>
+          <div className={styles.heroPortraitGlow} aria-hidden="true" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/solo-hero.png"
+            alt={PROFILE.name}
+            className={styles.heroPortraitImg}
+          />
+        </div>
+
+      </section>
+
+      {/* ── STICKY HERO IMAGE (mobile only) ─────────────── */}
+      <section className={styles.heroImageSection}>
+        <div className={styles.heroImageWrapper}>
+          <div className={styles.heroImagePanel}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/solo-hero.png"
+              alt={PROFILE.name}
+              className={styles.heroFullImg}
+            />
+          </div>
         </div>
       </section>
+
+      {/* ── STICKY BOTTOM CTA (mobile only) ─────────────── */}
+      <div className={styles.stickyBottom}>
+        <a href="#contact" className={styles.stickyBottomBtn}>
+          Hire me <ArrowIcon />
+        </a>
+        <span className={styles.stickyBottomMeta}>Responds in&nbsp;24h</span>
+      </div>
 
       {/* ── BRANDS ──────────────────────────────────────── */}
       <section
@@ -722,9 +703,9 @@ export default function SoloPortfolio() {
               </div>
               <div className={styles.socials}>
                 <a href={PROFILE.instagram} className={styles.socialLink} aria-label="Instagram">Instagram</a>
-                <a href={PROFILE.behance}   className={styles.socialLink} aria-label="Behance">Behance</a>
-                <a href={PROFILE.linkedin}  className={styles.socialLink} aria-label="LinkedIn">LinkedIn</a>
-                <a href={PROFILE.dribbble}  className={styles.socialLink} aria-label="Dribbble">Dribbble</a>
+                <a href={PROFILE.behance} className={styles.socialLink} aria-label="Behance">Behance</a>
+                <a href={PROFILE.linkedin} className={styles.socialLink} aria-label="LinkedIn">LinkedIn</a>
+                <a href={PROFILE.dribbble} className={styles.socialLink} aria-label="Dribbble">Dribbble</a>
               </div>
             </div>
 
@@ -774,9 +755,9 @@ export default function SoloPortfolio() {
             </a>
             <div className={styles.footerSocials}>
               <a href={PROFILE.instagram} className={styles.footerSocialLink}>IG</a>
-              <a href={PROFILE.behance}   className={styles.footerSocialLink}>BE</a>
-              <a href={PROFILE.linkedin}  className={styles.footerSocialLink}>LI</a>
-              <a href={PROFILE.dribbble}  className={styles.footerSocialLink}>DR</a>
+              <a href={PROFILE.behance} className={styles.footerSocialLink}>BE</a>
+              <a href={PROFILE.linkedin} className={styles.footerSocialLink}>LI</a>
+              <a href={PROFILE.dribbble} className={styles.footerSocialLink}>DR</a>
             </div>
           </div>
           <nav className={styles.footerNav}>
@@ -840,15 +821,6 @@ function TimelineItem({ item, index }: { item: (typeof EXPERIENCE)[0]; index: nu
 }
 
 // ── ICONS ──────────────────────────────────────────────────────────
-
-function ScrollArrowIcon() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <path d="M12 5v14" /><path d="M5 15l7 7 7-7" />
-    </svg>
-  );
-}
 
 function ArrowIcon() {
   return (
