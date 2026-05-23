@@ -149,7 +149,7 @@ function Intro() {
           <div className={styles.summaryFigure}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=900&q=80&auto=format&fit=crop"
+              src="/pure-about.png"
               alt="Portrait"
             />
           </div>
@@ -200,9 +200,8 @@ function Skills() {
                   style={{
                     opacity: visible ? 1 : 0,
                     transform: visible ? "translateY(0)" : "translateY(20px)",
-                    transition: `opacity 0.6s ${i * 0.12}s ease, transform 0.6s ${
-                      i * 0.12
-                    }s cubic-bezier(0.22, 1, 0.36, 1)`,
+                    transition: `opacity 0.6s ${i * 0.12}s ease, transform 0.6s ${i * 0.12
+                      }s cubic-bezier(0.22, 1, 0.36, 1)`,
                   }}
                 >
                   <div className={styles.eduIcon}>
