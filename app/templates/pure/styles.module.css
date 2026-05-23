@@ -83,20 +83,7 @@
 }
 
 .badge {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  padding: 14px 22px;
-  border-radius: 999px;
-  opacity: 0;
-  transform: translateX(-30px);
-  animation: badgeIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  width: fit-content;
-  max-width: 320px;
+  display: none;
 }
 
 .badge:nth-child(1) { animation-delay: 0.4s; }
@@ -172,9 +159,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   z-index: 1;
-  min-height: 380px;
+  min-height: auto;
   width: 100%;
   order: 1;
 }
@@ -271,24 +258,7 @@
 }
 
 .bigName {
-  position: relative;
-  z-index: 2;
-  margin-top: -20px;
-  font-family: "Plus Jakarta Sans", "Inter", sans-serif;
-  font-size: clamp(1.9rem, 6vw, 5rem);
-  font-weight: 800;
-  line-height: 1.05;
-  letter-spacing: -0.03em;
-  background: linear-gradient(120deg, #ffffff 0%, #fff0e6 45%, #ffb9a8 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  text-align: center;
-  max-width: 100%;
-  white-space: nowrap;
-  text-shadow: 0 2px 30px rgba(255, 107, 91, 0.25);
-  opacity: 0;
-  animation: nameIn 1.2s 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  display: none;
 }
 
 @keyframes nameIn {
@@ -304,12 +274,7 @@
 }
 
 .bigNameSub {
-  margin-top: 16px;
-  text-align: center;
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 15px;
-  opacity: 0;
-  animation: badgeIn 0.9s 1s forwards;
+  display: none;
 }
 
 .bigNameSubLink {
@@ -1200,49 +1165,18 @@
   }
 }
 
-/* ── Mobile hero overrides ─────────────────────────────── */
-
-@media (max-width: 1023px) {
-  /* Stack figure at top, intro below — no bottom-alignment */
-  .heroCenter {
-    justify-content: flex-start;
-    min-height: auto;
-    gap: 0;
-  }
-
-  /* Hide desktop name overlay + sub-line on mobile */
-  .bigName {
-    display: none;
-  }
-
-  .bigNameSub {
-    display: none;
-  }
-
-  /* Hide role/email pill badges on mobile (replaced by mobileIntro) */
-  .badge {
-    display: none;
-  }
-}
-
-/* ── Mobile intro block (shown only on mobile) ─────────── */
+/* ── Hero intro — all screens ──────────────────────────── */
 
 .mobileIntro {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 14px;
-  padding: 20px 16px 12px;
+  gap: 16px;
+  padding: 20px 16px 8px;
   width: 100%;
   opacity: 0;
   animation: mobileIntroIn 0.7s 0.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-
-@media (min-width: 1024px) {
-  .mobileIntro {
-    display: none;
-  }
 }
 
 @keyframes mobileIntroIn {
@@ -1252,19 +1186,19 @@
 
 .mobileIntroHey {
   margin: 0;
-  font-size: clamp(13px, 3.5vw, 15px);
+  font-size: clamp(11px, 1.2vw, 14px);
   font-weight: 500;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.55);
 }
 
 .mobileIntroName {
   margin: 0;
   font-family: "Plus Jakarta Sans", "Inter", sans-serif;
-  font-size: clamp(1.75rem, 7.5vw, 2.6rem);
+  font-size: clamp(1.8rem, 4vw, 3.4rem);
   font-weight: 800;
-  line-height: 1.1;
+  line-height: 1.08;
   letter-spacing: -0.03em;
   background: linear-gradient(120deg, #ffffff 0%, #fff0e6 45%, #ffb9a8 100%);
   background-clip: text;
@@ -1277,12 +1211,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 28px;
+  min-height: 32px;
   gap: 1px;
 }
 
 .mobileIntroTypingText {
-  font-size: clamp(14px, 4vw, 17px);
+  font-size: clamp(14px, 1.5vw, 20px);
   font-weight: 700;
   color: #ff6b5b;
   letter-spacing: 0.01em;
@@ -1306,8 +1240,8 @@
 
 /* CTA line */
 .mobileIntroCta {
-  margin: 4px 0 0;
-  font-size: clamp(13px, 3.8vw, 15px);
+  margin: 2px 0 0;
+  font-size: clamp(13px, 1.1vw, 15px);
   color: rgba(255, 255, 255, 0.82);
 }
 
@@ -1331,7 +1265,6 @@
   justify-content: center;
   gap: 10px;
   flex-wrap: wrap;
-  margin-top: 4px;
 }
 
 .mobileIntroWa,
@@ -1339,13 +1272,13 @@
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  padding: 10px 18px;
+  padding: 10px 20px;
   border-radius: 999px;
-  font-size: clamp(12px, 3.5vw, 14px);
+  font-size: clamp(12px, 1vw, 14px);
   font-weight: 600;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  transition: background 0.2s, border-color 0.2s, transform 0.25s cubic-bezier(0.22,1,0.36,1);
+  transition: background 0.2s, border-color 0.2s, transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
   white-space: nowrap;
 }
 
