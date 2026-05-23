@@ -14,7 +14,7 @@ const FEATURED = {
     "A lightweight, opinionated playbook for shipping mobile experiences that users actually return to — built from five years of client work across fintech, health, and consumer apps.",
   read: "10 mins read",
   date: "Jul 10, 2022",
-  img: "https://images.unsplash.com/photo-1611532736417-1e3c87ac8c64?w=1400&q=80&auto=format&fit=crop",
+  img: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1400&q=80&auto=format&fit=crop",
 };
 
 const POSTS = [
@@ -24,7 +24,7 @@ const POSTS = [
     tag: "Process",
     title: "From sketch to ship — a lightweight design workflow",
     read: "7 mins read",
-    img: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=900&q=80&auto=format&fit=crop",
+    img: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=900&q=80&auto=format&fit=crop",
   },
   {
     day: "06",

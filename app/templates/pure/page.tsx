@@ -104,7 +104,7 @@ const ARTICLES = [
     date: "Jul 2022",
     title: "From sketch to ship — a lightweight design workflow",
     read: "7 mins read",
-    img: "https://images.unsplash.com/photo-1611532736417-1e3c87ac8c64?w=400&q=80&auto=format&fit=crop",
+    img: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=400&q=80&auto=format&fit=crop",
   },
   {
     day: "06",
