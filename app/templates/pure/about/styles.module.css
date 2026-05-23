@@ -66,8 +66,6 @@
   letter-spacing: 0.18em;
   font-size: 13px;
   margin-bottom: 18px;
-  opacity: 0;
-  animation: rise 0.9s 0.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 .bannerName {
@@ -81,8 +79,6 @@
   -webkit-background-clip: text;
   color: transparent;
   margin: 0 0 32px;
-  opacity: 0;
-  animation: rise 1s 0.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 .crumbs {
@@ -91,8 +87,6 @@
   gap: 12px;
   color: rgba(255, 255, 255, 0.6);
   font-size: 14px;
-  opacity: 0;
-  animation: rise 0.9s 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 .crumbs a {

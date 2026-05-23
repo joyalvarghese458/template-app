@@ -69,8 +69,6 @@
   -webkit-background-clip: text;
   color: transparent;
   margin: 0 0 32px;
-  opacity: 0;
-  animation: rise 1s 0.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 .crumbs {
@@ -79,8 +77,6 @@
   gap: 12px;
   color: rgba(255, 255, 255, 0.6);
   font-size: 14px;
-  opacity: 0;
-  animation: rise 0.9s 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 .crumbs a {
@@ -135,8 +131,6 @@
   align-items: center;
   gap: 18px;
   transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s;
-  opacity: 0;
-  transform: translateY(20px);
   min-width: 0;
 }
 
