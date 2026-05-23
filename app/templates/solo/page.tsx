@@ -384,12 +384,12 @@ export default function SoloPortfolio() {
       </section>
 
       {/* ── STICKY BOTTOM CTA (mobile only) ─────────────── */}
-      <div className={styles.stickyBottom}>
+      {/* <div className={styles.stickyBottom}>
         <a href="#contact" className={styles.stickyBottomBtn}>
           Hire me <ArrowIcon />
         </a>
         <span className={styles.stickyBottomMeta}>Responds in&nbsp;24h</span>
-      </div>
+      </div> */}
 
       {/* ── BRANDS ──────────────────────────────────────── */}
       <section
