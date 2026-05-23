@@ -66,29 +66,52 @@
 
 @media (min-width: 1024px) {
   .heroGrid {
-    grid-template-columns: 1fr 1.6fr 1fr;
-    gap: 40px;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
     align-items: center;
   }
 }
 
-/* Hero left column - badges */
-.heroLeft {
+@media (min-width: 1280px) {
+  .heroGrid {
+    gap: 80px;
+  }
+}
+
+/* heroContent — text + stats + socials */
+.heroContent {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 18px;
+  gap: 16px;
   z-index: 2;
-  order: 2;
+  order: 2; /* mobile: below image */
+  width: 100%;
 }
 
 @media (min-width: 1024px) {
-  .heroLeft {
+  .heroContent {
+    order: 1; /* desktop: left column */
     align-items: flex-start;
-    justify-content: center;
-    order: 0;
-    align-self: center;
+    gap: 20px;
+  }
+}
+
+/* heroStats — stat numbers row */
+.heroStats {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .heroStats {
+    justify-content: flex-start;
+    gap: 36px;
+    margin-top: 4px;
   }
 }
 
@@ -149,6 +172,13 @@
   margin-top: 0;
   opacity: 0;
   animation: badgeIn 1s 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  .socials {
+    justify-content: flex-start;
+  }
 }
 
 .socialIcon {
@@ -163,20 +193,25 @@
   transform: translateY(-3px) scale(1.15) rotate(-8deg);
 }
 
-/* Hero center — figure + name */
+/* Hero center — profile image */
 .heroCenter {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   z-index: 1;
-  min-height: auto;
   width: 100%;
-  order: 1;
+  order: 1; /* mobile: image first */
 }
 
-/* heroCenter height is content-driven; no fixed min-height needed */
+@media (min-width: 1024px) {
+  .heroCenter {
+    order: 2; /* desktop: right column */
+    align-items: center;
+    justify-content: center;
+  }
+}
 
 .figureWrap {
   position: relative;
@@ -205,15 +240,15 @@
 
 @media (min-width: 1024px) {
   .figureWrap {
-    width: 320px;
-    height: 380px;
+    width: min(44vw, 400px);
+    height: min(48vw, 460px);
   }
 }
 
 @media (min-width: 1280px) {
   .figureWrap {
-    width: 360px;
-    height: 420px;
+    width: 420px;
+    height: 480px;
   }
 }
 
@@ -310,33 +345,11 @@
   border-color: #fff;
 }
 
-/* Hero right — stats */
-.heroRight {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  z-index: 2;
-  order: 3;
-  width: 100%;
-}
-
-@media (min-width: 1024px) {
-  .heroRight {
-    flex-direction: column;
-    align-items: flex-end;
-    text-align: right;
-    gap: 4px;
-    align-self: center;
-  }
-}
-
 .stat {
   position: relative;
-  padding: 8px 0;
+  padding: 4px 0;
   opacity: 0;
-  transform: translateX(30px);
+  transform: translateX(-20px);
   animation: badgeIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   text-align: center;
   min-width: 80px;
@@ -348,22 +361,23 @@
 
 @media (min-width: 1024px) {
   .stat {
-    text-align: right;
+    text-align: left;
+    padding: 8px 0;
   }
   .stat::after {
     content: "";
     position: absolute;
     bottom: 0;
     left: 0;
-    right: 0;
+    width: 40px;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+    background: linear-gradient(90deg, rgba(108, 99, 255, 0.5), transparent);
   }
 }
 
 .statValue {
   font-family: "Plus Jakarta Sans", "Inter", sans-serif;
-  font-size: clamp(26px, 2.4vw, 34px);
+  font-size: clamp(24px, 5vw, 32px);
   font-weight: 800;
   color: #fff;
   letter-spacing: -0.03em;
@@ -371,10 +385,23 @@
   line-height: 1;
 }
 
+@media (min-width: 1024px) {
+  .statValue {
+    font-size: clamp(26px, 2.2vw, 34px);
+  }
+}
+
 .statLabel {
-  color: rgba(255, 255, 255, 0.6);
-  font-size: clamp(11px, 0.9vw, 13px);
+  color: rgba(255, 255, 255, 0.55);
+  font-size: clamp(11px, 2.5vw, 13px);
   margin: 0;
+  letter-spacing: 0.02em;
+}
+
+@media (min-width: 1024px) {
+  .statLabel {
+    font-size: 12px;
+  }
 }
 
 /* ── About section ─────────────────────────────────────── */
@@ -1200,6 +1227,16 @@
   animation: mobileIntroIn 0.7s 0.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
+/* Desktop: left-align everything inside the intro block */
+@media (min-width: 1024px) {
+  .mobileIntro {
+    align-items: flex-start;
+    text-align: left;
+    padding: 0;
+    gap: 12px;
+  }
+}
+
 @keyframes mobileIntroIn {
   from { opacity: 0; transform: translateY(18px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -1227,6 +1264,12 @@
   color: transparent;
 }
 
+@media (min-width: 1024px) {
+  .mobileIntroName {
+    font-size: clamp(2.6rem, 4vw, 4rem);
+  }
+}
+
 /* Typing row */
 .mobileIntroTypingRow {
   display: flex;
@@ -1236,11 +1279,23 @@
   gap: 1px;
 }
 
+@media (min-width: 1024px) {
+  .mobileIntroTypingRow {
+    justify-content: flex-start;
+  }
+}
+
 .mobileIntroTypingText {
   font-size: clamp(13px, 3.2vw, 18px);
   font-weight: 700;
   color: #ff6b5b;
   letter-spacing: 0.01em;
+}
+
+@media (min-width: 1024px) {
+  .mobileIntroTypingText {
+    font-size: 20px;
+  }
 }
 
 .mobileIntroCursor {
@@ -1287,6 +1342,12 @@
   gap: 8px;
   flex-wrap: wrap;
   margin-top: 2px;
+}
+
+@media (min-width: 1024px) {
+  .mobileIntroActions {
+    justify-content: flex-start;
+  }
 }
 
 .mobileIntroWa,

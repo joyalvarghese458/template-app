@@ -162,22 +162,38 @@ function Hero() {
       </div>
 
       <div className={styles.heroGrid}>
-        {/* Left badges */}
-        <div className={styles.heroLeft}>
-          <div className={styles.badge}>
-            <span className={styles.badgeDot} />
-            <div>
-              <span className={styles.badgeLabel}>{PROFILE.role}</span>
-              <span className={styles.badgeSub}>{PROFILE.location}</span>
-            </div>
+        {/* Image — top on mobile, RIGHT column on desktop */}
+        <div className={styles.heroCenter}>
+          <div className={styles.figureWrap}>
+            <div className={styles.figureHalo} aria-hidden="true" />
+            <div className={styles.figureRing} aria-hidden="true" />
+            <div className={styles.figureGlow} aria-hidden="true" />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              className={styles.figureImg}
+              src="/pure-portrait.png"
+              alt={`${PROFILE.name} portrait`}
+              draggable={false}
+            />
           </div>
+        </div>
 
-          <div className={`${styles.badge} ${styles.badgeMuted}`}>
-            <span className={`${styles.badgeDot} ${styles.badgeDotMuted}`} />
-            <div>
-              <span className={styles.badgeLabel}>Say hello to</span>
-              <span className={styles.badgeSub}>{PROFILE.email}</span>
-            </div>
+        {/* Text content — below image on mobile, LEFT column on desktop */}
+        <div className={styles.heroContent}>
+          <HeroIntro
+            name={PROFILE.name}
+            email={PROFILE.email}
+            roles={PROFILE.roles}
+            whatsapp={PROFILE.whatsapp}
+          />
+
+          <div className={styles.heroStats}>
+            {STATS.map((s) => (
+              <div key={s.label} className={styles.stat}>
+                <p className={styles.statValue}>{s.value}</p>
+                <p className={styles.statLabel}>{s.label}</p>
+              </div>
+            ))}
           </div>
 
           <div className={styles.socials}>
@@ -194,47 +210,6 @@ function Hero() {
               <svg className={styles.socialIcon} viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" strokeWidth="2"/></svg>
             </a>
           </div>
-        </div>
-
-        {/* Center figure + name */}
-        <div className={styles.heroCenter}>
-          <div className={styles.figureWrap}>
-            <div className={styles.figureHalo} aria-hidden="true" />
-            <div className={styles.figureRing} aria-hidden="true" />
-            <div className={styles.figureGlow} aria-hidden="true" />
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              className={styles.figureImg}
-              src="/pure-portrait.png"
-              alt={`${PROFILE.name} portrait`}
-              draggable={false}
-            />
-          </div>
-          {/* Desktop: name + CTA overlaid/below figure */}
-          <h1 className={styles.bigName}>{PROFILE.name}</h1>
-          <p className={styles.bigNameSub}>
-            Do you have a project?
-            <Link href="/templates/pure/contact" className={styles.bigNameSubLink}>
-              Let&apos;s Talk
-            </Link>
-          </p>
-          {/* Mobile-only: greeting, typing role, CTA, WhatsApp + email */}
-          <HeroIntro
-            name={PROFILE.name}
-            email={PROFILE.email}
-            roles={PROFILE.roles}
-            whatsapp={PROFILE.whatsapp}
-          />
-        </div>
-
-        {/* Right stats */}
-        <div className={styles.heroRight}>
-          {STATS.map((s) => (
-            <div key={s.label} className={styles.stat}>
-              <p className={styles.statValue}>{s.value}</p>
-              <p className={styles.statLabel}>{s.label}</p>
-            </div>
-          ))}
         </div>
       </div>
     </section>
