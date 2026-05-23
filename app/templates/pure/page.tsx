@@ -196,11 +196,13 @@ function Hero() {
         {/* Center figure + name */}
         <div className={styles.heroCenter}>
           <div className={styles.figureWrap}>
+            <div className={styles.figureHalo} aria-hidden="true" />
+            <div className={styles.figureRing} aria-hidden="true" />
             <div className={styles.figureGlow} aria-hidden="true" />
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               className={styles.figureImg}
-              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&q=80&auto=format&fit=crop"
+              src="/pure-portrait.png"
               alt={`${PROFILE.name} portrait`}
               draggable={false}
             />

@@ -60,7 +60,7 @@
 
 @media (min-width: 1024px) {
   .heroGrid {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1.5fr 1fr;
     align-items: center;
   }
 }
@@ -187,8 +187,8 @@
 
 .figureWrap {
   position: relative;
-  width: min(78vw, 360px);
-  height: min(78vw, 400px);
+  width: min(70vw, 300px);
+  height: min(78vw, 360px);
   max-width: 100%;
   margin: 0 auto;
   display: grid;
@@ -198,27 +198,69 @@
 
 @media (min-width: 640px) {
   .figureWrap {
-    width: min(70vw, 420px);
-    height: min(70vw, 460px);
+    width: min(55vw, 360px);
+    height: min(60vw, 400px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .figureWrap {
+    width: 360px;
+    height: 420px;
   }
 }
 
 .figureGlow {
   position: absolute;
-  inset: -20% -10% 10%;
-  background: radial-gradient(circle at center, rgba(108, 99, 255, 0.55) 0%, transparent 65%);
-  filter: blur(40px);
+  inset: -25% -15% 5%;
+  background:
+    radial-gradient(circle at 50% 40%, rgba(108, 99, 255, 0.65) 0%, transparent 60%),
+    radial-gradient(circle at 30% 75%, rgba(255, 107, 91, 0.4) 0%, transparent 55%);
+  filter: blur(45px);
   z-index: 0;
+}
+
+.figureHalo {
+  position: absolute;
+  inset: 8% 12% 18%;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    rgba(108, 99, 255, 0.55),
+    rgba(255, 107, 91, 0.45),
+    rgba(184, 168, 255, 0.5),
+    rgba(108, 99, 255, 0.55)
+  );
+  filter: blur(18px);
+  opacity: 0.85;
+  z-index: 0;
+  animation: haloSpin 16s linear infinite;
+}
+
+.figureRing {
+  position: absolute;
+  inset: 6% 10% 16%;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    inset 0 0 60px rgba(108, 99, 255, 0.25),
+    0 0 80px rgba(108, 99, 255, 0.2);
+  z-index: 0;
+}
+
+@keyframes haloSpin {
+  to { transform: rotate(360deg); }
 }
 
 .figureImg {
   position: relative;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: top center;
+  object-fit: contain;
+  object-position: center;
   z-index: 1;
-  filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 24px 50px rgba(108, 99, 255, 0.45))
+          drop-shadow(0 10px 28px rgba(0, 0, 0, 0.35));
   animation: float 5s ease-in-out infinite;
   transition: transform 0.4s ease;
 }
@@ -231,19 +273,20 @@
 .bigName {
   position: relative;
   z-index: 2;
-  margin-top: -30px;
+  margin-top: -20px;
   font-family: "Plus Jakarta Sans", "Inter", sans-serif;
-  font-size: clamp(2.25rem, 9vw, 6rem);
+  font-size: clamp(1.9rem, 6vw, 5rem);
   font-weight: 800;
   line-height: 1.05;
-  letter-spacing: -0.04em;
-  background: linear-gradient(120deg, #fff4ec 0%, #b8a8ff 60%, #6c63ff 100%);
+  letter-spacing: -0.03em;
+  background: linear-gradient(120deg, #ffffff 0%, #fff0e6 45%, #ffb9a8 100%);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
   text-align: center;
   max-width: 100%;
-  word-break: break-word;
+  white-space: nowrap;
+  text-shadow: 0 2px 30px rgba(255, 107, 91, 0.25);
   opacity: 0;
   animation: nameIn 1.2s 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
@@ -251,6 +294,13 @@
 @keyframes nameIn {
   from { opacity: 0; letter-spacing: -0.08em; transform: translateY(20px); }
   to { opacity: 1; letter-spacing: -0.04em; transform: translateY(0); }
+}
+
+@media (min-width: 1024px) {
+  .bigName {
+    white-space: nowrap;
+    font-size: clamp(2.5rem, 4vw, 4.5rem);
+  }
 }
 
 .bigNameSub {
@@ -1142,6 +1192,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .figureImg,
+  .figureHalo,
   .aboutBadge,
   .badgeDot,
   .playBtn::after {

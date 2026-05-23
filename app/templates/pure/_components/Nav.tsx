@@ -49,27 +49,6 @@ export default function Nav({ current = "home", variant = "dark" }: NavProps) {
   return (
     <>
       <header className={klass}>
-        <Link href="/templates/pure" className={styles.brand} aria-label="Pure home">
-          <svg
-            className={styles.brandIcon}
-            viewBox="0 0 48 48"
-            fill="none"
-            aria-hidden="true"
-          >
-            <defs>
-              <linearGradient id="pureNavGrad" x1="0" y1="0" x2="48" y2="48">
-                <stop offset="0%" stopColor="#ff6b5b" />
-                <stop offset="100%" stopColor="#ff8a7c" />
-              </linearGradient>
-            </defs>
-            <path d="M24 4 L44 40 L4 40 Z" fill="url(#pureNavGrad)" />
-            <path d="M24 18 L34 36 L14 36 Z" fill={variant === "light" ? "#fff" : "#0e0b2a"} />
-          </svg>
-          <span>
-            Pur<span className={styles.brandAccent}>e</span>
-          </span>
-        </Link>
-
         <nav className={styles.links} aria-label="Primary">
           {ITEMS.map((item) => (
             <Link

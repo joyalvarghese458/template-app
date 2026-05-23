@@ -128,15 +128,18 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: var(--pure-coral);
-  color: #fff;
-  padding: 16px 32px;
+  background: linear-gradient(135deg, var(--pure-coral) 0%, #e64b3b 100%);
+  color: #ffffff;
+  padding: 16px 34px;
   border-radius: var(--pure-radius-pill);
-  font-weight: 600;
+  font-weight: 800;
   font-size: 15px;
+  letter-spacing: 0.01em;
   border: none;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.18);
   transition: transform 0.3s var(--pure-easing), box-shadow 0.3s var(--pure-easing), background 0.2s;
-  box-shadow: 0 12px 28px -10px var(--pure-coral-glow);
+  box-shadow: 0 12px 28px -10px var(--pure-coral-glow),
+              inset 0 1px 0 rgba(255, 255, 255, 0.25);
   position: relative;
   overflow: hidden;
 }
