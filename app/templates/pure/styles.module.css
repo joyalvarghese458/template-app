@@ -10,9 +10,9 @@
   background: linear-gradient(180deg, #0e0b2a 0%, #1a1545 60%, #0e0b2a 100%);
   overflow: hidden;
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* mobile: push grid to top so image is high and content shows below */
   justify-content: center;
-  padding: 76px 20px 36px;
+  padding: 72px 20px 36px;
 }
 
 @media (min-width: 768px) {
@@ -23,6 +23,7 @@
 
 @media (min-width: 1024px) {
   .hero {
+    align-items: center; /* desktop: vertically center the 2-col layout */
     padding: 80px 60px 48px;
   }
 }
@@ -215,8 +216,8 @@
 
 .figureWrap {
   position: relative;
-  width: min(68vw, 240px);
-  height: min(75vw, 270px);
+  width: min(62vw, 210px);
+  height: min(68vw, 235px);
   max-width: 100%;
   margin: 0 auto;
   display: grid;
@@ -226,8 +227,8 @@
 
 @media (min-width: 480px) {
   .figureWrap {
-    width: min(60vw, 280px);
-    height: min(66vw, 320px);
+    width: min(56vw, 250px);
+    height: min(62vw, 280px);
   }
 }
 
