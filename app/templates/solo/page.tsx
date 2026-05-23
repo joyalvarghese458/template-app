@@ -335,80 +335,82 @@ export default function SoloPortfolio() {
 
       {/* ── HERO ────────────────────────────────────────── */}
       <section id="hero" className={styles.hero}>
-        {/* Full-bleed portrait — visible only on mobile */}
+
+        {/* ── Mobile: photo strip at the top (face visible, no content overlap) */}
         <div className={styles.heroBgPhoto} aria-hidden="true">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={PROFILE.avatar} alt="" />
+          {/* Overlay fades to var(--bg) — adapts to dark AND light mode */}
           <div className={styles.heroBgPhotoOverlay} />
         </div>
 
-        {/* animated blobs — visible only on desktop */}
-        <div className={styles.heroBlobA} aria-hidden="true" />
-        <div className={styles.heroBlobB} aria-hidden="true" />
-        <div className={styles.heroBlobC} aria-hidden="true" />
-        <div className={styles.heroNoise}  aria-hidden="true" />
+        {/* ── Content body (solid var(--bg) on mobile → theme change is obvious) */}
+        <div className={styles.heroBody}>
+          {/* Decorative blobs — desktop only */}
+          <div className={styles.heroBlobA} aria-hidden="true" />
+          <div className={styles.heroBlobB} aria-hidden="true" />
+          <div className={styles.heroBlobC} aria-hidden="true" />
+          <div className={styles.heroNoise}  aria-hidden="true" />
 
-        <div className={styles.container}>
-          <div className={styles.heroGrid}>
-            {/* LEFT / MOBILE-ONLY CONTENT */}
-            <div className={styles.heroContent}>
-              <div className={styles.heroBadge}>
-                <span className={styles.heroBadgeDot} />
-                {PROFILE.status}
-              </div>
+          <div className={styles.container}>
+            <div className={styles.heroGrid}>
 
-              <h1 className={styles.heroTitle}>
-                Designing<br />
-                <span className={styles.heroWordWrap}>
-                  <span key={wordIdx} className={styles.heroWord} aria-live="polite">
-                    {HERO_WORDS[wordIdx]}
-                  </span>
-                </span><br />
-                <span className={styles.heroTitleLight}>that Define You.</span>
-              </h1>
+              {/* Left column — all text content */}
+              <div className={styles.heroContent}>
+                <h1 className={styles.heroTitle}>
+                  Designing<br />
+                  <span className={styles.heroWordWrap}>
+                    <span key={wordIdx} className={styles.heroWord} aria-live="polite">
+                      {HERO_WORDS[wordIdx]}
+                    </span>
+                  </span><br />
+                  <span className={styles.heroTitleLight}>that Define You.</span>
+                </h1>
 
-              <p className={styles.heroLead}>{PROFILE.bio1}</p>
+                <p className={styles.heroLead}>{PROFILE.bio1}</p>
 
-              <div className={styles.heroActions}>
-                <a href="#work" className={styles.btnPrimary}>
-                  View my work <ArrowIcon />
-                </a>
-                <a href="#contact" className={styles.btnGhost}>
-                  Start a project
-                </a>
-              </div>
+                <div className={styles.heroActions}>
+                  <a href="#work" className={styles.btnPrimary}>
+                    View my work <ArrowIcon />
+                  </a>
+                  <a href="#contact" className={styles.btnGhost}>
+                    Start a project
+                  </a>
+                </div>
 
-              <div className={styles.heroStats}>
-                {STATS.map((s) => (
-                  <div key={s.label} className={styles.heroStat}>
-                    <span className={styles.heroStatValue}>{s.value}</span>
-                    <span className={styles.heroStatLabel}>{s.label}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* RIGHT COL — portrait (desktop only) */}
-            <div className={styles.heroVisual}>
-              <div className={styles.heroImgWrap}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={PROFILE.avatar} alt={PROFILE.name} className={styles.heroImg} />
-                <div className={styles.heroImgGlow} aria-hidden="true" />
-              </div>
-              <div className={styles.heroFloatCard}>
-                <span className={styles.heroFloatIcon}>✦</span>
-                <div>
-                  <div className={styles.heroFloatTitle}>Creative Director</div>
-                  <div className={styles.heroFloatSub}>Brand · Type · Motion</div>
+                <div className={styles.heroStats}>
+                  {STATS.map((s) => (
+                    <div key={s.label} className={styles.heroStat}>
+                      <span className={styles.heroStatValue}>{s.value}</span>
+                      <span className={styles.heroStatLabel}>{s.label}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
+
+              {/* Right column — portrait (desktop only) */}
+              <div className={styles.heroVisual}>
+                <div className={styles.heroImgWrap}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={PROFILE.avatar} alt={PROFILE.name} className={styles.heroImg} />
+                  <div className={styles.heroImgGlow} aria-hidden="true" />
+                </div>
+                <div className={styles.heroFloatCard}>
+                  <span className={styles.heroFloatIcon}>✦</span>
+                  <div>
+                    <div className={styles.heroFloatTitle}>Creative Director</div>
+                    <div className={styles.heroFloatSub}>Brand · Type · Motion</div>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
-        </div>
 
-        <div className={styles.scrollCue} aria-hidden="true">
-          <span className={styles.scrollLine} />
-          <span className={styles.scrollText}>scroll</span>
+          <div className={styles.scrollCue} aria-hidden="true">
+            <span className={styles.scrollLine} />
+            <span className={styles.scrollText}>scroll</span>
+          </div>
         </div>
       </section>
 
