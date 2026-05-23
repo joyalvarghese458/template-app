@@ -138,13 +138,13 @@
   background: #ffffff;
 }
 
-.filterActive,
-.filterActive:hover {
-  background: #14112d;
+.filtersInner .filterActive,
+.filtersInner .filterActive:hover {
+  background: #ff6b5b;
   color: #ffffff;
-  border-color: #14112d;
+  border-color: #ff6b5b;
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px -10px rgba(20, 17, 45, 0.5);
+  box-shadow: 0 10px 24px -10px rgba(255, 107, 91, 0.5);
 }
 
 /* ── Grid ─────────────────────────────────────────── */
