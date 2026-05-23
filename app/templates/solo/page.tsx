@@ -358,13 +358,13 @@ export default function SoloPortfolio() {
               {/* Left column — all text content */}
               <div className={styles.heroContent}>
                 <h1 className={styles.heroTitle}>
-                  Designing<br />
+                  <span className={styles.heroTitleTop}>Designing</span>
                   <span className={styles.heroWordWrap}>
                     <span key={wordIdx} className={styles.heroWord} aria-live="polite">
                       {HERO_WORDS[wordIdx]}
                     </span>
-                  </span><br />
-                  <span className={styles.heroTitleLight}>that Define You.</span>
+                  </span>
+                  <span className={styles.heroTitleBottom}>that Define You.</span>
                 </h1>
 
                 <p className={styles.heroLead}>{PROFILE.bio1}</p>
@@ -407,10 +407,6 @@ export default function SoloPortfolio() {
             </div>
           </div>
 
-          <div className={styles.scrollCue} aria-hidden="true">
-            <span className={styles.scrollLine} />
-            <span className={styles.scrollText}>scroll</span>
-          </div>
         </div>
       </section>
 
@@ -431,6 +427,26 @@ export default function SoloPortfolio() {
                 <span className={styles.brandSep} aria-hidden="true">✦</span>
               </span>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── STICKY STATEMENT ────────────────────────────── */}
+      <section className={styles.stickySection}>
+        <div className={styles.stickySectionWrapper}>
+          <div className={styles.stickySectionPanel}>
+            <div className={styles.stickyBgGlow} aria-hidden="true" />
+            <div className={styles.stickyInner}>
+              <span className={styles.stickyLabel}>Design Philosophy</span>
+              <h2 className={styles.stickyHeading}>
+                Good design is invisible.<br />
+                Great design is{" "}
+                <em className={styles.stickyAccent}>unforgettable.</em>
+              </h2>
+              <div className={styles.stickyDivider}>
+                <span className={styles.stickyDividerDot} />
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -824,6 +840,15 @@ function TimelineItem({ item, index }: { item: (typeof EXPERIENCE)[0]; index: nu
 }
 
 // ── ICONS ──────────────────────────────────────────────────────────
+
+function ScrollArrowIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M12 5v14" /><path d="M5 15l7 7 7-7" />
+    </svg>
+  );
+}
 
 function ArrowIcon() {
   return (
