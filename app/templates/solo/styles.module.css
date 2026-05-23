@@ -641,7 +641,7 @@
 
 .heroImageWrapper {
   position: relative;
-  height: 130svh;
+  height: 100svh;
 }
 
 .heroImagePanel {
@@ -662,7 +662,7 @@
 
 /* ── BRANDS MARQUEE ─────────────────────────────────────── */
 .brands {
-  padding: 40px 0;
+  padding: 24px 0;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   overflow: hidden;
@@ -741,7 +741,7 @@
 
 .stickySectionWrapper {
   position: relative;
-  height: 110svh;
+  height: 100svh;
 }
 @media (min-width: 768px) { .stickySectionWrapper { height: 120svh; } }
 
