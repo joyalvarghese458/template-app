@@ -6,31 +6,9 @@ import { useEffect, useRef, useState } from "react";
  * Reveal on scroll using IntersectionObserver.
  * Adds the visible state once the element enters the viewport.
  */
-export function useReveal<T extends HTMLElement>(threshold = 0.18) {
+export function useReveal<T extends HTMLElement>(_threshold = 0.18) {
   const ref = useRef<T>(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-
-    const io = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            setVisible(true);
-            io.unobserve(entry.target);
-          }
-        }
-      },
-      { threshold, rootMargin: "0px 0px -10% 0px" }
-    );
-
-    io.observe(el);
-    return () => io.disconnect();
-  }, [threshold]);
-
-  return { ref, visible } as const;
+  return { ref, visible: true } as const;
 }
 
 /**

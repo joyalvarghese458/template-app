@@ -12,7 +12,6 @@ import { useState } from "react";
 import Link from "next/link";
 import Nav from "./_components/Nav";
 import Footer from "./_components/Footer";
-import Loader from "./_components/Loader";
 import HeroIntro from "./_components/HeroIntro";
 import { useReveal } from "./_components/hooks";
 import theme from "./_components/theme.module.css";
@@ -130,7 +129,6 @@ const CLIENTS = [
 export default function PureHome() {
   return (
     <div className={theme.root}>
-      <Loader />
       <Nav current="home" />
 
       <Hero />

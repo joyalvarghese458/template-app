@@ -3,7 +3,6 @@
 import Link from "next/link";
 import Nav from "../_components/Nav";
 import Footer from "../_components/Footer";
-import Loader from "../_components/Loader";
 import { useReveal } from "../_components/hooks";
 import theme from "../_components/theme.module.css";
 import styles from "./styles.module.css";
@@ -72,7 +71,6 @@ const POSTS = [
 export default function PureBlog() {
   return (
     <div className={theme.root}>
-      <Loader />
       <Nav current="blog" />
 
       <section className={styles.banner}>
