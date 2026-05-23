@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import styles from "./Nav.module.css";
 
-export type NavCurrent = "home" | "about" | "portfolio" | "pages" | "blog" | "contact";
+export type NavCurrent = "home" | "about" | "portfolio" | "blog" | "contact";
 
 interface NavProps {
   current?: NavCurrent;
@@ -15,7 +15,6 @@ const ITEMS: { key: NavCurrent; label: string; href: string }[] = [
   { key: "home", label: "Home", href: "/templates/pure" },
   { key: "about", label: "About", href: "/templates/pure/about" },
   { key: "portfolio", label: "Portfolio", href: "/templates/pure/portfolio" },
-  { key: "pages", label: "Pages", href: "/templates/pure/portfolio" },
   { key: "blog", label: "Blog", href: "/templates/pure/blog" },
   { key: "contact", label: "Contact", href: "/templates/pure/contact" },
 ];

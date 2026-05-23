@@ -12,12 +12,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 110px 20px 60px;
+  padding: 76px 20px 36px;
 }
 
 @media (min-width: 768px) {
   .hero {
-    padding: 130px 40px 80px;
+    padding: 84px 40px 44px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    padding: 80px 60px 48px;
   }
 }
 
@@ -55,12 +61,13 @@
   max-width: 1280px;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 40px;
+  gap: 20px;
 }
 
 @media (min-width: 1024px) {
   .heroGrid {
-    grid-template-columns: 1fr 1.5fr 1fr;
+    grid-template-columns: 1fr 1.6fr 1fr;
+    gap: 40px;
     align-items: center;
   }
 }
@@ -70,6 +77,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 18px;
   z-index: 2;
   order: 2;
@@ -78,7 +86,9 @@
 @media (min-width: 1024px) {
   .heroLeft {
     align-items: flex-start;
+    justify-content: center;
     order: 0;
+    align-self: center;
   }
 }
 
@@ -136,9 +146,9 @@
 .socials {
   display: inline-flex;
   gap: 16px;
-  margin-top: 30px;
+  margin-top: 0;
   opacity: 0;
-  animation: badgeIn 1s 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: badgeIn 1s 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 .socialIcon {
@@ -166,16 +176,12 @@
   order: 1;
 }
 
-@media (min-width: 640px) {
-  .heroCenter {
-    min-height: 460px;
-  }
-}
+/* heroCenter height is content-driven; no fixed min-height needed */
 
 .figureWrap {
   position: relative;
-  width: min(70vw, 300px);
-  height: min(78vw, 360px);
+  width: min(68vw, 240px);
+  height: min(75vw, 270px);
   max-width: 100%;
   margin: 0 auto;
   display: grid;
@@ -183,14 +189,28 @@
   transform-style: preserve-3d;
 }
 
+@media (min-width: 480px) {
+  .figureWrap {
+    width: min(60vw, 280px);
+    height: min(66vw, 320px);
+  }
+}
+
 @media (min-width: 640px) {
   .figureWrap {
-    width: min(55vw, 360px);
-    height: min(60vw, 400px);
+    width: min(50vw, 310px);
+    height: min(55vw, 350px);
   }
 }
 
 @media (min-width: 1024px) {
+  .figureWrap {
+    width: 320px;
+    height: 380px;
+  }
+}
+
+@media (min-width: 1280px) {
   .figureWrap {
     width: 360px;
     height: 420px;
@@ -296,7 +316,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 32px;
+  gap: 20px;
   z-index: 2;
   order: 3;
   width: 100%;
@@ -307,18 +327,19 @@
     flex-direction: column;
     align-items: flex-end;
     text-align: right;
-    gap: 24px;
+    gap: 4px;
+    align-self: center;
   }
 }
 
 .stat {
   position: relative;
-  padding: 12px 0;
+  padding: 8px 0;
   opacity: 0;
   transform: translateX(30px);
   animation: badgeIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   text-align: center;
-  min-width: 90px;
+  min-width: 80px;
 }
 
 .stat:nth-child(1) { animation-delay: 0.5s; }
@@ -342,17 +363,17 @@
 
 .statValue {
   font-family: "Plus Jakarta Sans", "Inter", sans-serif;
-  font-size: 36px;
+  font-size: clamp(26px, 2.4vw, 34px);
   font-weight: 800;
   color: #fff;
   letter-spacing: -0.03em;
-  margin: 0 0 4px;
+  margin: 0 0 2px;
   line-height: 1;
 }
 
 .statLabel {
   color: rgba(255, 255, 255, 0.6);
-  font-size: 13px;
+  font-size: clamp(11px, 0.9vw, 13px);
   margin: 0;
 }
 
@@ -1172,8 +1193,8 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 16px;
-  padding: 20px 16px 8px;
+  gap: 8px;
+  padding: 8px 16px 4px;
   width: 100%;
   opacity: 0;
   animation: mobileIntroIn 0.7s 0.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
@@ -1186,19 +1207,19 @@
 
 .mobileIntroHey {
   margin: 0;
-  font-size: clamp(11px, 1.2vw, 14px);
+  font-size: clamp(10px, 2.6vw, 13px);
   font-weight: 500;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .mobileIntroName {
   margin: 0;
   font-family: "Plus Jakarta Sans", "Inter", sans-serif;
-  font-size: clamp(1.8rem, 4vw, 3.4rem);
+  font-size: clamp(1.55rem, 4.5vw, 3.2rem);
   font-weight: 800;
-  line-height: 1.08;
+  line-height: 1.06;
   letter-spacing: -0.03em;
   background: linear-gradient(120deg, #ffffff 0%, #fff0e6 45%, #ffb9a8 100%);
   background-clip: text;
@@ -1211,12 +1232,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 32px;
+  min-height: 24px;
   gap: 1px;
 }
 
 .mobileIntroTypingText {
-  font-size: clamp(14px, 1.5vw, 20px);
+  font-size: clamp(13px, 3.2vw, 18px);
   font-weight: 700;
   color: #ff6b5b;
   letter-spacing: 0.01em;
@@ -1225,7 +1246,7 @@
 .mobileIntroCursor {
   display: inline-block;
   width: 2px;
-  height: 1.1em;
+  height: 1em;
   background: #6c63ff;
   border-radius: 1px;
   vertical-align: middle;
@@ -1241,7 +1262,7 @@
 /* CTA line */
 .mobileIntroCta {
   margin: 2px 0 0;
-  font-size: clamp(13px, 1.1vw, 15px);
+  font-size: clamp(12px, 2.8vw, 15px);
   color: rgba(255, 255, 255, 0.82);
 }
 
@@ -1263,23 +1284,32 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
   flex-wrap: wrap;
+  margin-top: 2px;
 }
 
 .mobileIntroWa,
 .mobileIntroEmail {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  padding: 10px 20px;
+  gap: 6px;
+  padding: 9px 16px;
   border-radius: 999px;
-  font-size: clamp(12px, 1vw, 14px);
+  font-size: clamp(11px, 2.6vw, 13px);
   font-weight: 600;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   transition: background 0.2s, border-color 0.2s, transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
   white-space: nowrap;
+}
+
+@media (min-width: 1024px) {
+  .mobileIntroWa,
+  .mobileIntroEmail {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
 }
 
 .mobileIntroWa {
