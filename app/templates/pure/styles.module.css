@@ -1199,3 +1199,176 @@
     animation: none !important;
   }
 }
+
+/* ── Mobile hero overrides ─────────────────────────────── */
+
+@media (max-width: 1023px) {
+  /* Stack figure at top, intro below — no bottom-alignment */
+  .heroCenter {
+    justify-content: flex-start;
+    min-height: auto;
+    gap: 0;
+  }
+
+  /* Hide desktop name overlay + sub-line on mobile */
+  .bigName {
+    display: none;
+  }
+
+  .bigNameSub {
+    display: none;
+  }
+
+  /* Hide role/email pill badges on mobile (replaced by mobileIntro) */
+  .badge {
+    display: none;
+  }
+}
+
+/* ── Mobile intro block (shown only on mobile) ─────────── */
+
+.mobileIntro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+  padding: 20px 16px 12px;
+  width: 100%;
+  opacity: 0;
+  animation: mobileIntroIn 0.7s 0.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@media (min-width: 1024px) {
+  .mobileIntro {
+    display: none;
+  }
+}
+
+@keyframes mobileIntroIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.mobileIntroHey {
+  margin: 0;
+  font-size: clamp(13px, 3.5vw, 15px);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.mobileIntroName {
+  margin: 0;
+  font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+  font-size: clamp(1.75rem, 7.5vw, 2.6rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  background: linear-gradient(120deg, #ffffff 0%, #fff0e6 45%, #ffb9a8 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Typing row */
+.mobileIntroTypingRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 28px;
+  gap: 1px;
+}
+
+.mobileIntroTypingText {
+  font-size: clamp(14px, 4vw, 17px);
+  font-weight: 700;
+  color: #ff6b5b;
+  letter-spacing: 0.01em;
+}
+
+.mobileIntroCursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  background: #6c63ff;
+  border-radius: 1px;
+  vertical-align: middle;
+  margin-left: 2px;
+  animation: cursorBlink 0.75s step-end infinite;
+}
+
+@keyframes cursorBlink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* CTA line */
+.mobileIntroCta {
+  margin: 4px 0 0;
+  font-size: clamp(13px, 3.8vw, 15px);
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.mobileIntroCtaLink {
+  color: #ff6b5b;
+  font-weight: 700;
+  margin-left: 5px;
+  border-bottom: 1px solid rgba(255, 107, 91, 0.45);
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.mobileIntroCtaLink:hover {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Action buttons */
+.mobileIntroActions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.mobileIntroWa,
+.mobileIntroEmail {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-size: clamp(12px, 3.5vw, 14px);
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: background 0.2s, border-color 0.2s, transform 0.25s cubic-bezier(0.22,1,0.36,1);
+  white-space: nowrap;
+}
+
+.mobileIntroWa {
+  background: rgba(37, 211, 102, 0.12);
+  border: 1px solid rgba(37, 211, 102, 0.28);
+  color: #25d366;
+}
+
+.mobileIntroWa:hover {
+  background: rgba(37, 211, 102, 0.22);
+  border-color: rgba(37, 211, 102, 0.5);
+  transform: translateY(-2px);
+}
+
+.mobileIntroEmail {
+  background: rgba(108, 99, 255, 0.12);
+  border: 1px solid rgba(108, 99, 255, 0.28);
+  color: #a09aff;
+}
+
+.mobileIntroEmail:hover {
+  background: rgba(108, 99, 255, 0.22);
+  border-color: rgba(108, 99, 255, 0.5);
+  transform: translateY(-2px);
+}

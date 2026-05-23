@@ -13,6 +13,7 @@ import Link from "next/link";
 import Nav from "./_components/Nav";
 import Footer from "./_components/Footer";
 import Loader from "./_components/Loader";
+import HeroIntro from "./_components/HeroIntro";
 import { useReveal } from "./_components/hooks";
 import theme from "./_components/theme.module.css";
 import styles from "./styles.module.css";
@@ -22,8 +23,10 @@ import styles from "./styles.module.css";
 const PROFILE = {
   name: "Jonathon Doe",
   role: "UI/UX Designer",
+  roles: ["UI/UX Designer", "Graphic Designer", "Brand Strategist", "Web Designer"],
   location: "Based in USA",
   email: "doe@gmail.com",
+  whatsapp: "https://wa.me/",
 };
 
 const STATS = [
@@ -207,6 +210,7 @@ function Hero() {
               draggable={false}
             />
           </div>
+          {/* Desktop: name + CTA overlaid/below figure */}
           <h1 className={styles.bigName}>{PROFILE.name}</h1>
           <p className={styles.bigNameSub}>
             Do you have a project?
@@ -214,6 +218,13 @@ function Hero() {
               Let&apos;s Talk
             </Link>
           </p>
+          {/* Mobile-only: greeting, typing role, CTA, WhatsApp + email */}
+          <HeroIntro
+            name={PROFILE.name}
+            email={PROFILE.email}
+            roles={PROFILE.roles}
+            whatsapp={PROFILE.whatsapp}
+          />
         </div>
 
         {/* Right stats */}
