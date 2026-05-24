@@ -157,6 +157,8 @@ export const TEMPLATES: Template[] = [
     audiences: ["creators", "founders"], specialties: ["writer"] },
   { id: "s4", slug: "solo", title: "Solo", tag: "Graphic Designer · Single page", tier: "starter",
     audiences: ["designers"], specialties: ["graphic", "brand"] },
+  { id: "p11", slug: "graphic-designer", title: "Luminary", tag: "Graphic Designer · Premium SPA", tier: "pro",
+    audiences: ["designers"], specialties: ["graphic", "brand", "motion"] },
   { id: "s5", title: "Profile One", tag: "Personal brand", tier: "starter",
     audiences: ["founders", "creators"], specialties: ["personal-brand", "coach"] },
   { id: "s6", title: "Classic", tag: "CV · Print-ready", tier: "starter",
