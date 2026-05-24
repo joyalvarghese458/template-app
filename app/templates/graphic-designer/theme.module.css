@@ -45,7 +45,7 @@
 
 .page a { text-decoration: none; color: inherit; }
 .page img { display: block; max-width: 100%; }
-.page button { cursor: pointer; border: none; background: none; }
+:where(.page) button { cursor: pointer; border: none; background: none; }
 
 /* ── Layout Primitives ─────────────────────────────────────────── */
 .container {

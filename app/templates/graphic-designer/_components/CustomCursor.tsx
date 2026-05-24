@@ -62,8 +62,8 @@ export default function CustomCursor() {
 
   return (
     <>
-      <div ref={cursorRef} className={styles.cursor} aria-hidden="true" />
-      <div ref={dotRef} className={styles.cursorDot} aria-hidden="true" />
+      <div ref={cursorRef} className={styles.cursor} style={{ left: "-200px", top: "-200px" }} aria-hidden="true" />
+      <div ref={dotRef} className={styles.cursorDot} style={{ left: "-200px", top: "-200px" }} aria-hidden="true" />
     </>
   );
 }
