@@ -622,7 +622,7 @@
 /* ── Hero — xl+ viewport fit (desktop only) ─────────────────────── */
 @media (min-width: 1280px) {
   .heroContent {
-    padding-block: 6rem 2.5rem;
+    padding-block: 5rem 1.25rem;
   }
 
   .heroInner {
@@ -630,28 +630,28 @@
   }
 
   .heroKicker {
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
   }
 
   .heroTitle {
-    font-size: clamp(3rem, 5vw, 5.5rem);
-    margin-bottom: 1.25rem;
+    font-size: clamp(2.75rem, 4.5vw, 5rem);
+    margin-bottom: 1rem;
   }
 
   .heroDesc {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
   }
 
   .heroActions {
-    margin-bottom: 1.75rem;
+    margin-bottom: 1.5rem;
   }
 
   .heroSocials {
-    margin-top: 1rem;
+    margin-top: 0.875rem;
   }
 
   .heroScroll {
-    margin-top: 1.25rem !important;
+    margin-top: 1rem !important;
   }
 }
 
