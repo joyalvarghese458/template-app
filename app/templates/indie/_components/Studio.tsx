@@ -46,14 +46,15 @@ function ServiceRow({
         style={{
           width: "100%",
           display: "grid",
-          gridTemplateColumns: "3rem 1fr auto auto",
-          gap: "1.5rem",
+          gridTemplateColumns: "2.5rem 1fr auto auto",
+          gap: "1.25rem",
           alignItems: "center",
-          padding: "1.75rem 0",
+          padding: "1.5rem 0",
           background: "none",
           border: "none",
           cursor: "pointer",
           textAlign: "left",
+          WebkitTapHighlightColor: "transparent",
         }}
         className="indie-service-row"
       >
@@ -65,7 +66,8 @@ function ServiceRow({
             color: isOpen ? "var(--i-accent)" : "var(--i-ink-faint)",
             fontVariantNumeric: "tabular-nums",
             transition: "color 0.3s ease",
-            paddingTop: "0.2rem",
+            paddingTop: "0.15rem",
+            flexShrink: 0,
           }}
         >
           {String(index + 1).padStart(2, "0")}
@@ -74,19 +76,20 @@ function ServiceRow({
         {/* Title */}
         <span
           style={{
-            fontSize: "clamp(1.3rem, 2.5vw, 2rem)",
+            fontSize: "clamp(1.1rem, 2.5vw, 2rem)",
             fontFamily: "var(--i-font-display)",
             fontWeight: 300,
             letterSpacing: "-0.02em",
-            color: isOpen ? "var(--i-ink)" : hovered ? "var(--i-ink)" : "var(--i-ink)",
+            color: "var(--i-ink)",
             transition: "color 0.3s ease",
             lineHeight: 1.2,
+            wordBreak: "break-word",
           }}
         >
           {service.title}
         </span>
 
-        {/* Category tag */}
+        {/* Category tag — desktop only */}
         <span
           style={{
             fontSize: "0.72rem",
@@ -100,13 +103,13 @@ function ServiceRow({
           {service.category}
         </span>
 
-        {/* Toggle icon */}
+        {/* Toggle icon — 40×40 touch target */}
         <motion.div
           animate={{ rotate: isOpen ? 45 : 0 }}
           transition={{ duration: 0.35, ease }}
           style={{
-            width: 32,
-            height: 32,
+            width: 40,
+            height: 40,
             borderRadius: "50%",
             border: `1px solid ${isOpen ? "var(--i-accent)" : "var(--i-border)"}`,
             display: "flex",
@@ -114,7 +117,8 @@ function ServiceRow({
             justifyContent: "center",
             color: isOpen ? "var(--i-accent)" : "var(--i-ink-faint)",
             flexShrink: 0,
-            transition: "border-color 0.3s ease, color 0.3s ease",
+            transition: "border-color 0.3s ease, color 0.3s ease, background 0.3s ease",
+            background: isOpen ? "rgba(129,140,248,0.06)" : "transparent",
           }}
         >
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
@@ -136,15 +140,15 @@ function ServiceRow({
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.45, ease }}
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
             style={{ overflow: "hidden" }}
           >
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns: "3rem 1fr 1fr",
-                gap: "1.5rem",
-                paddingBottom: "2.25rem",
+                gridTemplateColumns: "2.5rem 1fr 1fr",
+                gap: "1.25rem",
+                paddingBottom: "2rem",
               }}
               className="indie-service-expand"
             >
@@ -600,40 +604,57 @@ export default function Studio() {
           }
           .indie-studio-outer > div:first-child {
             position: static !important;
-            padding-top: 3rem !important;
-            padding-bottom: 2rem !important;
+            padding-top: 2.5rem !important;
+            padding-bottom: 1.75rem !important;
             border-bottom: 1px solid var(--i-border);
           }
           .indie-studio-outer > div:last-child {
-            padding-top: 2rem !important;
+            padding-top: 1.5rem !important;
+            padding-bottom: 3rem !important;
           }
         }
-        /* ── Services head / tools / testimonials ── */
+
+        /* ── Accordion rows ── */
+        .indie-service-row { color: var(--i-ink); }
+
+        /* ── Smooth expand on all sizes ── */
+        .indie-service-expand {
+          transition: none;
+        }
+
+        /* ── Tablet: hide category tag ── */
         @media (max-width: 860px) {
+          .indie-service-cat { display: none !important; }
           .indie-services-head { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
           .indie-tools-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
           .indie-testimonials-grid { grid-template-columns: 1fr !important; }
-          .indie-service-cat { display: none !important; }
         }
         @media (min-width: 861px) {
           .indie-service-cat { display: inline !important; }
         }
-        /* ── Service expand panel ── */
-        .indie-service-row { color: var(--i-ink); }
+
+        /* ── Mobile: collapse expand panel, tighter row ── */
         @media (max-width: 640px) {
-          .indie-service-expand { grid-template-columns: 1fr !important; }
-          .indie-service-expand > div:first-child { display: none; }
+          .indie-service-expand {
+            grid-template-columns: 1fr !important;
+            gap: 1.5rem !important;
+            padding-bottom: 1.5rem !important;
+          }
+          /* Hide number spacer column */
+          .indie-service-expand > div:first-child { display: none !important; }
+
+          /* Tighter row button */
           .indie-service-row {
             grid-template-columns: 2rem 1fr auto !important;
-            gap: 0.75rem !important;
+            gap: 0.875rem !important;
             padding: 1.25rem 0 !important;
           }
         }
-        /* ── Section padding ── */
+
+        /* ── Small phone refinements ── */
         @media (max-width: 480px) {
-          #studio > div { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
-          .indie-tools-flex { gap: 0.4rem !important; }
-          .indie-testimonials-grid > div { padding: 1.5rem !important; }
+          .indie-tools-flex { gap: 0.375rem !important; }
+          .indie-testimonials-grid > div { padding: 1.25rem !important; }
         }
       `}</style>
     </section>

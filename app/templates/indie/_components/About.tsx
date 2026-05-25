@@ -17,6 +17,148 @@ export default function About() {
       ref={sectionRef}
       style={{ borderTop: "1px solid var(--i-border)" }}
     >
+
+      {/* ═══════════════════════════════════════════════════════════
+          MOBILE-ONLY compact identity strip
+          Hidden on desktop (>860px), replaces the full aside
+      ═══════════════════════════════════════════════════════════ */}
+      <motion.div
+        className="indie-about-mobile-id"
+        initial={{ opacity: 0, y: 16 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.8, ease }}
+        style={{ display: "none" }}
+      >
+        {/* Top row: monogram + name/role + badge */}
+        <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+          <div
+            style={{
+              width: 52,
+              height: 52,
+              borderRadius: "50%",
+              border: "1px solid var(--i-accent)",
+              background: "var(--i-accent-dim)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              flexShrink: 0,
+            }}
+          >
+            <span
+              style={{
+                fontSize: "1.15rem",
+                fontFamily: "var(--i-font-display)",
+                fontWeight: 300,
+                color: "var(--i-accent)",
+              }}
+            >
+              {PROFILE.initials}
+            </span>
+          </div>
+
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <div
+              style={{
+                fontSize: "0.875rem",
+                fontWeight: 500,
+                color: "var(--i-ink)",
+                letterSpacing: "-0.01em",
+                marginBottom: "0.2rem",
+              }}
+            >
+              {PROFILE.name}
+            </div>
+            <div style={{ fontSize: "0.72rem", color: "var(--i-ink-muted)", lineHeight: 1.4 }}>
+              {PROFILE.role}
+            </div>
+          </div>
+
+          {/* Availability badge */}
+          <div
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "0.4rem",
+              padding: "0.35rem 0.65rem",
+              borderRadius: "100px",
+              border: "1px solid rgba(74,222,128,0.3)",
+              background: "rgba(74,222,128,0.06)",
+              flexShrink: 0,
+            }}
+          >
+            <div
+              style={{
+                width: 5,
+                height: 5,
+                borderRadius: "50%",
+                background: "#4ade80",
+                boxShadow: "0 0 6px #4ade80",
+              }}
+            />
+            <span style={{ fontSize: "0.6rem", color: "rgba(74,222,128,0.85)", letterSpacing: "0.05em", whiteSpace: "nowrap" }}>
+              {PROFILE.availability}
+            </span>
+          </div>
+        </div>
+
+        {/* Meta row: location + status */}
+        <div style={{ display: "flex", gap: "2rem", flexWrap: "wrap" }}>
+          {[
+            { label: "Based in", value: PROFILE.location },
+            { label: "Status",   value: PROFILE.status },
+          ].map(({ label, value }) => (
+            <div key={label}>
+              <div
+                style={{
+                  fontSize: "0.58rem",
+                  letterSpacing: "0.14em",
+                  textTransform: "uppercase",
+                  color: "var(--i-ink-faint)",
+                  marginBottom: "0.2rem",
+                }}
+              >
+                {label}
+              </div>
+              <div style={{ fontSize: "0.78rem", color: "var(--i-ink-muted)" }}>{value}</div>
+            </div>
+          ))}
+        </div>
+
+        {/* Social links row */}
+        <div style={{ display: "flex", gap: "0" }}>
+          {[
+            { label: "Instagram", href: PROFILE.instagram },
+            { label: "Vimeo",     href: PROFILE.vimeo },
+            { label: "LinkedIn",  href: PROFILE.linkedin },
+            { label: "Behance",   href: PROFILE.behance },
+          ].map(({ label, href }) => (
+            <a
+              key={label}
+              href={href}
+              style={{
+                fontSize: "0.7rem",
+                color: "var(--i-ink-faint)",
+                textDecoration: "none",
+                letterSpacing: "0.04em",
+                padding: "0.5rem 0.875rem 0.5rem 0",
+                display: "flex",
+                alignItems: "center",
+                gap: "0.35rem",
+                marginRight: "0.5rem",
+              }}
+            >
+              <svg width="7" height="7" viewBox="0 0 8 8" fill="none">
+                <path d="M1 7L7 1M7 1H3M7 1v4" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              {label}
+            </a>
+          ))}
+        </div>
+      </motion.div>
+
+      {/* ═══════════════════════════════════════════════════════════
+          DESKTOP two-column layout
+      ═══════════════════════════════════════════════════════════ */}
       <div
         style={{
           maxWidth: 1240,
@@ -29,10 +171,9 @@ export default function About() {
         }}
         className="indie-about-outer"
       >
-        {/* ═══════════════════════════════════════════════════════════
-            LEFT — sticky identity panel
-        ═══════════════════════════════════════════════════════════ */}
+        {/* ── LEFT: sticky identity panel (desktop only) ── */}
         <motion.aside
+          className="indie-about-aside"
           initial={{ opacity: 0, x: -24 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 1.0, delay: 0.1, ease }}
@@ -43,7 +184,6 @@ export default function About() {
             paddingBottom: "3rem",
           }}
         >
-          {/* Section index */}
           <div
             style={{
               fontSize: "0.6rem",
@@ -56,7 +196,6 @@ export default function About() {
             04 / About
           </div>
 
-          {/* Monogram */}
           <div
             style={{
               width: 64,
@@ -83,7 +222,6 @@ export default function About() {
             </span>
           </div>
 
-          {/* Name + role */}
           <div
             style={{
               fontSize: "0.85rem",
@@ -106,19 +244,11 @@ export default function About() {
             {PROFILE.role}
           </div>
 
-          <div
-            style={{
-              width: "100%",
-              height: 1,
-              background: "var(--i-border)",
-              marginBottom: "1.5rem",
-            }}
-          />
+          <div style={{ width: "100%", height: 1, background: "var(--i-border)", marginBottom: "1.5rem" }} />
 
-          {/* Meta */}
           {[
             { label: "Based in", value: PROFILE.location },
-            { label: "Status", value: PROFILE.status },
+            { label: "Status",   value: PROFILE.status },
           ].map(({ label, value }) => (
             <div key={label} style={{ marginBottom: "1rem" }}>
               <div
@@ -132,13 +262,10 @@ export default function About() {
               >
                 {label}
               </div>
-              <div style={{ fontSize: "0.78rem", color: "var(--i-ink-muted)" }}>
-                {value}
-              </div>
+              <div style={{ fontSize: "0.78rem", color: "var(--i-ink-muted)" }}>{value}</div>
             </div>
           ))}
 
-          {/* Availability badge */}
           <div
             style={{
               display: "inline-flex",
@@ -162,20 +289,17 @@ export default function About() {
                 flexShrink: 0,
               }}
             />
-            <span
-              style={{ fontSize: "0.65rem", color: "rgba(74,222,128,0.85)", letterSpacing: "0.06em" }}
-            >
+            <span style={{ fontSize: "0.65rem", color: "rgba(74,222,128,0.85)", letterSpacing: "0.06em" }}>
               {PROFILE.availability}
             </span>
           </div>
 
-          {/* Social links */}
           <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
             {[
               { label: "Instagram", href: PROFILE.instagram },
-              { label: "Vimeo", href: PROFILE.vimeo },
-              { label: "LinkedIn", href: PROFILE.linkedin },
-              { label: "Behance", href: PROFILE.behance },
+              { label: "Vimeo",     href: PROFILE.vimeo },
+              { label: "LinkedIn",  href: PROFILE.linkedin },
+              { label: "Behance",   href: PROFILE.behance },
             ].map(({ label, href }) => (
               <a
                 key={label}
@@ -207,19 +331,16 @@ export default function About() {
           </div>
         </motion.aside>
 
-        {/* ═══════════════════════════════════════════════════════════
-            RIGHT — scrolling narrative content
-        ═══════════════════════════════════════════════════════════ */}
-        <div style={{ paddingTop: "4rem", paddingBottom: "5rem" }}>
+        {/* ── RIGHT: scrolling content ── */}
+        <div className="indie-about-content" style={{ paddingTop: "4rem", paddingBottom: "5rem" }}>
 
-          {/* Heading */}
           <motion.h2
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={vp}
             transition={{ duration: 1.1, ease }}
             style={{
-              fontSize: "clamp(2rem, 4vw, 3.8rem)",
+              fontSize: "clamp(1.9rem, 4vw, 3.8rem)",
               fontFamily: "var(--i-font-display)",
               fontWeight: 300,
               lineHeight: 1.1,
@@ -233,7 +354,6 @@ export default function About() {
             <em>every single frame.</em>
           </motion.h2>
 
-          {/* Studio image */}
           <motion.div
             initial={{ opacity: 0, clipPath: "inset(8% 0 8% 0)" }}
             whileInView={{ opacity: 1, clipPath: "inset(0% 0 0% 0)" }}
@@ -250,24 +370,17 @@ export default function About() {
             <img
               src={PROFILE.studioImage}
               alt="Creative studio environment"
-              style={{
-                width: "100%",
-                aspectRatio: "16 / 9",
-                objectFit: "cover",
-                display: "block",
-              }}
+              style={{ width: "100%", aspectRatio: "16 / 9", objectFit: "cover", display: "block" }}
             />
             <div
               style={{
                 position: "absolute",
                 inset: 0,
-                background:
-                  "linear-gradient(to bottom, transparent 50%, rgba(5,5,8,0.5) 100%)",
+                background: "linear-gradient(to bottom, transparent 50%, rgba(5,5,8,0.5) 100%)",
               }}
             />
           </motion.div>
 
-          {/* Bio paragraphs */}
           {[PROFILE.bio1, PROFILE.bio2, PROFILE.bio3].map((bio, i) => (
             <motion.p
               key={i}
@@ -287,7 +400,6 @@ export default function About() {
             </motion.p>
           ))}
 
-          {/* Philosophy quote */}
           <motion.blockquote
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -330,7 +442,6 @@ export default function About() {
             </cite>
           </motion.blockquote>
 
-          {/* Stats grid */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -359,7 +470,7 @@ export default function About() {
               >
                 <div
                   style={{
-                    fontSize: "clamp(1.4rem, 2.5vw, 2.2rem)",
+                    fontSize: "clamp(1.3rem, 2.5vw, 2.2rem)",
                     fontFamily: "var(--i-font-display)",
                     fontWeight: 300,
                     color: "var(--i-ink)",
@@ -372,7 +483,7 @@ export default function About() {
                 </div>
                 <div
                   style={{
-                    fontSize: "0.6rem",
+                    fontSize: "0.58rem",
                     color: "var(--i-ink-muted)",
                     letterSpacing: "0.07em",
                     textTransform: "uppercase",
@@ -384,7 +495,6 @@ export default function About() {
             ))}
           </motion.div>
 
-          {/* CTA */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -432,31 +542,56 @@ export default function About() {
       </div>
 
       <style>{`
+        /* ── Mobile identity strip — hidden on desktop ── */
+        .indie-about-mobile-id {
+          display: none;
+        }
+
+        /* ── Breakpoint: tablet + mobile ── */
         @media (max-width: 860px) {
+          /* Show compact strip, hide full aside */
+          .indie-about-mobile-id {
+            display: flex !important;
+            flex-direction: column;
+            gap: 1.25rem;
+            padding: 2.5rem clamp(1.25rem, 4vw, 2rem) 1.75rem;
+            border-bottom: 1px solid var(--i-border);
+          }
+          .indie-about-aside {
+            display: none !important;
+          }
+
+          /* Collapse outer grid to 1 column */
           .indie-about-outer {
             grid-template-columns: 1fr !important;
             gap: 0 !important;
+            padding-left: clamp(1.25rem, 4vw, 2rem) !important;
+            padding-right: clamp(1.25rem, 4vw, 2rem) !important;
           }
-          .indie-about-outer aside {
-            position: static !important;
-            padding-top: 3rem !important;
-            padding-bottom: 2rem !important;
-            border-bottom: 1px solid var(--i-border);
+
+          /* Content column starts right after the mobile strip */
+          .indie-about-content {
+            padding-top: 2.5rem !important;
+            padding-bottom: 3.5rem !important;
           }
+
+          /* Stats: 2-column */
           .indie-stats-grid {
             grid-template-columns: repeat(2, 1fr) !important;
           }
         }
+
+        /* ── Small phones ── */
         @media (max-width: 480px) {
-          .indie-about-outer {
-            padding: 0 1.25rem !important;
+          .indie-about-mobile-id {
+            gap: 1rem;
+            padding-top: 2rem;
           }
-          .indie-about-outer aside {
-            padding-top: 2.5rem !important;
+          .indie-stats-grid > div {
+            padding: 1rem 0.75rem !important;
           }
-          .indie-about-outer > div {
-            padding-top: 2.5rem !important;
-            padding-bottom: 3.5rem !important;
+          .indie-about-content {
+            padding-top: 2rem !important;
           }
         }
       `}</style>
