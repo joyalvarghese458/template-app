@@ -2,7 +2,6 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { PROFILE } from "../_data/portfolio";
 import { ease } from "../_utils/motion";
 
 const WORDS = ["cinematic", "intentional", "immersive", "unforgettable"];
@@ -16,7 +15,7 @@ export default function Statement() {
       ref={ref}
       style={{
         borderTop: "1px solid var(--i-border)",
-        padding: "5rem 2rem 5rem",
+        padding: "clamp(3rem, 6vw, 5rem) clamp(1.25rem, 4vw, 2rem)",
         overflow: "hidden",
         position: "relative",
       }}
@@ -134,6 +133,7 @@ export default function Statement() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.9, delay: 0.5, ease }}
+            className="indie-statement-stats"
             style={{
               display: "flex",
               gap: "3rem",
@@ -180,7 +180,16 @@ export default function Statement() {
         @media (max-width: 768px) {
           .indie-statement-grid {
             grid-template-columns: 1fr !important;
-            gap: 2.5rem !important;
+            gap: 2rem !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .indie-statement-grid {
+            gap: 1.5rem !important;
+          }
+          .indie-statement-stats {
+            gap: 1.5rem !important;
+            padding-top: 1.5rem !important;
           }
         }
       `}</style>

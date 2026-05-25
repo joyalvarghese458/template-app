@@ -16,12 +16,12 @@ function WorkCard({ project }: { project: (typeof WORKS)[0] }) {
       className="indie-wcard"
       style={{
         position: "relative",
-        width: "clamp(220px, 23vw, 360px)",
-        height: "clamp(250px, 32vh, 400px)",
+        width: "clamp(200px, 56vw, 360px)",
+        height: "clamp(240px, 40vh, 400px)",
         borderRadius: "0.625rem",
         overflow: "hidden",
         flexShrink: 0,
-        marginRight: "1.25rem",   // gap between cards — must equal keyframe math
+        marginRight: "1rem",
         border: "1px solid rgba(240,240,248,0.07)",
         background: project.color,
         cursor: "pointer",
@@ -65,9 +65,9 @@ function WorkCard({ project }: { project: (typeof WORKS)[0] }) {
       <div
         style={{
           position: "absolute",
-          top: "1rem",
-          left: "1rem",
-          right: "1rem",
+          top: "0.875rem",
+          left: "0.875rem",
+          right: "0.875rem",
           display: "flex",
           justifyContent: "space-between",
           alignItems: "flex-start",
@@ -101,10 +101,10 @@ function WorkCard({ project }: { project: (typeof WORKS)[0] }) {
 
       {/* Bottom info */}
       <div
-        style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "1.25rem" }}
+        style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "1rem" }}
       >
         {/* Tool badges (max 2) */}
-        <div style={{ display: "flex", gap: "0.3rem", marginBottom: "0.5rem", flexWrap: "wrap" }}>
+        <div style={{ display: "flex", gap: "0.3rem", marginBottom: "0.4rem", flexWrap: "wrap" }}>
           {project.tools.slice(0, 2).map((t) => (
             <span
               key={t}
@@ -124,7 +124,7 @@ function WorkCard({ project }: { project: (typeof WORKS)[0] }) {
 
         <h3
           style={{
-            fontSize: "clamp(0.9rem, 1.5vw, 1.2rem)",
+            fontSize: "clamp(0.85rem, 1.5vw, 1.2rem)",
             fontFamily: "var(--i-font-display)",
             fontWeight: 300,
             letterSpacing: "-0.02em",
@@ -182,18 +182,18 @@ export default function Work() {
         background: "var(--i-surface)",
         borderTop: "1px solid var(--i-border)",
         borderBottom: "1px solid var(--i-border)",
-        paddingTop: "4rem",
-        paddingBottom: "4rem",
+        paddingTop: "clamp(2.5rem, 5vw, 4rem)",
+        paddingBottom: "clamp(2.5rem, 5vw, 4rem)",
         overflow: "hidden",
       }}
     >
-      {/* ── Section heading ─────────────────────────────────── */}
+      {/* ── Section heading ─────────────────────────────── */}
       <div
         ref={headRef}
         style={{
           maxWidth: 1240,
           margin: "0 auto",
-          padding: "0 2rem 3rem",
+          padding: "0 clamp(1.25rem, 4vw, 2rem) clamp(1.5rem, 4vw, 3rem)",
           display: "grid",
           gridTemplateColumns: "1fr 1fr",
           gap: "2rem",
@@ -226,7 +226,7 @@ export default function Work() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1.0, delay: 0.1, ease }}
             style={{
-              fontSize: "clamp(2rem, 4.5vw, 4rem)",
+              fontSize: "clamp(1.8rem, 4.5vw, 4rem)",
               fontFamily: "var(--i-font-display)",
               fontWeight: 300,
               letterSpacing: "-0.025em",
@@ -245,21 +245,22 @@ export default function Work() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.9, delay: 0.2, ease }}
+          className="indie-work-desc"
         >
           <p
             style={{
               fontSize: "0.875rem",
               lineHeight: 1.78,
               color: "var(--i-ink-muted)",
-              margin: "0 0 1.5rem",
+              margin: "0 0 1.25rem",
               maxWidth: 360,
             }}
           >
-            Built from concept to final render — no shortcuts, no stock footage. Hover any row to pause and explore each project.
+            Built from concept to final render — no shortcuts, no stock footage. Hover any row to pause and explore.
           </p>
 
           {/* Direction labels */}
-          <div style={{ display: "flex", gap: "2rem", flexWrap: "wrap" }}>
+          <div style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap" }}>
             {[
               { label: "Row 1 →", color: "var(--i-accent)" },
               { label: "← Row 2", color: "var(--i-cyan)" },
@@ -279,7 +280,7 @@ export default function Work() {
               >
                 <span
                   style={{
-                    width: 20,
+                    width: 16,
                     height: 1,
                     background: color,
                     display: "inline-block",
@@ -293,7 +294,7 @@ export default function Work() {
       </div>
 
       {/* ── Row 1 — scrolls LEFT ─────────────────────────────── */}
-      <div style={{ overflow: "hidden", marginBottom: "1.25rem", paddingLeft: "2rem" }}>
+      <div style={{ overflow: "hidden", marginBottom: "1rem", paddingLeft: "clamp(1.25rem, 4vw, 2rem)" }}>
         <div className="indie-row-left" style={{ display: "flex", width: "max-content" }}>
           {ROW_1.map((p, i) => (
             <WorkCard key={`r1-${p.id}-${i}`} project={p} />
@@ -302,7 +303,7 @@ export default function Work() {
       </div>
 
       {/* ── Row 2 — scrolls RIGHT ────────────────────────────── */}
-      <div style={{ overflow: "hidden", paddingLeft: "2rem" }}>
+      <div style={{ overflow: "hidden", paddingLeft: "clamp(1.25rem, 4vw, 2rem)" }}>
         <div className="indie-row-right" style={{ display: "flex", width: "max-content" }}>
           {ROW_2.map((p, i) => (
             <WorkCard key={`r2-${p.id}-${i}`} project={p} />
@@ -314,8 +315,8 @@ export default function Work() {
       <div
         style={{
           maxWidth: 1240,
-          margin: "2.5rem auto 0",
-          padding: "0 2rem",
+          margin: "clamp(1.25rem, 3vw, 2.5rem) auto 0",
+          padding: "0 clamp(1.25rem, 4vw, 2rem)",
           display: "flex",
           alignItems: "center",
           gap: "0.75rem",
@@ -330,7 +331,8 @@ export default function Work() {
             color: "var(--i-ink-faint)",
           }}
         >
-          Hover to pause · {WORKS.length} projects
+          <span className="indie-work-hint-long">Hover to pause · </span>
+          {WORKS.length} projects
         </span>
       </div>
 
@@ -359,22 +361,33 @@ export default function Work() {
         }
 
         /* Card hover — scale image + reveal description */
-        .indie-wcard:hover .indie-wcard__img {
-          transform: scale(1.07);
-        }
-        .indie-wcard:hover .indie-wcard__desc {
-          max-height: 64px;
-          opacity: 1;
-          padding-top: 0.5rem;
-          border-color: rgba(240,240,248,0.08);
-          margin-top: 0.375rem;
+        @media (hover: hover) {
+          .indie-wcard:hover .indie-wcard__img {
+            transform: scale(1.07);
+          }
+          .indie-wcard:hover .indie-wcard__desc {
+            max-height: 64px;
+            opacity: 1;
+            padding-top: 0.5rem;
+            border-color: rgba(240,240,248,0.08);
+            margin-top: 0.375rem;
+          }
         }
 
         @media (max-width: 640px) {
           .indie-work-head { grid-template-columns: 1fr !important; }
+          .indie-work-desc { display: none !important; }
+          .indie-work-hint-long { display: none; }
+        }
+        @media (max-width: 480px) {
+          .indie-wcard {
+            width: clamp(180px, 72vw, 260px) !important;
+            height: clamp(220px, 52vw, 320px) !important;
+            margin-right: 0.75rem !important;
+          }
         }
         @media (prefers-reduced-motion: reduce) {
-          .indie-row-left, .indie-row-right { animation: none; }
+          .indie-row-left, .indie-row-right { animation: none; overflow-x: auto; }
         }
       `}</style>
     </section>

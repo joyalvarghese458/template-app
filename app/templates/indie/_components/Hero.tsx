@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { motion, useMotionValue, useSpring } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { heroContainer, heroLine, ease } from "../_utils/motion";
 import { PROFILE } from "../_data/portfolio";
 import styles from "./Hero.module.css";
@@ -9,8 +9,16 @@ import styles from "./Hero.module.css";
 export default function Hero() {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
+
+  // Orrery parallax — more movement
   const springX = useSpring(mouseX, { stiffness: 40, damping: 18 });
   const springY = useSpring(mouseY, { stiffness: 40, damping: 18 });
+
+  // Hero image parallax — subtler, different depth layer
+  const imgRawX = useTransform(mouseX, (v) => v * 0.45);
+  const imgRawY = useTransform(mouseY, (v) => v * 0.45);
+  const springImgX = useSpring(imgRawX, { stiffness: 28, damping: 22 });
+  const springImgY = useSpring(imgRawY, { stiffness: 28, damping: 22 });
 
   useEffect(() => {
     if (window.matchMedia("(pointer: coarse)").matches) return;
@@ -44,6 +52,27 @@ export default function Hero() {
         </div>
       </motion.div>
 
+      {/* Solo hero image — transparent PNG, bottom-anchored right side */}
+      <motion.div
+        className={styles.heroImgWrap}
+        style={{ x: springImgX, y: springImgY }}
+        initial={{ opacity: 0, scale: 0.97, y: 30 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ duration: 1.4, delay: 0.6, ease }}
+      >
+        <img
+          src="/solo-hero.png"
+          alt=""
+          aria-hidden="true"
+          className={styles.heroImg}
+          draggable={false}
+        />
+        {/* Fade left edge into background so text stays readable */}
+        <div className={styles.heroImgFade} />
+        {/* Accent glow beneath the figure */}
+        <div className={styles.heroImgGlow} />
+      </motion.div>
+
       {/* Text content */}
       <div className={styles.content}>
         {/* Eyebrow */}
@@ -65,26 +94,17 @@ export default function Hero() {
           animate="visible"
         >
           <span className={styles.lineWrap}>
-            <motion.span
-              variants={heroLine}
-              className={styles.titleLine}
-            >
+            <motion.span variants={heroLine} className={styles.titleLine}>
               {PROFILE.heroLine1}
             </motion.span>
           </span>
           <span className={styles.lineWrap}>
-            <motion.span
-              variants={heroLine}
-              className={`${styles.titleLine} ${styles.italic}`}
-            >
+            <motion.span variants={heroLine} className={`${styles.titleLine} ${styles.italic}`}>
               {PROFILE.heroLine2}
             </motion.span>
           </span>
           <span className={styles.lineWrap}>
-            <motion.span
-              variants={heroLine}
-              className={`${styles.titleLine} ${styles.dim}`}
-            >
+            <motion.span variants={heroLine} className={`${styles.titleLine} ${styles.dim}`}>
               {PROFILE.heroLine3}
             </motion.span>
           </span>

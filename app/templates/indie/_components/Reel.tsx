@@ -14,7 +14,7 @@ export default function Reel() {
       id="reel"
       ref={ref}
       style={{
-        padding: "5rem 2rem",
+        padding: "clamp(3rem, 6vw, 5rem) clamp(1.25rem, 4vw, 2rem)",
         maxWidth: 1240,
         margin: "0 auto",
       }}
@@ -28,7 +28,7 @@ export default function Reel() {
           display: "flex",
           alignItems: "center",
           gap: "0.75rem",
-          marginBottom: "3rem",
+          marginBottom: "clamp(1.5rem, 4vw, 3rem)",
         }}
       >
         <div
@@ -59,7 +59,7 @@ export default function Reel() {
         style={{
           position: "relative",
           width: "100%",
-          borderRadius: "0.75rem",
+          borderRadius: "clamp(0.5rem, 2vw, 0.75rem)",
           overflow: "hidden",
           background: "#0b0b14",
           border: "1px solid var(--i-border)",
@@ -67,35 +67,36 @@ export default function Reel() {
             "0 40px 120px -20px rgba(0,0,0,0.8), 0 0 0 1px rgba(129,140,248,0.06)",
         }}
       >
-        {/* Letterbox bars */}
+        {/* Letterbox bars — hidden on mobile */}
         <div
           aria-hidden="true"
+          className="indie-reel-bar indie-reel-bar-top"
           style={{
             position: "absolute",
             top: 0,
             left: 0,
             right: 0,
-            height: "clamp(16px, 3.5%, 36px)",
+            height: "clamp(12px, 3.5%, 36px)",
             background: "#000",
             zIndex: 2,
           }}
         />
         <div
           aria-hidden="true"
+          className="indie-reel-bar indie-reel-bar-bottom"
           style={{
             position: "absolute",
             bottom: 0,
             left: 0,
             right: 0,
-            height: "clamp(16px, 3.5%, 36px)",
+            height: "clamp(12px, 3.5%, 36px)",
             background: "#000",
             zIndex: 2,
           }}
         />
 
-        {/* Aspect ratio box — 2.39:1 cinemascope */}
-        <div style={{ aspectRatio: "2.39 / 1", position: "relative" }}>
-          {/* Poster image (replace src with actual video) */}
+        {/* Aspect ratio box — cinemascope on desktop, 16:9 on mobile */}
+        <div className="indie-reel-ratio" style={{ position: "relative" }}>
           <img
             src={PROFILE.reelPoster}
             alt="Showreel poster"
@@ -133,8 +134,8 @@ export default function Reel() {
               whileTap={{ scale: 0.96 }}
               transition={{ duration: 0.3, ease }}
               style={{
-                width: "clamp(64px, 8vw, 96px)",
-                height: "clamp(64px, 8vw, 96px)",
+                width: "clamp(56px, 8vw, 96px)",
+                height: "clamp(56px, 8vw, 96px)",
                 borderRadius: "50%",
                 background: "rgba(129, 140, 248, 0.15)",
                 border: "1.5px solid rgba(129, 140, 248, 0.6)",
@@ -151,8 +152,8 @@ export default function Reel() {
                 viewBox="0 0 24 24"
                 fill="currentColor"
                 style={{
-                  width: "clamp(20px, 2.5vw, 30px)",
-                  height: "clamp(20px, 2.5vw, 30px)",
+                  width: "clamp(18px, 2.5vw, 30px)",
+                  height: "clamp(18px, 2.5vw, 30px)",
                   color: "#f0f0f8",
                   marginLeft: "3px",
                 }}
@@ -166,10 +167,10 @@ export default function Reel() {
           <div
             style={{
               position: "absolute",
-              bottom: "clamp(24px, 5%, 48px)",
-              right: "2rem",
+              bottom: "clamp(12px, 5%, 48px)",
+              right: "clamp(0.75rem, 3vw, 2rem)",
               zIndex: 3,
-              fontSize: "0.75rem",
+              fontSize: "0.72rem",
               letterSpacing: "0.12em",
               color: "rgba(240,240,248,0.7)",
               fontVariantNumeric: "tabular-nums",
@@ -186,7 +187,7 @@ export default function Reel() {
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.9, delay: 0.3, ease }}
         style={{
-          marginTop: "2rem",
+          marginTop: "clamp(1rem, 3vw, 2rem)",
           fontSize: "0.8rem",
           color: "var(--i-ink-faint)",
           letterSpacing: "0.06em",
@@ -195,6 +196,15 @@ export default function Reel() {
       >
         {PROFILE.name} · {PROFILE.role} · Selected works 2024–2026
       </motion.p>
+
+      <style>{`
+        /* Cinemascope 2.39:1 on desktop, 16:9 on mobile */
+        .indie-reel-ratio { aspect-ratio: 2.39 / 1; }
+        @media (max-width: 640px) {
+          .indie-reel-ratio { aspect-ratio: 16 / 9; }
+          .indie-reel-bar { display: none; }
+        }
+      `}</style>
     </section>
   );
 }

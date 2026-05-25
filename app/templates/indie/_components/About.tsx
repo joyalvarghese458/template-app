@@ -21,17 +21,16 @@ export default function About() {
         style={{
           maxWidth: 1240,
           margin: "0 auto",
-          padding: "0 2rem",
+          padding: "0 clamp(1.25rem, 4vw, 2rem)",
           display: "grid",
           gridTemplateColumns: "220px 1fr",
-          gap: "5rem",
+          gap: "4rem",
           alignItems: "start",
         }}
         className="indie-about-outer"
       >
         {/* ═══════════════════════════════════════════════════════════
             LEFT — sticky identity panel
-            Stays fixed while the right column scrolls.
         ═══════════════════════════════════════════════════════════ */}
         <motion.aside
           initial={{ opacity: 0, x: -24 }}
@@ -39,8 +38,8 @@ export default function About() {
           transition={{ duration: 1.0, delay: 0.1, ease }}
           style={{
             position: "sticky",
-            top: "6rem",
-            paddingTop: "5rem",
+            top: "5rem",
+            paddingTop: "4rem",
             paddingBottom: "3rem",
           }}
         >
@@ -60,8 +59,8 @@ export default function About() {
           {/* Monogram */}
           <div
             style={{
-              width: 72,
-              height: 72,
+              width: 64,
+              height: 64,
               borderRadius: "50%",
               border: "1px solid var(--i-accent)",
               background: "var(--i-accent-dim)",
@@ -73,7 +72,7 @@ export default function About() {
           >
             <span
               style={{
-                fontSize: "1.5rem",
+                fontSize: "1.4rem",
                 fontFamily: "var(--i-font-display)",
                 fontWeight: 300,
                 color: "var(--i-accent)",
@@ -190,6 +189,7 @@ export default function About() {
                   alignItems: "center",
                   gap: "0.4rem",
                   transition: "color 0.25s ease",
+                  padding: "0.25rem 0",
                 }}
                 onMouseEnter={(e) =>
                   ((e.currentTarget as HTMLAnchorElement).style.color = "var(--i-ink)")
@@ -210,7 +210,7 @@ export default function About() {
         {/* ═══════════════════════════════════════════════════════════
             RIGHT — scrolling narrative content
         ═══════════════════════════════════════════════════════════ */}
-        <div style={{ paddingTop: "5rem", paddingBottom: "6rem" }}>
+        <div style={{ paddingTop: "4rem", paddingBottom: "5rem" }}>
 
           {/* Heading */}
           <motion.h2
@@ -219,12 +219,12 @@ export default function About() {
             viewport={vp}
             transition={{ duration: 1.1, ease }}
             style={{
-              fontSize: "clamp(2.2rem, 4vw, 3.8rem)",
+              fontSize: "clamp(2rem, 4vw, 3.8rem)",
               fontFamily: "var(--i-font-display)",
               fontWeight: 300,
               lineHeight: 1.1,
               letterSpacing: "-0.025em",
-              margin: "0 0 2.5rem",
+              margin: "0 0 2rem",
               color: "var(--i-ink)",
             }}
           >
@@ -243,7 +243,7 @@ export default function About() {
               borderRadius: "0.625rem",
               overflow: "hidden",
               border: "1px solid var(--i-border)",
-              marginBottom: "3rem",
+              marginBottom: "2.5rem",
               position: "relative",
             }}
           >
@@ -276,10 +276,10 @@ export default function About() {
               viewport={vp}
               transition={{ duration: 0.95, delay: i * 0.1, ease }}
               style={{
-                fontSize: "1rem",
+                fontSize: "clamp(0.875rem, 1.5vw, 1rem)",
                 lineHeight: 1.85,
                 color: "var(--i-ink-muted)",
-                margin: "0 0 1.375rem",
+                margin: "0 0 1.25rem",
                 maxWidth: 580,
               }}
             >
@@ -294,8 +294,8 @@ export default function About() {
             viewport={vp}
             transition={{ duration: 1.0, ease }}
             style={{
-              margin: "2.5rem 0",
-              padding: "1.5rem 1.75rem",
+              margin: "2rem 0",
+              padding: "1.25rem 1.5rem",
               borderLeft: "3px solid var(--i-accent)",
               background: "var(--i-accent-dim)",
               borderRadius: "0 0.5rem 0.5rem 0",
@@ -305,7 +305,7 @@ export default function About() {
           >
             <p
               style={{
-                fontSize: "1.1rem",
+                fontSize: "clamp(0.95rem, 1.5vw, 1.1rem)",
                 fontFamily: "var(--i-font-display)",
                 fontStyle: "italic",
                 fontWeight: 300,
@@ -344,7 +344,7 @@ export default function About() {
               borderRadius: "0.5rem",
               overflow: "hidden",
               background: "var(--i-border)",
-              marginBottom: "2.5rem",
+              marginBottom: "2rem",
             }}
             className="indie-stats-grid"
           >
@@ -353,13 +353,13 @@ export default function About() {
                 key={s.label}
                 style={{
                   background: "var(--i-elevated)",
-                  padding: "1.5rem 1.25rem",
+                  padding: "1.25rem 1rem",
                   textAlign: "center",
                 }}
               >
                 <div
                   style={{
-                    fontSize: "clamp(1.6rem, 2.5vw, 2.2rem)",
+                    fontSize: "clamp(1.4rem, 2.5vw, 2.2rem)",
                     fontFamily: "var(--i-font-display)",
                     fontWeight: 300,
                     color: "var(--i-ink)",
@@ -372,7 +372,7 @@ export default function About() {
                 </div>
                 <div
                   style={{
-                    fontSize: "0.62rem",
+                    fontSize: "0.6rem",
                     color: "var(--i-ink-muted)",
                     letterSpacing: "0.07em",
                     textTransform: "uppercase",
@@ -407,6 +407,7 @@ export default function About() {
                 textDecoration: "none",
                 transition: "all 0.35s ease",
                 background: "transparent",
+                minHeight: 48,
               }}
               onMouseEnter={(e) => {
                 const el = e.currentTarget as HTMLAnchorElement;
@@ -439,12 +440,23 @@ export default function About() {
           .indie-about-outer aside {
             position: static !important;
             padding-top: 3rem !important;
-            padding-bottom: 0 !important;
+            padding-bottom: 2rem !important;
             border-bottom: 1px solid var(--i-border);
-            margin-bottom: 0;
           }
           .indie-stats-grid {
             grid-template-columns: repeat(2, 1fr) !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .indie-about-outer {
+            padding: 0 1.25rem !important;
+          }
+          .indie-about-outer aside {
+            padding-top: 2.5rem !important;
+          }
+          .indie-about-outer > div {
+            padding-top: 2.5rem !important;
+            padding-bottom: 3.5rem !important;
           }
         }
       `}</style>

@@ -66,7 +66,7 @@ export default function Contact() {
       ref={ref}
       style={{
         borderTop: "1px solid var(--i-border)",
-        padding: "5rem 2rem 5rem",
+        padding: "clamp(3rem, 6vw, 5rem) clamp(1.25rem, 4vw, 2rem)",
         position: "relative",
         overflow: "hidden",
       }}
@@ -134,12 +134,12 @@ export default function Contact() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1.0, delay: 0.1, ease }}
             style={{
-              fontSize: "clamp(2.5rem, 5vw, 5rem)",
+              fontSize: "clamp(2rem, 5vw, 5rem)",
               fontFamily: "var(--i-font-display)",
               fontWeight: 300,
               lineHeight: 1.05,
               letterSpacing: "-0.03em",
-              margin: "0 0 2rem",
+              margin: "0 0 1.75rem",
               color: "var(--i-ink)",
             }}
           >
@@ -427,7 +427,17 @@ export default function Contact() {
         @media (max-width: 768px) {
           .contact-grid {
             grid-template-columns: 1fr !important;
-            gap: 3rem !important;
+            gap: 2.5rem !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .contact-grid form,
+          .contact-grid > div:last-child > div {
+            padding: 1.5rem !important;
+          }
+          .contact-form-btn {
+            padding: 0.875rem !important;
+            font-size: 0.875rem !important;
           }
         }
       `}</style>

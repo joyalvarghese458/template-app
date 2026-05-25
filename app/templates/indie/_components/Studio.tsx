@@ -287,7 +287,7 @@ export default function Studio() {
         ref={servicesRef}
         style={{
           borderTop: "1px solid var(--i-border)",
-          padding: "0 2rem",
+          padding: "0 clamp(1.25rem, 4vw, 2rem)",
         }}
       >
         <div
@@ -400,7 +400,7 @@ export default function Studio() {
       <div
         style={{
           borderBottom: "1px solid var(--i-border)",
-          padding: "4rem 2rem",
+          padding: "clamp(2.5rem, 5vw, 4rem) clamp(1.25rem, 4vw, 2rem)",
         }}
       >
         <div style={{ maxWidth: 1240, margin: "0 auto" }}>
@@ -506,7 +506,7 @@ export default function Studio() {
         style={{
           background: "var(--i-surface)",
           borderBottom: "1px solid var(--i-border)",
-          padding: "4rem 2rem 5rem",
+          padding: "clamp(2.5rem, 5vw, 4rem) clamp(1.25rem, 4vw, 2rem) clamp(3rem, 6vw, 5rem)",
         }}
       >
         <div style={{ maxWidth: 1240, margin: "0 auto" }}>
@@ -592,6 +592,23 @@ export default function Studio() {
       </div>
 
       <style>{`
+        /* ── Services sticky grid ── */
+        @media (max-width: 860px) {
+          .indie-studio-outer {
+            grid-template-columns: 1fr !important;
+            gap: 0 !important;
+          }
+          .indie-studio-outer > div:first-child {
+            position: static !important;
+            padding-top: 3rem !important;
+            padding-bottom: 2rem !important;
+            border-bottom: 1px solid var(--i-border);
+          }
+          .indie-studio-outer > div:last-child {
+            padding-top: 2rem !important;
+          }
+        }
+        /* ── Services head / tools / testimonials ── */
         @media (max-width: 860px) {
           .indie-services-head { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
           .indie-tools-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
@@ -601,11 +618,22 @@ export default function Studio() {
         @media (min-width: 861px) {
           .indie-service-cat { display: inline !important; }
         }
+        /* ── Service expand panel ── */
         .indie-service-row { color: var(--i-ink); }
-        .indie-service-expand { }
         @media (max-width: 640px) {
           .indie-service-expand { grid-template-columns: 1fr !important; }
           .indie-service-expand > div:first-child { display: none; }
+          .indie-service-row {
+            grid-template-columns: 2rem 1fr auto !important;
+            gap: 0.75rem !important;
+            padding: 1.25rem 0 !important;
+          }
+        }
+        /* ── Section padding ── */
+        @media (max-width: 480px) {
+          #studio > div { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+          .indie-tools-flex { gap: 0.4rem !important; }
+          .indie-testimonials-grid > div { padding: 1.5rem !important; }
         }
       `}</style>
     </section>

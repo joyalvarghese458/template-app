@@ -4,7 +4,7 @@
   position: relative;
   width: 100%;
   height: 100svh;
-  min-height: 640px;
+  min-height: 580px;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -32,8 +32,8 @@
 }
 
 .orb1 {
-  width: clamp(300px, 50vw, 700px);
-  height: clamp(300px, 50vw, 700px);
+  width: clamp(200px, 50vw, 700px);
+  height: clamp(200px, 50vw, 700px);
   top: -15%;
   right: 0%;
   background: radial-gradient(circle, rgba(99, 102, 241, 0.09), transparent 70%);
@@ -41,8 +41,8 @@
 }
 
 .orb2 {
-  width: clamp(200px, 35vw, 500px);
-  height: clamp(200px, 35vw, 500px);
+  width: clamp(150px, 35vw, 500px);
+  height: clamp(150px, 35vw, 500px);
   bottom: 5%;
   left: 5%;
   background: radial-gradient(circle, rgba(34, 211, 238, 0.06), transparent 70%);
@@ -56,8 +56,8 @@
   right: -8%;
   top: 50%;
   transform: translateY(-50%);
-  width: clamp(380px, 52vmin, 680px);
-  height: clamp(380px, 52vmin, 680px);
+  width: clamp(280px, 52vmin, 680px);
+  height: clamp(280px, 52vmin, 680px);
   pointer-events: none;
   z-index: 1;
 }
@@ -181,7 +181,7 @@
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: rgba(240, 240, 248, 0.4);
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .eyebrowDot {
@@ -200,13 +200,13 @@
 }
 
 .heroTitle {
-  font-size: clamp(3.5rem, 9.5vw, 10rem);
+  font-size: clamp(2.8rem, 9.5vw, 10rem);
   font-weight: 300;
   line-height: 0.93;
   letter-spacing: -0.03em;
   font-family: var(--i-font-display, serif);
   color: #f0f0f8;
-  margin: 0 0 3rem;
+  margin: 0 0 2.5rem;
 }
 
 .lineWrap {
@@ -254,6 +254,7 @@
   text-decoration: none;
   transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.3s ease, background 0.4s ease;
   background: rgba(129, 140, 248, 0.05);
+  min-height: 48px;
 }
 
 .reelBtn:hover {
@@ -263,11 +264,68 @@
   transform: translateY(-1px);
 }
 
+/* ── Solo hero image ─────────────────────────────────────────────────── */
+
+.heroImgWrap {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: clamp(320px, 46vw, 780px);
+  z-index: 4;
+  pointer-events: none;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.heroImg {
+  height: clamp(65%, 88%, 100%);
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: bottom right;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+  /* Subtle drop shadow to integrate with the dark scene */
+  filter: drop-shadow(-24px 0 48px rgba(129, 140, 248, 0.18))
+          drop-shadow(0 -8px 40px rgba(129, 140, 248, 0.08));
+}
+
+/* Left-edge gradient fade — blends figure into the text side */
+.heroImgFade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    #050508 0%,
+    rgba(5, 5, 8, 0.35) 28%,
+    transparent 55%
+  );
+  pointer-events: none;
+}
+
+/* Accent glow pool beneath the figure */
+.heroImgGlow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 35%;
+  background: radial-gradient(
+    ellipse 70% 60% at 60% 100%,
+    rgba(129, 140, 248, 0.12) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
 /* ── Scroll indicator ─────────────────────────────────────────────────── */
 
 .scrollIndicator {
   position: absolute;
-  bottom: 2.5rem;
+  bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -299,25 +357,116 @@
   color: rgba(240, 240, 248, 0.25);
 }
 
-/* ── Mobile ───────────────────────────────────────────────────────────── */
+/* ── Responsive ───────────────────────────────────────────────────────── */
 
+/* Tablets */
 @media (max-width: 900px) {
   .orbContainer {
-    width: clamp(260px, 80vmin, 420px);
-    height: clamp(260px, 80vmin, 420px);
+    width: clamp(220px, 70vmin, 420px);
+    height: clamp(220px, 70vmin, 420px);
     right: -20%;
-    opacity: 0.45;
+    opacity: 0.4;
+  }
+  .heroTitle {
+    font-size: clamp(2.8rem, 10vw, 7rem);
+    margin-bottom: 2rem;
+  }
+  /* Reduce image size on tablets so text isn't crowded */
+  .heroImgWrap {
+    width: clamp(240px, 38vw, 520px);
+  }
+  .heroImgFade {
+    background: linear-gradient(
+      to right,
+      #050508 0%,
+      rgba(5, 5, 8, 0.5) 32%,
+      transparent 60%
+    );
   }
 }
 
-@media (max-width: 540px) {
+/* Large phones */
+@media (max-width: 640px) {
+  .hero {
+    align-items: flex-end;
+    padding-bottom: 5rem;
+  }
   .orbContainer {
-    opacity: 0.25;
+    top: 12%;
+    right: -25%;
+    transform: none;
+    opacity: 0.18;
+    width: clamp(280px, 90vw, 400px);
+    height: clamp(280px, 90vw, 400px);
+  }
+  /* On mobile the figure is in the background, content takes full width */
+  .heroImgWrap {
+    width: 100%;
+    right: 0;
+    opacity: 0.35;
+    justify-content: flex-end;
+  }
+  .heroImg {
+    height: 70%;
+    filter: drop-shadow(0 0 32px rgba(129, 140, 248, 0.12));
+  }
+  .heroImgFade {
+    background: linear-gradient(
+      to right,
+      #050508 0%,
+      rgba(5, 5, 8, 0.72) 40%,
+      rgba(5, 5, 8, 0.25) 75%,
+      transparent 100%
+    );
   }
   .content {
     padding: 0 1.25rem;
+    position: relative;
+    z-index: 10;
+  }
+  .eyebrow {
+    margin-bottom: 1.25rem;
+    font-size: 0.65rem;
+  }
+  .heroTitle {
+    font-size: clamp(2.6rem, 12vw, 5rem);
+    margin-bottom: 1.75rem;
+    line-height: 1;
   }
   .heroMeta {
     gap: 1rem;
+  }
+  .heroName {
+    font-size: 0.7rem;
+  }
+  .reelBtn {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.8rem;
+  }
+  .scrollIndicator {
+    bottom: 1.5rem;
+  }
+}
+
+/* Small phones */
+@media (max-width: 400px) {
+  .orbContainer {
+    opacity: 0.12;
+  }
+  .heroImgWrap {
+    opacity: 0.25;
+  }
+  .heroTitle {
+    font-size: clamp(2.2rem, 13vw, 3.5rem);
+  }
+  .reelBtn {
+    padding: 0.7rem 1.25rem;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .ring1, .ring2, .ring3, .ring4, .glowCore, .eyebrowDot, .scrollLine {
+    animation: none;
   }
 }

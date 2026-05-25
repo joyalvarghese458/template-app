@@ -10,7 +10,7 @@ export default function Footer() {
       style={{
         borderTop: "1px solid var(--i-border)",
         background: "var(--i-bg)",
-        padding: "3rem 2rem",
+        padding: "clamp(2rem, 4vw, 3rem) clamp(1.25rem, 4vw, 2rem)",
       }}
     >
       <div
@@ -20,45 +20,51 @@ export default function Footer() {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          gap: "1.5rem",
+          gap: "1.25rem",
           flexWrap: "wrap",
         }}
+        className="indie-footer-inner"
       >
-        <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+        {/* Logo + copyright */}
+        <div style={{ display: "flex", alignItems: "center", gap: "0.875rem", minWidth: 0 }}>
           <div
             style={{
-              width: 36,
-              height: 36,
+              width: 34,
+              height: 34,
               borderRadius: "50%",
               background: "var(--i-accent-dim)",
               border: "1px solid var(--i-accent)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              fontSize: "0.7rem",
+              fontSize: "0.68rem",
               fontWeight: 600,
               letterSpacing: "0.05em",
               color: "var(--i-accent)",
+              flexShrink: 0,
             }}
           >
             {PROFILE.initials}
           </div>
           <span
             style={{
-              fontSize: "0.875rem",
+              fontSize: "0.8rem",
               color: "var(--i-ink-muted)",
+              whiteSpace: "nowrap",
             }}
           >
-            © {year} {PROFILE.name}. All rights reserved.
+            © {year} {PROFILE.name}
           </span>
         </div>
 
+        {/* Social links */}
         <div
           style={{
             display: "flex",
-            gap: "2rem",
-            fontSize: "0.8rem",
+            gap: "1.5rem",
+            fontSize: "0.78rem",
             color: "var(--i-ink-faint)",
+            flexWrap: "wrap",
           }}
         >
           {[
@@ -73,6 +79,7 @@ export default function Footer() {
                 color: "inherit",
                 textDecoration: "none",
                 transition: "color 0.3s ease",
+                padding: "0.25rem 0",
               }}
               onMouseEnter={(e) =>
                 ((e.target as HTMLElement).style.color = "var(--i-accent)")
@@ -86,14 +93,16 @@ export default function Footer() {
           ))}
         </div>
 
+        {/* Email */}
         <a
           href={`mailto:${PROFILE.email}`}
           style={{
-            fontSize: "0.8rem",
+            fontSize: "0.78rem",
             color: "var(--i-ink-faint)",
             textDecoration: "none",
-            letterSpacing: "0.05em",
+            letterSpacing: "0.04em",
             transition: "color 0.3s ease",
+            wordBreak: "break-all",
           }}
           onMouseEnter={(e) =>
             ((e.target as HTMLElement).style.color = "var(--i-ink)")
@@ -105,6 +114,16 @@ export default function Footer() {
           {PROFILE.email}
         </a>
       </div>
+
+      <style>{`
+        @media (max-width: 640px) {
+          .indie-footer-inner {
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            gap: 1.25rem !important;
+          }
+        }
+      `}</style>
     </footer>
   );
 }
