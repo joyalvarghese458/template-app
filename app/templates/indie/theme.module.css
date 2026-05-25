@@ -1,0 +1,42 @@
+/* ── Indie Template — Dark Cinematic Theme ─────────────────────────── */
+
+.page {
+  /* Colour system */
+  --i-bg: #050508;
+  --i-surface: #0b0b14;
+  --i-elevated: #13131f;
+  --i-border: rgba(240, 240, 255, 0.07);
+  --i-ink: #f0f0f8;
+  --i-ink-muted: rgba(240, 240, 248, 0.45);
+  --i-ink-faint: rgba(240, 240, 248, 0.2);
+  --i-accent: #818cf8;
+  --i-accent-dim: rgba(129, 140, 248, 0.15);
+  --i-accent-glow: rgba(129, 140, 248, 0.25);
+  --i-cyan: #22d3ee;
+  --i-cyan-dim: rgba(34, 211, 238, 0.12);
+
+  /* Typography */
+  --i-font-display: var(--font-serif, "Playfair Display", serif);
+  --i-font-body: var(--font-sans, "Geist", sans-serif);
+
+  /* Easing */
+  --i-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --i-ease-slow: cubic-bezier(0.87, 0, 0.13, 1);
+
+  background-color: var(--i-bg);
+  color: var(--i-ink);
+  font-family: var(--i-font-body);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Reduced motion — disable all non-essential animations */
+@media (prefers-reduced-motion: reduce) {
+  .page *,
+  .page *::before,
+  .page *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
