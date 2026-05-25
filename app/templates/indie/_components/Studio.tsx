@@ -31,13 +31,15 @@ function ServiceRow({
       onHoverStart={() => setHovered(true)}
       onHoverEnd={() => setHovered(false)}
       style={{
-        borderBottom: "1px solid var(--i-border)",
-        background: isOpen
-          ? "rgba(129,140,248,0.03)"
-          : hovered
-          ? "rgba(240,240,248,0.02)"
-          : "transparent",
-        transition: "background 0.3s ease",
+        borderTop: `1px solid ${isOpen ? "rgba(129,140,248,0.22)" : "transparent"}`,
+        borderLeft: `1px solid ${isOpen ? "rgba(129,140,248,0.22)" : "transparent"}`,
+        borderRight: `1px solid ${isOpen ? "rgba(129,140,248,0.22)" : "transparent"}`,
+        borderBottom: `1px solid ${isOpen ? "rgba(129,140,248,0.22)" : "var(--i-border)"}`,
+        borderRadius: isOpen ? "0.875rem" : "0rem",
+        margin: isOpen ? "0.25rem 0 0.5rem" : "0",
+        background: isOpen ? "rgba(129,140,248,0.025)" : hovered ? "rgba(240,240,248,0.018)" : "transparent",
+        transition: "background 0.3s ease, border-color 0.3s ease, border-radius 0.35s ease, margin 0.3s ease",
+        overflow: "hidden",
       }}
     >
       {/* Row header — always visible */}
@@ -49,7 +51,7 @@ function ServiceRow({
           gridTemplateColumns: "2.5rem 1fr auto auto",
           gap: "1.25rem",
           alignItems: "center",
-          padding: "1.5rem 0",
+          padding: "1.5rem clamp(0.875rem, 2vw, 1.25rem)",
           background: "none",
           border: "none",
           cursor: "pointer",
@@ -148,7 +150,7 @@ function ServiceRow({
                 display: "grid",
                 gridTemplateColumns: "2.5rem 1fr 1fr",
                 gap: "1.25rem",
-                paddingBottom: "2rem",
+                padding: "0 clamp(0.875rem, 2vw, 1.25rem) 2rem",
               }}
               className="indie-service-expand"
             >
@@ -637,22 +639,32 @@ export default function Studio() {
         @media (max-width: 640px) {
           .indie-service-expand {
             grid-template-columns: 1fr !important;
-            gap: 1.5rem !important;
+            gap: 1.25rem !important;
             padding-bottom: 1.5rem !important;
           }
           /* Hide number spacer column */
           .indie-service-expand > div:first-child { display: none !important; }
 
-          /* Tighter row button */
+          /* Tighter row button — keep horizontal padding */
           .indie-service-row {
             grid-template-columns: 2rem 1fr auto !important;
-            gap: 0.875rem !important;
-            padding: 1.25rem 0 !important;
+            gap: 0.75rem !important;
+            padding: 1.125rem clamp(0.75rem, 4vw, 1rem) !important;
           }
         }
 
         /* ── Small phone refinements ── */
         @media (max-width: 480px) {
+          .indie-service-row {
+            grid-template-columns: 1.75rem 1fr auto !important;
+            gap: 0.625rem !important;
+            padding: 1rem 0.875rem !important;
+          }
+          .indie-service-expand {
+            padding-left: 0.875rem !important;
+            padding-right: 0.875rem !important;
+            padding-bottom: 1.25rem !important;
+          }
           .indie-tools-flex { gap: 0.375rem !important; }
           .indie-testimonials-grid > div { padding: 1.25rem !important; }
         }
