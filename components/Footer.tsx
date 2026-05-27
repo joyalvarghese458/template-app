@@ -33,7 +33,7 @@ export default function Footer() {
           {/* ── Column 1: Brand ──────────────────────────────────── */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <p className="font-sans text-2xl font-black tracking-[-0.04em] text-canvas-bg mb-2">
-              its<span className="text-brand-light">M</span>yfolio
+              My <span className="text-black">Portfolio</span>
             </p>
             <p className="text-sm text-canvas-bg/60 leading-relaxed mb-5">
               Crafting portfolios that get you hired.
