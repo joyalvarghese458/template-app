@@ -169,8 +169,8 @@ export const TEMPLATES: Template[] = [
     audiences: ["photographers"], specialties: ["gallery"] },
   { id: "s9", slug: "indie", title: "Indie", tag: "Motion & VFX · Cinematic", tier: "starter",
     audiences: ["designers", "creators"], specialties: ["motion", "3d"] },
-  { id: "s10", title: "Onefolio", tag: "Universal · Lite", tier: "starter",
-    audiences: ["creators", "founders", "designers"], specialties: [] },
+  { id: "s10", slug: "onefolio", title: "Onefolio", tag: "Creative Flow · Designer Portfolio", tier: "starter",
+    audiences: ["creators", "founders", "designers"], specialties: ["graphic", "brand", "motion"] },
 
   // ── Pro ─────────────────────────────────────────────────────────
   { id: "p1", title: "Designer Pro", tag: "Designer · Multi-page", tier: "pro",
