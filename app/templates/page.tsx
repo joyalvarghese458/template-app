@@ -14,7 +14,7 @@ import FilterShell from "./_components/FilterShell";
 import TemplateCard from "./_components/TemplateCard";
 
 export const metadata: Metadata = {
-  title: "All Portfolio Templates — itsMyfolio",
+  title: "All Portfolio Templates — My Portfolio",
   description:
     "Browse 30 hand-crafted portfolio templates. Search and filter by profession — designer, developer, photographer, creator, founder, or agency.",
 };

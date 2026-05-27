@@ -122,7 +122,7 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-canvas-bg/10 py-5 text-center">
         <p className="text-xs text-canvas-bg/50">
-          © 2026 itsMyfolio. All rights reserved.
+          © 2026 My Portfolio. All rights reserved.
         </p>
       </div>
     </footer>

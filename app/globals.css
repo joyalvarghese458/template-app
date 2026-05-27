@@ -2,9 +2,9 @@
 
 /* ── Color theme: blue + white only ──────────────────────────────── */
 @theme {
-  --color-brand:       #2563eb;
-  --color-brand-light: #3b82f6;
-  --color-brand-dark:  #1d4ed8;
+  --color-brand:       #0077B5;
+  --color-brand-light: #0a8fd4;
+  --color-brand-dark:  #005f8e;
   --color-canvas-bg:   #ffffff;
   --color-ink:         #000000;
   --color-ink-soft:    #475569;
@@ -112,7 +112,7 @@
 /* ── Global base ─────────────────────────────────────────────────── */
 :root {
   --navbar-height: 4rem;
-  --hero-glow: rgba(37, 99, 235, 0.18);
+  --hero-glow: rgba(0, 119, 181, 0.18);
   color-scheme: light;
 }
 

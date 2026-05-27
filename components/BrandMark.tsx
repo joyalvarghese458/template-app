@@ -8,7 +8,7 @@ interface BrandMarkProps {
 }
 
 /**
- * itsMyfolio brand mark (V09).
+ * My Portfolio brand mark (V09).
  * Gradient tile + stylized "M" — pairs with the V01 wordmark in the navbar.
  * Single source of truth: also used by app/icon.svg.
  */

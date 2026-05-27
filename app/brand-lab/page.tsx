@@ -272,7 +272,7 @@ export default function BrandLabPage() {
         {/* Header */}
         <header className="mb-14">
           <p className="text-xs tracking-[0.32em] uppercase text-neutral-500 mb-3">
-            Brand lab · itsMyfolio
+            Brand lab · My Portfolio
           </p>
           <h1 className={`${inter.className} font-extrabold tracking-[-0.04em] text-4xl sm:text-5xl`}>
             10 wordmark directions.

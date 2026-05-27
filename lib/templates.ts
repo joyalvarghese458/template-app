@@ -232,7 +232,7 @@ export function templateHref(t: Pick<Template, "id" | "slug">) {
 export const WA_NUMBER = "971568450406";
 
 export function waLink(tierLabel: string, name: string, price: number) {
-  const msg = `Hi itsMyfolio! I'd like to order the "${name}" (${tierLabel} tier) portfolio template at AED ${price}.`;
+  const msg = `Hi! I'd like to order the "${name}" (${tierLabel} tier) portfolio template at AED ${price}.`;
   return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
 }
 

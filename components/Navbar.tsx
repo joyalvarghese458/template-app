@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import OfferBanner from "@/components/OfferBanner";
 
 const NAV_LINKS = [
   { href: "#templates", label: "Templates" },
@@ -22,24 +21,25 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-[background-color,border-color,box-shadow] duration-300 will-change-auto ${
         scrolled
-          ? "bg-canvas-bg/90 backdrop-blur-xl border-b border-ink/10 shadow-sm"
-          : "bg-canvas-bg/70 backdrop-blur-md"
+          ? "bg-white border-b border-black/10 shadow-sm"
+          : "bg-transparent border-b border-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* ── Brand ─────────────────────────────────────────────── */}
         <Link
           href="/"
-          aria-label="itsMyfolio home"
-          className="group inline-flex items-baseline font-sans text-[22px] sm:text-[26px] font-black tracking-[-0.04em] text-ink select-none transition-transform duration-200 hover:-translate-y-0.5"
+          aria-label="My Portfolio home"
+          className={`group inline-flex items-baseline font-sans text-[22px] sm:text-[26px] font-black tracking-[-0.04em] select-none transition-colors duration-300 hover:-translate-y-0.5 ${
+            scrolled ? "text-ink" : "text-white"
+          }`}
         >
-          <span>its</span>
-          <span className="text-brand transition-colors duration-200 group-hover:text-brand-light">
-            M
+          <span>My </span>
+          <span className={`transition-colors duration-500 ${scrolled ? "text-brand group-hover:text-brand-light" : "text-white/80 group-hover:text-white"}`}>
+            Portfolio
           </span>
-          <span>yfolio</span>
         </Link>
 
         {/* ── Desktop links ─────────────────────────────────────── */}
@@ -49,7 +49,9 @@ export default function Navbar() {
               <li key={label}>
                 <Link
                   href={href}
-                  className="text-sm font-medium text-ink-soft hover:text-ink transition-colors duration-150"
+                  className={`text-sm font-medium transition-colors duration-300 ${
+                    scrolled ? "text-ink-soft hover:text-ink" : "text-white/80 hover:text-white"
+                  }`}
                 >
                   {label}
                 </Link>
@@ -60,33 +62,33 @@ export default function Navbar() {
 
         {/* ── Mobile: hamburger ────────────────────────────────── */}
         <div className="md:hidden flex items-center gap-2">
-        <button
-          className="flex flex-col items-center justify-center w-10 h-10 gap-[5px] rounded-md hover:bg-ink/5 transition-colors"
-          onClick={() => setIsOpen((v) => !v)}
-          aria-label={isOpen ? "Close menu" : "Open menu"}
-          aria-expanded={isOpen}
-        >
-          <span
-            className={`block w-6 h-[2px] bg-ink rounded-full transition-all duration-300 origin-center ${
-              isOpen ? "translate-y-[7px] rotate-45" : ""
+          <button
+            className={`flex flex-col items-center justify-center w-10 h-10 gap-[5px] rounded-md transition-colors ${
+              scrolled ? "hover:bg-ink/5" : "hover:bg-white/10"
             }`}
-          />
-          <span
-            className={`block w-6 h-[2px] bg-ink rounded-full transition-all duration-300 ${
-              isOpen ? "opacity-0 scale-x-0" : ""
-            }`}
-          />
-          <span
-            className={`block w-6 h-[2px] bg-ink rounded-full transition-all duration-300 origin-center ${
-              isOpen ? "-translate-y-[7px] -rotate-45" : ""
-            }`}
-          />
-        </button>
+            onClick={() => setIsOpen((v) => !v)}
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isOpen}
+          >
+            <span
+              className={`block w-6 h-[2px] rounded-full transition-all duration-300 origin-center ${
+                scrolled ? "bg-ink" : "bg-white"
+              } ${isOpen ? "translate-y-[7px] rotate-45" : ""}`}
+            />
+            <span
+              className={`block w-6 h-[2px] rounded-full transition-all duration-300 ${
+                scrolled ? "bg-ink" : "bg-white"
+              } ${isOpen ? "opacity-0 scale-x-0" : ""}`}
+            />
+            <span
+              className={`block w-6 h-[2px] rounded-full transition-all duration-300 origin-center ${
+                scrolled ? "bg-ink" : "bg-white"
+              } ${isOpen ? "-translate-y-[7px] -rotate-45" : ""}`}
+            />
+          </button>
         </div>
       </div>
 
-      {/* ── Auto-scrolling offer banner ─────────────────────────── */}
-      <OfferBanner />
 
       {/* ── Mobile drawer ───────────────────────────────────────── */}
       <div
@@ -94,7 +96,7 @@ export default function Navbar() {
           isOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <ul className="bg-canvas-bg/95 backdrop-blur-xl border-t border-ink/10 px-6 py-4 flex flex-col gap-1">
+        <ul className="bg-white/95 backdrop-blur-xl border-t border-black/10 px-6 py-4 flex flex-col gap-1">
           {NAV_LINKS.map(({ href, label }) => (
             <li key={label}>
               <Link
