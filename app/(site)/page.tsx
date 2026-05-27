@@ -19,11 +19,11 @@ export default function Home() {
           src="/landing-img.png"
           alt="Landing"
           fill
-          className="object-contain object-center sm:object-cover sm:object-center"
+          className="object-cover object-center"
           priority
         />
         {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black/60 sm:bg-black/55" aria-hidden="true" />
+        <div className="absolute inset-0 bg-black/50" aria-hidden="true" />
 
         {/* Hero content */}
         <div className="relative z-10 flex-1 flex flex-col items-center justify-center w-full px-6 sm:px-8 lg:px-12 pt-20 pb-6 text-center">
@@ -75,7 +75,7 @@ export default function Home() {
           {/* Trust strip */}
           <div className="flex flex-col items-center gap-2 text-[11px] sm:text-xs text-white/60">
             <div className="flex items-center gap-2.5">
-              <span className="whitespace-nowrap flex items-center gap-1"><span className="w-1 h-1 rounded-full bg-yellow-400 shrink-0" /><span className="text-white font-semibold">4.9</span>&nbsp;· 280+ reviews</span>
+              <span className="whitespace-nowrap flex items-center gap-1"><span className="w-1 h-1 rounded-full bg-brand shrink-0" /><span className="text-white font-semibold">4.9</span>&nbsp;· 280+ reviews</span>
               <span className="shrink-0 w-px h-3 bg-white/20" />
               <span className="whitespace-nowrap flex items-center gap-1"><span className="w-1 h-1 rounded-full bg-brand shrink-0" /><span className="text-white font-semibold">30+</span>&nbsp;templates</span>
             </div>
