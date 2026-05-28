@@ -57,10 +57,10 @@ export default function Footer() {
             </h3>
             <ul className="space-y-3">
               {[
-                { href: "/", label: "Home" },
-                { href: "#templates", label: "Templates" },
-                { href: "#about", label: "Features" },
-                { href: "#reviews", label: "Reviews" },
+                { href: "/templates", label: "Templates" },
+                { href: "/pricing", label: "Pricing" },
+                { href: "#blog", label: "Blog" },
+                { href: "#contact", label: "Contact" },
               ].map(({ href, label }) => (
                 <li key={label}>
                   <Link
@@ -91,24 +91,28 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:hello@itsmyfolio.ae"
+                  href="mailto:info@myportfoliowebsite.com"
                   className="hover:text-canvas-bg transition-colors"
                 >
-                  hello@itsmyfolio.ae
+                  info@myportfoliowebsite.com
                 </a>
               </li>
             </ul>
 
             <div className="flex gap-3 mt-5 justify-center md:justify-start">
               <a
-                href="#"
+                href="https://wa.me/971568450406"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="WhatsApp"
                 className="w-9 h-9 flex items-center justify-center rounded-full bg-canvas-bg/15 hover:bg-canvas-bg/30 text-canvas-bg/80 hover:text-canvas-bg transition-all duration-150"
               >
                 {WA_ICON}
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/myportfoliowebsite?igsh=MWl2ZW00NXFjZmdleQ=="
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Instagram"
                 className="w-9 h-9 flex items-center justify-center rounded-full bg-canvas-bg/15 hover:bg-canvas-bg/30 text-canvas-bg/80 hover:text-canvas-bg transition-all duration-150"
               >
