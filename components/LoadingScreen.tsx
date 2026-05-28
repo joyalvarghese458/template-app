@@ -13,13 +13,25 @@ function statusFor(progress: number) {
 }
 
 export default function LoadingScreen() {
+  // true = already shown this session (or not the initial load)
+  const [alreadySeen, setAlreadySeen] = useState(true);
   const [progress, setProgress] = useState(0);
   const [exiting, setExiting] = useState(false);
   const [gone, setGone] = useState(false);
   const [dots, setDots] = useState("");
 
   useEffect(() => {
-    const DURATION = 2000; // exactly 2 seconds to fill
+    // Only show on the very first page load of the session
+    if (sessionStorage.getItem("siteLoaded")) {
+      setAlreadySeen(true);
+      return;
+    }
+    setAlreadySeen(false);
+  }, []);
+
+  useEffect(() => {
+    if (alreadySeen) return;
+    const DURATION = 2000;
     const start = performance.now();
 
     const id = requestAnimationFrame(function tick(now) {
@@ -28,26 +40,28 @@ export default function LoadingScreen() {
       if (p < 100) {
         requestAnimationFrame(tick);
       } else {
-        // brief pause at 100% before exit
         setTimeout(() => {
           setExiting(true);
-          setTimeout(() => setGone(true), 900);
+          setTimeout(() => {
+            setGone(true);
+            sessionStorage.setItem("siteLoaded", "1");
+          }, 900);
         }, 200);
       }
     });
 
     return () => cancelAnimationFrame(id);
-  }, []);
+  }, [alreadySeen]);
 
-  // Trailing dot animation — "" → "." → ".." → "..." every 350ms.
   useEffect(() => {
+    if (alreadySeen) return;
     const id = setInterval(() => {
       setDots((d) => (d.length >= 3 ? "" : d + "."));
     }, 350);
     return () => clearInterval(id);
-  }, []);
+  }, [alreadySeen]);
 
-  if (gone) return null;
+  if (alreadySeen || gone) return null;
 
   return (
     <div

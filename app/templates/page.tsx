@@ -65,16 +65,6 @@ export default async function TemplatesPage({
           }}
         />
         <div className="relative max-w-7xl mx-auto text-center">
-          <div className="flex items-center justify-center gap-4 mb-3">
-            <span className="h-px w-8 bg-brand/60" aria-hidden="true" />
-            <Link
-              href="/#templates"
-              className="text-brand text-[10px] sm:text-xs font-semibold uppercase tracking-[0.28em] hover:text-brand-dark transition-colors"
-            >
-              ← Back to home
-            </Link>
-            <span className="h-px w-8 bg-brand/60" aria-hidden="true" />
-          </div>
           <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl text-ink tracking-tight mb-2 sm:mb-3">
             {soloAudience ? (
               <>
