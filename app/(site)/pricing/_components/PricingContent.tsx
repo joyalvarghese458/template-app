@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 
 const PLANS = [
@@ -127,7 +127,11 @@ function detectCurrency(): "AED" | "INR" {
 }
 
 export default function PricingContent() {
-  const [currency, setCurrency] = useState<"AED" | "INR">(() => detectCurrency());
+  const [currency, setCurrency] = useState<"AED" | "INR">("AED");
+
+  useEffect(() => {
+    setCurrency(detectCurrency());
+  }, []);
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
 
   function formatPrice(aed: number, inr: number) {
