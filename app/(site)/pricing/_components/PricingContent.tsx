@@ -117,8 +117,17 @@ function CheckIcon() {
   );
 }
 
+function detectCurrency(): "AED" | "INR" {
+  try {
+    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    if (tz === "Asia/Kolkata") return "INR";
+    if (tz === "Asia/Dubai") return "AED";
+  } catch {}
+  return "AED";
+}
+
 export default function PricingContent() {
-  const [currency, setCurrency] = useState<"AED" | "INR">("AED");
+  const [currency, setCurrency] = useState<"AED" | "INR">(() => detectCurrency());
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
 
   function formatPrice(aed: number, inr: number) {
