@@ -84,6 +84,19 @@ export default function Home() {
 
         </div>
 
+        {/* Scroll cue */}
+        <a
+          href="#templates"
+          aria-label="Scroll to explore"
+          className="relative z-10 flex flex-col items-center gap-1.5 text-white/60 hover:text-white transition-colors duration-150 pb-4"
+        >
+          <span className="text-[10px] sm:text-xs tracking-wide">Scroll to explore</span>
+          <svg className="w-4 h-4 sm:w-5 sm:h-5 animate-bounce" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <path d="M12 5v14" />
+            <path d="M19 12l-7 7-7-7" />
+          </svg>
+        </a>
+
         {/* Offer banner always pinned to bottom edge of the viewport */}
         <div className="relative z-10 w-full">
           <OfferBanner />
