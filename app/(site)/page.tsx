@@ -106,7 +106,7 @@ export default function Home() {
 
           {/* Heading */}
           <h1 className="font-serif font-bold text-4xl sm:text-5xl md:text-6xl xl:text-7xl text-white tracking-[-0.02em] leading-[1.1] mb-5 sm:mb-6 max-w-3xl">
-            Portfolios designed to stand out.
+            Portfolio designed to stand out.
           </h1>
 
           {/* Subtitle */}
