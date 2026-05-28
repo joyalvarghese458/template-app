@@ -1,4 +1,5 @@
 import BackToTemplates from "./_components/BackToTemplates";
+import PageTransition from "@/components/PageTransition";
 
 export default function TemplatesLayout({
   children,
@@ -8,7 +9,7 @@ export default function TemplatesLayout({
   return (
     <>
       <BackToTemplates />
-      {children}
+      <PageTransition>{children}</PageTransition>
     </>
   );
 }

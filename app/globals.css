@@ -109,6 +109,16 @@
   animation: loaderEnter 0.65s cubic-bezier(0.4, 0, 0.2, 1) 0.1s both;
 }
 
+/* Page route transition — triggered by key change on pathname */
+@keyframes pageEnter {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.page-enter {
+  animation: pageEnter 0.4s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
 /* ── Global base ─────────────────────────────────────────────────── */
 :root {
   --navbar-height: 4rem;

@@ -1,5 +1,7 @@
 import Navbar from "@/components/Navbar";
 import LoadingScreen from "@/components/LoadingScreen";
+import SmoothScroll from "@/components/SmoothScroll";
+import PageTransition from "@/components/PageTransition";
 
 export default function SiteLayout({
   children,
@@ -7,10 +9,10 @@ export default function SiteLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <>
+    <SmoothScroll>
       <LoadingScreen />
       <Navbar />
-      {children}
-    </>
+      <PageTransition>{children}</PageTransition>
+    </SmoothScroll>
   );
 }
