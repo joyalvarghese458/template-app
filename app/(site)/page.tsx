@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import heroImage from "@/app/opengraph-image.jpg";
+import heroImageMobile from "@/app/landing-mb.webp";
 import StatsBar from "@/components/StatsBar";
 import AboutSection from "@/components/AboutSection";
 import TemplatesSection from "@/components/TemplatesSection";
@@ -74,7 +75,14 @@ export default function Home() {
           src={heroImage}
           alt="Landing"
           fill
-          className="object-cover object-center"
+          className="object-cover object-center hidden sm:block"
+          priority
+        />
+        <Image
+          src={heroImageMobile}
+          alt="Landing"
+          fill
+          className="object-cover object-center block sm:hidden"
           priority
         />
         {/* Dark overlay */}
