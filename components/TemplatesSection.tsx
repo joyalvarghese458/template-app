@@ -316,7 +316,7 @@ function TierCarousel({ tier }: { tier: TierWithTemplates }) {
               {tier.price}
             </span>
           </h3>
-         
+
         </div>
 
         {/* Arrow buttons */}
@@ -409,7 +409,7 @@ export default function TemplatesSection() {
             <span className="italic text-brand">in days.</span>
           </h2>
           <p className="text-base sm:text-lg text-ink-soft leading-relaxed">
-            30 hand-crafted portfolio templates across three price tiers — pay
+            30+ hand-crafted portfolio templates across three price tiers — pay
             once, own forever.
           </p>
         </div>

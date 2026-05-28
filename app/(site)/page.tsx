@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import StatsBar from "@/components/StatsBar";
 import AboutSection from "@/components/AboutSection";
 import TemplatesSection from "@/components/TemplatesSection";
@@ -9,9 +10,62 @@ import Footer from "@/components/Footer";
 import Image from "next/image";
 import OfferBanner from "@/components/OfferBanner";
 
+export const metadata: Metadata = {
+  title: "Professional Portfolio Templates — Launch in Days",
+  description:
+    "Browse 30+ premium portfolio templates for designers, developers, photographers & creators. Starting at AED 49. One-time payment, lifetime ownership.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    url: "https://www.myportfoliowebsite.com/",
+  },
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "My Portfolio",
+  url: "https://www.myportfoliowebsite.com",
+  description:
+    "Hand-crafted portfolio templates for designers, developers, photographers, and creators.",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate:
+        "https://www.myportfoliowebsite.com/templates?q={search_term_string}",
+    },
+    "query-input": "required name=search_term_string",
+  },
+};
+
+const orgJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "My Portfolio",
+  url: "https://www.myportfoliowebsite.com",
+  logo: "https://www.myportfoliowebsite.com/icon.svg",
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+971568450406",
+    contactType: "customer service",
+    areaServed: "AE",
+    availableLanguage: "English",
+  },
+};
+
 export default function Home() {
   return (
     <main className="bg-canvas-bg">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+      />
       {/* ── Hero ──────────────────────────────────────────────────── */}
       <section className="relative flex flex-col overflow-hidden" style={{ height: "100svh" }}>
         {/* Full-width background image */}

@@ -14,9 +14,24 @@ import FilterShell from "./_components/FilterShell";
 import TemplateCard from "./_components/TemplateCard";
 
 export const metadata: Metadata = {
-  title: "All Portfolio Templates — My Portfolio",
+  title: "All Portfolio Templates — Browse 30+ Designs",
   description:
-    "Browse 30 hand-crafted portfolio templates. Search and filter by profession — designer, developer, photographer, creator, founder, or agency.",
+    "Browse 30+ hand-crafted portfolio templates. Filter by profession — designer, developer, photographer, creator, founder, or agency. Starting from AED 49.",
+  alternates: {
+    canonical: "/templates",
+  },
+  openGraph: {
+    url: "https://www.myportfoliowebsite.com/templates",
+    title: "All Portfolio Templates — Browse 30+ Designs",
+    description:
+      "Browse 30+ hand-crafted portfolio templates. Filter by profession — designer, developer, photographer, creator, founder, or agency. Starting from AED 49.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "All Portfolio Templates — Browse 30+ Designs",
+    description:
+      "Browse 30+ hand-crafted portfolio templates. Filter by profession and price. Starting from AED 49.",
+  },
 };
 
 type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
@@ -76,7 +91,7 @@ export default async function TemplatesPage({
           <p className="text-sm sm:text-base md:text-lg text-ink-soft max-w-2xl mx-auto leading-relaxed">
             {soloAudience
               ? soloAudience.blurb
-              : `Search 30 hand-crafted templates and filter by profession, specialty, or price.`}
+              : `Search 30+ hand-crafted templates and filter by profession, specialty, or price.`}
           </p>
         </div>
       </header>

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import {
   Inter,
   Plus_Jakarta_Sans,
@@ -6,6 +7,10 @@ import {
   Manrope,
   Fraunces,
 } from "next/font/google";
+
+export const metadata: Metadata = {
+  robots: { index: false, follow: false },
+};
 
 const inter = Inter({ subsets: ["latin"], weight: ["300", "400", "500", "700", "800", "900"] });
 const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], weight: ["300", "400", "500", "700", "800"] });
