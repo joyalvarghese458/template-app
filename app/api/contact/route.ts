@@ -91,5 +91,39 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Failed to send email." }, { status: 500 });
   }
 
+  // Auto-reply to the sender
+  await resend.emails.send({
+    from: FROM_EMAIL,
+    to: email,
+    subject: "Thanks for reaching out — we'll be in touch soon!",
+    html: `
+      <div style="font-family:Inter,sans-serif;max-width:600px;margin:0 auto;padding:32px;background:#f6f5fb;border-radius:16px;">
+        <div style="background:linear-gradient(135deg,#0e0b2a,#1a1545);padding:32px;border-radius:12px;margin-bottom:24px;">
+          <h1 style="color:#fff;font-size:24px;margin:0 0 8px;">Thank you, ${first_name}!</h1>
+          <p style="color:rgba(255,255,255,0.6);margin:0;font-size:14px;">We've received your message.</p>
+        </div>
+
+        <div style="background:#fff;padding:28px;border-radius:12px;margin-bottom:16px;">
+          <p style="color:#14112d;font-size:15px;line-height:1.75;margin:0 0 16px;">
+            Hi ${first_name}, thanks for getting in touch with us at <strong>My Portfolio</strong>.
+          </p>
+          <p style="color:#14112d;font-size:15px;line-height:1.75;margin:0 0 16px;">
+            We've received your message and will get back to you within <strong>one business day</strong>.
+            In the meantime, feel free to reach us directly on WhatsApp for a faster response.
+          </p>
+          <a href="https://wa.me/971568450406"
+             style="display:inline-block;background:#0e0b2a;color:#fff;font-size:14px;font-weight:600;
+                    padding:12px 24px;border-radius:8px;text-decoration:none;margin-top:4px;">
+            Chat on WhatsApp
+          </a>
+        </div>
+
+        <p style="color:#9896a4;font-size:12px;text-align:center;margin:24px 0 0;">
+          My Portfolio &middot; Dubai, UAE &middot; info@myportfoliowebsite.com
+        </p>
+      </div>
+    `,
+  });
+
   return NextResponse.json({ success: true });
 }
