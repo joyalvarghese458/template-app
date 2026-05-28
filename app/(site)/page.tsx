@@ -5,6 +5,7 @@ import StatsBar from "@/components/StatsBar";
 import AboutSection from "@/components/AboutSection";
 import TemplatesSection from "@/components/TemplatesSection";
 import ReviewSection from "@/components/ReviewSection";
+import FAQSection from "@/components/FAQSection";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import HowItWorks from "@/components/HowItWorks";
 import ScrollingBackgroundSection from "@/components/ScrollingBackgroundSection";
@@ -212,6 +213,7 @@ export default function Home() {
       <HowItWorks />
       <WhyChooseUs />
       <ReviewSection />
+      <FAQSection />
       <ScrollingBackgroundSection />
       <Footer />
     </main>
