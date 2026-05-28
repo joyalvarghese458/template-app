@@ -101,11 +101,6 @@ function TemplateCard({
           className={`absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03] bg-gradient-to-br ${tier.accent}`}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent pointer-events-none" />
-        <span
-          className={`absolute top-3 left-3 inline-flex items-center px-2.5 py-1 text-[10px] font-semibold uppercase tracking-widest rounded-full border backdrop-blur-sm ${tier.badgeColor}`}
-        >
-          {tier.label}
-        </span>
       </Link>
 
       {/* Body */}
