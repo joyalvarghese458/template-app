@@ -8,7 +8,7 @@ const NAV_LINKS = [
   { href: "/templates", label: "Templates" },
   { href: "/pricing", label: "Pricing" },
   { href: "/#blog", label: "Blog" },
-  { href: "/#contact", label: "Contact" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function Navbar() {
