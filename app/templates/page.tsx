@@ -13,6 +13,7 @@ import {
 } from "@/lib/templates";
 import FilterShell from "./_components/FilterShell";
 import TemplateCard from "./_components/TemplateCard";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "All Portfolio Templates — Browse 30+ Designs",
@@ -54,7 +55,7 @@ export default async function TemplatesPage({
   const soloAudience = audiences.length === 1 ? AUDIENCES.find((a) => a.id === audiences[0]) : null;
 
   return (
-    <main className="bg-canvas-bg min-h-svh pb-20">
+    <main className="bg-canvas-bg min-h-svh">
       <Navbar />
       {/* ── Header ─────────────────────────────────────────────────── */}
       <header className="relative overflow-hidden pt-16 sm:pt-20 pb-6 sm:pb-8 px-4 sm:px-6 lg:px-8 border-b border-ink/10">
@@ -114,7 +115,7 @@ export default async function TemplatesPage({
           )}
 
           {/* Footer CTA */}
-          <div className="text-center mt-20">
+          <div className="text-center mt-20 mb-20">
             <p className="text-ink-soft text-sm mb-5">
               Can&apos;t find a fit? We custom-build portfolios from scratch.
             </p>
@@ -129,6 +130,7 @@ export default async function TemplatesPage({
           </div>
         </div>
       </div>
+      <Footer />
     </main>
   );
 }
