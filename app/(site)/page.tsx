@@ -75,6 +75,7 @@ export default function Home() {
           src={heroImage}
           alt="Landing"
           fill
+          sizes="(max-width: 639px) 0px, 100vw"
           className="object-cover object-center hidden sm:block"
           priority
         />
@@ -82,8 +83,8 @@ export default function Home() {
           src={heroImageMobile}
           alt="Landing"
           fill
+          sizes="(min-width: 640px) 0px, 100vw"
           className="object-cover object-center block sm:hidden"
-          priority
         />
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/50" aria-hidden="true" />
