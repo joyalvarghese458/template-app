@@ -6,17 +6,17 @@ import { NextResponse } from "next/server";
    FROM_EMAIL : must be a Resend-verified domain address.
                 During development you can use onboarding@resend.dev
                 but it will only deliver to your Resend account email. */
-const TO_EMAIL   = process.env.CONTACT_TO_EMAIL   ?? "joyalvarghese458@gmail.com";
-const FROM_EMAIL = process.env.CONTACT_FROM_EMAIL ?? "onboarding@resend.dev";
+const TO_EMAIL = process.env.CONTACT_TO_EMAIL ?? "info.myportfoliowebsiteglobal@gmail.com";
+const FROM_EMAIL = process.env.CONTACT_FROM_EMAIL ?? "contact@myportfoliowebsite.com";
 
 interface ContactPayload {
   first_name: string;
-  last_name:  string;
-  email:      string;
-  phone?:     string;
-  subject:    string;
-  budget:     string;
-  message:    string;
+  last_name: string;
+  email: string;
+  phone?: string;
+  subject: string;
+  budget: string;
+  message: string;
 }
 
 export async function POST(request: Request) {
@@ -37,8 +37,8 @@ export async function POST(request: Request) {
   }
 
   const { error } = await resend.emails.send({
-    from:    FROM_EMAIL,
-    to:      TO_EMAIL,
+    from: FROM_EMAIL,
+    to: TO_EMAIL,
     replyTo: email,
     subject: `[Contact] ${subject} — ${first_name} ${last_name}`,
     html: `
