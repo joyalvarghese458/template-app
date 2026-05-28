@@ -90,7 +90,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/35 sm:bg-black/50" aria-hidden="true" />
 
         {/* Hero content */}
-        <div className="relative z-10 flex-1 flex flex-col items-center justify-between sm:justify-center w-full px-6 sm:px-8 lg:px-12 pt-20 pb-4 sm:pb-6 text-center">
+        <div className="relative z-10 flex-1 flex flex-col items-center justify-between w-full px-6 sm:px-8 lg:px-12 pt-20 pb-4 sm:pb-6 text-center">
 
           {/* Top content group */}
           <div className="flex flex-col items-center">
@@ -140,19 +140,10 @@ export default function Home() {
               </svg>
             </a>
 
-            {/* Trust strip — desktop only */}
-            <div className="hidden sm:flex flex-col items-center gap-2 text-xs text-white/60">
-              <div className="flex items-center gap-2.5">
-                <span className="whitespace-nowrap flex items-center gap-1"><span className="w-1 h-1 rounded-full bg-brand shrink-0" /><span className="text-white font-semibold">4.9</span>&nbsp;· 280+ reviews</span>
-                <span className="shrink-0 w-px h-3 bg-white/20" />
-                <span className="whitespace-nowrap flex items-center gap-1"><span className="w-1 h-1 rounded-full bg-brand shrink-0" /><span className="text-white font-semibold">30+</span>&nbsp;templates</span>
-              </div>
-              <span className="whitespace-nowrap flex items-center gap-1"><span className="w-1 h-1 rounded-full bg-brand shrink-0" />One-time payment · lifetime ownership</span>
-            </div>
           </div>
 
-          {/* Stats grid — mobile only, pinned to bottom */}
-          <div className="sm:hidden w-full border-t border-white/15 pt-3">
+          {/* Stats grid — all screen sizes, pinned to bottom */}
+          <div className="w-full border-t border-white/15 pt-3 max-w-lg sm:max-w-xl mx-auto">
             <div className="grid grid-cols-4 gap-1">
               {/* 4.9 reviews */}
               <div className="flex flex-col items-center gap-1">
