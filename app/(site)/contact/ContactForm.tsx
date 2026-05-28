@@ -38,7 +38,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="bg-canvas-bg rounded-2xl border border-ink/10 p-6 sm:p-8 shadow-sm">
+    <div className="bg-canvas-bg rounded-2xl border border-ink/10 p-6 sm:p-8 shadow-sm shadow-ink/5">
       <h2 className="font-serif text-2xl sm:text-3xl text-ink tracking-tight mb-2">
         Send a <span className="italic text-brand">message</span>
       </h2>

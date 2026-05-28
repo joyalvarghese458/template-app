@@ -122,6 +122,7 @@ export default function ContactPage() {
                 target={item.key === "location" || item.key === "whatsapp" ? "_blank" : undefined}
                 rel="noopener noreferrer"
                 className="group flex items-center gap-3.5 p-4 sm:p-5 rounded-xl border border-ink/10 bg-canvas-bg
+                           shadow-sm shadow-ink/5
                            hover:border-brand/30 hover:shadow-md hover:shadow-brand/8
                            transition-all duration-300 hover:-translate-y-0.5"
               >
