@@ -69,7 +69,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
       />
       {/* ── Hero ──────────────────────────────────────────────────── */}
-      <section className="relative flex flex-col overflow-hidden" style={{ height: "100svh" }}>
+      <section className="relative flex flex-col overflow-hidden" style={{ minHeight: "100svh" }}>
         {/* Full-width background image */}
         <Image
           src={heroImage}

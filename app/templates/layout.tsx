@@ -1,4 +1,3 @@
-import Navbar from "@/components/Navbar";
 import BackToTemplates from "./_components/BackToTemplates";
 
 export default function TemplatesLayout({
@@ -8,7 +7,6 @@ export default function TemplatesLayout({
 }>) {
   return (
     <>
-      <Navbar />
       <BackToTemplates />
       {children}
     </>
