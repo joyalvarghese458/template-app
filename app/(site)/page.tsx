@@ -90,7 +90,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/35 sm:bg-black/50" aria-hidden="true" />
 
         {/* Hero content */}
-        <div className="relative z-10 flex-1 flex flex-col items-center justify-between w-full px-6 sm:px-8 lg:px-12 pt-20 pb-4 sm:pb-6 text-center">
+        <div className="relative z-10 flex-1 flex flex-col items-center w-full px-6 sm:px-8 lg:px-12 pt-20 pb-4 sm:pb-6 text-center">
 
           {/* Top content group */}
           <div className="flex flex-col items-center">
@@ -141,6 +141,10 @@ export default function Home() {
             </a>
 
           </div>
+
+          {/* Flexible spacer — grows to fill available space but never collapses below 72px,
+              guaranteeing the background image always shows through on all screen sizes */}
+          <div className="flex-1 min-h-[72px]" aria-hidden="true" />
 
           {/* Stats grid — all screen sizes, pinned to bottom */}
           <div className="w-full border-t border-white/15 pt-3 max-w-lg sm:max-w-xl mx-auto">
