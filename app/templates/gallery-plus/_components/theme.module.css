@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@300;400&display=swap");
+
+/* ============================================================
+   GALLERY+ DESIGN TOKENS
+   Applied via <div className={theme.root}> to avoid global CSS pollution.
+   All --gp-* variables are scoped to this subtree.
+   ============================================================ */
+
+.root {
+  --gp-bg: #060608;
+  --gp-surface: #0e0e12;
+  --gp-surface2: #14141a;
+  --gp-cream: #f0ebe4;
+  --gp-cream-dim: rgba(240, 235, 228, 0.65);
+  --gp-cream-muted: rgba(240, 235, 228, 0.42);
+  --gp-cream-faint: rgba(240, 235, 228, 0.14);
+  --gp-cream-ghost: rgba(240, 235, 228, 0.06);
+  --gp-gold: #c8a96e;
+  --gp-gold-dim: rgba(200, 169, 110, 0.5);
+  --gp-gold-glow: rgba(200, 169, 110, 0.22);
+  --gp-rose: #c47a6e;
+  --gp-green: #6fcf97;
+  --gp-border: rgba(240, 235, 228, 0.08);
+  --gp-border-strong: rgba(240, 235, 228, 0.16);
+
+  --gp-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --gp-sans: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --gp-mono: "DM Mono", "Courier New", monospace;
+
+  --gp-ease-out: cubic-bezier(0.25, 0.85, 0.3, 1);
+  --gp-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --gp-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  background: var(--gp-bg);
+  color: var(--gp-cream);
+  font-family: var(--gp-sans);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.root *,
+.root *::before,
+.root *::after {
+  box-sizing: border-box;
+}
+
+/* ---- Film grain overlay ---- */
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 300;
+  opacity: 0.07;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.5 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  background-size: 200px 200px;
+}
+
+/* ---- Soft vignette / ambient light ---- */
+.vignette {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(200, 169, 110, 0.04) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 60% at 100% 100%, rgba(196, 122, 110, 0.03) 0%, transparent 60%),
+    radial-gradient(ellipse 100% 80% at 0% 60%, rgba(200, 169, 110, 0.02) 0%, transparent 60%);
+}
+
+/* ---- Scroll progress bar ---- */
+.progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gp-gold), var(--gp-rose));
+  z-index: 500;
+  transform-origin: left;
+  pointer-events: none;
+  box-shadow: 0 0 12px var(--gp-gold-glow);
+  transition: transform 0.1s linear;
+}
+
+/* ---- Custom cursor (desktop) ---- */
+.cursor {
+  position: fixed;
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(240, 235, 228, 0.5);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.35s var(--gp-ease-out), height 0.35s var(--gp-ease-out),
+    border-color 0.35s ease, background 0.35s ease, opacity 0.3s ease;
+  mix-blend-mode: difference;
+}
+
+.cursorDot {
+  position: fixed;
+  width: 5px;
+  height: 5px;
+  background: #f0ebe4;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.08s linear;
+  mix-blend-mode: difference;
+}
+
+@media (hover: none), (max-width: 900px) {
+  .cursor,
+  .cursorDot {
+    display: none;
+  }
+}
