@@ -9,7 +9,7 @@ const PLANS = [
     name: "Digital Resume",
     tagline: "Digital Resume",
     priceAED: 49,
-    priceINR: 1499,
+    priceINR: 999,
     description:
       "ATS-friendly digital resume designed to help professionals stand out and apply smarter.",
     includes: [
@@ -55,8 +55,8 @@ const PLANS = [
     id: "creator-portfolio",
     name: "Creator Portfolio",
     tagline: "Creator Portfolio",
-    priceAED: 1499,
-    priceINR: 3499,
+    priceAED: 149,
+    priceINR: 3999,
     description:
       "Built for creators, photographers, influencers, videographers, and personal brands.",
     includes: [
@@ -78,8 +78,8 @@ const PLANS = [
     id: "business-portfolio",
     name: "Business Portfolio",
     tagline: "Business Portfolio",
-    priceAED: 2499,
-    priceINR: 5499,
+    priceAED: 1599,
+    priceINR: 39999,
     description:
       "Designed for freelancers, agencies, consultants, startups, and growing businesses.",
     includes: [
@@ -122,7 +122,7 @@ function detectCurrency(): "AED" | "INR" {
     const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
     if (tz === "Asia/Kolkata") return "INR";
     if (tz === "Asia/Dubai") return "AED";
-  } catch {}
+  } catch { }
   return "AED";
 }
 
