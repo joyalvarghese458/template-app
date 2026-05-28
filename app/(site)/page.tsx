@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import heroImage from "@/app/opengraph-image.jpg";
 import StatsBar from "@/components/StatsBar";
 import AboutSection from "@/components/AboutSection";
 import TemplatesSection from "@/components/TemplatesSection";
@@ -70,7 +71,7 @@ export default function Home() {
       <section className="relative flex flex-col overflow-hidden" style={{ height: "100svh" }}>
         {/* Full-width background image */}
         <Image
-          src="/landing-img.png"
+          src={heroImage}
           alt="Landing"
           fill
           className="object-cover object-center"
