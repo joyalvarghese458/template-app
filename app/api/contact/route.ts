@@ -1,8 +1,6 @@
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 /* ── Configuration ──────────────────────────────────────────
    TO_EMAIL   : where contact form submissions are delivered
    FROM_EMAIL : must be a Resend-verified domain address.
@@ -22,6 +20,8 @@ interface ContactPayload {
 }
 
 export async function POST(request: Request) {
+  const resend = new Resend(process.env.RESEND_API_KEY);
+
   let body: unknown;
   try {
     body = await request.json();
