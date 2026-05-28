@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
+import Navbar from "@/components/Navbar";
 import {
   AUDIENCES,
   TEMPLATES,
@@ -54,6 +55,7 @@ export default async function TemplatesPage({
 
   return (
     <main className="bg-canvas-bg min-h-svh pb-20">
+      <Navbar />
       {/* ── Header ─────────────────────────────────────────────────── */}
       <header className="relative overflow-hidden pt-16 sm:pt-20 pb-6 sm:pb-8 px-4 sm:px-6 lg:px-8 border-b border-ink/10">
         <div

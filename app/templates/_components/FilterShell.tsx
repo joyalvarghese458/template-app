@@ -63,7 +63,7 @@ export default function FilterShell() {
   return (
     <>
       {/* Sticky search + filter bar */}
-      <div className="sticky top-0 z-30 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 py-3 sm:py-4 bg-canvas-bg/85 backdrop-blur-md border-b border-ink/10">
+      <div className="sticky top-16 z-30 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 py-3 sm:py-4 bg-canvas-bg/85 backdrop-blur-md border-b border-ink/10">
         <div className="flex items-center gap-2 sm:gap-3">
           {/* Search input pill */}
           <div className="relative flex-1 min-w-0">
