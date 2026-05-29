@@ -2,7 +2,18 @@
 
 import Link from "next/link";
 
-const REPEATS = 6;
+const ITEMS = [
+  <>
+    <span className="font-bold uppercase tracking-[0.18em] text-white">Limited Offer</span>
+    <span className="mx-2 text-white/30">•</span>
+    Up to <span className="font-bold text-white">40% OFF</span> on Professional Portfolio Websites
+  </>,
+  <>Launch Your Professional Portfolio Website This Week</>,
+  <>
+    Professional Portfolio Websites Starting at{" "}
+    <span className="font-bold text-white">₹2499</span>
+  </>,
+];
 
 function Track({ ariaHidden }: { ariaHidden?: boolean }) {
   return (
@@ -10,26 +21,16 @@ function Track({ ariaHidden }: { ariaHidden?: boolean }) {
       className="flex shrink-0 items-center"
       aria-hidden={ariaHidden || undefined}
     >
-      {Array.from({ length: REPEATS }).map((_, i) => (
-        <span key={i} className="flex shrink-0 items-center gap-3 px-6">
-          <svg
-            className="w-3.5 h-3.5 text-brand shrink-0"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            aria-hidden="true"
-          >
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-          </svg>
-          <span className="whitespace-nowrap text-[12px] sm:text-[13px] font-medium tracking-wide text-white/70">
-            <span className="font-bold uppercase tracking-[0.18em] text-white">Eid Special</span>
-            <span className="mx-2 text-white/30">·</span>
-            Up to{" "}
-            <span className="font-bold text-white">50% OFF</span>{" "}
-            on Premium tier portfolios
+      {Array.from({ length: 4 }).map((_, repeat) =>
+        ITEMS.map((item, i) => (
+          <span key={`${repeat}-${i}`} className="flex shrink-0 items-center gap-3 px-6">
+            <span className="whitespace-nowrap text-[12px] sm:text-[13px] font-medium tracking-wide text-white/70">
+              {item}
+            </span>
+            <span className="text-white/20">✦</span>
           </span>
-          <span className="text-white/20">✦</span>
-        </span>
-      ))}
+        ))
+      )}
     </div>
   );
 }
@@ -38,7 +39,7 @@ export default function OfferBanner() {
   return (
     <Link
       href="/templates?tier=premium"
-      aria-label="Eid Special: up to 50% off on Premium tier portfolios"
+      aria-label="Limited Offer: up to 40% off on Professional Portfolio Websites starting at ₹2499"
       className="group relative block overflow-hidden backdrop-blur-md"
       style={{ background: "rgba(0, 0, 0, 0.45)" }}
     >
