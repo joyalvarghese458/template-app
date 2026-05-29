@@ -96,6 +96,15 @@
   to   { transform: scale(1.1)  translate(1.5%, -1%); }
 }
 
+/* Utility: hide scrollbar while keeping scroll functionality */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 /* Loading screen — content entrance */
 @keyframes loaderEnter {
   from { opacity: 0; transform: translateY(18px); }
