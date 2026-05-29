@@ -153,7 +153,7 @@ export const TEMPLATES: Template[] = [
     audiences: ["creators", "founders"], specialties: ["writer", "consultant", "personal-brand"] },
   { id: "s2", slug: "pure", title: "Pure", tag: "Personal · Light", tier: "starter",
     audiences: ["creators", "founders"], specialties: ["personal-brand"] },
-  { id: "s3", title: "Cardstock", tag: "CV · Card layout", tier: "starter",
+  { id: "s3", slug: "cardstock", title: "Cardstock", tag: "CV · Card layout", tier: "starter",
     audiences: ["creators", "founders"], specialties: ["writer"] },
   { id: "s4", slug: "solo", title: "Solo", tag: "Graphic Designer · Single page", tier: "starter",
     audiences: ["designers"], specialties: ["graphic", "brand"] },
