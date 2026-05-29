@@ -73,6 +73,11 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Invalid request body." }, { status: 400 });
   }
 
+  // Honeypot check — real users never see or fill this field, bots do
+  if ((body as Record<string, unknown>).website) {
+    return NextResponse.json({ success: true });
+  }
+
   const { first_name, last_name, email, phone, subject, budget, message } =
     body as ContactPayload;
 

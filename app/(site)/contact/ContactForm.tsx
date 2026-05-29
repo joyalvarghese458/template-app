@@ -47,6 +47,12 @@ export default function ContactForm() {
       </p>
 
       <form ref={formRef} onSubmit={handleSubmit} noValidate className="space-y-5">
+        {/* Honeypot — invisible to humans, bots fill it automatically, we reject if non-empty */}
+        <div style={{ position: "absolute", left: "-9999px", top: "-9999px", width: "1px", height: "1px", overflow: "hidden" }} aria-hidden="true">
+          <label htmlFor="website">Website</label>
+          <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+        </div>
+
         {/* Name row */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
