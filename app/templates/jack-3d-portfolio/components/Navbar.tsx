@@ -32,7 +32,7 @@ export default function Navbar() {
             }}
         >
             <span className="text-white font-black tracking-widest text-lg md:text-xl select-none">
-                JACK
+                ASHWIN
             </span>
 
             <div className="flex items-center gap-6 md:gap-10 lg:gap-14">

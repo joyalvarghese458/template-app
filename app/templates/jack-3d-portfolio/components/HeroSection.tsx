@@ -11,7 +11,7 @@ export default function HeroSection() {
             style={{ overflowX: 'clip', background: '#0C0C0C', paddingTop: 'clamp(3rem, 6vw, 6rem)' }}
         >
 
-            {/* Hero Heading */}
+            {/* Hero Heading — back layer (behind image) */}
             <div className="overflow-hidden relative z-20 px-8 sm:px-12 md:px-16 lg:px-20">
                 <FadeIn
                     delay={0.15}
@@ -26,11 +26,33 @@ export default function HeroSection() {
                 </FadeIn>
             </div>
 
+            {/* Hero Heading — front layer (outline only, image shows through letters) */}
+            <div className="absolute inset-x-0 z-40 px-8 sm:px-12 md:px-16 lg:px-20"
+                style={{ top: 'clamp(3rem, 6vw, 6rem)' }}
+            >
+                <FadeIn
+                    delay={0.15}
+                    y={40}
+                    as="h1"
+                    className="font-black uppercase tracking-tight leading-none
+                        whitespace-nowrap w-full text-center
+                        text-[14vw] sm:text-[15vw] md:text-[16vw] lg:text-[17.5vw]
+                        mt-6 sm:mt-4 md:-mt-5"
+                    style={{
+                        background: 'none',
+                        WebkitTextFillColor: 'transparent',
+                        WebkitTextStroke: '1.5px #BBCCD7',
+                    }}
+                >
+                    Hi, i&apos;m Ashi
+                </FadeIn>
+            </div>
+
             {/* Portrait — overlapping the heading */}
             <div
                 className="absolute left-1/2 -translate-x-1/2 z-30
-        top-0
-        w-[200px] sm:w-[260px] md:w-[320px] lg:w-[380px]"
+        top-50
+        w-[170px] sm:w-[220px] md:w-[270px] lg:w-[320px]"
             >
                 <FadeIn delay={0.6} y={30}>
                     <Magnet
