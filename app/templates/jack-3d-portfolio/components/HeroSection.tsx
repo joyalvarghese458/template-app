@@ -1,49 +1,27 @@
 'use client';
 
-import React from 'react';
 import { FadeIn, Magnet, ContactButton } from './ui';
 
 const PORTRAIT_URL =
     'https://shrug-person-78902957.figma.site/_components/v2/d24c01ad3a56fc65e942a1f501eb73db42d7cf9a/Rectangle_40443.81459862.png';
 
-const NAV_LINKS = ['About', 'Price', 'Projects', 'Contact'];
-
 export default function HeroSection() {
     return (
         <section
             className="h-screen flex flex-col relative"
-            style={{ overflowX: 'clip', background: '#0C0C0C' }}
+            style={{ overflowX: 'clip', background: '#0C0C0C', paddingTop: 'clamp(3rem, 6vw, 6rem)' }}
         >
-            {/* Navbar */}
-            <FadeIn
-                delay={0}
-                y={-20}
-                as="nav"
-                className="flex justify-between items-center px-6 md:px-10 pt-6 md:pt-8 relative z-20"
-            >
-                {NAV_LINKS.map((link) => (
-                    <a
-                        key={link}
-                        href={`#${link.toLowerCase()}`}
-                        className="text-[#D7E2EA] font-medium uppercase tracking-wider
-              text-sm md:text-lg lg:text-[1.4rem]
-              hover:opacity-70 transition-opacity duration-200"
-                    >
-                        {link}
-                    </a>
-                ))}
-            </FadeIn>
 
             {/* Hero Heading */}
-            <div className="overflow-hidden relative z-20">
+            <div className="overflow-hidden relative z-20 px-8 sm:px-12 md:px-16 lg:px-20">
                 <FadeIn
                     delay={0.15}
                     y={40}
                     as="h1"
                     className="hero-heading font-black uppercase tracking-tight leading-none
-            whitespace-nowrap w-full text-center
-            text-[14vw] sm:text-[15vw] md:text-[16vw] lg:text-[17.5vw]
-            mt-6 sm:mt-4 md:-mt-5"
+                        whitespace-nowrap w-full text-center
+                        text-[14vw] sm:text-[15vw] md:text-[16vw] lg:text-[17.5vw]
+                        mt-6 sm:mt-4 md:-mt-5"
                 >
                     Hi, i&apos;m jack
                 </FadeIn>
@@ -52,9 +30,9 @@ export default function HeroSection() {
             {/* Portrait — centered absolutely */}
             <div
                 className="absolute left-1/2 -translate-x-1/2 z-10
-          top-1/2 -translate-y-1/2
-          sm:top-auto sm:translate-y-0 sm:bottom-0
-          w-[280px] sm:w-[360px] md:w-[440px] lg:w-[520px]"
+                    top-1/2 -translate-y-1/2
+                    sm:top-auto sm:translate-y-0 sm:bottom-0
+                    w-[280px] sm:w-[360px] md:w-[440px] lg:w-[520px]"
             >
                 <FadeIn delay={0.6} y={30}>
                     <Magnet
@@ -78,14 +56,14 @@ export default function HeroSection() {
 
             {/* Bottom bar */}
             <div
-                className="mt-auto flex justify-between items-end
-          px-6 md:px-10 pb-7 sm:pb-8 md:pb-10 relative z-20"
+                className="mt-auto flex justify-between items-end relative z-20"
+                style={{ paddingLeft: 'clamp(1.5rem, 4vw, 5rem)', paddingRight: 'clamp(1.5rem, 4vw, 5rem)', paddingBottom: 'clamp(1.5rem, 3vw, 3rem)' }}
             >
                 <FadeIn delay={0.35} y={20}>
                     <p
                         className="text-[#D7E2EA] font-light uppercase tracking-wide leading-snug
-              max-w-[160px] sm:max-w-[220px] md:max-w-[260px]"
-                        style={{ fontSize: 'clamp(0.75rem, 1.4vw, 1.5rem)' }}
+                            max-w-[180px] sm:max-w-[240px] md:max-w-[280px]"
+                        style={{ fontSize: 'clamp(0.8rem, 1.4vw, 1.4rem)' }}
                     >
                         a 3d creator driven by crafting striking and unforgettable projects
                     </p>
