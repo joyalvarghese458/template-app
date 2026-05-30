@@ -2,8 +2,7 @@
 
 import { FadeIn, Magnet, ContactButton } from './ui';
 
-const PORTRAIT_URL =
-    'https://shrug-person-78902957.figma.site/_components/v2/d24c01ad3a56fc65e942a1f501eb73db42d7cf9a/Rectangle_40443.81459862.png';
+const PORTRAIT_URL = '/hero-test.webp';
 
 export default function HeroSection() {
     return (
@@ -23,16 +22,15 @@ export default function HeroSection() {
                         text-[14vw] sm:text-[15vw] md:text-[16vw] lg:text-[17.5vw]
                         mt-6 sm:mt-4 md:-mt-5"
                 >
-                    Hi, i&apos;m jack
+                    Hi, i&apos;m Ashi
                 </FadeIn>
             </div>
 
-            {/* Portrait — centered absolutely */}
+            {/* Portrait — overlapping the heading */}
             <div
-                className="absolute left-1/2 -translate-x-1/2 z-10
-                    top-1/2 -translate-y-1/2
-                    sm:top-auto sm:translate-y-0 sm:bottom-0
-                    w-[280px] sm:w-[360px] md:w-[440px] lg:w-[520px]"
+                className="absolute left-1/2 -translate-x-1/2 z-30
+        top-0
+        w-[200px] sm:w-[260px] md:w-[320px] lg:w-[380px]"
             >
                 <FadeIn delay={0.6} y={30}>
                     <Magnet
