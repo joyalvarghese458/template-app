@@ -34,7 +34,7 @@ function LinkList({ items }: { items: { label: string; href: string }[] }) {
                     href={l.href}
                     className="flex items-center gap-2 text-sm font-light
                         hover:opacity-60 transition-opacity duration-200"
-                    style={{ color: '#0C0C0C', opacity: 0.75 }}
+                    style={{ color: '#0C0C0C', opacity: 0.85 }}
                 >
                     <span style={{ opacity: 0.35 }}>—</span>
                     {l.label}
@@ -48,7 +48,7 @@ export default function ContactSection() {
     const [email, setEmail] = useState('');
     const [sent, setSent] = useState(false);
 
-    function handleSubmit(e: SubmitEvent) {
+    function handleSubmit(e: { preventDefault: () => void }) {
         e.preventDefault();
         if (!email.trim()) return;
         setSent(true);
@@ -114,7 +114,7 @@ export default function ContactSection() {
                         </span>
                         <p
                             className="text-sm font-light leading-relaxed"
-                            style={{ color: '#0C0C0C', opacity: 0.45, maxWidth: 200 }}
+                            style={{ color: '#0C0C0C', opacity: 0.65, maxWidth: 200 }}
                         >
                             3D creator crafting striking visuals, immersive experiences, and unforgettable brands.
                         </p>
@@ -124,7 +124,7 @@ export default function ContactSection() {
                     <FadeIn delay={0.1} y={20} className="flex flex-col gap-4">
                         <h4
                             className="text-xs font-semibold uppercase tracking-[0.2em]"
-                            style={{ color: '#0C0C0C', opacity: 0.35 }}
+                            style={{ color: '#0C0C0C', opacity: 0.5 }}
                         >
                             Quick Links
                         </h4>
@@ -135,7 +135,7 @@ export default function ContactSection() {
                     <FadeIn delay={0.2} y={20} className="flex flex-col gap-4">
                         <h4
                             className="text-xs font-semibold uppercase tracking-[0.2em]"
-                            style={{ color: '#0C0C0C', opacity: 0.35 }}
+                            style={{ color: '#0C0C0C', opacity: 0.5 }}
                         >
                             Services
                         </h4>
@@ -146,13 +146,13 @@ export default function ContactSection() {
                     <FadeIn delay={0.3} y={20} className="flex flex-col gap-4">
                         <h4
                             className="text-xs font-semibold uppercase tracking-[0.2em]"
-                            style={{ color: '#0C0C0C', opacity: 0.35 }}
+                            style={{ color: '#0C0C0C', opacity: 0.5 }}
                         >
                             Stay in the Loop
                         </h4>
                         <p
                             className="text-sm font-light leading-relaxed"
-                            style={{ color: '#0C0C0C', opacity: 0.5 }}
+                            style={{ color: '#0C0C0C', opacity: 0.65 }}
                         >
                             Get updates on new projects, behind-the-scenes process, and creative drops.
                         </p>
@@ -194,14 +194,14 @@ export default function ContactSection() {
                         <div className="flex flex-col gap-1" style={{ marginTop: '0.5rem' }}>
                             <span
                                 className="text-xs uppercase tracking-[0.2em] font-medium"
-                                style={{ color: '#0C0C0C', opacity: 0.35 }}
+                                style={{ color: '#0C0C0C', opacity: 0.5 }}
                             >
                                 Direct Contact
                             </span>
                             <a
                                 href="mailto:hello@jack3d.studio"
                                 className="text-sm font-light hover:opacity-60 transition-opacity duration-200"
-                                style={{ color: '#0C0C0C', opacity: 0.6 }}
+                                style={{ color: '#0C0C0C', opacity: 0.8 }}
                             >
                                 hello@jack3d.studio
                             </a>

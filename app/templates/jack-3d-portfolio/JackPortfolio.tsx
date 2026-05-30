@@ -31,7 +31,7 @@ export default function JackPortfolio() {
             const { default: Lenis } = await import('lenis');
             if (!active) return;
 
-            lenis = new Lenis({ duration: 1.1, touchMultiplier: 1.5 }) as LenisInstance;
+            lenis = new Lenis({ duration: 0.85, touchMultiplier: 1.2 }) as LenisInstance;
 
             function tick(t: number) {
                 lenis?.raf(t);
