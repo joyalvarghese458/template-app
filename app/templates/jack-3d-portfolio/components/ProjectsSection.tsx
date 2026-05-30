@@ -183,7 +183,7 @@ export default function ProjectsSection() {
     return (
         <section
             id="projects"
-            className="rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px]
+            className="rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] rounded-b-[40px] sm:rounded-b-[50px] md:rounded-b-[60px]
         -mt-10 sm:-mt-12 md:-mt-14 relative z-10
         px-5 sm:px-8 md:px-10 pt-20 sm:pt-24 md:pt-32"
             style={{ background: '#0C0C0C', paddingBottom: 'clamp(1.5rem, 3vw, 3rem)' }}
@@ -214,7 +214,7 @@ export default function ProjectsSection() {
                         position: 'sticky',
                         top: 0,
                         height: '100vh',
-                        overflow: 'hidden',
+                        overflow: 'visible',
                     }}
                 >
                     {PROJECTS.map((project, i) => (
