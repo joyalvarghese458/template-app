@@ -35,13 +35,31 @@ const PROJECTS = [
         ],
         col2: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055818_9d062121-ad7e-46b9-999a-1a6a692ef1ee.png&w=1280&q=85',
     },
+    {
+        num: '04',
+        name: 'Vortex Motion',
+        category: 'Personal',
+        col1: [
+            'https://picsum.photos/seed/vortex1/800/600',
+            'https://picsum.photos/seed/vortex2/800/600',
+        ],
+        col2: 'https://picsum.photos/seed/vortex3/800/900',
+    },
+    {
+        num: '05',
+        name: 'Lumina UI Kit',
+        category: 'Client',
+        col1: [
+            'https://picsum.photos/seed/lumina1/800/600',
+            'https://picsum.photos/seed/lumina2/800/600',
+        ],
+        col2: 'https://picsum.photos/seed/lumina3/800/900',
+    },
 ];
 
 const TOTAL = PROJECTS.length;
-// How far each card sticks down from the viewport top (card 0 = base, each
-// subsequent card is 28px lower so you can see the stack depth behind it).
-const CARD_TOP_BASE = 96; // px  ≈ top-24
-const CARD_TOP_STEP = 28; // px
+const CARD_TOP_BASE = 96;
+const CARD_TOP_STEP = 28;
 
 function ProjectCard({
     project,
@@ -52,31 +70,44 @@ function ProjectCard({
     index: number;
     scrollProgress: MotionValue<number>;
 }) {
-    // Cards that have been "passed" shrink slightly so you can see depth.
-    // Last card (index = TOTAL-1) never scales below 1.
     const targetScale = 1 - (TOTAL - 1 - index) * 0.03;
 
-    // Each card scales across its own 1/TOTAL slice of the scroll range.
+    // Scale down as later cards stack on top
     const scale = useTransform(
         scrollProgress,
         [index / TOTAL, (index + 1) / TOTAL],
         [1, targetScale]
     );
 
+    // Spread y animations across the full 0→1 range using TOTAL-1 as denominator
+    // so the last card finishes exactly when the sticky container releases.
+    const y = useTransform(
+        scrollProgress,
+        index === 0 ? [0, 1] : [(index - 1) / (TOTAL - 1), index / (TOTAL - 1)],
+        index === 0 ? ['0vh', '0vh'] : ['100vh', '0vh']
+    );
+
     return (
         <motion.div
-            style={{ scale, background: '#0C0C0C', padding: 'clamp(1.25rem, 3vw, 2.5rem)' }}
-            className="w-full h-full
-        rounded-[40px] sm:rounded-[50px] md:rounded-[60px]
-        border-2 border-[#D7E2EA]
-        flex flex-col"
+            style={{
+                position: 'absolute',
+                top: CARD_TOP_BASE + index * CARD_TOP_STEP,
+                left: 0,
+                right: 0,
+                height: '85vh',
+                zIndex: index + 1,
+                y,
+                scale,
+                background: '#0C0C0C',
+                padding: 'clamp(1.25rem, 3vw, 2.5rem)',
+            }}
+            className="rounded-[40px] sm:rounded-[50px] md:rounded-[60px] border-2 border-[#D7E2EA] flex flex-col"
         >
             {/* ── Top row: number · info · button ── */}
             <div
                 className="flex flex-nowrap items-start flex-shrink-0"
                 style={{ gap: 'clamp(0.75rem, 2vw, 1.75rem)', marginBottom: 'clamp(0.75rem, 1.5vw, 1.5rem)' }}
             >
-                {/* Number */}
                 <span
                     className="font-black text-[#D7E2EA] leading-[0.9] flex-shrink-0"
                     style={{ fontSize: 'clamp(2.5rem, 7vw, 100px)' }}
@@ -84,7 +115,6 @@ function ProjectCard({
                     {project.num}
                 </span>
 
-                {/* Category + Name */}
                 <div
                     className="flex-1 min-w-0 flex flex-col"
                     style={{
@@ -106,7 +136,6 @@ function ProjectCard({
                     </p>
                 </div>
 
-                {/* Button — pulled away from the rounded corner */}
                 <div
                     className="flex-shrink-0"
                     style={{ paddingTop: 'clamp(0.25rem, 0.5vw, 0.5rem)' }}
@@ -117,8 +146,6 @@ function ProjectCard({
 
             {/* ── Image grid ── */}
             <div className="flex gap-3 sm:gap-4 flex-1 min-h-0">
-
-                {/* Left column: 2 stacked images, 40% width */}
                 <div className="flex flex-col gap-3 sm:gap-4" style={{ width: '40%' }}>
                     <div
                         className="rounded-[24px] sm:rounded-[32px] md:rounded-[40px] overflow-hidden flex-shrink-0"
@@ -128,8 +155,6 @@ function ProjectCard({
                         <img src={project.col1[0]} alt="" loading="lazy" decoding="async"
                             className="w-full h-full object-cover" />
                     </div>
-
-                    {/* Bottom image fills remaining height */}
                     <div className="rounded-[24px] sm:rounded-[32px] md:rounded-[40px] overflow-hidden flex-1 min-h-0">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img src={project.col1[1]} alt="" loading="lazy" decoding="async"
@@ -137,7 +162,6 @@ function ProjectCard({
                     </div>
                 </div>
 
-                {/* Right column: one tall image, 60% */}
                 <div className="flex-1 min-w-0 rounded-[24px] sm:rounded-[32px] md:rounded-[40px] overflow-hidden">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={project.col2} alt="" loading="lazy" decoding="async"
@@ -149,8 +173,6 @@ function ProjectCard({
 }
 
 export default function ProjectsSection() {
-    // Attach useScroll to the CARDS container only (not the whole section) so
-    // the heading + padding don't dilute the scroll-progress range.
     const cardsRef = useRef<HTMLDivElement>(null);
 
     const { scrollYProgress } = useScroll({
@@ -177,38 +199,33 @@ export default function ProjectsSection() {
             </FadeIn>
 
             {/*
-              ONE shared container — the only source of scroll-space for all cards.
-              Total height = TOTAL * 100vh so each card gets a full viewport of
-              "pin time" before the next card slides in from below.
-
-              All sticky divs are direct children (siblings), so they share the
-              same scroll context and can coexist simultaneously — that is what
-              produces the "deck of cards" stacking visual.
-
-              z-index increases with index → later cards render on top.
+              Scroll-space container: total height drives how long all cards
+              animate before the section exits.
+              ONE sticky inner div holds the whole deck — so when the container
+              bottom reaches the viewport, ALL cards un-stick and scroll up together.
             */}
             <div
                 ref={cardsRef}
                 className="relative"
                 style={{ height: `${TOTAL * 80}vh` }}
             >
-                {PROJECTS.map((project, i) => (
-                    <div
-                        key={project.num}
-                        style={{
-                            position: 'sticky',
-                            top: CARD_TOP_BASE + i * CARD_TOP_STEP,
-                            height: '85vh',
-                            zIndex: i + 1,
-                        }}
-                    >
+                <div
+                    style={{
+                        position: 'sticky',
+                        top: 0,
+                        height: '100vh',
+                        overflow: 'hidden',
+                    }}
+                >
+                    {PROJECTS.map((project, i) => (
                         <ProjectCard
+                            key={project.num}
                             project={project}
                             index={i}
                             scrollProgress={scrollYProgress}
                         />
-                    </div>
-                ))}
+                    ))}
+                </div>
             </div>
         </section>
     );
