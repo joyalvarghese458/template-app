@@ -186,7 +186,7 @@ export default function ProjectsSection() {
             className="rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px]
         -mt-10 sm:-mt-12 md:-mt-14 relative z-10
         px-5 sm:px-8 md:px-10 pt-20 sm:pt-24 md:pt-32"
-            style={{ background: '#0C0C0C', paddingBottom: 'clamp(4rem, 8vw, 8rem)' }}
+            style={{ background: '#0C0C0C', paddingBottom: 'clamp(1.5rem, 3vw, 3rem)' }}
         >
             <FadeIn y={40}>
                 <h2
