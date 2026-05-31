@@ -16,23 +16,27 @@ export default function Navbar() {
     }, []);
 
     return (
-        <>
-            <FadeIn
-                delay={0}
-                y={-20}
-                as="nav"
-                className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center transition-all duration-300"
-                style={{
-                    paddingLeft: 'clamp(1.5rem, 4vw, 5rem)',
-                    paddingRight: 'clamp(1.5rem, 4vw, 5rem)',
-                    paddingTop: scrolled ? '1rem' : 'clamp(1.25rem, 3vw, 3rem)',
-                    paddingBottom: scrolled ? '1rem' : '0',
-                    background: scrolled || menuOpen ? 'rgba(12,12,12,0.88)' : 'transparent',
-                    backdropFilter: scrolled || menuOpen ? 'blur(14px)' : 'none',
-                    WebkitBackdropFilter: scrolled || menuOpen ? 'blur(14px)' : 'none',
-                    borderBottom: scrolled ? '1px solid rgba(215,226,234,0.08)' : 'none',
-                }}
-            >
+        <FadeIn
+            delay={0}
+            y={-20}
+            as="nav"
+            className="fixed top-0 left-0 right-0 z-50 flex flex-col transition-colors duration-300"
+            style={{
+                // 100vh always equals the viewport height even inside a transformed ancestor.
+                // Using bottom:0 would stretch to the full page height instead.
+                height: menuOpen ? '100vh' : 'auto',
+                paddingLeft: 'clamp(1.5rem, 4vw, 5rem)',
+                paddingRight: 'clamp(1.5rem, 4vw, 5rem)',
+                paddingTop: scrolled && !menuOpen ? '1rem' : 'clamp(1.25rem, 3vw, 3rem)',
+                paddingBottom: scrolled && !menuOpen ? '1rem' : '0',
+                background: menuOpen ? 'rgba(12,12,12,0.97)' : scrolled ? 'rgba(12,12,12,0.88)' : 'transparent',
+                backdropFilter: scrolled || menuOpen ? 'blur(14px)' : 'none',
+                WebkitBackdropFilter: scrolled || menuOpen ? 'blur(14px)' : 'none',
+                borderBottom: scrolled && !menuOpen ? '1px solid rgba(215,226,234,0.08)' : 'none',
+            }}
+        >
+            {/* Top bar: logo + desktop links + hamburger */}
+            <div className="flex justify-between items-center w-full">
                 <span className="text-white font-black tracking-widest text-lg md:text-xl select-none">
                     ASHWIN
                 </span>
@@ -71,24 +75,21 @@ export default function Navbar() {
                         style={{ transform: menuOpen ? 'translateY(-8px) rotate(-45deg)' : 'none' }}
                     />
                 </button>
-            </FadeIn>
+            </div>
 
-            {/* Mobile menu overlay — hidden on md and above */}
+            {/* Mobile menu — only rendered when open, fills remaining nav height */}
             {menuOpen && (
                 <div
-                    className="md:hidden fixed inset-0 z-40 flex flex-col items-center justify-center"
-                    style={{
-                        background: 'rgba(12,12,12,0.97)',
-                        backdropFilter: 'blur(20px)',
-                        WebkitBackdropFilter: 'blur(20px)',
-                    }}
+                    className="md:hidden flex flex-col items-center justify-center flex-1"
+                    style={{ paddingBottom: '4rem' }}
                 >
                     {NAV_LINKS.map((link) => (
                         <a
                             key={link}
                             href={`#${link.toLowerCase()}`}
-                            className="text-[#D7E2EA] font-black uppercase tracking-[0.2em] py-5 text-3xl
+                            className="text-[#D7E2EA] font-black uppercase tracking-[0.2em] text-3xl
                                 hover:text-white transition-colors duration-200"
+                            style={{ paddingTop: '1.25rem', paddingBottom: '1.25rem' }}
                             onClick={() => setMenuOpen(false)}
                         >
                             {link}
@@ -96,6 +97,6 @@ export default function Navbar() {
                     ))}
                 </div>
             )}
-        </>
+        </FadeIn>
     );
 }

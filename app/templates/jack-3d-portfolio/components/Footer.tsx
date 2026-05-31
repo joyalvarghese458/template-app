@@ -64,10 +64,10 @@ export default function Footer() {
         >
             {/* ── Main grid ── */}
             <div className="px-8 sm:px-12 md:px-20 py-14 sm:py-16 md:py-20">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-12 md:gap-16">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10 sm:gap-12 md:gap-16">
 
-                    {/* Col 1 — Brand */}
-                    <FadeIn delay={0} y={20} className="flex flex-col gap-4">
+                    {/* Col 1 — Brand — full width on mobile */}
+                    <FadeIn delay={0} y={20} className="col-span-2 sm:col-span-1 flex flex-col gap-4">
                         <span className="text-white font-black tracking-widest text-2xl mb-2 select-none">
                             JACK
                         </span>
@@ -91,8 +91,8 @@ export default function Footer() {
                         <LinkList items={SERVICES_LINKS} />
                     </FadeIn>
 
-                    {/* Col 4 — Newsletter */}
-                    <FadeIn delay={0.3} y={20} className="flex flex-col gap-4">
+                    {/* Col 4 — Newsletter — full width on mobile */}
+                    <FadeIn delay={0.3} y={20} className="col-span-2 sm:col-span-1 flex flex-col gap-4">
                         <h4 className={COL_HEADING} style={{ opacity: 0.4 }}>Stay in the Loop</h4>
                         <p className="text-[#D7E2EA] text-sm font-light leading-relaxed mb-4" style={{ opacity: 0.5 }}>
                             Get updates on new projects, behind-the-scenes process, and creative drops.

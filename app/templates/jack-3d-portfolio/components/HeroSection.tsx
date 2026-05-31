@@ -52,7 +52,7 @@ export default function HeroSection() {
             <div
                 className="absolute left-1/2 -translate-x-1/2 z-30
         top-50
-        w-[170px] sm:w-[220px] md:w-[270px] lg:w-[320px]"
+        w-[240px] sm:w-[260px] md:w-[270px] lg:w-[320px]"
             >
                 <FadeIn delay={0.6} y={30}>
                     <Magnet
@@ -76,8 +76,8 @@ export default function HeroSection() {
 
             {/* Bottom bar */}
             <div
-                className="mt-auto flex justify-between items-end relative z-20"
-                style={{ paddingLeft: 'clamp(1.5rem, 4vw, 5rem)', paddingRight: 'clamp(1.5rem, 4vw, 5rem)', paddingBottom: 'clamp(1.5rem, 3vw, 3rem)' }}
+                className="flex justify-between items-end relative z-20"
+                style={{ marginTop: 'auto', paddingLeft: 'clamp(1.5rem, 4vw, 5rem)', paddingRight: 'clamp(1.5rem, 4vw, 5rem)', paddingBottom: 'clamp(1.5rem, 3vw, 3rem)' }}
             >
                 <FadeIn delay={0.35} y={20}>
                     <p

@@ -91,17 +91,18 @@ function ProjectCard({
         <motion.div
             style={{
                 position: 'absolute',
-                top: CARD_TOP_BASE + index * CARD_TOP_STEP,
+                // CSS variables let us change base/step per breakpoint via a <style> tag
+                top: `calc(var(--jack-card-base, ${CARD_TOP_BASE}px) + ${index} * var(--jack-card-step, ${CARD_TOP_STEP}px))`,
                 left: 0,
                 right: 0,
-                height: '85vh',
                 zIndex: index + 1,
                 y,
                 scale,
                 background: '#0C0C0C',
                 padding: 'clamp(1.25rem, 3vw, 2.5rem)',
             }}
-            className="rounded-[40px] sm:rounded-[50px] md:rounded-[60px] border-2 border-[#D7E2EA] flex flex-col"
+            className="rounded-[40px] sm:rounded-[50px] md:rounded-[60px] border-2 border-[#D7E2EA] flex flex-col
+                h-[76vh] sm:h-[80vh] md:h-[85vh]"
         >
             {/* ── Top row: number · info · button ── */}
             <div
@@ -181,6 +182,15 @@ export default function ProjectsSection() {
     });
 
     return (
+        <>
+        <style>{`
+            @media (max-width: 767px) {
+                .jack-portfolio {
+                    --jack-card-base: 120px;
+                    --jack-card-step: 24px;
+                }
+            }
+        `}</style>
         <section
             id="projects"
             className="rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] rounded-b-[40px] sm:rounded-b-[50px] md:rounded-b-[60px]
@@ -228,5 +238,6 @@ export default function ProjectsSection() {
                 </div>
             </div>
         </section>
+        </>
     );
 }
