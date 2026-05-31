@@ -95,11 +95,11 @@ const ALL_ARTICLES: Article[] = [
       "https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=700&q=80&auto=format&fit=crop",
   },
   {
-    slug: "personal-branding-website-guide",
-    category: "Personal Branding",
-    title: "Personal Branding Website: The Complete Guide for 2025",
+    slug: "freelancer-portfolio-website-uae",
+    category: "Freelancing",
+    title: "How Freelancers in UAE Can Win More Clients with a Professional Portfolio Website",
     excerpt:
-      "Build a personal brand that commands attention. Learn how to define your unique positioning, visual identity, and craft a website that opens doors.",
+      "Discover how a professional freelancer portfolio website can help you win more clients in the UAE — practical strategies for standing out in Dubai, Abu Dhabi, and beyond.",
     author: {
       name: "Leila Torres",
       role: "Brand Consultant",
@@ -216,10 +216,10 @@ const TRENDING = [
     category: "Developer Portfolios",
   },
   {
-    slug: "personal-branding-website-guide",
-    title: "Personal Branding Website: The Complete Guide for 2025",
+    slug: "freelancer-portfolio-website-uae",
+    title: "How Freelancers in UAE Can Win More Clients with a Professional Portfolio Website",
     readTime: 10,
-    category: "Personal Branding",
+    category: "Freelancing",
   },
   {
     slug: "developer-portfolio-tripled-job-offers",

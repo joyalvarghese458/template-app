@@ -1070,6 +1070,389 @@ function PhotographyPortfolioContent() {
   );
 }
 
+// ── Article Content: UAE Freelancer Portfolio ─────────────────────────────
+
+function UAEFreelancerContent() {
+  return (
+    <>
+      <h2>Introduction</h2>
+      <p>
+        The UAE freelance economy is moving fast. From Dubai&apos;s booming creative sector to Abu Dhabi&apos;s
+        expanding tech landscape, more professionals than ever are choosing independence over the traditional
+        employment path — and the market is rewarding those who show up prepared.
+      </p>
+      <p>
+        But here&apos;s the reality most freelancers face: the UAE is a high-trust, relationship-driven business
+        culture. Clients — whether they&apos;re local startups, multinational brands headquartered in DIFC, or
+        regional agencies looking to outsource — want to know who they&apos;re working with before they commit.
+        A WhatsApp number and an Instagram page aren&apos;t enough anymore.
+      </p>
+      <p>
+        A professional <strong>freelancer portfolio website</strong> changes that dynamic entirely. It signals
+        credibility, communicates your value clearly, and gives potential clients a place to evaluate your work
+        on their own terms — before they ever send you a message.
+      </p>
+      <p>
+        This guide is written specifically for freelancers based in the UAE. Whether you&apos;re a graphic
+        designer in Dubai, a copywriter in Abu Dhabi, a video editor in Sharjah, or a web developer working
+        remotely across the region, these strategies will help you build an online presence that consistently
+        wins better clients.
+      </p>
+
+      <h2>The UAE Freelance Market: Why Your Online Presence Matters More Here</h2>
+      <p>
+        The UAE has made significant strides in supporting independent professionals. The introduction of
+        freelance permits across emirates — including dedicated freelance visas and licenses through bodies like
+        Dubai Creative Clusters, TECOM, and Abu Dhabi&apos;s twofour54 — has made it easier than ever to
+        operate legitimately as a solo professional.
+      </p>
+      <p>
+        But legitimacy on paper and credibility in the eyes of a client are two different things. As the
+        freelance talent pool in the UAE grows, so does the competition for quality work. The clients worth
+        having — the ones with real budgets, interesting projects, and the professionalism to pay on time —
+        have options. They&apos;re choosing freelancers the same way they&apos;d evaluate any business: by
+        looking at their online presence.
+      </p>
+      <p>
+        A professional <strong>portfolio website in Dubai</strong> or the wider UAE does something that no
+        social media profile or PDF rate card can replicate: it gives you a permanent, branded home on the
+        internet that you fully own and control. It works for you while you&apos;re on a shoot, in a meeting,
+        or asleep. And in a market where many freelancers still rely solely on referrals and word-of-mouth,
+        it gives you a significant edge.
+      </p>
+
+      <h2>10 Ways a Professional Portfolio Website Helps UAE Freelancers Win More Clients</h2>
+
+      <h3>1. It Establishes Instant Credibility in a Trust-First Market</h3>
+      <p>
+        In the UAE business environment, first impressions carry enormous weight. Before a potential client
+        calls you, emails you, or books a meeting, they will search for you online. What they find — or
+        don&apos;t find — shapes their entire perception of your professionalism.
+      </p>
+      <p>
+        A well-designed <strong>professional portfolio UAE</strong> website immediately signals that you take
+        your work seriously. It tells a prospective client that you&apos;re established, not scrambling. That
+        distinction matters in a market where premium brands, government entities, and international companies
+        are making vendor decisions based on perceived reliability as much as raw skill.
+      </p>
+      <p>
+        Compare two freelancers pitching for the same project: one sends a PDF portfolio over WhatsApp, the
+        other sends a link to a polished website with case studies, testimonials, and a clear services page.
+        The second freelancer wins the perception battle before a single word is exchanged.
+      </p>
+
+      <h3>2. It Works as a 24/7 Business Development Tool</h3>
+      <p>
+        Freelancing in the UAE means working across time zones — clients in Europe, North America, and South
+        Asia are reviewing proposals while you&apos;re offline. A portfolio website never sleeps.
+      </p>
+      <p>
+        Unlike a social media profile that disappears in a feed or a PDF that sits unopened in someone&apos;s
+        inbox, your website is always available, always presenting your best work, and always guiding visitors
+        toward making contact.
+      </p>
+      <p>
+        This is especially valuable for inbound client acquisition. When someone finds you through a Google
+        search for &quot;freelance copywriter Dubai&quot; or &quot;brand designer Abu Dhabi,&quot; your
+        website is the first — and often only — opportunity to convert that interest into a conversation.
+      </p>
+
+      <h3>3. It Helps You Rank on Google for Local Searches</h3>
+      <p>
+        Many freelancers in the UAE overlook search engine optimization entirely, which means the ones who
+        don&apos;t are picking up significant business from clients who are actively searching for their
+        services.
+      </p>
+      <p>
+        A <strong>freelance website UAE</strong> with location-specific content — mentioning the cities you
+        serve, the industries you work with, and the types of projects you specialize in — can rank for
+        searches that bring clients directly to you. &quot;Freelance motion designer Dubai,&quot; &quot;social
+        media manager Abu Dhabi,&quot; &quot;UX designer UAE&quot; — these are real searches made by real
+        decision-makers looking to hire.
+      </p>
+      <p>
+        You don&apos;t need to master technical SEO. You need a website that clearly communicates what you
+        do, where you&apos;re based, and who you serve — with that information in your page titles, headings,
+        and body copy. That alone puts you ahead of most freelancers in the region.
+      </p>
+
+      <h3>4. It Lets You Showcase Work in Its Best Light</h3>
+      <p>
+        Social media platforms control how your work is displayed. Instagram compresses images. LinkedIn
+        buries portfolio attachments. Behance and Dribbble have their own visual style that may not represent
+        your brand.
+      </p>
+      <p>
+        On your own portfolio website, you decide how your work is presented. Full-screen images. Case study
+        narratives. Embedded videos. Before-and-after comparisons. Downloadable project summaries. Whatever
+        format best communicates the quality and context of what you&apos;ve produced — you control it
+        entirely.
+      </p>
+      <p>
+        This matters especially for creative freelancers in the UAE who work on premium projects for luxury
+        brands, hospitality groups, or regional enterprises. The context and presentation of your work is
+        part of your brand positioning. A thoughtfully curated portfolio page for a hotel rebranding project
+        communicates far more than a gallery of images ever could.
+      </p>
+
+      <h3>5. It Communicates Your Niche and Attracts the Right Clients</h3>
+      <p>
+        One of the most common mistakes UAE freelancers make is trying to appeal to everyone. A generalist
+        position might feel safer, but it actually makes it harder to win the clients you want — because
+        nothing in your presence speaks directly to them.
+      </p>
+      <p>
+        A professional portfolio website gives you the space to position yourself with precision. If you
+        specialize in Arabic-English bilingual content, say so clearly. If your photography work focuses on
+        the hospitality and F&amp;B sector, build your gallery around that. If you&apos;re a developer with
+        deep experience in fintech projects across the GCC, make that the story your website tells.
+      </p>
+      <p>
+        Specificity attracts higher-quality inquiries from clients who already know they need exactly what
+        you offer. It also allows you to justify premium pricing — specialists command higher rates than
+        generalists, and your website is where that positioning is established.
+      </p>
+
+      <h3>6. It Builds Authority Through Client Testimonials</h3>
+      <p>
+        Referrals are the lifeblood of freelancing in the UAE — the business culture here runs on trust and
+        personal recommendation. A portfolio website lets you extend that trust mechanism to people who
+        haven&apos;t yet been referred to you.
+      </p>
+      <p>
+        Feature testimonials from past clients prominently on your site. In the UAE context, mentioning the
+        company name or industry (with permission) adds significant weight — &quot;Senior Marketing Manager
+        at a leading Dubai hospitality group&quot; means more than a first name and a generic comment.
+      </p>
+      <p>
+        If you&apos;ve worked with recognizable regional brands, a simple &quot;brands I&apos;ve worked
+        with&quot; section on your homepage can be the visual shortcut that converts a skeptical visitor into
+        a serious inquiry.
+      </p>
+
+      <h3>7. It Supports Your Freelance Visa and Business Legitimacy</h3>
+      <p>
+        For freelancers operating under a UAE freelance permit or license, a professional website reinforces
+        your status as a legitimate, established independent professional. It&apos;s the online equivalent of
+        a business address.
+      </p>
+      <p>
+        When you&apos;re submitting proposals for larger contracts — particularly with government-adjacent
+        entities, multinationals, or well-funded startups — having a professional web presence is often an
+        implicit requirement. Some procurement processes will ask for a company or personal website as part
+        of the vendor qualification process. A polished portfolio website means you never have to apologize
+        for not having one.
+      </p>
+
+      <h3>8. It Gives You Control Over Your Rates and Positioning</h3>
+      <p>
+        Freelancers who position themselves well charge more — and get paid more willingly. Your portfolio
+        website is your primary positioning tool.
+      </p>
+      <p>
+        When a potential client arrives at your site and sees a well-designed, professionally written presence
+        that clearly communicates your expertise and the value you deliver, they arrive at the conversation
+        with a different perception than if they found you through a referral with no supporting evidence.
+      </p>
+      <p>
+        A strong <strong>professional portfolio UAE</strong> website lets you lead with your best work, frame
+        your services in terms of client outcomes, and establish a premium positioning before price is ever
+        discussed. That changes the negotiation dynamic significantly.
+      </p>
+
+      <h3>9. It Gives You a Home Base Across All Your Marketing Channels</h3>
+      <p>
+        Whether you&apos;re active on LinkedIn, posting on Instagram, attending networking events at Dubai
+        Chamber or business communities like A4E, or speaking at industry meetups — all of those activities
+        should ultimately drive traffic somewhere.
+      </p>
+      <p>
+        Your portfolio website is that somewhere. Every social post, every business card, every email
+        signature, every LinkedIn message should point back to it. It&apos;s the one destination where
+        everything about you and your work is consolidated, curated, and presented at its best.
+      </p>
+      <p>
+        Without a portfolio website as your home base, your marketing energy is scattered across platforms
+        you don&apos;t control, building audiences you don&apos;t own.
+      </p>
+
+      <h3>10. It Grows With Your Career</h3>
+      <p>
+        A portfolio website isn&apos;t a one-time exercise. It&apos;s a long-term asset that compounds in
+        value over time. New projects get added. Testimonials accumulate. Blog posts build your SEO authority.
+        Your positioning evolves as you level up in your career.
+      </p>
+      <p>
+        Freelancers who invest in their portfolio websites early tend to outpace their peers significantly
+        over a two to three year horizon — not because they&apos;re more talented, but because they&apos;ve
+        built a visible, credible, searchable presence that keeps generating opportunities while others are
+        still relying on occasional referrals.
+      </p>
+
+      <figure>
+        <img
+          src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=900&q=80&auto=format&fit=crop"
+          alt="Dubai skyline representing the UAE business landscape"
+          className="article-img"
+        />
+        <figcaption>The UAE&apos;s competitive freelance market rewards professionals who invest in their online presence.</figcaption>
+      </figure>
+
+      <h2>What to Include in Your Freelancer Portfolio Website as a UAE Professional</h2>
+      <p>
+        A strong <strong>freelance website UAE</strong> contains several elements that go beyond what
+        you&apos;d include in a generic portfolio. Here&apos;s what matters most in this specific market:
+      </p>
+      <p>
+        <strong>A bilingual or English-first approach.</strong> English is the primary business language
+        across the UAE, but if you serve Arabic-speaking clients or government entities, Arabic language
+        support or at minimum an acknowledgment of your bilingual capability adds meaningful relevance.
+      </p>
+      <p>
+        <strong>Location specificity.</strong> Name the emirates and regions you serve. Mention relevant
+        industries — hospitality, real estate, fintech, retail, media — that reflect your actual client base.
+        This serves both human readers and search engines.
+      </p>
+      <p>
+        <strong>Local social proof.</strong> Testimonials, brand logos, or client case studies that reflect
+        UAE or GCC work are more persuasive to local prospects than international credentials alone. Both
+        matter, but local first.
+      </p>
+      <p>
+        <strong>A clear services page.</strong> UAE clients — especially in corporate and agency contexts —
+        appreciate clarity about scope. What do you offer? What does the process look like? What&apos;s
+        included? A well-written services page reduces the friction between interest and inquiry.
+      </p>
+      <p>
+        <strong>Professional contact options.</strong> Include WhatsApp contact alongside a formal email
+        address and contact form. WhatsApp is a primary business communication channel in the UAE, and
+        making it easy to reach you via WhatsApp signals that you understand local business norms.
+      </p>
+      <p>
+        <strong>Your freelance license or permit details.</strong> For clients who need to process invoices
+        through procurement systems, being able to reference your trade license number builds trust and
+        removes administrative barriers.
+      </p>
+
+      <h2>Common Mistakes UAE Freelancers Make With Their Online Presence</h2>
+      <p>
+        <strong>Relying solely on Instagram.</strong> Instagram is a powerful discovery tool, but it&apos;s
+        not a portfolio platform. The algorithm limits your reach, you don&apos;t own the audience, and it
+        offers no space for context, case studies, or client-specific messaging.
+      </p>
+      <p>
+        <strong>Using a free subdomain.</strong> A URL like <code>yourname.wixsite.com</code> or{" "}
+        <code>yourname.squarespace.com</code> immediately undermines the professional impression you&apos;re
+        trying to create. A proper domain — ideally <code>yourname.com</code> or <code>yourname.ae</code> —
+        is a minimal investment with significant impact on perceived credibility.
+      </p>
+      <p>
+        <strong>Building a website and never updating it.</strong> A portfolio with projects from three years
+        ago and no recent work tells potential clients you&apos;re either not busy (concerning) or not
+        maintaining your presence (also concerning). Regular updates, even minor ones, signal that you&apos;re
+        active and in demand.
+      </p>
+      <p>
+        <strong>Generic copy with no UAE context.</strong> A portfolio that could belong to a freelancer in
+        Manchester or Mumbai misses the opportunity to speak directly to UAE clients. Ground your copy in the
+        local market, reference regional industries, and make it clear that you understand the specific
+        landscape your clients operate in.
+      </p>
+
+      <h2>Expert Insights: How to Get Clients in UAE as a Freelancer</h2>
+      <p>
+        The most successful independent professionals in the UAE treat their portfolio website as the center
+        of a broader client attraction strategy. A few approaches worth adopting:
+      </p>
+      <p>
+        <strong>Combine your website with LinkedIn outreach.</strong> The UAE has a highly active LinkedIn
+        user base, particularly in Dubai&apos;s professional community. A strong LinkedIn profile that links
+        to your portfolio website creates a two-step credibility pathway: LinkedIn introduces you, your
+        website closes the deal.
+      </p>
+      <p>
+        <strong>Attend and follow up from in-person events.</strong> Business networking is alive and well
+        in the UAE. After meeting a potential client at an event, sending them a message that includes your
+        portfolio website link gives them something to review at their own pace — and dramatically increases
+        your conversion rate compared to exchanging business cards alone.
+      </p>
+      <p>
+        <strong>Write about the UAE market.</strong> A blog section on your portfolio site that covers topics
+        relevant to your industry in a UAE context — trends in Dubai&apos;s creative market, how regional
+        brands approach X, what clients in the GCC typically look for in a freelance Y — builds local SEO
+        authority and positions you as someone with genuine regional expertise.
+      </p>
+      <p>
+        <strong>Ask for introductions, not just referrals.</strong> The UAE business community is smaller
+        and more interconnected than it appears. A satisfied client who introduces you personally to a
+        contact is worth ten passive referrals. Your portfolio website gives them something tangible to share
+        when making that introduction.
+      </p>
+
+      <h2>FAQ: Freelancer Portfolio Website UAE</h2>
+
+      <h3>Do I really need a portfolio website if I&apos;m already getting clients through referrals?</h3>
+      <p>
+        Referrals are valuable, but they have a ceiling. A portfolio website extends your reach beyond your
+        immediate network, helps you attract inbound inquiries from clients who don&apos;t know you yet, and
+        supports your referrals by giving referred contacts somewhere to evaluate your work before they reach
+        out. The freelancers who grow fastest in the UAE use both.
+      </p>
+
+      <h3>What domain extension should I use for a UAE freelancer website?</h3>
+      <p>
+        A <code>.com</code> domain is universally recognized and works well for most freelancers. A{" "}
+        <code>.ae</code> domain signals local relevance and can have a slight advantage for UAE-focused
+        searches. If your name or brand is available in both, consider securing both and redirecting one to
+        the other. Avoid free subdomains — the investment in a proper domain is minimal relative to what it
+        communicates about your professionalism.
+      </p>
+
+      <h3>How much should I invest in building a professional portfolio website in the UAE?</h3>
+      <p>
+        The range is wide depending on how you build it. Custom-built websites from a web developer can cost
+        AED 5,000 to 20,000+. Professional portfolio platforms offer high-quality, polished results at a
+        fraction of that cost — typically a monthly or annual subscription — and are often the smarter choice
+        for freelancers who want to be up and running quickly with a professional result.
+      </p>
+
+      <h3>Can a portfolio website help me get clients outside the UAE?</h3>
+      <p>
+        Absolutely. One of the underrated advantages of a strong <strong>freelancer portfolio website</strong>{" "}
+        is that it removes geographic limitations entirely. UAE-based freelancers with strong portfolios
+        regularly work with clients in Europe, North America, and across the GCC — without ever meeting them
+        in person. Your website is your global calling card.
+      </p>
+
+      <h3>How long does it take to start getting clients from a portfolio website?</h3>
+      <p>
+        It depends on how much effort you put into SEO and promotion. Organic search traffic can take three
+        to six months to build meaningfully. But direct traffic — from LinkedIn, networking follow-ups, and
+        word of mouth — can generate inquiries from day one. Think of your portfolio website as a long-term
+        investment with compounding returns, not an overnight solution.
+      </p>
+
+      <h2>Conclusion</h2>
+      <p>
+        The UAE freelance market rewards professionals who show up with clarity, credibility, and confidence.
+        A professional <strong>freelancer portfolio website</strong> is the most reliable way to project all
+        three — and to keep doing so consistently, even when you&apos;re focused on delivering client work
+        rather than chasing new leads.
+      </p>
+      <p>
+        The freelancers building the most sustainable independent careers in Dubai, Abu Dhabi, and across the
+        Emirates aren&apos;t just the most talented — they&apos;re the most visible and the most trusted. A
+        polished, well-structured portfolio website is how you build both.
+      </p>
+      <p>
+        The market is growing. The opportunity is real. The only question is whether potential clients can
+        find you — and whether what they find is good enough to make them reach out.
+      </p>
+      <p>Make sure the answer to both is yes.</p>
+    </>
+  );
+}
+
 // ── Articles Map ──────────────────────────────────────────────────────────
 
 const ARTICLES: Record<string, ArticleMeta> = {
@@ -1100,6 +1483,20 @@ const ARTICLES: Record<string, ArticleMeta> = {
     heroImage:
       "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&q=80&auto=format&fit=crop",
     Content: DeveloperPortfolioGuideContent,
+  },
+  "freelancer-portfolio-website-uae": {
+    slug: "freelancer-portfolio-website-uae",
+    category: "Freelancing",
+    categoryColor: "bg-emerald-100 text-emerald-700",
+    title: "How Freelancers in UAE Can Win More Clients with a Professional Portfolio Website",
+    excerpt:
+      "Discover how a professional freelancer portfolio website can help you win more clients in the UAE — practical strategies for standing out in Dubai, Abu Dhabi, and beyond.",
+    author: { name: "Leila Torres", role: "Brand Consultant", avatar: "https://i.pravatar.cc/40?img=48" },
+    date: "May 8, 2025",
+    readTime: 10,
+    heroImage:
+      "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1200&q=80&auto=format&fit=crop",
+    Content: UAEFreelancerContent,
   },
   "photography-portfolio-website-essentials": {
     slug: "photography-portfolio-website-essentials",
