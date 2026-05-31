@@ -1453,6 +1453,377 @@ function UAEFreelancerContent() {
   );
 }
 
+// ── Article Content: Founder Personal Brand ───────────────────────────────
+
+function FounderPersonalBrandContent() {
+  return (
+    <>
+      <h2>Introduction</h2>
+      <p>
+        People don&apos;t just invest in ideas — they invest in founders. They don&apos;t just buy products
+        — they buy into the people building them. And they don&apos;t just hire for startups — they bet on
+        the person leading them.
+      </p>
+      <p>
+        This is one of the most consistent truths in the startup world, and yet most founders underinvest in
+        the one asset that communicates all of this at scale: their personal brand.
+      </p>
+      <p>
+        A <strong>founder portfolio website</strong> is not a vanity project. It&apos;s not something you
+        build after you&apos;ve made it. It&apos;s one of the highest-leverage tools available to an
+        early-stage founder — a permanent, searchable, fully owned platform that shapes how investors,
+        customers, journalists, potential hires, and partners perceive you before a single conversation
+        takes place.
+      </p>
+      <p>
+        In an era where anyone with a stake in your company will search your name before engaging, what comes
+        up matters enormously. This guide makes the case for why every startup founder needs a personal brand
+        website — and gives you a clear picture of what it should contain, what it should communicate, and
+        how it compounds in value over time.
+      </p>
+
+      <h2>The Case for a Founder Personal Brand</h2>
+
+      <h3>You Are the Company&apos;s First Credibility Signal</h3>
+      <p>
+        For early-stage startups, the product is often unfinished, the traction is early, and the brand is
+        still being built. In that environment, the founder is the company&apos;s most credible asset.
+      </p>
+      <p>
+        When an angel investor is deciding whether to take a meeting, when a journalist is choosing which
+        founder to feature in a story, when a potential hire is weighing a risky career move to join a small
+        team — all of them are evaluating the founder. Your track record, your thinking, your communication
+        style, your vision. These are the signals that create confidence when everything else is still in
+        early stages.
+      </p>
+      <p>
+        A <strong>personal brand website for founders</strong> consolidates all of those signals in one place.
+        It answers the questions your stakeholders are already asking, before they have to ask them.
+      </p>
+
+      <h3>Founders Who Build Personal Brands Build Stronger Companies</h3>
+      <p>
+        This isn&apos;t anecdotal. Some of the most successful startups in recent years have been built in
+        public — with founders who used their personal platforms to attract customers, recruit talent, raise
+        capital, and generate press, often before their products were fully launched.
+      </p>
+      <p>
+        A founder with a strong personal brand brings compounding advantages to their company. Media outlets
+        prefer to write about recognizable founders. Investors are more likely to take inbound meetings with
+        founders whose names they&apos;ve encountered before. Top-tier candidates are more willing to take a
+        risk on a startup when they believe in the person leading it. Customers are more loyal when they feel
+        connected to the founder&apos;s story and mission.
+      </p>
+      <p>
+        None of this requires a massive audience or years of content creation. It requires a clear, credible,
+        well-maintained online presence — and a <strong>founder personal website</strong> is the foundation
+        of that.
+      </p>
+
+      <h3>Your LinkedIn Profile Isn&apos;t Enough</h3>
+      <p>
+        LinkedIn is valuable. But it&apos;s a platform you don&apos;t control, optimized for LinkedIn&apos;s
+        goals rather than yours. The format is fixed. The visual identity is generic. The audience is
+        constrained to people already on the platform. And crucially, it doesn&apos;t rank as well in Google
+        searches for your name compared to a dedicated personal website with proper SEO.
+      </p>
+      <p>
+        Your founder portfolio website is the one place on the internet that is entirely yours — your design,
+        your narrative, your structure, your calls to action. Everything else (LinkedIn, Twitter/X, podcast
+        appearances, press mentions) should point back to it.
+      </p>
+
+      <figure>
+        <img
+          src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=900&q=80&auto=format&fit=crop"
+          alt="Startup founder working at a desk"
+          className="article-img"
+        />
+        <figcaption>A founder&apos;s personal brand is one of the earliest and most durable competitive advantages a startup can have.</figcaption>
+      </figure>
+
+      <h2>What a Founder Portfolio Website Should Include</h2>
+
+      <h3>1. A Compelling Founder Bio</h3>
+      <p>
+        This is the cornerstone of your entire personal brand website. Your bio needs to do several things
+        simultaneously: establish your credibility, communicate your vision, and make you feel like a person
+        worth paying attention to.
+      </p>
+      <p>
+        Lead with who you are and what you&apos;re building right now. Then give the context that makes that
+        credible — your relevant background, past ventures, domain expertise, and the experiences that shaped
+        your thinking. Close with something that communicates your perspective or mission: why this problem,
+        why now, why you.
+      </p>
+      <p>
+        Write in first person. Avoid the corporate third-person bio that reads like a press release. Founders
+        who write with a genuine, direct voice are consistently more compelling than those who default to
+        formal, distanced language.
+      </p>
+      <p>
+        Keep a short version (two to three sentences) and a longer version (two to three paragraphs)
+        available — different contexts require different lengths, and having both ready saves time when press
+        or event organizers ask.
+      </p>
+
+      <h3>2. Your Current Venture — Front and Center</h3>
+      <p>
+        Your <strong>startup founder website</strong> should make it immediately clear what you&apos;re
+        building and why it matters. This isn&apos;t just a link to your company website — it&apos;s your
+        opportunity to frame the narrative around your startup in your own words.
+      </p>
+      <p>
+        Describe the problem you&apos;re solving, the insight that led you to it, and the approach
+        you&apos;re taking. This section should read like the founder&apos;s version of your pitch — not the
+        investor deck version, but the human version. The story behind the company, told by the person
+        building it.
+      </p>
+      <p>
+        Link prominently to your company website, your product, or a relevant landing page. Potential
+        investors and journalists who arrive at your personal site will want a direct path to learn more
+        about the venture.
+      </p>
+
+      <h3>3. Past Experience and Track Record</h3>
+      <p>
+        Founders are evaluated partly on what they&apos;ve built before. If you have relevant past ventures
+        — exits, notable roles, companies you&apos;ve scaled, products you&apos;ve shipped — this section
+        builds the pattern recognition that investors and stakeholders look for.
+      </p>
+      <p>
+        You don&apos;t need an impressive list of exits to make this section compelling. What matters is
+        demonstrating relevant experience: domain expertise, operational credibility, understanding of your
+        market, and evidence that you can execute. A founder who spent ten years working inside the problem
+        they&apos;re now building a solution for is deeply compelling, regardless of whether they&apos;ve
+        founded a company before.
+      </p>
+      <p>
+        For first-time founders, frame your experience around transferable signals: industries you understand
+        deeply, teams you&apos;ve led, problems you&apos;ve solved at scale, or communities you&apos;re
+        embedded in.
+      </p>
+
+      <h3>4. Thought Leadership Content</h3>
+      <p>
+        One of the most powerful functions of a <strong>personal brand website for founders</strong> is
+        establishing you as a credible voice in your industry — someone whose thinking is worth following,
+        not just whose product is worth trying.
+      </p>
+      <p>
+        A blog, essay section, or writing archive on your personal website serves multiple purposes. It
+        demonstrates that you understand your space deeply. It gives journalists and investors a window into
+        how you think. It builds SEO authority around your name and your area of focus. And it creates
+        shareable content that extends your reach across platforms.
+      </p>
+      <p>
+        You don&apos;t need to publish weekly. A handful of well-considered, substantive pieces — your
+        perspective on a market shift, a counterintuitive insight from building your company, a framework
+        for thinking about a problem in your space — can carry enormous weight.
+      </p>
+      <p>
+        Founders who write consistently and well consistently outperform those who don&apos;t in terms of
+        media attention, inbound investor interest, and talent attraction. The bar for genuinely insightful
+        founder writing is lower than most people assume.
+      </p>
+
+      <h3>5. Press and Media Features</h3>
+      <p>
+        If you&apos;ve been featured in publications, podcasts, panels, or conferences — make that visible.
+        A &quot;As featured in&quot; section with recognizable logos, or a press page with links to notable
+        coverage, builds credibility through association and makes it easy for journalists to verify that
+        you&apos;re an established voice worth quoting.
+      </p>
+      <p>
+        Even early-stage founders often have more press than they realize: a podcast appearance, a local
+        business feature, a panel at an industry event. Curate what you have. As your company grows, this
+        section will grow with it.
+      </p>
+
+      <h3>6. Speaking and Events</h3>
+      <p>
+        If you speak at conferences, moderate panels, or host events, a speaking section on your{" "}
+        <strong>founder portfolio website</strong> serves two purposes: it demonstrates your standing in
+        your industry, and it actively attracts more speaking opportunities.
+      </p>
+      <p>
+        Event organizers search for speakers online. A dedicated speaking page with your topics, past events,
+        and a clear invitation to get in touch for speaking inquiries can generate a steady stream of inbound
+        opportunities — which in turn grow your visibility, credibility, and network.
+      </p>
+      <p>
+        Include a professional headshot suitable for event programs, a short speaker bio, and your topic
+        areas or keynote titles.
+      </p>
+
+      <h3>7. Investor Relations Signal</h3>
+      <p>
+        If you&apos;re actively fundraising or anticipate doing so, your personal website can quietly do a
+        lot of heavy lifting before you enter a formal process.
+      </p>
+      <p>
+        A clearly stated note about your current fundraising status, your thesis, or your approach to
+        building makes it easy for investors who encounter you organically to understand the opportunity.
+        At minimum, make sure your LinkedIn and AngelList profiles are linked prominently so investors can
+        quickly access the structured information they need.
+      </p>
+
+      <h3>8. A Direct, Personal Contact Method</h3>
+      <p>
+        Founders need to be reachable — by journalists, investors, potential partners, and occasionally
+        customers. Your personal website should make it straightforward to get in touch, with a contact
+        form or direct email address.
+      </p>
+      <p>
+        Be clear about what kinds of conversations you&apos;re open to. Setting expectations filters your
+        inbox without closing doors.
+      </p>
+
+      <figure>
+        <img
+          src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=900&q=80&auto=format&fit=crop"
+          alt="Founder presenting at a conference"
+          className="article-img"
+        />
+        <figcaption>Founders who invest in their personal brand early build a platform that pays dividends throughout their company&apos;s lifecycle.</figcaption>
+      </figure>
+
+      <h2>Personal Branding for Entrepreneurs: The Long Game</h2>
+
+      <h3>The Compounding Value of a Founder Personal Brand</h3>
+      <p>
+        Personal brands compound like investments. The founder who starts building their online presence at
+        the seed stage will have a measurably stronger platform by the time they&apos;re raising a Series A,
+        launching a major product, or navigating a pivotal moment in their company&apos;s trajectory.
+      </p>
+      <p>
+        Press relationships deepen over time. Your name starts appearing in searches your potential
+        customers, recruits, and investors are conducting. Speaking opportunities lead to more speaking
+        opportunities. Each piece of thought leadership content you publish extends your reach a little
+        further.
+      </p>
+      <p>
+        The founders who wait until they &quot;need&quot; a personal brand — usually when they&apos;re
+        mid-fundraise or navigating a PR moment — are always playing catch-up. The ones who build quietly
+        and consistently from early on are never scrambling.
+      </p>
+
+      <h3>When a Founder&apos;s Personal Brand Becomes a Company Asset</h3>
+      <p>There are specific inflection points in a startup&apos;s journey where a founder&apos;s personal brand pays direct dividends to the company:</p>
+      <ul>
+        <li><strong>During fundraising.</strong> Investors who already know your name and have encountered your thinking come into conversations warmer and more predisposed to believe in your vision.</li>
+        <li><strong>During hiring.</strong> Top candidates research founders before accepting offers. A compelling personal brand can be the deciding factor for a great hire weighing multiple opportunities.</li>
+        <li><strong>During a product launch.</strong> A founder with an engaged audience can drive meaningful early traction through personal channels that the company&apos;s own brand accounts couldn&apos;t replicate at the same stage.</li>
+        <li><strong>During a crisis.</strong> A founder with an established, trusted personal brand has an existing platform to communicate directly, transparently, and credibly.</li>
+        <li><strong>During media outreach.</strong> Journalists who already follow your thinking are far more likely to respond to your pitches and feature your company.</li>
+      </ul>
+
+      <h3>Authenticity Is the Strategy</h3>
+      <p>
+        One concern founders often raise about personal branding is that it feels performative or
+        self-promotional. The antidote to that discomfort is authenticity. The most effective founder
+        personal brands aren&apos;t polished PR constructs. They&apos;re genuine expressions of how a
+        founder thinks, what they care about, and what they&apos;re learning.
+      </p>
+      <p>
+        <strong>Personal branding for entrepreneurs</strong> doesn&apos;t mean becoming an influencer. It
+        means showing up as a credible, thoughtful, visible presence in your industry — consistently enough
+        that the right people know who you are when it matters.
+      </p>
+
+      <h2>Common Mistakes Founders Make With Their Personal Brand Online</h2>
+      <p>
+        <strong>Waiting until they need it.</strong> A personal brand built under pressure is never as
+        strong as one built steadily over time. Start early, even if it feels premature.
+      </p>
+      <p>
+        <strong>Separating their personal brand from their company.</strong> Your personal story and your
+        company&apos;s story should reinforce each other, not exist in separate silos.
+      </p>
+      <p>
+        <strong>Inconsistency across platforms.</strong> If your LinkedIn says one thing, your personal
+        website says another, and your Twitter bio says a third, you create confusion rather than clarity.
+      </p>
+      <p>
+        <strong>Neglecting the website in favor of social media.</strong> Social platforms are rented land.
+        Your personal website is the one asset you own outright — treat it accordingly.
+      </p>
+      <p>
+        <strong>Over-polishing to the point of inauthenticity.</strong> Founders who sound like their PR
+        teams have ghost-written everything lose the trust that personal branding is supposed to build.
+      </p>
+
+      <h2>FAQ: Founder Portfolio Website Questions Answered</h2>
+
+      <h3>When should a startup founder build a personal brand website?</h3>
+      <p>
+        As early as possible, ideally before you feel like you need one. The compounding nature of personal
+        brands means that earlier investment pays larger dividends later. Even a simple, well-crafted
+        one-page site launched at the idea stage is more valuable than a perfect site built under
+        fundraising pressure two years later.
+      </p>
+
+      <h3>Should a founder&apos;s personal website be separate from their company website?</h3>
+      <p>
+        Yes, in almost every case. Your company website serves the company&apos;s brand and customer
+        acquisition goals. Your personal website serves your individual credibility, story, and professional
+        network. They should link to each other prominently, but they serve different audiences and different
+        purposes. A personal site also survives company pivots, acquisitions, and new ventures in a way a
+        company website never can.
+      </p>
+
+      <h3>What&apos;s the difference between a founder portfolio website and a LinkedIn profile?</h3>
+      <p>
+        LinkedIn is a standardized platform with fixed formats, limited design control, and an algorithm
+        that determines what your audience sees. Your personal website is fully owned, fully customized, and
+        fully indexed by search engines under your own domain. LinkedIn is a distribution channel — your
+        personal website is the destination it should point to.
+      </p>
+
+      <h3>Does a founder&apos;s personal brand really influence investor decisions?</h3>
+      <p>
+        Consistently, yes. Investors — particularly at early stages — are making bets on people as much as
+        products. A founder whose thinking they&apos;ve encountered, whose values are clear, and whose
+        credibility is well-documented reduces the uncertainty that makes early-stage investing difficult.
+        A strong personal brand doesn&apos;t replace traction, but it significantly improves the quality
+        and temperature of investor conversations.
+      </p>
+
+      <h3>How much content does a founder need to maintain a strong personal brand website?</h3>
+      <p>
+        Less than most people assume. A well-written bio, a clear description of your current venture, a
+        handful of substantive blog posts or essays, and a press section are enough to create a compelling
+        presence. Quality and consistency matter far more than volume. Two or three genuinely insightful
+        pieces published quarterly will outperform a high-frequency content schedule of shallow takes every
+        time.
+      </p>
+
+      <h2>Conclusion</h2>
+      <p>
+        The most valuable startups in the world were built by founders who understood that their personal
+        credibility and their company&apos;s success are not separate things — they&apos;re deeply,
+        structurally linked.
+      </p>
+      <p>
+        A <strong>founder portfolio website</strong> is where that credibility lives online. It&apos;s the
+        asset that works while you&apos;re building, that speaks to investors before you pitch them, that
+        attracts talent before you post a job, and that earns media coverage before you launch your campaign.
+      </p>
+      <p>
+        It doesn&apos;t have to be elaborate. It has to be intentional. Clear about who you are, honest
+        about what you&apos;re building, specific about what you believe, and designed to make the right
+        people want to reach out.
+      </p>
+      <p>
+        The founders who build strong personal brands early don&apos;t just raise money more easily or hire
+        better — they build companies on a foundation of trust that is genuinely difficult for competitors
+        to replicate.
+      </p>
+      <p>Your personal brand is not a side project. It&apos;s infrastructure.</p>
+    </>
+  );
+}
+
 // ── Articles Map ──────────────────────────────────────────────────────────
 
 const ARTICLES: Record<string, ArticleMeta> = {
@@ -1483,6 +1854,20 @@ const ARTICLES: Record<string, ArticleMeta> = {
     heroImage:
       "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&q=80&auto=format&fit=crop",
     Content: DeveloperPortfolioGuideContent,
+  },
+  "founder-portfolio-website-personal-brand": {
+    slug: "founder-portfolio-website-personal-brand",
+    category: "Personal Branding",
+    categoryColor: "bg-violet-100 text-violet-700",
+    title: "Founder Personal Brand: Why Every Startup Founder Needs a Portfolio Website",
+    excerpt:
+      "Your startup's credibility often starts with you. Discover why a founder portfolio website is one of the most powerful personal branding investments you can make — and what to include on it.",
+    author: { name: "Sarah Chen", role: "Portfolio Strategist", avatar: "https://i.pravatar.cc/40?img=47" },
+    date: "May 5, 2025",
+    readTime: 12,
+    heroImage:
+      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&q=80&auto=format&fit=crop",
+    Content: FounderPersonalBrandContent,
   },
   "freelancer-portfolio-website-uae": {
     slug: "freelancer-portfolio-website-uae",

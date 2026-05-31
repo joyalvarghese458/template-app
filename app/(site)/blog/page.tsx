@@ -111,18 +111,18 @@ const ALL_ARTICLES: Article[] = [
       "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=700&q=80&auto=format&fit=crop",
   },
   {
-    slug: "freelancer-portfolio-tips",
-    category: "Freelancing",
-    title: "Freelancer Portfolio Tips: How to Win More Clients Online",
+    slug: "founder-portfolio-website-personal-brand",
+    category: "Personal Branding",
+    title: "Founder Personal Brand: Why Every Startup Founder Needs a Portfolio Website",
     excerpt:
-      "Transform your freelance portfolio from a static gallery into a client-converting machine. These proven strategies have helped thousands of freelancers double their rates.",
+      "Your startup's credibility often starts with you. Discover why a founder portfolio website is one of the most powerful personal branding investments you can make — and what to include on it.",
     author: {
       name: "Sarah Chen",
       role: "Portfolio Strategist",
       avatar: "https://i.pravatar.cc/40?img=47",
     },
     date: "May 5, 2025",
-    readTime: 6,
+    readTime: 12,
     image:
       "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=700&q=80&auto=format&fit=crop",
   },
