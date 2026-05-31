@@ -159,27 +159,27 @@ export default function Home() {
             <div className="grid grid-cols-4 gap-1">
               {/* 4.9 reviews */}
               <div className="flex flex-col items-center gap-1">
-                <svg className="w-5 h-5 text-brand" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <svg className="w-5 h-5 text-brand" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.78 1.401 8.169L12 19.243l-7.335 3.917 1.401-8.169L.132 9.211l8.2-1.193z" />
                 </svg>
-                <span className="text-white font-bold text-sm leading-none">4.9</span>
-                <span className="text-white/55 text-[10px] leading-tight text-center">280+ reviews</span>
+                <span className="text-white font-bold text-sm leading-none">4.9 Rating</span>
+                <span className="text-white/55 text-[10px] leading-tight text-center">Trusted by pros</span>
               </div>
               {/* 30+ templates */}
               <div className="flex flex-col items-center gap-1">
                 <svg className="w-5 h-5 text-brand" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
                 </svg>
-                <span className="text-white font-bold text-sm leading-none">30+</span>
-                <span className="text-white/55 text-[10px] leading-tight text-center">templates</span>
+                <span className="text-white font-bold text-sm leading-none">30+ Templates</span>
+                <span className="text-white/55 text-[10px] leading-tight text-center">Modern & responsive</span>
               </div>
               {/* One-time payment */}
               <div className="flex flex-col items-center gap-1">
                 <svg className="w-5 h-5 text-brand" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                 </svg>
-                <span className="text-white font-bold text-sm leading-none">One-time</span>
-                <span className="text-white/55 text-[10px] leading-tight text-center">payment</span>
+                <span className="text-white font-bold text-sm leading-none">7 day delivery</span>
+                <span className="text-white/55 text-[10px] leading-tight text-center">Fast turnaround time</span>
               </div>
               {/* Lifetime ownership */}
               <div className="flex flex-col items-center gap-1">
