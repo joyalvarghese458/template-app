@@ -61,6 +61,9 @@ export const metadata: Metadata = {
     description:
       "Hand-crafted portfolio templates for designers, developers, photographers, and creators. Starting from AED 49.",
   },
+  icons: {
+    icon: "/fav-icon.webp",
+  },
   verification: {
     google: "2uHzaEXJTXe_lr1P4q-uSK9vhmZ1YCr9B_3p7zWR4Yc",
   },
