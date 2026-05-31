@@ -63,6 +63,38 @@ const FEATURED: Article = {
 
 const ALL_ARTICLES: Article[] = [
   {
+    slug: "portfolio-website-for-professionals-india",
+    category: "Career Growth",
+    title: "Portfolio Website for Indian Professionals: Stand Out in a Competitive Job Market",
+    excerpt:
+      "India's job market is more competitive than ever. Learn how a professional portfolio website can set you apart — whether you're a developer in Bengaluru, a designer in Mumbai, or a freelancer anywhere in the country.",
+    author: {
+      name: "Priya Nair",
+      role: "Career Coach",
+      avatar: "https://i.pravatar.cc/40?img=36",
+    },
+    date: "May 28, 2025",
+    readTime: 10,
+    image:
+      "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=700&q=80&auto=format&fit=crop",
+  },
+  {
+    slug: "freelancer-portfolio-website-india",
+    category: "Freelancing",
+    title: "How Freelancers in India Can Win More Clients with a Professional Portfolio Website",
+    excerpt:
+      "Discover how a professional freelancer portfolio website can help you win more clients in India — practical strategies for standing out on platforms like Upwork, Fiverr, and with direct clients across Bengaluru, Delhi, Hyderabad, and beyond.",
+    author: {
+      name: "Leila Torres",
+      role: "Brand Consultant",
+      avatar: "https://i.pravatar.cc/40?img=48",
+    },
+    date: "May 26, 2025",
+    readTime: 11,
+    image:
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=700&q=80&auto=format&fit=crop",
+  },
+  {
     slug: "developer-portfolio-website-guide",
     category: "Developer Portfolios",
     title: "The Ultimate Developer Portfolio Guide: What to Include, What to Skip",
@@ -210,21 +242,21 @@ const ALL_ARTICLES: Article[] = [
 
 const TRENDING = [
   {
-    slug: "developer-portfolio-website-guide",
-    title: "The Ultimate Developer Portfolio Guide: What to Include, What to Skip",
-    readTime: 15,
-    category: "Developer Portfolios",
+    slug: "portfolio-website-for-professionals-india",
+    title: "Portfolio Website for Indian Professionals: Stand Out in a Competitive Job Market",
+    readTime: 10,
+    category: "Career Growth",
   },
   {
-    slug: "freelancer-portfolio-website-uae",
-    title: "How Freelancers in UAE Can Win More Clients with a Professional Portfolio Website",
-    readTime: 10,
+    slug: "freelancer-portfolio-website-india",
+    title: "How Freelancers in India Can Win More Clients with a Professional Portfolio Website",
+    readTime: 11,
     category: "Freelancing",
   },
   {
-    slug: "developer-portfolio-tripled-job-offers",
-    title: "Case Study: How One Developer Portfolio Tripled Job Offers",
-    readTime: 11,
+    slug: "developer-portfolio-website-guide",
+    title: "The Ultimate Developer Portfolio Guide: What to Include, What to Skip",
+    readTime: 15,
     category: "Developer Portfolios",
   },
 ];
@@ -341,7 +373,9 @@ export default function BlogPage() {
         <h1 className="font-serif font-bold text-3xl sm:text-4xl md:text-5xl text-ink leading-tight mb-4 max-w-3xl mx-auto">
           Insights on Building a
           <br />
-          <span className="text-brand">Professional Portfolio Website</span>
+          <Link href="/" className="text-brand underline decoration-brand/40 hover:decoration-brand transition-colors duration-200">
+            Professional Portfolio Website
+          </Link>
         </h1>
 
         {/* Subtitle */}
@@ -622,6 +656,61 @@ export default function BlogPage() {
               </div>
             </div>
 
+            {/* External Resources */}
+            <div className="bg-white border border-black/10 rounded-2xl p-6 shadow-sm">
+              <div className="flex items-center gap-2 mb-4">
+                <svg className="w-4 h-4 text-brand" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+                </svg>
+                <h3 className="font-bold text-ink text-sm">External Resources</h3>
+              </div>
+
+              <p className="text-[11px] font-semibold text-ink-soft uppercase tracking-wider mb-2">Learn More</p>
+              <ul className="space-y-2 mb-4">
+                {[
+                  { label: "Portfolio Design — Wikipedia", href: "https://en.wikipedia.org/wiki/Portfolio_(design)" },
+                  { label: "Personal Branding — Wikipedia", href: "https://en.wikipedia.org/wiki/Personal_branding" },
+                  { label: "Career Development — Wikipedia", href: "https://en.wikipedia.org/wiki/Career_development" },
+                  { label: "India's IT Industry — Wikipedia", href: "https://en.wikipedia.org/wiki/Information_technology_in_India" },
+                  { label: "Freelancing in India — Wikipedia", href: "https://en.wikipedia.org/wiki/Freelancer" },
+                ].map(({ label, href }) => (
+                  <li key={href}>
+                    <a
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-brand hover:underline leading-snug"
+                    >
+                      {label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+
+              <p className="text-[11px] font-semibold text-ink-soft uppercase tracking-wider mb-2">Find Inspiration</p>
+              <ul className="space-y-2">
+                {[
+                  { label: "Behance — Portfolio Community", href: "https://www.behance.net" },
+                  { label: "Dribbble — Design Inspiration", href: "https://dribbble.com" },
+                  { label: "LinkedIn — Professional Network", href: "https://www.linkedin.com" },
+                  { label: "Naukri — Jobs in India", href: "https://www.naukri.com" },
+                  { label: "Internshala — Indian Freelance Work", href: "https://internshala.com" },
+                ].map(({ label, href }) => (
+                  <li key={href}>
+                    <a
+                      href={href}
+                      target="_blank"
+                      rel="nofollow noopener noreferrer"
+                      className="text-sm text-ink-soft hover:text-ink hover:underline leading-snug"
+                    >
+                      {label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
             {/* CTA Card */}
             <div className="bg-ink rounded-2xl p-6 text-white">
               <h3 className="font-bold text-base mb-2 leading-snug">
@@ -649,7 +738,9 @@ export default function BlogPage() {
         </div>
         <h2 className="font-serif font-bold text-3xl sm:text-4xl md:text-5xl text-ink leading-tight mb-4 max-w-2xl mx-auto">
           Ready to Build Your{" "}
-          <span className="text-brand">Professional Portfolio Website?</span>
+          <Link href="/" className="text-brand underline decoration-brand/40 hover:decoration-brand transition-colors duration-200">
+            Professional Portfolio Website?
+          </Link>
         </h2>
         <p className="text-ink-soft text-base sm:text-lg max-w-xl mx-auto mb-8 leading-relaxed">
           Join 50,000+ professionals who&apos;ve launched stunning portfolio
