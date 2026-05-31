@@ -63,36 +63,36 @@ const FEATURED: Article = {
 
 const ALL_ARTICLES: Article[] = [
   {
-    slug: "how-to-build-developer-portfolio",
+    slug: "developer-portfolio-website-guide",
     category: "Developer Portfolios",
-    title: "How to Build a Developer Portfolio Website That Gets You Hired",
+    title: "The Ultimate Developer Portfolio Guide: What to Include, What to Skip",
     excerpt:
-      "A step-by-step guide to crafting a developer portfolio that showcases your skills, highlights your projects, and lands you interviews at top companies.",
+      "Learn exactly what to include in your developer portfolio website — and what's killing your chances. A practical guide for software developers who want to stand out and get hired.",
     author: {
       name: "Marcus Reid",
       role: "Senior Engineer",
       avatar: "https://i.pravatar.cc/40?img=12",
     },
     date: "May 15, 2025",
-    readTime: 12,
+    readTime: 15,
     image:
       "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=700&q=80&auto=format&fit=crop",
   },
   {
-    slug: "designer-portfolio-examples",
+    slug: "photography-portfolio-website-essentials",
     category: "Designer Portfolios",
-    title: "Designer Portfolio Website Examples: What Makes Them Stand Out",
+    title: "Photography Portfolio Website: 10 Things Every Photographer Needs on Their Site",
     excerpt:
-      "We curated 25 of the best designer portfolio websites and broke down exactly what makes each one effective, inspiring, and client-winning.",
+      "Your photography portfolio website should be doing more than looking pretty. Here are the 10 essential elements every photographer needs to attract clients and grow their business.",
     author: {
       name: "James Okonkwo",
       role: "UX Designer",
       avatar: "https://i.pravatar.cc/40?img=33",
     },
     date: "May 12, 2025",
-    readTime: 7,
+    readTime: 15,
     image:
-      "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=700&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=700&q=80&auto=format&fit=crop",
   },
   {
     slug: "personal-branding-website-guide",
@@ -210,9 +210,9 @@ const ALL_ARTICLES: Article[] = [
 
 const TRENDING = [
   {
-    slug: "how-to-build-developer-portfolio",
-    title: "How to Build a Developer Portfolio Website That Gets You Hired",
-    readTime: 12,
+    slug: "developer-portfolio-website-guide",
+    title: "The Ultimate Developer Portfolio Guide: What to Include, What to Skip",
+    readTime: 15,
     category: "Developer Portfolios",
   },
   {
