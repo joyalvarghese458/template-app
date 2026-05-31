@@ -143,7 +143,7 @@ export default function Home() {
               href="#templates"
               className="group inline-flex items-center gap-2.5 px-8 py-3.5 text-sm sm:text-base font-semibold text-white bg-brand rounded-full shadow-[0_8px_32px_-8px_rgba(0,119,181,0.7)] hover:-translate-y-0.5 hover:shadow-[0_16px_40px_-8px_rgba(0,119,181,0.8)] transition-all duration-200 active:translate-y-0 mb-8 sm:mb-10"
             >
-              Browse Templates
+              Launch Your Portfolio
               <svg className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M5 12h14" /><path d="M13 5l7 7-7 7" />
               </svg>

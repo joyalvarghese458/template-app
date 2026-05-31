@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAsterisk } from "@fortawesome/free-solid-svg-icons";
 
 const ITEMS = [
   <>
@@ -8,11 +10,8 @@ const ITEMS = [
     <span className="mx-2 text-white/30">•</span>
     Up to <span className="font-bold text-white">40% OFF</span> on Professional Portfolio Websites
   </>,
-  <>Launch Your Professional Portfolio Website This Week</>,
-  <>
-    Professional Portfolio Websites Starting at{" "}
-    <span className="font-bold text-white">₹2499</span>
-  </>,
+  <>Launch Your Portfolio Website This Week</>,
+  <>Premium Quality Without the Premium Price Tag</>,
 ];
 
 function Track({ ariaHidden }: { ariaHidden?: boolean }) {
@@ -23,11 +22,11 @@ function Track({ ariaHidden }: { ariaHidden?: boolean }) {
     >
       {Array.from({ length: 4 }).map((_, repeat) =>
         ITEMS.map((item, i) => (
-          <span key={`${repeat}-${i}`} className="flex shrink-0 items-center gap-3 px-6">
-            <span className="whitespace-nowrap text-[12px] sm:text-[13px] font-medium tracking-wide text-white/70">
+          <span key={`${repeat}-${i}`} className="flex shrink-0 items-center">
+            <span className="whitespace-nowrap text-[12px] sm:text-[13px] font-medium tracking-wide text-white/70 px-6">
               {item}
             </span>
-            <span className="text-white/20">✦</span>
+            <FontAwesomeIcon icon={faAsterisk} className="text-white/20 w-2.5 h-2.5 shrink-0" />
           </span>
         ))
       )}
