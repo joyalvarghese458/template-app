@@ -63,38 +63,6 @@ const FEATURED: Article = {
 
 const ALL_ARTICLES: Article[] = [
   {
-    slug: "portfolio-website-for-professionals-india",
-    category: "Career Growth",
-    title: "Portfolio Website for Indian Professionals: Stand Out in a Competitive Job Market",
-    excerpt:
-      "India's job market is more competitive than ever. Learn how a professional portfolio website can set you apart — whether you're a developer in Bengaluru, a designer in Mumbai, or a freelancer anywhere in the country.",
-    author: {
-      name: "Priya Nair",
-      role: "Career Coach",
-      avatar: "https://i.pravatar.cc/40?img=36",
-    },
-    date: "May 28, 2025",
-    readTime: 10,
-    image:
-      "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=700&q=80&auto=format&fit=crop",
-  },
-  {
-    slug: "freelancer-portfolio-website-india",
-    category: "Freelancing",
-    title: "How Freelancers in India Can Win More Clients with a Professional Portfolio Website",
-    excerpt:
-      "Discover how a professional freelancer portfolio website can help you win more clients in India — practical strategies for standing out on platforms like Upwork, Fiverr, and with direct clients across Bengaluru, Delhi, Hyderabad, and beyond.",
-    author: {
-      name: "Leila Torres",
-      role: "Brand Consultant",
-      avatar: "https://i.pravatar.cc/40?img=48",
-    },
-    date: "May 26, 2025",
-    readTime: 11,
-    image:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=700&q=80&auto=format&fit=crop",
-  },
-  {
     slug: "developer-portfolio-website-guide",
     category: "Developer Portfolios",
     title: "The Ultimate Developer Portfolio Guide: What to Include, What to Skip",
@@ -173,6 +141,38 @@ const ALL_ARTICLES: Article[] = [
     readTime: 12,
     image:
       "https://images.unsplash.com/photo-1552664730-d307ca884978?w=700&q=80&auto=format&fit=crop",
+  },
+  {
+    slug: "portfolio-website-for-professionals-india",
+    category: "Career Growth",
+    title: "Portfolio Website for Indian Professionals: Stand Out in a Competitive Job Market",
+    excerpt:
+      "India's job market is more competitive than ever. Learn how a professional portfolio website can set you apart — whether you're a developer in Bengaluru, a designer in Mumbai, or a freelancer anywhere in the country.",
+    author: {
+      name: "Priya Nair",
+      role: "Career Coach",
+      avatar: "https://i.pravatar.cc/40?img=36",
+    },
+    date: "May 28, 2025",
+    readTime: 10,
+    image:
+      "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=700&q=80&auto=format&fit=crop",
+  },
+  {
+    slug: "freelancer-portfolio-website-india",
+    category: "Freelancing",
+    title: "How Freelancers in India Can Win More Clients with a Professional Portfolio Website",
+    excerpt:
+      "Discover how a professional freelancer portfolio website can help you win more clients in India — practical strategies for standing out on platforms like Upwork, Fiverr, and with direct clients across Bengaluru, Delhi, Hyderabad, and beyond.",
+    author: {
+      name: "Leila Torres",
+      role: "Brand Consultant",
+      avatar: "https://i.pravatar.cc/40?img=48",
+    },
+    date: "May 26, 2025",
+    readTime: 11,
+    image:
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=700&q=80&auto=format&fit=crop",
   },
   {
     slug: "marketing-portfolio-website",
