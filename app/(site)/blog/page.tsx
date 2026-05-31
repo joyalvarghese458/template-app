@@ -373,7 +373,7 @@ export default function BlogPage() {
         <h1 className="font-serif font-bold text-3xl sm:text-4xl md:text-5xl text-ink leading-tight mb-4 max-w-3xl mx-auto">
           Insights on Building a
           <br />
-          <Link href="/" className="text-brand underline decoration-brand/40 hover:decoration-brand transition-colors duration-200">
+          <Link href="/" className="text-brand transition-colors duration-200">
             Professional Portfolio Website
           </Link>
         </h1>
@@ -738,7 +738,7 @@ export default function BlogPage() {
         </div>
         <h2 className="font-serif font-bold text-3xl sm:text-4xl md:text-5xl text-ink leading-tight mb-4 max-w-2xl mx-auto">
           Ready to Build Your{" "}
-          <Link href="/" className="text-brand underline decoration-brand/40 hover:decoration-brand transition-colors duration-200">
+          <Link href="/" className="text-brand transition-colors duration-200">
             Professional Portfolio Website?
           </Link>
         </h2>

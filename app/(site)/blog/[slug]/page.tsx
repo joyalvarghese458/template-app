@@ -72,7 +72,7 @@ function DesignerPortfolioContent() {
         <li><strong>Quality over quantity</strong> — Three to five strong, well-documented projects outperform fifteen scattered ones every time.</li>
         <li><strong>Evidence of process</strong> — Screenshots of final designs are nice. Screenshots of sketches, wireframes, iterations, and decisions are memorable.</li>
         <li><strong>Communication skills</strong> — How you write about your work signals how you&apos;ll communicate with stakeholders, clients, and cross-functional teams.</li>
-        <li><strong>Professional presentation</strong> — A polished, well-structured professional portfolio website communicates that you care about craft at every level — not just when you&apos;re on the clock.</li>
+        <li><strong>Professional presentation</strong> — A polished, well-structured <a href="/" className="text-brand underline hover:decoration-brand">professional portfolio website</a> communicates that you care about craft at every level — not just when you&apos;re on the clock.</li>
       </ul>
       <p>This is the lens you should use when building every page of your portfolio.</p>
 
@@ -179,7 +179,7 @@ function DesignerPortfolioContent() {
         meetings. A layout that breaks on mobile — or worse, requires horizontal scrolling — creates an
         immediate negative impression.
       </p>
-      <p>Every element of your professional portfolio website should render cleanly on screens from 375px wide upward.</p>
+      <p>Every element of your <a href="/" className="text-brand underline hover:decoration-brand">professional portfolio website</a> should render cleanly on screens from 375px wide upward.</p>
 
       <h3>Basic On-Page SEO</h3>
       <p>
@@ -294,7 +294,7 @@ function DesignerPortfolioContent() {
         <li><strong>Lead with your strongest work, always.</strong> The order of your projects tells a story about what you value and what you want to be hired for. Most visitors won&apos;t scroll past the first two or three projects, so your sequencing matters enormously.</li>
         <li><strong>Brevity in writing is a design skill.</strong> The ability to explain complex design decisions in clear, concise language is something senior designers do exceptionally well. Your case study writing is a chance to demonstrate that skill.</li>
         <li><strong>Your portfolio is never finished — it&apos;s just live.</strong> Treat it as a living document. The best designers revisit their portfolios regularly, not just when they&apos;re job hunting.</li>
-        <li><strong>Social proof amplifies everything.</strong> A quote from a satisfied client, a testimonial from a collaborator, or a mention in a publication adds credibility in a way that self-promotion can&apos;t replicate. Actively collect this kind of social proof throughout your career.</li>
+        <li><strong>Social proof amplifies everything.</strong> A quote from a satisfied client, a testimonial from a collaborator, or a mention in a publication adds credibility in a way that self-promotion can&apos;t replicate. Actively collect this kind of social proof throughout your career. Showcase your work on platforms like <a href="https://www.behance.net" target="_blank" rel="nofollow noopener noreferrer" className="text-ink-soft underline hover:text-ink">Behance</a> or <a href="https://dribbble.com" target="_blank" rel="nofollow noopener noreferrer" className="text-ink-soft underline hover:text-ink">Dribbble</a> and link them from your portfolio.</li>
         <li><strong>Specificity is more persuasive than versatility.</strong> In most hiring scenarios, a designer who is clearly excellent at one thing is more compelling than a designer who is decent at many things. Know what your signature strength is, and let it lead.</li>
       </ul>
 
@@ -347,7 +347,7 @@ function DesignerPortfolioContent() {
         raw talent. They&apos;re the ones who communicate their value clearly, present their thinking credibly,
         and make it easy for the right people to say yes.
       </p>
-      <p>Your portfolio is the most important piece of design work you&apos;ll ever ship. Treat it that way.</p>
+      <p>Your <a href="/" className="text-brand underline hover:decoration-brand">professional portfolio website</a> is the most important piece of design work you&apos;ll ever ship. Treat it that way.</p>
     </>
   );
 }
@@ -365,7 +365,7 @@ function DeveloperPortfolioGuideContent() {
       </p>
       <p>That&apos;s a problem.</p>
       <p>
-        A well-crafted <strong>developer portfolio website</strong> is one of the highest-leverage career
+        A well-crafted <a href="/" className="text-brand underline hover:decoration-brand"><strong>developer portfolio website</strong></a> is one of the highest-leverage career
         investments you can make. It&apos;s your first impression, your proof of work, and your personal brand —
         all in one place. Yet most developers treat it as an afterthought, throwing together a list of repos and
         calling it done.
@@ -433,7 +433,7 @@ function DeveloperPortfolioGuideContent() {
         <li><strong>Your specific role</strong> — especially important for team projects</li>
         <li><strong>The tech stack</strong> — relevant, but not the main event</li>
         <li><strong>Outcomes or impact</strong> — users gained, performance improvements, client results</li>
-        <li><strong>A live link and/or GitHub repo</strong> — let visitors explore the work themselves</li>
+        <li><strong>A live link and/or <a href="https://github.com" target="_blank" rel="nofollow noopener noreferrer" className="text-ink-soft underline hover:text-ink">GitHub</a> repo</strong> — let visitors explore the work themselves</li>
       </ul>
       <p>Think of each project as a short case study, not just a screenshot with a tech list underneath it.</p>
 
@@ -496,7 +496,7 @@ function DeveloperPortfolioGuideContent() {
       <h3>7. Contact Information and a Clear CTA</h3>
       <p>
         If someone reaches the bottom of your portfolio and wants to hire you, don&apos;t make them work for it.
-        Include a simple contact form or a direct email address. Add links to your GitHub, LinkedIn, and any other
+        Include a simple contact form or a direct email address. Add links to your <a href="https://github.com" target="_blank" rel="nofollow noopener noreferrer" className="text-ink-soft underline hover:text-ink">GitHub</a>, <a href="https://www.linkedin.com" target="_blank" rel="nofollow noopener noreferrer" className="text-ink-soft underline hover:text-ink">LinkedIn</a>, and any other
         relevant professional profiles.
       </p>
       <p>
@@ -656,7 +656,7 @@ function DeveloperPortfolioGuideContent() {
 
       <h2>Conclusion</h2>
       <p>
-        Your <strong>developer portfolio website</strong> isn&apos;t a formality — it&apos;s one of the most
+        Your <a href="/" className="text-brand underline hover:decoration-brand"><strong>developer portfolio website</strong></a> isn&apos;t a formality — it&apos;s one of the most
         powerful career assets you can build. Done well, it replaces a thousand cold applications. It gives
         hiring managers confidence, shows clients what you can do, and signals to the industry that you take your
         craft seriously.
@@ -691,7 +691,7 @@ function PhotographyPortfolioContent() {
         then your best images are sitting in the dark.
       </p>
       <p>
-        A <strong>photography portfolio website</strong> isn&apos;t just an online gallery. It&apos;s your
+        A <a href="/" className="text-brand underline hover:decoration-brand"><strong>photography portfolio website</strong></a> isn&apos;t just an online gallery. It&apos;s your
         storefront, your sales team, and your creative statement, all working around the clock on your behalf. The
         difference between a photographer who has a steady stream of inquiries and one who&apos;s constantly
         chasing leads often comes down to one thing: how well their website is built.
@@ -903,8 +903,7 @@ function PhotographyPortfolioContent() {
         frustrate visitors — it actively hurts your search rankings.
       </p>
       <p>
-        Before publishing or redesigning your site, test it on multiple devices and run it through Google
-        PageSpeed Insights. The results will show you exactly where to focus your optimization efforts.
+        Before publishing or redesigning your site, test it on multiple devices and run it through <a href="https://pagespeed.web.dev" target="_blank" rel="nofollow noopener noreferrer" className="text-ink-soft underline hover:text-ink">Google PageSpeed Insights</a>. The results will show you exactly where to focus your optimization efforts.
       </p>
 
       <h3>9. A Blog or Behind-the-Scenes Journal</h3>
@@ -1051,7 +1050,7 @@ function PhotographyPortfolioContent() {
       <h2>Conclusion</h2>
       <p>
         Your photography speaks for itself — but only if your website gives it the platform it deserves. A
-        strong <strong>photography portfolio website</strong> isn&apos;t built in an afternoon, but it also
+        strong <a href="/" className="text-brand underline hover:decoration-brand"><strong>photography portfolio website</strong></a> isn&apos;t built in an afternoon, but it also
         doesn&apos;t need to be overwhelming. Start with the fundamentals covered in this guide: curated
         galleries, a genuine about page, clear contact information, and a site that loads fast and looks great
         on every device.
@@ -1088,7 +1087,7 @@ function UAEFreelancerContent() {
         A WhatsApp number and an Instagram page aren&apos;t enough anymore.
       </p>
       <p>
-        A professional <strong>freelancer portfolio website</strong> changes that dynamic entirely. It signals
+        A professional <a href="/" className="text-brand underline hover:decoration-brand"><strong>freelancer portfolio website</strong></a> changes that dynamic entirely. It signals
         credibility, communicates your value clearly, and gives potential clients a place to evaluate your work
         on their own terms — before they ever send you a message.
       </p>
@@ -1365,8 +1364,8 @@ function UAEFreelancerContent() {
         of a broader client attraction strategy. A few approaches worth adopting:
       </p>
       <p>
-        <strong>Combine your website with LinkedIn outreach.</strong> The UAE has a highly active LinkedIn
-        user base, particularly in Dubai&apos;s professional community. A strong LinkedIn profile that links
+        <strong>Combine your website with <a href="https://www.linkedin.com" target="_blank" rel="nofollow noopener noreferrer" className="text-ink-soft underline hover:text-ink">LinkedIn</a> outreach.</strong> The UAE has a highly active LinkedIn
+        user base, particularly in Dubai&apos;s professional community. A strong <a href="https://en.wikipedia.org/wiki/LinkedIn" target="_blank" rel="noopener noreferrer" className="text-ink-soft underline hover:text-ink">LinkedIn</a> profile that links
         to your portfolio website creates a two-step credibility pathway: LinkedIn introduces you, your
         website closes the deal.
       </p>
@@ -1435,7 +1434,7 @@ function UAEFreelancerContent() {
       <h2>Conclusion</h2>
       <p>
         The UAE freelance market rewards professionals who show up with clarity, credibility, and confidence.
-        A professional <strong>freelancer portfolio website</strong> is the most reliable way to project all
+        A professional <a href="/" className="text-brand underline hover:decoration-brand"><strong>freelancer portfolio website</strong></a> is the most reliable way to project all
         three — and to keep doing so consistently, even when you&apos;re focused on delivering client work
         rather than chasing new leads.
       </p>
@@ -1469,7 +1468,7 @@ function FounderPersonalBrandContent() {
         the one asset that communicates all of this at scale: their personal brand.
       </p>
       <p>
-        A <strong>founder portfolio website</strong> is not a vanity project. It&apos;s not something you
+        A <a href="/" className="text-brand underline hover:decoration-brand"><strong>founder portfolio website</strong></a> is not a vanity project. It&apos;s not something you
         build after you&apos;ve made it. It&apos;s one of the highest-leverage tools available to an
         early-stage founder — a permanent, searchable, fully owned platform that shapes how investors,
         customers, journalists, potential hires, and partners perceive you before a single conversation
@@ -1664,7 +1663,7 @@ function FounderPersonalBrandContent() {
       <p>
         A clearly stated note about your current fundraising status, your thesis, or your approach to
         building makes it easy for investors who encounter you organically to understand the opportunity.
-        At minimum, make sure your LinkedIn and AngelList profiles are linked prominently so investors can
+        At minimum, make sure your <a href="https://www.linkedin.com" target="_blank" rel="nofollow noopener noreferrer" className="text-ink-soft underline hover:text-ink">LinkedIn</a> and <a href="https://www.angellist.com" target="_blank" rel="nofollow noopener noreferrer" className="text-ink-soft underline hover:text-ink">AngelList</a> profiles are linked prominently so investors can
         quickly access the structured information they need.
       </p>
 
@@ -1805,7 +1804,7 @@ function FounderPersonalBrandContent() {
         structurally linked.
       </p>
       <p>
-        A <strong>founder portfolio website</strong> is where that credibility lives online. It&apos;s the
+        A <a href="/" className="text-brand underline hover:decoration-brand"><strong>founder portfolio website</strong></a> is where that credibility lives online. It&apos;s the
         asset that works while you&apos;re building, that speaks to investors before you pitch them, that
         attracts talent before you post a job, and that earns media coverage before you launch your campaign.
       </p>
@@ -1858,7 +1857,7 @@ function AgencyVsPortfolioContent() {
         of your capabilities.
       </p>
       <p>
-        For creatives, a <strong>studio portfolio website</strong> typically features a curated gallery or
+        For creatives, a <a href="/" className="text-brand underline hover:decoration-brand"><strong>studio portfolio website</strong></a> typically features a curated gallery or
         case study section as its centerpiece. The navigation is minimal. The design gives maximum space to
         the work itself. The copy is lean — enough to provide context, not so much that it competes with the
         visuals.
@@ -1876,7 +1875,7 @@ function AgencyVsPortfolioContent() {
 
       <h2>What Is an Agency Website?</h2>
       <p>
-        A <strong>creative agency website</strong> is built around services, process, and outcomes. Its
+        A <a href="https://en.wikipedia.org/wiki/Creative_agency" target="_blank" rel="noopener noreferrer" className="text-ink-soft underline hover:text-ink"><strong>creative agency website</strong></a> is built around services, process, and outcomes. Its
         primary job is to communicate what you do, who you do it for, and why your approach produces results
         that justify your fees.
       </p>
@@ -2084,7 +2083,7 @@ function AgencyVsPortfolioContent() {
 
       <h2>Conclusion</h2>
       <p>
-        The <strong>agency website vs portfolio website</strong> question doesn&apos;t have a universal
+        The <strong>agency website vs <a href="/" className="text-brand underline hover:decoration-brand">portfolio website</a></strong> question doesn&apos;t have a universal
         right answer — but it does have a right answer for your studio, at this stage of its development,
         with the clients you&apos;re trying to attract.
       </p>
