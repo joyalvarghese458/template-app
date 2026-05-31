@@ -198,12 +198,11 @@ export default function Home() {
         <a
           href="#templates"
           aria-label="Scroll to explore"
-          className="absolute right-6 sm:right-8 bottom-14 z-10 flex flex-col items-center gap-1.5 text-white/60 hover:text-white transition-colors duration-150"
+          className="absolute right-6 sm:right-8 bottom-14 z-10 text-brand hover:opacity-70 transition-opacity duration-200 animate-bounce"
         >
-          <span className="text-[10px] sm:text-xs tracking-wide">Scroll to explore</span>
-          <svg className="w-4 h-4 sm:w-5 sm:h-5 animate-bounce" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-            <path d="M12 5v14" />
-            <path d="M19 12l-7 7-7-7" />
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <circle cx="20" cy="20" r="19" fill="currentColor" fillOpacity="0.15" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.5" />
+            <path d="M13 17l7 7 7-7" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </a>
 
