@@ -128,6 +128,82 @@
   animation: pageEnter 0.4s cubic-bezier(0.4, 0, 0.2, 1) both;
 }
 
+/* ── Blog article prose ──────────────────────────────────────────── */
+.prose-article {
+  color: var(--color-ink);
+  font-size: 1.0625rem;
+  line-height: 1.8;
+}
+
+.prose-article h2 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.3;
+  color: var(--color-ink);
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose-article h3 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.15rem;
+  line-height: 1.4;
+  color: var(--color-ink);
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.prose-article p {
+  margin-bottom: 1.1rem;
+  color: #334155;
+}
+
+.prose-article ul,
+.prose-article ol {
+  margin-bottom: 1.1rem;
+  padding-left: 1.5rem;
+}
+
+.prose-article li {
+  margin-bottom: 0.4rem;
+  color: #334155;
+}
+
+.prose-article ul li {
+  list-style-type: disc;
+}
+
+.prose-article ol li {
+  list-style-type: decimal;
+}
+
+.prose-article strong {
+  color: var(--color-ink);
+  font-weight: 600;
+}
+
+.prose-article figure {
+  margin: 2rem 0;
+}
+
+.article-img {
+  width: 100%;
+  border-radius: 1rem;
+  object-fit: cover;
+  max-height: 420px;
+  display: block;
+}
+
+.prose-article figcaption {
+  text-align: center;
+  font-size: 0.8125rem;
+  color: var(--color-ink-soft);
+  margin-top: 0.6rem;
+  font-style: italic;
+}
+
 /* ── Global base ─────────────────────────────────────────────────── */
 :root {
   --navbar-height: 4rem;

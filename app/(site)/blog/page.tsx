@@ -47,9 +47,9 @@ const CATEGORY_COLORS: Record<string, string> = {
 const FEATURED: Article = {
   slug: "10-elements-every-professional-portfolio-needs",
   category: "Portfolio Design",
-  title: "10 Elements Every Professional Portfolio Website Needs in 2025",
+  title: "How to Build a Portfolio Website That Gets You Hired as a Designer in 2025",
   excerpt:
-    "Discover the must-have elements that separate average portfolios from career-defining ones. We analyzed 500+ successful portfolios to bring you this definitive guide.",
+    "Most design portfolios look the same — and that's exactly why they fail. Learn the proven framework top designers use to present their work, communicate their value, and land dream roles and high-value clients.",
   author: {
     name: "Sarah Chen",
     role: "Portfolio Strategist",
@@ -466,6 +466,8 @@ export default function BlogPage() {
                       </div>
                       <Link
                         href={`/blog/${FEATURED.slug}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 px-5 py-2.5 bg-brand text-white text-sm font-semibold rounded-lg hover:bg-brand-light transition-colors duration-200 self-start"
                       >
                         Read Article
