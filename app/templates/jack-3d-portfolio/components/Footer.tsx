@@ -50,7 +50,7 @@ export default function Footer() {
     const [email, setEmail] = useState('');
     const [sent, setSent] = useState(false);
 
-    function handleSubmit(e: SubmitEvent) {
+    function handleSubmit(e: { preventDefault: () => void }) {
         e.preventDefault();
         if (!email.trim()) return;
         setSent(true);

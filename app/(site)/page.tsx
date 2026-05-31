@@ -91,7 +91,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/35 sm:bg-black/50" aria-hidden="true" />
 
         {/* Hero content */}
-        <div className="relative z-10 flex-1 flex flex-col items-center w-full px-6 sm:px-8 lg:px-12 pt-20 pb-4 sm:pb-6 text-center">
+        <div className="relative z-10 flex-1 flex flex-col items-center w-full px-6 sm:px-8 lg:px-12 pt-16 sm:pt-20 pb-4 sm:pb-6 text-center">
 
           {/* Top content group */}
           <div className="flex flex-col items-center">
@@ -119,16 +119,24 @@ export default function Home() {
 
             {/* Heading */}
             <h1 className="font-serif font-bold text-4xl sm:text-5xl md:text-6xl xl:text-7xl text-white tracking-[-0.02em] leading-[1.1] mb-5 sm:mb-6 max-w-3xl">
-              Portfolio{" "}
-              <span className="text-brand">designed</span>{" "}
-              to stand out.
+              Professional{" "}
+              <span className="text-brand">Portfolio Website</span>{" "}
+              for Modern Professionals.
             </h1>
 
             {/* Subtitle */}
-            <p className="text-sm sm:text-base md:text-lg text-white/75 max-w-sm sm:max-w-2xl mb-7 sm:mb-10 leading-relaxed">
+            {/* <p className="text-sm sm:text-base md:text-lg text-white/75 max-w-sm sm:max-w-2xl mb-7 sm:mb-10 leading-relaxed">
               Premium portfolio templates for creators, agencies &amp; personal brands.
               Launch in days, not weeks.
+            </p> */}
+            <p className="text-sm sm:text-base md:text-lg text-white/75 max-w-sm sm:max-w-2xl mb-7 sm:mb-10 leading-relaxed">
+              Launch a professional portfolio website that showcases your <br /> expertise &amp; attracts new opportunities.
             </p>
+            {/* <p className="text-sm sm:text-base md:text-lg text-white/75 max-w-sm sm:max-w-2xl mb-7 sm:mb-10 leading-relaxed">
+              Launch a professional portfolio website<br />
+              that showcases your work and builds credibility,<br />
+              helping you attract clients &amp; opportunities faster.
+            </p> */}
 
             {/* CTA */}
             <a
@@ -143,9 +151,8 @@ export default function Home() {
 
           </div>
 
-          {/* Flexible spacer — grows to fill available space but never collapses below 72px,
-              guaranteeing the background image always shows through on all screen sizes */}
-          <div className="flex-1 min-h-[72px]" aria-hidden="true" />
+          {/* Flexible spacer — grows to fill available space, collapses on small viewports */}
+          <div className="flex-1 min-h-0" aria-hidden="true" />
 
           {/* Stats grid — all screen sizes, pinned to bottom */}
           <div className="w-full border-t border-white/15 pt-3 max-w-lg sm:max-w-xl mx-auto">
