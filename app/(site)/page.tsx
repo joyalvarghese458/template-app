@@ -97,7 +97,7 @@ export default function Home() {
           <div className="flex flex-col items-center">
             {/* Rating pill */}
             <div className="inline-flex items-center gap-2 pl-3 pr-4 py-2 rounded-full border border-white/25 mb-6 sm:mb-8 bg-white/10 backdrop-blur-sm">
-              <span className="flex items-center gap-0.5" aria-label="4.5 out of 5 stars">
+              <span className="flex items-center gap-0.5" aria-label="4.9 out of 5 stars">
                 {[0, 1, 2, 3].map((i) => (
                   <svg key={i} className="w-3.5 h-3.5 text-yellow-400" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                     <path d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.78 1.401 8.169L12 19.243l-7.335 3.917 1.401-8.169L.132 9.211l8.2-1.193z" />
@@ -107,13 +107,13 @@ export default function Home() {
                   <svg className="absolute inset-0 w-full h-full text-yellow-400/30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                     <path d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.78 1.401 8.169L12 19.243l-7.335 3.917 1.401-8.169L.132 9.211l8.2-1.193z" />
                   </svg>
-                  <svg className="absolute inset-0 w-full h-full text-yellow-400" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style={{ clipPath: "inset(0 50% 0 0)" }}>
+                  <svg className="absolute inset-0 w-full h-full text-yellow-400" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style={{ clipPath: "inset(0 10% 0 0)" }}>
                     <path d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.78 1.401 8.169L12 19.243l-7.335 3.917 1.401-8.169L.132 9.211l8.2-1.193z" />
                   </svg>
                 </span>
               </span>
               <span className="h-3.5 w-px bg-white/30" aria-hidden="true" />
-              <span className="text-sm font-bold text-white tabular-nums">4.5</span>
+              <span className="text-sm font-bold text-white tabular-nums">4.9</span>
               <span className="text-[10px] font-semibold text-white/60 tracking-wide">/ 5</span>
             </div>
 
