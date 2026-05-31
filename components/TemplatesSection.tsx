@@ -195,8 +195,7 @@ export default function TemplatesSection() {
             <span className="italic text-brand">Launch in days.</span>
           </h2>
           <p className="text-base sm:text-lg text-ink-soft leading-relaxed mb-6">
-            Hand-crafted portfolio templates for every career path — pay once,
-            own forever.
+            Choose from professionally designed portfolio website layouts optimized for credibility, visibility, and conversions.
           </p>
 
           {/* Currency toggle */}
@@ -206,11 +205,10 @@ export default function TemplatesSection() {
                 key={c}
                 type="button"
                 onClick={() => setCurrency(c)}
-                className={`px-4 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 ${
-                  currency === c
+                className={`px-4 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 ${currency === c
                     ? "bg-brand text-canvas-bg shadow-sm shadow-brand/30"
                     : "text-ink-soft hover:text-ink"
-                }`}
+                  }`}
               >
                 {c}
               </button>
