@@ -54,21 +54,12 @@ export const metadata: Metadata = {
     title: "My Portfolio — Professional Portfolio Templates",
     description:
       "Hand-crafted portfolio templates for designers, developers, photographers, and creators. Starting from AED 49. One-time payment, lifetime ownership.",
-    images: [
-      {
-        url: "/Opengraph.jpg",
-        width: 1200,
-        height: 630,
-        alt: "My Portfolio — Professional Portfolio Templates",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "My Portfolio — Professional Portfolio Templates",
     description:
       "Hand-crafted portfolio templates for designers, developers, photographers, and creators. Starting from AED 49.",
-    images: ["/Opengraph.jpg"],
   },
   icons: {
     icon: "/fav-icon.webp",

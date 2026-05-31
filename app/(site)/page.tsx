@@ -22,14 +22,6 @@ export const metadata: Metadata = {
   },
   openGraph: {
     url: "https://www.myportfoliowebsite.com/",
-    images: [
-      {
-        url: "/Opengraph.jpg",
-        width: 1200,
-        height: 630,
-        alt: "My Portfolio — Professional Portfolio Templates",
-      },
-    ],
   },
 };
 
