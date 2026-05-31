@@ -91,7 +91,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/35 sm:bg-black/50" aria-hidden="true" />
 
         {/* Hero content */}
-        <div className="relative z-10 flex-1 flex flex-col items-center w-full px-6 sm:px-8 lg:px-12 pt-16 sm:pt-20 pb-4 sm:pb-6 text-center">
+        <div className="relative z-10 flex-1 flex flex-col items-center w-full px-6 sm:px-8 lg:px-12 pt-16 sm:pt-20 pb-12 sm:pb-14 text-center">
 
           {/* Top content group */}
           <div className="flex flex-col items-center">
@@ -194,11 +194,11 @@ export default function Home() {
 
         </div>
 
-        {/* Scroll cue */}
+        {/* Scroll cue — absolute bottom-right, sits above the offer banner */}
         <a
           href="#templates"
           aria-label="Scroll to explore"
-          className="relative z-10 flex flex-col items-center gap-1.5 text-white/60 hover:text-white transition-colors duration-150 pb-12"
+          className="absolute right-6 sm:right-8 bottom-14 z-10 flex flex-col items-center gap-1.5 text-white/60 hover:text-white transition-colors duration-150"
         >
           <span className="text-[10px] sm:text-xs tracking-wide">Scroll to explore</span>
           <svg className="w-4 h-4 sm:w-5 sm:h-5 animate-bounce" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
