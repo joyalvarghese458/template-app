@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import heroImage from "@/app/opengraph-image.jpg";
+import heroImage from "@/app/landing-img.png";
 import heroImageMobile from "@/app/new-landing.webp";
 import StatsBar from "@/components/StatsBar";
 import AboutSection from "@/components/AboutSection";
@@ -19,9 +19,6 @@ export const metadata: Metadata = {
     "Browse 30+ premium portfolio templates for designers, developers, photographers & creators. Starting at AED 49. One-time payment, lifetime ownership.",
   alternates: {
     canonical: "/",
-  },
-  openGraph: {
-    url: "https://www.myportfoliowebsite.com/",
   },
 };
 

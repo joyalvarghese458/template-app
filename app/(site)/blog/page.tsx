@@ -127,18 +127,18 @@ const ALL_ARTICLES: Article[] = [
       "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=700&q=80&auto=format&fit=crop",
   },
   {
-    slug: "resume-to-portfolio-website",
-    category: "Career Growth",
-    title: "How to Turn Your Resume Into a Professional Portfolio Website",
+    slug: "agency-website-vs-portfolio-website",
+    category: "Agency & Studio",
+    title: "Agency Website vs Portfolio Website: Which One Does Your Studio Actually Need?",
     excerpt:
-      "Your resume is just the beginning. Discover how to transform your experience and achievements into a dynamic portfolio that truly shows what you can do.",
+      "Agency website or portfolio website — it's not just a design decision, it's a strategic one. Find out which one your creative studio actually needs and why getting it wrong costs you clients.",
     author: {
       name: "Priya Nair",
       role: "Career Coach",
       avatar: "https://i.pravatar.cc/40?img=36",
     },
     date: "May 1, 2025",
-    readTime: 9,
+    readTime: 12,
     image:
       "https://images.unsplash.com/photo-1552664730-d307ca884978?w=700&q=80&auto=format&fit=crop",
   },

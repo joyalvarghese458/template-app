@@ -1824,6 +1824,285 @@ function FounderPersonalBrandContent() {
   );
 }
 
+// ── Article Content: Agency vs Portfolio Website ──────────────────────────
+
+function AgencyVsPortfolioContent() {
+  return (
+    <>
+      <h2>Introduction</h2>
+      <p>
+        It&apos;s a question creative studio owners face more often than they&apos;d like to admit — usually
+        late into a website redesign, when they&apos;ve already committed to a direction and started to sense
+        that something feels off.
+      </p>
+      <p>
+        Are we building an agency website or a portfolio website? And does it matter?
+      </p>
+      <p>
+        It matters more than most people realize. The <strong>difference between an agency and portfolio
+        website</strong> isn&apos;t purely aesthetic — it&apos;s strategic. The two serve different audiences
+        in different ways, signal different things about your business, and are optimized for different
+        conversion goals. Building the wrong one — or worse, accidentally building a hybrid that does neither
+        job well — is one of the most common and costly mistakes creative studios make.
+      </p>
+      <p>
+        This guide cuts through the confusion. You&apos;ll come away with a clear understanding of what each
+        type of website is built to do, how to diagnose which one your studio actually needs right now, and
+        what happens when studios get this decision wrong.
+      </p>
+
+      <h2>What Is a Portfolio Website?</h2>
+      <p>
+        A portfolio website is built around work. Its primary job is to showcase what you&apos;ve created —
+        visually, compellingly, and in enough depth that a prospective client can form a confident opinion
+        of your capabilities.
+      </p>
+      <p>
+        For creatives, a <strong>studio portfolio website</strong> typically features a curated gallery or
+        case study section as its centerpiece. The navigation is minimal. The design gives maximum space to
+        the work itself. The copy is lean — enough to provide context, not so much that it competes with the
+        visuals.
+      </p>
+      <p>
+        Portfolio websites are naturally personal. Even when they represent a small team, they tend to
+        reflect an individual sensibility — the aesthetic, the taste, the specific kind of work the studio
+        pursues. They communicate craft and vision before they communicate process or pricing.
+      </p>
+      <p>
+        The implicit message of a portfolio website is: <em>look what we&apos;ve made</em>. The conversion
+        it&apos;s optimized for is often a single action: get in touch, see more work, or start a project
+        together.
+      </p>
+
+      <h2>What Is an Agency Website?</h2>
+      <p>
+        A <strong>creative agency website</strong> is built around services, process, and outcomes. Its
+        primary job is to communicate what you do, who you do it for, and why your approach produces results
+        that justify your fees.
+      </p>
+      <p>
+        Agency websites are more explicitly commercial. They tend to feature defined service pages, client
+        logos, case studies framed around business outcomes rather than aesthetic achievement, team pages,
+        and clear calls to action tied to a sales process — discovery calls, project inquiries, proposal
+        requests.
+      </p>
+      <p>
+        Where a portfolio website says <em>look what we&apos;ve made</em>, an agency website says{" "}
+        <em>here&apos;s what we do, here&apos;s how we do it, and here&apos;s what clients get when they
+        work with us</em>.
+      </p>
+      <p>
+        The conversion an agency website is optimized for is typically a qualified business inquiry —
+        someone who has read enough about your services, process, and credentials to want to begin a formal
+        conversation.
+      </p>
+
+      <figure>
+        <img
+          src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&q=80&auto=format&fit=crop"
+          alt="Creative studio team reviewing work"
+          className="article-img"
+        />
+        <figcaption>The format your studio chooses signals something fundamental about how you operate and who you&apos;re built to serve.</figcaption>
+      </figure>
+
+      <h2>The Core Differences: Agency Website vs Portfolio Website</h2>
+
+      <h3>Audience and Expectations</h3>
+      <p>
+        A portfolio website speaks to someone who is evaluating creative quality. They want to see your best
+        work, understand your aesthetic range, and develop a feel for your sensibility. They arrive with
+        curiosity.
+      </p>
+      <p>
+        A <strong>creative agency website</strong> speaks to someone evaluating business capability. They
+        want to know whether you can solve their specific problem, whether you&apos;ve done it before, what
+        the process looks like, and whether the investment is justified. They arrive with a problem to solve.
+      </p>
+
+      <h3>Content Structure and Navigation</h3>
+      <p>
+        Portfolio websites prioritize simplicity. A home page, a work section, an about page, and a contact
+        page is a complete, functional portfolio structure. Navigation is minimal because the goal is to
+        direct attention to the work.
+      </p>
+      <p>
+        Agency websites are more information-dense by necessity. Service pages, industry pages, team bios,
+        a defined process section, case studies with metrics, a blog or resources section, and a clear
+        conversion path are all standard components. The navigation serves a more complex information
+        architecture because the site is doing more selling.
+      </p>
+
+      <h3>Case Studies vs Galleries</h3>
+      <p>
+        Portfolio websites present work as galleries — images, visual sequences, or video reels where the
+        work speaks for itself. The framing is minimal: project name, client, a brief description.
+      </p>
+      <p>
+        Agency websites present work as case studies — structured narratives that walk through the brief,
+        the strategic thinking, the creative approach, and the outcome. The emphasis shifts from &quot;what
+        it looks like&quot; to &quot;what it achieved.&quot; Metrics, client quotes, and business impact
+        become central.
+      </p>
+      <p>The same project can be presented either way. How you choose to present it signals how you want to be perceived.</p>
+
+      <h3>Tone and Voice</h3>
+      <p>
+        Portfolio websites tend toward restraint in their copy. Short sentences. Minimal explanation. The
+        work carries the weight.
+      </p>
+      <p>
+        Agency websites require a more developed voice — one that communicates strategic capability, builds
+        trust through specificity, and speaks directly to the anxieties and ambitions of a business buyer.
+        The copy needs to answer questions that a portfolio website never has to address: How do you work?
+        What do I get? Why should I trust you with this?
+      </p>
+
+      <h3>Pricing and Commercial Signals</h3>
+      <p>
+        Portfolio websites rarely mention pricing directly. The conversation about budget typically happens
+        after the initial contact.
+      </p>
+      <p>
+        Agency websites increasingly benefit from including at least a signals-level indication of
+        investment — a defined &quot;starting from&quot; figure, a clear statement of the types of clients
+        or project scales you work with, or a transparent services and pricing page. Business buyers want
+        to qualify investment before committing to a conversation.
+      </p>
+
+      <figure>
+        <img
+          src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=900&q=80&auto=format&fit=crop"
+          alt="Studio team discussing strategy"
+          className="article-img"
+        />
+        <figcaption>The right website format depends on where your studio is, how it operates, and who you&apos;re trying to reach.</figcaption>
+      </figure>
+
+      <h2>So Which One Does Your Studio Actually Need?</h2>
+
+      <h3>You Probably Need a Portfolio Website If...</h3>
+      <ul>
+        <li><strong>You&apos;re a solo creative or very small studio.</strong> When the work is inseparable from the person or small team making it, a portfolio website is the more natural and honest format.</li>
+        <li><strong>Your work wins clients through visual impact.</strong> If the strongest argument for hiring you is what your work looks like — as is often true for brand designers, illustrators, photographers, and motion designers — a format that leads with the work is usually more effective.</li>
+        <li><strong>You&apos;re working with design-literate clients.</strong> Creative directors and brand managers who evaluate portfolios professionally respond better to work-forward presentation than process-heavy agency language.</li>
+        <li><strong>You want to attract inbound work from people who know what they want.</strong> Portfolio websites are excellent at converting referred traffic and design community visitors.</li>
+        <li><strong>You&apos;re earlier in your studio&apos;s development.</strong> A clean, well-curated portfolio website that showcases strong work is more credible than an agency website with thin service copy and a modest client list.</li>
+      </ul>
+
+      <h3>You Probably Need an Agency Website If...</h3>
+      <ul>
+        <li><strong>You have a defined team, process, and service offering.</strong> When your studio has moved beyond &quot;I make things&quot; to &quot;we solve problems through a defined approach,&quot; an agency website communicates that evolution.</li>
+        <li><strong>You&apos;re targeting corporate, enterprise, or institutional clients.</strong> Larger organizations evaluating creative partners are conducting a procurement process. They want to understand your methodology and evaluate whether your operation can handle the scale of their needs.</li>
+        <li><strong>You want to compete on strategy and outcomes, not just aesthetics.</strong> If your studio&apos;s differentiation is the thinking behind the work, a portfolio website undersells you.</li>
+        <li><strong>You&apos;re building a sales pipeline, not just receiving referrals.</strong> Agency websites are built to convert strangers into qualified leads through a structured conversion journey.</li>
+        <li><strong>Your studio has a track record with recognizable clients.</strong> A strong client roster is a significant conversion asset — but only if your website is structured to display and leverage it.</li>
+      </ul>
+
+      <h2>The Hybrid Trap: Why Trying to Be Both Often Means Being Neither</h2>
+      <p>
+        Here&apos;s where a lot of studios get into trouble. Feeling the pull of both formats, they build a
+        site that&apos;s half portfolio, half agency — elaborate service copy alongside a minimal gallery,
+        case studies written as vague project descriptions, a team page that implies a larger operation than
+        actually exists.
+      </p>
+      <p>
+        The result satisfies no one. Visitors who want to evaluate the work find too much commercial copy in
+        the way. Visitors who want to evaluate the studio&apos;s capabilities find the work presented without
+        the strategic context they need.
+      </p>
+      <p>
+        At any given moment, your website should have a primary orientation — a clear answer to the question
+        &quot;what is this site trying to do?&quot; — and every structural and copy decision should serve
+        that answer.
+      </p>
+
+      <h2>When to Transition From Portfolio to Agency Website</h2>
+      <p>
+        Most creative studios start with a portfolio website. The transition to an agency website makes sense
+        when several things are true simultaneously: you have a defined team and a repeatable process;
+        you&apos;ve accumulated a body of client work you can speak about with strategic depth; you have a
+        clear sense of the types of clients and projects you want to attract; and your current website is no
+        longer converting at the level it should because it&apos;s underselling your actual capabilities.
+      </p>
+      <p>
+        Done well, the shift from portfolio to agency website often marks a genuine inflection point in a
+        studio&apos;s growth — not because the website caused the growth, but because the clarity required
+        to build the agency website properly forced the strategic thinking the business needed.
+      </p>
+
+      <h2>Expert Insights: Getting the Decision Right</h2>
+      <ul>
+        <li><strong>Be honest about your current stage, not your aspirational stage.</strong> Build the website that accurately represents what you are right now. A portfolio website that honestly showcases excellent work will always outperform an agency website that overpromises on capabilities not yet in place.</li>
+        <li><strong>Talk to the clients you want to attract, not the ones you currently have.</strong> Your website should speak to the clients you&apos;re optimizing for. If you want to attract larger corporate accounts, your site needs to evolve toward agency format — even if it means some current clients find it less immediately intuitive.</li>
+        <li><strong>Your navigation reveals your true format.</strong> Look at your current site&apos;s navigation and ask: what is each item here for? If everything points to work, you have a portfolio site. If everything points to a business relationship, you have an agency site. If the navigation is contradictory, your site is probably sending mixed signals.</li>
+        <li><strong>The best studio websites feel inevitable.</strong> When the format, content, voice, and work are all aligned, visitors understand quickly and intuitively what kind of studio they&apos;re dealing with. That clarity is the goal, whatever format you choose.</li>
+      </ul>
+
+      <h2>FAQ: Agency Website vs Portfolio Website</h2>
+
+      <h3>What is the main difference between an agency website and a portfolio website?</h3>
+      <p>
+        A portfolio website is built to showcase work — its primary job is to display your creative output
+        compellingly, with minimal friction between the visitor and the work itself. An agency website is
+        built to communicate business capability — services, process, team, and outcomes. Portfolio websites
+        are optimized for creative evaluation; agency websites are optimized for business conversion.
+      </p>
+
+      <h3>Can a small creative studio have an agency-style website?</h3>
+      <p>
+        Yes, but it needs to be earned. An agency-format website implies a level of process sophistication,
+        team structure, and client track record that the site&apos;s content needs to actually support. A
+        two-person studio with strong work, clear services, and genuine client outcomes can present as an
+        agency effectively. The same studio with thin case studies and vague service descriptions will feel
+        unconvincing in the same format.
+      </p>
+
+      <h3>Should creative studios include pricing on their website?</h3>
+      <p>
+        For portfolio-oriented studios working with referred, design-literate clients, pricing is often left
+        to conversation. For agency-format studios targeting business buyers, including at least a
+        &quot;starting from&quot; figure significantly improves lead quality and conversion rates. The right
+        approach depends on your positioning and your sales process.
+      </p>
+
+      <h3>How often should a creative studio redesign their website?</h3>
+      <p>
+        A full redesign every two to three years is reasonable for most studios, with ongoing updates to
+        work samples and case studies in between. The more meaningful trigger for a redesign isn&apos;t time
+        — it&apos;s when your website no longer accurately represents where your studio is and where
+        you&apos;re headed.
+      </p>
+
+      <h3>What makes a creative agency website stand out from competitors?</h3>
+      <p>
+        Specificity. Generic agency websites — the ones with vague statements about &quot;crafting
+        experiences&quot; and &quot;driving results&quot; — are indistinguishable from each other. The
+        agency websites that stand out lead with a clear, honest, specific point of view: who you work with,
+        what you specifically do for them, and what makes your approach different.
+      </p>
+
+      <h2>Conclusion</h2>
+      <p>
+        The <strong>agency website vs portfolio website</strong> question doesn&apos;t have a universal
+        right answer — but it does have a right answer for your studio, at this stage of its development,
+        with the clients you&apos;re trying to attract.
+      </p>
+      <p>
+        Portfolio websites win clients through the force of the work itself. Agency websites win clients
+        through the clarity of the value proposition. The studios that consistently attract the right
+        clients — and charge accordingly — are the ones whose websites honestly and compellingly reflect
+        who they actually are.
+      </p>
+      <p>
+        Know what your site is for. Build it to do that job exceptionally. Update it when your studio
+        outgrows it. That discipline, more than any design trend or technical feature, is what separates
+        the studios whose websites work from the ones whose websites exist.
+      </p>
+    </>
+  );
+}
+
 // ── Articles Map ──────────────────────────────────────────────────────────
 
 const ARTICLES: Record<string, ArticleMeta> = {
@@ -1854,6 +2133,20 @@ const ARTICLES: Record<string, ArticleMeta> = {
     heroImage:
       "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&q=80&auto=format&fit=crop",
     Content: DeveloperPortfolioGuideContent,
+  },
+  "agency-website-vs-portfolio-website": {
+    slug: "agency-website-vs-portfolio-website",
+    category: "Agency & Studio",
+    categoryColor: "bg-amber-100 text-amber-700",
+    title: "Agency Website vs Portfolio Website: Which One Does Your Studio Actually Need?",
+    excerpt:
+      "Agency website or portfolio website — it's not just a design decision, it's a strategic one. Find out which one your creative studio actually needs and why getting it wrong costs you clients.",
+    author: { name: "Priya Nair", role: "Career Coach", avatar: "https://i.pravatar.cc/40?img=36" },
+    date: "May 1, 2025",
+    readTime: 12,
+    heroImage:
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80&auto=format&fit=crop",
+    Content: AgencyVsPortfolioContent,
   },
   "founder-portfolio-website-personal-brand": {
     slug: "founder-portfolio-website-personal-brand",
