@@ -195,7 +195,7 @@ export default function Home() {
         <a
           href="#templates"
           aria-label="Scroll to explore"
-          className="absolute right-6 sm:right-8 bottom-14 z-10 text-brand hover:opacity-70 transition-opacity duration-200 animate-bounce"
+          className="hidden sm:block absolute right-6 sm:right-8 bottom-14 z-10 text-brand hover:opacity-70 transition-opacity duration-200 animate-bounce"
         >
           <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
             <circle cx="20" cy="20" r="19" fill="currentColor" fillOpacity="0.15" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.5" />
