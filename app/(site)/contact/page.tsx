@@ -207,7 +207,7 @@ export default function ContactPage() {
                     </svg>
                   </a>
                   <a
-                    href="https://www.instagram.com/myportfoliowebsite"
+                    href="https://www.instagram.com/myportfoliowebsite/"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Instagram"

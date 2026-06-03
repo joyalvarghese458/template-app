@@ -110,7 +110,7 @@ export default function Footer() {
                 {WA_ICON}
               </a>
               <a
-                href="https://www.instagram.com/myportfoliowebsite?igsh=MWl2ZW00NXFjZmdleQ=="
+                href="https://www.instagram.com/myportfoliowebsite/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
