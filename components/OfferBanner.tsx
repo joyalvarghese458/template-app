@@ -37,7 +37,7 @@ function Track({ ariaHidden }: { ariaHidden?: boolean }) {
 export default function OfferBanner() {
   return (
     <Link
-      href="/templates?tier=premium"
+      href="/templates?section=creator-portfolio"
       aria-label="Limited Offer: up to 40% off on Professional Portfolio Websites starting at ₹2499"
       className="group relative block overflow-hidden backdrop-blur-md"
       style={{ background: "rgba(0, 0, 0, 0.45)" }}

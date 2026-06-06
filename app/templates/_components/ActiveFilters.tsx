@@ -4,29 +4,32 @@ import { useCallback } from "react";
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import {
   AUDIENCE_LABEL,
+  SECTION_LABEL,
   SPECIALTY_LABEL,
   TIER_BY_ID,
   type AudienceId,
+  type SectionId,
   type TierId,
 } from "@/lib/templates";
 
 type Props = {
+  sections: SectionId[];
   audiences: AudienceId[];
   specialties: string[];
   tiers: TierId[];
   query: string;
 };
 
-export default function ActiveFilters({ audiences, specialties, tiers, query }: Props) {
+export default function ActiveFilters({ sections, audiences, specialties, tiers, query }: Props) {
   const router = useRouter();
   const pathname = usePathname();
   const sp = useSearchParams();
 
   const hasAny =
-    audiences.length > 0 || specialties.length > 0 || tiers.length > 0 || query !== "";
+    sections.length > 0 || audiences.length > 0 || specialties.length > 0 || tiers.length > 0 || query !== "";
 
   const removeFrom = useCallback(
-    (key: "audience" | "specialty" | "tier" | "q", value?: string) => {
+    (key: "section" | "audience" | "specialty" | "tier" | "q", value?: string) => {
       const next = new URLSearchParams(sp.toString());
       if (key === "q" || !value) {
         next.delete(key);
@@ -49,6 +52,13 @@ export default function ActiveFilters({ audiences, specialties, tiers, query }: 
       {query && (
         <Chip label={`"${query}"`} onRemove={() => removeFrom("q")} />
       )}
+      {sections.map((s) => (
+        <Chip
+          key={`sec-${s}`}
+          label={SECTION_LABEL[s]}
+          onRemove={() => removeFrom("section", s)}
+        />
+      ))}
       {audiences.map((a) => (
         <Chip
           key={`a-${a}`}

@@ -41,32 +41,32 @@ const CATEGORIES: Category[] = [
     id: "digital-resume",
     label: "Digital Resume",
     description: "Clean, professional resume templates that get you hired.",
-    templateIds: ["s1", "s2", "s3", "s6"],
-    href: "/templates?audience=creators,founders",
+    templateIds: ["dr1", "dr2", "dr3", "dr4"],
+    href: "/templates?section=digital-resume",
     aed: 49,
   },
   {
     id: "career-portfolio",
     label: "Career Portfolio",
     description: "Showcase your skills and experience to land your next role.",
-    templateIds: ["p2", "s5", "p7", "x5"],
-    href: "/templates?audience=developers,founders",
+    templateIds: ["p1", "x11", "s8", "s9"],
+    href: "/templates?section=career-portfolio",
     aed: 99,
   },
   {
     id: "creator-portfolio",
     label: "Creator Portfolio",
     description: "Express your creative vision with striking artistic layouts.",
-    templateIds: ["s4", "p11", "s9", "s10"],
-    href: "/templates?audience=creators,designers",
+    templateIds: ["s1", "s2", "p2", "p9"],
+    href: "/templates?section=creator-portfolio",
     aed: 149,
   },
   {
     id: "business-portfolio",
     label: "Business Portfolio",
     description: "Premium templates built for agencies, studios, and brands.",
-    templateIds: ["p4", "x1", "p10", "x8"],
-    href: "/templates?audience=agencies,founders",
+    templateIds: ["bp1", "bp2", "bp3"],
+    href: "/templates?section=business-portfolio",
     aed: 1599,
   },
 ];
@@ -216,22 +216,20 @@ export default function TemplatesSection() {
           </div>
         </div>
 
-        {/* Profession quick-filters */}
+        {/* Section quick-filters */}
         <div className="flex flex-wrap items-center justify-center gap-1.5 mb-12">
           {[
-            { id: "designers", label: "Designers" },
-            { id: "developers", label: "Developers" },
-            { id: "photographers", label: "Photographers" },
-            { id: "creators", label: "Creators" },
-            { id: "founders", label: "Founders" },
-            { id: "agencies", label: "Agencies" },
-          ].map((a) => (
+            { id: "digital-resume",     label: "Digital Resume" },
+            { id: "career-portfolio",   label: "Career Portfolio" },
+            { id: "creator-portfolio",  label: "Creator Portfolio" },
+            { id: "business-portfolio", label: "Business Portfolio" },
+          ].map((s) => (
             <a
-              key={a.id}
-              href={`/templates?audience=${a.id}`}
+              key={s.id}
+              href={`/templates?section=${s.id}`}
               className="inline-flex items-center px-3 py-1.5 text-xs font-medium text-ink-soft hover:text-brand-dark bg-canvas-bg border border-ink/15 hover:border-brand/40 hover:bg-brand/5 rounded-full transition-colors"
             >
-              {a.label}
+              {s.label}
             </a>
           ))}
         </div>

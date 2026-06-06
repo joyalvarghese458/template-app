@@ -4,12 +4,16 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import {
   AUDIENCES,
+  SECTIONS,
+  SECTION_ORDER,
   TEMPLATES,
   filterTemplates,
   parseAudiences,
+  parseSections,
   parseSpecialties,
   parseTiers,
   parseQuery,
+  type SectionId,
 } from "@/lib/templates";
 import FilterShell from "./_components/FilterShell";
 import TemplateCard from "./_components/TemplateCard";
@@ -18,7 +22,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "All Portfolio Templates — Browse 30+ Designs",
   description:
-    "Browse 30+ hand-crafted portfolio templates. Filter by profession — designer, developer, photographer, creator, founder, or agency. Starting from AED 49.",
+    "Browse 30+ hand-crafted portfolio templates. Filter by section, profession, or price. Starting from AED 49.",
   alternates: {
     canonical: "/templates",
   },
@@ -26,13 +30,13 @@ export const metadata: Metadata = {
     url: "https://www.myportfoliowebsite.com/templates",
     title: "All Portfolio Templates — Browse 30+ Designs",
     description:
-      "Browse 30+ hand-crafted portfolio templates. Filter by profession — designer, developer, photographer, creator, founder, or agency. Starting from AED 49.",
+      "Browse 30+ hand-crafted portfolio templates. Filter by section, profession, or price. Starting from AED 49.",
   },
   twitter: {
     card: "summary_large_image",
     title: "All Portfolio Templates — Browse 30+ Designs",
     description:
-      "Browse 30+ hand-crafted portfolio templates. Filter by profession and price. Starting from AED 49.",
+      "Browse 30+ hand-crafted portfolio templates. Filter by section, profession, or price. Starting from AED 49.",
   },
 };
 
@@ -44,15 +48,33 @@ export default async function TemplatesPage({
   searchParams: SearchParams;
 }) {
   const sp = await searchParams;
+  const sections = parseSections(sp.section);
   const audiences = parseAudiences(sp.audience);
   const specialties = parseSpecialties(sp.specialty);
   const tiers = parseTiers(sp.tier);
   const q = parseQuery(sp.q);
 
-  const filtered = filterTemplates({ audiences, specialties, tiers, q });
+  const filtered = filterTemplates({ sections, audiences, specialties, tiers, q });
+
+  const hasActiveFilter =
+    sections.length > 0 || audiences.length > 0 || specialties.length > 0 ||
+    tiers.length > 0 || q.length > 0;
 
   // Single-audience header personalization
   const soloAudience = audiences.length === 1 ? AUDIENCES.find((a) => a.id === audiences[0]) : null;
+  const soloSection = sections.length === 1 ? SECTIONS.find((s) => s.id === sections[0]) : null;
+
+  // Group filtered results by section in defined order
+  const grouped: { sectionId: SectionId; label: string; blurb: string; templates: typeof filtered }[] =
+    SECTION_ORDER.map((sectionId) => {
+      const meta = SECTIONS.find((s) => s.id === sectionId)!;
+      return {
+        sectionId,
+        label: meta.label,
+        blurb: meta.blurb,
+        templates: filtered.filter((t) => t.section === sectionId),
+      };
+    }).filter((g) => g.templates.length > 0);
 
   return (
     <main className="bg-canvas-bg min-h-svh">
@@ -69,7 +91,12 @@ export default async function TemplatesPage({
         />
         <div className="relative max-w-7xl mx-auto text-center">
           <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl text-ink tracking-tight mb-2 sm:mb-3">
-            {soloAudience ? (
+            {soloSection ? (
+              <>
+                <span className="italic text-brand">{soloSection.label}</span>{" "}
+                Templates
+              </>
+            ) : soloAudience ? (
               <>
                 Portfolios for{" "}
                 <span className="italic text-brand">{soloAudience.label}</span>
@@ -82,9 +109,11 @@ export default async function TemplatesPage({
             )}
           </h1>
           <p className="text-sm sm:text-base md:text-lg text-ink-soft max-w-2xl mx-auto leading-relaxed">
-            {soloAudience
+            {soloSection
+              ? soloSection.blurb
+              : soloAudience
               ? soloAudience.blurb
-              : `Search 30+ hand-crafted templates and filter by profession, specialty, or price.`}
+              : `Search ${TEMPLATES.length}+ hand-crafted templates and filter by section, profession, specialty, or price.`}
           </p>
         </div>
       </header>
@@ -105,11 +134,38 @@ export default async function TemplatesPage({
           </div>
 
           {filtered.length > 0 ? (
-            <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-5 lg:gap-6">
-              {filtered.map((t) => (
-                <TemplateCard key={t.id} template={t} />
-              ))}
-            </div>
+            hasActiveFilter ? (
+              /* ── Flat grid when filters are active ── */
+              <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-5 lg:gap-6">
+                {filtered.map((t) => (
+                  <TemplateCard key={t.id} template={t} />
+                ))}
+              </div>
+            ) : (
+              /* ── Section-grouped grid when no filter active ── */
+              <div className="space-y-12 sm:space-y-16">
+                {grouped.map((group) => (
+                  <section key={group.sectionId}>
+                    <div className="flex items-baseline gap-3 mb-5 sm:mb-6">
+                      <h2 className="font-serif text-2xl sm:text-3xl text-ink tracking-tight">
+                        {group.label}
+                      </h2>
+                      <span className="text-sm text-ink-soft hidden sm:inline">
+                        {group.blurb}
+                      </span>
+                      <span className="ml-auto text-xs text-ink-soft tabular-nums shrink-0">
+                        {group.templates.length} template{group.templates.length === 1 ? "" : "s"}
+                      </span>
+                    </div>
+                    <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-5 lg:gap-6">
+                      {group.templates.map((t) => (
+                        <TemplateCard key={t.id} template={t} />
+                      ))}
+                    </div>
+                  </section>
+                ))}
+              </div>
+            )
           ) : (
             <EmptyState />
           )}

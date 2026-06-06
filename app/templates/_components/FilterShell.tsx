@@ -7,6 +7,7 @@ import ActiveFilters from "./ActiveFilters";
 import {
   parseAudiences,
   parseSpecialties,
+  parseSections,
   parseTiers,
   parseQuery,
 } from "@/lib/templates";
@@ -20,12 +21,13 @@ export default function FilterShell() {
   const spString = sp.toString();
 
   // Current URL-driven state (recomputed on every render — cheap)
+  const sections = parseSections(sp.get("section") ?? undefined);
   const audiences = parseAudiences(sp.get("audience") ?? undefined);
   const specialties = parseSpecialties(sp.get("specialty") ?? undefined);
   const tiers = parseTiers(sp.get("tier") ?? undefined);
   const urlQuery = parseQuery(sp.get("q") ?? undefined);
 
-  const activeCount = audiences.length + specialties.length + tiers.length;
+  const activeCount = sections.length + audiences.length + specialties.length + tiers.length;
 
   // ── Search input — local state with debounced URL sync ────────────
   const [query, setQuery] = useState(urlQuery);
@@ -33,7 +35,6 @@ export default function FilterShell() {
   const lastPushedRef = useRef(urlQuery);
 
   // Sync local state if URL changes from outside (back button, chip remove)
-  // but not while the user is actively typing in the field.
   useEffect(() => {
     if (urlQuery !== query && document.activeElement !== inputRef.current) {
       setQuery(urlQuery);
@@ -63,7 +64,7 @@ export default function FilterShell() {
   return (
     <>
       {/* Sticky search + filter bar */}
-      <div className="sticky top-0 z-[51] -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 py-3 sm:py-4 bg-canvas-bg/85 backdrop-blur-md border-b border-ink/10">
+      <div className="sticky top-0 z-20 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 py-3 sm:py-4 bg-canvas-bg/85 backdrop-blur-md border-b border-ink/10">
         <div className="flex items-center gap-2 sm:gap-3">
           {/* Search input pill */}
           <div className="relative flex-1 min-w-0">
@@ -155,6 +156,7 @@ export default function FilterShell() {
         </div>
 
         <ActiveFilters
+          sections={sections}
           audiences={audiences}
           specialties={specialties}
           tiers={tiers}
@@ -165,6 +167,7 @@ export default function FilterShell() {
       <FilterDrawer
         open={drawerOpen}
         onClose={closeDrawer}
+        currentSections={sections}
         currentAudiences={audiences}
         currentSpecialties={specialties}
         currentTiers={tiers}

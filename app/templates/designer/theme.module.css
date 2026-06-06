@@ -1,0 +1,25 @@
+.page {
+  --ds-bg:           hsl(28 8% 5%);
+  --ds-surface:      hsl(28 6% 9%);
+  --ds-card:         hsl(28 5% 11%);
+  --ds-text:         hsl(38 25% 93%);
+  --ds-muted:        hsl(30 8% 50%);
+  --ds-stroke:       hsl(28 7% 14%);
+  --ds-accent-from:  #E2B96A;
+  --ds-accent-to:    #C07A2E;
+
+  background-color: var(--ds-bg);
+  color:            var(--ds-text);
+  min-height:       100vh;
+  overflow-x:       hidden;
+}
+
+@keyframes ds-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
+@keyframes ds-fade-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

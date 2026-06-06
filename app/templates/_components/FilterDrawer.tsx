@@ -4,14 +4,17 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import {
   AUDIENCES,
+  SECTIONS,
   TIERS,
   AUDIENCE_COUNTS,
+  SECTION_COUNTS,
   TIER_COUNTS,
   SPECIALTY_COUNTS,
   getAllSpecialties,
   filterTemplates,
   parseQuery,
   type AudienceId,
+  type SectionId,
   type TierId,
 } from "@/lib/templates";
 
@@ -21,6 +24,7 @@ const SPECIALTY_PREVIEW_COUNT = 6;
 type Props = {
   open: boolean;
   onClose: () => void;
+  currentSections: SectionId[];
   currentAudiences: AudienceId[];
   currentSpecialties: string[];
   currentTiers: TierId[];
@@ -29,6 +33,7 @@ type Props = {
 export default function FilterDrawer({
   open,
   onClose,
+  currentSections,
   currentAudiences,
   currentSpecialties,
   currentTiers,
@@ -38,14 +43,15 @@ export default function FilterDrawer({
   const sp = useSearchParams();
 
   // ── Pending selections — local until "Apply" ──────────────────────
+  const [sections, setSections] = useState<Set<SectionId>>(new Set(currentSections));
   const [audiences, setAudiences] = useState<Set<AudienceId>>(new Set(currentAudiences));
   const [specialties, setSpecialties] = useState<Set<string>>(new Set(currentSpecialties));
   const [tiers, setTiers] = useState<Set<TierId>>(new Set(currentTiers));
 
-  // Resync from URL each time the drawer opens (in case URL changed
-  // via active-filter chip removal while the drawer was closed).
+  // Resync from URL each time the drawer opens
   useEffect(() => {
     if (!open) return;
+    setSections(new Set(currentSections));
     setAudiences(new Set(currentAudiences));
     setSpecialties(new Set(currentSpecialties));
     setTiers(new Set(currentTiers));
@@ -53,8 +59,9 @@ export default function FilterDrawer({
 
   // ── Section collapse state ────────────────────────────────────────
   const [openSections, setOpenSections] = useState({
-    audience: true,
-    specialty: true,
+    section: true,
+    audience: false,
+    specialty: false,
     tier: true,
   });
   const [showAllSpecialties, setShowAllSpecialties] = useState(false);
@@ -86,31 +93,34 @@ export default function FilterDrawer({
 
   const apply = useCallback(() => {
     const next = new URLSearchParams(sp.toString());
+    sections.size ? next.set("section", [...sections].join(",")) : next.delete("section");
     audiences.size ? next.set("audience", [...audiences].join(",")) : next.delete("audience");
     specialties.size ? next.set("specialty", [...specialties].join(",")) : next.delete("specialty");
     tiers.size ? next.set("tier", [...tiers].join(",")) : next.delete("tier");
     const qs = next.toString();
     router.push(qs ? `${pathname}?${qs}` : pathname, { scroll: false });
     onClose();
-  }, [audiences, specialties, tiers, sp, router, pathname, onClose]);
+  }, [sections, audiences, specialties, tiers, sp, router, pathname, onClose]);
 
   const clearAll = () => {
+    setSections(new Set());
     setAudiences(new Set());
     setSpecialties(new Set());
     setTiers(new Set());
   };
 
-  // Live preview of how many templates will match if Apply is clicked
+  // Live preview count
   const previewCount = useMemo(() => {
     return filterTemplates({
+      sections: [...sections],
       audiences: [...audiences],
       specialties: [...specialties],
       tiers: [...tiers],
       q: parseQuery(sp.get("q") ?? undefined),
     }).length;
-  }, [audiences, specialties, tiers, sp]);
+  }, [sections, audiences, specialties, tiers, sp]);
 
-  const totalActive = audiences.size + specialties.size + tiers.size;
+  const totalActive = sections.size + audiences.size + specialties.size + tiers.size;
   const visibleSpecialties = showAllSpecialties
     ? ALL_SPECIALTIES
     : ALL_SPECIALTIES.slice(0, SPECIALTY_PREVIEW_COUNT);
@@ -160,7 +170,27 @@ export default function FilterDrawer({
         </header>
 
         {/* Body — scrollable */}
-        <div className="flex-1 overflow-y-auto px-5 sm:px-6 py-2 divide-y divide-ink/10">
+        <div className="relative flex-1 min-h-0">
+        <div className="absolute inset-0 overflow-y-auto px-5 sm:px-6 py-2 divide-y divide-ink/10">
+
+          {/* Section */}
+          <FilterSection
+            title="Section"
+            selectedCount={sections.size}
+            open={openSections.section}
+            onToggle={() => setOpenSections((s) => ({ ...s, section: !s.section }))}
+          >
+            {SECTIONS.map((sec) => (
+              <CheckboxRow
+                key={sec.id}
+                checked={sections.has(sec.id)}
+                onChange={() => toggle(sections, sec.id, setSections)}
+                label={sec.label}
+                count={SECTION_COUNTS[sec.id]}
+              />
+            ))}
+          </FilterSection>
+
           {/* Profession */}
           <FilterSection
             title="Profession"
@@ -236,6 +266,7 @@ export default function FilterDrawer({
               />
             ))}
           </FilterSection>
+        </div>
         </div>
 
         {/* Footer */}

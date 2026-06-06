@@ -1,0 +1,84 @@
+/* ── Designer Pro Template — Dark Animated Portfolio Theme ───────────── */
+
+.page {
+  --dp-bg: hsl(0 0% 4%);
+  --dp-surface: hsl(0 0% 8%);
+  --dp-text: hsl(0 0% 96%);
+  --dp-muted: hsl(0 0% 53%);
+  --dp-stroke: hsl(0 0% 12%);
+  --dp-accent-from: #89aacc;
+  --dp-accent-to: #4e85bf;
+  --dp-accent-gradient: linear-gradient(90deg, var(--dp-accent-from), var(--dp-accent-to));
+  --dp-font-body: var(--font-sans, "Inter", sans-serif);
+  --dp-font-display: var(--font-serif, "Playfair Display", serif);
+
+  background-color: var(--dp-bg);
+  color: var(--dp-text);
+  font-family: var(--dp-font-body);
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.page *,
+.page *::before,
+.page *::after {
+  box-sizing: border-box;
+}
+
+.page img {
+  max-width: 100%;
+  height: auto;
+}
+
+.page input,
+.page textarea,
+.page select {
+  max-width: 100%;
+}
+
+.page p,
+.page li,
+.page span {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.page a,
+.page button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ── Keyframes (not scoped — intentionally global for inline style references) */
+@keyframes dp-scroll-down {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(200%); }
+}
+
+@keyframes dp-role-fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes dp-gradient-shift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes dp-pulse-glow {
+  0%, 100% { box-shadow: 0 0 6px #22c55e; opacity: 1; }
+  50%       { box-shadow: 0 0 14px #22c55e; opacity: 0.7; }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .page *,
+  .page *::before,
+  .page *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
