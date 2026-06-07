@@ -223,7 +223,7 @@ export const TEMPLATES: Template[] = [
   // ── Career Portfolio  (AED 99 · tier: pro) ───────────────────────
   // simple cards
   {
-    id: "cp1", title: "Journey", tag: "Career Portfolio · Timeline", tier: "pro",
+    id: "cp1", slug: "journey", title: "Journey", tag: "Career Portfolio · Timeline", tier: "pro",
     section: "career-portfolio",
     audiences: ["founders", "developers"], specialties: ["consultant", "frontend", "full-stack"]
   },
