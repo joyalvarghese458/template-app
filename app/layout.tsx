@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import CursorWrapper from "@/components/CursorWrapper";
 
 const geist = Geist({
   variable: "--font-geist",
@@ -85,6 +86,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </head>
       <body className="font-sans antialiased bg-canvas-bg text-ink">
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NT5RLV7L" height="0" width="0" style={{display:"none",visibility:"hidden"}}></iframe></noscript>
+        <CursorWrapper />
         {children}
       </body>
     </html>

@@ -218,6 +218,13 @@ html {
   color: var(--color-ink);
 }
 
+@media (pointer: fine) {
+  *, *::before, *::after { cursor: none !important; }
+}
+@media (pointer: coarse) {
+  *, *::before, *::after { cursor: auto; }
+}
+
 *,
 *::before,
 *::after {
