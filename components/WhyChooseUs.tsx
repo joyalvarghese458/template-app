@@ -7,7 +7,6 @@ const ROWS: { others: string; us: string }[] = [
     others: "Generic templates that look like everyone else's",
     us: "Premium, unique designs crafted for individuality",
   },
-
   {
     others: "Complex customization requiring coding knowledge",
     us: "We handle all customization for you professionally",
@@ -154,8 +153,8 @@ export default function WhyChooseUs() {
               {/* Mobile label: Others */}
               <div
                 className={`md:hidden flex items-center gap-3 transition-all duration-700 ${visible
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-6"
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-6"
                   }`}
                 style={{ transitionDelay: `${400 + i * 120}ms` }}
               >
@@ -168,8 +167,8 @@ export default function WhyChooseUs() {
               {/* Others card */}
               <div
                 className={`flex items-center gap-3 sm:gap-4 px-5 sm:px-6 py-4 sm:py-5 rounded-2xl bg-brand/[0.06] border border-ink/5 transition-all duration-700 ${visible
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-6"
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-6"
                   }`}
                 style={{ transitionDelay: `${420 + i * 120}ms` }}
               >
@@ -182,8 +181,8 @@ export default function WhyChooseUs() {
               {/* Mobile label: Us */}
               <div
                 className={`md:hidden flex items-center gap-3 mt-2 transition-all duration-700 ${visible
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-6"
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-6"
                   }`}
                 style={{ transitionDelay: `${440 + i * 120}ms` }}
               >
@@ -196,8 +195,8 @@ export default function WhyChooseUs() {
               {/* Us card */}
               <div
                 className={`group flex items-center gap-3 sm:gap-4 px-5 sm:px-6 py-4 sm:py-5 rounded-2xl bg-canvas-bg border border-brand/30 shadow-[0_1px_2px_rgba(0,0,0,0.04)] hover:shadow-[0_10px_30px_-12px_rgba(37,99,235,0.35)] hover:-translate-y-0.5 hover:border-brand/60 transition-all duration-500 ${visible
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-6"
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-6"
                   }`}
                 style={{ transitionDelay: `${460 + i * 120}ms` }}
               >
