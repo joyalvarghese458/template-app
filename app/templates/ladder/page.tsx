@@ -6,12 +6,13 @@ import Navbar from './_components/Navbar'
 import Hero from './_components/Hero'
 import s from './theme.module.css'
 
-// Below-fold sections — loaded only after initial paint
-const Stats    = dynamic(() => import('./_components/Stats'))
-const About    = dynamic(() => import('./_components/About'))
-const Services = dynamic(() => import('./_components/Services'))
-const Works    = dynamic(() => import('./_components/Works'))
-const Contact  = dynamic(() => import('./_components/Contact'))
+const sectionFallback = <div className="bg-black w-full" style={{ minHeight: 120 }} />
+
+const Stats    = dynamic(() => import('./_components/Stats'),    { loading: () => sectionFallback })
+const About    = dynamic(() => import('./_components/About'),    { loading: () => sectionFallback })
+const Services = dynamic(() => import('./_components/Services'), { loading: () => sectionFallback })
+const Works    = dynamic(() => import('./_components/Works'),    { loading: () => sectionFallback })
+const Contact  = dynamic(() => import('./_components/Contact'),  { loading: () => sectionFallback })
 
 export default function LadderPage() {
   return (
