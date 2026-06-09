@@ -20,12 +20,12 @@ export default function Hero() {
       <div className="flex flex-col md:flex-row" style={{ minHeight: '100svh' }}>
 
         {/* Mobile Spline */}
-        <div className="md:hidden w-full shrink-0 relative" style={{ height: 280 }}>
+        <div className="md:hidden w-full shrink-0 relative" style={{ height: 440, paddingTop: 48 }}>
           <SplineScene scene={HERO.splineScene} className="w-full h-full" />
         </div>
 
         {/* Left — text */}
-        <div className="flex-1 flex flex-col justify-center px-6 sm:px-10 lg:px-20 pt-20 pb-12 md:pt-24 lg:pt-28 relative z-10">
+        <div className="flex-1 flex flex-col justify-center px-6 sm:px-10 lg:px-20 pt-4 pb-12 md:pt-24 lg:pt-28 relative z-10">
 
           {/* Greeting */}
           <motion.h1
