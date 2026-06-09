@@ -7,6 +7,7 @@ const ROWS: { others: string; us: string }[] = [
     others: "Generic templates that look like everyone else's",
     us: "Premium, unique designs crafted for individuality",
   },
+
   {
     others: "Complex customization requiring coding knowledge",
     us: "We handle all customization for you professionally",
@@ -97,9 +98,8 @@ export default function WhyChooseUs() {
       <div className="relative z-10 max-w-6xl mx-auto">
         {/* Eyebrow */}
         <div
-          className={`flex items-center justify-center gap-4 mb-5 transition-all duration-700 ${
-            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-          }`}
+          className={`flex items-center justify-center gap-4 mb-5 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+            }`}
         >
           <span className="h-px w-8 bg-ink/30" aria-hidden="true" />
           <p className="text-ink-soft text-[10px] sm:text-xs font-semibold uppercase tracking-[0.28em]">
@@ -109,9 +109,8 @@ export default function WhyChooseUs() {
         </div>
 
         <h2
-          className={`font-serif text-4xl sm:text-5xl text-ink text-center mb-4 transition-all duration-700 delay-100 ${
-            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-          }`}
+          className={`font-serif text-4xl sm:text-5xl text-ink text-center mb-4 transition-all duration-700 delay-100 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+            }`}
         >
           What sets us{" "}
           <span className="italic bg-gradient-to-r from-brand via-brand-light to-brand bg-clip-text text-transparent">
@@ -120,18 +119,16 @@ export default function WhyChooseUs() {
         </h2>
 
         <p
-          className={`text-base sm:text-lg text-ink-soft text-center max-w-2xl mx-auto mb-14 leading-relaxed transition-all duration-700 delay-200 ${
-            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-          }`}
+          className={`text-base sm:text-lg text-ink-soft text-center max-w-2xl mx-auto mb-14 leading-relaxed transition-all duration-700 delay-200 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+            }`}
         >
           A side-by-side look at how we compare to typical template providers.
         </p>
 
         {/* Column headers */}
         <div
-          className={`grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-4 transition-all duration-700 delay-300 ${
-            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-          }`}
+          className={`grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-4 transition-all duration-700 delay-300 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+            }`}
         >
           <div className="hidden md:flex items-center gap-3 px-6">
             <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.24em] text-ink-soft">
@@ -156,11 +153,10 @@ export default function WhyChooseUs() {
             >
               {/* Mobile label: Others */}
               <div
-                className={`md:hidden flex items-center gap-3 transition-all duration-700 ${
-                  visible
+                className={`md:hidden flex items-center gap-3 transition-all duration-700 ${visible
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-6"
-                }`}
+                  }`}
                 style={{ transitionDelay: `${400 + i * 120}ms` }}
               >
                 <span className="text-[10px] font-semibold uppercase tracking-[0.24em] text-ink-soft">
@@ -171,11 +167,10 @@ export default function WhyChooseUs() {
 
               {/* Others card */}
               <div
-                className={`flex items-center gap-3 sm:gap-4 px-5 sm:px-6 py-4 sm:py-5 rounded-2xl bg-brand/[0.06] border border-ink/5 transition-all duration-700 ${
-                  visible
+                className={`flex items-center gap-3 sm:gap-4 px-5 sm:px-6 py-4 sm:py-5 rounded-2xl bg-brand/[0.06] border border-ink/5 transition-all duration-700 ${visible
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-6"
-                }`}
+                  }`}
                 style={{ transitionDelay: `${420 + i * 120}ms` }}
               >
                 <XIcon />
@@ -186,11 +181,10 @@ export default function WhyChooseUs() {
 
               {/* Mobile label: Us */}
               <div
-                className={`md:hidden flex items-center gap-3 mt-2 transition-all duration-700 ${
-                  visible
+                className={`md:hidden flex items-center gap-3 mt-2 transition-all duration-700 ${visible
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-6"
-                }`}
+                  }`}
                 style={{ transitionDelay: `${440 + i * 120}ms` }}
               >
                 <span className="text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-dark">
@@ -201,11 +195,10 @@ export default function WhyChooseUs() {
 
               {/* Us card */}
               <div
-                className={`group flex items-center gap-3 sm:gap-4 px-5 sm:px-6 py-4 sm:py-5 rounded-2xl bg-canvas-bg border border-brand/30 shadow-[0_1px_2px_rgba(0,0,0,0.04)] hover:shadow-[0_10px_30px_-12px_rgba(37,99,235,0.35)] hover:-translate-y-0.5 hover:border-brand/60 transition-all duration-500 ${
-                  visible
+                className={`group flex items-center gap-3 sm:gap-4 px-5 sm:px-6 py-4 sm:py-5 rounded-2xl bg-canvas-bg border border-brand/30 shadow-[0_1px_2px_rgba(0,0,0,0.04)] hover:shadow-[0_10px_30px_-12px_rgba(37,99,235,0.35)] hover:-translate-y-0.5 hover:border-brand/60 transition-all duration-500 ${visible
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-6"
-                }`}
+                  }`}
                 style={{ transitionDelay: `${460 + i * 120}ms` }}
               >
                 <CheckIcon />
