@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import s from '../theme.module.css'
 
@@ -14,7 +15,10 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [active, setActive] = useState('')
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [portalTarget, setPortalTarget] = useState<HTMLElement | null>(null)
   const observerRef = useRef<IntersectionObserver | null>(null)
+
+  useEffect(() => { setPortalTarget(document.body) }, [])
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -89,40 +93,44 @@ export default function Navbar() {
         </div>
       </header>
 
-      {/* Mobile overlay */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.25 }}
-            className={s.mobileMenu}
-          >
-            <button
-              onClick={() => setMobileOpen(false)}
-              className="absolute top-5 right-6 text-white"
-              aria-label="Close menu"
+      {/* Mobile overlay — portaled to body to escape stacking contexts */}
+      {portalTarget && createPortal(
+        <AnimatePresence>
+          {mobileOpen && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              className={s.mobileMenu}
+              style={{ zIndex: 99999 }}
             >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
-                <path d="M18 6L6 18M6 6l12 12" />
-              </svg>
-            </button>
-            {NAV_LINKS.map((link, i) => (
-              <motion.button
-                key={link.href}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.08 + 0.1 }}
-                onClick={() => handleNav(link.href)}
-                className={`${s.mobileMenuLink} bg-transparent border-0 p-0`}
+              <button
+                onClick={() => setMobileOpen(false)}
+                className="absolute top-5 right-6 text-white"
+                aria-label="Close menu"
               >
-                {link.label}
-              </motion.button>
-            ))}
-          </motion.div>
-        )}
-      </AnimatePresence>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+                  <path d="M18 6L6 18M6 6l12 12" />
+                </svg>
+              </button>
+              {NAV_LINKS.map((link, i) => (
+                <motion.button
+                  key={link.href}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.08 + 0.1 }}
+                  onClick={() => handleNav(link.href)}
+                  className={`${s.mobileMenuLink} bg-transparent border-0 p-0`}
+                >
+                  {link.label}
+                </motion.button>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>,
+        document.body
+      )}
     </>
   )
 }
