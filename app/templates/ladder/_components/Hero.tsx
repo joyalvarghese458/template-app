@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { SplineScene } from './SplineScene'
 import { Spotlight } from './Spotlight'
@@ -7,6 +8,42 @@ import { HERO } from '../_data/portfolio'
 import s from '../theme.module.css'
 
 export default function Hero() {
+  const audioRef = useRef<HTMLAudioElement | null>(null)
+  const autoPlayedRef = useRef(false)
+
+  useEffect(() => {
+    const audio = new Audio('/sounds/robo.mp3')
+    audio.volume = 0.8
+    audioRef.current = audio
+
+    // Desktop: try immediate autoplay
+    audio.play().then(() => { autoPlayedRef.current = true }).catch(() => {})
+
+    // Mobile fallback: play on the very first pointer interaction anywhere on screen
+    const onFirstPointer = () => {
+      if (autoPlayedRef.current) return
+      autoPlayedRef.current = true
+      audio.currentTime = 0
+      audio.play().catch(() => {})
+    }
+    window.addEventListener('pointerdown', onFirstPointer, { once: true })
+
+    return () => {
+      window.removeEventListener('pointerdown', onFirstPointer)
+      audio.pause()
+    }
+  }, [])
+
+  // Called when robot is tapped — mark autoplay done early so window listener doesn't double-play
+  const onRoboPointerDown = () => { autoPlayedRef.current = true }
+
+  const playRobo = () => {
+    const audio = audioRef.current
+    if (!audio) return
+    audio.currentTime = 0
+    audio.play().catch(() => {})
+  }
+
   return (
     <section
       className="relative w-full overflow-hidden bg-black"
@@ -20,7 +57,12 @@ export default function Hero() {
       <div className="flex flex-col md:flex-row" style={{ minHeight: '100svh' }}>
 
         {/* Mobile Spline */}
-        <div className="md:hidden w-full shrink-0 relative" style={{ height: 440, paddingTop: 48 }}>
+        <div
+          className="md:hidden w-full shrink-0 relative cursor-pointer"
+          style={{ height: 440, paddingTop: 48 }}
+          onPointerDown={onRoboPointerDown}
+          onClick={playRobo}
+        >
           <SplineScene scene={HERO.splineScene} className="w-full h-full" />
         </div>
 
@@ -90,7 +132,7 @@ export default function Hero() {
         </div>
 
         {/* Right — Spline (desktop only) */}
-        <div className="hidden md:block flex-1 relative">
+        <div className="hidden md:block flex-1 relative cursor-pointer" onPointerDown={onRoboPointerDown} onClick={playRobo}>
           <SplineScene
             scene={HERO.splineScene}
             className="w-full h-full absolute inset-0"
