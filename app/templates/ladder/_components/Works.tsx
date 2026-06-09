@@ -113,7 +113,7 @@ function WorkCard({ project, index }: { project: typeof PROJECTS[0]; index: numb
 
 export default function Works() {
   return (
-    <section id="works" className="bg-black py-28 lg:py-36 px-6 sm:px-10 lg:px-20">
+    <section id="works" className="bg-black py-16 lg:py-20 px-6 sm:px-10 lg:px-20">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <SectionReveal>

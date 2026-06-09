@@ -5,6 +5,36 @@ export const HERO = {
   splineScene: 'https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode',
 }
 
+export const STATS = [
+  { value: '8+',  label: 'Years Experience' },
+  { value: '60+', label: 'Projects Delivered' },
+  { value: '40+', label: 'Happy Clients' },
+  { value: '12',  label: 'Industry Awards' },
+]
+
+export const SERVICES = [
+  {
+    number: '01',
+    title: '3D Visualization',
+    desc: 'Photorealistic product renders, architectural visualizations, and immersive 3D environments built for maximum impact.',
+  },
+  {
+    number: '02',
+    title: 'Character Design',
+    desc: 'High-fidelity character modeling and rigging for games, film, and brand mascots — from concept to final asset.',
+  },
+  {
+    number: '03',
+    title: 'Motion & VFX',
+    desc: 'Dynamic motion graphics, title sequences, and visual effects that bring stories to life in cinema and advertising.',
+  },
+  {
+    number: '04',
+    title: 'Brand Campaigns',
+    desc: 'Full-pipeline CGI production for global brands — concept, 3D, compositing, and final delivery at any scale.',
+  },
+]
+
 export const ABOUT = {
   quote: '"Art is not what you see, but what you make others see."',
   bio: 'Aria Nova is a Dubai-based 3D artist and visual designer with a decade of experience crafting hyper-real digital worlds for film, games, and brand campaigns. Her work lives at the intersection of technical mastery and raw creative vision — equal parts sculptor, filmmaker, and technologist.',

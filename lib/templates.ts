@@ -228,7 +228,7 @@ export const TEMPLATES: Template[] = [
     audiences: ["founders", "developers"], specialties: ["consultant", "frontend", "full-stack"]
   },
   {
-    id: "cp2", title: "Ladder", tag: "Career Portfolio · Professional", tier: "pro",
+    id: "cp2", slug: "ladder", title: "Ladder", tag: "Career Portfolio · Professional", tier: "pro",
     section: "career-portfolio",
     audiences: ["founders", "creators"], specialties: ["executive", "personal-brand", "speaker"]
   },

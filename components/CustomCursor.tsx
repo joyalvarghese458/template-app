@@ -1,72 +1,65 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-import { motion, useMotionValue, useSpring } from 'framer-motion'
+import { useEffect, useRef, useState } from 'react'
 
 export default function CustomCursor() {
+  const dotRef  = useRef<HTMLDivElement>(null)
+  const ringRef = useRef<HTMLDivElement>(null)
   const [isPointer, setIsPointer] = useState(false)
-  const [mounted, setMounted] = useState(false)
-
-  const rawX = useMotionValue(-100)
-  const rawY = useMotionValue(-100)
-
-  // Dot follows instantly — no spring delay
-  const dotX = useSpring(rawX, { stiffness: 2000, damping: 60, mass: 0.2 })
-  const dotY = useSpring(rawY, { stiffness: 2000, damping: 60, mass: 0.2 })
-
-  // Ring trails slightly behind
-  const ringX = useSpring(rawX, { stiffness: 500, damping: 40, mass: 0.4 })
-  const ringY = useSpring(rawY, { stiffness: 500, damping: 40, mass: 0.4 })
+  const [visible,   setVisible]   = useState(false)
 
   useEffect(() => {
-    setMounted(true)
+    if (window.matchMedia('(pointer: coarse)').matches) return
 
-    const move = (e: MouseEvent) => {
-      rawX.set(e.clientX)
-      rawY.set(e.clientY)
+    let shown = false
+
+    const onMove = (e: MouseEvent) => {
+      const x = e.clientX
+      const y = e.clientY
+
+      if (dotRef.current)  dotRef.current.style.transform  = `translate(${x - 4}px, ${y - 4}px)`
+      if (ringRef.current) ringRef.current.style.transform = `translate(${x - 16}px, ${y - 16}px)`
+
+      if (!shown) { shown = true; setVisible(true) }
     }
 
-    const checkPointer = (e: MouseEvent) => {
-      const target = e.target as HTMLElement
+    const onOver = (e: MouseEvent) => {
+      const t = e.target as HTMLElement
       setIsPointer(
-        target.tagName === 'A' ||
-        target.tagName === 'BUTTON' ||
-        target.closest('a') !== null ||
-        target.closest('button') !== null ||
-        window.getComputedStyle(target).cursor === 'pointer'
+        t.tagName === 'A' ||
+        t.tagName === 'BUTTON' ||
+        !!t.closest('a') ||
+        !!t.closest('button')
       )
     }
 
-    window.addEventListener('mousemove', move)
-    window.addEventListener('mouseover', checkPointer)
-    return () => {
-      window.removeEventListener('mousemove', move)
-      window.removeEventListener('mouseover', checkPointer)
-    }
-  }, [rawX, rawY])
+    window.addEventListener('mousemove', onMove, { passive: true })
+    window.addEventListener('mouseover', onOver, { passive: true })
 
-  if (!mounted) return null
-  if (typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches) return null
+    return () => {
+      window.removeEventListener('mousemove', onMove)
+      window.removeEventListener('mouseover', onOver)
+    }
+  }, [])
 
   return (
     <>
-      {/* Dot — instant */}
-      <motion.div
-        style={{ x: dotX, y: dotY, translateX: '-50%', translateY: '-50%' }}
-        className="fixed top-0 left-0 w-2 h-2 bg-white rounded-full pointer-events-none z-[99999] mix-blend-difference"
+      <div
+        ref={dotRef}
+        className="fixed top-0 left-0 w-2 h-2 rounded-full pointer-events-none z-[99999] bg-white mix-blend-difference will-change-transform"
+        style={{ opacity: visible ? 1 : 0 }}
         aria-hidden
       />
-      {/* Ring — trails smoothly */}
-      <motion.div
-        style={{ x: ringX, y: ringY, translateX: '-50%', translateY: '-50%' }}
-        animate={{
-          width: isPointer ? 48 : 32,
+      <div
+        ref={ringRef}
+        className="fixed top-0 left-0 rounded-full border pointer-events-none z-[99998] will-change-transform"
+        style={{
+          opacity: visible ? (isPointer ? 1 : 0.65) : 0,
+          width:  isPointer ? 48 : 32,
           height: isPointer ? 48 : 32,
-          borderColor: isPointer ? '#FF3D00' : 'rgba(120,120,120,0.5)',
-          opacity: isPointer ? 1 : 0.65,
+          borderColor: isPointer ? '#FF3D00' : 'rgba(140,140,140,0.5)',
+          transition: 'width 0.18s ease, height 0.18s ease, border-color 0.18s ease, opacity 0.18s ease',
         }}
-        transition={{ duration: 0.15, ease: 'easeOut' }}
-        className="fixed top-0 left-0 rounded-full border pointer-events-none z-[99998]"
         aria-hidden
       />
     </>

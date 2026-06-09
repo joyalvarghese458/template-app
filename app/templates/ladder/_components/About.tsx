@@ -7,10 +7,10 @@ import s from '../theme.module.css'
 
 export default function About() {
   return (
-    <section id="about" className="bg-black py-28 lg:py-36 px-6 sm:px-10 lg:px-20">
+    <section id="about" className="bg-black py-16 lg:py-20 px-6 sm:px-10 lg:px-20">
       {/* Section label */}
       <SectionReveal>
-        <p className={`${s.monoFont} text-[#FF3D00] text-xs tracking-[0.2em] uppercase mb-14`}>
+        <p className={`${s.monoFont} text-[#FF3D00] text-xs tracking-[0.2em] uppercase mb-10`}>
           / 001 About
         </p>
       </SectionReveal>

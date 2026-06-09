@@ -43,7 +43,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className={`${s.grain} relative bg-black py-28 lg:py-40 px-6 sm:px-10 lg:px-20`}
+      className={`${s.grain} relative bg-black py-16 lg:py-20 px-6 sm:px-10 lg:px-20`}
     >
       {/* Subtle red glow top */}
       <div
