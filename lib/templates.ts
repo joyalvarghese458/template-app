@@ -233,6 +233,11 @@ export const TEMPLATES: Template[] = [
     audiences: ["founders", "creators"], specialties: ["executive", "personal-brand", "speaker"]
   },
   {
+    id: "adaline", slug: "adaline", title: "Adaline", tag: "Full Stack Developer · Botanical", tier: "pro",
+    section: "career-portfolio",
+    audiences: ["developers"], specialties: ["full-stack", "engineering", "saas"]
+  },
+  {
     id: "cp3", title: "Forge", tag: "Career Portfolio · Modern", tier: "pro",
     section: "career-portfolio",
     audiences: ["developers", "designers"], specialties: ["frontend", "ui-ux", "full-stack"]
