@@ -4,6 +4,7 @@ import type { ComponentType, ReactNode } from "react";
 import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { createPortal } from "react-dom";
 import { motion, type Variants } from "framer-motion";
 import {
   Award,
@@ -40,13 +41,19 @@ type ThemePalette = {
   shadow: string;
 };
 
+type PopupContent = {
+  title: string;
+  subtitle: string;
+  paragraphs: string[];
+};
+
 const sectionIds = ["about", "experience", "projects", "achievements"] as const;
 
 const profile = {
   name: "Joyal Varghese",
   title: "Full Stack Developer",
   photo:
-    "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&h=500&q=80",
+    "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&h=500&q=80&facepad=3",
   location: "Dubai, UAE",
   email: "joyal@swiftfolio.dev",
   phone: "+971 56 845 0406",
@@ -174,7 +181,16 @@ const projects = [
     stack: "Next.js + TypeScript + AWS",
     description:
       "A premium portfolio generation product with reusable templates, optimized media delivery, and a frictionless editing experience.",
-    image: "/new-landing.webp",
+    image: "/landing-img.png",
+    github: "https://github.com",
+    live: "https://example.com",
+  },
+  {
+    name: "Executive Analytics Suite",
+    stack: "React + Node.js + PostgreSQL",
+    description:
+      "A decision-support dashboard for leadership teams with KPI tracking, operational drill-downs, and export-ready reporting for weekly business reviews.",
+    image: "/hero-test.webp",
     github: "https://github.com",
     live: "https://example.com",
   },
@@ -237,6 +253,7 @@ export default function SwiftResume() {
   const [activeSection, setActiveSection] =
     useState<(typeof sectionIds)[number]>("about");
   const [shareLabel, setShareLabel] = useState("Share Profile");
+  const [selectedPopup, setSelectedPopup] = useState<PopupContent | null>(null);
 
   const palette = palettes[theme];
 
@@ -247,7 +264,7 @@ export default function SwiftResume() {
       { id: "projects", label: "Projects" },
       { id: "achievements", label: "Achievements" },
     ],
-    []
+    [],
   );
 
   useEffect(() => {
@@ -264,7 +281,7 @@ export default function SwiftResume() {
       {
         rootMargin: "-20% 0px -45% 0px",
         threshold: [0.2, 0.35, 0.5, 0.7],
-      }
+      },
     );
 
     sectionIds.forEach((id) => {
@@ -329,8 +346,32 @@ export default function SwiftResume() {
     }
   };
 
+  const openProjectPopup = (project: (typeof projects)[number]) => {
+    setSelectedPopup({
+      title: project.name,
+      subtitle: project.stack,
+      paragraphs: [
+        project.description,
+        "Built to demonstrate measurable delivery, clean architecture decisions, and a recruiter-friendly technology profile.",
+      ],
+    });
+  };
+
+  const openAtsPopup = () => {
+    setSelectedPopup({
+      title: "ATS Snapshot",
+      subtitle: "Keyword alignment and recruiter scan summary",
+      paragraphs: [
+        "Target roles: Full Stack Developer, Frontend Engineer, Product Engineer, and Software Developer.",
+        "ATS keywords: React, Next.js, TypeScript, Node.js, NestJS, PostgreSQL, MongoDB, Docker, AWS, API Integration, ERP, HRMS, Performance Optimization.",
+        "Recruiter summary: 7+ years experience, enterprise systems delivery, dashboard and platform development, scalable frontend architecture, and measurable performance improvements.",
+      ],
+    });
+  };
+
   return (
     <div
+      data-swift-cursor="default"
       className="min-h-screen px-3 py-8 sm:px-6 sm:py-20 lg:px-8"
       style={{
         background: palette.background,
@@ -356,7 +397,11 @@ export default function SwiftResume() {
               color: palette.text,
             }}
           >
-            {theme === "dark" ? <SunMedium size={16} /> : <MoonStar size={16} />}
+            {theme === "dark" ? (
+              <SunMedium size={16} />
+            ) : (
+              <MoonStar size={16} />
+            )}
             {theme === "dark" ? "Light Mode" : "Dark Mode"}
           </button>
         </div>
@@ -386,7 +431,7 @@ export default function SwiftResume() {
                   alt={`${profile.name} portrait`}
                   fill
                   sizes="(min-width: 1024px) 128px, (min-width: 768px) 112px, 96px"
-                  className="object-cover"
+                  className="object-cover object-top"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent" />
               </div>
@@ -395,14 +440,20 @@ export default function SwiftResume() {
                   <h1 className="text-[1.55rem] font-semibold leading-none tracking-tight sm:text-[2.35rem] lg:text-[3.4rem]">
                     {profile.name}
                   </h1>
-                  <p className="mt-1 text-xs sm:mt-2 sm:text-base lg:text-lg" style={{ color: palette.muted }}>
+                  <p
+                    className="mt-1 text-xs sm:mt-2 sm:text-base lg:text-lg"
+                    style={{ color: palette.muted }}
+                  >
                     {profile.title}
                   </p>
                 </div>
               </div>
             </motion.div>
 
-            <motion.div variants={cardReveal} className="grid grid-cols-2 gap-2 sm:grid-cols-2 sm:gap-3">
+            <motion.div
+              variants={cardReveal}
+              className="grid grid-cols-2 gap-2 sm:grid-cols-2 sm:gap-3"
+            >
               <ContactChip
                 icon={Mail}
                 label="Email"
@@ -447,7 +498,10 @@ export default function SwiftResume() {
             </motion.div>
           </div>
 
-          <motion.div variants={cardReveal} className="mt-3 grid grid-cols-2 gap-2 md:flex md:flex-wrap md:gap-3 lg:mt-8">
+          <motion.div
+            variants={cardReveal}
+            className="mt-3 grid grid-cols-2 gap-2 md:flex md:flex-wrap md:gap-3 lg:mt-8"
+          >
             <ActionButton
               icon={Download}
               label="Download Resume"
@@ -461,7 +515,12 @@ export default function SwiftResume() {
               href={`mailto:${profile.email}`}
               palette={palette}
             />
-            <ActionButton icon={Link2} label="LinkedIn" href="https://linkedin.com" palette={palette} />
+            <ActionButton
+              icon={Link2}
+              label="LinkedIn"
+              href="https://linkedin.com"
+              palette={palette}
+            />
             <ActionButton
               icon={GitBranch}
               label="GitHub"
@@ -507,12 +566,25 @@ export default function SwiftResume() {
             <GlassCard palette={palette}>
               <SidebarTitle icon={GraduationCap} title="Education" />
               <div className="mt-3 space-y-1.5 sm:mt-4 sm:space-y-2">
-                <p className="text-sm font-semibold sm:text-lg">{education.degree}</p>
-                <p className="text-xs sm:text-base" style={{ color: palette.muted }}>{education.institution}</p>
-                <p className="text-[11px] sm:text-sm" style={{ color: palette.subtle }}>
+                <p className="text-sm font-semibold sm:text-lg">
+                  {education.degree}
+                </p>
+                <p
+                  className="text-xs sm:text-base"
+                  style={{ color: palette.muted }}
+                >
+                  {education.institution}
+                </p>
+                <p
+                  className="text-[11px] sm:text-sm"
+                  style={{ color: palette.subtle }}
+                >
                   Graduation Year: {education.year}
                 </p>
-                <p className="text-[11px] leading-5 sm:text-sm sm:leading-6" style={{ color: palette.muted }}>
+                <p
+                  className="text-[11px] leading-5 sm:text-sm sm:leading-6"
+                  style={{ color: palette.muted }}
+                >
                   {education.highlights}
                 </p>
               </div>
@@ -520,7 +592,10 @@ export default function SwiftResume() {
 
             <GlassCard palette={palette}>
               <SidebarTitle icon={Languages} title="Languages" />
-              <div className="mt-3 space-y-1.5 text-[11px] sm:mt-4 sm:space-y-2 sm:text-sm" style={{ color: palette.muted }}>
+              <div
+                className="mt-3 space-y-1.5 text-[11px] sm:mt-4 sm:space-y-2 sm:text-sm"
+                style={{ color: palette.muted }}
+              >
                 {languages.map((item) => (
                   <p key={item}>{item}</p>
                 ))}
@@ -554,14 +629,25 @@ export default function SwiftResume() {
                     className="rounded-2xl border p-3 sm:p-4"
                     style={{ borderColor: palette.border }}
                   >
-                    <p className="text-sm font-semibold sm:text-base">{reference.name}</p>
-                    <p className="mt-1 text-[11px] sm:text-sm" style={{ color: palette.muted }}>
+                    <p className="text-sm font-semibold sm:text-base">
+                      {reference.name}
+                    </p>
+                    <p
+                      className="mt-1 text-[11px] sm:text-sm"
+                      style={{ color: palette.muted }}
+                    >
                       {reference.role} | {reference.company}
                     </p>
-                    <p className="mt-2 text-[11px] sm:mt-3 sm:text-sm" style={{ color: palette.subtle }}>
+                    <p
+                      className="mt-2 text-[11px] sm:mt-3 sm:text-sm"
+                      style={{ color: palette.subtle }}
+                    >
                       {reference.email}
                     </p>
-                    <p className="text-[11px] sm:text-sm" style={{ color: palette.subtle }}>
+                    <p
+                      className="text-[11px] sm:text-sm"
+                      style={{ color: palette.subtle }}
+                    >
                       {reference.phone}
                     </p>
                   </div>
@@ -617,9 +703,10 @@ export default function SwiftResume() {
                     <p key={paragraph}>{paragraph}</p>
                   ))}
                   <p>
-                    Career objective: continue building premium, scalable products that blend
-                    engineering rigor with clear product thinking, while mentoring teams and
-                    raising the bar for user experience.
+                    Career objective: continue building premium, scalable
+                    products that blend engineering rigor with clear product
+                    thinking, while mentoring teams and raising the bar for user
+                    experience.
                   </p>
                 </div>
               </GlassCard>
@@ -654,7 +741,7 @@ export default function SwiftResume() {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true, amount: 0.2 }}
                       transition={{ duration: 0.5, delay: index * 0.06 }}
-                      className="relative rounded-[20px] border p-3 transition hover:-translate-y-1 sm:rounded-[24px] sm:p-5"
+                      className="relative rounded-[20px] border p-3 transition sm:rounded-[24px] sm:p-5"
                       style={{
                         background: palette.surfaceStrong,
                         borderColor: palette.border,
@@ -663,8 +750,13 @@ export default function SwiftResume() {
                       <span className="absolute -left-[17px] top-5 h-3 w-3 rounded-full border-[3px] border-[#FF4FA1] bg-[#FFD2E8] shadow-[0_0_0_4px_rgba(255,79,161,0.14)] sm:-left-[33px] sm:top-7 sm:h-[18px] sm:w-[18px] sm:border-4 sm:shadow-[0_0_0_6px_rgba(255,79,161,0.14)]" />
                       <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-3">
                         <div>
-                          <h3 className="text-base font-semibold sm:text-xl">{item.role}</h3>
-                          <p className="mt-1 text-[11px] sm:text-base" style={{ color: palette.muted }}>
+                          <h3 className="text-base font-semibold sm:text-xl">
+                            {item.role}
+                          </h3>
+                          <p
+                            className="mt-1 text-[11px] sm:text-base"
+                            style={{ color: palette.muted }}
+                          >
                             {item.company}
                           </p>
                         </div>
@@ -678,7 +770,10 @@ export default function SwiftResume() {
                           {item.duration}
                         </span>
                       </div>
-                      <p className="mt-3 text-[11px] leading-5 sm:mt-4 sm:text-sm sm:leading-6" style={{ color: palette.muted }}>
+                      <p
+                        className="mt-3 text-[11px] leading-5 sm:mt-4 sm:text-sm sm:leading-6"
+                        style={{ color: palette.muted }}
+                      >
                         {item.description}
                       </p>
                       <div className="mt-3 space-y-1.5 sm:mt-4 sm:space-y-2">
@@ -721,7 +816,16 @@ export default function SwiftResume() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true, amount: 0.2 }}
                       transition={{ duration: 0.5, delay: index * 0.06 }}
-                      className="overflow-hidden rounded-[20px] border transition hover:-translate-y-1 hover:shadow-2xl sm:rounded-[24px]"
+                      role="button"
+                      tabIndex={0}
+                      onClick={() => openProjectPopup(project)}
+                      onKeyDown={(event) => {
+                        if (event.key === "Enter" || event.key === " ") {
+                          event.preventDefault();
+                          openProjectPopup(project);
+                        }
+                      }}
+                      className="overflow-hidden rounded-[20px] border transition focus:outline-none focus-visible:ring-2 focus-visible:ring-white/20 sm:rounded-[24px]"
                       style={{
                         background: palette.surfaceStrong,
                         borderColor: palette.border,
@@ -739,18 +843,27 @@ export default function SwiftResume() {
                       </div>
                       <div className="space-y-3 p-3 sm:space-y-4 sm:p-5">
                         <div>
-                          <h3 className="text-base font-semibold sm:text-xl">{project.name}</h3>
-                          <p className="mt-1 text-[11px] sm:text-sm" style={{ color: palette.muted }}>
+                          <h3 className="text-base font-semibold sm:text-xl">
+                            {project.name}
+                          </h3>
+                          <p
+                            className="mt-1 text-[11px] sm:text-sm"
+                            style={{ color: palette.muted }}
+                          >
                             {project.stack}
                           </p>
                         </div>
-                        <p className="text-[11px] leading-5 sm:text-sm sm:leading-6" style={{ color: palette.muted }}>
+                        <p
+                          className="text-[11px] leading-5 sm:text-sm sm:leading-6"
+                          style={{ color: palette.muted }}
+                        >
                           {project.description}
                         </p>
                         <div className="flex flex-wrap gap-2 sm:gap-3">
                           <Link
                             href={project.github}
                             target="_blank"
+                            onClick={(event) => event.stopPropagation()}
                             className="inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-[11px] transition hover:-translate-y-0.5 sm:gap-2 sm:px-4 sm:py-2 sm:text-sm"
                             style={{ borderColor: palette.border }}
                           >
@@ -760,6 +873,7 @@ export default function SwiftResume() {
                           <Link
                             href={project.live}
                             target="_blank"
+                            onClick={(event) => event.stopPropagation()}
                             className="inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-[11px] transition hover:-translate-y-0.5 sm:gap-2 sm:px-4 sm:py-2 sm:text-sm"
                             style={{
                               borderColor: "rgba(255,79,161,0.26)",
@@ -817,36 +931,128 @@ export default function SwiftResume() {
                   </div>
                 </GlassCard>
 
-                <GlassCard palette={palette}>
-                  <SectionTitle
-                    icon={Sparkles}
-                    title="Design Style"
-                    subtitle="How this resume presents work"
-                    palette={palette}
-                  />
-                  <div
-                    className="mt-4 space-y-3 text-[11px] leading-5 sm:mt-5 sm:space-y-4 sm:text-sm sm:leading-6"
-                    style={{ color: palette.muted }}
-                  >
-                    <p>
-                      Luxury glassmorphism dashboard aesthetic with soft borders,
-                      cinematic gradients, and recruiter-first hierarchy.
-                    </p>
-                    <p>
-                      Optimized for quick scanning on desktop, tablet, and mobile with
-                      motion accents that support the content instead of distracting from it.
-                    </p>
-                    <p>
-                      Built as a true single-page digital CV so hiring teams can assess
-                      profile, skills, timeline, and projects without navigating away.
-                    </p>
-                  </div>
-                </GlassCard>
+                <div
+                  role="button"
+                  tabIndex={0}
+                  onClick={openAtsPopup}
+                  onKeyDown={(event) => {
+                    if (event.key === "Enter" || event.key === " ") {
+                      event.preventDefault();
+                      openAtsPopup();
+                    }
+                  }}
+                  className="rounded-[20px] transition focus:outline-none focus-visible:ring-2 focus-visible:ring-white/20 sm:rounded-[24px]"
+                >
+                  <GlassCard palette={palette}>
+                    <SectionTitle
+                      icon={Sparkles}
+                      title="ATS Snapshot"
+                      subtitle="Keyword alignment and recruiter scan summary"
+                      palette={palette}
+                    />
+                    <div
+                      className="mt-4 space-y-3 text-[11px] leading-5 sm:mt-5 sm:space-y-4 sm:text-sm sm:leading-6"
+                      style={{ color: palette.muted }}
+                    >
+                      <p>
+                        Target roles: Full Stack Developer, Frontend Engineer,
+                        Product Engineer, and Software Developer.
+                      </p>
+                      <p>
+                        ATS keywords: React, Next.js, TypeScript, Node.js,
+                        NestJS, PostgreSQL, MongoDB, Docker, AWS, API
+                        Integration, ERP, HRMS, Performance Optimization.
+                      </p>
+                      <p>
+                        Recruiter summary: 7+ years experience, enterprise
+                        systems delivery, dashboard and platform development,
+                        scalable frontend architecture, and measurable
+                        performance improvements.
+                      </p>
+                    </div>
+                  </GlassCard>
+                </div>
               </div>
             </motion.section>
           </div>
         </div>
       </div>
+
+      {typeof document !== "undefined" && selectedPopup
+        ? createPortal(
+            <div
+              data-swift-cursor="default"
+              className="fixed inset-0 z-[1000] flex items-center justify-center bg-black/55 p-4 backdrop-blur-sm"
+            >
+              <div
+                className="w-full max-w-xl rounded-[24px] border p-5 sm:p-6"
+                style={{
+                  background:
+                    theme === "light"
+                      ? "rgba(255,255,255,0.96)"
+                      : "rgba(29, 23, 52, 0.94)",
+                  borderColor: palette.border,
+                  boxShadow: palette.shadow,
+                }}
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <h3
+                      className="text-xl font-semibold sm:text-2xl"
+                      style={{ color: palette.text }}
+                    >
+                      {selectedPopup.title}
+                    </h3>
+                    <p
+                      className="mt-1 text-sm"
+                      style={{ color: palette.muted }}
+                    >
+                      {selectedPopup.subtitle}
+                    </p>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setSelectedPopup(null)}
+                    className="rounded-full border px-3 py-1.5 text-xs font-medium transition"
+                    style={{
+                      borderColor:
+                        theme === "light"
+                          ? "rgba(17,24,39,0.14)"
+                          : "rgba(255,255,255,0.16)",
+                      color: palette.text,
+                      background:
+                        theme === "light"
+                          ? "rgba(17,24,39,0.04)"
+                          : "rgba(255,255,255,0.04)",
+                    }}
+                  >
+                    Close
+                  </button>
+                </div>
+                <div
+                  className="mt-5 space-y-4 text-sm leading-6"
+                  style={{ color: palette.muted }}
+                >
+                  {selectedPopup.paragraphs.map((paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
+                  ))}
+                </div>
+              </div>
+            </div>,
+            document.body,
+          )
+        : null}
+
+      <style jsx global>{`
+        @media (pointer: fine) {
+          [data-swift-cursor="default"],
+          [data-swift-cursor="default"] *,
+          [data-swift-cursor="default"] *::before,
+          [data-swift-cursor="default"] *::after {
+            cursor: auto !important;
+          }
+        }
+      `}</style>
     </div>
   );
 }
@@ -884,7 +1090,9 @@ function SidebarTitle({
       <span className="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-[#8B5CF6]/15 text-[#FF4FA1] sm:h-10 sm:w-10 sm:rounded-2xl">
         <Icon size={18} />
       </span>
-      <h2 className="text-sm font-semibold uppercase tracking-[0.12em] sm:text-lg sm:normal-case sm:tracking-normal">{title}</h2>
+      <h2 className="text-sm font-semibold uppercase tracking-[0.12em] sm:text-lg sm:normal-case sm:tracking-normal">
+        {title}
+      </h2>
     </div>
   );
 }
@@ -907,8 +1115,13 @@ function SectionTitle({
           <Icon size={18} />
         </span>
         <div>
-          <h2 className="text-lg font-semibold uppercase tracking-[0.08em] sm:text-2xl sm:tracking-tight sm:normal-case">{title}</h2>
-          <p className="hidden text-sm sm:block" style={{ color: palette.subtle }}>
+          <h2 className="text-lg font-semibold uppercase tracking-[0.08em] sm:text-2xl sm:tracking-tight sm:normal-case">
+            {title}
+          </h2>
+          <p
+            className="hidden text-sm sm:block"
+            style={{ color: palette.subtle }}
+          >
             {subtitle}
           </p>
         </div>
@@ -943,10 +1156,15 @@ function ContactChip({
           <Icon size={15} />
         </span>
         <div className="min-w-0">
-          <p className="text-[8px] uppercase tracking-[0.12em] sm:text-xs sm:tracking-[0.2em]" style={{ color: palette.subtle }}>
+          <p
+            className="text-[8px] uppercase tracking-[0.12em] sm:text-xs sm:tracking-[0.2em]"
+            style={{ color: palette.subtle }}
+          >
             {label}
           </p>
-          <p className="mt-0.5 truncate text-[10px] font-medium sm:mt-1 sm:text-sm">{value}</p>
+          <p className="mt-0.5 truncate text-[10px] font-medium sm:mt-1 sm:text-sm">
+            {value}
+          </p>
         </div>
       </div>
     </div>

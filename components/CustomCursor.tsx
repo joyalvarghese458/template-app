@@ -1,14 +1,17 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import { usePathname } from 'next/navigation'
 
 export default function CustomCursor() {
   const dotRef  = useRef<HTMLDivElement>(null)
   const ringRef = useRef<HTMLDivElement>(null)
   const [isPointer, setIsPointer] = useState(false)
   const [visible,   setVisible]   = useState(false)
+  const pathname = usePathname()
 
   useEffect(() => {
+    if (pathname === '/templates/swift') return
     if (window.matchMedia('(pointer: coarse)').matches) return
 
     let shown = false
@@ -40,7 +43,9 @@ export default function CustomCursor() {
       window.removeEventListener('mousemove', onMove)
       window.removeEventListener('mouseover', onOver)
     }
-  }, [])
+  }, [pathname])
+
+  if (pathname === '/templates/swift') return null
 
   return (
     <>
