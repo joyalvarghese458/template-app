@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import {
   TEMPLATES,
   TIER_BY_ID,
@@ -83,19 +82,21 @@ function TemplateCard({
   currency: Currency;
   price: number;
 }) {
-  const router = useRouter();
   const tier = TIER_BY_ID[template.tier];
   const href = templateHref(template);
+  const openTemplatePreview = () => {
+    window.open(href, "_blank", "noopener,noreferrer");
+  };
 
   return (
     <article
       role="link"
       tabIndex={0}
-      onClick={() => router.push(href)}
+      onClick={openTemplatePreview}
       onKeyDown={(event) => {
         if (event.key === "Enter" || event.key === " ") {
           event.preventDefault();
-          router.push(href);
+          openTemplatePreview();
         }
       }}
       className="group relative flex cursor-pointer flex-col overflow-hidden rounded-2xl border border-ink/10 bg-canvas-bg transition-all duration-300 hover:-translate-y-1 hover:border-brand/40 hover:shadow-[0_20px_50px_-12px_rgba(37,99,235,0.18)] focus:outline-none focus:ring-2 focus:ring-brand/40"
@@ -103,6 +104,8 @@ function TemplateCard({
       {/* Preview image */}
       <Link
         href={href}
+        target="_blank"
+        rel="noopener noreferrer"
         onClick={(event) => event.stopPropagation()}
         className="relative block aspect-[3/4] overflow-hidden bg-ink/5"
         aria-label={`View ${template.title} template`}
@@ -143,6 +146,8 @@ function TemplateCard({
         <div className="flex gap-1.5">
           <Link
             href={href}
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={(event) => event.stopPropagation()}
             className="flex-1 inline-flex items-center justify-center gap-1 px-1.5 sm:px-2 py-1.5 sm:py-2 text-[11px] sm:text-xs font-bold text-brand bg-canvas-bg border border-brand/40 hover:bg-brand/10 rounded-lg transition-all duration-200 active:scale-95"
           >
