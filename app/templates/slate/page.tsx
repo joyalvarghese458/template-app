@@ -4,7 +4,7 @@ import SlateResume from "./slate-resume";
 export const metadata: Metadata = {
   title: "Slate Template",
   description:
-    "Slate is a premium mobile-first digital resume dashboard with an editorial hero, recruiter-friendly hierarchy, and polished resume cards.",
+    "Slate is a professional mobile-first ATS-style resume template with clean recruiter hierarchy, focused sections, and polished digital presentation.",
 };
 
 export default function SlateTemplatePage() {
