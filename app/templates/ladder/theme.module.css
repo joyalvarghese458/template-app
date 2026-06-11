@@ -27,13 +27,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Scoped cursor: none for non-touch devices */
-@media (pointer: fine) {
-  .page, .page * {
-    cursor: none !important;
-  }
-}
-
 .page *,
 .page *::before,
 .page *::after {

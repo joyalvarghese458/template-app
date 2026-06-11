@@ -1,44 +1,34 @@
 'use client'
 
 import { useEffect } from 'react'
+import Lenis from 'lenis'
 
 export default function SmoothScroll({ children }: { children: React.ReactNode }) {
   useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    let lenis: any = null
-    let rafId: number
-    let active = true
-
-    // Global CSS sets scroll-behavior: smooth which conflicts with Lenis
     const html = document.documentElement
+    const previousScrollBehavior = html.style.scrollBehavior
     html.style.scrollBehavior = 'auto'
 
-    ;(async () => {
-      const { default: Lenis } = await import('lenis')
-      if (!active) return
+    const lenis = new Lenis({
+      duration: 1.8,
+      easing: (t: number) => 1 - Math.pow(1 - t, 4),
+      smoothWheel: true,
+      wheelMultiplier: 0.72,
+      touchMultiplier: 1.35,
+      syncTouch: true,
+    })
 
-      // lerp (not duration) gives the signature "floating" deceleration feel.
-      // 0.08 = very smooth; increase toward 0.15 for snappier response.
-      lenis = new Lenis({
-        lerp: 0.08,
-        smoothWheel: true,
-        wheelMultiplier: 1,
-        touchMultiplier: 1.8,
-        syncTouch: true,
-      })
-
-      function raf(time: number) {
-        lenis.raf(time)
-        rafId = requestAnimationFrame(raf)
-      }
+    let rafId: number
+    const raf = (time: number) => {
+      lenis.raf(time)
       rafId = requestAnimationFrame(raf)
-    })()
+    }
+    rafId = requestAnimationFrame(raf)
 
     return () => {
-      active = false
-      html.style.scrollBehavior = ''
+      html.style.scrollBehavior = previousScrollBehavior
       cancelAnimationFrame(rafId)
-      lenis?.destroy()
+      lenis.destroy()
     }
   }, [])
 
