@@ -365,20 +365,20 @@ export default function SwiftResume() {
           initial="hidden"
           animate="show"
           variants={containerReveal}
-          className="overflow-hidden rounded-[24px] border p-4 shadow-2xl backdrop-blur-2xl sm:p-6 lg:p-10"
+          className="overflow-hidden rounded-[24px] border p-3 shadow-2xl backdrop-blur-2xl sm:p-6 lg:p-10"
           style={{
             background: palette.surface,
             borderColor: palette.border,
             boxShadow: palette.shadow,
           }}
         >
-          <div className="grid gap-4 md:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] md:gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-8">
+          <div className="grid gap-3 md:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] md:gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-8">
             <motion.div
               variants={cardReveal}
-              className="flex min-w-0 items-start gap-3 sm:gap-4 md:items-center md:gap-6"
+              className="flex min-w-0 items-center gap-3 sm:gap-4 md:items-center md:gap-6"
             >
               <div
-                className="relative h-20 w-20 shrink-0 overflow-hidden rounded-[24px] border sm:h-24 sm:w-24 md:h-28 md:w-28 lg:h-32 lg:w-32 lg:rounded-[28px]"
+                className="relative h-16 w-16 shrink-0 overflow-hidden rounded-[20px] border sm:h-24 sm:w-24 md:h-28 md:w-28 lg:h-32 lg:w-32 lg:rounded-[28px]"
                 style={{ borderColor: palette.border }}
               >
                 <Image
@@ -390,19 +390,19 @@ export default function SwiftResume() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent" />
               </div>
-              <div className="min-w-0 space-y-2 sm:space-y-3">
+              <div className="min-w-0 space-y-1 sm:space-y-3">
                 <div>
-                  <h1 className="text-[1.95rem] font-semibold leading-none tracking-tight sm:text-[2.35rem] lg:text-[3.4rem]">
+                  <h1 className="text-[1.55rem] font-semibold leading-none tracking-tight sm:text-[2.35rem] lg:text-[3.4rem]">
                     {profile.name}
                   </h1>
-                  <p className="mt-1.5 text-sm sm:mt-2 sm:text-base lg:text-lg" style={{ color: palette.muted }}>
+                  <p className="mt-1 text-xs sm:mt-2 sm:text-base lg:text-lg" style={{ color: palette.muted }}>
                     {profile.title}
                   </p>
                 </div>
               </div>
             </motion.div>
 
-            <motion.div variants={cardReveal} className="grid gap-2 sm:grid-cols-2 sm:gap-3">
+            <motion.div variants={cardReveal} className="grid grid-cols-2 gap-2 sm:grid-cols-2 sm:gap-3">
               <ContactChip
                 icon={Mail}
                 label="Email"
@@ -447,7 +447,7 @@ export default function SwiftResume() {
             </motion.div>
           </div>
 
-          <motion.div variants={cardReveal} className="mt-4 grid grid-cols-2 gap-2 md:flex md:flex-wrap md:gap-3 lg:mt-8">
+          <motion.div variants={cardReveal} className="mt-3 grid grid-cols-2 gap-2 md:flex md:flex-wrap md:gap-3 lg:mt-8">
             <ActionButton
               icon={Download}
               label="Download Resume"
@@ -483,7 +483,7 @@ export default function SwiftResume() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="grid gap-3 sm:grid-cols-2 sm:gap-4 lg:sticky lg:top-20 lg:grid-cols-1 lg:self-start lg:gap-6"
+            className="order-2 grid gap-3 sm:grid-cols-2 sm:gap-4 lg:order-1 lg:sticky lg:top-20 lg:grid-cols-1 lg:self-start lg:gap-6"
           >
             <GlassCard palette={palette}>
               <SidebarTitle icon={Sparkles} title="Expertise" />
@@ -570,7 +570,7 @@ export default function SwiftResume() {
             </GlassCard>
           </motion.aside>
 
-          <div className="space-y-4 sm:space-y-6">
+          <div className="order-1 space-y-4 sm:space-y-6 lg:order-2">
             <div className="block">
               <GlassCard palette={palette}>
                 <div className="flex gap-2 overflow-x-auto pb-1 no-scrollbar">
@@ -932,21 +932,21 @@ function ContactChip({
 }) {
   const content = (
     <div
-      className="rounded-[16px] border p-2.5 transition hover:-translate-y-0.5 sm:rounded-[20px] sm:p-4"
+      className="rounded-[14px] border p-2 transition hover:-translate-y-0.5 sm:rounded-[20px] sm:p-4"
       style={{
         background: palette.surfaceStrong,
         borderColor: palette.border,
       }}
     >
-      <div className="flex items-start gap-3">
+      <div className="flex items-start gap-2 sm:gap-3">
         <span className="mt-0.5 text-[#FF4FA1]">
-          <Icon size={17} />
+          <Icon size={15} />
         </span>
         <div className="min-w-0">
-          <p className="text-[9px] uppercase tracking-[0.14em] sm:text-xs sm:tracking-[0.2em]" style={{ color: palette.subtle }}>
+          <p className="text-[8px] uppercase tracking-[0.12em] sm:text-xs sm:tracking-[0.2em]" style={{ color: palette.subtle }}>
             {label}
           </p>
-          <p className="mt-1 truncate text-[11px] font-medium sm:text-sm">{value}</p>
+          <p className="mt-0.5 truncate text-[10px] font-medium sm:mt-1 sm:text-sm">{value}</p>
         </div>
       </div>
     </div>
@@ -983,7 +983,7 @@ function ActionButton({
   palette: ThemePalette;
 }) {
   const className =
-    "inline-flex items-center justify-center gap-1.5 rounded-full border px-3 py-2 text-[11px] font-medium transition hover:-translate-y-0.5 sm:gap-2 sm:px-4 sm:py-2.5 sm:text-sm";
+    "inline-flex items-center justify-center gap-1.5 rounded-full border px-3 py-1.5 text-[10px] font-medium transition hover:-translate-y-0.5 sm:gap-2 sm:px-4 sm:py-2.5 sm:text-sm";
   const style = {
     background: primary
       ? "linear-gradient(135deg, rgba(255,79,161,0.95), rgba(139,92,246,0.95))"
