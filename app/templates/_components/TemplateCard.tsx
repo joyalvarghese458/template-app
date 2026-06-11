@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import {
   TIER_BY_ID,
   templateHref,
@@ -8,13 +11,27 @@ import {
 } from "@/lib/templates";
 
 export default function TemplateCard({ template }: { template: Template }) {
+  const router = useRouter();
   const tier = TIER_BY_ID[template.tier];
+  const href = templateHref(template);
 
   return (
-    <article className="group relative flex flex-col bg-canvas-bg rounded-2xl overflow-hidden border border-ink/10 hover:border-brand/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_-12px_rgba(37,99,235,0.18)]">
+    <article
+      role="link"
+      tabIndex={0}
+      onClick={() => router.push(href)}
+      onKeyDown={(event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          router.push(href);
+        }
+      }}
+      className="group relative flex cursor-pointer flex-col overflow-hidden rounded-2xl border border-ink/10 bg-canvas-bg transition-all duration-300 hover:-translate-y-1 hover:border-brand/40 hover:shadow-[0_20px_50px_-12px_rgba(37,99,235,0.18)] focus:outline-none focus:ring-2 focus:ring-brand/40"
+    >
       {/* Preview */}
       <Link
-        href={templateHref(template)}
+        href={href}
+        onClick={(event) => event.stopPropagation()}
         className="relative block aspect-[3/4] overflow-hidden bg-ink/5"
         aria-label={`View ${template.title} template`}
       >
@@ -57,7 +74,8 @@ export default function TemplateCard({ template }: { template: Template }) {
 
         <div className="flex gap-1.5 mt-0.5 sm:mt-1">
           <Link
-            href={templateHref(template)}
+            href={href}
+            onClick={(event) => event.stopPropagation()}
             className="flex-1 inline-flex items-center justify-center gap-1 px-1.5 sm:px-2 py-1.5 sm:py-2 text-[11px] sm:text-xs font-bold text-brand bg-canvas-bg border border-brand/40 hover:bg-brand/10 rounded-lg transition-all duration-200 active:scale-95"
           >
             <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -70,6 +88,7 @@ export default function TemplateCard({ template }: { template: Template }) {
             href={waLink(tier.label, template.title, tier.price)}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={(event) => event.stopPropagation()}
             className="flex-1 inline-flex items-center justify-center gap-1 px-1.5 sm:px-2 py-1.5 sm:py-2 text-[11px] sm:text-xs font-bold text-canvas-bg bg-brand hover:bg-brand/90 rounded-lg shadow-lg shadow-brand/30 transition-all duration-200 active:scale-95"
           >
             <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">

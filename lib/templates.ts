@@ -200,7 +200,7 @@ export const SPECIALTIES: Record<AudienceId, SpecialtyMeta[]> = {
 export const TEMPLATES: Template[] = [
   // ── Digital Resume  (AED 49 · tier: starter) ─────────────────────
   {
-    id: "dr1", title: "Swift", tag: "Digital Resume · Single page", tier: "starter",
+    id: "dr1", slug: "swift", title: "Swift", tag: "Digital Resume · Single page", tier: "starter",
     section: "digital-resume",
     audiences: ["founders", "creators", "developers"], specialties: ["personal-brand", "consultant", "frontend"]
   },

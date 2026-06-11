@@ -3,6 +3,7 @@ import type { MetadataRoute } from "next";
 const BASE_URL = "https://www.myportfoliowebsite.com";
 
 const LIVE_TEMPLATE_SLUGS = [
+  "swift",
   "atelier",
   "pure",
   "indie",
