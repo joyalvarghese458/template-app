@@ -25,7 +25,6 @@ export const metadata: Metadata = {
     type: "website",
   },
 };
-console.log("Metadata:");
 export default function AdalinePage() {
   return (
     <div className={theme.root}>

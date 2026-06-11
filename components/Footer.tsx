@@ -61,6 +61,8 @@ export default function Footer() {
                 { href: "/pricing", label: "Pricing" },
                 { href: "/blog", label: "Blog" },
                 { href: "/contact", label: "Contact" },
+                { href: "/privacy-policy", label: "Privacy Policy" },
+                { href: "/terms-of-service", label: "Terms of Service" },
               ].map(({ href, label }) => (
                 <li key={label}>
                   <Link
