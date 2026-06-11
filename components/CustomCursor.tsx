@@ -11,8 +11,19 @@ export default function CustomCursor() {
   const pathname = usePathname()
 
   useEffect(() => {
-    if (pathname === '/templates/swift') return
-    if (window.matchMedia('(pointer: coarse)').matches) return
+    const root = document.documentElement
+
+    if (pathname === '/templates/swift') {
+      root.classList.remove('has-custom-cursor')
+      return
+    }
+
+    if (window.matchMedia('(pointer: coarse)').matches) {
+      root.classList.remove('has-custom-cursor')
+      return
+    }
+
+    root.classList.add('has-custom-cursor')
 
     let shown = false
 
@@ -40,6 +51,7 @@ export default function CustomCursor() {
     window.addEventListener('mouseover', onOver, { passive: true })
 
     return () => {
+      root.classList.remove('has-custom-cursor')
       window.removeEventListener('mousemove', onMove)
       window.removeEventListener('mouseover', onOver)
     }
