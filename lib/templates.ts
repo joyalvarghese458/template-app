@@ -215,7 +215,7 @@ export const TEMPLATES: Template[] = [
     audiences: ["developers", "designers"], specialties: ["frontend", "ui-ux", "graphic"]
   },
   {
-    id: "dr4", title: "Pulse", tag: "Digital Resume · Bold", tier: "starter",
+    id: "dr4", slug: "pulse", title: "Pulse", tag: "Digital Resume · Bold", tier: "starter",
     section: "digital-resume",
     audiences: ["founders", "creators", "developers"], specialties: ["personal-brand", "speaker", "ai-ml"]
   },

@@ -1,0 +1,64 @@
+.page {
+  background:
+    radial-gradient(circle at top, rgba(191, 219, 254, 0.34), transparent 32%),
+    linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
+}
+
+.shell {
+  color: #0f172a;
+}
+
+.heroCard {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.heroSurface {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.94)),
+    linear-gradient(90deg, rgba(30, 58, 138, 0.05), transparent 34%);
+}
+
+.heroMetricGrid {
+  border-top: 1px solid rgba(148, 163, 184, 0.26);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.26);
+  padding: 1rem 0;
+}
+
+.heroMetricItem {
+  min-width: 0;
+}
+
+.contentBlock {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.screenOnly {
+  display: block;
+}
+
+@media print {
+  .page {
+    background: #ffffff;
+  }
+
+  .shell {
+    color: #0f172a;
+  }
+
+  .heroCard,
+  .contentBlock {
+    box-shadow: none !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .screenOnly {
+    display: none !important;
+  }
+
+  :global(body) {
+    background: #ffffff !important;
+  }
+}
