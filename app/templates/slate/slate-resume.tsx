@@ -5,14 +5,13 @@ import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import {
-  ArrowUpRight,
   Award,
-  BookOpen,
   BriefcaseBusiness,
   Download,
   ExternalLink,
   Globe,
   GraduationCap,
+  Lightbulb,
   Languages,
   Link2,
   Mail,
@@ -25,9 +24,7 @@ import {
   Trophy,
   UserRound,
 } from "lucide-react";
-import { Badge } from "./components/ui/badge";
 import { Button } from "./components/ui/button";
-import { DetailDialog } from "./components/detail-dialog";
 import {
   achievements,
   certifications,
@@ -44,30 +41,23 @@ import {
 
 type ThemeMode = "dark" | "light";
 
-type DialogState = {
-  title: string;
-  eyebrow: string;
-  body: string;
-  bullets: string[];
-} | null;
-
 const cardMotion = {
   initial: { opacity: 0, y: 18 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, amount: 0.18 },
-  transition: { duration: 0.48, ease: [0.22, 1, 0.36, 1] as const },
+  viewport: { once: true, amount: 0.16 },
+  transition: { duration: 0.46, ease: [0.22, 1, 0.36, 1] as const },
 };
 
 function getInitialTheme(): ThemeMode {
-  return "light";
+  return "dark";
 }
 
 function buildResumeText() {
   return [
     `${profile.name} - ${profile.title}`,
-    `${profile.location} | ${profile.email} | ${profile.phone}`,
+    `${profile.location} | ${profile.email} | ${profile.phone} | ${profile.website}`,
     "",
-    "Summary",
+    "Professional Summary",
     ...profile.summary,
     "",
     "Experience",
@@ -78,42 +68,46 @@ function buildResumeText() {
       "",
     ]),
     "Skills",
-    skills.join(", "),
+    ...skills.map((group) => `${group.category}: ${group.items.join(", ")}`),
     "",
     "Education",
-    `${education.degree}, ${education.program}`,
-    education.institution,
+    `${education.degree} | ${education.institution} | ${education.duration}`,
+    education.note,
     "",
     "Certifications",
-    ...certifications,
+    ...certifications.map(
+      (item) => `${item.name} - ${item.issuer} (${item.year})`
+    ),
   ].join("\n");
 }
 
 function SectionHeading({
   icon: Icon,
-  eyebrow,
   title,
-  titleClass = "text-slate-950",
-  iconShellClass = "border-slate-200 bg-slate-100",
+  subtitle,
+  titleClass,
+  subtitleClass,
+  iconShellClass,
 }: {
   icon: typeof Sparkles;
-  eyebrow: string;
   title: string;
-  titleClass?: string;
-  iconShellClass?: string;
+  subtitle?: string;
+  titleClass: string;
+  subtitleClass: string;
+  iconShellClass: string;
 }) {
   return (
     <div className="flex items-start gap-3">
-      <div className={`mt-0.5 rounded-2xl border p-2.5 ${iconShellClass}`}>
-        <Icon className="h-4 w-4 text-[#b88746]" />
+      <div className={`rounded-2xl border p-2.5 ${iconShellClass}`}>
+        <Icon className="h-4 w-4 text-[#d6a85f]" />
       </div>
       <div>
-        <p className="text-[11px] uppercase tracking-[0.24em] text-[#b88746]">
-          {eyebrow}
-        </p>
-        <h2 className={`mt-2 text-lg font-semibold tracking-tight sm:text-xl ${titleClass}`}>
+        <h2 className={`text-xl font-semibold tracking-[-0.03em] ${titleClass}`}>
           {title}
         </h2>
+        {subtitle ? (
+          <p className={`mt-1 text-sm leading-6 ${subtitleClass}`}>{subtitle}</p>
+        ) : null}
       </div>
     </div>
   );
@@ -122,35 +116,39 @@ function SectionHeading({
 export default function SlateResume() {
   const [theme, setTheme] = useState<ThemeMode>(getInitialTheme);
   const [shareLabel, setShareLabel] = useState("Share Profile");
-  const [dialog, setDialog] = useState<DialogState>(null);
 
   const isLight = theme === "light";
 
   const shellClass = isLight
-    ? "bg-[#f4f6f8] text-slate-950"
-    : "bg-[#0b1020] text-white";
+    ? "bg-[#eef2f6] text-slate-950"
+    : "bg-[#070b14] text-white";
   const pageGlow = isLight
-    ? "bg-[radial-gradient(circle_at_top,rgba(184,135,70,0.12),transparent_42%)]"
+    ? "bg-[radial-gradient(circle_at_top,rgba(184,135,70,0.14),transparent_44%)]"
     : "bg-[radial-gradient(circle_at_top,rgba(214,168,95,0.16),transparent_42%)]";
-  const panelClass = isLight
-    ? "border-slate-200 bg-white text-slate-950 shadow-[0_16px_45px_rgba(15,23,42,0.08)]"
-    : "border-white/12 bg-white/6 text-white shadow-[0_18px_55px_rgba(2,6,23,0.45)]";
-  const softPanelClass = isLight
+  const frameClass = isLight
+    ? "border-slate-200/80 bg-white/90 shadow-[0_28px_90px_rgba(15,23,42,0.08)]"
+    : "border-white/10 bg-[#0d1321]/88 shadow-[0_34px_110px_rgba(1,6,18,0.55)]";
+  const sectionClass = isLight
+    ? "border-slate-200/90 bg-white/70"
+    : "border-white/8 bg-white/[0.03]";
+  const insetClass = isLight
     ? "border-slate-200 bg-slate-50"
     : "border-white/10 bg-black/18";
   const headingClass = isLight ? "text-slate-950" : "text-white";
-  const bodyClass = isLight ? "text-slate-600" : "text-white/72";
+  const bodyClass = isLight ? "text-slate-600" : "text-white/70";
   const strongTextClass = isLight ? "text-slate-700" : "text-white/82";
-  const pillClass = isLight
-    ? "border-slate-200 bg-slate-50 text-slate-700"
-    : "border-white/12 bg-white/8 text-white/78";
+  const subtitleClass = isLight ? "text-slate-500" : "text-white/60";
   const iconShellClass = isLight
     ? "border-slate-200 bg-slate-100"
-    : "border-white/12 bg-white/8";
+    : "border-white/10 bg-white/6";
+  const chipClass = isLight
+    ? "border-slate-200 bg-slate-50 text-slate-700"
+    : "border-white/10 bg-white/5 text-white/78";
+  const statClass = isLight
+    ? "border-slate-200 bg-slate-50/80"
+    : "border-white/10 bg-white/[0.04]";
+  const dividerClass = isLight ? "border-slate-200/90" : "border-white/8";
   const timelineClass = isLight ? "bg-slate-200" : "bg-white/10";
-  const dateChipClass = isLight
-    ? "border-slate-200 bg-slate-50 text-slate-600"
-    : "border-white/12 bg-white/8 text-white/65";
 
   const resumeText = useMemo(() => buildResumeText(), []);
 
@@ -176,10 +174,10 @@ export default function SlateResume() {
   function downloadResume() {
     const blob = new Blob([resumeText], { type: "text/plain;charset=utf-8" });
     const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "adarsh-pandey-slate-resume.txt";
-    a.click();
+    const anchor = document.createElement("a");
+    anchor.href = url;
+    anchor.download = "adarsh-pandey-slate-resume.txt";
+    anchor.click();
     URL.revokeObjectURL(url);
   }
 
@@ -209,146 +207,141 @@ export default function SlateResume() {
       <div className="relative">
         <div className={`pointer-events-none absolute inset-0 ${pageGlow}`} />
 
-        <div className="relative mx-auto max-w-6xl px-3 py-3 sm:px-5 sm:py-5 lg:px-8 lg:py-8">
-          <motion.section
+        <div className="relative mx-auto max-w-7xl px-4 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-10">
+          <motion.div
             {...cardMotion}
-            className={`overflow-hidden rounded-[30px] border ${panelClass}`}
+            className={`overflow-hidden rounded-[32px] border backdrop-blur-xl ${frameClass}`}
           >
-            <div className="border-b border-black/6 px-4 py-4 sm:px-6 sm:py-5">
-              <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-                <div className="min-w-0">
-                  <Badge
-                    className={
-                      isLight
-                        ? "border-slate-200 bg-slate-100 text-slate-600"
-                        : "border-white/12 bg-white/8 text-white/72"
-                    }
-                  >
-                    ATS Resume Template
-                  </Badge>
-                  <h1 className="mt-3 text-3xl font-semibold tracking-[-0.05em] sm:text-4xl lg:text-5xl">
-                    {profile.name}
-                  </h1>
-                  <p className="mt-2 text-sm font-semibold uppercase tracking-[0.24em] text-[#b88746] sm:text-[13px]">
-                    {profile.title}
-                  </p>
-                  <p className={`mt-4 max-w-2xl text-sm leading-7 ${bodyClass}`}>
-                    {profile.tagline}
-                  </p>
-                </div>
-
-                <div className={`rounded-[24px] border p-3 sm:min-w-[240px] ${softPanelClass}`}>
-                  <div className="flex items-center gap-3">
-                    <div className="h-16 w-16 overflow-hidden rounded-2xl border border-black/8">
-                      <Image
-                        src={portraitImage}
-                        alt={`${profile.name} portrait`}
-                        width={128}
-                        height={128}
-                        priority
-                        className="h-full w-full object-cover"
-                      />
+            <header className={`border-b px-5 py-6 sm:px-7 sm:py-8 lg:px-10 ${dividerClass}`}>
+              <div className="flex flex-col gap-6 lg:gap-7">
+                <div className="flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
+                  <div className="flex min-w-0 flex-col gap-5 sm:flex-row sm:items-start">
+                    <div className={`w-full max-w-[132px] shrink-0 rounded-[24px] border p-2 ${insetClass}`}>
+                      <div className="overflow-hidden rounded-[18px] bg-black/20">
+                        <Image
+                          src={portraitImage}
+                          alt={`${profile.name} portrait`}
+                          width={640}
+                          height={860}
+                          priority
+                          className="h-auto w-full object-cover"
+                        />
+                      </div>
                     </div>
-                    <div className="min-w-0">
-                      <p className={`text-sm font-semibold ${headingClass}`}>{profile.name}</p>
-                      <p className={`mt-1 text-xs leading-5 ${bodyClass}`}>{profile.location}</p>
-                      <p className="mt-1 text-xs font-medium uppercase tracking-[0.18em] text-[#b88746]">
-                        Open to creator, content, and design-led roles
+
+                    <div className="min-w-0 flex-1">
+                      <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#d6a85f]">
+                        Professional Resume
                       </p>
+                      <h1 className={`mt-3 text-3xl font-semibold tracking-[-0.06em] sm:text-4xl lg:text-[3.2rem] ${headingClass}`}>
+                        {profile.name}
+                      </h1>
+                      <p className="mt-3 text-sm font-semibold uppercase tracking-[0.24em] text-[#d6a85f] sm:text-[13px]">
+                        {profile.title}
+                      </p>
+                      <p className={`mt-4 max-w-3xl text-sm leading-7 sm:text-[15px] ${bodyClass}`}>
+                        {profile.tagline}
+                      </p>
+                      <div className={`mt-4 inline-flex max-w-full rounded-full border px-4 py-2 text-sm ${chipClass}`}>
+                        {profile.availability}
+                      </div>
                     </div>
                   </div>
+
+                  <div className="flex flex-wrap gap-2.5 md:max-w-[280px] md:justify-end">
+                    <Button onClick={downloadResume}>
+                      <Download className="h-4 w-4" />
+                      Download Resume
+                    </Button>
+                    <Button
+                      variant={isLight ? "ghost" : "secondary"}
+                      className={isLight ? "border border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100" : ""}
+                      asChild
+                    >
+                      <a href={profile.linkedin} target="_blank" rel="noreferrer">
+                        <Link2 className="h-4 w-4" />
+                        LinkedIn
+                      </a>
+                    </Button>
+                    <Button
+                      variant={isLight ? "ghost" : "secondary"}
+                      className={isLight ? "border border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100" : ""}
+                      asChild
+                    >
+                      <a href={profile.github} target="_blank" rel="noreferrer">
+                        <Globe className="h-4 w-4" />
+                        GitHub
+                      </a>
+                    </Button>
+                    <Button
+                      variant={isLight ? "ghost" : "secondary"}
+                      className={isLight ? "border border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100" : ""}
+                      onClick={shareProfile}
+                    >
+                      <Share2 className="h-4 w-4" />
+                      {shareLabel}
+                    </Button>
+                    <Button
+                      variant={isLight ? "ghost" : "secondary"}
+                      className={isLight ? "border border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100" : ""}
+                      onClick={() => persistTheme(isLight ? "dark" : "light")}
+                    >
+                      {isLight ? <MoonStar className="h-4 w-4" /> : <SunMedium className="h-4 w-4" />}
+                      Theme
+                    </Button>
+                  </div>
+                </div>
+
+                <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+                  {[
+                    { icon: MapPin, label: "Location", value: profile.location },
+                    { icon: Mail, label: "Email", value: profile.email, href: `mailto:${profile.email}` },
+                    { icon: Phone, label: "Phone", value: profile.phone, href: `tel:${profile.phone}` },
+                    { icon: Globe, label: "Website", value: profile.website, href: `https://${profile.website}` },
+                  ].map(({ icon: Icon, label, value, href }) => {
+                    const content = (
+                      <div className={`h-full rounded-[22px] border px-4 py-3.5 ${insetClass}`}>
+                        <div className="flex items-start gap-3">
+                          <Icon className="mt-0.5 h-4 w-4 shrink-0 text-[#d6a85f]" />
+                          <div className="min-w-0">
+                            <p className="text-[11px] uppercase tracking-[0.18em] text-[#d6a85f]">
+                              {label}
+                            </p>
+                            <p className={`mt-1 break-words text-sm leading-6 ${strongTextClass}`}>
+                              {value}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    );
+
+                    return href ? (
+                      <a key={label} href={href} className="block h-full">
+                        {content}
+                      </a>
+                    ) : (
+                      <div key={label}>{content}</div>
+                    );
+                  })}
                 </div>
               </div>
+            </header>
 
-              <div className="mt-5 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
-                {[
-                  { icon: Mail, text: profile.email },
-                  { icon: Phone, text: profile.phone },
-                  { icon: Globe, text: profile.website },
-                  { icon: MapPin, text: profile.location },
-                ].map(({ icon: Icon, text }) => (
-                  <div
-                    key={text}
-                    className={`flex items-center gap-3 rounded-2xl border px-3.5 py-3 text-sm ${softPanelClass}`}
-                  >
-                    <Icon className="h-4 w-4 shrink-0 text-[#b88746]" />
-                    <span className={`min-w-0 truncate ${strongTextClass}`}>{text}</span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-5 flex flex-wrap gap-2.5">
-                <Button onClick={downloadResume}>
-                  <Download className="h-4 w-4" />
-                  Download Resume
-                </Button>
-                <Button
-                  variant={isLight ? "ghost" : "secondary"}
-                  className={isLight ? "border border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100" : ""}
-                  asChild
-                >
-                  <a href={`mailto:${profile.email}`}>
-                    <Mail className="h-4 w-4" />
-                    Email
-                  </a>
-                </Button>
-                <Button
-                  variant={isLight ? "ghost" : "secondary"}
-                  className={isLight ? "border border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100" : ""}
-                  asChild
-                >
-                  <a href={profile.linkedin} target="_blank" rel="noreferrer">
-                    <Link2 className="h-4 w-4" />
-                    LinkedIn
-                  </a>
-                </Button>
-                <Button
-                  variant={isLight ? "ghost" : "secondary"}
-                  className={isLight ? "border border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100" : ""}
-                  asChild
-                >
-                  <a href={profile.github} target="_blank" rel="noreferrer">
-                    <Globe className="h-4 w-4" />
-                    GitHub
-                  </a>
-                </Button>
-                <Button
-                  variant={isLight ? "ghost" : "secondary"}
-                  className={isLight ? "border border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100" : ""}
-                  onClick={shareProfile}
-                >
-                  <Share2 className="h-4 w-4" />
-                  {shareLabel}
-                </Button>
-                <Button
-                  variant={isLight ? "ghost" : "secondary"}
-                  className={isLight ? "border border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100" : ""}
-                  onClick={() => persistTheme(isLight ? "dark" : "light")}
-                >
-                  {isLight ? (
-                    <MoonStar className="h-4 w-4" />
-                  ) : (
-                    <SunMedium className="h-4 w-4" />
-                  )}
-                  Theme
-                </Button>
-              </div>
-            </div>
-
-            <div className="grid gap-4 px-4 py-4 sm:px-6 sm:py-6 lg:grid-cols-[1.15fr_0.85fr]">
-              <div className="space-y-4">
+            <div className="grid gap-6 px-5 py-6 sm:px-7 sm:py-7 lg:grid-cols-[minmax(0,1.45fr)_minmax(280px,0.9fr)] lg:items-start lg:gap-8 lg:px-10 lg:py-10">
+              <div className="space-y-6">
                 <motion.section
                   {...cardMotion}
-                  className={`rounded-[26px] border p-4 sm:p-5 ${panelClass}`}
+                  className={`rounded-[30px] border p-5 sm:p-6 ${sectionClass}`}
                 >
                   <SectionHeading
                     icon={UserRound}
-                    eyebrow="Professional Summary"
-                    title="Mobile-first recruiter snapshot"
+                    title="Professional Summary"
+                    subtitle="A concise introduction to the value, style, and direction behind the work."
                     titleClass={headingClass}
+                    subtitleClass={subtitleClass}
                     iconShellClass={iconShellClass}
                   />
-                  <div className={`mt-5 space-y-3 text-sm leading-7 ${bodyClass}`}>
+                  <div className={`mt-6 space-y-4 text-[15px] leading-8 ${bodyClass}`}>
                     {profile.summary.map((paragraph) => (
                       <p key={paragraph}>{paragraph}</p>
                     ))}
@@ -357,129 +350,103 @@ export default function SlateResume() {
 
                 <motion.section
                   {...cardMotion}
-                  className={`rounded-[26px] border p-4 sm:p-5 ${panelClass}`}
+                  className={`rounded-[30px] border p-5 sm:p-6 ${sectionClass}`}
                 >
                   <SectionHeading
                     icon={BriefcaseBusiness}
-                    eyebrow="Experience"
-                    title="Career history"
+                    title="Experience"
+                    subtitle="A recruiter-friendly timeline with role, impact, and context."
                     titleClass={headingClass}
+                    subtitleClass={subtitleClass}
                     iconShellClass={iconShellClass}
                   />
-                  <div className="mt-5 space-y-4">
+                  <div className="mt-6 space-y-5">
                     {experience.map((item, index) => (
-                      <div key={`${item.role}-${item.company}`} className="relative pl-5">
-                        <div className={`absolute left-0 top-2 h-2.5 w-2.5 rounded-full bg-[#b88746]`} />
+                      <article
+                        key={`${item.role}-${item.company}`}
+                        className={`relative pl-6 ${index < experience.length - 1 ? "pb-5" : ""}`}
+                      >
+                        <span className="absolute left-0 top-2.5 h-2.5 w-2.5 rounded-full bg-[#d6a85f]" />
                         {index < experience.length - 1 ? (
-                          <div className={`absolute left-[4px] top-6 h-[calc(100%+0.7rem)] w-px ${timelineClass}`} />
+                          <span className={`absolute bottom-0 left-[4px] top-6 w-px ${timelineClass}`} />
                         ) : null}
-                        <button
-                          type="button"
-                          onClick={() =>
-                            setDialog({
-                              title: item.role,
-                              eyebrow: `${item.company} · ${item.duration}`,
-                              body: item.summary,
-                              bullets: item.achievements,
-                            })
-                          }
-                          className={`w-full rounded-[22px] border p-4 text-left transition hover:-translate-y-0.5 ${softPanelClass}`}
-                        >
-                          <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+
+                        <div className={`rounded-[24px] border px-4 py-4 ${insetClass}`}>
+                          <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
                             <div>
-                              <p className={`text-base font-semibold ${headingClass}`}>{item.role}</p>
-                              <p className={`mt-1 text-sm ${bodyClass}`}>{item.company}</p>
+                              <h3 className={`text-lg font-semibold ${headingClass}`}>{item.role}</h3>
+                              <p className={`mt-1 text-sm ${strongTextClass}`}>{item.company}</p>
                             </div>
-                            <span className={`inline-flex rounded-full border px-3 py-1 text-xs ${dateChipClass}`}>
-                              {item.duration}
-                            </span>
+                            <p className="text-sm text-[#d6a85f]">{item.duration}</p>
                           </div>
-                          <p className={`mt-3 text-sm leading-6 ${bodyClass}`}>{item.summary}</p>
-                          <ul className={`mt-3 space-y-2 text-sm leading-6 ${strongTextClass}`}>
-                            {item.achievements.slice(0, 2).map((achievement) => (
-                              <li key={achievement} className="flex gap-2">
-                                <span className="mt-[9px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#b88746]" />
+                          <p className={`mt-3 text-sm leading-7 ${bodyClass}`}>{item.summary}</p>
+                          <ul className={`mt-4 space-y-2 text-sm leading-7 ${strongTextClass}`}>
+                            {item.achievements.map((achievement) => (
+                              <li key={achievement} className="flex gap-3">
+                                <span className="mt-[11px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#d6a85f]" />
                                 <span>{achievement}</span>
                               </li>
                             ))}
                           </ul>
-                          <div className="mt-4 flex items-center gap-2 text-sm font-medium text-[#b88746]">
-                            View full details
-                            <ArrowUpRight className="h-4 w-4" />
-                          </div>
-                        </button>
-                      </div>
+                        </div>
+                      </article>
                     ))}
                   </div>
                 </motion.section>
 
                 <motion.section
                   {...cardMotion}
-                  className={`rounded-[26px] border p-4 sm:p-5 ${panelClass}`}
+                  className={`rounded-[30px] border p-5 sm:p-6 ${sectionClass}`}
                 >
                   <SectionHeading
-                    icon={BookOpen}
-                    eyebrow="Projects"
-                    title="Relevant work samples"
+                    icon={Link2}
+                    title="Projects"
+                    subtitle="Selected work samples with direct proof and cleaner hierarchy."
                     titleClass={headingClass}
+                    subtitleClass={subtitleClass}
                     iconShellClass={iconShellClass}
                   />
-                  <div className="mt-5 grid gap-4">
+                  <div className="mt-6 grid gap-4 xl:grid-cols-2">
                     {projects.map((project) => (
                       <article
                         key={project.title}
-                        className={`overflow-hidden rounded-[24px] border ${softPanelClass}`}
+                        className={`overflow-hidden rounded-[26px] border ${insetClass}`}
                       >
-                        <div className="border-b border-black/6">
+                        <div className={`border-b ${dividerClass}`}>
                           <Image
                             src={project.image}
                             alt={`${project.title} preview`}
-                            width={800}
-                            height={520}
-                            className="h-auto w-full object-cover"
+                            width={960}
+                            height={640}
+                            className="aspect-[16/10] h-auto w-full object-cover"
                             unoptimized
                           />
                         </div>
                         <div className="p-4">
-                          <div className="flex flex-wrap gap-2">
+                          <h3 className={`text-lg font-semibold ${headingClass}`}>{project.title}</h3>
+                          <p className={`mt-2 text-sm leading-7 ${bodyClass}`}>{project.description}</p>
+
+                          <div className="mt-4 flex flex-wrap gap-2">
                             {project.stack.map((item) => (
                               <span
                                 key={item}
-                                className={`rounded-full border px-2.5 py-1 text-[11px] uppercase tracking-[0.18em] ${pillClass}`}
+                                className={`rounded-full border px-3 py-1.5 text-xs ${chipClass}`}
                               >
                                 {item}
                               </span>
                             ))}
                           </div>
-                          <h3 className={`mt-4 text-lg font-semibold ${headingClass}`}>
-                            {project.title}
-                          </h3>
-                          <p className={`mt-2 text-sm leading-6 ${bodyClass}`}>
-                            {project.description}
-                          </p>
-                          <ul className={`mt-3 space-y-2 text-sm leading-6 ${strongTextClass}`}>
+
+                          <ul className={`mt-4 space-y-2 text-sm leading-7 ${strongTextClass}`}>
                             {project.highlights.slice(0, 2).map((highlight) => (
-                              <li key={highlight} className="flex gap-2">
-                                <span className="mt-[9px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#b88746]" />
+                              <li key={highlight} className="flex gap-3">
+                                <span className="mt-[11px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#d6a85f]" />
                                 <span>{highlight}</span>
                               </li>
                             ))}
                           </ul>
-                          <div className="mt-4 flex flex-wrap gap-2">
-                            <Button
-                              variant={isLight ? "ghost" : "secondary"}
-                              className={isLight ? "border border-slate-200 bg-slate-50 px-3 py-2 text-xs text-slate-700 hover:bg-slate-100" : "px-3 py-2 text-xs"}
-                              onClick={() =>
-                                setDialog({
-                                  title: project.title,
-                                  eyebrow: project.stack.join(" · "),
-                                  body: project.description,
-                                  bullets: project.highlights,
-                                })
-                              }
-                            >
-                              Details
-                            </Button>
+
+                          <div className="mt-5 flex flex-wrap gap-2.5">
                             <Button
                               variant={isLight ? "ghost" : "secondary"}
                               className={isLight ? "border border-slate-200 bg-slate-50 px-3 py-2 text-xs text-slate-700 hover:bg-slate-100" : "px-3 py-2 text-xs"}
@@ -506,206 +473,216 @@ export default function SlateResume() {
                     ))}
                   </div>
                 </motion.section>
-              </div>
-
-              <div className="space-y-4">
-                <motion.section
-                  {...cardMotion}
-                  className={`rounded-[26px] border p-4 sm:p-5 ${panelClass}`}
-                >
-                  <SectionHeading
-                    icon={Sparkles}
-                    eyebrow="ATS Snapshot"
-                    title="What recruiters notice first"
-                    titleClass={headingClass}
-                    iconShellClass={iconShellClass}
-                  />
-                  <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
-                    {recruiterSnapshot.map((item) => (
-                      <div
-                        key={item.label}
-                        className={`rounded-[22px] border p-4 ${softPanelClass}`}
-                      >
-                        <p className="text-2xl font-semibold text-[#b88746]">{item.value}</p>
-                        <p className={`mt-1 text-sm ${bodyClass}`}>{item.label}</p>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="mt-4 space-y-3">
-                    {[
-                      "Clear fit for creator-led content, education, and design-support roles",
-                      "Strong communication, presentation structure, and audience retention instincts",
-                      "Comfortable translating technical ideas into easy-to-scan experiences",
-                    ].map((point) => (
-                      <div
-                        key={point}
-                        className={`rounded-2xl border p-4 text-sm leading-6 ${softPanelClass} ${strongTextClass}`}
-                      >
-                        {point}
-                      </div>
-                    ))}
-                  </div>
-                </motion.section>
 
                 <motion.section
                   {...cardMotion}
-                  className={`rounded-[26px] border p-4 sm:p-5 ${panelClass}`}
-                >
-                  <SectionHeading
-                    icon={Sparkles}
-                    eyebrow="Core Skills"
-                    title="Keywords and competencies"
-                    titleClass={headingClass}
-                    iconShellClass={iconShellClass}
-                  />
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {skills.map((skill) => (
-                      <span
-                        key={skill}
-                        className={`rounded-full border px-3 py-2 text-xs ${pillClass}`}
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </motion.section>
-
-                <motion.section
-                  {...cardMotion}
-                  className={`rounded-[26px] border p-4 sm:p-5 ${panelClass}`}
-                >
-                  <SectionHeading
-                    icon={GraduationCap}
-                    eyebrow="Education"
-                    title="Academic foundation"
-                    titleClass={headingClass}
-                    iconShellClass={iconShellClass}
-                  />
-                  <div className={`mt-5 rounded-[22px] border p-4 ${softPanelClass}`}>
-                    <p className={`text-base font-semibold ${headingClass}`}>{education.degree}</p>
-                    <p className="mt-1 text-sm font-medium text-[#b88746]">{education.program}</p>
-                    <p className={`mt-3 text-sm leading-6 ${bodyClass}`}>{education.institution}</p>
-                    <p className={`mt-2 text-sm leading-6 ${bodyClass}`}>{education.note}</p>
-                  </div>
-                </motion.section>
-
-                <motion.section
-                  {...cardMotion}
-                  className={`rounded-[26px] border p-4 sm:p-5 ${panelClass}`}
+                  className={`rounded-[30px] border p-5 sm:p-6 ${sectionClass}`}
                 >
                   <SectionHeading
                     icon={Award}
-                    eyebrow="Certifications"
-                    title="Proof of learning"
+                    title="Certifications"
+                    subtitle="Resume-style credentials kept concise and easy to scan."
                     titleClass={headingClass}
+                    subtitleClass={subtitleClass}
                     iconShellClass={iconShellClass}
                   />
-                  <div className="mt-5 space-y-3">
+                  <div className="mt-6 space-y-3">
                     {certifications.map((item) => (
                       <div
-                        key={item}
-                        className={`rounded-2xl border p-4 text-sm ${softPanelClass} ${strongTextClass}`}
+                        key={item.name}
+                        className={`rounded-[22px] border px-4 py-3.5 ${insetClass}`}
                       >
-                        {item}
-                      </div>
-                    ))}
-                  </div>
-                </motion.section>
-
-                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
-                  <motion.section
-                    {...cardMotion}
-                    className={`rounded-[26px] border p-4 sm:p-5 ${panelClass}`}
-                  >
-                    <SectionHeading
-                      icon={Languages}
-                      eyebrow="Languages"
-                      title="Communication range"
-                      titleClass={headingClass}
-                      iconShellClass={iconShellClass}
-                    />
-                    <div className="mt-5 space-y-3">
-                      {languages.map((item) => (
-                        <div
-                          key={item}
-                          className={`rounded-2xl border p-4 text-sm ${softPanelClass} ${strongTextClass}`}
-                        >
-                          {item}
+                        <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+                          <p className={`text-sm font-semibold ${headingClass}`}>{item.name}</p>
+                          <p className="text-sm text-[#d6a85f]">{item.year}</p>
                         </div>
-                      ))}
-                    </div>
-                  </motion.section>
-
-                  <motion.section
-                    {...cardMotion}
-                    className={`rounded-[26px] border p-4 sm:p-5 ${panelClass}`}
-                  >
-                    <SectionHeading
-                      icon={Trophy}
-                      eyebrow="Achievements"
-                      title="Career highlights"
-                      titleClass={headingClass}
-                      iconShellClass={iconShellClass}
-                    />
-                    <div className="mt-5 space-y-3">
-                      {achievements.map((item) => (
-                        <div
-                          key={item}
-                          className={`rounded-2xl border p-4 text-sm leading-6 ${softPanelClass} ${strongTextClass}`}
-                        >
-                          {item}
-                        </div>
-                      ))}
-                    </div>
-                  </motion.section>
-                </div>
-
-                <motion.section
-                  {...cardMotion}
-                  className={`rounded-[26px] border p-4 sm:p-5 ${panelClass}`}
-                >
-                  <SectionHeading
-                    icon={Mail}
-                    eyebrow="References"
-                    title="Available on request"
-                    titleClass={headingClass}
-                    iconShellClass={iconShellClass}
-                  />
-                  <div className="mt-5 space-y-4">
-                    {references.map((reference) => (
-                      <div
-                        key={reference.email}
-                        className={`rounded-[22px] border p-4 ${softPanelClass}`}
-                      >
-                        <p className={`text-base font-semibold ${headingClass}`}>{reference.name}</p>
-                        <p className={`mt-1 text-sm ${bodyClass}`}>
-                          {reference.role} · {reference.company}
-                        </p>
-                        <a
-                          href={`mailto:${reference.email}`}
-                          className="mt-3 inline-flex items-center gap-2 text-sm font-medium text-[#b88746]"
-                        >
-                          {reference.email}
-                          <ArrowUpRight className="h-4 w-4" />
-                        </a>
+                        <p className={`mt-1 text-sm ${bodyClass}`}>{item.issuer}</p>
                       </div>
                     ))}
                   </div>
                 </motion.section>
               </div>
+
+              <motion.aside {...cardMotion} className="lg:sticky lg:top-6 lg:self-stretch">
+                <div
+                  className={`rounded-[30px] border p-5 sm:p-6 ${sectionClass} lg:flex lg:min-h-full lg:flex-col`}
+                >
+                  <section>
+                    <SectionHeading
+                      icon={Sparkles}
+                      title="ATS Snapshot"
+                      subtitle="High-priority signals recruiters usually scan first."
+                      titleClass={headingClass}
+                      subtitleClass={subtitleClass}
+                      iconShellClass={iconShellClass}
+                    />
+                    <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
+                      {recruiterSnapshot.map((item) => (
+                        <div key={item.label} className={`rounded-[24px] border px-4 py-4 ${statClass}`}>
+                          <p className="text-[11px] uppercase tracking-[0.18em] text-[#d6a85f]">
+                            {item.label}
+                          </p>
+                          <p className={`mt-2 text-2xl font-semibold tracking-[-0.04em] ${headingClass}`}>
+                            {item.value}
+                          </p>
+                          <p className={`mt-2 text-sm leading-6 ${bodyClass}`}>{item.detail}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </section>
+
+                  <section className="mt-6">
+                    <SectionHeading
+                      icon={Sparkles}
+                      title="Core Skills"
+                      subtitle="Organized for fast screening and keyword matching."
+                      titleClass={headingClass}
+                      subtitleClass={subtitleClass}
+                      iconShellClass={iconShellClass}
+                    />
+                    <div className="mt-6 space-y-4">
+                      {skills.map((group) => (
+                        <div key={group.category} className={`rounded-[24px] border p-4 ${insetClass}`}>
+                          <p className="text-sm font-semibold text-[#d6a85f]">{group.category}</p>
+                          <div className="mt-3 flex flex-wrap gap-2">
+                            {group.items.map((item) => (
+                              <span
+                                key={item}
+                                className={`rounded-full border px-3 py-1.5 text-xs ${chipClass}`}
+                              >
+                                {item}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </section>
+
+                  <section className="mt-6">
+                    <SectionHeading
+                      icon={GraduationCap}
+                      title="Education"
+                      subtitle="Academic background presented with resume-style brevity."
+                      titleClass={headingClass}
+                      subtitleClass={subtitleClass}
+                      iconShellClass={iconShellClass}
+                    />
+                    <div className={`mt-6 rounded-[24px] border px-4 py-4 ${insetClass}`}>
+                      <h3 className={`text-lg font-semibold ${headingClass}`}>{education.degree}</h3>
+                      <div className="mt-2 flex flex-col gap-1 text-sm sm:flex-row sm:items-center sm:justify-between">
+                        <p className={strongTextClass}>{education.institution}</p>
+                        <p className="text-[#d6a85f]">{education.duration}</p>
+                      </div>
+                      <p className={`mt-3 text-sm leading-7 ${bodyClass}`}>{education.note}</p>
+                    </div>
+                  </section>
+
+                  <section className="mt-6">
+                    <SectionHeading
+                      icon={Trophy}
+                      title="Achievements"
+                      subtitle="Key wins that reinforce credibility."
+                      titleClass={headingClass}
+                      subtitleClass={subtitleClass}
+                      iconShellClass={iconShellClass}
+                    />
+                    <div className="mt-6 space-y-3">
+                      {achievements.map((item) => (
+                        <div key={item} className={`rounded-[22px] border px-4 py-3.5 ${insetClass}`}>
+                          <p className={`text-sm leading-7 ${strongTextClass}`}>{item}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </section>
+
+                  <section className="mt-6">
+                    <SectionHeading
+                      icon={Languages}
+                      title="Languages"
+                      subtitle="Communication range for global and local collaboration."
+                      titleClass={headingClass}
+                      subtitleClass={subtitleClass}
+                      iconShellClass={iconShellClass}
+                    />
+                    <div className="mt-6 space-y-3">
+                      {languages.map((item) => (
+                        <div
+                          key={item.name}
+                          className={`rounded-[22px] border px-4 py-3.5 ${insetClass}`}
+                        >
+                          <div className="flex items-center justify-between gap-4">
+                            <p className={`text-sm font-semibold ${headingClass}`}>{item.name}</p>
+                            <p className={`text-right text-sm ${bodyClass}`}>{item.level}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </section>
+
+                  <section className="mt-6">
+                    <SectionHeading
+                      icon={Lightbulb}
+                      title="Working Style"
+                      subtitle="A quick signal of how this candidate approaches content and collaboration."
+                      titleClass={headingClass}
+                      subtitleClass={subtitleClass}
+                      iconShellClass={iconShellClass}
+                    />
+                    <div className={`mt-6 rounded-[24px] border px-4 py-4 ${insetClass}`}>
+                      <p className={`text-sm leading-7 ${strongTextClass}`}>
+                        Clear communication, polished execution, and mobile-first thinking across content,
+                        design, and educational products.
+                      </p>
+                      <div className="mt-4 flex flex-wrap gap-2">
+                        {["Structured", "Collaborative", "Audience-first"].map((item) => (
+                          <span
+                            key={item}
+                            className={`rounded-full border px-3 py-1.5 text-xs ${chipClass}`}
+                          >
+                            {item}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </section>
+
+                  <section className="mt-6">
+                    <SectionHeading
+                      icon={Mail}
+                      title="References"
+                      subtitle="Compact supporting contacts placed at the end of the sidebar."
+                      titleClass={headingClass}
+                      subtitleClass={subtitleClass}
+                      iconShellClass={iconShellClass}
+                    />
+                    <div className="mt-6 space-y-3">
+                      {references.map((reference) => (
+                        <div
+                          key={reference.contact}
+                          className={`rounded-[22px] border px-4 py-3.5 ${insetClass}`}
+                        >
+                          <p className={`text-sm font-semibold ${headingClass}`}>{reference.name}</p>
+                          <p className={`mt-1 text-sm ${bodyClass}`}>
+                            {reference.role} - {reference.company}
+                          </p>
+                          <a
+                            href={`mailto:${reference.contact}`}
+                            className="mt-3 inline-flex items-center gap-2 break-all text-sm text-[#d6a85f]"
+                          >
+                            {reference.contact}
+                            <ExternalLink className="h-3.5 w-3.5 shrink-0" />
+                          </a>
+                        </div>
+                      ))}
+                    </div>
+                  </section>
+                </div>
+              </motion.aside>
             </div>
-          </motion.section>
+          </motion.div>
         </div>
       </div>
-
-      <DetailDialog
-        open={dialog !== null}
-        title={dialog?.title ?? ""}
-        eyebrow={dialog?.eyebrow ?? ""}
-        body={dialog?.body ?? ""}
-        bullets={dialog?.bullets ?? []}
-        onClose={() => setDialog(null)}
-      />
     </main>
   );
 }
