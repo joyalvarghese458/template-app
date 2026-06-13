@@ -37,6 +37,7 @@ export type SerenityData = {
   philosophy: string;
   bio: string;
   profileImage: string;
+  aboutImage: string;
   students: number;
   certifications: string[];
   specialties: string[];
@@ -66,7 +67,10 @@ export const data: SerenityData = {
   philosophy:
     "I believe the mat is a mirror. Every practice reveals something true — about how we move, how we breathe, and who we are becoming.",
   bio: "I found yoga at a crossroads — when life felt loud and my body felt like a stranger. That first practice in a small studio in Rishikesh didn't just stretch my muscles; it gave me back a sense of home inside myself. Fifteen years later, that feeling is exactly what I try to pass on to every student I meet.\n\nI trained in India, deepened my practice in Bali, and have since taught thousands of students across four continents. My classes are warm, unhurried, and honest. I don't teach yoga as performance — I teach it as a conversation between you and your breath.\n\nWhen I'm not on the mat, you'll find me wandering rice paddies, reading philosophy, or attempting to grow things in my garden.",
-  profileImage: "https://placehold.co/520x620/c8d8c8/4a6a4a?text=Aria",
+  profileImage:
+    "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=520&h=650&fit=crop&q=80&auto=format",
+  aboutImage:
+    "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=520&h=680&fit=crop&q=80&auto=format",
   students: 2400,
   certifications: [
     "E-RYT 500 — Yoga Alliance",
@@ -102,7 +106,7 @@ export const data: SerenityData = {
       icon: "moon",
       title: "Yin Yoga",
       description:
-        "Slow, quiet, and profound. We hold space — long holds that soften deep tissue and invite genuine stillness.",
+        "Slow, quiet, and profound. Long holds that soften deep tissue and invite genuine stillness into the body.",
     },
     {
       icon: "heart",
@@ -158,7 +162,7 @@ export const data: SerenityData = {
       year: "2023",
       title: "Wellness Educator of the Year",
       description:
-        "Recognised by the Global Wellness Institute. Honestly, the messages from students mean far more — but it was a beautiful moment to share.",
+        "Recognised by the Global Wellness Institute. The student messages mean far more — but it was a beautiful moment to share.",
     },
   ],
   retreats: [
@@ -174,7 +178,7 @@ export const data: SerenityData = {
       location: "Manali, India",
       duration: "7 Days",
       overview:
-        "Altitude practice in the mountains. No WiFi, no agenda. Just traditional Hatha, pranayama at dawn, Ayurvedic meals, and the quietest nights of your life.",
+        "Altitude practice in the mountains. No WiFi, no agenda. Traditional Hatha, pranayama at dawn, Ayurvedic meals, and the quietest nights of your life.",
     },
     {
       name: "Pacific Reset",
@@ -206,24 +210,24 @@ export const data: SerenityData = {
     },
     {
       quote:
-        "I've practiced with many teachers over twenty years. Aria combines depth of knowledge with a warmth that is simply extraordinary. She sees you.",
+        "I've practiced with many teachers over twenty years. Aria combines depth of knowledge with a warmth that is simply extraordinary. She truly sees you.",
       name: "Sunita Rao",
       role: "Senior Practitioner, Mumbai",
     },
     {
       quote:
-        "My private sessions with Aria helped me heal from a spinal injury that three physiotherapists could not resolve. I owe her more than I can say.",
+        "My private sessions with Aria helped me heal from a spinal injury that three physiotherapists couldn't resolve. I owe her more than I can say.",
       name: "James Whitfield",
       role: "Private Client, London",
     },
   ],
   gallery: [
-    "https://placehold.co/600x500/c8d8c8/5a7a5a?text=Morning+Practice",
-    "https://placehold.co/600x720/d8c8b0/7a6040?text=Bali+Retreat",
-    "https://placehold.co/600x480/c8ccd8/5a5e7a?text=Rice+Fields",
-    "https://placehold.co/600x400/d8c8d0/7a5a68?text=Studio",
-    "https://placehold.co/600x560/c8d4c0/5a6e52?text=Meditation",
-    "https://placehold.co/600x620/d4d0c8/6e6a5a?text=Community",
+    "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&h=500&fit=crop&q=80&auto=format",
+    "https://images.unsplash.com/photo-1545389336-cf090694435e?w=600&h=740&fit=crop&q=80&auto=format",
+    "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&h=480&fit=crop&q=80&auto=format",
+    "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&h=400&fit=crop&q=80&auto=format",
+    "https://images.unsplash.com/photo-1474418397713-7ede21d49118?w=600&h=580&fit=crop&q=80&auto=format",
+    "https://images.unsplash.com/photo-1529693662653-9d480530a697?w=600&h=640&fit=crop&q=80&auto=format",
   ],
   resources: [
     {
