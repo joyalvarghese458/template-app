@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import {
   AUDIENCES,
@@ -11,8 +11,6 @@ import {
   TIER_COUNTS,
   SPECIALTY_COUNTS,
   getAllSpecialties,
-  filterTemplates,
-  parseQuery,
   type AudienceId,
   type SectionId,
   type TierId,
@@ -102,24 +100,6 @@ export default function FilterDrawer({
     onClose();
   }, [sections, audiences, specialties, tiers, sp, router, pathname, onClose]);
 
-  const clearAll = () => {
-    setSections(new Set());
-    setAudiences(new Set());
-    setSpecialties(new Set());
-    setTiers(new Set());
-  };
-
-  // Live preview count
-  const previewCount = useMemo(() => {
-    return filterTemplates({
-      sections: [...sections],
-      audiences: [...audiences],
-      specialties: [...specialties],
-      tiers: [...tiers],
-      q: parseQuery(sp.get("q") ?? undefined),
-    }).length;
-  }, [sections, audiences, specialties, tiers, sp]);
-
   const totalActive = sections.size + audiences.size + specialties.size + tiers.size;
   const visibleSpecialties = showAllSpecialties
     ? ALL_SPECIALTIES
@@ -141,7 +121,7 @@ export default function FilterDrawer({
         role="dialog"
         aria-modal="true"
         aria-label="Filter templates"
-        className={`fixed top-0 left-0 bottom-0 z-50 w-full max-w-sm bg-canvas-bg shadow-2xl flex flex-col transition-transform duration-300 ease-out ${
+        className={`fixed top-0 left-0 z-50 h-screen w-full max-w-sm bg-canvas-bg shadow-2xl flex flex-col overflow-hidden transition-transform duration-300 ease-out ${
           open ? "translate-x-0" : "-translate-x-full"
         }`}
       >
@@ -170,8 +150,7 @@ export default function FilterDrawer({
         </header>
 
         {/* Body — scrollable */}
-        <div className="relative flex-1 min-h-0">
-        <div className="absolute inset-0 overflow-y-auto px-5 sm:px-6 py-2 divide-y divide-ink/10">
+        <div className="overflow-y-auto px-5 sm:px-6 py-2 divide-y divide-ink/10" style={{ flex: "1 1 0", minHeight: 0 }}>
 
           {/* Section */}
           <FilterSection
@@ -267,27 +246,22 @@ export default function FilterDrawer({
             ))}
           </FilterSection>
         </div>
-        </div>
 
         {/* Footer */}
-        <footer className="flex items-center gap-3 px-5 sm:px-6 py-4 border-t border-ink/10 shrink-0 bg-canvas-bg">
+        <footer className="flex items-center gap-3 px-5 sm:px-6 py-4 border-t border-ink/10 bg-canvas-bg" style={{ flexShrink: 0 }}>
           <button
             type="button"
-            onClick={clearAll}
-            disabled={totalActive === 0}
-            className="flex-1 px-4 py-3 text-sm font-semibold text-ink bg-canvas-bg border border-ink/20 hover:border-ink/40 rounded-full transition disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:border-ink/20"
+            onClick={onClose}
+            className="flex-1 px-4 py-3 text-sm font-semibold text-ink bg-canvas-bg border border-ink/20 hover:border-ink/40 rounded-full transition"
           >
-            Clear all
+            Cancel
           </button>
           <button
             type="button"
             onClick={apply}
             className="flex-1 px-4 py-3 text-sm font-semibold text-canvas-bg bg-brand hover:bg-brand/90 rounded-full shadow-lg shadow-brand/30 transition-all duration-150 active:scale-95"
           >
-            Show {previewCount}{" "}
-            <span className="font-normal opacity-90">
-              {previewCount === 1 ? "result" : "results"}
-            </span>
+            Apply
           </button>
         </footer>
       </aside>
