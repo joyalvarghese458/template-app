@@ -238,9 +238,9 @@ export const TEMPLATES: Template[] = [
     audiences: ["developers"], specialties: ["full-stack", "engineering", "saas"]
   },
   {
-    id: "cp3", title: "Forge", tag: "Career Portfolio · Modern", tier: "pro",
+    id: "cp3", slug: "serenity", title: "Serenity", tag: "Wellness · Yoga & Mindfulness", tier: "pro",
     section: "career-portfolio",
-    audiences: ["developers", "designers"], specialties: ["frontend", "ui-ux", "full-stack"]
+    audiences: ["creators"], specialties: ["wellness", "yoga", "mindfulness"]
   },
   {
     id: "cp4", title: "Elevate", tag: "Career Portfolio · Premium", tier: "pro",
