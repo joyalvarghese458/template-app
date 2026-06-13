@@ -170,7 +170,6 @@ export default function FilterShell() {
         currentSections={sections}
         currentAudiences={audiences}
         currentSpecialties={specialties}
-        currentTiers={tiers}
       />
     </>
   );

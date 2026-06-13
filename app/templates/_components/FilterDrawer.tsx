@@ -5,15 +5,12 @@ import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import {
   AUDIENCES,
   SECTIONS,
-  TIERS,
   AUDIENCE_COUNTS,
   SECTION_COUNTS,
-  TIER_COUNTS,
   SPECIALTY_COUNTS,
   getAllSpecialties,
   type AudienceId,
   type SectionId,
-  type TierId,
 } from "@/lib/templates";
 
 const ALL_SPECIALTIES = getAllSpecialties();
@@ -25,7 +22,6 @@ type Props = {
   currentSections: SectionId[];
   currentAudiences: AudienceId[];
   currentSpecialties: string[];
-  currentTiers: TierId[];
 };
 
 export default function FilterDrawer({
@@ -34,7 +30,6 @@ export default function FilterDrawer({
   currentSections,
   currentAudiences,
   currentSpecialties,
-  currentTiers,
 }: Props) {
   const router = useRouter();
   const pathname = usePathname();
@@ -44,7 +39,6 @@ export default function FilterDrawer({
   const [sections, setSections] = useState<Set<SectionId>>(new Set(currentSections));
   const [audiences, setAudiences] = useState<Set<AudienceId>>(new Set(currentAudiences));
   const [specialties, setSpecialties] = useState<Set<string>>(new Set(currentSpecialties));
-  const [tiers, setTiers] = useState<Set<TierId>>(new Set(currentTiers));
 
   // Resync from URL each time the drawer opens
   useEffect(() => {
@@ -52,7 +46,6 @@ export default function FilterDrawer({
     setSections(new Set(currentSections));
     setAudiences(new Set(currentAudiences));
     setSpecialties(new Set(currentSpecialties));
-    setTiers(new Set(currentTiers));
   }, [open]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // ── Section collapse state ────────────────────────────────────────
@@ -60,7 +53,6 @@ export default function FilterDrawer({
     section: true,
     audience: false,
     specialty: false,
-    tier: true,
   });
   const [showAllSpecialties, setShowAllSpecialties] = useState(false);
 
@@ -94,13 +86,13 @@ export default function FilterDrawer({
     sections.size ? next.set("section", [...sections].join(",")) : next.delete("section");
     audiences.size ? next.set("audience", [...audiences].join(",")) : next.delete("audience");
     specialties.size ? next.set("specialty", [...specialties].join(",")) : next.delete("specialty");
-    tiers.size ? next.set("tier", [...tiers].join(",")) : next.delete("tier");
+    next.delete("tier");
     const qs = next.toString();
     router.push(qs ? `${pathname}?${qs}` : pathname, { scroll: false });
     onClose();
-  }, [sections, audiences, specialties, tiers, sp, router, pathname, onClose]);
+  }, [sections, audiences, specialties, sp, router, pathname, onClose]);
 
-  const totalActive = sections.size + audiences.size + specialties.size + tiers.size;
+  const totalActive = sections.size + audiences.size + specialties.size;
   const visibleSpecialties = showAllSpecialties
     ? ALL_SPECIALTIES
     : ALL_SPECIALTIES.slice(0, SPECIALTY_PREVIEW_COUNT);
@@ -227,24 +219,6 @@ export default function FilterDrawer({
             )}
           </FilterSection>
 
-          {/* Tier */}
-          <FilterSection
-            title="Tier"
-            selectedCount={tiers.size}
-            open={openSections.tier}
-            onToggle={() => setOpenSections((s) => ({ ...s, tier: !s.tier }))}
-          >
-            {TIERS.map((t) => (
-              <CheckboxRow
-                key={t.id}
-                checked={tiers.has(t.id)}
-                onChange={() => toggle(tiers, t.id, setTiers)}
-                label={t.label}
-                count={TIER_COUNTS[t.id]}
-                suffix={`AED ${t.price}`}
-              />
-            ))}
-          </FilterSection>
         </div>
 
         {/* Footer */}
