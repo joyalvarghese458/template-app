@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { EXPERIENCE } from "../_data/portfolio";
-import { fadeUp, stagger, viewport } from "../_utils/motion";
+import { fadeUp, viewport } from "../_utils/motion";
 import styles from "../theme.module.css";
 
 const COLOR_MAP = {

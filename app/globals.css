@@ -128,6 +128,15 @@
   animation: pageEnter 0.4s cubic-bezier(0.4, 0, 0.2, 1) both;
 }
 
+@keyframes pageEnterNoTransform {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.page-enter-no-transform {
+  animation: pageEnterNoTransform 0.4s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
 /* ── Blog article prose ──────────────────────────────────────────── */
 .prose-article {
   color: var(--color-ink);

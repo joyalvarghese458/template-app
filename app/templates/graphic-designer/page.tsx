@@ -13,7 +13,7 @@
   ────────────────────────────────────────────────────────────────
 */
 
-import { useLenis }       from "./_hooks/useLenis";
+import { useEffect }      from "react";
 import GrainOverlay       from "./_components/GrainOverlay";
 import ScrollProgress     from "./_components/ScrollProgress";
 import CustomCursor       from "./_components/CustomCursor";
@@ -32,7 +32,23 @@ import Footer             from "./_components/Footer";
 import styles             from "./theme.module.css";
 
 export default function GraphicDesignerPortfolio() {
-  useLenis();
+  useEffect(() => {
+    const html = document.documentElement;
+    const body = document.body;
+    const previousHtmlOverflowX = html.style.overflowX;
+    const previousBodyOverflowX = body.style.overflowX;
+    const previousScrollBehavior = html.style.scrollBehavior;
+
+    html.style.overflowX = "hidden";
+    body.style.overflowX = "hidden";
+    html.style.scrollBehavior = "auto";
+
+    return () => {
+      html.style.overflowX = previousHtmlOverflowX;
+      body.style.overflowX = previousBodyOverflowX;
+      html.style.scrollBehavior = previousScrollBehavior;
+    };
+  }, []);
 
   return (
     <div className={styles.page}>

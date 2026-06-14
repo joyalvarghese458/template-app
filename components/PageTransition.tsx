@@ -8,9 +8,13 @@ export default function PageTransition({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
+  const stickySafeRoute =
+    pathname === "/templates/onefolio" ||
+    pathname === "/templates/graphic-designer";
+  const className = stickySafeRoute ? "page-enter page-enter-no-transform" : "page-enter";
 
   return (
-    <div key={pathname} className="page-enter">
+    <div key={pathname} className={className}>
       {children}
     </div>
   );
