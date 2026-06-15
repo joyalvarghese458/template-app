@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import {
   TIER_BY_ID,
@@ -12,6 +13,8 @@ import {
 export default function TemplateCard({ template }: { template: Template }) {
   const tier = TIER_BY_ID[template.tier];
   const href = templateHref(template);
+  const fallbackSrc = templateImage(template);
+  const [imgSrc, setImgSrc] = useState(`/previews/${template.slug ?? template.id}.jpg`);
   const openTemplatePreview = () => {
     window.open(href, "_blank", "noopener,noreferrer");
   };
@@ -40,11 +43,12 @@ export default function TemplateCard({ template }: { template: Template }) {
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={templateImage(template)}
+          src={imgSrc}
+          onError={() => setImgSrc(fallbackSrc)}
           alt={`${template.title} portfolio preview`}
           loading="lazy"
           draggable={false}
-          className={`absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03] bg-gradient-to-br ${tier.accent}`}
+          className={`absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03] bg-gradient-to-br ${tier.accent}`}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent pointer-events-none" />
         <span
