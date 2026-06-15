@@ -42,3 +42,4 @@ next-env.d.ts
 
 # generated preview screenshots
 public/previews/*.jpg
+public/previews/*.webm

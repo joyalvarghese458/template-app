@@ -13,8 +13,10 @@ import {
 export default function TemplateCard({ template }: { template: Template }) {
   const tier = TIER_BY_ID[template.tier];
   const href = templateHref(template);
+  const slug = template.slug ?? template.id;
   const fallbackSrc = templateImage(template);
-  const [imgSrc, setImgSrc] = useState(`/previews/${template.slug ?? template.id}.jpg`);
+  const [mode, setMode] = useState<"video" | "img">("video");
+  const [imgSrc, setImgSrc] = useState(`/previews/${slug}.jpg`);
   const openTemplatePreview = () => {
     window.open(href, "_blank", "noopener,noreferrer");
   };
@@ -41,15 +43,29 @@ export default function TemplateCard({ template }: { template: Template }) {
         className="relative block aspect-[3/4] overflow-hidden bg-ink/5"
         aria-label={`View ${template.title} template`}
       >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={imgSrc}
-          onError={() => setImgSrc(fallbackSrc)}
-          alt={`${template.title} portfolio preview`}
-          loading="lazy"
-          draggable={false}
-          className={`absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03] bg-gradient-to-br ${tier.accent}`}
-        />
+        {mode === "video" ? (
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            poster={`/previews/${slug}.jpg`}
+            onError={() => setMode("img")}
+            className={`absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03] bg-gradient-to-br ${tier.accent}`}
+          >
+            <source src={`/previews/${slug}.webm`} type="video/webm" />
+          </video>
+        ) : (
+          /* eslint-disable-next-line @next/next/no-img-element */
+          <img
+            src={imgSrc}
+            onError={() => setImgSrc(fallbackSrc)}
+            alt={`${template.title} portfolio preview`}
+            loading="lazy"
+            draggable={false}
+            className={`absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03] bg-gradient-to-br ${tier.accent}`}
+          />
+        )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent pointer-events-none" />
         <span
           className={`absolute top-3 left-3 inline-flex items-center px-2.5 py-1 text-[10px] font-semibold uppercase tracking-widest rounded-full border backdrop-blur-sm ${tier.badgeColor}`}
