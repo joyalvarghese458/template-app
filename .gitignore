@@ -40,6 +40,4 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# generated preview screenshots
-public/previews/*.jpg
-public/previews/*.webm
+# preview screenshots are committed so they deploy to Vercel as static assets
