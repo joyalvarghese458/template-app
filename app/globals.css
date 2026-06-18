@@ -217,6 +217,14 @@
 :root {
   --navbar-height: 4rem;
   --hero-glow: rgba(0, 119, 181, 0.18);
+  --ev-bg: #0a0a0a;
+  --ev-surface: #111111;
+  --ev-surface-2: #1a1a1a;
+  --ev-accent: #e8ff47;
+  --ev-accent-dim: #b8cc2e;
+  --ev-text: #f5f5f0;
+  --ev-muted: #888880;
+  --ev-border: rgba(255, 255, 255, 0.07);
   color-scheme: light;
 }
 

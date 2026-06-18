@@ -1,23 +1,21 @@
 import type { Metadata } from "next";
-import {
-  Inter,
-  Plus_Jakarta_Sans,
-  Instrument_Serif,
-  Space_Grotesk,
-  Manrope,
-  Fraunces,
-} from "next/font/google";
 
 export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-const inter = Inter({ subsets: ["latin"], weight: ["300", "400", "500", "700", "800", "900"] });
-const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], weight: ["300", "400", "500", "700", "800"] });
-const instrument = Instrument_Serif({ subsets: ["latin"], weight: ["400"], style: ["normal", "italic"] });
-const space = Space_Grotesk({ subsets: ["latin"], weight: ["400", "500", "700"] });
-const manrope = Manrope({ subsets: ["latin"], weight: ["300", "400", "500", "700", "800"] });
-const fraunces = Fraunces({ subsets: ["latin"], weight: ["400", "500", "700"], style: ["normal", "italic"] });
+const interClass =
+  'font-["Inter","Segoe_UI",Roboto,Helvetica,Arial,sans-serif]';
+const jakartaClass =
+  'font-["Plus_Jakarta_Sans","Inter","Segoe_UI",Roboto,Helvetica,Arial,sans-serif]';
+const instrumentClass =
+  'font-["Instrument_Serif","Iowan_Old_Style","Palatino_Linotype","Book_Antiqua",Georgia,serif]';
+const spaceClass =
+  'font-["Space_Grotesk","Inter","Segoe_UI",Roboto,Helvetica,Arial,sans-serif]';
+const manropeClass =
+  'font-["Manrope","Inter","Segoe_UI",Roboto,Helvetica,Arial,sans-serif]';
+const frauncesClass =
+  'font-["Fraunces","Iowan_Old_Style","Palatino_Linotype","Book_Antiqua",Georgia,serif]';
 
 const BLUE = "#2563eb";
 const BLUE_ELECTRIC = "#0066ff";
@@ -40,7 +38,7 @@ const VARIANTS: Variant[] = [
     hover: "M cycles brand → brand-light, 200ms",
     render: (
       <span
-        className={`${inter.className} group inline-flex items-baseline text-[34px] font-extrabold tracking-[-0.04em] text-[#0a0a0a]`}
+        className={`${interClass} group inline-flex items-baseline text-[34px] font-extrabold tracking-[-0.04em] text-[#0a0a0a]`}
       >
         its
         <span
@@ -61,7 +59,7 @@ const VARIANTS: Variant[] = [
     hover: "Scale 1.02, M shifts hue",
     render: (
       <span
-        className={`${jakarta.className} group inline-flex items-baseline text-[36px] font-extrabold tracking-[-0.05em] text-[#0a0a0a] transition-transform duration-200 hover:scale-[1.02]`}
+        className={`${jakartaClass} group inline-flex items-baseline text-[36px] font-extrabold tracking-[-0.05em] text-[#0a0a0a] transition-transform duration-200 hover:scale-[1.02]`}
       >
         its
         <span
@@ -83,13 +81,13 @@ const VARIANTS: Variant[] = [
     render: (
       <span className="group inline-flex items-baseline text-[34px] text-[#0a0a0a]">
         <span
-          className={`${instrument.className} italic font-normal text-[1.05em] tracking-[0.01em] transition-all duration-300 group-hover:tracking-[0.05em]`}
+          className={`${instrumentClass} italic font-normal text-[1.05em] tracking-[0.01em] transition-all duration-300 group-hover:tracking-[0.05em]`}
           style={{ color: "#0a0a0a" }}
         >
           its
         </span>
         <span
-          className={`${jakarta.className} font-extrabold tracking-[-0.04em]`}
+          className={`${jakartaClass} font-extrabold tracking-[-0.04em]`}
           style={{ marginLeft: "2px" }}
         >
           <span style={{ color: BLUE }}>M</span>yfolio
@@ -104,7 +102,7 @@ const VARIANTS: Variant[] = [
     font: "Inter 300 + Inter 800",
     hover: "Light part fades up slightly, bold stays",
     render: (
-      <span className={`${inter.className} group inline-flex items-baseline text-[34px] text-[#0a0a0a]`}>
+      <span className={`${interClass} group inline-flex items-baseline text-[34px] text-[#0a0a0a]`}>
         <span className="font-light tracking-[-0.02em] opacity-80 transition-opacity duration-200 group-hover:opacity-100">
           its
         </span>
@@ -121,7 +119,7 @@ const VARIANTS: Variant[] = [
     font: "Manrope 400 wide + Manrope 800 tight",
     hover: "Prefix tracking expands further",
     render: (
-      <span className={`${manrope.className} group inline-flex items-baseline text-[32px] text-[#0a0a0a]`}>
+      <span className={`${manropeClass} group inline-flex items-baseline text-[32px] text-[#0a0a0a]`}>
         <span className="font-normal uppercase text-[14px] tracking-[0.32em] mr-[10px] transition-all duration-300 group-hover:tracking-[0.42em]">
           its
         </span>
@@ -138,7 +136,7 @@ const VARIANTS: Variant[] = [
     font: "Inter 700 · tracking -0.03em",
     hover: "Dot pulses briefly",
     render: (
-      <span className={`${inter.className} group inline-flex items-baseline text-[34px] font-bold tracking-[-0.03em] text-[#0a0a0a]`}>
+      <span className={`${interClass} group inline-flex items-baseline text-[34px] font-bold tracking-[-0.03em] text-[#0a0a0a]`}>
         <span className="relative">
           ı
           <span
@@ -157,7 +155,7 @@ const VARIANTS: Variant[] = [
     font: "Inter 800 · tracking -0.04em",
     hover: "Underline draws across whole wordmark",
     render: (
-      <span className={`${inter.className} group inline-flex items-baseline text-[34px] font-extrabold tracking-[-0.04em] text-[#0a0a0a]`}>
+      <span className={`${interClass} group inline-flex items-baseline text-[34px] font-extrabold tracking-[-0.04em] text-[#0a0a0a]`}>
         its
         <span className="relative inline-block">
           M
@@ -177,7 +175,7 @@ const VARIANTS: Variant[] = [
     font: "Plus Jakarta Sans 800 · tracking -0.04em",
     hover: "Gradient angle rotates",
     render: (
-      <span className={`${jakarta.className} group inline-flex items-baseline text-[34px] font-extrabold tracking-[-0.04em] text-[#0a0a0a]`}>
+      <span className={`${jakartaClass} group inline-flex items-baseline text-[34px] font-extrabold tracking-[-0.04em] text-[#0a0a0a]`}>
         its
         <span
           className="bg-clip-text text-transparent transition-all duration-500 group-hover:[background-position:100%_0]"
@@ -200,7 +198,7 @@ const VARIANTS: Variant[] = [
     font: "Inter 700 · tracking -0.025em",
     hover: "Mark rotates 90°",
     render: (
-      <span className={`${inter.className} group inline-flex items-center gap-[10px] text-[28px] font-bold tracking-[-0.025em] text-[#0a0a0a]`}>
+      <span className={`${interClass} group inline-flex items-center gap-[10px] text-[28px] font-bold tracking-[-0.025em] text-[#0a0a0a]`}>
         <span
           className="inline-grid place-items-center w-[28px] h-[28px] rounded-[7px] text-white text-[13px] font-black transition-transform duration-300 group-hover:rotate-[-12deg]"
           style={{ background: `linear-gradient(135deg, ${BLUE} 0%, #7c3aed 100%)` }}
@@ -221,8 +219,8 @@ const VARIANTS: Variant[] = [
     hover: "M slides up a hair",
     render: (
       <span className="group inline-flex items-baseline text-[34px] text-[#0a0a0a]">
-        <span className={`${fraunces.className} italic font-normal text-[1.05em] mr-[1px]`}>its</span>
-        <span className={`${inter.className} font-extrabold tracking-[-0.04em]`}>
+        <span className={`${frauncesClass} italic font-normal text-[1.05em] mr-[1px]`}>its</span>
+        <span className={`${interClass} font-extrabold tracking-[-0.04em]`}>
           <span
             className="inline-block transition-transform duration-200 group-hover:-translate-y-[2px]"
             style={{ color: BLUE }}
@@ -245,7 +243,7 @@ const BONUS: Variant[] = [
     font: "Space Grotesk 700",
     hover: "Letter spacing breathes",
     render: (
-      <span className={`${space.className} group inline-flex items-baseline text-[34px] font-bold tracking-[-0.02em] text-[#0a0a0a] transition-all duration-300 hover:tracking-[0em]`}>
+      <span className={`${spaceClass} group inline-flex items-baseline text-[34px] font-bold tracking-[-0.02em] text-[#0a0a0a] transition-all duration-300 hover:tracking-[0em]`}>
         its<span style={{ color: BLUE }}>M</span>yfolio
       </span>
     ),
@@ -257,7 +255,7 @@ const BONUS: Variant[] = [
     font: "Inter 700",
     hover: "Slashes slide outwards",
     render: (
-      <span className={`${inter.className} group inline-flex items-baseline gap-[6px] text-[30px] font-bold tracking-[-0.02em] text-[#0a0a0a]`}>
+      <span className={`${interClass} group inline-flex items-baseline gap-[6px] text-[30px] font-bold tracking-[-0.02em] text-[#0a0a0a]`}>
         <span
           className="inline-block transition-transform duration-300 group-hover:-translate-x-1"
           style={{ color: BLUE }}
@@ -279,7 +277,7 @@ export default function BrandLabPage() {
           <p className="text-xs tracking-[0.32em] uppercase text-neutral-500 mb-3">
             Brand lab · My Portfolio
           </p>
-          <h1 className={`${inter.className} font-extrabold tracking-[-0.04em] text-4xl sm:text-5xl`}>
+          <h1 className={`${interClass} font-extrabold tracking-[-0.04em] text-4xl sm:text-5xl`}>
             10 wordmark directions.
           </h1>
           <p className="mt-4 text-neutral-600 max-w-2xl leading-relaxed">
@@ -297,7 +295,7 @@ export default function BrandLabPage() {
         </section>
 
         {/* Bonus row */}
-        <h2 className={`${inter.className} mt-16 mb-5 text-2xl font-bold tracking-[-0.03em]`}>
+        <h2 className={`${interClass} mt-16 mb-5 text-2xl font-bold tracking-[-0.03em]`}>
           Bonus variations
         </h2>
         <section className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -307,22 +305,22 @@ export default function BrandLabPage() {
         </section>
 
         {/* Dark preview strip */}
-        <h2 className={`${inter.className} mt-16 mb-5 text-2xl font-bold tracking-[-0.03em]`}>
+        <h2 className={`${interClass} mt-16 mb-5 text-2xl font-bold tracking-[-0.03em]`}>
           On dark navbar
         </h2>
         <div className="rounded-2xl bg-[#0a0a0f] p-8 sm:p-10 flex flex-wrap items-center gap-x-12 gap-y-8">
           <DarkCard label="V1 Linear">
-            <span className={`${inter.className} text-[26px] font-extrabold tracking-[-0.04em] text-white`}>
+            <span className={`${interClass} text-[26px] font-extrabold tracking-[-0.04em] text-white`}>
               its<span style={{ color: "#60a5fa" }}>M</span>yfolio
             </span>
           </DarkCard>
           <DarkCard label="V2 Framer">
-            <span className={`${jakarta.className} text-[28px] font-extrabold tracking-[-0.05em] text-white`}>
+            <span className={`${jakartaClass} text-[28px] font-extrabold tracking-[-0.05em] text-white`}>
               its<span className="text-[1.08em]" style={{ color: "#3b82f6" }}>M</span>yfolio
             </span>
           </DarkCard>
           <DarkCard label="V7 Underline">
-            <span className={`${inter.className} text-[26px] font-extrabold tracking-[-0.04em] text-white`}>
+            <span className={`${interClass} text-[26px] font-extrabold tracking-[-0.04em] text-white`}>
               its
               <span className="relative inline-block">
                 M
@@ -332,7 +330,7 @@ export default function BrandLabPage() {
             </span>
           </DarkCard>
           <DarkCard label="V9 Mark">
-            <span className={`${inter.className} inline-flex items-center gap-[10px] text-[22px] font-bold tracking-[-0.025em] text-white`}>
+            <span className={`${interClass} inline-flex items-center gap-[10px] text-[22px] font-bold tracking-[-0.025em] text-white`}>
               <span
                 className="inline-grid place-items-center w-[28px] h-[28px] rounded-[7px] text-white text-[13px] font-black"
                 style={{ background: `linear-gradient(135deg, #3b82f6 0%, #7c3aed 100%)` }}

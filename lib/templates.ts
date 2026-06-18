@@ -243,7 +243,7 @@ export const TEMPLATES: Template[] = [
     audiences: ["creators"], specialties: ["wellness", "yoga", "mindfulness"]
   },
   {
-    id: "cp4", title: "Elevate", tag: "Career Portfolio · Premium", tier: "pro",
+    id: "cp4", slug: "elevate", title: "Elevate", tag: "Career Portfolio · Premium", tier: "pro",
     section: "career-portfolio",
     audiences: ["founders", "agencies"], specialties: ["executive", "consultant", "personal-brand"]
   },
