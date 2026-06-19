@@ -1,0 +1,45 @@
+/* ── Torque Design System — Industrial Blueprint Tokens ─────────── */
+.root {
+  /* Colors */
+  --color-graphite: #0b0e13;
+  --color-surface-1: #11151b;
+  --color-surface-2: #181d26;
+  --color-surface-3: #1f2530;
+  --color-off-white: #eef1f5;
+  --color-steel: #8a93a3;
+  --color-blueprint: #3fa9f5;
+  --color-blueprint-dim: rgba(63, 169, 245, 0.16);
+  --color-safety-orange: #ff6a1f;
+  --color-teal: #2dd4bf;
+  --color-border: rgba(255, 255, 255, 0.08);
+
+  /* Typography */
+  --font-display: 'Space Grotesk', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Spacing */
+  --sp-8: 8px;
+  --sp-16: 16px;
+  --sp-24: 24px;
+  --sp-32: 32px;
+  --sp-40: 40px;
+  --sp-48: 48px;
+  --sp-64: 64px;
+  --sp-96: 96px;
+  --sp-128: 128px;
+
+  /* Radii */
+  --r-tag: 4px;
+  --r-btn: 4px;
+  --r-card: 10px;
+
+  /* Layout */
+  --max-w: 1200px;
+
+  background-color: var(--color-graphite);
+  color: var(--color-off-white);
+  font-family: var(--font-display);
+  font-feature-settings: "calt", "kern";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

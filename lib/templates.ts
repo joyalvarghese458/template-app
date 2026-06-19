@@ -238,6 +238,11 @@ export const TEMPLATES: Template[] = [
     audiences: ["developers"], specialties: ["full-stack", "engineering", "saas"]
   },
   {
+    id: "torque", slug: "torque", title: "Torque", tag: "Mechanical Engineer · Industrial Blueprint", tier: "pro",
+    section: "career-portfolio",
+    audiences: ["developers"], specialties: ["engineering", "cad", "manufacturing"]
+  },
+  {
     id: "cp3", slug: "serenity", title: "Serenity", tag: "Wellness · Yoga & Mindfulness", tier: "pro",
     section: "career-portfolio",
     audiences: ["creators"], specialties: ["wellness", "yoga", "mindfulness"]
