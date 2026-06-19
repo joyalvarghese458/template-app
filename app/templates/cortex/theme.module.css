@@ -1,0 +1,42 @@
+/* ── Cortex Design System — Data Science / Analytics Tokens ─────── */
+.root {
+  /* Colors */
+  --color-bg: #0a0e17;
+  --color-surface-1: #0f1525;
+  --color-surface-2: #141b2e;
+  --color-surface-3: #1b2338;
+  --color-ink: #eef1f8;
+  --color-ink-soft: #8b93ab;
+  --color-ink-faint: #5b6378;
+  --color-violet: #8b5cf6;
+  --color-cyan: #22d3ee;
+  --color-amber: #fbbf24;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-grid-line: rgba(139, 92, 246, 0.12);
+
+  /* Typography */
+  --font-display: 'Sora', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'Fira Code', 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Spacing */
+  --sp-8: 8px;
+  --sp-16: 16px;
+  --sp-24: 24px;
+  --sp-32: 32px;
+  --sp-48: 48px;
+  --sp-64: 64px;
+  --sp-96: 96px;
+
+  /* Radii */
+  --r-card: 12px;
+  --r-btn: 6px;
+
+  /* Layout */
+  --max-w: 1180px;
+
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

@@ -1,0 +1,38 @@
+/* ── Byline Design System — Editorial Newsroom Tokens ───────────── */
+.root {
+  /* Colors */
+  --color-paper: #f3efe6;
+  --color-paper-aged: #ece4d3;
+  --color-paper-deep: #e3d9c4;
+  --color-ink: #1a1714;
+  --color-ink-soft: #5b554c;
+  --color-ink-faint: #8a8276;
+  --color-press-red: #b3231a;
+  --color-press-red-dim: rgba(179, 35, 26, 0.12);
+  --color-rule: rgba(26, 23, 20, 0.16);
+  --color-rule-soft: rgba(26, 23, 20, 0.08);
+  --color-highlight: #f4d35e;
+
+  /* Typography */
+  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body: Georgia, 'Times New Roman', serif;
+  --font-type: 'Special Elite', 'Courier New', monospace;
+
+  /* Spacing */
+  --sp-8: 8px;
+  --sp-16: 16px;
+  --sp-24: 24px;
+  --sp-32: 32px;
+  --sp-48: 48px;
+  --sp-64: 64px;
+  --sp-96: 96px;
+
+  /* Layout */
+  --max-w: 1160px;
+
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

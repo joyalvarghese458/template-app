@@ -243,6 +243,16 @@ export const TEMPLATES: Template[] = [
     audiences: ["developers"], specialties: ["engineering", "cad", "manufacturing"]
   },
   {
+    id: "byline", slug: "byline", title: "Byline", tag: "Journalist · Editorial Newsroom", tier: "pro",
+    section: "career-portfolio",
+    audiences: ["creators"], specialties: ["writer", "copywriter"]
+  },
+  {
+    id: "cortex", slug: "cortex", title: "Cortex", tag: "Data Scientist · ML Analytics", tier: "pro",
+    section: "career-portfolio",
+    audiences: ["developers"], specialties: ["ai-ml", "data-science"]
+  },
+  {
     id: "cp3", slug: "serenity", title: "Serenity", tag: "Wellness · Yoga & Mindfulness", tier: "pro",
     section: "career-portfolio",
     audiences: ["creators"], specialties: ["wellness", "yoga", "mindfulness"]
