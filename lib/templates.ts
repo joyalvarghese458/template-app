@@ -321,6 +321,12 @@ export const TEMPLATES: Template[] = [
     image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=420&h=860&q=80&auto=format&fit=crop",
     audiences: ["designers", "creators"], specialties: ["motion", "ui-ux", "graphic"]
   },
+  {
+    id: "cp5", slug: "amplify", title: "Amplify", tag: "Digital Marketer · Results-first", tier: "pro",
+    section: "career-portfolio",
+    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=420&h=860&q=80&auto=format&fit=crop",
+    audiences: ["creators", "founders"], specialties: ["copywriter", "personal-brand", "consultant"]
+  },
 
   // ── Creator Portfolio  (AED 149 · tier: premium) ─────────────────
   {
