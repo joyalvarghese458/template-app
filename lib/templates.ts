@@ -253,6 +253,11 @@ export const TEMPLATES: Template[] = [
     audiences: ["developers"], specialties: ["ai-ml", "data-science"]
   },
   {
+    id: "ascend", slug: "ascend", title: "Ascend", tag: "Career Coach · Job Search Strategist", tier: "pro",
+    section: "career-portfolio",
+    audiences: ["founders"], specialties: ["coach", "consultant", "personal-brand"]
+  },
+  {
     id: "cp3", slug: "serenity", title: "Serenity", tag: "Wellness · Yoga & Mindfulness", tier: "pro",
     section: "career-portfolio",
     audiences: ["creators"], specialties: ["wellness", "yoga", "mindfulness"]
