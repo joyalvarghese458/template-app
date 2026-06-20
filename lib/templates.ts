@@ -148,6 +148,7 @@ export const SPECIALTIES: Record<AudienceId, SpecialtyMeta[]> = {
     { id: "full-stack",  label: "Full Stack" },
     { id: "mobile",      label: "Mobile" },
     { id: "ai-ml",       label: "AI / ML" },
+    { id: "data-science",label: "Data Science" },
     { id: "game",        label: "Game" },
     { id: "devops",      label: "DevOps" },
     { id: "no-code",     label: "No-Code" },
@@ -249,6 +250,11 @@ export const TEMPLATES: Template[] = [
   },
   {
     id: "cortex", slug: "cortex", title: "Cortex", tag: "Data Scientist · ML Analytics", tier: "pro",
+    section: "career-portfolio",
+    audiences: ["developers"], specialties: ["ai-ml", "data-science"]
+  },
+  {
+    id: "datalab", slug: "datalab", title: "DataLab", tag: "Data Science Student · 3D Interactive", tier: "pro",
     section: "career-portfolio",
     audiences: ["developers"], specialties: ["ai-ml", "data-science"]
   },
