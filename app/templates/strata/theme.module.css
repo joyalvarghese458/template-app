@@ -1,0 +1,41 @@
+/* ── Strata Design System — Civil/Structural Survey Tokens ───────── */
+.root {
+  /* Colors */
+  --color-bg: #eef0ec;
+  --color-surface-1: #ffffff;
+  --color-surface-2: #e4e7e0;
+  --color-surface-3: #dadedb;
+  --color-ink: #1f2421;
+  --color-ink-soft: #5c655e;
+  --color-ink-faint: #8f968f;
+  --color-safety: #f15a24;
+  --color-concrete: #8b8d87;
+  --color-steel: #2c4a5e;
+  --color-border: rgba(31, 36, 33, 0.16);
+
+  /* Typography */
+  --font-display: 'Big Shoulders Display', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Spacing */
+  --sp-8: 8px;
+  --sp-16: 16px;
+  --sp-24: 24px;
+  --sp-32: 32px;
+  --sp-48: 48px;
+  --sp-64: 64px;
+  --sp-96: 96px;
+
+  /* Radii */
+  --r-card: 6px;
+  --r-btn: 4px;
+
+  /* Layout */
+  --max-w: 1180px;
+
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-mono);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

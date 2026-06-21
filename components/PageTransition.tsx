@@ -11,7 +11,8 @@ export default function PageTransition({
   const stickySafeRoute =
     pathname === "/templates/onefolio" ||
     pathname === "/templates/graphic-designer" ||
-    pathname === "/templates/prism";
+    pathname === "/templates/prism" ||
+    pathname === "/templates/strata";
   const className = stickySafeRoute ? "page-enter page-enter-no-transform" : "page-enter";
 
   return (

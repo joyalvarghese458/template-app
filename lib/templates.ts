@@ -280,6 +280,11 @@ export const TEMPLATES: Template[] = [
     audiences: ["designers"], specialties: ["ui-ux", "graphic"]
   },
   {
+    id: "strata", slug: "strata", title: "Strata", tag: "Civil Engineer · Structural & Site Design", tier: "pro",
+    section: "career-portfolio",
+    audiences: ["developers"], specialties: ["engineering", "construction", "structural"]
+  },
+  {
     id: "cp3", slug: "serenity", title: "Serenity", tag: "Wellness · Yoga & Mindfulness", tier: "pro",
     section: "career-portfolio",
     audiences: ["creators"], specialties: ["wellness", "yoga", "mindfulness"]
