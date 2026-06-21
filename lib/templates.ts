@@ -270,6 +270,11 @@ export const TEMPLATES: Template[] = [
     audiences: ["developers"], specialties: ["security"]
   },
   {
+    id: "canvas", slug: "canvas", title: "Canvas", tag: "UI/UX & Graphic Designer · Bauhaus Studio", tier: "pro",
+    section: "career-portfolio",
+    audiences: ["designers"], specialties: ["ui-ux", "graphic", "brand"]
+  },
+  {
     id: "cp3", slug: "serenity", title: "Serenity", tag: "Wellness · Yoga & Mindfulness", tier: "pro",
     section: "career-portfolio",
     audiences: ["creators"], specialties: ["wellness", "yoga", "mindfulness"]
