@@ -275,6 +275,11 @@ export const TEMPLATES: Template[] = [
     audiences: ["designers"], specialties: ["ui-ux", "graphic", "brand"]
   },
   {
+    id: "prism", slug: "prism", title: "Prism", tag: "Product Designer · Glassmorphic Aurora", tier: "pro",
+    section: "career-portfolio",
+    audiences: ["designers"], specialties: ["ui-ux", "graphic"]
+  },
+  {
     id: "cp3", slug: "serenity", title: "Serenity", tag: "Wellness · Yoga & Mindfulness", tier: "pro",
     section: "career-portfolio",
     audiences: ["creators"], specialties: ["wellness", "yoga", "mindfulness"]

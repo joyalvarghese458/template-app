@@ -1,0 +1,41 @@
+/* ── Prism Design System — Glassmorphic Aurora Tokens ────────────── */
+.root {
+  /* Colors */
+  --color-bg: #0a0a14;
+  --color-surface-1: rgba(255, 255, 255, 0.05);
+  --color-surface-2: rgba(255, 255, 255, 0.03);
+  --color-ink: #f5f4fa;
+  --color-ink-soft: #a8a6c0;
+  --color-ink-faint: #6b6886;
+  --color-teal: #2dd9c4;
+  --color-indigo: #6c63ff;
+  --color-magenta: #e94fd1;
+  --color-border: rgba(255, 255, 255, 0.12);
+  --gradient-aurora: linear-gradient(120deg, #2dd9c4 0%, #6c63ff 50%, #e94fd1 100%);
+
+  /* Typography */
+  --font-display: 'Unbounded', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-body: 'Manrope', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  /* Spacing */
+  --sp-8: 8px;
+  --sp-16: 16px;
+  --sp-24: 24px;
+  --sp-32: 32px;
+  --sp-48: 48px;
+  --sp-64: 64px;
+  --sp-96: 96px;
+
+  /* Radii */
+  --r-card: 20px;
+  --r-btn: 100px;
+
+  /* Layout */
+  --max-w: 1180px;
+
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
