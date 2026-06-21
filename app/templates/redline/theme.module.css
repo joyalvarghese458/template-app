@@ -1,0 +1,40 @@
+/* ── Redline Design System — Carbon Fiber / Motorsport Tokens ────── */
+.root {
+  /* Colors */
+  --color-bg: #0d0d0f;
+  --color-surface-1: #16161a;
+  --color-surface-2: #1d1d22;
+  --color-surface-3: #26262c;
+  --color-ink: #f2f2f0;
+  --color-ink-soft: #9a9aa0;
+  --color-ink-faint: #5e5e66;
+  --color-red: #e10600;
+  --color-amber: #ffb700;
+  --color-border: rgba(255, 255, 255, 0.08);
+
+  /* Typography */
+  --font-display: 'Rajdhani', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-body: 'Barlow', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  /* Spacing */
+  --sp-8: 8px;
+  --sp-16: 16px;
+  --sp-24: 24px;
+  --sp-32: 32px;
+  --sp-48: 48px;
+  --sp-64: 64px;
+  --sp-96: 96px;
+
+  /* Radii */
+  --r-card: 10px;
+  --r-btn: 4px;
+
+  /* Layout */
+  --max-w: 1180px;
+
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

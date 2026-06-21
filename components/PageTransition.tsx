@@ -12,7 +12,8 @@ export default function PageTransition({
     pathname === "/templates/onefolio" ||
     pathname === "/templates/graphic-designer" ||
     pathname === "/templates/prism" ||
-    pathname === "/templates/strata";
+    pathname === "/templates/strata" ||
+    pathname === "/templates/redline";
   const className = stickySafeRoute ? "page-enter page-enter-no-transform" : "page-enter";
 
   return (

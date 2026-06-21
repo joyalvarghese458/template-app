@@ -285,6 +285,11 @@ export const TEMPLATES: Template[] = [
     audiences: ["developers"], specialties: ["engineering", "construction", "structural"]
   },
   {
+    id: "redline", slug: "redline", title: "Redline", tag: "Mechanical Engineer · Motorsport & Automation", tier: "pro",
+    section: "career-portfolio",
+    audiences: ["developers"], specialties: ["engineering", "manufacturing", "cad"]
+  },
+  {
     id: "cp3", slug: "serenity", title: "Serenity", tag: "Wellness · Yoga & Mindfulness", tier: "pro",
     section: "career-portfolio",
     audiences: ["creators"], specialties: ["wellness", "yoga", "mindfulness"]
