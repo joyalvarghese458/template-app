@@ -1,0 +1,42 @@
+/* ── Ledger Design System — Parchment / Emerald / Gold Tokens ─────── */
+.root {
+  /* Colors */
+  --color-bg: #f8f3e7;
+  --color-surface-1: #fffdf7;
+  --color-surface-2: #f1e8d3;
+  --color-surface-3: #e9dec0;
+  --color-ink: #16291f;
+  --color-ink-soft: #4d5f52;
+  --color-ink-faint: #8a9388;
+  --color-green: #1f5c3f;
+  --color-green-deep: #123825;
+  --color-gold: #b8862c;
+  --color-gold-soft: #d8b563;
+  --color-border: rgba(22, 41, 31, 0.14);
+
+  /* Typography */
+  --font-display: 'Fraunces', Georgia, "Times New Roman", serif;
+  --font-body: 'Work Sans', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  /* Spacing */
+  --sp-8: 8px;
+  --sp-16: 16px;
+  --sp-24: 24px;
+  --sp-32: 32px;
+  --sp-48: 48px;
+  --sp-64: 64px;
+  --sp-96: 96px;
+
+  /* Radii */
+  --r-card: 10px;
+  --r-btn: 4px;
+
+  /* Layout */
+  --max-w: 1180px;
+
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
