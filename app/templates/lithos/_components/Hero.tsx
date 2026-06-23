@@ -140,8 +140,6 @@ export default function Hero() {
           style={{
             position: "absolute",
             bottom: "40px",
-            left: "20px",
-            right: "20px",
             zIndex: 50,
             display: "flex",
             flexDirection: "column",
@@ -189,6 +187,10 @@ export default function Hero() {
         }
         .lithos-dig-btn:hover { background-color: #d2611f; transform: scale(1.03); box-shadow: 0 10px 26px rgba(232,112,42,0.3); }
         .lithos-dig-btn:active { transform: scale(0.95); }
+        .lithos-hero-right {
+          left: 20px;
+          right: 20px;
+        }
         @media (max-width: 639px) {
           .lithos-hero-left { display: none; }
         }
