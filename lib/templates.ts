@@ -295,6 +295,11 @@ export const TEMPLATES: Template[] = [
     audiences: ["developers"], specialties: ["geology", "earth-science", "fieldwork"]
   },
   {
+    id: "surge", slug: "surge", title: "Surge", tag: "Digital Marketing Specialist · Growth & Performance", tier: "pro",
+    section: "career-portfolio",
+    audiences: ["creators", "founders"], specialties: ["copywriter", "personal-brand", "consultant"]
+  },
+  {
     id: "cp3", slug: "serenity", title: "Serenity", tag: "Wellness · Yoga & Mindfulness", tier: "pro",
     section: "career-portfolio",
     audiences: ["creators"], specialties: ["wellness", "yoga", "mindfulness"]
