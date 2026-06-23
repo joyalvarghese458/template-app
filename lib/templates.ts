@@ -290,6 +290,11 @@ export const TEMPLATES: Template[] = [
     audiences: ["developers"], specialties: ["engineering", "manufacturing", "cad"]
   },
   {
+    id: "lithos", slug: "lithos", title: "Lithos", tag: "Geology Student · Field & Earth Sciences", tier: "pro",
+    section: "career-portfolio",
+    audiences: ["developers"], specialties: ["geology", "earth-science", "fieldwork"]
+  },
+  {
     id: "cp3", slug: "serenity", title: "Serenity", tag: "Wellness · Yoga & Mindfulness", tier: "pro",
     section: "career-portfolio",
     audiences: ["creators"], specialties: ["wellness", "yoga", "mindfulness"]
