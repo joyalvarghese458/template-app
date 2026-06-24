@@ -1,0 +1,43 @@
+/* ── Echelon Design System — Graphite Command / Cobalt & Copper Tokens ── */
+.root {
+  /* Colors */
+  --color-bg: #0b0e14;
+  --color-surface-1: #11151d;
+  --color-surface-2: #161b25;
+  --color-surface-3: #1d2330;
+  --color-ink: #eef1f6;
+  --color-ink-soft: #9aa7bb;
+  --color-ink-faint: #5c6679;
+  --color-cobalt: #3b6fe0;
+  --color-cobalt-bright: #6f97f2;
+  --color-steel: #b7c0cf;
+  --color-copper: #d98a3d;
+  --color-copper-bright: #f0ab5e;
+  --color-border: rgba(238, 241, 246, 0.12);
+
+  /* Typography */
+  --font-display: 'Domine', Georgia, "Times New Roman", serif;
+  --font-body: 'Karla', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  /* Spacing */
+  --sp-8: 8px;
+  --sp-16: 16px;
+  --sp-24: 24px;
+  --sp-32: 32px;
+  --sp-48: 48px;
+  --sp-64: 64px;
+  --sp-96: 96px;
+
+  /* Radii */
+  --r-card: 14px;
+  --r-btn: 100px;
+
+  /* Layout */
+  --max-w: 1180px;
+
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

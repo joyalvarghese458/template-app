@@ -305,6 +305,11 @@ export const TEMPLATES: Template[] = [
     audiences: ["founders", "agencies"], specialties: ["executive", "consultant", "personal-brand"]
   },
   {
+    id: "echelon", slug: "echelon", title: "Echelon", tag: "Chief Executive Officer · Graphite Command", tier: "pro",
+    section: "career-portfolio",
+    audiences: ["founders", "agencies"], specialties: ["executive", "personal-brand", "consultant"]
+  },
+  {
     id: "cp3", slug: "serenity", title: "Serenity", tag: "Wellness · Yoga & Mindfulness", tier: "pro",
     section: "career-portfolio",
     audiences: ["creators"], specialties: ["wellness", "yoga", "mindfulness"]
