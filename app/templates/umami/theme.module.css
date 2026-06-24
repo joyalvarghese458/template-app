@@ -1,0 +1,42 @@
+/* ── Umami Design System — Charcoal Hearth / Ember & Wine Tokens ── */
+.root {
+  /* Colors */
+  --color-bg: #15110f;
+  --color-surface-1: #1c1613;
+  --color-surface-2: #231b17;
+  --color-surface-3: #2b211c;
+  --color-ink: #f5ece0;
+  --color-ink-soft: #c4b6a8;
+  --color-ink-faint: #786a5e;
+  --color-ember: #e8552c;
+  --color-ember-bright: #ff8a4c;
+  --color-wine: #7c2233;
+  --color-herb: #6b8f47;
+  --color-border: rgba(245, 236, 224, 0.12);
+
+  /* Typography */
+  --font-display: 'Cormorant', Georgia, "Times New Roman", serif;
+  --font-body: 'Jost', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  /* Spacing */
+  --sp-8: 8px;
+  --sp-16: 16px;
+  --sp-24: 24px;
+  --sp-32: 32px;
+  --sp-48: 48px;
+  --sp-64: 64px;
+  --sp-96: 96px;
+
+  /* Radii */
+  --r-card: 14px;
+  --r-btn: 100px;
+
+  /* Layout */
+  --max-w: 1180px;
+
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

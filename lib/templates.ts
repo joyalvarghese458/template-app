@@ -310,6 +310,11 @@ export const TEMPLATES: Template[] = [
     audiences: ["founders", "agencies"], specialties: ["executive", "personal-brand", "consultant"]
   },
   {
+    id: "umami", slug: "umami", title: "Umami", tag: "Executive Chef · Charcoal Hearth", tier: "pro",
+    section: "career-portfolio",
+    audiences: ["creators", "founders"], specialties: ["personal-brand", "consultant"]
+  },
+  {
     id: "cp3", slug: "serenity", title: "Serenity", tag: "Wellness · Yoga & Mindfulness", tier: "pro",
     section: "career-portfolio",
     audiences: ["creators"], specialties: ["wellness", "yoga", "mindfulness"]
