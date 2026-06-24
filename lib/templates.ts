@@ -300,6 +300,11 @@ export const TEMPLATES: Template[] = [
     audiences: ["creators", "founders"], specialties: ["copywriter", "personal-brand", "consultant"]
   },
   {
+    id: "atlas", slug: "atlas", title: "Atlas", tag: "Business Consultant · Boardroom Navy & Gold", tier: "pro",
+    section: "career-portfolio",
+    audiences: ["founders", "agencies"], specialties: ["executive", "consultant", "personal-brand"]
+  },
+  {
     id: "cp3", slug: "serenity", title: "Serenity", tag: "Wellness · Yoga & Mindfulness", tier: "pro",
     section: "career-portfolio",
     audiences: ["creators"], specialties: ["wellness", "yoga", "mindfulness"]

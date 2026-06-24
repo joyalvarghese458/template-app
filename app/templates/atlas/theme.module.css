@@ -1,0 +1,43 @@
+/* ── Atlas Design System — Boardroom Navy / Champagne Gold Tokens ── */
+.root {
+  /* Colors */
+  --color-bg: #0a0f1c;
+  --color-surface-1: #111a2c;
+  --color-surface-2: #16213a;
+  --color-surface-3: #1d2c4a;
+  --color-ink: #f3efe4;
+  --color-ink-soft: #aab4c9;
+  --color-ink-faint: #6c7790;
+  --color-gold: #d4af6a;
+  --color-gold-bright: #f1d49b;
+  --color-burgundy: #9c3f4a;
+  --color-emerald: #3f8f76;
+  --color-steel: #5b7ba6;
+  --color-border: rgba(243, 239, 228, 0.12);
+
+  /* Typography */
+  --font-display: 'Newsreader', Georgia, "Times New Roman", serif;
+  --font-body: 'IBM Plex Sans', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  /* Spacing */
+  --sp-8: 8px;
+  --sp-16: 16px;
+  --sp-24: 24px;
+  --sp-32: 32px;
+  --sp-48: 48px;
+  --sp-64: 64px;
+  --sp-96: 96px;
+
+  /* Radii */
+  --r-card: 16px;
+  --r-btn: 100px;
+
+  /* Layout */
+  --max-w: 1180px;
+
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
