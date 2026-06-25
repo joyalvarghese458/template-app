@@ -315,6 +315,11 @@ export const TEMPLATES: Template[] = [
     audiences: ["creators", "founders"], specialties: ["personal-brand", "consultant"]
   },
   {
+    id: "parallax", slug: "parallax", title: "Parallax", tag: "Animation & VFX Student · Render Viewport", tier: "pro",
+    section: "career-portfolio",
+    audiences: ["designers", "creators"], specialties: ["motion", "3d"]
+  },
+  {
     id: "cp3", slug: "serenity", title: "Serenity", tag: "Wellness · Yoga & Mindfulness", tier: "pro",
     section: "career-portfolio",
     audiences: ["creators"], specialties: ["wellness", "yoga", "mindfulness"]

@@ -26,7 +26,7 @@ export default function Gallery() {
               whileInView="visible"
               viewport={VIEWPORT}
               transition={{ delay: i * 0.07 }}
-              className={`ech-gallery-item ${i === 0 ? "ech-gallery-item-wide" : ""}`}
+              className={`ech-gallery-item ${i === GALLERY.length - 1 ? "ech-gallery-item-wide" : ""}`}
             >
               <Image
                 src={shot.src}
@@ -64,12 +64,9 @@ export default function Gallery() {
           color: #eef1f6;
           background-image: linear-gradient(to top, rgba(11,14,20,0.88), transparent);
         }
-        @media (min-width: 540px) {
-          .ech-gallery-item-wide { grid-column: span 2; aspect-ratio: 16 / 7; }
-        }
+        .ech-gallery-item-wide { grid-column: 1 / -1; aspect-ratio: 16 / 7; }
         @media (min-width: 700px) {
           .ech-gallery-grid { grid-template-columns: repeat(4, minmax(0,1fr)); }
-          .ech-gallery-item-wide { grid-column: span 2; aspect-ratio: 4 / 3; }
         }
       `}</style>
     </section>

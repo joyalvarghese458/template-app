@@ -26,7 +26,7 @@ export default function Gallery() {
               whileInView="visible"
               viewport={VIEWPORT}
               transition={{ delay: i * 0.07 }}
-              className={`umami-gallery-item ${i === 0 ? "umami-gallery-item-wide" : ""}`}
+              className={`umami-gallery-item ${i === GALLERY.length - 1 ? "umami-gallery-item-wide" : ""}`}
             >
               <Image
                 src={shot.src}
@@ -64,12 +64,9 @@ export default function Gallery() {
           color: #f5ece0;
           background-image: linear-gradient(to top, rgba(21,17,15,0.88), transparent);
         }
-        @media (min-width: 540px) {
-          .umami-gallery-item-wide { grid-column: span 2; aspect-ratio: 16 / 7; }
-        }
+        .umami-gallery-item-wide { grid-column: 1 / -1; aspect-ratio: 16 / 7; }
         @media (min-width: 700px) {
           .umami-gallery-grid { grid-template-columns: repeat(4, minmax(0,1fr)); }
-          .umami-gallery-item-wide { grid-column: span 2; aspect-ratio: 4 / 3; }
         }
       `}</style>
     </section>
