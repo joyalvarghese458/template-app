@@ -209,7 +209,9 @@ export default function SlateResume() {
 
         <div className="relative mx-auto max-w-7xl px-4 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-10">
           <motion.div
-            {...cardMotion}
+            initial={cardMotion.initial}
+            animate={{ opacity: 1, y: 0 }}
+            transition={cardMotion.transition}
             className={`overflow-hidden rounded-[32px] border backdrop-blur-xl ${frameClass}`}
           >
             <header className={`border-b px-5 py-6 sm:px-7 sm:py-8 lg:px-10 ${dividerClass}`}>
