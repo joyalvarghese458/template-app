@@ -103,39 +103,7 @@ function projectPreview(accent: string, label: string, subtitle: string, chips: 
   `);
 }
 
-export const portraitImage = svgDataUri(`
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 860">
-    <defs>
-      <radialGradient id="halo" cx="50%" cy="18%" r="62%">
-        <stop offset="0%" stop-color="rgba(255,255,255,0.95)" />
-        <stop offset="25%" stop-color="rgba(255,255,255,0.3)" />
-        <stop offset="100%" stop-color="rgba(11,15,25,0)" />
-      </radialGradient>
-      <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stop-color="#111827" />
-        <stop offset="100%" stop-color="#020617" />
-      </linearGradient>
-      <linearGradient id="jacket" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stop-color="#64748b" />
-        <stop offset="100%" stop-color="#1e293b" />
-      </linearGradient>
-    </defs>
-    <rect width="640" height="860" rx="48" fill="url(#bg)" />
-    <ellipse cx="320" cy="140" rx="250" ry="170" fill="url(#halo)" />
-    <ellipse cx="320" cy="796" rx="160" ry="28" fill="rgba(255,255,255,0.12)" />
-    <path d="M170 770c22-142 68-226 150-226s128 84 150 226" fill="url(#jacket)" />
-    <path d="M234 768c9-97 30-177 86-225l-39-70c-60 29-109 98-126 295z" fill="#334155" opacity="0.92" />
-    <path d="M406 768c-9-97-30-177-86-225l39-70c60 29 109 98 126 295z" fill="#0f172a" opacity="0.95" />
-    <path d="M273 555h94l16 160h-126z" fill="#f8fafc" />
-    <path d="M271 554c14 28 35 42 49 42s35-14 49-42l-11-44h-76z" fill="#d4a373" />
-    <ellipse cx="320" cy="400" rx="88" ry="112" fill="#d7a77a" />
-    <path d="M255 410c7 49 28 93 65 93 37 0 58-44 65-93 7-49-9-120-65-120s-72 71-65 120z" fill="#d9a87c" />
-    <path d="M242 389c8-92 64-139 134-129 32 5 54 24 63 53 5 15 7 48 2 76-12-20-20-49-28-58-17 6-52 4-81-7-19-7-36-18-50-31-12 28-31 71-40 96-7-1-12 0-17 0 1-1 7 0 17 0z" fill="#111827" />
-    <path d="M280 448c19 24 81 24 100 0-6 42-27 67-50 67s-44-25-50-67z" fill="#101828" opacity="0.18" />
-    <path d="M292 464c10 11 57 11 67 0-7 23-20 36-33 36s-26-13-34-36z" fill="#0f172a" opacity="0.26" />
-    <path d="M283 335c7-43 34-83 102-74 38 5 56 31 61 66-18-26-39-48-63-53-50-12-85-3-100 7z" fill="#111827" />
-  </svg>
-`);
+export const portraitImage = "/passportsize.jpg";
 
 export const profile: SlateProfile = {
   name: "Adarsh Pandey",
