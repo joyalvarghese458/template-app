@@ -2,31 +2,7 @@ function svgDataUri(svg: string) {
   return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
 }
 
-export const pulsePortrait = svgDataUri(`
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 760">
-    <defs>
-      <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stop-color="#f8fafc" />
-        <stop offset="100%" stop-color="#dce5f2" />
-      </linearGradient>
-      <linearGradient id="coat" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stop-color="#1e293b" />
-        <stop offset="100%" stop-color="#334155" />
-      </linearGradient>
-    </defs>
-    <rect width="640" height="760" rx="36" fill="url(#bg)" />
-    <ellipse cx="320" cy="114" rx="180" ry="94" fill="#ffffff" opacity="0.72" />
-    <ellipse cx="320" cy="710" rx="150" ry="22" fill="#94a3b8" opacity="0.28" />
-    <path d="M176 678c26-152 74-236 144-236 70 0 126 84 144 236" fill="url(#coat)" />
-    <path d="M270 438h102l18 180H252z" fill="#f8fafc" />
-    <path d="M274 420c8 34 26 54 48 54s40-20 48-54l-10-42h-76z" fill="#d2a47c" />
-    <ellipse cx="320" cy="292" rx="90" ry="112" fill="#dbb08a" />
-    <path d="M246 294c0-78 54-136 126-136 54 0 92 36 92 122 0 30-6 62-18 92-12-24-24-54-42-72-26 20-80 18-124-14-16 20-28 52-42 88-12-22-18-52-18-80z" fill="#223047" />
-    <circle cx="286" cy="292" r="8" fill="#1f2937" />
-    <circle cx="354" cy="292" r="8" fill="#1f2937" />
-    <path d="M288 336c16 12 48 12 64 0" stroke="#9a6a47" stroke-width="8" stroke-linecap="round" opacity="0.45" />
-  </svg>
-`);
+export const pulsePortrait = "/sarah.jpg";
 
 export function pulseProjectPreview(
   accent: string,
