@@ -23,7 +23,7 @@ interface Article {
 }
 
 // ── Data ───────────────────────────────────────────────────────────────────
-const CATEGORIES = [
+const ALL_CATEGORY_ORDER = [
   "All",
   "Portfolio Design",
   "Personal Branding",
@@ -31,6 +31,7 @@ const CATEGORIES = [
   "Freelancing",
   "Developer Portfolios",
   "Designer Portfolios",
+  "Agency & Studio",
   "Marketing Portfolios",
 ];
 
@@ -261,6 +262,36 @@ const TRENDING = [
   },
 ];
 
+const LIVE_BLOG_SLUGS = new Set([
+  "10-elements-every-professional-portfolio-needs",
+  "developer-portfolio-website-guide",
+  "agency-website-vs-portfolio-website",
+  "founder-portfolio-website-personal-brand",
+  "freelancer-portfolio-website-uae",
+  "photography-portfolio-website-essentials",
+]);
+
+const VISIBLE_ARTICLES = ALL_ARTICLES.filter((article) =>
+  LIVE_BLOG_SLUGS.has(article.slug)
+);
+
+const HIDDEN_ARTICLES = ALL_ARTICLES.filter(
+  (article) => !LIVE_BLOG_SLUGS.has(article.slug)
+);
+
+const VISIBLE_TRENDING = TRENDING.filter((article) =>
+  LIVE_BLOG_SLUGS.has(article.slug)
+);
+
+const HIDDEN_TRENDING = TRENDING.filter(
+  (article) => !LIVE_BLOG_SLUGS.has(article.slug)
+);
+
+const FEATURED_IS_LIVE = LIVE_BLOG_SLUGS.has(FEATURED.slug);
+
+void HIDDEN_ARTICLES;
+void HIDDEN_TRENDING;
+
 const POPULAR_TAGS = [
   "#portfolio design",
   "#personal branding",
@@ -340,16 +371,32 @@ function ArticleCard({ article }: { article: Article }) {
 export default function BlogPage() {
   const [activeCategory, setActiveCategory] = useState("All");
   const [search, setSearch] = useState("");
+  const categories = useMemo(() => {
+    const categorySet = new Set<string>();
+
+    if (FEATURED_IS_LIVE) categorySet.add(FEATURED.category);
+    for (const article of VISIBLE_ARTICLES) categorySet.add(article.category);
+
+    return [
+      "All",
+      ...ALL_CATEGORY_ORDER.filter(
+        (category) => category !== "All" && categorySet.has(category)
+      ),
+      ...Array.from(categorySet).filter(
+        (category) => !ALL_CATEGORY_ORDER.includes(category)
+      ),
+    ];
+  }, []);
 
   const filtered = useMemo(() => {
-    return ALL_ARTICLES.filter((a) => {
+    return VISIBLE_ARTICLES.filter((a) => {
       if (activeCategory !== "All" && a.category !== activeCategory) return false;
       if (search && !a.title.toLowerCase().includes(search.toLowerCase())) return false;
       return true;
     });
   }, [activeCategory, search]);
 
-  const showFeatured = activeCategory === "All" && !search;
+  const showFeatured = FEATURED_IS_LIVE && activeCategory === "All" && !search;
 
   return (
     <main className="bg-canvas-bg min-h-screen">
@@ -427,7 +474,7 @@ export default function BlogPage() {
       <div className="sticky top-16 z-40 bg-white border-b border-black/10 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2 overflow-x-auto py-3 no-scrollbar">
-            {CATEGORIES.map((cat) => (
+            {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
@@ -614,7 +661,7 @@ export default function BlogPage() {
                 <h3 className="font-bold text-ink text-sm">Trending Now</h3>
               </div>
               <ol className="space-y-4">
-                {TRENDING.map((item, i) => (
+                {VISIBLE_TRENDING.map((item, i) => (
                   <li key={item.slug} className="flex gap-3">
                     <span className="w-6 h-6 rounded-full bg-brand text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">
                       {i + 1}
