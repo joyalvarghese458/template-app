@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import puppeteer from "puppeteer";
+import type { Page } from "puppeteer";
 import path from "path";
 import fs from "fs";
 
@@ -8,7 +9,7 @@ export const runtime = "nodejs";
 const SCROLL_DURATION_MS = 6000;
 const HERO_READY_TIMEOUT_MS = 15000;
 
-async function waitForHeroReady(page: puppeteer.Page) {
+async function waitForHeroReady(page: Page) {
   try {
     await page.waitForSelector('[data-spline-scene="true"][data-spline-ready="true"]', {
       timeout: HERO_READY_TIMEOUT_MS,

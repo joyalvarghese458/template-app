@@ -9,8 +9,8 @@
   --color-ink:         #000000;
   --color-ink-soft:    #475569;
 
-  --font-sans:  var(--font-geist);
-  --font-serif: var(--font-playfair);
+  --font-sans:  var(--font-geist, system-ui, sans-serif);
+  --font-serif: var(--font-playfair, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif);
 
   --animate-fade-in-up: fadeInUp 0.9s ease-out both;
   --animate-scroll-bounce: scrollBounce 1.6s ease-in-out infinite;
