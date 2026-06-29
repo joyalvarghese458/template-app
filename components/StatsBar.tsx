@@ -3,10 +3,10 @@
 import { useEffect, useRef, useState } from "react";
 
 const STATS = [
-  { value: 30,  suffix: "+", label: "Portfolio Templates" },
+  { value: 30, suffix: "+", label: "Portfolio Templates" },
   { value: 120, suffix: "+", label: "Portfolios Delivered" },
-  { value: 1,   suffix: "",  label: "Year Free Support" },
-  { value: 5,   suffix: "★", label: "Average Rating" },
+  { value: 1, suffix: "", label: "Year Free Support" },
+  { value: 5, suffix: "★", label: "Average Rating" },
 ] as const;
 
 function useCountUp(target: number, active: boolean, duration = 1800) {
@@ -54,10 +54,9 @@ function StatItem({
   const count = useCountUp(value, active);
 
   return (
-    <div className={`flex items-center justify-center gap-3 py-6 px-6 ${border}`}>
-      <span className="text-canvas-bg text-lg leading-none" aria-hidden="true">
-        •
-      </span>
+    <div
+      className={`flex items-center justify-center gap-3 py-6 px-6 ${border}`}
+    >
       <div className="text-center">
         <span className="text-2xl sm:text-3xl font-extrabold text-canvas-bg tabular-nums">
           {count}
@@ -93,7 +92,7 @@ export default function StatsBar() {
           observer.disconnect();
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.3 },
     );
 
     observer.observe(el);
