@@ -1,0 +1,221 @@
+/* Portaled to <body> — cannot rely on CSS custom properties scoped to the
+   themed .root wrapper, so colors/fonts here are literal values mirroring
+   theme.module.css's tokens. */
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  background: rgba(248, 245, 239, 0.78);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(21, 20, 15, 0);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.navScrolled {
+  border-bottom-color: rgba(21, 20, 15, 0.1);
+  box-shadow: 0 12px 28px rgba(21, 20, 15, 0.05);
+}
+
+.inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  font-family: "Inter", -apple-system, sans-serif;
+}
+
+@media (min-width: 768px) {
+  .inner {
+    padding: 0 3rem;
+  }
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-decoration: none;
+  color: #15140f;
+  min-width: 0;
+}
+
+.mark {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(21, 20, 15, 0.18);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+  min-width: 0;
+}
+
+.brandName {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 0.98rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.brandRole {
+  font-size: 0.7rem;
+  color: #5b564c;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 639px) {
+  .brandRole {
+    display: none;
+  }
+}
+
+.links {
+  display: none;
+  align-items: center;
+  gap: 2.1rem;
+}
+
+@media (min-width: 900px) {
+  .links {
+    display: flex;
+  }
+}
+
+.link {
+  position: relative;
+  padding: 0.4rem 0;
+  font-size: 0.84rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #5b564c;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.link:hover {
+  color: #15140f;
+}
+
+.linkActive {
+  color: #15140f;
+}
+
+.underline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 1.5px;
+  background: #8a5a2b;
+}
+
+.burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 38px;
+  height: 38px;
+  background: none;
+  border: 1px solid rgba(21, 20, 15, 0.14);
+  border-radius: 50%;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+@media (min-width: 900px) {
+  .burger {
+    display: none;
+  }
+}
+
+.burger span {
+  width: 14px;
+  height: 1px;
+  background: #15140f;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.burgerOpen span:first-child {
+  transform: translateY(3px) rotate(45deg);
+}
+
+.burgerOpen span:last-child {
+  transform: translateY(-3px) rotate(-45deg);
+}
+
+.mobilePanel {
+  position: fixed;
+  inset: 0;
+  z-index: 190;
+  background: #f8f5ef;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 6rem 1.75rem 3rem;
+  font-family: "Inter", -apple-system, sans-serif;
+}
+
+.mobileLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.mobileLink {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.85rem 0;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 2.1rem;
+  color: #15140f;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(21, 20, 15, 0.08);
+}
+
+.mobileIndex {
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  color: #9a948a;
+}
+
+.mobileLinkActive {
+  color: #8a5a2b;
+}
+
+.mobileFooter {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: #5b564c;
+}
+
+.mobileFooter a {
+  color: #15140f;
+  text-decoration: none;
+}

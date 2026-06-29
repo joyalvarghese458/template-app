@@ -1,0 +1,168 @@
+/* ── Intro ─────────────────────────────────────────────── */
+
+.intro {
+  padding: 7.5rem 0 4rem;
+}
+
+@media (min-width: 900px) {
+  .intro {
+    padding: 9.5rem 0 5rem;
+  }
+}
+
+.introGrid {
+  display: grid;
+  gap: 1.75rem;
+}
+
+@media (min-width: 860px) {
+  .introGrid {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 4rem;
+    align-items: end;
+  }
+}
+
+.introTitle {
+  font-size: clamp(2.3rem, 5.4vw, 3.6rem);
+  font-weight: 400;
+  line-height: 1.12;
+  margin: 0;
+}
+
+.introBody p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--helm-ink-soft);
+  margin: 0;
+}
+
+/* ── Press quotes ──────────────────────────────────────── */
+
+.quoteGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  border-top: 1px solid var(--helm-line);
+  padding-top: 2.5rem;
+}
+
+@media (min-width: 700px) {
+  .quoteGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3rem 3.5rem;
+  }
+}
+
+.quoteCard {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.quoteText {
+  font-size: clamp(1.2rem, 2vw, 1.45rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.quoteOutlet {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--helm-accent);
+}
+
+/* ── Speaking ──────────────────────────────────────────── */
+
+.speakingGrid {
+  display: grid;
+  gap: 2.5rem;
+}
+
+@media (min-width: 860px) {
+  .speakingGrid {
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 4.5rem;
+    align-items: start;
+  }
+}
+
+.speakingPhotoWrap {
+  justify-self: center;
+  width: 100%;
+}
+
+.speakingPhoto {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--helm-line);
+}
+
+.speakingImg {
+  object-fit: cover;
+}
+
+.speakingItems {
+  list-style: none;
+  margin: 1.75rem 0 0;
+  padding: 0;
+  border-top: 1px solid var(--helm-line);
+}
+
+.speakingRow {
+  display: grid;
+  grid-template-columns: 3.5rem 1fr;
+  gap: 1.25rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--helm-line);
+}
+
+.speakingYear {
+  font-size: 1.05rem;
+  color: var(--helm-ink-soft);
+}
+
+.speakingTitle {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0 0 0.3rem;
+}
+
+.speakingMeta {
+  font-size: 0.85rem;
+  color: var(--helm-ink-soft);
+  margin: 0;
+}
+
+/* ── CTA ───────────────────────────────────────────────── */
+
+.cta {
+  padding: 5rem 0 8rem;
+}
+
+.ctaInner {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+@media (min-width: 700px) {
+  .ctaInner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.ctaTitle {
+  font-size: clamp(2rem, 4.6vw, 3rem);
+  font-weight: 400;
+  margin: 0;
+}

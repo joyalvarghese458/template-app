@@ -89,9 +89,9 @@ export type SectionMeta = {
 };
 
 export const SECTIONS: SectionMeta[] = [
-  { id: "digital-resume",     label: "Digital Resume",     blurb: "Clean, one-page professional resumes — AED 49" },
-  { id: "career-portfolio",   label: "Career Portfolio",   blurb: "Showcase your skills, experience & work history — AED 99" },
-  { id: "creator-portfolio",  label: "Creator Portfolio",  blurb: "Creative portfolios for designers, creators & more — AED 149" },
+  { id: "digital-resume", label: "Digital Resume", blurb: "Clean, one-page professional resumes — AED 49" },
+  { id: "career-portfolio", label: "Career Portfolio", blurb: "Showcase your skills, experience & work history — AED 99" },
+  { id: "creator-portfolio", label: "Creator Portfolio", blurb: "Creative portfolios for designers, creators & more — AED 149" },
   { id: "business-portfolio", label: "Business Portfolio", blurb: "For founders, agencies & consultants — AED 1,599" },
 ];
 
@@ -117,12 +117,12 @@ export type AudienceMeta = {
 };
 
 export const AUDIENCES: AudienceMeta[] = [
-  { id: "designers",     label: "Designers",     blurb: "UI/UX, brand, motion, 3D & more" },
-  { id: "developers",    label: "Developers",    blurb: "Frontend, full-stack, mobile, AI" },
+  { id: "designers", label: "Designers", blurb: "UI/UX, brand, motion, 3D & more" },
+  { id: "developers", label: "Developers", blurb: "Frontend, full-stack, mobile, AI" },
   { id: "photographers", label: "Photographers", blurb: "Galleries & visual storytelling" },
-  { id: "creators",      label: "Creators",      blurb: "Writers, YouTubers, podcasters, musicians" },
-  { id: "founders",      label: "Founders",      blurb: "SaaS, startup, consultants, coaches" },
-  { id: "agencies",      label: "Agencies",      blurb: "Studios, luxury, Webflow/Framer" },
+  { id: "creators", label: "Creators", blurb: "Writers, YouTubers, podcasters, musicians" },
+  { id: "founders", label: "Founders", blurb: "SaaS, startup, consultants, coaches" },
+  { id: "agencies", label: "Agencies", blurb: "Studios, luxury, Webflow/Framer" },
 ];
 
 // ────────────────────────────────────────────────────────────────────
@@ -133,59 +133,59 @@ export type SpecialtyMeta = { id: string; label: string };
 
 export const SPECIALTIES: Record<AudienceId, SpecialtyMeta[]> = {
   designers: [
-    { id: "ui-ux",       label: "UI/UX" },
-    { id: "brand",       label: "Brand" },
-    { id: "graphic",     label: "Graphic" },
-    { id: "motion",      label: "Motion" },
-    { id: "3d",          label: "3D" },
+    { id: "ui-ux", label: "UI/UX" },
+    { id: "brand", label: "Brand" },
+    { id: "graphic", label: "Graphic" },
+    { id: "motion", label: "Motion" },
+    { id: "3d", label: "3D" },
     { id: "illustrator", label: "Illustrator" },
-    { id: "architect",   label: "Architect" },
-    { id: "interior",    label: "Interior" },
-    { id: "fashion",     label: "Fashion" },
+    { id: "architect", label: "Architect" },
+    { id: "interior", label: "Interior" },
+    { id: "fashion", label: "Fashion" },
   ],
   developers: [
-    { id: "frontend",    label: "Frontend" },
-    { id: "full-stack",  label: "Full Stack" },
-    { id: "mobile",      label: "Mobile" },
-    { id: "ai-ml",       label: "AI / ML" },
-    { id: "data-science",label: "Data Science" },
-    { id: "game",        label: "Game" },
-    { id: "devops",      label: "DevOps" },
-    { id: "no-code",     label: "No-Code" },
-    { id: "security",    label: "Security" },
+    { id: "frontend", label: "Frontend" },
+    { id: "full-stack", label: "Full Stack" },
+    { id: "mobile", label: "Mobile" },
+    { id: "ai-ml", label: "AI / ML" },
+    { id: "data-science", label: "Data Science" },
+    { id: "game", label: "Game" },
+    { id: "devops", label: "DevOps" },
+    { id: "no-code", label: "No-Code" },
+    { id: "security", label: "Security" },
   ],
   photographers: [
-    { id: "gallery",  label: "Gallery" },
-    { id: "fashion",  label: "Fashion" },
+    { id: "gallery", label: "Gallery" },
+    { id: "fashion", label: "Fashion" },
     { id: "fine-art", label: "Fine Art" },
-    { id: "wedding",  label: "Wedding" },
+    { id: "wedding", label: "Wedding" },
   ],
   creators: [
-    { id: "writer",      label: "Writer" },
-    { id: "copywriter",  label: "Copywriter" },
-    { id: "youtuber",    label: "YouTuber" },
-    { id: "podcaster",   label: "Podcaster" },
-    { id: "musician",    label: "Musician / DJ" },
-    { id: "filmmaker",   label: "Filmmaker" },
-    { id: "influencer",  label: "Influencer" },
+    { id: "writer", label: "Writer" },
+    { id: "copywriter", label: "Copywriter" },
+    { id: "youtuber", label: "YouTuber" },
+    { id: "podcaster", label: "Podcaster" },
+    { id: "musician", label: "Musician / DJ" },
+    { id: "filmmaker", label: "Filmmaker" },
+    { id: "influencer", label: "Influencer" },
     { id: "model-actor", label: "Model / Actor" },
   ],
   founders: [
-    { id: "saas",           label: "SaaS" },
-    { id: "startup",        label: "Startup" },
-    { id: "consultant",     label: "Consultant" },
-    { id: "coach",          label: "Coach" },
+    { id: "saas", label: "SaaS" },
+    { id: "startup", label: "Startup" },
+    { id: "consultant", label: "Consultant" },
+    { id: "coach", label: "Coach" },
     { id: "personal-brand", label: "Personal Brand" },
-    { id: "executive",      label: "Executive" },
-    { id: "speaker",        label: "Speaker" },
-    { id: "real-estate",    label: "Real Estate" },
-    { id: "ecommerce",      label: "Ecommerce" },
+    { id: "executive", label: "Executive" },
+    { id: "speaker", label: "Speaker" },
+    { id: "real-estate", label: "Real Estate" },
+    { id: "ecommerce", label: "Ecommerce" },
   ],
   agencies: [
     { id: "creative-studio", label: "Creative Studio" },
-    { id: "luxury",          label: "Luxury" },
-    { id: "webflow-framer",  label: "Webflow / Framer" },
-    { id: "ai-automation",   label: "AI Automation" },
+    { id: "luxury", label: "Luxury" },
+    { id: "webflow-framer", label: "Webflow / Framer" },
+    { id: "ai-automation", label: "AI Automation" },
   ],
 };
 
@@ -412,6 +412,12 @@ export const TEMPLATES: Template[] = [
 
   // ── Creator Portfolio  (AED 149 · tier: premium) ─────────────────
   {
+    id: "x5", slug: "helm", title: "Helm", tag: "Chief Executive Officer · Ivory Minimalist", tier: "premium",
+    section: "creator-portfolio",
+    image: "https://images.pexels.com/photos/31497519/pexels-photo-31497519.jpeg?cs=srgb&fm=jpg&w=420&h=860&fit=crop",
+    audiences: ["founders", "agencies"], specialties: ["executive", "personal-brand", "consultant"]
+  },
+  {
     id: "s1", title: "Minimalist", tag: "Resume · Single page", tier: "premium",
     section: "creator-portfolio",
     audiences: ["creators", "founders"], specialties: ["writer", "consultant", "personal-brand"]
@@ -471,11 +477,7 @@ export const TEMPLATES: Template[] = [
     section: "creator-portfolio",
     audiences: ["designers"], specialties: ["architect", "interior"]
   },
-  {
-    id: "x5", title: "Founder", tag: "Executive · Suite", tier: "premium",
-    section: "creator-portfolio",
-    audiences: ["founders"], specialties: ["executive", "saas", "startup"]
-  },
+
   {
     id: "x6", title: "Maker Pro", tag: "Designer · Elite", tier: "premium",
     section: "creator-portfolio",
@@ -552,9 +554,9 @@ function toArray(raw: string | string[] | undefined): string[] {
     .filter(Boolean);
 }
 
-const SECTION_IDS  = new Set<SectionId>(SECTIONS.map((s) => s.id));
+const SECTION_IDS = new Set<SectionId>(SECTIONS.map((s) => s.id));
 const AUDIENCE_IDS = new Set<AudienceId>(AUDIENCES.map((a) => a.id));
-const TIER_IDS     = new Set<TierId>(TIERS.map((t) => t.id));
+const TIER_IDS = new Set<TierId>(TIERS.map((t) => t.id));
 const ALL_SPECIALTY_IDS = new Set<string>(
   (Object.keys(SPECIALTIES) as AudienceId[]).flatMap((id) =>
     SPECIALTIES[id].map((s) => s.id)

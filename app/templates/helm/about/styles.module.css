@@ -1,0 +1,233 @@
+/* ── Intro ─────────────────────────────────────────────── */
+
+.intro {
+  padding: 7.5rem 0 5rem;
+}
+
+@media (min-width: 900px) {
+  .intro {
+    padding: 9.5rem 0 6rem;
+  }
+}
+
+.introGrid {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 860px) {
+  .introGrid {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 4rem;
+    align-items: end;
+  }
+}
+
+.introTitle {
+  font-size: clamp(2.3rem, 5.4vw, 3.6rem);
+  font-weight: 400;
+  line-height: 1.12;
+  margin: 0;
+}
+
+.introBody p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--helm-ink-soft);
+  margin: 0 0 1.25rem;
+}
+
+/* ── Bio ───────────────────────────────────────────────── */
+
+.bioGrid {
+  display: grid;
+  gap: 2.5rem;
+}
+
+@media (min-width: 860px) {
+  .bioGrid {
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 4.5rem;
+    align-items: start;
+  }
+}
+
+.bioPhotoWrap {
+  justify-self: center;
+  width: 100%;
+}
+
+.bioPhoto {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  aspect-ratio: 4 / 5;
+  border: 1px solid var(--helm-line);
+}
+
+.bioImg {
+  object-fit: cover;
+}
+
+.bioQuote {
+  font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.35;
+  margin: 0 0 1.5rem;
+}
+
+.bioParagraph {
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: var(--helm-ink-soft);
+  margin: 0 0 1.25rem;
+}
+
+.bioSig {
+  margin-top: 1.5rem;
+}
+
+.bioSigMark {
+  width: 130px;
+  height: 30px;
+  color: var(--helm-accent);
+}
+
+/* ── Section headers (shared shape) ───────────────────── */
+
+.sectionHead {
+  margin-bottom: 3rem;
+}
+
+.sectionTitle {
+  font-size: clamp(1.9rem, 3.6vw, 2.7rem);
+  font-weight: 400;
+  margin: 0;
+}
+
+/* ── Timeline ──────────────────────────────────────────── */
+
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--helm-line);
+}
+
+.timelineRow {
+  display: grid;
+  grid-template-columns: 3.5rem 1.2rem 1fr;
+  gap: 0 1.25rem;
+  padding: 1.85rem 0;
+  border-bottom: 1px solid var(--helm-line);
+}
+
+@media (min-width: 700px) {
+  .timelineRow {
+    grid-template-columns: 5rem 1.2rem 1fr;
+  }
+}
+
+.timelineYear {
+  font-size: 1.1rem;
+  color: var(--helm-ink-soft);
+}
+
+.timelineDot {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.timelineDot::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--helm-accent);
+  margin-top: 0.45rem;
+}
+
+.timelineTitle {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0 0 0.4rem;
+}
+
+.timelineDesc {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--helm-ink-soft);
+  margin: 0;
+  max-width: 42rem;
+}
+
+/* ── Awards ────────────────────────────────────────────── */
+
+.awardsList {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--helm-line);
+}
+
+.awardRow {
+  display: grid;
+  grid-template-columns: 3.5rem 1fr auto;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 1.4rem 0;
+  border-bottom: 1px solid var(--helm-line);
+}
+
+@media (min-width: 700px) {
+  .awardRow {
+    grid-template-columns: 5rem 1fr auto;
+  }
+}
+
+.awardYear {
+  font-size: 1rem;
+  color: var(--helm-ink-faint);
+}
+
+.awardTitle {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.awardOrg {
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--helm-accent);
+  text-align: right;
+}
+
+/* ── CTA ───────────────────────────────────────────────── */
+
+.cta {
+  padding: 5rem 0 8rem;
+}
+
+.ctaInner {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: flex-start;
+  text-align: left;
+}
+
+@media (min-width: 700px) {
+  .ctaInner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.ctaTitle {
+  font-size: clamp(2rem, 4.6vw, 3rem);
+  font-weight: 400;
+  margin: 0;
+}

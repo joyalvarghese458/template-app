@@ -1,0 +1,92 @@
+.footer {
+  border-top: 1px solid var(--helm-line);
+  padding: 4.5rem 0 2.25rem;
+  background: var(--helm-bg-alt);
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding-bottom: 3.5rem;
+}
+
+@media (min-width: 860px) {
+  .top {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.brandName {
+  font-size: 1.6rem;
+  margin: 0 0 0.4rem;
+}
+
+.brandRole {
+  font-size: 0.85rem;
+  color: var(--helm-ink-soft);
+}
+
+.cols {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.25rem 2.5rem;
+}
+
+@media (min-width: 560px) {
+  .cols {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 860px) {
+  .cols {
+    gap: 2.5rem 4rem;
+  }
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.colLabel {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--helm-ink-faint);
+  margin-bottom: 0.3rem;
+}
+
+.colLink {
+  font-size: 0.92rem;
+  color: var(--helm-ink-soft);
+  text-decoration: none;
+  transition: color 0.25s ease;
+  width: fit-content;
+}
+
+.colLink:hover {
+  color: var(--helm-accent);
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--helm-line);
+  font-size: 0.78rem;
+  color: var(--helm-ink-faint);
+}
+
+@media (min-width: 640px) {
+  .bottom {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

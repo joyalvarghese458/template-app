@@ -1,0 +1,213 @@
+/* ── Intro (shared shape with about/press) ────────────── */
+
+.intro {
+  padding: 7.5rem 0 4rem;
+}
+
+@media (min-width: 900px) {
+  .intro {
+    padding: 9.5rem 0 5rem;
+  }
+}
+
+.introGrid {
+  display: grid;
+  gap: 1.75rem;
+}
+
+@media (min-width: 860px) {
+  .introGrid {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 4rem;
+    align-items: end;
+  }
+}
+
+.introTitle {
+  font-size: clamp(2.3rem, 5.4vw, 3.6rem);
+  font-weight: 400;
+  line-height: 1.12;
+  margin: 0;
+}
+
+.introBody p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--helm-ink-soft);
+  margin: 0;
+}
+
+/* ── Index list ────────────────────────────────────────── */
+
+.listSection {
+  padding-bottom: 6rem;
+}
+
+.indexWrap {
+  position: relative;
+}
+
+.indexList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--helm-line);
+}
+
+.indexRow {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  gap: 0.25rem 1.5rem;
+  padding: 2.25rem 0;
+  border-bottom: 1px solid var(--helm-line);
+  cursor: default;
+}
+
+@media (min-width: 760px) {
+  .indexRow {
+    grid-template-columns: 3.5rem 1fr auto;
+    align-items: center;
+    gap: 1rem 2rem;
+  }
+}
+
+.indexNumber {
+  font-size: 1.1rem;
+  color: var(--helm-ink-faint);
+}
+
+.indexMain {
+  min-width: 0;
+}
+
+.indexTitle {
+  font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+  font-weight: 400;
+  margin: 0 0 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.indexRow:hover .indexTitle {
+  color: var(--helm-accent);
+}
+
+.indexDesc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--helm-ink-soft);
+  margin: 0;
+  max-width: 38rem;
+}
+
+.indexImageMobile {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  margin-top: 1.25rem;
+  overflow: hidden;
+}
+
+.indexImageMobileImg {
+  object-fit: cover;
+}
+
+@media (min-width: 760px) {
+  .indexImageMobile {
+    display: none;
+  }
+}
+
+.indexMeta {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 760px) {
+  .indexMeta {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.35rem;
+    margin-top: 0;
+    text-align: right;
+  }
+}
+
+.indexSector {
+  font-size: 0.74rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--helm-accent);
+}
+
+.indexYear,
+.indexMetric {
+  font-size: 0.84rem;
+  color: var(--helm-ink-faint);
+}
+
+/* ── Floating hover preview (desktop only) ────────────── */
+
+.floatPreview {
+  display: none;
+}
+
+@media (min-width: 1280px) {
+  .floatPreview {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 64px;
+    transform: translate(0, -50%);
+    width: 320px;
+    height: 230px;
+    pointer-events: none;
+    z-index: 150;
+  }
+}
+
+@media (min-width: 1500px) {
+  .floatPreview {
+    right: 96px;
+    width: 360px;
+    height: 260px;
+  }
+}
+
+.floatPreviewImageWrap {
+  position: absolute;
+  inset: 0;
+  box-shadow: 0 40px 80px -30px rgba(21, 20, 15, 0.35);
+}
+
+.floatPreviewImage {
+  object-fit: cover;
+}
+
+/* ── CTA ───────────────────────────────────────────────── */
+
+.cta {
+  padding: 4rem 0 8rem;
+}
+
+.ctaInner {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+@media (min-width: 700px) {
+  .ctaInner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.ctaTitle {
+  font-size: clamp(2rem, 4.6vw, 3rem);
+  font-weight: 400;
+  margin: 0;
+}

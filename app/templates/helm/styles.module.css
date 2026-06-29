@@ -1,0 +1,356 @@
+/* ── Hero ──────────────────────────────────────────────── */
+
+.hero {
+  padding: 7.5rem 0 4rem;
+}
+
+@media (min-width: 900px) {
+  .hero {
+    padding: 9.5rem 0 5rem;
+  }
+}
+
+.heroGrid {
+  display: grid;
+  gap: 1.6rem;
+  grid-template-areas:
+    "kicker"
+    "photo"
+    "title"
+    "lead"
+    "cta"
+    "sig";
+}
+
+@media (min-width: 900px) {
+  .heroGrid {
+    grid-template-columns: 1.15fr 0.85fr;
+    column-gap: 4rem;
+    row-gap: 1.4rem;
+    grid-template-areas:
+      "kicker photo"
+      "title  photo"
+      "lead   photo"
+      "cta    photo"
+      "sig    photo";
+    align-items: start;
+  }
+}
+
+.heroKicker {
+  grid-area: kicker;
+}
+
+.heroPhoto {
+  grid-area: photo;
+  position: relative;
+  justify-self: center;
+}
+
+@media (min-width: 900px) {
+  .heroPhoto {
+    justify-self: end;
+    grid-row: span 5;
+  }
+}
+
+.heroFrame {
+  position: relative;
+  width: min(360px, 78vw);
+  aspect-ratio: 4 / 5;
+  padding: 12px;
+  background: var(--helm-card);
+  border: 1px solid var(--helm-line);
+  box-shadow: 0 36px 70px -28px rgba(21, 20, 15, 0.28);
+}
+
+@media (min-width: 900px) {
+  .heroFrame {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+.heroImg {
+  object-fit: cover;
+  object-position: top center;
+}
+
+.heroBadge {
+  position: absolute;
+  left: -10px;
+  bottom: -16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--helm-ink);
+  color: var(--helm-bg);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0.6rem 0.9rem;
+  white-space: nowrap;
+}
+
+.heroBadgeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #6fb88a;
+  flex-shrink: 0;
+}
+
+.heroTitle {
+  grid-area: title;
+  font-size: clamp(2.6rem, 7vw, 4.4rem);
+  font-weight: 400;
+  line-height: 1.04;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.heroLead {
+  grid-area: lead;
+  font-size: 1.08rem;
+  line-height: 1.6;
+  color: var(--helm-ink-soft);
+  max-width: 34rem;
+}
+
+.heroActions {
+  grid-area: cta;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+.heroSig {
+  grid-area: sig;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-top: 0.75rem;
+}
+
+.sigMark {
+  width: 110px;
+  height: 26px;
+  color: var(--helm-accent);
+}
+
+.heroSigCaption {
+  font-family: var(--font-helm-display), serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--helm-ink-soft);
+}
+
+/* ── Stats ─────────────────────────────────────────────── */
+
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.5rem 1.5rem;
+}
+
+@media (min-width: 720px) {
+  .statsRow {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.statValue {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 400;
+}
+
+.statLabel {
+  font-size: 0.84rem;
+  color: var(--helm-ink-soft);
+}
+
+/* ── Philosophy ────────────────────────────────────────── */
+
+.philosophyGrid {
+  display: grid;
+  gap: 2.5rem;
+}
+
+@media (min-width: 860px) {
+  .philosophyGrid {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 4rem;
+    align-items: start;
+  }
+}
+
+.quote {
+  font-size: clamp(1.7rem, 3.4vw, 2.5rem);
+  font-weight: 400;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.philosophyBody p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--helm-ink-soft);
+  margin: 0 0 1.5rem;
+}
+
+.textLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--helm-ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--helm-ink);
+  padding-bottom: 0.2rem;
+  width: fit-content;
+}
+
+.textLinkArrow {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.3s ease;
+}
+
+.textLink:hover .textLinkArrow {
+  transform: translateX(3px);
+}
+
+/* ── Ventures preview ──────────────────────────────────── */
+
+.sectionHead {
+  margin-bottom: 3rem;
+}
+
+.sectionHeadRow {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  justify-content: space-between;
+}
+
+@media (min-width: 760px) {
+  .sectionHeadRow {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+}
+
+.sectionTitle {
+  font-size: clamp(1.9rem, 3.6vw, 2.7rem);
+  font-weight: 400;
+  margin: 0;
+  max-width: 30rem;
+}
+
+.previewGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+@media (min-width: 700px) {
+  .previewGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.75rem;
+  }
+}
+
+.previewCardLink {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.previewImageWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--helm-bg-alt);
+}
+
+.previewImage {
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.previewCardLink:hover .previewImage {
+  transform: scale(1.05);
+}
+
+.previewMeta {
+  padding-top: 1.1rem;
+}
+
+.previewSector {
+  font-size: 0.74rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--helm-accent);
+}
+
+.previewTitle {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin: 0.4rem 0 0.5rem;
+}
+
+.previewDesc {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--helm-ink-soft);
+  margin: 0;
+}
+
+/* ── Press marquee ─────────────────────────────────────── */
+
+.marqueeLabel {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--helm-ink-faint);
+  margin-bottom: 2.25rem;
+}
+
+/* ── Closing CTA ───────────────────────────────────────── */
+
+.cta {
+  padding: 6rem 0 8rem;
+}
+
+.ctaInner {
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+  align-items: flex-start;
+}
+
+@media (min-width: 760px) {
+  .ctaInner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.ctaTitle {
+  font-size: clamp(2.1rem, 5vw, 3.2rem);
+  font-weight: 400;
+  line-height: 1.1;
+  margin: 0;
+}

@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   },
 };
 
-const CREATOR_PORTFOLIO_TEMPLATE_IDS = new Set(["s1", "s2", "p2", "p9"]);
+const CREATOR_PORTFOLIO_TEMPLATE_IDS = new Set(["x5", "s1", "s2", "p2",]);
 
 type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
 
@@ -124,8 +124,8 @@ export default async function TemplatesPage({
             {soloSection
               ? soloSection.blurb
               : soloAudience
-              ? soloAudience.blurb
-              : `Search ${visibleTemplateCount}+ hand-crafted templates and filter by section, profession, specialty, or price.`}
+                ? soloAudience.blurb
+                : `Search ${visibleTemplateCount}+ hand-crafted templates and filter by section, profession, specialty, or price.`}
           </p>
         </div>
       </header>

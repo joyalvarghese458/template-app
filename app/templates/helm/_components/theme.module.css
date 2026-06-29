@@ -1,0 +1,160 @@
+/* ────────────────────────────────────────────────────────────────
+   Helm — shared design tokens & base utilities
+   Imported by every page alongside that page's own styles.module.css
+   ──────────────────────────────────────────────────────────────── */
+
+.root {
+  --helm-bg: #f8f5ef;
+  --helm-bg-alt: #f1ece2;
+  --helm-card: #ffffff;
+  --helm-ink: #15140f;
+  --helm-ink-soft: #5b564c;
+  --helm-ink-faint: #9a948a;
+  --helm-line: rgba(21, 20, 15, 0.12);
+  --helm-line-soft: rgba(21, 20, 15, 0.07);
+  --helm-accent: #8a5a2b;
+  --helm-accent-soft: #c79a66;
+  --helm-accent-tint: rgba(138, 90, 43, 0.08);
+
+  background: var(--helm-bg);
+  color: var(--helm-ink);
+  font-family: var(--font-helm-body), "Inter", -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  min-height: 100vh;
+}
+
+.display {
+  font-family: var(--font-helm-display), "Fraunces", Georgia, serif;
+}
+
+.italic {
+  font-style: italic;
+  color: var(--helm-accent);
+}
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 3rem;
+  }
+}
+
+.section {
+  padding: 6rem 0;
+}
+
+@media (min-width: 900px) {
+  .section {
+    padding: 9rem 0;
+  }
+}
+
+.sectionTight {
+  padding: 3.5rem 0;
+}
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--helm-ink-soft);
+}
+
+.kickerDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--helm-accent);
+  flex-shrink: 0;
+}
+
+.lineDivider {
+  height: 1px;
+  width: 100%;
+  background: var(--helm-line);
+  border: none;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-helm-body), sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  padding: 0.95rem 1.7rem;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btnPrimary {
+  background: var(--helm-ink);
+  color: var(--helm-bg);
+}
+
+.btnPrimary:hover {
+  background: var(--helm-accent);
+}
+
+.btnGhost {
+  background: transparent;
+  color: var(--helm-ink);
+  border-color: var(--helm-line);
+}
+
+.btnGhost:hover {
+  border-color: var(--helm-ink);
+  background: var(--helm-card);
+}
+
+.btnArrow {
+  width: 15px;
+  height: 15px;
+  transition: transform 0.3s ease;
+}
+
+.btn:hover .btnArrow {
+  transform: translateX(3px);
+}
+
+.eyebrow {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--helm-accent);
+  margin-bottom: 1.1rem;
+  display: block;
+}
+
+.numeral {
+  font-family: var(--font-helm-display), serif;
+  font-feature-settings: "lnum";
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}

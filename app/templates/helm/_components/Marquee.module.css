@@ -1,0 +1,35 @@
+.marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  gap: 4.5rem;
+  animation: scroll 28s linear infinite;
+}
+
+.item {
+  font-family: var(--font-helm-display), "Fraunces", serif;
+  font-size: clamp(1.25rem, 3vw, 1.9rem);
+  font-style: italic;
+  color: var(--helm-ink-faint);
+  white-space: nowrap;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+  }
+}
