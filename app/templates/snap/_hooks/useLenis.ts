@@ -4,47 +4,51 @@ import { useEffect } from "react";
 
 export function useLenis() {
   useEffect(() => {
+    const html = document.documentElement;
+    const body = document.body;
+    const previousHtmlOverflowX = html.style.overflowX;
+    const previousBodyOverflowX = body.style.overflowX;
+    const previousScrollBehavior = html.style.scrollBehavior;
+
+    html.style.overflowX = "hidden";
+    body.style.overflowX = "hidden";
+    html.style.scrollBehavior = "auto";
+
     type LenisInstance = { raf: (t: number) => void; destroy: () => void };
-    type GsapInstance = typeof import("gsap")["default"];
 
     let lenis: LenisInstance | null = null;
-    let tick: ((time: number) => void) | null = null;
-    let gsapInstance: GsapInstance | null = null;
+    let rafId = 0;
     let active = true;
 
     (async () => {
-      const [{ default: Lenis }, { default: gsap }] = await Promise.all([
-        import("lenis"),
-        import("gsap"),
-      ]);
+      const { default: Lenis } = await import("lenis");
 
       if (!active) return;
 
-      gsapInstance = gsap;
-
       lenis = new Lenis({
-        duration: 1.4,
-        easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        touchMultiplier: 2,
+        duration: 1.3,
+        easing: (t: number) => 1 - Math.pow(1 - t, 4),
+        smoothWheel: true,
+        wheelMultiplier: 0.9,
+        touchMultiplier: 1.4,
+        syncTouch: true,
       }) as LenisInstance;
 
-      tick = (time: number) => {
-        if (lenis) lenis.raf(time * 1000);
+      const raf = (time: number) => {
+        lenis?.raf(time);
+        rafId = window.requestAnimationFrame(raf);
       };
-
-      gsap.ticker.add(tick);
-      gsap.ticker.lagSmoothing(0);
+      rafId = window.requestAnimationFrame(raf);
     })();
 
     return () => {
       active = false;
-      // Remove tick from GSAP before destroying lenis to prevent
-      // "Cannot read properties of null (reading 'raf')" after unmount.
-      if (gsapInstance && tick) gsapInstance.ticker.remove(tick);
+      html.style.overflowX = previousHtmlOverflowX;
+      body.style.overflowX = previousBodyOverflowX;
+      html.style.scrollBehavior = previousScrollBehavior;
+      if (rafId) window.cancelAnimationFrame(rafId);
       if (lenis) lenis.destroy();
       lenis = null;
-      tick = null;
-      gsapInstance = null;
     };
   }, []);
 }

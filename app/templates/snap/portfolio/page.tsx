@@ -3,18 +3,17 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { useLenis }        from "../_hooks/useLenis";
 import GrainOverlay        from "../_components/GrainOverlay";
 import ScrollProgress      from "../_components/ScrollProgress";
 import CustomCursor        from "../_components/CustomCursor";
+import { useSnapViewport } from "../_hooks/useSnapViewport";
 import Nav                 from "../_components/Nav";
 import Footer              from "../_components/Footer";
 import { PORTFOLIO_ITEMS, PORTFOLIO_CATEGORIES } from "../_data/portfolio";
-import { stagger, scaleIn, viewport } from "../_utils/motion";
 import styles from "../theme.module.css";
 
 export default function SnapPortfolio() {
-  useLenis();
+  useSnapViewport();
   const [active, setActive] = useState("all");
 
   const filtered =

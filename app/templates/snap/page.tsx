@@ -17,11 +17,10 @@
   ──────────────────────────────────────────────────────────────────
 */
 
-import { useEffect }         from "react";
-import { useLenis }          from "./_hooks/useLenis";
 import GrainOverlay          from "./_components/GrainOverlay";
 import ScrollProgress        from "./_components/ScrollProgress";
 import CustomCursor          from "./_components/CustomCursor";
+import { useSnapViewport }   from "./_hooks/useSnapViewport";
 import Nav                   from "./_components/Nav";
 import Hero                  from "./_components/Hero";
 import Categories            from "./_components/Categories";
@@ -37,18 +36,7 @@ import Footer                from "./_components/Footer";
 import styles                from "./theme.module.css";
 
 export default function SnapHome() {
-  useLenis();
-
-  useEffect(() => {
-    const html = document.documentElement;
-    const body = document.body;
-    html.style.overflowX = "hidden";
-    body.style.overflowX = "hidden";
-    return () => {
-      html.style.overflowX = "";
-      body.style.overflowX = "";
-    };
-  }, []);
+  useSnapViewport();
 
   return (
     <div className={styles.page}>

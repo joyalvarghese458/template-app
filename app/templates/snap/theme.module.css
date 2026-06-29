@@ -7,6 +7,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600&display=swap");
 
 /* ── CSS Variables ─────────────────────────────────────────────── */
+:global(html.lenis),
+:global(html.lenis body) {
+  height: auto;
+}
+
+:global(html.lenis.lenis-smooth) {
+  scroll-behavior: auto !important;
+}
+
+:global(html.lenis.lenis-stopped) {
+  overflow: hidden;
+}
+
+:global(html.lenis body) {
+  overflow-x: hidden;
+}
+
 .page {
   --snap-bg:          #06060a;
   --snap-bg2:         #0d0d12;
@@ -31,6 +48,10 @@
   background: var(--snap-bg);
   color: var(--snap-text);
   overflow-x: hidden;
+  overflow-y: clip;
+  width: 100%;
+  max-width: 100%;
+  min-height: 100svh;
   position: relative;
 }
 
@@ -160,20 +181,21 @@
 /* ── Grain Overlay ─────────────────────────────────────────────── */
 .grain {
   position: fixed;
-  inset: -50%;
-  width: 200%;
-  height: 200%;
+  inset: 0;
   pointer-events: none;
   z-index: 9999;
   opacity: 0.03;
+  overflow: hidden;
+  background-position: 0 0;
   animation: grainShift 0.35s steps(1) infinite;
 }
 
 @keyframes grainShift {
-  0%  { transform: translate(0, 0); }
-  25% { transform: translate(-3%, -2%); }
-  50% { transform: translate(2%, 2%); }
-  75% { transform: translate(-1%, 3%); }
+  0%  { background-position: 0 0; }
+  25% { background-position: -18px -12px; }
+  50% { background-position: 14px 16px; }
+  75% { background-position: -8px 20px; }
+  100% { background-position: 0 0; }
 }
 
 /* ── Scroll Progress ───────────────────────────────────────────── */
@@ -337,9 +359,20 @@
   inset: 0;
   z-index: 999;
   pointer-events: none;
+  visibility: hidden;
+  overflow: hidden;
 }
 
-.mobileMenuOpen { pointer-events: all; }
+.mobileMenuOpen {
+  pointer-events: all;
+  visibility: visible;
+}
+
+@media (min-width: 769px) {
+  .mobileMenu {
+    display: none;
+  }
+}
 
 .mobileMenuBg {
   position: absolute;
@@ -365,7 +398,12 @@
   gap: 0.5rem;
   transform: translateX(100%);
   transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
+
+.mobileMenuPanel::-webkit-scrollbar { display: none; }
 
 .mobileMenuOpen .mobileMenuPanel { transform: translateX(0); }
 

@@ -1,12 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { motion } from "framer-motion";
-import { useLenis }    from "../_hooks/useLenis";
 import GrainOverlay    from "../_components/GrainOverlay";
 import ScrollProgress  from "../_components/ScrollProgress";
 import CustomCursor    from "../_components/CustomCursor";
+import { useSnapViewport } from "../_hooks/useSnapViewport";
 import Nav             from "../_components/Nav";
 import Footer          from "../_components/Footer";
 import { PROFILE, FAQ } from "../_data/portfolio";
@@ -14,7 +13,7 @@ import { fadeUp, stagger, viewport } from "../_utils/motion";
 import styles from "../theme.module.css";
 
 export default function SnapContact() {
-  useLenis();
+  useSnapViewport();
 
   const [formData, setFormData] = useState({
     firstName: "",
