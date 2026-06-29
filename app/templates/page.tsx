@@ -40,6 +40,8 @@ export const metadata: Metadata = {
   },
 };
 
+const CREATOR_PORTFOLIO_TEMPLATE_IDS = new Set(["s1", "s2", "p2", "p9"]);
+
 type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
 
 export default async function TemplatesPage({
@@ -55,6 +57,16 @@ export default async function TemplatesPage({
   const q = parseQuery(sp.q);
 
   const filtered = filterTemplates({ sections, audiences, specialties, tiers, q });
+  const visibleTemplates = filtered.filter(
+    (template) =>
+      template.section !== "creator-portfolio" ||
+      CREATOR_PORTFOLIO_TEMPLATE_IDS.has(template.id)
+  );
+  const visibleTemplateCount = TEMPLATES.filter(
+    (template) =>
+      template.section !== "creator-portfolio" ||
+      CREATOR_PORTFOLIO_TEMPLATE_IDS.has(template.id)
+  ).length;
 
   const hasActiveFilter =
     sections.length > 0 || audiences.length > 0 || specialties.length > 0 ||
@@ -72,7 +84,7 @@ export default async function TemplatesPage({
         sectionId,
         label: meta.label,
         blurb: meta.blurb,
-        templates: filtered.filter((t) => t.section === sectionId),
+        templates: visibleTemplates.filter((t) => t.section === sectionId),
       };
     }).filter((g) => g.templates.length > 0);
 
@@ -113,7 +125,7 @@ export default async function TemplatesPage({
               ? soloSection.blurb
               : soloAudience
               ? soloAudience.blurb
-              : `Search ${TEMPLATES.length}+ hand-crafted templates and filter by section, profession, specialty, or price.`}
+              : `Search ${visibleTemplateCount}+ hand-crafted templates and filter by section, profession, specialty, or price.`}
           </p>
         </div>
       </header>
@@ -128,16 +140,16 @@ export default async function TemplatesPage({
           {/* Result count */}
           <div className="flex items-center justify-between mb-5 sm:mb-6">
             <p className="text-sm text-ink-soft">
-              <span className="font-semibold text-ink tabular-nums">{filtered.length}</span>{" "}
-              of {TEMPLATES.length} template{filtered.length === 1 ? "" : "s"}
+              <span className="font-semibold text-ink tabular-nums">{visibleTemplates.length}</span>{" "}
+              of {visibleTemplateCount} template{visibleTemplates.length === 1 ? "" : "s"}
             </p>
           </div>
 
-          {filtered.length > 0 ? (
+          {visibleTemplates.length > 0 ? (
             hasActiveFilter ? (
               /* ── Flat grid when filters are active ── */
               <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-5 lg:gap-6">
-                {filtered.map((t) => (
+                {visibleTemplates.map((t) => (
                   <TemplateCard key={t.id} template={t} />
                 ))}
               </div>
@@ -167,7 +179,7 @@ export default async function TemplatesPage({
               </div>
             )
           ) : (
-            <EmptyState />
+            <EmptyState visibleTemplateCount={visibleTemplateCount} />
           )}
 
           {/* Footer CTA */}
@@ -197,7 +209,7 @@ function FilterShellFallback() {
   );
 }
 
-function EmptyState() {
+function EmptyState({ visibleTemplateCount }: { visibleTemplateCount: number }) {
   return (
     <div className="text-center py-20 px-6 border border-dashed border-ink/20 rounded-2xl">
       <div className="w-14 h-14 mx-auto rounded-full bg-brand/10 border border-brand/30 flex items-center justify-center mb-5">
@@ -214,7 +226,7 @@ function EmptyState() {
         href="/templates"
         className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-canvas-bg bg-brand hover:bg-brand/90 rounded-full transition-all duration-200"
       >
-        Show all {TEMPLATES.length} templates
+        Show all {visibleTemplateCount} templates
       </Link>
     </div>
   );
