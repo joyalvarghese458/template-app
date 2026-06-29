@@ -49,7 +49,7 @@ const CATEGORIES: Category[] = [
     id: "career-portfolio",
     label: "Career Portfolio",
     description: "Showcase your skills and experience to land your next role.",
-    templateIds: ["p1", "x11", "s8", "s9"],
+    templateIds: ["torque", "p11", "cp2", "s8"],
     href: "/templates?section=career-portfolio",
     aed: 99,
   },
@@ -236,7 +236,8 @@ export default function TemplatesSection() {
             <span className="italic text-brand">Launch in days.</span>
           </h2>
           <p className="text-base sm:text-lg text-ink-soft leading-relaxed mb-6">
-            Choose from professionally designed portfolio website layouts optimized for credibility, visibility, and conversions.
+            Choose from professionally designed portfolio website layouts
+            optimized for credibility, visibility, and conversions.
           </p>
 
           {/* Currency toggle */}
@@ -246,10 +247,11 @@ export default function TemplatesSection() {
                 key={c}
                 type="button"
                 onClick={() => setCurrency(c)}
-                className={`px-4 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 ${currency === c
+                className={`px-4 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 ${
+                  currency === c
                     ? "bg-brand text-canvas-bg shadow-sm shadow-brand/30"
                     : "text-ink-soft hover:text-ink"
-                  }`}
+                }`}
               >
                 {c}
               </button>
@@ -260,9 +262,9 @@ export default function TemplatesSection() {
         {/* Section quick-filters */}
         <div className="flex flex-wrap items-center justify-center gap-1.5 mb-12">
           {[
-            { id: "digital-resume",     label: "Digital Resume" },
-            { id: "career-portfolio",   label: "Career Portfolio" },
-            { id: "creator-portfolio",  label: "Creator Portfolio" },
+            { id: "digital-resume", label: "Digital Resume" },
+            { id: "career-portfolio", label: "Career Portfolio" },
+            { id: "creator-portfolio", label: "Creator Portfolio" },
             { id: "business-portfolio", label: "Business Portfolio" },
           ].map((s) => (
             <a
@@ -318,7 +320,12 @@ export default function TemplatesSection() {
                 {/* Grid: 2 cols mobile, 4 cols desktop */}
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
                   {templates.map((t) => (
-                    <TemplateCard key={t.id} template={t} currency={currency} price={cat.aed} />
+                    <TemplateCard
+                      key={t.id}
+                      template={t}
+                      currency={currency}
+                      price={cat.aed}
+                    />
                   ))}
                 </div>
               </div>
