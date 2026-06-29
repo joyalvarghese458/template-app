@@ -6,6 +6,18 @@ import fs from "fs";
 export const runtime = "nodejs";
 
 const SCROLL_DURATION_MS = 6000;
+const HERO_READY_TIMEOUT_MS = 15000;
+
+async function waitForHeroReady(page: puppeteer.Page) {
+  try {
+    await page.waitForSelector('[data-spline-scene="true"][data-spline-ready="true"]', {
+      timeout: HERO_READY_TIMEOUT_MS,
+    });
+    await new Promise((r) => setTimeout(r, 1200));
+  } catch {
+    // Ignore when a template does not have an interactive hero readiness marker.
+  }
+}
 
 export async function POST(req: NextRequest) {
   const body = await req.json().catch(() => null);
@@ -32,6 +44,7 @@ export async function POST(req: NextRequest) {
     const page = await browser.newPage();
     await page.setViewport({ width: 390, height: 844, deviceScaleFactor: 1 });
     await page.goto(url, { waitUntil: "networkidle2", timeout: 30000 });
+    await waitForHeroReady(page);
     await new Promise((r) => setTimeout(r, 2000));
 
     // Poster JPEG at the top

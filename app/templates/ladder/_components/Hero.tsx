@@ -63,7 +63,11 @@ export default function Hero() {
           onPointerDown={onRoboPointerDown}
           onClick={playRobo}
         >
-          <SplineScene scene={HERO.splineScene} className="w-full h-full" />
+          <SplineScene
+            scene={HERO.splineScene}
+            className="w-full h-full"
+            priority
+          />
         </div>
 
         {/* Left — text */}
@@ -136,6 +140,7 @@ export default function Hero() {
           <SplineScene
             scene={HERO.splineScene}
             className="w-full h-full absolute inset-0"
+            priority
           />
         </div>
       </div>

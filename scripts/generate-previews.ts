@@ -6,6 +6,19 @@ import { TEMPLATES } from "../lib/templates";
 const BASE_URL = "http://localhost:8086";
 const OUTPUT_DIR = path.join(process.cwd(), "public", "previews");
 const SCROLL_DURATION_MS = 6000;
+const HERO_READY_TIMEOUT_MS = 15000;
+
+// Wait for above-the-fold interactive heroes like Ladder's Spline robot.
+async function waitForHeroReady(page: puppeteer.Page) {
+  try {
+    await page.waitForSelector('[data-spline-scene="true"][data-spline-ready="true"]', {
+      timeout: HERO_READY_TIMEOUT_MS,
+    });
+    await new Promise((r) => setTimeout(r, 1200));
+  } catch {
+    // Most templates do not expose a hero-ready signal, so fall back quietly.
+  }
+}
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 async function scrollPage(page: any, durationMs: number) {
@@ -44,6 +57,7 @@ async function main() {
       const page = await browser.newPage();
       await page.setViewport({ width: 390, height: 844, deviceScaleFactor: 1 });
       await page.goto(url, { waitUntil: "networkidle2", timeout: 30000 });
+      await waitForHeroReady(page);
       // Wait for fonts and entrance animations
       await new Promise((r) => setTimeout(r, 2000));
 
