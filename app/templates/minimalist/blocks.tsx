@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import heroPortraitImage from "./hero-portrait.png";
 import {
   capabilities,
   contactTracks,
@@ -16,6 +19,7 @@ import {
   timeline,
   workCollections,
 } from "./data";
+import { AnimatedText, FadeIn, Magnet } from "./motion";
 import styles from "./styles.module.css";
 
 export function Hero() {
@@ -24,34 +28,44 @@ export function Hero() {
       <div className={styles.container}>
         <div className={styles.heroGrid}>
           <div>
-            <p className={styles.eyebrow}>Creator Portfolio Template</p>
-            <div className={styles.heroTitleStack}>
-              <h1 className={styles.heroTitle}>Mina Vale</h1>
-              <h1 className={styles.heroTitleOutline} aria-hidden="true">
-                Mina Vale
-              </h1>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/hero-test.webp"
-                alt="Creative portrait"
-                className={styles.heroPortrait}
-                loading="eager"
-                fetchPriority="high"
-                draggable={false}
-              />
-            </div>
-            <p className={styles.heroSubhead}>Creative director. Visual storyteller.</p>
-            <p className={styles.heroLead}>{site.tagline}</p>
-            <div className={styles.heroActions}>
+            <FadeIn as="p" className={styles.eyebrow}>
+              Creator Portfolio Template
+            </FadeIn>
+            <FadeIn delay={0.1} y={36} className={styles.heroTitleStack}>
+              <Magnet strength={4} padding={180} className={styles.heroPortraitMagnet}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={heroPortraitImage.src}
+                  alt="Creative portrait"
+                  className={styles.heroPortrait}
+                  loading="eager"
+                  fetchPriority="high"
+                  draggable={false}
+                />
+              </Magnet>
+              <div className={styles.heroTitleWrap}>
+                <h1 className={styles.heroTitle}>Mina Vale</h1>
+                <h1 className={styles.heroTitleOutline} aria-hidden="true">
+                  Mina Vale
+                </h1>
+              </div>
+            </FadeIn>
+            <FadeIn as="p" delay={0.16} className={styles.heroSubhead}>
+              Creative director. Visual storyteller.
+            </FadeIn>
+            <FadeIn delay={0.22} y={24}>
+              <AnimatedText text={site.tagline} className={styles.heroLead} />
+            </FadeIn>
+            <FadeIn delay={0.28} y={18} className={styles.heroActions}>
               <Link href="/templates/minimalist/work" className={styles.primaryButton}>
                 Explore the work
               </Link>
               <Link href="/templates/minimalist/contact" className={styles.secondaryButton}>
                 Plan your project
               </Link>
-            </div>
+            </FadeIn>
           </div>
-          <div className={styles.heroCard}>
+          <FadeIn delay={0.18} x={24} className={styles.heroCard}>
             <div className={styles.heroSurface}>
               <p className={styles.surfaceLabel}>Current focus</p>
               <h2>{site.availability}</h2>
@@ -68,7 +82,7 @@ export function Hero() {
                 ))}
               </div>
             </div>
-          </div>
+          </FadeIn>
         </div>
       </div>
     </section>
@@ -85,11 +99,16 @@ export function HighlightGrid() {
           body="This concept takes the minimalist card direction and expands it into a fuller portfolio system with dedicated pages, richer sections, and stronger storytelling."
         />
         <div className={styles.cardGrid}>
-          {homeHighlights.map((item) => (
-            <article key={item.title} className={styles.infoCard}>
+          {homeHighlights.map((item, index) => (
+            <FadeIn
+              key={item.title}
+              as="article"
+              delay={0.08 * index}
+              className={styles.infoCard}
+            >
               <p className={styles.cardEyebrow}>{item.title}</p>
               <p className={styles.cardBody}>{item.body}</p>
-            </article>
+            </FadeIn>
           ))}
         </div>
       </div>
@@ -107,8 +126,13 @@ export function CaseStudyStrip() {
           body="Each case entry gives enough context to communicate role, scope, and result without overwhelming the visitor."
         />
         <div className={styles.caseList}>
-          {featuredCases.map((item) => (
-            <article key={item.name} className={styles.caseCard}>
+          {featuredCases.map((item, index) => (
+            <FadeIn
+              key={item.name}
+              as="article"
+              delay={0.08 * index}
+              className={styles.caseCard}
+            >
               <div className={styles.caseHeader}>
                 <div>
                   <p className={styles.caseEyebrow}>{item.category}</p>
@@ -126,7 +150,7 @@ export function CaseStudyStrip() {
                   </span>
                 ))}
               </div>
-            </article>
+            </FadeIn>
           ))}
         </div>
       </div>
@@ -139,15 +163,20 @@ export function TestimonialBand() {
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.quotePanel}>
-          {testimonials.map((item) => (
-            <article key={item.name} className={styles.quoteCard}>
+          {testimonials.map((item, index) => (
+            <FadeIn
+              key={item.name}
+              as="article"
+              delay={0.1 * index}
+              className={styles.quoteCard}
+            >
               <p className={styles.quoteMark}>“</p>
               <p className={styles.quoteBody}>{item.quote}</p>
               <p className={styles.quoteMeta}>
                 {item.name}
                 <span>{item.role}</span>
               </p>
-            </article>
+            </FadeIn>
           ))}
         </div>
       </div>
@@ -165,7 +194,7 @@ export function StoryBlocks() {
           body="The goal is to make depth feel effortless. That means clear hierarchy, measured pacing, and content choices that reflect a mature point of view."
         />
         <div className={styles.splitGrid}>
-          <div className={styles.textPanel}>
+          <FadeIn className={styles.textPanel}>
             <p>
               This page pattern is designed for people whose work needs more than
               a landing page. It gives room for context, conviction, and
@@ -176,13 +205,17 @@ export function StoryBlocks() {
               layered panels, editorial spacing, and restrained motion to create
               depth without making the site feel heavy.
             </p>
-          </div>
+          </FadeIn>
           <div className={styles.stackedList}>
-            {principles.map((item) => (
-              <div key={item} className={styles.stackedRow}>
+            {principles.map((item, index) => (
+              <FadeIn
+                key={item}
+                delay={0.08 * index}
+                className={styles.stackedRow}
+              >
                 <span />
                 <p>{item}</p>
-              </div>
+              </FadeIn>
             ))}
           </div>
         </div>
@@ -201,14 +234,19 @@ export function TimelineSection() {
           body="Multi-page creator sites perform better when they can show progression and context rather than compressing everything into a single scroll."
         />
         <div className={styles.timelineList}>
-          {timeline.map((item) => (
-            <article key={item.year} className={styles.timelineCard}>
+          {timeline.map((item, index) => (
+            <FadeIn
+              key={item.year}
+              as="article"
+              delay={0.08 * index}
+              className={styles.timelineCard}
+            >
               <p className={styles.timelineYear}>{item.year}</p>
               <div>
                 <h3 className={styles.cardTitle}>{item.title}</h3>
                 <p>{item.detail}</p>
               </div>
-            </article>
+            </FadeIn>
           ))}
         </div>
       </div>
@@ -226,10 +264,16 @@ export function CapabilityCloud() {
           body="These are the kinds of modules and disciplines this structure can communicate cleanly across the five-page setup."
         />
         <div className={styles.chipCloud}>
-          {capabilities.map((item) => (
-            <span key={item} className={styles.chipLarge}>
+          {capabilities.map((item, index) => (
+            <FadeIn
+              key={item}
+              as="span"
+              delay={0.03 * index}
+              y={16}
+              className={styles.chipLarge}
+            >
               {item}
-            </span>
+            </FadeIn>
           ))}
         </div>
       </div>
@@ -247,8 +291,13 @@ export function WorkCollectionsSection() {
           body="The work page is not just a gallery. It is split into project narratives, supporting systems, and behind-the-scenes signals that make the portfolio feel lived in."
         />
         <div className={styles.collectionGrid}>
-          {workCollections.map((collection) => (
-            <article key={collection.title} className={styles.collectionCard}>
+          {workCollections.map((collection, index) => (
+            <FadeIn
+              key={collection.title}
+              as="article"
+              delay={0.08 * index}
+              className={styles.collectionCard}
+            >
               <p className={styles.cardEyebrow}>{collection.eyebrow}</p>
               <h3 className={styles.cardTitle}>{collection.title}</h3>
               <ul className={styles.bulletList}>
@@ -256,7 +305,7 @@ export function WorkCollectionsSection() {
                   <li key={item}>{item}</li>
                 ))}
               </ul>
-            </article>
+            </FadeIn>
           ))}
         </div>
       </div>
@@ -274,12 +323,17 @@ export function ProcessSection() {
           body="Every page can carry more detail, but the system stays lightweight and easy to browse because the flow is clear."
         />
         <div className={styles.processGrid}>
-          {processSteps.map((item) => (
-            <article key={item.step} className={styles.processCard}>
+          {processSteps.map((item, index) => (
+            <FadeIn
+              key={item.step}
+              as="article"
+              delay={0.08 * index}
+              className={styles.processCard}
+            >
               <p className={styles.processStep}>{item.step}</p>
               <h3 className={styles.cardTitle}>{item.title}</h3>
               <p>{item.detail}</p>
-            </article>
+            </FadeIn>
           ))}
         </div>
       </div>
@@ -297,8 +351,13 @@ export function ServicesSection() {
           body="This page type gives room for pricing context, deliverables, and decision-making detail so the visitor knows what working together actually looks like."
         />
         <div className={styles.serviceGrid}>
-          {serviceStacks.map((service) => (
-            <article key={service.title} className={styles.serviceCard}>
+          {serviceStacks.map((service, index) => (
+            <FadeIn
+              key={service.title}
+              as="article"
+              delay={0.08 * index}
+              className={styles.serviceCard}
+            >
               <div className={styles.serviceHeader}>
                 <div>
                   <h3 className={styles.cardTitle}>{service.title}</h3>
@@ -311,7 +370,7 @@ export function ServicesSection() {
                   <li key={bullet}>{bullet}</li>
                 ))}
               </ul>
-            </article>
+            </FadeIn>
           ))}
         </div>
       </div>
@@ -329,10 +388,15 @@ export function NotesSection() {
           body="Adding depth is not only about volume. It is also about giving the portfolio room for reflections, philosophy, and guiding thoughts."
         />
         <div className={styles.noteGrid}>
-          {journalNotes.map((note) => (
-            <article key={note} className={styles.noteCard}>
+          {journalNotes.map((note, index) => (
+            <FadeIn
+              key={note}
+              as="article"
+              delay={0.08 * index}
+              className={styles.noteCard}
+            >
               <p>{note}</p>
-            </article>
+            </FadeIn>
           ))}
         </div>
       </div>
@@ -350,7 +414,7 @@ export function ContactSection() {
           body="Instead of ending with a single email line, this page clarifies fit, response expectations, and the best way to start the conversation."
         />
         <div className={styles.contactGrid}>
-          <div className={styles.contactCard}>
+          <FadeIn className={styles.contactCard}>
             <p className={styles.cardEyebrow}>Reach out</p>
             <h3 className={styles.contactTitle}>{site.email}</h3>
             <p>
@@ -358,20 +422,32 @@ export function ContactSection() {
               your presentation right now.
             </p>
             <div className={styles.contactActions}>
-              <a href={`mailto:${site.email}`} className={styles.primaryButton}>
-                Email the studio
-              </a>
-              <a href={`tel:${site.phone.replace(/\s+/g, "")}`} className={styles.secondaryButton}>
-                Call {site.phone}
-              </a>
+              <Magnet>
+                <a href={`mailto:${site.email}`} className={styles.primaryButton}>
+                  Email the studio
+                </a>
+              </Magnet>
+              <Magnet>
+                <a
+                  href={`tel:${site.phone.replace(/\s+/g, "")}`}
+                  className={styles.secondaryButton}
+                >
+                  Call {site.phone}
+                </a>
+              </Magnet>
             </div>
-          </div>
+          </FadeIn>
           <div className={styles.detailList}>
-            {contactTracks.map((item) => (
-              <article key={item.label} className={styles.detailRow}>
+            {contactTracks.map((item, index) => (
+              <FadeIn
+                key={item.label}
+                as="article"
+                delay={0.08 * index}
+                className={styles.detailRow}
+              >
                 <p>{item.label}</p>
                 <span>{item.value}</span>
-              </article>
+              </FadeIn>
             ))}
           </div>
         </div>
@@ -390,11 +466,16 @@ export function FaqSection() {
           body="A five-page template has room to answer real questions before the inquiry starts."
         />
         <div className={styles.faqList}>
-          {faqs.map((item) => (
-            <details key={item.question} className={styles.faqItem}>
+          {faqs.map((item, index) => (
+            <FadeIn
+              key={item.question}
+              as="details"
+              delay={0.08 * index}
+              className={styles.faqItem}
+            >
               <summary>{item.question}</summary>
               <p>{item.answer}</p>
-            </details>
+            </FadeIn>
           ))}
         </div>
       </div>
@@ -406,7 +487,7 @@ export function ClosingBanner() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <div className={styles.banner}>
+        <FadeIn className={styles.banner}>
           <div>
             <p className={styles.cardEyebrow}>Five-page creator template</p>
             <h2>Minimalist, but with enough space to actually say something.</h2>
@@ -418,7 +499,7 @@ export function ClosingBanner() {
               </Link>
             ))}
           </div>
-        </div>
+        </FadeIn>
       </div>
     </section>
   );
@@ -434,10 +515,10 @@ function SectionHeading({
   body: string;
 }) {
   return (
-    <div className={styles.sectionHeading}>
+    <FadeIn className={styles.sectionHeading}>
       <p className={styles.eyebrow}>{label}</p>
       <h2 className={styles.sectionTitle}>{title}</h2>
       <p className={styles.sectionBody}>{body}</p>
-    </div>
+    </FadeIn>
   );
 }

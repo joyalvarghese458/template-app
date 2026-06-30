@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { pageLinks, site } from "./data";
+import { FadeIn } from "./motion";
 import styles from "./styles.module.css";
 
 export default function TemplateShell({
@@ -24,7 +25,7 @@ export default function TemplateShell({
   return (
     <div className={styles.page}>
       <div className={styles.ambientGlow} aria-hidden="true" />
-      <header className={styles.header}>
+      <FadeIn as="header" y={-18} duration={0.6} className={styles.header}>
         <div className={styles.container}>
           <div className={styles.headerBar}>
             <Link
@@ -72,7 +73,7 @@ export default function TemplateShell({
             </div>
           </div>
         </div>
-      </header>
+      </FadeIn>
 
       <div
         className={menuOpen ? styles.mobileMenuOpen : styles.mobileMenu}
@@ -105,45 +106,50 @@ export default function TemplateShell({
         </div>
       </div>
 
-      <main>{children}</main>
+      <div key={pathname} className={styles.routeStage}>
+        <main>{children}</main>
 
-      <footer className={styles.footer}>
-        <div className={styles.container}>
-          <div className={styles.footerGrid}>
-            <div>
-              <p className={styles.footerHeading}>{site.name}</p>
-              <p className={styles.footerCopy}>{site.tagline}</p>
-            </div>
-            <div>
-              <p className={styles.footerHeading}>Navigate</p>
-              <div className={styles.footerLinks}>
-                {pageLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className={styles.footerLink}
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    {link.label}
-                  </Link>
-                ))}
+        <FadeIn as="footer" className={styles.footer}>
+          <div className={styles.container}>
+            <div className={styles.footerGrid}>
+              <div>
+                <p className={styles.footerHeading}>{site.name}</p>
+                <p className={styles.footerCopy}>{site.tagline}</p>
               </div>
-            </div>
-            <div>
-              <p className={styles.footerHeading}>Contact</p>
-              <div className={styles.footerLinks}>
-                <a href={`mailto:${site.email}`} className={styles.footerLink}>
-                  {site.email}
-                </a>
-                <a href={`tel:${site.phone.replace(/\s+/g, "")}`} className={styles.footerLink}>
-                  {site.phone}
-                </a>
-                <span className={styles.footerMuted}>{site.location}</span>
+              <div>
+                <p className={styles.footerHeading}>Navigate</p>
+                <div className={styles.footerLinks}>
+                  {pageLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className={styles.footerLink}
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <p className={styles.footerHeading}>Contact</p>
+                <div className={styles.footerLinks}>
+                  <a href={`mailto:${site.email}`} className={styles.footerLink}>
+                    {site.email}
+                  </a>
+                  <a
+                    href={`tel:${site.phone.replace(/\s+/g, "")}`}
+                    className={styles.footerLink}
+                  >
+                    {site.phone}
+                  </a>
+                  <span className={styles.footerMuted}>{site.location}</span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </footer>
+        </FadeIn>
+      </div>
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import MotionShell from "./MotionShell";
 import TemplateShell from "./TemplateShell";
 
 export const metadata: Metadata = {
@@ -21,5 +22,9 @@ export default function MinimalistLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <TemplateShell>{children}</TemplateShell>;
+  return (
+    <MotionShell>
+      <TemplateShell>{children}</TemplateShell>
+    </MotionShell>
+  );
 }

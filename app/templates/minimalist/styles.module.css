@@ -36,6 +36,15 @@
   overflow-x: clip;
 }
 
+@keyframes routeStageEnter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .ambientGlow {
   position: fixed;
   inset: 0;
@@ -51,6 +60,12 @@
   margin: 0 auto;
   position: relative;
   z-index: 1;
+}
+
+.routeStage {
+  background: #0c0c0c;
+  min-height: 100vh;
+  animation: routeStageEnter 0.28s ease both;
 }
 
 .header {
@@ -339,8 +354,14 @@
   width: fit-content;
   max-width: 100%;
   margin-bottom: 1.35rem;
-  padding-top: clamp(4.8rem, 10vw, 8.5rem);
-  min-height: clamp(10rem, 18vw, 15rem);
+  padding-top: clamp(10rem, 15vw, 12.25rem);
+}
+
+.heroTitleWrap {
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
+  z-index: 3;
 }
 
 .heroTitle,
@@ -365,7 +386,7 @@
 
 .heroTitle {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   background: linear-gradient(180deg, #646973 0%, #bbccd7 100%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -375,24 +396,31 @@
 .heroTitleOutline {
   position: absolute;
   inset: 0;
-  z-index: 3;
+  z-index: 4;
   color: transparent;
   -webkit-text-stroke: 1.4px #bbccd7;
   opacity: 0.9;
 }
 
-.heroPortrait {
+.heroPortraitMagnet {
   position: absolute;
   left: 50%;
   top: 0;
-  transform: translateX(-50%);
-  z-index: 4;
-  width: clamp(6.5rem, 13vw, 10.5rem);
+  z-index: 1;
+  transform: translate(
+    calc(-50% - 0.7rem + var(--magnet-x, 0px)),
+    var(--magnet-y, 0px)
+  );
+}
+
+.heroPortrait {
+  width: clamp(10rem, 14.5vw, 13rem);
   height: auto;
   object-fit: contain;
   pointer-events: none;
   user-select: none;
-  filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.38));
+  display: block;
+  filter: drop-shadow(0 16px 28px rgba(0, 0, 0, 0.34));
 }
 
 .heroSubhead {
@@ -794,7 +822,7 @@
 
   .heroTitleStack {
     margin-bottom: 1.6rem;
-    padding-top: clamp(5.5rem, 9vw, 9rem);
+    padding-top: clamp(10.75rem, 14vw, 13rem);
   }
 
   .cardGrid,
@@ -828,8 +856,7 @@
   }
 
   .heroTitleStack {
-    min-height: clamp(10rem, 14vw, 15rem);
-    padding-top: clamp(6rem, 8vw, 9.5rem);
+    padding-top: clamp(11rem, 13vw, 13.5rem);
   }
 
   .heroSection,
