@@ -669,8 +669,9 @@ export const TEMPLATES: Template[] = [
   },
   {
     id: "s1",
+    slug: "minimalist",
     title: "Minimalist",
-    tag: "Resume · Single page",
+    tag: "Creator Portfolio · Five pages",
     tier: "premium",
     section: "creator-portfolio",
     audiences: ["creators", "founders"],

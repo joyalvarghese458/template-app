@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
+import TemplateShell from "./TemplateShell";
 
 export const metadata: Metadata = {
-  title: "Minimalist — Clean Resume & CV Portfolio Template",
+  title: "Minimalist - Creator Portfolio Template",
   description:
-    "Minimalist is a single-page resume portfolio template for writers, consultants, and personal brands. Clean lines, readable typography, instant impact. Starting at AED 49.",
+    "A five-page minimalist creator portfolio template with richer content, smooth scrolling, responsive layouts, and a refined editorial feel.",
   alternates: {
     canonical: "/templates/minimalist",
   },
   openGraph: {
-    url: "https://www.myportfoliowebsite.com/templates/minimalist",
-    title: "Minimalist — Clean Resume & CV Portfolio Template | My Portfolio",
+    title: "Minimalist - Creator Portfolio Template",
     description:
-      "A single-page resume portfolio for writers, consultants, and personal brands. Clean lines, readable typography, instant impact.",
+      "Five pages of refined creator portfolio content with a minimalist visual language and strong mobile responsiveness.",
+    url: "https://www.myportfoliowebsite.com/templates/minimalist",
   },
 };
 
@@ -20,5 +21,5 @@ export default function MinimalistLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <>{children}</>;
+  return <TemplateShell>{children}</TemplateShell>;
 }

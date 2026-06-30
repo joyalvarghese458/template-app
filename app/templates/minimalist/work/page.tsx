@@ -2,25 +2,21 @@ import type { Metadata } from "next";
 import {
   CaseStudyStrip,
   ClosingBanner,
-  Hero,
-  HighlightGrid,
   NotesSection,
   ProcessSection,
-  TestimonialBand,
-} from "./blocks";
+  WorkCollectionsSection,
+} from "../blocks";
 
 export const metadata: Metadata = {
-  title: "Minimalist - Overview",
+  title: "Minimalist - Work",
 };
 
-export default function MinimalistOverviewPage() {
+export default function MinimalistWorkPage() {
   return (
     <>
-      <Hero />
-      <HighlightGrid />
       <CaseStudyStrip />
+      <WorkCollectionsSection />
       <ProcessSection />
-      <TestimonialBand />
       <NotesSection />
       <ClosingBanner />
     </>
