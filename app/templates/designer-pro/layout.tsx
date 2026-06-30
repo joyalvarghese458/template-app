@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import PageEnter from "./_components/PageEnter";
 
 export const metadata: Metadata = {
   title: "Designer Pro — Dark Animated Creative Portfolio Template",
@@ -16,5 +17,20 @@ export const metadata: Metadata = {
 };
 
 export default function DesignerProLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return (
+    <>
+      {/*
+        The shared site shell sets <html> background to white (app/globals.css,
+        for the mostly-light template catalog). Designer Pro's own dark bg only
+        lives on a div further down the tree, so on a hard refresh the browser
+        paints that white <html> background first, before any client JS has
+        run, producing a white flash on first paint. A plain CSS override here
+        takes effect the instant it's parsed (no JS/hydration wait), and is
+        automatically removed when navigating away from Designer Pro, since this
+        whole subtree unmounts then.
+      */}
+      <style>{`html, body { background-color: hsl(0 0% 4%) !important; }`}</style>
+      <PageEnter>{children}</PageEnter>
+    </>
+  );
 }

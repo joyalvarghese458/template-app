@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
+import { createPortal } from "react-dom";
 import { usePathname } from "next/navigation";
 
 const LINKS = [
@@ -12,9 +13,23 @@ const LINKS = [
 
 const CONTACT_HREF = "/templates/designer-pro/contact";
 
+const noopSubscribe = () => () => {};
+
+// SSR-safe "are we mounted on the client" check (no setState-in-effect needed):
+// false during server render/hydration, true once running in the browser.
+function useIsClient() {
+  return useSyncExternalStore(noopSubscribe, () => true, () => false);
+}
+
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+  // The shared site layout wraps every template page in a page-enter transition
+  // div. Any non-"none" transform on that ancestor gives position:fixed
+  // descendants a new containing block, so they drift with scroll instead of
+  // staying pinned. Portaling straight to <body> sidesteps that ancestor
+  // entirely, without needing changes outside this template's own folder.
+  const isClient = useIsClient();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 100);
@@ -22,7 +37,9 @@ export default function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  return (
+  if (!isClient) return null;
+
+  const nav = (
     <header className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-4 md:pt-6 px-4">
       <nav
         className="inline-flex items-center rounded-full backdrop-blur-md border px-2 py-2 transition-all duration-300"
@@ -42,7 +59,7 @@ export default function Nav() {
           <span
             className="w-full h-full rounded-full flex items-center justify-center text-[13px] italic leading-none"
             style={{
-              fontFamily: "var(--dp-font-display, var(--font-serif, serif))",
+              fontFamily: '"Playfair Display", serif',
               backgroundColor: "hsl(0 0% 4%)",
               color: "hsl(0 0% 96%)",
             }}
@@ -128,4 +145,6 @@ export default function Nav() {
       </nav>
     </header>
   );
+
+  return createPortal(nav, document.body);
 }
