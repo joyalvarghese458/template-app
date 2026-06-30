@@ -73,7 +73,7 @@ export const TIERS: TierMeta[] = [
 ];
 
 export const TIER_BY_ID: Record<TierId, TierMeta> = Object.fromEntries(
-  TIERS.map((t) => [t.id, t])
+  TIERS.map((t) => [t.id, t]),
 ) as Record<TierId, TierMeta>;
 
 // ────────────────────────────────────────────────────────────────────
@@ -89,10 +89,26 @@ export type SectionMeta = {
 };
 
 export const SECTIONS: SectionMeta[] = [
-  { id: "digital-resume", label: "Digital Resume", blurb: "Clean, one-page professional resumes — AED 49" },
-  { id: "career-portfolio", label: "Career Portfolio", blurb: "Showcase your skills, experience & work history — AED 99" },
-  { id: "creator-portfolio", label: "Creator Portfolio", blurb: "Creative portfolios for designers, creators & more — AED 149" },
-  { id: "business-portfolio", label: "Business Portfolio", blurb: "For founders, agencies & consultants — AED 1,599" },
+  {
+    id: "digital-resume",
+    label: "Digital Resume",
+    blurb: "Clean, one-page professional resumes — AED 49",
+  },
+  {
+    id: "career-portfolio",
+    label: "Career Portfolio",
+    blurb: "Showcase your skills, experience & work history — AED 99",
+  },
+  {
+    id: "creator-portfolio",
+    label: "Creator Portfolio",
+    blurb: "Creative portfolios for designers, creators & more — AED 149",
+  },
+  {
+    id: "business-portfolio",
+    label: "Business Portfolio",
+    blurb: "For founders, agencies & consultants — AED 1,599",
+  },
 ];
 
 export const SECTION_ORDER: SectionId[] = [
@@ -103,7 +119,7 @@ export const SECTION_ORDER: SectionId[] = [
 ];
 
 export const SECTION_BY_ID: Record<SectionId, SectionMeta> = Object.fromEntries(
-  SECTIONS.map((s) => [s.id, s])
+  SECTIONS.map((s) => [s.id, s]),
 ) as Record<SectionId, SectionMeta>;
 
 // ────────────────────────────────────────────────────────────────────
@@ -117,12 +133,36 @@ export type AudienceMeta = {
 };
 
 export const AUDIENCES: AudienceMeta[] = [
-  { id: "designers", label: "Designers", blurb: "UI/UX, brand, motion, 3D & more" },
-  { id: "developers", label: "Developers", blurb: "Frontend, full-stack, mobile, AI" },
-  { id: "photographers", label: "Photographers", blurb: "Galleries & visual storytelling" },
-  { id: "creators", label: "Creators", blurb: "Writers, YouTubers, podcasters, musicians" },
-  { id: "founders", label: "Founders", blurb: "SaaS, startup, consultants, coaches" },
-  { id: "agencies", label: "Agencies", blurb: "Studios, luxury, Webflow/Framer" },
+  {
+    id: "designers",
+    label: "Designers",
+    blurb: "UI/UX, brand, motion, 3D & more",
+  },
+  {
+    id: "developers",
+    label: "Developers",
+    blurb: "Frontend, full-stack, mobile, AI",
+  },
+  {
+    id: "photographers",
+    label: "Photographers",
+    blurb: "Galleries & visual storytelling",
+  },
+  {
+    id: "creators",
+    label: "Creators",
+    blurb: "Writers, YouTubers, podcasters, musicians",
+  },
+  {
+    id: "founders",
+    label: "Founders",
+    blurb: "SaaS, startup, consultants, coaches",
+  },
+  {
+    id: "agencies",
+    label: "Agencies",
+    blurb: "Studios, luxury, Webflow/Framer",
+  },
 ];
 
 // ────────────────────────────────────────────────────────────────────
@@ -202,323 +242,613 @@ export const SPECIALTIES: Record<AudienceId, SpecialtyMeta[]> = {
 export const TEMPLATES: Template[] = [
   // ── Digital Resume  (AED 49 · tier: starter) ─────────────────────
   {
-    id: "dr1", slug: "swift", title: "Swift", tag: "Digital Resume · Single page", tier: "starter",
+    id: "dr1",
+    slug: "swift",
+    title: "Swift",
+    tag: "Digital Resume · Single page",
+    tier: "starter",
     section: "digital-resume",
-    audiences: ["founders", "creators", "developers"], specialties: ["personal-brand", "consultant", "frontend"]
+    audiences: ["founders", "creators", "developers"],
+    specialties: ["personal-brand", "consultant", "frontend"],
   },
   {
-    id: "dr2", slug: "slate", title: "Slate", tag: "Digital Resume · Minimal", tier: "starter",
+    id: "dr2",
+    slug: "slate",
+    title: "Slate",
+    tag: "Digital Resume · Minimal",
+    tier: "starter",
     section: "digital-resume",
-    audiences: ["founders", "creators"], specialties: ["personal-brand", "writer"]
+    audiences: ["founders", "creators"],
+    specialties: ["personal-brand", "writer"],
   },
   {
-    id: "dr3", slug: "crisp", title: "Crisp", tag: "Digital Resume · Clean", tier: "starter",
+    id: "dr3",
+    slug: "crisp",
+    title: "Crisp",
+    tag: "Digital Resume · Clean",
+    tier: "starter",
     section: "digital-resume",
-    audiences: ["developers", "designers"], specialties: ["frontend", "ui-ux", "graphic"]
+    audiences: ["developers", "designers"],
+    specialties: ["frontend", "ui-ux", "graphic"],
   },
   {
-    id: "dr4", slug: "pulse", title: "Pulse", tag: "Digital Resume · Bold", tier: "starter",
+    id: "dr4",
+    slug: "pulse",
+    title: "Pulse",
+    tag: "Digital Resume · Bold",
+    tier: "starter",
     section: "digital-resume",
-    audiences: ["founders", "creators", "developers"], specialties: ["personal-brand", "speaker", "ai-ml"]
+    audiences: ["founders", "creators", "developers"],
+    specialties: ["personal-brand", "speaker", "ai-ml"],
   },
 
   // ── Career Portfolio  (AED 99 · tier: pro) ───────────────────────
   // simple cards
   {
-    id: "cp1", slug: "journey", title: "Journey", tag: "Career Portfolio · Timeline", tier: "pro",
+    id: "cp2",
+    slug: "ladder",
+    title: "Ladder",
+    tag: "Career Portfolio · Professional",
+    tier: "pro",
     section: "career-portfolio",
-    audiences: ["founders", "developers"], specialties: ["consultant", "frontend", "full-stack"]
+    audiences: ["founders", "creators"],
+    specialties: ["executive", "personal-brand", "speaker"],
   },
   {
-    id: "cp2", slug: "ladder", title: "Ladder", tag: "Career Portfolio · Professional", tier: "pro",
+    id: "adaline",
+    slug: "adaline",
+    title: "Adaline",
+    tag: "Full Stack Developer · Botanical",
+    tier: "pro",
     section: "career-portfolio",
-    audiences: ["founders", "creators"], specialties: ["executive", "personal-brand", "speaker"]
+    audiences: ["developers"],
+    specialties: ["full-stack", "engineering", "saas"],
   },
   {
-    id: "adaline", slug: "adaline", title: "Adaline", tag: "Full Stack Developer · Botanical", tier: "pro",
+    id: "torque",
+    slug: "torque",
+    title: "Torque",
+    tag: "Mechanical Engineer · Industrial Blueprint",
+    tier: "pro",
     section: "career-portfolio",
-    audiences: ["developers"], specialties: ["full-stack", "engineering", "saas"]
+    audiences: ["developers"],
+    specialties: ["engineering", "cad", "manufacturing"],
   },
   {
-    id: "torque", slug: "torque", title: "Torque", tag: "Mechanical Engineer · Industrial Blueprint", tier: "pro",
+    id: "byline",
+    slug: "byline",
+    title: "Byline",
+    tag: "Journalist · Editorial Newsroom",
+    tier: "pro",
     section: "career-portfolio",
-    audiences: ["developers"], specialties: ["engineering", "cad", "manufacturing"]
+    audiences: ["creators"],
+    specialties: ["writer", "copywriter"],
   },
   {
-    id: "byline", slug: "byline", title: "Byline", tag: "Journalist · Editorial Newsroom", tier: "pro",
+    id: "cortex",
+    slug: "cortex",
+    title: "Cortex",
+    tag: "Data Scientist · ML Analytics",
+    tier: "pro",
     section: "career-portfolio",
-    audiences: ["creators"], specialties: ["writer", "copywriter"]
+    audiences: ["developers"],
+    specialties: ["ai-ml", "data-science"],
   },
   {
-    id: "cortex", slug: "cortex", title: "Cortex", tag: "Data Scientist · ML Analytics", tier: "pro",
+    id: "datalab",
+    slug: "datalab",
+    title: "DataLab",
+    tag: "Data Science Student · 3D Interactive",
+    tier: "pro",
     section: "career-portfolio",
-    audiences: ["developers"], specialties: ["ai-ml", "data-science"]
+    audiences: ["developers"],
+    specialties: ["ai-ml", "data-science"],
   },
   {
-    id: "datalab", slug: "datalab", title: "DataLab", tag: "Data Science Student · 3D Interactive", tier: "pro",
+    id: "ascend",
+    slug: "ascend",
+    title: "Ascend",
+    tag: "Career Coach · Job Search Strategist",
+    tier: "pro",
     section: "career-portfolio",
-    audiences: ["developers"], specialties: ["ai-ml", "data-science"]
+    audiences: ["founders"],
+    specialties: ["coach", "consultant", "personal-brand"],
   },
   {
-    id: "ascend", slug: "ascend", title: "Ascend", tag: "Career Coach · Job Search Strategist", tier: "pro",
+    id: "cipher",
+    slug: "cipher",
+    title: "Cipher",
+    tag: "Cybersecurity Student · Offensive Security",
+    tier: "pro",
     section: "career-portfolio",
-    audiences: ["founders"], specialties: ["coach", "consultant", "personal-brand"]
+    audiences: ["developers"],
+    specialties: ["security"],
   },
   {
-    id: "cipher", slug: "cipher", title: "Cipher", tag: "Cybersecurity Student · Offensive Security", tier: "pro",
+    id: "canvas",
+    slug: "canvas",
+    title: "Canvas",
+    tag: "UI/UX & Graphic Designer · Bauhaus Studio",
+    tier: "pro",
     section: "career-portfolio",
-    audiences: ["developers"], specialties: ["security"]
+    audiences: ["designers"],
+    specialties: ["ui-ux", "graphic", "brand"],
   },
   {
-    id: "canvas", slug: "canvas", title: "Canvas", tag: "UI/UX & Graphic Designer · Bauhaus Studio", tier: "pro",
+    id: "prism",
+    slug: "prism",
+    title: "Prism",
+    tag: "Product Designer · Glassmorphic Aurora",
+    tier: "pro",
     section: "career-portfolio",
-    audiences: ["designers"], specialties: ["ui-ux", "graphic", "brand"]
+    audiences: ["designers"],
+    specialties: ["ui-ux", "graphic"],
   },
   {
-    id: "prism", slug: "prism", title: "Prism", tag: "Product Designer · Glassmorphic Aurora", tier: "pro",
+    id: "strata",
+    slug: "strata",
+    title: "Strata",
+    tag: "Civil Engineer · Structural & Site Design",
+    tier: "pro",
     section: "career-portfolio",
-    audiences: ["designers"], specialties: ["ui-ux", "graphic"]
+    audiences: ["developers"],
+    specialties: ["engineering", "construction", "structural"],
   },
   {
-    id: "strata", slug: "strata", title: "Strata", tag: "Civil Engineer · Structural & Site Design", tier: "pro",
+    id: "redline",
+    slug: "redline",
+    title: "Redline",
+    tag: "Mechanical Engineer · Motorsport & Automation",
+    tier: "pro",
     section: "career-portfolio",
-    audiences: ["developers"], specialties: ["engineering", "construction", "structural"]
+    audiences: ["developers"],
+    specialties: ["engineering", "manufacturing", "cad"],
   },
   {
-    id: "redline", slug: "redline", title: "Redline", tag: "Mechanical Engineer · Motorsport & Automation", tier: "pro",
+    id: "lithos",
+    slug: "lithos",
+    title: "Lithos",
+    tag: "Geology Student · Field & Earth Sciences",
+    tier: "pro",
     section: "career-portfolio",
-    audiences: ["developers"], specialties: ["engineering", "manufacturing", "cad"]
+    audiences: ["developers"],
+    specialties: ["geology", "earth-science", "fieldwork"],
   },
   {
-    id: "lithos", slug: "lithos", title: "Lithos", tag: "Geology Student · Field & Earth Sciences", tier: "pro",
+    id: "surge",
+    slug: "surge",
+    title: "Surge",
+    tag: "Digital Marketing Specialist · Growth & Performance",
+    tier: "pro",
     section: "career-portfolio",
-    audiences: ["developers"], specialties: ["geology", "earth-science", "fieldwork"]
+    audiences: ["creators", "founders"],
+    specialties: ["copywriter", "personal-brand", "consultant"],
   },
   {
-    id: "surge", slug: "surge", title: "Surge", tag: "Digital Marketing Specialist · Growth & Performance", tier: "pro",
+    id: "atlas",
+    slug: "atlas",
+    title: "Atlas",
+    tag: "Business Consultant · Boardroom Navy & Gold",
+    tier: "pro",
     section: "career-portfolio",
-    audiences: ["creators", "founders"], specialties: ["copywriter", "personal-brand", "consultant"]
+    audiences: ["founders", "agencies"],
+    specialties: ["executive", "consultant", "personal-brand"],
   },
   {
-    id: "atlas", slug: "atlas", title: "Atlas", tag: "Business Consultant · Boardroom Navy & Gold", tier: "pro",
+    id: "echelon",
+    slug: "echelon",
+    title: "Echelon",
+    tag: "Chief Executive Officer · Graphite Command",
+    tier: "pro",
     section: "career-portfolio",
-    audiences: ["founders", "agencies"], specialties: ["executive", "consultant", "personal-brand"]
+    audiences: ["founders", "agencies"],
+    specialties: ["executive", "personal-brand", "consultant"],
   },
   {
-    id: "echelon", slug: "echelon", title: "Echelon", tag: "Chief Executive Officer · Graphite Command", tier: "pro",
+    id: "umami",
+    slug: "umami",
+    title: "Umami",
+    tag: "Executive Chef · Charcoal Hearth",
+    tier: "pro",
     section: "career-portfolio",
-    audiences: ["founders", "agencies"], specialties: ["executive", "personal-brand", "consultant"]
+    audiences: ["creators", "founders"],
+    specialties: ["personal-brand", "consultant"],
   },
   {
-    id: "umami", slug: "umami", title: "Umami", tag: "Executive Chef · Charcoal Hearth", tier: "pro",
+    id: "parallax",
+    slug: "parallax",
+    title: "Parallax",
+    tag: "Animation & VFX Student · Render Viewport",
+    tier: "pro",
     section: "career-portfolio",
-    audiences: ["creators", "founders"], specialties: ["personal-brand", "consultant"]
+    audiences: ["designers", "creators"],
+    specialties: ["motion", "3d"],
   },
   {
-    id: "parallax", slug: "parallax", title: "Parallax", tag: "Animation & VFX Student · Render Viewport", tier: "pro",
+    id: "cp3",
+    slug: "serenity",
+    title: "Serenity",
+    tag: "Wellness · Yoga & Mindfulness",
+    tier: "pro",
     section: "career-portfolio",
-    audiences: ["designers", "creators"], specialties: ["motion", "3d"]
+    audiences: ["creators"],
+    specialties: ["wellness", "yoga", "mindfulness"],
   },
   {
-    id: "cp3", slug: "serenity", title: "Serenity", tag: "Wellness · Yoga & Mindfulness", tier: "pro",
+    id: "cp4",
+    slug: "elevate",
+    title: "Elevate",
+    tag: "Career Portfolio · Premium",
+    tier: "pro",
     section: "career-portfolio",
-    audiences: ["creators"], specialties: ["wellness", "yoga", "mindfulness"]
-  },
-  {
-    id: "cp4", slug: "elevate", title: "Elevate", tag: "Career Portfolio · Premium", tier: "pro",
-    section: "career-portfolio",
-    audiences: ["founders", "agencies"], specialties: ["executive", "consultant", "personal-brand"]
+    audiences: ["founders", "agencies"],
+    specialties: ["executive", "consultant", "personal-brand"],
   },
   // 14 live-template slugs
   {
-    id: "s3", slug: "cardstock", title: "Cardstock", tag: "CV · Card layout", tier: "pro",
+    id: "s3",
+    slug: "cardstock",
+    title: "Cardstock",
+    tag: "CV · Card layout",
+    tier: "pro",
     section: "career-portfolio",
-    audiences: ["creators", "founders"], specialties: ["writer"]
+    audiences: ["creators", "founders"],
+    specialties: ["writer"],
   },
   {
-    id: "s4", slug: "solo", title: "Solo", tag: "Graphic Designer · Single page", tier: "pro",
+    id: "s4",
+    slug: "solo",
+    title: "Solo",
+    tag: "Graphic Designer · Single page",
+    tier: "pro",
     section: "career-portfolio",
-    audiences: ["designers"], specialties: ["graphic", "brand"]
+    audiences: ["designers"],
+    specialties: ["graphic", "brand"],
   },
   {
-    id: "p11", slug: "graphic-designer", title: "Luminary", tag: "Graphic Designer · Premium SPA", tier: "pro",
+    id: "p11",
+    slug: "graphic-designer",
+    title: "Luminary",
+    tag: "Graphic Designer · Premium SPA",
+    tier: "pro",
     section: "career-portfolio",
-    audiences: ["designers"], specialties: ["graphic", "brand", "motion"]
+    audiences: ["designers"],
+    specialties: ["graphic", "brand", "motion"],
   },
   {
-    id: "s5", slug: "profile-one", title: "Profile One", tag: "Personal brand · 3D Interactive", tier: "pro",
+    id: "s5",
+    slug: "profile-one",
+    title: "Profile One",
+    tag: "Personal brand · 3D Interactive",
+    tier: "pro",
     section: "career-portfolio",
-    audiences: ["founders", "creators"], specialties: ["personal-brand", "coach"]
+    audiences: ["founders", "creators"],
+    specialties: ["personal-brand", "coach"],
   },
   {
-    id: "s6", slug: "jack-3d-portfolio", title: "Classic", tag: "CV · Print-ready", tier: "pro",
+    id: "s6",
+    slug: "jack-3d-portfolio",
+    title: "Classic",
+    tag: "CV · Print-ready",
+    tier: "pro",
     section: "career-portfolio",
-    audiences: ["creators", "founders"], specialties: ["writer"]
+    audiences: ["creators", "founders"],
+    specialties: ["writer"],
   },
   {
-    id: "s8", slug: "snap", title: "Snap", tag: "Photographer · Luxury Cinematic", tier: "pro",
+    id: "s8",
+    slug: "snap",
+    title: "Snap",
+    tag: "Photographer · Luxury Cinematic",
+    tier: "pro",
     section: "career-portfolio",
-    image: "https://images.unsplash.com/photo-1519741497674-611481863552?w=420&h=860&q=80&auto=format&fit=crop",
-    audiences: ["photographers"], specialties: ["gallery", "wedding", "fashion", "fine-art"]
+    image:
+      "https://images.unsplash.com/photo-1519741497674-611481863552?w=420&h=860&q=80&auto=format&fit=crop",
+    audiences: ["photographers"],
+    specialties: ["gallery", "wedding", "fashion", "fine-art"],
   },
   {
-    id: "s9", slug: "indie", title: "Indie", tag: "Motion & VFX · Cinematic", tier: "pro",
+    id: "s9",
+    slug: "indie",
+    title: "Indie",
+    tag: "Motion & VFX · Cinematic",
+    tier: "pro",
     section: "career-portfolio",
-    audiences: ["designers", "creators"], specialties: ["motion", "3d"]
+    audiences: ["designers", "creators"],
+    specialties: ["motion", "3d"],
   },
   {
-    id: "s10", slug: "onefolio", title: "Onefolio", tag: "Creative Flow · Designer Portfolio", tier: "pro",
+    id: "s10",
+    slug: "onefolio",
+    title: "Onefolio",
+    tag: "Creative Flow · Designer Portfolio",
+    tier: "pro",
     section: "career-portfolio",
-    audiences: ["creators", "founders", "designers"], specialties: ["graphic", "brand", "motion"]
+    audiences: ["creators", "founders", "designers"],
+    specialties: ["graphic", "brand", "motion"],
   },
   {
-    id: "p1", slug: "designer", title: "Designer", tag: "Designer · Single page", tier: "pro",
+    id: "p1",
+    slug: "designer",
+    title: "Designer",
+    tag: "Designer · Single page",
+    tier: "pro",
     section: "career-portfolio",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=420&h=860&q=80&auto=format&fit=crop",
-    audiences: ["designers"], specialties: ["ui-ux", "graphic"]
+    image:
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=420&h=860&q=80&auto=format&fit=crop",
+    audiences: ["designers"],
+    specialties: ["ui-ux", "graphic"],
   },
   {
-    id: "p3", slug: "gallery-plus", title: "Gallery+", tag: "Photographer · Premium Portfolio", tier: "pro",
+    id: "p3",
+    slug: "gallery-plus",
+    title: "Gallery+",
+    tag: "Photographer · Premium Portfolio",
+    tier: "pro",
     section: "career-portfolio",
-    audiences: ["photographers"], specialties: ["gallery", "fine-art", "wedding", "fashion"]
+    audiences: ["photographers"],
+    specialties: ["gallery", "fine-art", "wedding", "fashion"],
   },
   {
-    id: "x1", slug: "atelier", title: "Atelier", tag: "Agency · Flagship", tier: "pro",
+    id: "x1",
+    slug: "atelier",
+    title: "Atelier",
+    tag: "Agency · Flagship",
+    tier: "pro",
     section: "career-portfolio",
-    audiences: ["agencies", "designers"], specialties: ["luxury", "creative-studio"]
+    audiences: ["agencies", "designers"],
+    specialties: ["luxury", "creative-studio"],
   },
   {
-    id: "x2", slug: "minimalist", title: "Reel", tag: "Director · Showreel", tier: "pro",
+    id: "x2",
+    slug: "minimalist",
+    title: "Reel",
+    tag: "Director · Showreel",
+    tier: "pro",
     section: "career-portfolio",
-    audiences: ["creators"], specialties: ["filmmaker", "model-actor"]
+    audiences: ["creators"],
+    specialties: ["filmmaker", "model-actor"],
   },
   {
-    id: "x3", slug: "pure", title: "Magnum", tag: "Photographer · Pro Max", tier: "pro",
+    id: "x3",
+    slug: "pure",
+    title: "Magnum",
+    tag: "Photographer · Pro Max",
+    tier: "pro",
     section: "career-portfolio",
-    audiences: ["photographers"], specialties: ["gallery", "fashion", "fine-art"]
+    audiences: ["photographers"],
+    specialties: ["gallery", "fashion", "fine-art"],
   },
   {
-    id: "x11", slug: "designer-pro", title: "Designer Pro", tag: "Creative Portfolio · Dark Animated SPA", tier: "pro",
+    id: "x11",
+    slug: "designer-pro",
+    title: "Designer Pro",
+    tag: "Creative Portfolio · Dark Animated SPA",
+    tier: "pro",
     section: "career-portfolio",
-    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=420&h=860&q=80&auto=format&fit=crop",
-    audiences: ["designers", "creators"], specialties: ["motion", "ui-ux", "graphic"]
+    image:
+      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=420&h=860&q=80&auto=format&fit=crop",
+    audiences: ["designers", "creators"],
+    specialties: ["motion", "ui-ux", "graphic"],
   },
   {
-    id: "cp5", slug: "amplify", title: "Amplify", tag: "Digital Marketer · Results-first", tier: "pro",
+    id: "cp5",
+    slug: "amplify",
+    title: "Amplify",
+    tag: "Digital Marketer · Results-first",
+    tier: "pro",
     section: "career-portfolio",
-    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=420&h=860&q=80&auto=format&fit=crop",
-    audiences: ["creators", "founders"], specialties: ["copywriter", "personal-brand", "consultant"]
+    image:
+      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=420&h=860&q=80&auto=format&fit=crop",
+    audiences: ["creators", "founders"],
+    specialties: ["copywriter", "personal-brand", "consultant"],
+  },
+  {
+    id: "cp1",
+    slug: "journey",
+    title: "Journey",
+    tag: "Career Portfolio · Timeline",
+    tier: "pro",
+    section: "career-portfolio",
+    audiences: ["founders", "developers"],
+    specialties: ["consultant", "frontend", "full-stack"],
   },
 
   // ── Creator Portfolio  (AED 149 · tier: premium) ─────────────────
   {
-    id: "x5", slug: "helm", title: "Helm", tag: "Chief Executive Officer · Ivory Minimalist", tier: "premium",
+    id: "x5",
+    slug: "helm",
+    title: "Helm",
+    tag: "Chief Executive Officer · Ivory Minimalist",
+    tier: "premium",
     section: "creator-portfolio",
-    image: "https://images.pexels.com/photos/31497519/pexels-photo-31497519.jpeg?cs=srgb&fm=jpg&w=420&h=860&fit=crop",
-    audiences: ["founders", "agencies"], specialties: ["executive", "personal-brand", "consultant"]
+    image:
+      "https://images.pexels.com/photos/31497519/pexels-photo-31497519.jpeg?cs=srgb&fm=jpg&w=420&h=860&fit=crop",
+    audiences: ["founders", "agencies"],
+    specialties: ["executive", "personal-brand", "consultant"],
   },
   {
-    id: "s1", title: "Minimalist", tag: "Resume · Single page", tier: "premium",
+    id: "s1",
+    title: "Minimalist",
+    tag: "Resume · Single page",
+    tier: "premium",
     section: "creator-portfolio",
-    audiences: ["creators", "founders"], specialties: ["writer", "consultant", "personal-brand"]
+    audiences: ["creators", "founders"],
+    specialties: ["writer", "consultant", "personal-brand"],
   },
   {
-    id: "s2", title: "Pure", tag: "Personal · Light", tier: "premium",
+    id: "s2",
+    title: "Pure",
+    tag: "Personal · Light",
+    tier: "premium",
     section: "creator-portfolio",
-    audiences: ["creators", "founders"], specialties: ["personal-brand"]
+    audiences: ["creators", "founders"],
+    specialties: ["personal-brand"],
   },
   {
-    id: "s7", title: "Quill", tag: "Writer · Lite", tier: "premium",
+    id: "s7",
+    title: "Quill",
+    tag: "Writer · Lite",
+    tier: "premium",
     section: "creator-portfolio",
-    audiences: ["creators"], specialties: ["writer", "copywriter"]
+    audiences: ["creators"],
+    specialties: ["writer", "copywriter"],
   },
   {
-    id: "p2", title: "DevHub", tag: "Developer · Projects grid", tier: "premium",
+    id: "p2",
+    title: "DevHub",
+    tag: "Developer · Projects grid",
+    tier: "premium",
     section: "creator-portfolio",
-    audiences: ["developers"], specialties: ["frontend", "full-stack"]
+    audiences: ["developers"],
+    specialties: ["frontend", "full-stack"],
   },
   {
-    id: "p4", title: "Studio", tag: "Creative · Case studies", tier: "premium",
+    id: "p4",
+    title: "Studio",
+    tag: "Creative · Case studies",
+    tier: "premium",
     section: "creator-portfolio",
-    audiences: ["designers", "agencies"], specialties: ["creative-studio", "ui-ux"]
+    audiences: ["designers", "agencies"],
+    specialties: ["creative-studio", "ui-ux"],
   },
   {
-    id: "p5", title: "Architect", tag: "Architect · Project pages", tier: "premium",
+    id: "p5",
+    title: "Architect",
+    tag: "Architect · Project pages",
+    tier: "premium",
     section: "creator-portfolio",
-    audiences: ["designers"], specialties: ["architect", "interior"]
+    audiences: ["designers"],
+    specialties: ["architect", "interior"],
   },
   {
-    id: "p6", title: "Artisan", tag: "Artist · Collection", tier: "premium",
+    id: "p6",
+    title: "Artisan",
+    tag: "Artist · Collection",
+    tier: "premium",
     section: "creator-portfolio",
-    audiences: ["designers", "creators"], specialties: ["illustrator", "3d"]
+    audiences: ["designers", "creators"],
+    specialties: ["illustrator", "3d"],
   },
   {
-    id: "p7", title: "Consult", tag: "Consultant · Services", tier: "premium",
+    id: "p7",
+    title: "Consult",
+    tag: "Consultant · Services",
+    tier: "premium",
     section: "creator-portfolio",
-    audiences: ["founders"], specialties: ["consultant", "coach"]
+    audiences: ["founders"],
+    specialties: ["consultant", "coach"],
   },
   {
-    id: "p8", title: "Stage", tag: "Speaker · Talks", tier: "premium",
+    id: "p8",
+    title: "Stage",
+    tag: "Speaker · Talks",
+    tier: "premium",
     section: "creator-portfolio",
-    audiences: ["founders", "creators"], specialties: ["speaker", "personal-brand"]
+    audiences: ["founders", "creators"],
+    specialties: ["speaker", "personal-brand"],
   },
   {
-    id: "p9", title: "Aura", tag: "Influencer · Press kit", tier: "premium",
+    id: "p9",
+    title: "Aura",
+    tag: "Influencer · Press kit",
+    tier: "premium",
     section: "creator-portfolio",
-    audiences: ["creators"], specialties: ["influencer", "model-actor"]
+    audiences: ["creators"],
+    specialties: ["influencer", "model-actor"],
   },
   {
-    id: "p10", title: "Brandmark", tag: "Brand · Identity", tier: "premium",
+    id: "p10",
+    title: "Brandmark",
+    tag: "Brand · Identity",
+    tier: "premium",
     section: "creator-portfolio",
-    audiences: ["designers", "agencies"], specialties: ["brand", "graphic"]
+    audiences: ["designers", "agencies"],
+    specialties: ["brand", "graphic"],
   },
   {
-    id: "x4", title: "Blueprint", tag: "Architect · Premier", tier: "premium",
+    id: "x4",
+    title: "Blueprint",
+    tag: "Architect · Premier",
+    tier: "premium",
     section: "creator-portfolio",
-    audiences: ["designers"], specialties: ["architect", "interior"]
+    audiences: ["designers"],
+    specialties: ["architect", "interior"],
   },
 
   {
-    id: "x6", title: "Maker Pro", tag: "Designer · Elite", tier: "premium",
+    id: "x6",
+    title: "Maker Pro",
+    tag: "Designer · Elite",
+    tier: "premium",
     section: "creator-portfolio",
-    audiences: ["designers"], specialties: ["ui-ux", "motion", "graphic"]
+    audiences: ["designers"],
+    specialties: ["ui-ux", "motion", "graphic"],
   },
   {
-    id: "x7", title: "Curate", tag: "Artist · Atelier", tier: "premium",
+    id: "x7",
+    title: "Curate",
+    tag: "Artist · Atelier",
+    tier: "premium",
     section: "creator-portfolio",
-    audiences: ["designers", "creators"], specialties: ["illustrator", "fine-art", "3d"]
+    audiences: ["designers", "creators"],
+    specialties: ["illustrator", "fine-art", "3d"],
   },
   {
-    id: "x8", title: "Atrium", tag: "Studio · Master", tier: "premium",
+    id: "x8",
+    title: "Atrium",
+    tag: "Studio · Master",
+    tier: "premium",
     section: "creator-portfolio",
-    audiences: ["agencies"], specialties: ["creative-studio", "luxury", "webflow-framer"]
+    audiences: ["agencies"],
+    specialties: ["creative-studio", "luxury", "webflow-framer"],
   },
   {
-    id: "x9", title: "Beacon", tag: "Brand · Premier", tier: "premium",
+    id: "x9",
+    title: "Beacon",
+    tag: "Brand · Premier",
+    tier: "premium",
     section: "creator-portfolio",
-    audiences: ["designers", "agencies", "founders"], specialties: ["brand", "personal-brand"]
+    audiences: ["designers", "agencies", "founders"],
+    specialties: ["brand", "personal-brand"],
   },
   {
-    id: "x10", title: "Lumen", tag: "Editorial · Premium", tier: "premium",
+    id: "x10",
+    title: "Lumen",
+    tag: "Editorial · Premium",
+    tier: "premium",
     section: "creator-portfolio",
-    audiences: ["creators"], specialties: ["writer", "copywriter"]
+    audiences: ["creators"],
+    specialties: ["writer", "copywriter"],
   },
 
   // ── Business Portfolio  (AED 1,599 · tier: elite) ────────────────
   {
-    id: "bp1", title: "Venture", tag: "Business Portfolio · Founder", tier: "elite",
+    id: "bp1",
+    title: "Venture",
+    tag: "Business Portfolio · Founder",
+    tier: "elite",
     section: "business-portfolio",
-    audiences: ["founders"], specialties: ["startup", "saas", "personal-brand"]
+    audiences: ["founders"],
+    specialties: ["startup", "saas", "personal-brand"],
   },
   {
-    id: "bp2", title: "Apex", tag: "Business Portfolio · Executive", tier: "elite",
+    id: "bp2",
+    title: "Apex",
+    tag: "Business Portfolio · Executive",
+    tier: "elite",
     section: "business-portfolio",
-    audiences: ["founders", "agencies"], specialties: ["executive", "consultant", "creative-studio"]
+    audiences: ["founders", "agencies"],
+    specialties: ["executive", "consultant", "creative-studio"],
   },
   {
-    id: "bp3", title: "Pinnacle", tag: "Business Portfolio · Agency", tier: "elite",
+    id: "bp3",
+    title: "Pinnacle",
+    tag: "Business Portfolio · Agency",
+    tier: "elite",
     section: "business-portfolio",
-    audiences: ["agencies", "founders"], specialties: ["luxury", "creative-studio", "webflow-framer"]
+    audiences: ["agencies", "founders"],
+    specialties: ["luxury", "creative-studio", "webflow-framer"],
   },
 ];
 
@@ -559,16 +889,22 @@ const AUDIENCE_IDS = new Set<AudienceId>(AUDIENCES.map((a) => a.id));
 const TIER_IDS = new Set<TierId>(TIERS.map((t) => t.id));
 const ALL_SPECIALTY_IDS = new Set<string>(
   (Object.keys(SPECIALTIES) as AudienceId[]).flatMap((id) =>
-    SPECIALTIES[id].map((s) => s.id)
-  )
+    SPECIALTIES[id].map((s) => s.id),
+  ),
 );
 
 export function parseSections(raw: string | string[] | undefined): SectionId[] {
-  return toArray(raw).filter((v): v is SectionId => SECTION_IDS.has(v as SectionId));
+  return toArray(raw).filter((v): v is SectionId =>
+    SECTION_IDS.has(v as SectionId),
+  );
 }
 
-export function parseAudiences(raw: string | string[] | undefined): AudienceId[] {
-  return toArray(raw).filter((v): v is AudienceId => AUDIENCE_IDS.has(v as AudienceId));
+export function parseAudiences(
+  raw: string | string[] | undefined,
+): AudienceId[] {
+  return toArray(raw).filter((v): v is AudienceId =>
+    AUDIENCE_IDS.has(v as AudienceId),
+  );
 }
 
 export function parseTiers(raw: string | string[] | undefined): TierId[] {
@@ -597,11 +933,18 @@ export function filterTemplates(args: {
 }): Template[] {
   const q = args.q.toLowerCase();
   return TEMPLATES.filter((t) => {
-    if (args.sections?.length && !args.sections.includes(t.section)) return false;
-    if (args.tiers.length && !args.tiers.includes(t.tier)) return false;
-    if (args.audiences.length && !args.audiences.some((a) => t.audiences.includes(a)))
+    if (args.sections?.length && !args.sections.includes(t.section))
       return false;
-    if (args.specialties.length && !args.specialties.some((s) => t.specialties.includes(s)))
+    if (args.tiers.length && !args.tiers.includes(t.tier)) return false;
+    if (
+      args.audiences.length &&
+      !args.audiences.some((a) => t.audiences.includes(a))
+    )
+      return false;
+    if (
+      args.specialties.length &&
+      !args.specialties.some((s) => t.specialties.includes(s))
+    )
       return false;
     if (q && !`${t.title} ${t.tag}`.toLowerCase().includes(q)) return false;
     return true;
@@ -619,13 +962,17 @@ export function getAllSpecialties(): SpecialtyMeta[] {
       if (!seen.has(s.id)) seen.set(s.id, s);
     }
   }
-  return Array.from(seen.values()).sort((a, b) => a.label.localeCompare(b.label));
+  return Array.from(seen.values()).sort((a, b) =>
+    a.label.localeCompare(b.label),
+  );
 }
 
 export const SECTION_COUNTS: Record<SectionId, number> = (() => {
   const counts = {
-    "digital-resume": 0, "career-portfolio": 0,
-    "creator-portfolio": 0, "business-portfolio": 0,
+    "digital-resume": 0,
+    "career-portfolio": 0,
+    "creator-portfolio": 0,
+    "business-portfolio": 0,
   } as Record<SectionId, number>;
   for (const t of TEMPLATES) counts[t.section]++;
   return counts;
@@ -639,23 +986,27 @@ export const AUDIENCE_COUNTS: Record<AudienceId, number> = (() => {
 })();
 
 export const TIER_COUNTS: Record<TierId, number> = (() => {
-  const counts = { starter: 0, pro: 0, premium: 0, elite: 0 } as Record<TierId, number>;
+  const counts = { starter: 0, pro: 0, premium: 0, elite: 0 } as Record<
+    TierId,
+    number
+  >;
   for (const t of TEMPLATES) counts[t.tier]++;
   return counts;
 })();
 
 export const SPECIALTY_COUNTS: Record<string, number> = (() => {
   const counts: Record<string, number> = {};
-  for (const t of TEMPLATES) for (const s of t.specialties) counts[s] = (counts[s] ?? 0) + 1;
+  for (const t of TEMPLATES)
+    for (const s of t.specialties) counts[s] = (counts[s] ?? 0) + 1;
   return counts;
 })();
 
 export const SECTION_LABEL: Record<SectionId, string> = Object.fromEntries(
-  SECTIONS.map((s) => [s.id, s.label])
+  SECTIONS.map((s) => [s.id, s.label]),
 ) as Record<SectionId, string>;
 
 export const AUDIENCE_LABEL: Record<AudienceId, string> = Object.fromEntries(
-  AUDIENCES.map((a) => [a.id, a.label])
+  AUDIENCES.map((a) => [a.id, a.label]),
 ) as Record<AudienceId, string>;
 
 export const SPECIALTY_LABEL: Record<string, string> = (() => {
