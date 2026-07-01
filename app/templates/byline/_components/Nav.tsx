@@ -1,7 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useSyncExternalStore } from "react";
+import { createPortal } from "react-dom";
 import { OWNER } from "../_data/portfolio";
+
+const noopSubscribe = () => () => {};
+function useIsClient() {
+  return useSyncExternalStore(noopSubscribe, () => true, () => false);
+}
 
 const NAV_LINKS = [
   { label: "About", href: "#about" },
@@ -14,6 +20,7 @@ const NAV_LINKS = [
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const isClient = useIsClient();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16);
@@ -21,7 +28,9 @@ export default function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  return (
+  if (!isClient) return null;
+
+  const nav = (
     <header
       style={{
         position: "fixed",
@@ -186,4 +195,6 @@ export default function Nav() {
       `}</style>
     </header>
   );
+
+  return createPortal(nav, document.body);
 }
