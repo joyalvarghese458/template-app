@@ -41,7 +41,7 @@ export type TierMeta = {
   badgeColor: string;
 };
 
-export const COMING_SOON_TEMPLATE_IDS = new Set(["bp1", "bp2", "bp3", "s2"]);
+export const COMING_SOON_TEMPLATE_IDS = new Set(["bp1", "bp2", "bp3", "s2", "p9"]);
 export const COMING_SOON_IMAGE_SRC = "/commingsoon.webp";
 
 // Each tier maps 1-to-1 to a section price point
