@@ -3,7 +3,9 @@
 import { useState } from "react";
 import Link from "next/link";
 import {
+  COMING_SOON_IMAGE_SRC,
   TIER_BY_ID,
+  isComingSoonTemplate,
   templateHref,
   templateImage,
   waLink,
@@ -35,9 +37,12 @@ export default function TemplateCard({
   const tier = TIER_BY_ID[template.tier];
   const href = templateHref(template);
   const slug = template.slug ?? template.id;
+  const isComingSoon = isComingSoonTemplate(template);
   const fallbackSrc = templateImage(template);
-  const [mode, setMode] = useState<"video" | "img">("video");
-  const [imgSrc, setImgSrc] = useState(`/previews/${slug}.jpg`);
+  const [mode, setMode] = useState<"video" | "img">(isComingSoon ? "img" : "video");
+  const [imgSrc, setImgSrc] = useState(
+    isComingSoon ? COMING_SOON_IMAGE_SRC : `/previews/${slug}.jpg`,
+  );
   const openTemplatePreview = () => {
     window.open(href, "_blank", "noopener,noreferrer");
   };
@@ -80,11 +85,13 @@ export default function TemplateCard({
           /* eslint-disable-next-line @next/next/no-img-element */
           <img
             src={imgSrc}
-            onError={() => setImgSrc(fallbackSrc)}
+            onError={() =>
+              setImgSrc(isComingSoon ? COMING_SOON_IMAGE_SRC : fallbackSrc)
+            }
             alt={`${template.title} portfolio preview`}
             loading="lazy"
             draggable={false}
-            className={`absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03] bg-gradient-to-br ${tier.accent}`}
+            className={`absolute inset-0 h-full w-full object-cover ${isComingSoon ? "object-center" : "object-top"} transition-transform duration-500 group-hover:scale-[1.03] bg-gradient-to-br ${tier.accent}`}
           />
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent pointer-events-none" />

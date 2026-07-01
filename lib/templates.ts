@@ -41,6 +41,9 @@ export type TierMeta = {
   badgeColor: string;
 };
 
+export const COMING_SOON_TEMPLATE_IDS = new Set(["bp1", "bp2", "bp3", "s2"]);
+export const COMING_SOON_IMAGE_SRC = "/commingsoon.webp";
+
 // Each tier maps 1-to-1 to a section price point
 export const TIERS: TierMeta[] = [
   {
@@ -875,9 +878,14 @@ export function templateImage(t: Pick<Template, "id" | "image">) {
   return t.image ?? `https://picsum.photos/seed/${t.id}/420/860`;
 }
 
+export function isComingSoonTemplate(t: Pick<Template, "id">) {
+  return COMING_SOON_TEMPLATE_IDS.has(t.id);
+}
+
 export function templateHref(
   t: Pick<Template, "id" | "slug" | "externalUrl">,
 ) {
+  if (isComingSoonTemplate(t)) return "/templates/coming-soon";
   return t.externalUrl ?? `/templates/${t.slug ?? t.id}`;
 }
 
