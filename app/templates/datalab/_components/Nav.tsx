@@ -1,13 +1,20 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useSyncExternalStore } from "react";
+import { createPortal } from "react-dom";
 import { OWNER } from "../_data/portfolio";
+
+const noopSubscribe = () => () => {};
+function useIsClient() {
+  return useSyncExternalStore(noopSubscribe, () => true, () => false);
+}
 import theme from "../theme.module.css";
 import { Terminal, Menu, X, Database } from "lucide-react";
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const isClient = useIsClient();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,7 +33,9 @@ export default function Nav() {
     { label: "Contact", href: "#contact" },
   ];
 
-  return (
+  if (!isClient) return null;
+
+  const nav = (
     <nav
       style={{
         position: "fixed",
@@ -40,9 +49,10 @@ export default function Nav() {
         justifyContent: "space-between",
         padding: "0 24px",
         transition: "all 0.3s ease",
-        background: scrolled ? "var(--glass-bg)" : "transparent",
-        backdropFilter: scrolled ? "var(--glass-blur)" : "none",
-        borderBottom: scrolled ? "1px solid var(--color-border)" : "1px solid transparent",
+        background: scrolled ? "rgba(11,15,25,0.92)" : "transparent",
+        backdropFilter: scrolled ? "blur(12px)" : "none",
+        borderBottom: scrolled ? "1px solid rgba(6,182,212,0.25)" : "1px solid transparent",
+        boxShadow: scrolled ? "0 4px 24px rgba(6,182,212,0.08)" : "none",
       }}
     >
       {/* Brand logo */}
@@ -170,4 +180,6 @@ export default function Nav() {
       `}</style>
     </nav>
   );
+
+  return createPortal(nav, document.body);
 }
