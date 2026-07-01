@@ -66,6 +66,7 @@ export default function TemplateShell({
                 onClick={() => setMenuOpen((value) => !value)}
                 aria-label={menuOpen ? "Close menu" : "Open menu"}
                 aria-expanded={menuOpen}
+                aria-controls="minimalist-mobile-menu"
               >
                 <span />
                 <span />
@@ -76,6 +77,7 @@ export default function TemplateShell({
       </FadeIn>
 
       <div
+        id="minimalist-mobile-menu"
         className={menuOpen ? styles.mobileMenuOpen : styles.mobileMenu}
         aria-hidden={!menuOpen}
       >
