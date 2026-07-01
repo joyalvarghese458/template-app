@@ -101,6 +101,25 @@
   font-weight: 700;
 }
 
+@media (max-width: 899px) {
+  .brand {
+    min-width: 0;
+  }
+
+  .brand span:last-child {
+    min-width: 0;
+  }
+
+  .brand strong,
+  .brand small {
+    overflow-wrap: anywhere;
+  }
+
+  .nav :global(a[class*="button"]) {
+    width: 100%;
+  }
+}
+
 @media (min-width: 900px) {
   .toggle {
     display: none;

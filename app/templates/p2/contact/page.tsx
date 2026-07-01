@@ -24,9 +24,7 @@ export default function P2ContactPage() {
 
           <div className={styles.contactGrid}>
             <article className={`${theme.card} ${styles.contactCard}`}>
-              <h3 style={{ marginTop: 0, fontFamily: "var(--p2-display)", fontSize: "1.6rem" }}>
-                Reach the clinic
-              </h3>
+              <h3 className={styles.cardTitle}>Reach the clinic</h3>
               <div className={styles.contactList}>
                 {CONTACT_DETAILS.map((item) => (
                   <div key={item.label}>
@@ -35,13 +33,11 @@ export default function P2ContactPage() {
                   </div>
                 ))}
               </div>
-              <p className={styles.small} style={{ marginTop: "1rem" }}>
-                {PROFILE.availability}
-              </p>
+              <p className={`${styles.small} ${styles.stackSpaceMd}`}>{PROFILE.availability}</p>
             </article>
 
             <article className={`${theme.card} ${styles.contactCard}`}>
-              <div className={styles.photoFrame} style={{ marginBottom: "1rem", minHeight: "14rem" }}>
+              <div className={`${styles.photoFrame} ${styles.contactPhotoFrame}`}>
                 <Image
                   src={MEDICAL_IMAGES.contact}
                   alt="Doctor welcoming a patient into a consultation room"
@@ -50,9 +46,7 @@ export default function P2ContactPage() {
                   sizes="(max-width: 760px) 100vw, 40vw"
                 />
               </div>
-              <h3 style={{ marginTop: 0, fontFamily: "var(--p2-display)", fontSize: "1.6rem" }}>
-                Appointment request
-              </h3>
+              <h3 className={styles.cardTitle}>Appointment request</h3>
               <form className={styles.form}>
                 <div className={styles.field}>
                   <label htmlFor="name">Full name</label>

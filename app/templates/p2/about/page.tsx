@@ -21,7 +21,7 @@ export default function P2AboutPage() {
               the same time: background, training, philosophy, and the shape of care all
               in one scroll.
             </p>
-            <div className={styles.pillList} style={{ marginTop: "1.4rem" }}>
+            <div className={`${styles.pillList} ${styles.stackSpaceMd}`}>
               {CREDENTIALS.map((item) => (
                 <span key={item} className={styles.pill}>
                   {item}

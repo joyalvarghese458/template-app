@@ -189,7 +189,7 @@ export default function P2HomePage() {
               <article key={item.name} className={`${theme.card} ${styles.storyCard}`}>
                 <p className={styles.quote}>&ldquo;{item.quote}&rdquo;</p>
                 <div className={styles.quoteMeta}>
-                  {item.name} · {item.detail}
+                  {item.name} {"\u00B7"} {item.detail}
                 </div>
               </article>
             ))}
