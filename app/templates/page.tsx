@@ -20,7 +20,7 @@ import TemplatesCatalog from "./_components/TemplatesCatalog";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "All Portfolio Templates â€” Browse 30+ Designs",
+  title: "Portfolio Website Templates | 30+ Premium Designs",
   description:
     "Browse 30+ hand-crafted portfolio templates. Filter by section, profession, or price. Starting from AED 49.",
   alternates: {
@@ -82,7 +82,9 @@ export default async function TemplatesPage({
     q.length > 0;
 
   const soloAudience =
-    audiences.length === 1 ? AUDIENCES.find((a) => a.id === audiences[0]) : null;
+    audiences.length === 1
+      ? AUDIENCES.find((a) => a.id === audiences[0])
+      : null;
   const soloSection =
     sections.length === 1 ? SECTIONS.find((s) => s.id === sections[0]) : null;
 
@@ -97,7 +99,9 @@ export default async function TemplatesPage({
       sectionId,
       label: meta.label,
       blurb: meta.blurb,
-      templates: visibleTemplates.filter((template) => template.section === sectionId),
+      templates: visibleTemplates.filter(
+        (template) => template.section === sectionId,
+      ),
     };
   }).filter((group) => group.templates.length > 0);
 
@@ -186,7 +190,11 @@ function FilterShellFallback() {
   );
 }
 
-function EmptyState({ visibleTemplateCount }: { visibleTemplateCount: number }) {
+function EmptyState({
+  visibleTemplateCount,
+}: {
+  visibleTemplateCount: number;
+}) {
   return (
     <div className="text-center py-20 px-6 border border-dashed border-ink/20 rounded-2xl">
       <div className="w-14 h-14 mx-auto rounded-full bg-brand/10 border border-brand/30 flex items-center justify-center mb-5">

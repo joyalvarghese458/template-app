@@ -12,14 +12,15 @@ export const metadata: Metadata = {
 export default function ComingSoonTemplatePage() {
   return (
     <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#06122b]">
-      <div
+      {/* Reuse the same artwork as a blurred cover background so the side fill matches the image edges. */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/commingsoon.webp"
+        alt=""
         aria-hidden="true"
-        className="absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(circle at top left, rgba(37, 99, 235, 0.22), transparent 38%), radial-gradient(circle at top right, rgba(29, 78, 216, 0.16), transparent 30%), linear-gradient(135deg, #102c72 0%, #07183d 52%, #030817 100%)",
-        }}
+        className="absolute inset-0 h-full w-full scale-105 object-cover blur-2xl"
       />
+      <div className="absolute inset-0 bg-[#06122b]/40" aria-hidden="true" />
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src="/commingsoon.webp"
