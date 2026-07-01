@@ -1,0 +1,121 @@
+.root {
+  --p2-bg: #f7fbfa;
+  --p2-surface: #ffffff;
+  --p2-surface-soft: #eef7f5;
+  --p2-ink: #10263d;
+  --p2-muted: #587085;
+  --p2-line: rgba(16, 38, 61, 0.12);
+  --p2-teal: #12816f;
+  --p2-mint: #7fd5c6;
+  --p2-gold: #d9b56c;
+  --p2-shadow: 0 28px 70px rgba(8, 30, 43, 0.08);
+  --p2-display:
+    "Iowan Old Style", "Palatino Linotype", "Book Antiqua", "Cormorant Garamond",
+    Georgia, serif;
+  --p2-body:
+    "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(127, 213, 198, 0.16), transparent 28%),
+    radial-gradient(circle at top right, rgba(16, 38, 61, 0.06), transparent 24%),
+    var(--p2-bg);
+  color: var(--p2-ink);
+  font-family: var(--p2-body);
+}
+
+.container {
+  width: min(1180px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.section {
+  padding: 4.25rem 0;
+}
+
+.sectionTight {
+  padding: 3rem 0;
+}
+
+.eyebrow {
+  margin: 0 0 0.9rem;
+  color: var(--p2-teal);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.displayTitle {
+  margin: 0;
+  font-family: var(--p2-display);
+  font-size: clamp(2.3rem, 5vw, 4.9rem);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+}
+
+.sectionTitle {
+  margin: 0;
+  font-family: var(--p2-display);
+  font-size: clamp(1.95rem, 4vw, 3.3rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.sectionLead {
+  margin: 1rem 0 0;
+  max-width: 42rem;
+  color: var(--p2-muted);
+  line-height: 1.75;
+  font-size: 1rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  min-height: 3.2rem;
+  padding: 0.95rem 1.35rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  text-decoration: none;
+  font-weight: 700;
+  transition:
+    transform 0.24s ease,
+    background 0.24s ease,
+    color 0.24s ease,
+    border-color 0.24s ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.buttonPrimary {
+  background: linear-gradient(135deg, var(--p2-teal), var(--p2-ink));
+  color: #f8fffe;
+}
+
+.buttonSecondary {
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--p2-ink);
+  border-color: var(--p2-line);
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  box-shadow: var(--p2-shadow);
+  backdrop-filter: blur(18px);
+}
+
+@media (min-width: 900px) {
+  .section {
+    padding: 6.25rem 0;
+  }
+
+  .sectionTight {
+    padding: 4rem 0;
+  }
+}

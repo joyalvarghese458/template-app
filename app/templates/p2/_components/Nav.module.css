@@ -1,0 +1,143 @@
+.wrap {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  backdrop-filter: blur(18px);
+  background:
+    linear-gradient(180deg, rgba(247, 251, 250, 0.92), rgba(247, 251, 250, 0.82));
+  border-bottom: 1px solid var(--p2-line);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 4.9rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+.brandMark {
+  width: 2.7rem;
+  height: 2.7rem;
+  display: grid;
+  place-items: center;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, var(--p2-teal), var(--p2-ink));
+  color: #f8fffe;
+  font-family: var(--p2-display);
+  font-size: 1.15rem;
+}
+
+.brand strong,
+.brand small {
+  display: block;
+}
+
+.brand strong {
+  font-size: 0.97rem;
+}
+
+.brand small {
+  color: var(--p2-muted);
+  font-size: 0.72rem;
+  margin-top: 0.18rem;
+}
+
+.toggle {
+  width: 2.9rem;
+  height: 2.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--p2-line);
+  background: rgba(255, 255, 255, 0.86);
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.32rem;
+}
+
+.toggle span {
+  width: 1rem;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--p2-ink);
+}
+
+.nav {
+  position: absolute;
+  top: calc(100% + 0.8rem);
+  left: 1rem;
+  right: 1rem;
+  display: none;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding: 1rem;
+  border-radius: 1.6rem;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid var(--p2-line);
+  box-shadow: 0 18px 54px rgba(7, 27, 43, 0.12);
+}
+
+.navOpen {
+  display: flex;
+}
+
+.link {
+  color: var(--p2-muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.linkActive {
+  color: var(--p2-ink);
+  font-weight: 700;
+}
+
+@media (min-width: 900px) {
+  .toggle {
+    display: none;
+  }
+
+  .nav {
+    position: static;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.3rem;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .link {
+    position: relative;
+  }
+
+  .link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.42rem;
+    width: 100%;
+    height: 2px;
+    border-radius: 999px;
+    background: var(--p2-teal);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.28s ease;
+  }
+
+  .link:hover::after,
+  .linkActive::after {
+    transform: scaleX(1);
+  }
+}

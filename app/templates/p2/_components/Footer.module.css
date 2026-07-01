@@ -1,0 +1,54 @@
+.footer {
+  padding: 4rem 0 5rem;
+  background:
+    radial-gradient(circle at top left, rgba(83, 195, 177, 0.18), transparent 36%),
+    #0d2133;
+  color: #edf7f5;
+}
+
+.inner {
+  display: grid;
+  gap: 2rem;
+}
+
+.intro {
+  max-width: 34rem;
+}
+
+.copy {
+  margin: 1rem 0 0;
+  color: rgba(237, 247, 245, 0.78);
+  line-height: 1.7;
+}
+
+.links {
+  display: grid;
+  gap: 1.6rem;
+}
+
+.label {
+  display: block;
+  margin-bottom: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  color: rgba(237, 247, 245, 0.58);
+}
+
+.link {
+  display: block;
+  margin-bottom: 0.72rem;
+  color: #edf7f5;
+  text-decoration: none;
+}
+
+@media (min-width: 900px) {
+  .inner {
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: start;
+  }
+
+  .links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

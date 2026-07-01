@@ -698,12 +698,13 @@ export const TEMPLATES: Template[] = [
   },
   {
     id: "p2",
+    slug: "p2",
     title: "DevHub",
     tag: "Developer · Projects grid",
     tier: "premium",
     section: "creator-portfolio",
-    audiences: ["developers"],
-    specialties: ["frontend", "full-stack"],
+    audiences: ["founders", "creators"],
+    specialties: ["personal-brand", "consultant"],
   },
   {
     id: "p4",
