@@ -57,7 +57,7 @@ const CATEGORIES: Category[] = [
     id: "creator-portfolio",
     label: "Creator Portfolio",
     description: "Express your creative vision with striking artistic layouts.",
-    templateIds: ["s1", "s2", "p2", "p9"],
+    templateIds: ["s1", "x5", "p2", "p9"],
     href: "/templates?section=creator-portfolio",
     aed: 149,
   },
