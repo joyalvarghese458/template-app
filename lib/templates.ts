@@ -27,6 +27,7 @@ export type Template = {
   tier: TierId;
   section: SectionId;
   slug?: string;
+  externalUrl?: string;
   image?: string;
   audiences: AudienceId[];
   specialties: string[];
@@ -851,6 +852,18 @@ export const TEMPLATES: Template[] = [
     audiences: ["agencies", "founders"],
     specialties: ["luxury", "creative-studio", "webflow-framer"],
   },
+  {
+    id: "dr5",
+    slug: "joyal-resume",
+    externalUrl: "https://joyal.myportfoliowebsite.com",
+    title: "Joyal",
+    tag: "Digital Resume · Personal site",
+    tier: "starter",
+    section: "digital-resume",
+    image: "/previews/joyal-resume.svg",
+    audiences: ["developers", "founders", "creators"],
+    specialties: ["frontend", "personal-brand", "consultant"],
+  },
 ];
 
 // ────────────────────────────────────────────────────────────────────
@@ -861,8 +874,10 @@ export function templateImage(t: Pick<Template, "id" | "image">) {
   return t.image ?? `https://picsum.photos/seed/${t.id}/420/860`;
 }
 
-export function templateHref(t: Pick<Template, "id" | "slug">) {
-  return `/templates/${t.slug ?? t.id}`;
+export function templateHref(
+  t: Pick<Template, "id" | "slug" | "externalUrl">,
+) {
+  return t.externalUrl ?? `/templates/${t.slug ?? t.id}`;
 }
 
 export const WA_NUMBER = "971568450406";
