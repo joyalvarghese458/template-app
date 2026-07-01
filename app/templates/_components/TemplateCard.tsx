@@ -10,7 +10,28 @@ import {
   type Template,
 } from "@/lib/templates";
 
-export default function TemplateCard({ template }: { template: Template }) {
+type Currency = "AED" | "INR";
+
+const INR_MAP: Record<number, number> = {
+  49: 999,
+  99: 2499,
+  149: 3999,
+  1599: 39999,
+};
+
+function formatPrice(aed: number, currency: Currency): string {
+  if (currency === "AED") return aed.toLocaleString("en-US");
+  const inr = INR_MAP[aed];
+  return inr !== undefined ? inr.toLocaleString("en-IN") : "—";
+}
+
+export default function TemplateCard({
+  template,
+  currency = "AED",
+}: {
+  template: Template;
+  currency?: Currency;
+}) {
   const tier = TIER_BY_ID[template.tier];
   const href = templateHref(template);
   const slug = template.slug ?? template.id;
@@ -87,8 +108,12 @@ export default function TemplateCard({ template }: { template: Template }) {
 
         <div className="flex items-baseline justify-between">
           <span className="text-ink">
-            <span className="text-[10px] sm:text-[11px] font-semibold text-ink-soft mr-1">AED</span>
-            <span className="font-serif text-xl sm:text-2xl tabular-nums">{tier.price}</span>
+            <span className="text-[10px] sm:text-[11px] font-semibold text-ink-soft mr-1">
+              {currency}
+            </span>
+            <span className="font-serif text-xl sm:text-2xl tabular-nums">
+              {formatPrice(tier.price, currency)}
+            </span>
           </span>
           <span className="hidden sm:inline text-[10px] font-medium uppercase tracking-widest text-ink-soft">
             One-time
