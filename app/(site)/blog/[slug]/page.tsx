@@ -4,6 +4,8 @@ import Link from "next/link";
 import Footer from "@/components/Footer";
 import { notFound } from "next/navigation";
 
+const BLOG_URL = "https://www.myportfoliowebsite.com/blog";
+
 // ── Types ─────────────────────────────────────────────────────────────────
 
 interface ArticleMeta {
@@ -2205,9 +2207,33 @@ export async function generateMetadata({
   const { slug } = await params;
   const article = ARTICLES[slug];
   if (!article) return {};
+
+  const articleUrl = `${BLOG_URL}/${slug}`;
+
   return {
     title: article.title,
     description: article.excerpt,
+    alternates: {
+      canonical: `/blog/${slug}`,
+    },
+    openGraph: {
+      type: "article",
+      url: articleUrl,
+      title: article.title,
+      description: article.excerpt,
+      images: [
+        {
+          url: article.heroImage,
+          alt: article.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: article.title,
+      description: article.excerpt,
+      images: [article.heroImage],
+    },
   };
 }
 
