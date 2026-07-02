@@ -28,13 +28,13 @@ export const metadata: Metadata = {
   },
   openGraph: {
     url: "https://www.myportfoliowebsite.com/templates",
-    title: "All Portfolio Templates â€” Browse 30+ Designs",
+    title: "All Portfolio Templates — Browse 30+ Designs",
     description:
       "Browse 30+ hand-crafted portfolio templates. Filter by section, profession, or price. Starting from AED 49.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "All Portfolio Templates â€” Browse 30+ Designs",
+    title: "All Portfolio Templates — Browse 30+ Designs",
     description:
       "Browse 30+ hand-crafted portfolio templates. Filter by section, profession, or price. Starting from AED 49.",
   },
