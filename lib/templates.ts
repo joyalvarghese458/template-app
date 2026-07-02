@@ -41,7 +41,7 @@ export type TierMeta = {
   badgeColor: string;
 };
 
-export const COMING_SOON_TEMPLATE_IDS = new Set(["bp1", "bp2", "bp3", "s2", "p9"]);
+export const COMING_SOON_TEMPLATE_IDS = new Set(["bp1", "bp2", "bp3", "p9"]);
 export const COMING_SOON_IMAGE_SRC = "/commingsoon.webp";
 
 // Each tier maps 1-to-1 to a section price point
@@ -616,12 +616,12 @@ export const TEMPLATES: Template[] = [
   {
     id: "x3",
     slug: "pure",
-    title: "Magnum",
-    tag: "Photographer · Pro Max",
-    tier: "pro",
-    section: "career-portfolio",
-    audiences: ["photographers"],
-    specialties: ["gallery", "fashion", "fine-art"],
+    title: "Pure",
+    tag: "Creator Portfolio · Light Editorial",
+    tier: "premium",
+    section: "creator-portfolio",
+    audiences: ["creators", "photographers", "founders"],
+    specialties: ["personal-brand", "gallery", "fashion"],
   },
   {
     id: "x11",
@@ -680,15 +680,6 @@ export const TEMPLATES: Template[] = [
     section: "creator-portfolio",
     audiences: ["creators", "founders"],
     specialties: ["writer", "consultant", "personal-brand"],
-  },
-  {
-    id: "s2",
-    title: "Pure",
-    tag: "Personal · Light",
-    tier: "premium",
-    section: "creator-portfolio",
-    audiences: ["creators", "founders"],
-    specialties: ["personal-brand"],
   },
   {
     id: "s7",

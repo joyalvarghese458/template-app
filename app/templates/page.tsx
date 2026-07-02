@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   },
 };
 
-const CREATOR_PORTFOLIO_TEMPLATE_IDS = new Set(["x5", "s1", "s2", "p2"]);
+const CREATOR_PORTFOLIO_TEMPLATE_IDS = new Set(["x5", "s1", "x3", "p2"]);
 
 type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
 
