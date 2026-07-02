@@ -41,7 +41,7 @@ export type TierMeta = {
   badgeColor: string;
 };
 
-export const COMING_SOON_TEMPLATE_IDS = new Set(["bp1", "bp2", "bp3", "p9", "x2"]);
+export const COMING_SOON_TEMPLATE_IDS = new Set(["bp1", "bp2", "bp3", "p9"]);
 export const COMING_SOON_IMAGE_SRC = "/commingsoon.webp";
 
 // Each tier maps 1-to-1 to a section price point
@@ -617,8 +617,9 @@ export const TEMPLATES: Template[] = [
   },
   {
     id: "x2",
+    slug: "reel",
     title: "Reel",
-    tag: "Director · Showreel",
+    tag: "Film Director · Screening Room",
     tier: "pro",
     section: "career-portfolio",
     audiences: ["creators"],
