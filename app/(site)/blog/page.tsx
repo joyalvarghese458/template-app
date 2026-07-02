@@ -39,7 +39,7 @@ const CATEGORY_COLORS: Record<string, string> = {
   "Portfolio Design": "bg-blue-100 text-blue-700",
   "Personal Branding": "bg-purple-100 text-purple-700",
   "Career Growth": "bg-green-100 text-green-700",
-  "Freelancing": "bg-amber-100 text-amber-700",
+  Freelancing: "bg-amber-100 text-amber-700",
   "Developer Portfolios": "bg-cyan-100 text-cyan-700",
   "Designer Portfolios": "bg-rose-100 text-rose-700",
   "Marketing Portfolios": "bg-yellow-100 text-yellow-700",
@@ -48,7 +48,8 @@ const CATEGORY_COLORS: Record<string, string> = {
 const FEATURED: Article = {
   slug: "10-elements-every-professional-portfolio-needs",
   category: "Portfolio Design",
-  title: "How to Build a Portfolio Website That Gets You Hired as a Designer in 2025",
+  title:
+    "How to Build a Portfolio Website That Gets You Hired as a Designer in 2025",
   excerpt:
     "Most design portfolios look the same — and that's exactly why they fail. Learn the proven framework top designers use to present their work, communicate their value, and land dream roles and high-value clients.",
   author: {
@@ -66,7 +67,8 @@ const ALL_ARTICLES: Article[] = [
   {
     slug: "developer-portfolio-website-guide",
     category: "Developer Portfolios",
-    title: "The Ultimate Developer Portfolio Guide: What to Include, What to Skip",
+    title:
+      "The Ultimate Developer Portfolio Guide: What to Include, What to Skip",
     excerpt:
       "Learn exactly what to include in your developer portfolio website — and what's killing your chances. A practical guide for software developers who want to stand out and get hired.",
     author: {
@@ -82,7 +84,8 @@ const ALL_ARTICLES: Article[] = [
   {
     slug: "photography-portfolio-website-essentials",
     category: "Designer Portfolios",
-    title: "Photography Portfolio Website: 10 Things Every Photographer Needs on Their Site",
+    title:
+      "Photography Portfolio Website: 10 Things Every Photographer Needs on Their Site",
     excerpt:
       "Your photography portfolio website should be doing more than looking pretty. Here are the 10 essential elements every photographer needs to attract clients and grow their business.",
     author: {
@@ -98,7 +101,8 @@ const ALL_ARTICLES: Article[] = [
   {
     slug: "freelancer-portfolio-website-uae",
     category: "Freelancing",
-    title: "How Freelancers in UAE Can Win More Clients with a Professional Portfolio Website",
+    title:
+      "How Freelancers in UAE Can Win More Clients with a Professional Portfolio Website",
     excerpt:
       "Discover how a professional freelancer portfolio website can help you win more clients in the UAE — practical strategies for standing out in Dubai, Abu Dhabi, and beyond.",
     author: {
@@ -114,7 +118,8 @@ const ALL_ARTICLES: Article[] = [
   {
     slug: "founder-portfolio-website-personal-brand",
     category: "Personal Branding",
-    title: "Founder Personal Brand: Why Every Startup Founder Needs a Portfolio Website",
+    title:
+      "Founder Personal Brand: Why Every Startup Founder Needs a Portfolio Website",
     excerpt:
       "Your startup's credibility often starts with you. Discover why a founder portfolio website is one of the most powerful personal branding investments you can make — and what to include on it.",
     author: {
@@ -130,7 +135,8 @@ const ALL_ARTICLES: Article[] = [
   {
     slug: "agency-website-vs-portfolio-website",
     category: "Agency & Studio",
-    title: "Agency Website vs Portfolio Website: Which One Does Your Studio Actually Need?",
+    title:
+      "Agency Website vs Portfolio Website: Which One Does Your Studio Actually Need?",
     excerpt:
       "Agency website or portfolio website — it's not just a design decision, it's a strategic one. Find out which one your creative studio actually needs and why getting it wrong costs you clients.",
     author: {
@@ -146,7 +152,8 @@ const ALL_ARTICLES: Article[] = [
   {
     slug: "portfolio-website-for-professionals-india",
     category: "Career Growth",
-    title: "Portfolio Website for Indian Professionals: Stand Out in a Competitive Job Market",
+    title:
+      "Portfolio Website for Indian Professionals: Stand Out in a Competitive Job Market",
     excerpt:
       "India's job market is more competitive than ever. Learn how a professional portfolio website can set you apart — whether you're a developer in Bengaluru, a designer in Mumbai, or a freelancer anywhere in the country.",
     author: {
@@ -162,7 +169,8 @@ const ALL_ARTICLES: Article[] = [
   {
     slug: "freelancer-portfolio-website-india",
     category: "Freelancing",
-    title: "How Freelancers in India Can Win More Clients with a Professional Portfolio Website",
+    title:
+      "How Freelancers in India Can Win More Clients with a Professional Portfolio Website",
     excerpt:
       "Discover how a professional freelancer portfolio website can help you win more clients in India — practical strategies for standing out on platforms like Upwork, Fiverr, and with direct clients across Bengaluru, Delhi, Hyderabad, and beyond.",
     author: {
@@ -244,19 +252,22 @@ const ALL_ARTICLES: Article[] = [
 const TRENDING = [
   {
     slug: "portfolio-website-for-professionals-india",
-    title: "Portfolio Website for Indian Professionals: Stand Out in a Competitive Job Market",
+    title:
+      "Portfolio Website for Indian Professionals: Stand Out in a Competitive Job Market",
     readTime: 10,
     category: "Career Growth",
   },
   {
     slug: "freelancer-portfolio-website-india",
-    title: "How Freelancers in India Can Win More Clients with a Professional Portfolio Website",
+    title:
+      "How Freelancers in India Can Win More Clients with a Professional Portfolio Website",
     readTime: 11,
     category: "Freelancing",
   },
   {
     slug: "developer-portfolio-website-guide",
-    title: "The Ultimate Developer Portfolio Guide: What to Include, What to Skip",
+    title:
+      "The Ultimate Developer Portfolio Guide: What to Include, What to Skip",
     readTime: 15,
     category: "Developer Portfolios",
   },
@@ -272,19 +283,19 @@ const LIVE_BLOG_SLUGS = new Set([
 ]);
 
 const VISIBLE_ARTICLES = ALL_ARTICLES.filter((article) =>
-  LIVE_BLOG_SLUGS.has(article.slug)
+  LIVE_BLOG_SLUGS.has(article.slug),
 );
 
 const HIDDEN_ARTICLES = ALL_ARTICLES.filter(
-  (article) => !LIVE_BLOG_SLUGS.has(article.slug)
+  (article) => !LIVE_BLOG_SLUGS.has(article.slug),
 );
 
 const VISIBLE_TRENDING = TRENDING.filter((article) =>
-  LIVE_BLOG_SLUGS.has(article.slug)
+  LIVE_BLOG_SLUGS.has(article.slug),
 );
 
 const HIDDEN_TRENDING = TRENDING.filter(
-  (article) => !LIVE_BLOG_SLUGS.has(article.slug)
+  (article) => !LIVE_BLOG_SLUGS.has(article.slug),
 );
 
 const FEATURED_IS_LIVE = LIVE_BLOG_SLUGS.has(FEATURED.slug);
@@ -306,7 +317,15 @@ const POPULAR_TAGS = [
 // ── Clock Icon ─────────────────────────────────────────────────────────────
 function ClockIcon() {
   return (
-    <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+    <svg
+      className="w-3.5 h-3.5"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
       <circle cx={12} cy={12} r={10} />
       <path d="M12 6v6l4 2" />
     </svg>
@@ -329,7 +348,9 @@ function ArticleCard({ article }: { article: Article }) {
       </div>
       <div className="p-5 flex flex-col flex-1">
         <div className="flex items-center gap-2 mb-3">
-          <span className={`px-2 py-0.5 rounded text-xs font-semibold ${CATEGORY_COLORS[article.category]}`}>
+          <span
+            className={`px-2 py-0.5 rounded text-xs font-semibold ${CATEGORY_COLORS[article.category]}`}
+          >
             {article.category}
           </span>
           <span className="flex items-center gap-1 text-xs text-ink-soft">
@@ -351,14 +372,25 @@ function ArticleCard({ article }: { article: Article }) {
               className="w-7 h-7 rounded-full object-cover"
             />
             <div>
-              <p className="text-xs font-semibold text-ink">{article.author.name}</p>
+              <p className="text-xs font-semibold text-ink">
+                {article.author.name}
+              </p>
               <p className="text-[10px] text-ink-soft">{article.date}</p>
             </div>
           </div>
           <span className="text-brand text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all duration-200">
             Read
-            <svg className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
-              <path d="M5 12h14" /><path d="M13 5l7 7-7 7" />
+            <svg
+              className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform duration-200"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2.5}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M5 12h14" />
+              <path d="M13 5l7 7-7 7" />
             </svg>
           </span>
         </div>
@@ -380,18 +412,20 @@ export default function BlogPage() {
     return [
       "All",
       ...ALL_CATEGORY_ORDER.filter(
-        (category) => category !== "All" && categorySet.has(category)
+        (category) => category !== "All" && categorySet.has(category),
       ),
       ...Array.from(categorySet).filter(
-        (category) => !ALL_CATEGORY_ORDER.includes(category)
+        (category) => !ALL_CATEGORY_ORDER.includes(category),
       ),
     ];
   }, []);
 
   const filtered = useMemo(() => {
     return VISIBLE_ARTICLES.filter((a) => {
-      if (activeCategory !== "All" && a.category !== activeCategory) return false;
-      if (search && !a.title.toLowerCase().includes(search.toLowerCase())) return false;
+      if (activeCategory !== "All" && a.category !== activeCategory)
+        return false;
+      if (search && !a.title.toLowerCase().includes(search.toLowerCase()))
+        return false;
       return true;
     });
   }, [activeCategory, search]);
@@ -400,17 +434,26 @@ export default function BlogPage() {
 
   return (
     <main className="bg-canvas-bg min-h-screen">
-
       {/* ── Hero ────────────────────────────────────────────────────── */}
       <section
         className="pt-28 pb-16 px-4 sm:px-6 lg:px-8 text-center"
         style={{
-          background: "linear-gradient(135deg, #f0f7ff 0%, #eaf3ff 50%, #f3f0ff 100%)",
+          background:
+            "linear-gradient(135deg, #f0f7ff 0%, #eaf3ff 50%, #f3f0ff 100%)",
         }}
       >
         {/* Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand/20 bg-white/70 backdrop-blur-sm mb-6 text-sm font-medium text-brand">
-          <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <svg
+            className="w-4 h-4"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
             <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
           </svg>
           Portfolio Insights &amp; Career Intelligence
@@ -463,7 +506,9 @@ export default function BlogPage() {
             { value: "4.9★", label: "Reader Rating" },
           ].map(({ value, label }) => (
             <div key={label} className="text-center">
-              <p className="text-xl sm:text-2xl font-bold text-brand">{value}</p>
+              <p className="text-xl sm:text-2xl font-bold text-brand">
+                {value}
+              </p>
               <p className="text-xs sm:text-sm text-ink-soft mt-0.5">{label}</p>
             </div>
           ))}
@@ -494,15 +539,22 @@ export default function BlogPage() {
       {/* ── Content + Sidebar ───────────────────────────────────────── */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div className="flex gap-8 xl:gap-12 items-start">
-
           {/* ── Left: Articles ──────────────────────────────────────── */}
           <div className="flex-1 min-w-0">
-
             {/* Featured Article */}
             {showFeatured && (
               <div className="mb-10">
                 <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-brand text-white text-xs font-semibold uppercase tracking-wider mb-4">
-                  <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <svg
+                    className="w-3.5 h-3.5"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                  >
                     <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
                   </svg>
                   Featured
@@ -518,7 +570,9 @@ export default function BlogPage() {
                     </div>
                     <div className="p-6 sm:p-8 flex flex-col justify-center">
                       <div className="flex items-center gap-3 mb-3">
-                        <span className={`px-2.5 py-0.5 rounded text-xs font-semibold ${CATEGORY_COLORS[FEATURED.category]}`}>
+                        <span
+                          className={`px-2.5 py-0.5 rounded text-xs font-semibold ${CATEGORY_COLORS[FEATURED.category]}`}
+                        >
                           {FEATURED.category}
                         </span>
                         <span className="flex items-center gap-1 text-xs text-ink-soft">
@@ -539,7 +593,9 @@ export default function BlogPage() {
                           className="w-9 h-9 rounded-full object-cover"
                         />
                         <div>
-                          <p className="text-sm font-semibold text-ink">{FEATURED.author.name}</p>
+                          <p className="text-sm font-semibold text-ink">
+                            {FEATURED.author.name}
+                          </p>
                           <p className="text-xs text-ink-soft">
                             {FEATURED.author.role} · {FEATURED.date}
                           </p>
@@ -552,8 +608,18 @@ export default function BlogPage() {
                         className="inline-flex items-center gap-2 px-5 py-2.5 bg-brand text-white text-sm font-semibold rounded-lg hover:bg-brand-light transition-colors duration-200 self-start"
                       >
                         Read Article
-                        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                          <path d="M5 12h14" /><path d="M13 5l7 7-7 7" />
+                        <svg
+                          className="w-4 h-4"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth={2.5}
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          aria-hidden="true"
+                        >
+                          <path d="M5 12h14" />
+                          <path d="M13 5l7 7-7 7" />
                         </svg>
                       </Link>
                     </div>
@@ -568,8 +634,8 @@ export default function BlogPage() {
                 {showFeatured
                   ? "Latest Articles"
                   : activeCategory !== "All"
-                  ? activeCategory
-                  : "Search Results"}
+                    ? activeCategory
+                    : "Search Results"}
               </h2>
               <span className="text-sm text-ink-soft">
                 {filtered.length} article{filtered.length !== 1 ? "s" : ""}
@@ -585,8 +651,17 @@ export default function BlogPage() {
               </div>
             ) : (
               <div className="text-center py-20 text-ink-soft">
-                <svg className="w-12 h-12 mx-auto mb-4 opacity-30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx={11} cy={11} r={8} /><path d="M21 21l-4.35-4.35" />
+                <svg
+                  className="w-12 h-12 mx-auto mb-4 opacity-30"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={1.5}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <circle cx={11} cy={11} r={8} />
+                  <path d="M21 21l-4.35-4.35" />
                 </svg>
                 <p className="text-lg font-semibold mb-1">No articles found</p>
                 <p className="text-sm">Try a different search or category</p>
@@ -596,7 +671,6 @@ export default function BlogPage() {
 
           {/* ── Right: Sidebar ──────────────────────────────────────── */}
           <aside className="hidden lg:flex flex-col gap-5 w-72 xl:w-80 shrink-0">
-
             {/* Newsletter */}
             <div className="bg-brand rounded-2xl p-6 text-white">
               <p className="text-xs font-semibold uppercase tracking-widest text-white/70 mb-1">
@@ -606,7 +680,8 @@ export default function BlogPage() {
                 Portfolio Tips, Every Week
               </h3>
               <p className="text-sm text-white/80 mb-4 leading-relaxed">
-                Join 12,000+ professionals getting actionable portfolio strategies every Tuesday.
+                Join 12,000+ professionals getting actionable portfolio
+                strategies every Tuesday.
               </p>
               <input
                 type="email"
@@ -621,14 +696,26 @@ export default function BlogPage() {
             {/* Free Checklist */}
             <div className="bg-white border border-black/10 rounded-2xl p-6 shadow-sm">
               <div className="flex items-center gap-2 mb-2">
-                <svg className="w-5 h-5 text-brand shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <svg
+                  className="w-5 h-5 text-brand shrink-0"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
                   <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                   <polyline points="22 4 12 14.01 9 11.01" />
                 </svg>
-                <h3 className="font-bold text-ink text-sm">Free Portfolio Checklist</h3>
+                <h3 className="font-bold text-ink text-sm">
+                  Free Portfolio Checklist
+                </h3>
               </div>
               <p className="text-sm text-ink-soft mb-4 leading-relaxed">
-                The 27-point checklist used by 10,000+ professionals to audit and improve their portfolio.
+                The 27-point checklist used by 10,000+ professionals to audit
+                and improve their portfolio.
               </p>
               <ul className="space-y-2 mb-4">
                 {[
@@ -638,8 +725,20 @@ export default function BlogPage() {
                   "Mobile performance score",
                   "SEO & discoverability",
                 ].map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-sm text-ink-soft">
-                    <svg className="w-3.5 h-3.5 text-brand shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <li
+                    key={item}
+                    className="flex items-start gap-2 text-sm text-ink-soft"
+                  >
+                    <svg
+                      className="w-3.5 h-3.5 text-brand shrink-0 mt-0.5"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth={2.5}
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      aria-hidden="true"
+                    >
                       <path d="M9 18l6-6-6-6" />
                     </svg>
                     {item}
@@ -654,7 +753,16 @@ export default function BlogPage() {
             {/* Trending Now */}
             <div className="bg-white border border-black/10 rounded-2xl p-6 shadow-sm">
               <div className="flex items-center gap-2 mb-4">
-                <svg className="w-4 h-4 text-brand" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <svg
+                  className="w-4 h-4 text-brand"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
                   <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
                   <polyline points="17 6 23 6 23 12" />
                 </svg>
@@ -685,7 +793,16 @@ export default function BlogPage() {
             {/* Popular Topics */}
             <div className="bg-white border border-black/10 rounded-2xl p-6 shadow-sm">
               <div className="flex items-center gap-2 mb-4">
-                <svg className="w-4 h-4 text-brand" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <svg
+                  className="w-4 h-4 text-brand"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
                   <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" />
                   <line x1="7" y1="7" x2="7.01" y2="7" />
                 </svg>
@@ -706,21 +823,49 @@ export default function BlogPage() {
             {/* External Resources */}
             <div className="bg-white border border-black/10 rounded-2xl p-6 shadow-sm">
               <div className="flex items-center gap-2 mb-4">
-                <svg className="w-4 h-4 text-brand" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <svg
+                  className="w-4 h-4 text-brand"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
                   <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
                   <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
                 </svg>
-                <h3 className="font-bold text-ink text-sm">External Resources</h3>
+                <h3 className="font-bold text-ink text-sm">
+                  External Resources
+                </h3>
               </div>
 
-              <p className="text-[11px] font-semibold text-ink-soft uppercase tracking-wider mb-2">Learn More</p>
+              <p className="text-[11px] font-semibold text-ink-soft uppercase tracking-wider mb-2">
+                Learn More
+              </p>
               <ul className="space-y-2 mb-4">
                 {[
-                  { label: "Portfolio Design — Wikipedia", href: "https://en.wikipedia.org/wiki/Portfolio_(design)" },
-                  { label: "Personal Branding — Wikipedia", href: "https://en.wikipedia.org/wiki/Personal_branding" },
-                  { label: "Career Development — Wikipedia", href: "https://en.wikipedia.org/wiki/Career_development" },
-                  { label: "India's IT Industry — Wikipedia", href: "https://en.wikipedia.org/wiki/Information_technology_in_India" },
-                  { label: "Freelancing in India — Wikipedia", href: "https://en.wikipedia.org/wiki/Freelancer" },
+                  {
+                    label: "Portfolio Design — Wikipedia",
+                    href: "https://en.wikipedia.org/wiki/Portfolio_(design)",
+                  },
+                  {
+                    label: "Personal Branding — Wikipedia",
+                    href: "https://en.wikipedia.org/wiki/Personal_branding",
+                  },
+                  {
+                    label: "Career Development — Wikipedia",
+                    href: "https://en.wikipedia.org/wiki/Career_development",
+                  },
+                  {
+                    label: "India's IT Industry — Wikipedia",
+                    href: "https://en.wikipedia.org/wiki/Information_technology_in_India",
+                  },
+                  {
+                    label: "Freelancing in India — Wikipedia",
+                    href: "https://en.wikipedia.org/wiki/Freelancer",
+                  },
                 ].map(({ label, href }) => (
                   <li key={href}>
                     <a
@@ -735,14 +880,31 @@ export default function BlogPage() {
                 ))}
               </ul>
 
-              <p className="text-[11px] font-semibold text-ink-soft uppercase tracking-wider mb-2">Find Inspiration</p>
+              <p className="text-[11px] font-semibold text-ink-soft uppercase tracking-wider mb-2">
+                Find Inspiration
+              </p>
               <ul className="space-y-2">
                 {[
-                  { label: "Behance — Portfolio Community", href: "https://www.behance.net" },
-                  { label: "Dribbble — Design Inspiration", href: "https://dribbble.com" },
-                  { label: "LinkedIn — Professional Network", href: "https://www.linkedin.com" },
-                  { label: "Naukri — Jobs in India", href: "https://www.naukri.com" },
-                  { label: "Internshala — Indian Freelance Work", href: "https://internshala.com" },
+                  {
+                    label: "Behance — Portfolio Community",
+                    href: "https://www.behance.net",
+                  },
+                  {
+                    label: "Dribbble — Design Inspiration",
+                    href: "https://dribbble.com",
+                  },
+                  {
+                    label: "LinkedIn — Professional Network",
+                    href: "https://www.linkedin.com",
+                  },
+                  {
+                    label: "Naukri — Jobs in India",
+                    href: "https://www.naukri.com",
+                  },
+                  {
+                    label: "Internshala — Indian Freelance Work",
+                    href: "https://internshala.com",
+                  },
                 ].map(({ label, href }) => (
                   <li key={href}>
                     <a
@@ -764,7 +926,8 @@ export default function BlogPage() {
                 Launch your portfolio in minutes
               </h3>
               <p className="text-sm text-white/70 mb-4 leading-relaxed">
-                No coding. 50+ professional templates for every creative discipline.
+                No coding. 50+ professional templates for every creative
+                discipline.
               </p>
               <Link
                 href="/templates"
@@ -773,7 +936,6 @@ export default function BlogPage() {
                 Get Started Free →
               </Link>
             </div>
-
           </aside>
         </div>
       </div>
@@ -791,8 +953,8 @@ export default function BlogPage() {
         </h2>
         <p className="text-ink-soft text-base sm:text-lg max-w-xl mx-auto mb-8 leading-relaxed">
           Join 50,000+ professionals who&apos;ve launched stunning portfolio
-          websites with My Portfolio. Get hired faster, win more clients, and own
-          your online presence.
+          websites with My Portfolio. Get hired faster, win more clients, and
+          own your online presence.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
           <Link
@@ -809,13 +971,18 @@ export default function BlogPage() {
           </Link>
         </div>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-sm text-ink-soft">
-          {[
-            "Free forever plan",
-            "No credit card needed",
-            "Launch in 5 minutes",
-          ].map((text) => (
+          {["Forever plan", "Launch in few days"].map((text) => (
             <span key={text} className="flex items-center gap-1.5">
-              <svg className="w-4 h-4 text-brand shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <svg
+                className="w-4 h-4 text-brand shrink-0"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                 <polyline points="22 4 12 14.01 9 11.01" />
               </svg>
