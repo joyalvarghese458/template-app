@@ -669,6 +669,16 @@ export const TEMPLATES: Template[] = [
     audiences: ["founders", "developers"],
     specialties: ["consultant", "frontend", "full-stack"],
   },
+  {
+    id: "sillage",
+    slug: "sillage",
+    title: "Sillage",
+    tag: "Independent Perfumer · Parchment & Amber",
+    tier: "pro",
+    section: "career-portfolio",
+    audiences: ["founders", "designers"],
+    specialties: ["personal-brand", "consultant", "brand"],
+  },
 
   // ── Creator Portfolio  (AED 149 · tier: premium) ─────────────────
   {
