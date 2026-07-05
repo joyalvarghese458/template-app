@@ -679,6 +679,16 @@ export const TEMPLATES: Template[] = [
     audiences: ["founders", "designers"],
     specialties: ["personal-brand", "consultant", "brand"],
   },
+  {
+    id: "marea",
+    slug: "marea",
+    title: "Marea",
+    tag: "Marine Biology Student · Ocean Depth Descent",
+    tier: "pro",
+    section: "career-portfolio",
+    audiences: ["developers"],
+    specialties: ["marine-biology", "ecology", "fieldwork"],
+  },
 
   // ── Creator Portfolio  (AED 149 · tier: premium) ─────────────────
   {
