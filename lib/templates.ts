@@ -689,6 +689,16 @@ export const TEMPLATES: Template[] = [
     audiences: ["developers"],
     specialties: ["marine-biology", "ecology", "fieldwork"],
   },
+  {
+    id: "escapement",
+    slug: "escapement",
+    title: "Escapement",
+    tag: "Independent Watchmaker · Brass & Patina",
+    tier: "pro",
+    section: "career-portfolio",
+    audiences: ["founders", "designers"],
+    specialties: ["personal-brand", "consultant", "brand"],
+  },
 
   // ── Creator Portfolio  (AED 149 · tier: premium) ─────────────────
   {

@@ -1,0 +1,43 @@
+/* ── Escapement Design System — Watchmaker's Atelier / Brass & Patina Tokens ── */
+.root {
+  /* Colors */
+  --color-bg: #12100d;
+  --color-surface-1: #17140f;
+  --color-surface-2: #1f1a13;
+  --color-surface-3: #292219;
+  --color-ink: #f2ead9;
+  --color-ink-soft: #b9ac93;
+  --color-ink-faint: #7d7362;
+  --color-brass: #c9a24b;
+  --color-brass-bright: #e8c876;
+  --color-teal: #4f8577;
+  --color-teal-bright: #6fa295;
+  --color-border: rgba(242, 234, 217, 0.12);
+
+  /* Typography */
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-body: 'Manrope', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'Space Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  /* Spacing */
+  --sp-8: 8px;
+  --sp-16: 16px;
+  --sp-24: 24px;
+  --sp-32: 32px;
+  --sp-48: 48px;
+  --sp-64: 64px;
+  --sp-96: 96px;
+
+  /* Radii */
+  --r-card: 14px;
+  --r-btn: 4px;
+
+  /* Layout */
+  --max-w: 1180px;
+
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
