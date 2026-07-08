@@ -699,6 +699,16 @@ export const TEMPLATES: Template[] = [
     audiences: ["founders", "designers"],
     specialties: ["personal-brand", "consultant", "brand"],
   },
+  {
+    id: "kiln",
+    slug: "kiln",
+    title: "Kiln",
+    tag: "Studio Ceramicist · Clay & Sage",
+    tier: "pro",
+    section: "career-portfolio",
+    audiences: ["designers", "founders"],
+    specialties: ["personal-brand", "brand", "consultant"],
+  },
 
   // ── Creator Portfolio  (AED 149 · tier: premium) ─────────────────
   {

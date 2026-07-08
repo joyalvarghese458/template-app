@@ -1,0 +1,43 @@
+/* ── Kiln Design System — Studio Ceramicist / Clay & Sage Tokens ── */
+.root {
+  /* Colors */
+  --color-bg: #f7f1e8;
+  --color-surface-1: #efe4d3;
+  --color-surface-2: #e6d7bf;
+  --color-surface-3: #dbc7a3;
+  --color-ink: #3a2e22;
+  --color-ink-soft: #6b5a45;
+  --color-ink-faint: #a08d70;
+  --color-terracotta: #c15f3c;
+  --color-terracotta-bright: #d97e56;
+  --color-sage: #6f7d58;
+  --color-sage-bright: #8c9c72;
+  --color-border: rgba(58, 46, 34, 0.14);
+
+  /* Typography */
+  --font-display: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --font-body: 'Karla', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  /* Spacing */
+  --sp-8: 8px;
+  --sp-16: 16px;
+  --sp-24: 24px;
+  --sp-32: 32px;
+  --sp-48: 48px;
+  --sp-64: 64px;
+  --sp-96: 96px;
+
+  /* Radii */
+  --r-card: 14px;
+  --r-btn: 4px;
+
+  /* Layout */
+  --max-w: 1180px;
+
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
