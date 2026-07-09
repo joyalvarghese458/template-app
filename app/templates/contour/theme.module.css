@@ -1,0 +1,43 @@
+/* ── Contour Design System — Landscape Architect / Moss & Water Tokens ── */
+.root {
+  /* Colors */
+  --color-bg: #f3f0e5;
+  --color-surface-1: #e7e0cb;
+  --color-surface-2: #dad0af;
+  --color-surface-3: #c7ba93;
+  --color-ink: #212a1f;
+  --color-ink-soft: #4c5343;
+  --color-ink-faint: #868c76;
+  --color-moss: #4b6b3f;
+  --color-moss-bright: #6f9459;
+  --color-water: #2f6b74;
+  --color-water-bright: #3f8a95;
+  --color-border: rgba(33, 42, 31, 0.14);
+
+  /* Typography */
+  --font-display: 'Lora', Georgia, 'Times New Roman', serif;
+  --font-body: 'Work Sans', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  /* Spacing */
+  --sp-8: 8px;
+  --sp-16: 16px;
+  --sp-24: 24px;
+  --sp-32: 32px;
+  --sp-48: 48px;
+  --sp-64: 64px;
+  --sp-96: 96px;
+
+  /* Radii */
+  --r-card: 14px;
+  --r-btn: 4px;
+
+  /* Layout */
+  --max-w: 1200px;
+
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

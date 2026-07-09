@@ -719,6 +719,16 @@ export const TEMPLATES: Template[] = [
     audiences: ["founders", "agencies"],
     specialties: ["consultant", "executive", "personal-brand"],
   },
+  {
+    id: "contour",
+    slug: "contour",
+    title: "Contour",
+    tag: "Landscape Architect · Site Plan & Growth Rings",
+    tier: "pro",
+    section: "career-portfolio",
+    audiences: ["designers"],
+    specialties: ["architect", "interior"],
+  },
 
   // ── Creator Portfolio  (AED 149 · tier: premium) ─────────────────
   {
