@@ -1,0 +1,43 @@
+/* ── Vantage Design System — Management Consultant / Ink & Emerald Tokens ── */
+.root {
+  /* Colors */
+  --color-bg: #f6f3ea;
+  --color-surface-1: #eee8d9;
+  --color-surface-2: #e3dac3;
+  --color-surface-3: #d2c5a4;
+  --color-ink: #17140f;
+  --color-ink-soft: #4a4438;
+  --color-ink-faint: #8a8271;
+  --color-emerald: #0f6b56;
+  --color-emerald-bright: #17916f;
+  --color-copper: #b3703b;
+  --color-copper-bright: #c88a53;
+  --color-border: rgba(23, 20, 15, 0.13);
+
+  /* Typography */
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-body: 'Manrope', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'Space Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  /* Spacing */
+  --sp-8: 8px;
+  --sp-16: 16px;
+  --sp-24: 24px;
+  --sp-32: 32px;
+  --sp-48: 48px;
+  --sp-64: 64px;
+  --sp-96: 96px;
+
+  /* Radii */
+  --r-card: 16px;
+  --r-btn: 6px;
+
+  /* Layout */
+  --max-w: 1200px;
+
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

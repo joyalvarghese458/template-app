@@ -709,6 +709,16 @@ export const TEMPLATES: Template[] = [
     audiences: ["designers", "founders"],
     specialties: ["personal-brand", "brand", "consultant"],
   },
+  {
+    id: "vantage",
+    slug: "vantage",
+    title: "Vantage",
+    tag: "Management Consultant · Ink & Emerald Dashboard",
+    tier: "pro",
+    section: "career-portfolio",
+    audiences: ["founders", "agencies"],
+    specialties: ["consultant", "executive", "personal-brand"],
+  },
 
   // ── Creator Portfolio  (AED 149 · tier: premium) ─────────────────
   {
