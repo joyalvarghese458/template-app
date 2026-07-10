@@ -729,6 +729,16 @@ export const TEMPLATES: Template[] = [
     audiences: ["designers"],
     specialties: ["architect", "interior"],
   },
+  {
+    id: "verdict",
+    slug: "verdict",
+    title: "Verdict",
+    tag: "Corporate Attorney · Onyx & Brass Chambers",
+    tier: "pro",
+    section: "career-portfolio",
+    audiences: ["founders", "agencies"],
+    specialties: ["executive", "consultant", "personal-brand"],
+  },
 
   // ── Creator Portfolio  (AED 149 · tier: premium) ─────────────────
   {
