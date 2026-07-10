@@ -739,6 +739,16 @@ export const TEMPLATES: Template[] = [
     audiences: ["founders", "agencies"],
     specialties: ["executive", "consultant", "personal-brand"],
   },
+  {
+    id: "wavelength",
+    slug: "wavelength",
+    title: "Wavelength",
+    tag: "Sound Designer & Composer · Signal Reel",
+    tier: "pro",
+    section: "career-portfolio",
+    audiences: ["creators"],
+    specialties: ["musician", "filmmaker", "personal-brand"],
+  },
 
   // ── Creator Portfolio  (AED 149 · tier: premium) ─────────────────
   {

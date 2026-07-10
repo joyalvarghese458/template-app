@@ -13,7 +13,8 @@ export default function PageTransition({
     pathname === "/templates/graphic-designer" ||
     pathname === "/templates/prism" ||
     pathname === "/templates/strata" ||
-    pathname === "/templates/redline";
+    pathname === "/templates/redline" ||
+    pathname === "/templates/wavelength";
   const className = stickySafeRoute ? "page-enter page-enter-no-transform" : "page-enter";
 
   return (

@@ -1,0 +1,30 @@
+/* ── Wavelength Design System — Sound Designer & Composer ──
+   Single persistent near-black canvas (no alternating light/dark
+   section backgrounds), one neon signal color, grotesque display
+   type. Deliberately built as its own system — nothing shared with
+   the site's serif/jewel-tone template family. */
+.root {
+  --color-bg: #0a0a0c;
+  --color-surface: #131316;
+  --color-surface-2: #1a1a1f;
+  --color-line: rgba(242, 242, 238, 0.12);
+  --color-line-soft: rgba(242, 242, 238, 0.06);
+  --color-text: #f2f2ee;
+  --color-text-soft: rgba(242, 242, 238, 0.6);
+  --color-text-faint: rgba(242, 242, 238, 0.34);
+  --color-neon: #c6ff3d;
+  --color-neon-dim: rgba(198, 255, 61, 0.35);
+  --color-signal: #ff5252;
+
+  --font-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Inter', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  --max-w: 1180px;
+
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
