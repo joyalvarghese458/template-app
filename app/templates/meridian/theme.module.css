@@ -1,0 +1,38 @@
+/* ── Meridian Design System — Commercial Airline Pilot ──
+   Night-flight deck: deep navy canvas, instrument amber + ice-blue
+   HUD accents, one contrasting paper-cream "logbook" section.
+   Every section is styled as a different cockpit / airline artifact
+   (instrument, logbook, chart, placard, annunciator panel, split-flap
+   board, boarding pass) — nothing shared with other template families. */
+.root {
+  --mrd-bg: #070c16;
+  --mrd-panel: #0d1424;
+  --mrd-panel-2: #131c31;
+  --mrd-line: rgba(214, 226, 247, 0.12);
+  --mrd-line-soft: rgba(214, 226, 247, 0.06);
+  --mrd-text: #e8eefb;
+  --mrd-text-soft: rgba(232, 238, 251, 0.62);
+  --mrd-text-faint: rgba(232, 238, 251, 0.36);
+  --mrd-amber: #f5a83c;
+  --mrd-amber-dim: rgba(245, 168, 60, 0.35);
+  --mrd-ice: #7fd4f2;
+  --mrd-ice-dim: rgba(127, 212, 242, 0.3);
+  --mrd-green: #58d68f;
+  --mrd-red: #ff6b5e;
+  --mrd-paper: #f2ecdd;
+  --mrd-paper-line: #d8cfb8;
+  --mrd-ink: #232a3c;
+  --mrd-ink-soft: rgba(35, 42, 60, 0.65);
+
+  --font-display: 'Archivo', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Inter', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  --max-w: 1160px;
+
+  background-color: var(--mrd-bg);
+  color: var(--mrd-text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

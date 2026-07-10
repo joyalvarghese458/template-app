@@ -749,6 +749,16 @@ export const TEMPLATES: Template[] = [
     audiences: ["creators"],
     specialties: ["musician", "filmmaker", "personal-brand"],
   },
+  {
+    id: "meridian",
+    slug: "meridian",
+    title: "Meridian",
+    tag: "Commercial Airline Pilot · Flight Deck & Logbook",
+    tier: "pro",
+    section: "career-portfolio",
+    audiences: ["founders", "developers"],
+    specialties: ["aviation", "personal-brand", "consultant"],
+  },
 
   // ── Creator Portfolio  (AED 149 · tier: premium) ─────────────────
   {

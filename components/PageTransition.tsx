@@ -14,7 +14,8 @@ export default function PageTransition({
     pathname === "/templates/prism" ||
     pathname === "/templates/strata" ||
     pathname === "/templates/redline" ||
-    pathname === "/templates/wavelength";
+    pathname === "/templates/wavelength" ||
+    pathname === "/templates/meridian";
   const className = stickySafeRoute ? "page-enter page-enter-no-transform" : "page-enter";
 
   return (
