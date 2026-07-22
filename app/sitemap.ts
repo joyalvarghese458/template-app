@@ -57,6 +57,7 @@ const EXCLUDED_ROUTES = new Set([
   "/brand-lab",
   "/templates/coming-soon",
   "/templates/dr1",
+  "/templates/x10",
 ]);
 
 function walkPageFiles(dir: string): string[] {
