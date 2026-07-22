@@ -53,7 +53,11 @@ const BLOG_POSTS = [
 ] as const;
 
 const EXCLUDED_PREFIXES = ["/api"] as const;
-const EXCLUDED_ROUTES = new Set(["/brand-lab", "/templates/coming-soon"]);
+const EXCLUDED_ROUTES = new Set([
+  "/brand-lab",
+  "/templates/coming-soon",
+  "/templates/dr1",
+]);
 
 function walkPageFiles(dir: string): string[] {
   const entries = fs.readdirSync(dir, { withFileTypes: true });
