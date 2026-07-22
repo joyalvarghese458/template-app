@@ -12,7 +12,7 @@ export const OWNER = {
   email: "mira@studiosolberg.dk",
   instagram: "https://instagram.com",
   shop: "https://example.com",
-  resumeUrl: "#",
+  resumeUrl: "mailto:mira@studiosolberg.dk?subject=Resume%20request",
   atelier: "Studio Solberg",
   location: "Bornholm, Denmark",
   availability: "Autumn kiln load open · booking now",

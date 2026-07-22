@@ -16,21 +16,9 @@ import Testimonials from "./_components/Testimonials";
 import Contact from "./_components/Contact";
 import Footer from "./_components/Footer";
 import theme from "./theme.module.css";
+import { metadataForRoute } from "@/app/seo";
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: "https://myportfoliowebsite.com/templates/verdict",
-  },
-  title: `${OWNER.name} — Corporate & Commercial Litigation Counsel`,
-  description:
-    "Independent litigation and corporate counsel portfolio — notable matters, practice areas, and case record for founders, family businesses, and enterprises across the UAE and GCC.",
-  openGraph: {
-    title: `${OWNER.name} — Corporate & Commercial Litigation Counsel`,
-    description:
-      "Independent litigation and corporate counsel portfolio — notable matters, practice areas, and case record across the UAE and GCC.",
-    type: "website",
-  },
-};
+export const metadata = metadataForRoute("/templates/verdict");
 
 export default function VerdictPage() {
   return (

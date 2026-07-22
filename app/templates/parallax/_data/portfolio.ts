@@ -12,7 +12,7 @@ export const OWNER = {
     "Final-year animation & VFX student building previs, creature animation, and full CG-to-comp breakdowns — currently looking for my first studio seat.",
   email: "kai.bennett@example.com",
   linkedin: "https://linkedin.com/in/kaibennett",
-  resumeUrl: "#",
+  resumeUrl: "mailto:kai.bennett@example.com?subject=Resume%20request",
   school: "Halsey Conservatory of Animation & VFX",
   location: "Vancouver, BC",
   availability: "Open to internships & junior roles · Grad 2026",

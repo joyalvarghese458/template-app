@@ -18,21 +18,9 @@ import Testimonials from "./_components/Testimonials";
 import Contact from "./_components/Contact";
 import Footer from "./_components/Footer";
 import theme from "./theme.module.css";
+import { metadataForRoute } from "@/app/seo";
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: "https://myportfoliowebsite.com/templates/umami",
-  },
-  title: `${OWNER.name} — Executive Chef & Culinary Director`,
-  description:
-    "Executive chef portfolio — live-fire tasting menus, restaurant residencies, and a career built on flavor over flash.",
-  openGraph: {
-    title: `${OWNER.name} — Executive Chef & Culinary Director`,
-    description:
-      "Executive chef portfolio — live-fire tasting menus, restaurant residencies, and a career built on flavor over flash.",
-    type: "website",
-  },
-};
+export const metadata = metadataForRoute("/templates/umami");
 
 export default function UmamiPage() {
   return (

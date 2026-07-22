@@ -63,10 +63,10 @@ export default function Footer() {
 
         <div className={styles.col}>
           <p className={styles.colLabel}>Connect</p>
-          <a href="#" className={styles.footLink}>Instagram <span>↗</span></a>
-          <a href="#" className={styles.footLink}>Facebook <span>↗</span></a>
-          <a href="#" className={styles.footLink}>500px <span>↗</span></a>
-          <a href="#" className={styles.footLink}>Behance <span>↗</span></a>
+          <a href="https://www.instagram.com/galleryplus/" className={styles.footLink}>Instagram <span>↗</span></a>
+          <a href="https://www.facebook.com/galleryplusstudio" className={styles.footLink}>Facebook <span>↗</span></a>
+          <a href="https://500px.com/p/galleryplus" className={styles.footLink}>500px <span>↗</span></a>
+          <a href="https://www.behance.net/galleryplus" className={styles.footLink}>Behance <span>↗</span></a>
           <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className={styles.footLink}>
             WhatsApp <span>↗</span>
           </a>

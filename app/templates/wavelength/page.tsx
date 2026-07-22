@@ -12,21 +12,9 @@ import Sessions from "./_components/Sessions";
 import Contact from "./_components/Contact";
 import Footer from "./_components/Footer";
 import theme from "./theme.module.css";
+import { metadataForRoute } from "@/app/seo";
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: "https://myportfoliowebsite.com/templates/wavelength",
-  },
-  title: `${OWNER.name} — Sound Designer & Composer`,
-  description:
-    "Independent sound design and composition portfolio — reel, credits, and tools for film, games, and advertising.",
-  openGraph: {
-    title: `${OWNER.name} — Sound Designer & Composer`,
-    description:
-      "Independent sound design and composition portfolio — reel, credits, and tools for film, games, and advertising.",
-    type: "website",
-  },
-};
+export const metadata = metadataForRoute("/templates/wavelength");
 
 export default function WavelengthPage() {
   return (

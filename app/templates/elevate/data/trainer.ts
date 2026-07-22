@@ -88,9 +88,9 @@ export const trainer = {
     },
   ],
   social: {
-    instagram: "#",
-    youtube: "#",
-    tiktok: "#",
+    instagram: "https://www.instagram.com/elevate.training/",
+    youtube: "https://www.youtube.com/@ElevateTraining",
+    tiktok: "https://www.tiktok.com/@elevate.training",
   },
   contact: {
     whatsapp: "+971 50 000 0000",

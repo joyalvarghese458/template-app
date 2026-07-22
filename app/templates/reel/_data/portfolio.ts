@@ -13,7 +13,7 @@ export const OWNER = {
   email: "reid@callahanpictures.co",
   imdb: "https://imdb.com",
   instagram: "https://instagram.com",
-  resumeUrl: "#",
+  resumeUrl: "mailto:reid@callahanpictures.co?subject=Resume%20request",
   studio: "Callahan Pictures",
   location: "Austin, TX",
   availability: "Booking Fall 2026 · Open to features",

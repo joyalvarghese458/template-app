@@ -12,7 +12,7 @@ export const OWNER = {
   email: "elias@ateliervoss.ch",
   instagram: "https://instagram.com",
   shop: "https://example.com",
-  resumeUrl: "#",
+  resumeUrl: "mailto:elias@ateliervoss.ch?subject=Resume%20request",
   atelier: "Atelier Voss",
   location: "Le Locle, Switzerland",
   availability: "Bespoke waitlist open · 2027 delivery",

@@ -6,14 +6,9 @@ import Reveal, { RevealGroup, RevealItem } from "../_components/Reveal";
 import Arrow from "../_components/Arrow";
 import theme from "../_components/theme.module.css";
 import styles from "./styles.module.css";
+import { metadataForRoute } from "@/app/seo";
 
-export const metadata = {
-  alternates: {
-    canonical: "https://myportfoliowebsite.com/templates/helm/press",
-  },
-  title: "Press & Speaking — Helm",
-  description: `Media coverage and speaking engagements featuring ${PROFILE.name}.`,
-};
+export const metadata = metadataForRoute("/templates/helm/press");
 
 export default function HelmPress() {
   return (

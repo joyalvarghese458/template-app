@@ -23,12 +23,12 @@ export const PROFILE = {
   email: "hello@kaelstorm.io",
   phone: "+1 424 555 0190",
   whatsapp: "14245550190",
-  instagram: "#",
-  vimeo: "#",
-  behance: "#",
-  linkedin: "#",
-  twitter: "#",
-  reelUrl: "#",
+  instagram: "https://www.instagram.com/kaelstorm.motion/",
+  vimeo: "https://vimeo.com/kaelstorm",
+  behance: "https://www.behance.net/kaelstorm",
+  linkedin: "https://www.linkedin.com/in/kael-storm",
+  twitter: "https://x.com/kaelstorm",
+  reelUrl: "/designer-showreel.mp4",
   avatar:
     "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80&auto=format&fit=crop",
   studioImage:

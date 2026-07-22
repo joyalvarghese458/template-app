@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description:
     "Luminary is a premium single-page portfolio template for graphic designers, brand designers, and motion creatives. Bold layouts, smooth transitions. Starting at AED 99.",
   openGraph: {
-    url: "https://www.myportfoliowebsite.com/templates/graphic-designer",
+    url: "https://myportfoliowebsite.com/templates/graphic-designer",
     title: "Luminary — Graphic Designer Portfolio Template | My Portfolio",
     description:
       "A premium single-page portfolio for graphic designers, brand designers, and motion creatives. Bold layouts, smooth transitions.",

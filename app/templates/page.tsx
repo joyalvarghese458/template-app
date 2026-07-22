@@ -18,27 +18,9 @@ import {
 import FilterShell from "./_components/FilterShell";
 import TemplatesCatalog from "./_components/TemplatesCatalog";
 import Footer from "@/components/Footer";
+import { metadataForRoute } from "@/app/seo";
 
-export const metadata: Metadata = {
-  title: "Portfolio Website Templates | 30+ Premium Designs",
-  description:
-    "Browse 30+ hand-crafted portfolio templates. Filter by section, profession, or price. Starting from AED 49.",
-  alternates: {
-    canonical: "https://myportfoliowebsite.com/templates",
-  },
-  openGraph: {
-    url: "https://www.myportfoliowebsite.com/templates",
-    title: "All Portfolio Templates — Browse 30+ Designs",
-    description:
-      "Browse 30+ hand-crafted portfolio templates. Filter by section, profession, or price. Starting from AED 49.",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "All Portfolio Templates — Browse 30+ Designs",
-    description:
-      "Browse 30+ hand-crafted portfolio templates. Filter by section, profession, or price. Starting from AED 49.",
-  },
-};
+export const metadata = metadataForRoute("/templates");
 
 const CREATOR_PORTFOLIO_TEMPLATE_IDS = new Set(["x5", "s1", "x3", "p2"]);
 

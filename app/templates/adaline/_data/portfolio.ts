@@ -7,7 +7,7 @@ export const OWNER = {
   email: "alex@example.com",
   linkedin: "https://linkedin.com/in/alexmorgan",
   github: "https://github.com/alexmorgan",
-  resumeUrl: "#",
+  resumeUrl: "mailto:alex@example.com?subject=Resume%20request",
   location: "Available Remotely",
   availability: "Open to new opportunities",
 };

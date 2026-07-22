@@ -60,7 +60,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between h-16">
           {/* Logo */}
           <a
-            href="#"
+            href="#about"
             onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
             className={`${s.displayFont} text-white text-xl tracking-widest`}
           >

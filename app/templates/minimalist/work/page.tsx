@@ -6,13 +6,9 @@ import {
   ProcessSection,
   WorkCollectionsSection,
 } from "../blocks";
+import { metadataForRoute } from "@/app/seo";
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: "https://myportfoliowebsite.com/templates/minimalist/work",
-  },
-  title: "Minimalist - Work",
-};
+export const metadata = metadataForRoute("/templates/minimalist/work");
 
 export default function MinimalistWorkPage() {
   return (

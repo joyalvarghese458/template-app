@@ -11,7 +11,7 @@ export const OWNER = {
   linkedin: "https://linkedin.com/in/leonavarro",
   htb: "https://app.hackthebox.com/profile/leonavarro",
   thm: "https://tryhackme.com/p/leonavarro",
-  resumeUrl: "#",
+  resumeUrl: "mailto:leo.navarro@example.com?subject=Resume%20request",
   location: "Austin, TX",
   availability: "Open to SOC & AppSec internships",
   stats: [

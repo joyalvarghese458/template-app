@@ -6,13 +6,9 @@ import {
   TestimonialBand,
   TimelineSection,
 } from "../blocks";
+import { metadataForRoute } from "@/app/seo";
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: "https://myportfoliowebsite.com/templates/minimalist/about",
-  },
-  title: "Minimalist - About",
-};
+export const metadata = metadataForRoute("/templates/minimalist/about");
 
 export default function MinimalistAboutPage() {
   return (

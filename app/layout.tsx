@@ -12,8 +12,8 @@ const SITE_URL = "https://myportfoliowebsite.com";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    template: "%s | My Portfolio",
-    default: "My Portfolio — Professional Portfolio Templates",
+    template: "%s",
+    default: "Portfolio Templates | My Portfolio",
   },
   description:
     "Hand-crafted portfolio templates for designers, developers, photographers, and creators. Starting from AED 49. One-time payment, lifetime ownership.",
@@ -45,13 +45,13 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: SITE_URL,
     siteName: "My Portfolio",
-    title: "My Portfolio — Professional Portfolio Templates",
+    title: "Portfolio Templates | My Portfolio",
     description:
       "Hand-crafted portfolio templates for designers, developers, photographers, and creators. Starting from AED 49. One-time payment, lifetime ownership.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "My Portfolio — Professional Portfolio Templates",
+    title: "Portfolio Templates | My Portfolio",
     description:
       "Hand-crafted portfolio templates for designers, developers, photographers, and creators. Starting from AED 49.",
   },

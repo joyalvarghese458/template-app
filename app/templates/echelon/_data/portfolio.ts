@@ -6,7 +6,7 @@ export const OWNER = {
     "I take the seat when an organization needs a steady hand — fixing what's broken, scaling what's working, and building the team that keeps winning after I've handed off the keys.",
   email: "marcus.whitfield@example.com",
   linkedin: "https://linkedin.com/in/marcuswhitfield",
-  resumeUrl: "#",
+  resumeUrl: "mailto:marcus.whitfield@example.com?subject=Resume%20request",
   location: "Chicago, IL",
   availability: "Open to CEO & board mandates",
   stats: [

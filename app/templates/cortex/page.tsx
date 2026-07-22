@@ -13,21 +13,9 @@ import Certifications from "./_components/Certifications";
 import Contact from "./_components/Contact";
 import Footer from "./_components/Footer";
 import theme from "./theme.module.css";
+import { metadataForRoute } from "@/app/seo";
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: "https://myportfoliowebsite.com/templates/cortex",
-  },
-  title: `${OWNER.name} — Senior Data Scientist`,
-  description:
-    "Senior data scientist building production machine learning systems — forecasting, NLP, and fraud detection at scale.",
-  openGraph: {
-    title: `${OWNER.name} — Senior Data Scientist`,
-    description:
-      "Senior data scientist building production machine learning systems — forecasting, NLP, and fraud detection at scale.",
-    type: "website",
-  },
-};
+export const metadata = metadataForRoute("/templates/cortex");
 
 export default function CortexPage() {
   return (

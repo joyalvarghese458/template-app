@@ -7,7 +7,7 @@ export const OWNER = {
   email: "axel.brennan@example.com",
   linkedin: "https://linkedin.com/in/axelbrennan",
   github: "https://github.com/axelbrennan",
-  resumeUrl: "#",
+  resumeUrl: "mailto:axel.brennan@example.com?subject=Resume%20request",
   location: "Indianapolis, IN",
   availability: "Open to senior design roles",
   stats: [

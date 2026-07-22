@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import { metadataForRoute } from "@/app/seo";
 
 export const metadata: Metadata = {
+  ...metadataForRoute("/brand-lab"),
   robots: { index: false, follow: false },
 };
 

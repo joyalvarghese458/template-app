@@ -12,21 +12,15 @@ import ScrollingBackgroundSection from "@/components/ScrollingBackgroundSection"
 import Footer from "@/components/Footer";
 import Image from "next/image";
 import OfferBanner from "@/components/OfferBanner";
+import { metadataForRoute } from "@/app/seo";
 
-export const metadata: Metadata = {
-  title: "Professional Portfolio Templates — Launch in Days",
-  description:
-    "Browse 30+ premium portfolio templates for designers, developers, photographers & creators. Starting at AED 49. One-time payment, lifetime ownership.",
-  alternates: {
-    canonical: "https://myportfoliowebsite.com",
-  },
-};
+export const metadata = metadataForRoute("/");
 
 const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "My Portfolio",
-  url: "https://www.myportfoliowebsite.com",
+  url: "https://myportfoliowebsite.com",
   description:
     "Hand-crafted portfolio templates for designers, developers, photographers, and creators.",
   potentialAction: {
@@ -34,7 +28,7 @@ const websiteJsonLd = {
     target: {
       "@type": "EntryPoint",
       urlTemplate:
-        "https://www.myportfoliowebsite.com/templates?q={search_term_string}",
+        "https://myportfoliowebsite.com/templates?q={search_term_string}",
     },
     "query-input": "required name=search_term_string",
   },
@@ -44,8 +38,8 @@ const orgJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "My Portfolio",
-  url: "https://www.myportfoliowebsite.com",
-  logo: "https://www.myportfoliowebsite.com/icon.svg",
+  url: "https://myportfoliowebsite.com",
+  logo: "https://myportfoliowebsite.com/icon.svg",
   contactPoint: {
     "@type": "ContactPoint",
     telephone: "+971568450406",

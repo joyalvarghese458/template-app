@@ -196,7 +196,7 @@ export default function About() {
               {/* Download CV */}
               <div className="mt-10">
                 <a
-                  href="#"
+                  href="mailto:sofia@example.com?subject=CV%20request"
                   className="inline-flex items-center gap-2 text-sm rounded-full px-5 py-2.5 border transition-all duration-300 hover:scale-105"
                   style={{
                     border: "1px solid hsl(28 7% 18%)",

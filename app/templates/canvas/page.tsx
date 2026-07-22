@@ -13,21 +13,9 @@ import Certifications from "./_components/Certifications";
 import Contact from "./_components/Contact";
 import Footer from "./_components/Footer";
 import theme from "./theme.module.css";
+import { metadataForRoute } from "@/app/seo";
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: "https://myportfoliowebsite.com/templates/canvas",
-  },
-  title: `${OWNER.name} — UI/UX & Graphic Designer`,
-  description:
-    "UI/UX and graphic design portfolio — product design, brand identity, design systems, and motion work.",
-  openGraph: {
-    title: `${OWNER.name} — UI/UX & Graphic Designer`,
-    description:
-      "UI/UX and graphic design portfolio — product design, brand identity, design systems, and motion work.",
-    type: "website",
-  },
-};
+export const metadata = metadataForRoute("/templates/canvas");
 
 export default function CanvasPage() {
   return (

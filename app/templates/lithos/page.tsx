@@ -17,21 +17,9 @@ import Testimonials from "./_components/Testimonials";
 import Contact from "./_components/Contact";
 import Footer from "./_components/Footer";
 import theme from "./theme.module.css";
+import { metadataForRoute } from "@/app/seo";
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: "https://myportfoliowebsite.com/templates/lithos",
-  },
-  title: `${OWNER.name} — Geology Student`,
-  description:
-    "Geology student portfolio — field mapping, stratigraphy, petrology, and GIS research from the Colorado Plateau and beyond.",
-  openGraph: {
-    title: `${OWNER.name} — Geology Student`,
-    description:
-      "Geology student portfolio — field mapping, stratigraphy, petrology, and GIS research from the Colorado Plateau and beyond.",
-    type: "website",
-  },
-};
+export const metadata = metadataForRoute("/templates/lithos");
 
 export default function LithosPage() {
   return (

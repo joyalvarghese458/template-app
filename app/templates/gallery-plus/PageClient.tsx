@@ -793,7 +793,7 @@ function InstagramGrid() {
           @galleryplus{" "}
           <em className={styles.accentItalic}>on Instagram</em>
         </h2>
-        <a href="#" target="_blank" rel="noopener noreferrer" className={styles.seeAllLink}>
+        <a href="https://www.instagram.com/galleryplus/" target="_blank" rel="noopener noreferrer" className={styles.seeAllLink}>
           Open Instagram ↗
         </a>
       </div>
@@ -802,7 +802,7 @@ function InstagramGrid() {
         {INSTAGRAM.map((url, i) => (
           <a
             key={i}
-            href="#"
+            href="https://www.instagram.com/galleryplus/"
             className={styles.instagramItem}
             style={{ animationDelay: `${i * 0.07}s` }}
             aria-label={`Instagram post ${i + 1}`}

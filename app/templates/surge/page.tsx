@@ -17,21 +17,9 @@ import Testimonials from "./_components/Testimonials";
 import Contact from "./_components/Contact";
 import Footer from "./_components/Footer";
 import theme from "./theme.module.css";
+import { metadataForRoute } from "@/app/seo";
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: "https://myportfoliowebsite.com/templates/surge",
-  },
-  title: `${OWNER.name} — Digital Marketing Specialist`,
-  description:
-    "Digital marketing portfolio — paid social, SEO, email lifecycle, and content campaigns with measurable results.",
-  openGraph: {
-    title: `${OWNER.name} — Digital Marketing Specialist`,
-    description:
-      "Digital marketing portfolio — paid social, SEO, email lifecycle, and content campaigns with measurable results.",
-    type: "website",
-  },
-};
+export const metadata = metadataForRoute("/templates/surge");
 
 export default function SurgePage() {
   return (

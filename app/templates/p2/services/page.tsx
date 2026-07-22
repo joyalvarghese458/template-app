@@ -2,14 +2,9 @@ import Image from "next/image";
 import { FEATURED_SERVICES, JOURNEY_STEPS, MEDICAL_IMAGES, PROFILE } from "../_data/content";
 import theme from "../_components/theme.module.css";
 import styles from "../page.module.css";
+import { metadataForRoute } from "@/app/seo";
 
-export const metadata = {
-  alternates: {
-    canonical: "https://myportfoliowebsite.com/templates/p2/services",
-  },
-  title: "Services | DevHub Doctor Template",
-  description: `Explore the service structure and care process used in ${PROFILE.name}'s doctor portfolio template.`,
-};
+export const metadata = metadataForRoute("/templates/p2/services");
 
 export default function P2ServicesPage() {
   return (

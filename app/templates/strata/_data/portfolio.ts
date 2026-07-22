@@ -8,7 +8,7 @@ export const OWNER = {
   linkedin: "https://linkedin.com/in/owencastillo",
   asce: "https://www.asce.org/",
   license: "P.E. License #CO-48213",
-  resumeUrl: "#",
+  resumeUrl: "mailto:owen.castillo@example.com?subject=Resume%20request",
   location: "Denver, CO",
   availability: "Open to senior structural roles",
   stats: [

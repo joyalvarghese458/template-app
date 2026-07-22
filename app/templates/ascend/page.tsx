@@ -13,21 +13,9 @@ import Certifications from "./_components/Certifications";
 import Contact from "./_components/Contact";
 import Footer from "./_components/Footer";
 import theme from "./theme.module.css";
+import { metadataForRoute } from "@/app/seo";
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: "https://myportfoliowebsite.com/templates/ascend",
-  },
-  title: `${OWNER.name} — Career Coach & Job Search Strategist`,
-  description:
-    "Career coach helping mid-career professionals land their next role through resume strategy, interview prep, and salary negotiation.",
-  openGraph: {
-    title: `${OWNER.name} — Career Coach & Job Search Strategist`,
-    description:
-      "Career coach helping mid-career professionals land their next role through resume strategy, interview prep, and salary negotiation.",
-    type: "website",
-  },
-};
+export const metadata = metadataForRoute("/templates/ascend");
 
 export default function AscendPage() {
   return (

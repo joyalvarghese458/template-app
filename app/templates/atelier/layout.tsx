@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description:
     "Atelier is a flagship premium portfolio template for creative agencies and luxury studios. Stunning animations, full-bleed imagery, and a cinematic feel. Starting at AED 149.",
   openGraph: {
-    url: "https://www.myportfoliowebsite.com/templates/atelier",
+    url: "https://myportfoliowebsite.com/templates/atelier",
     title: "Atelier — Premium Agency Portfolio Template | My Portfolio",
     description:
       "A flagship premium portfolio template for creative agencies and luxury studios. Stunning animations, full-bleed imagery, and a cinematic feel.",

@@ -18,21 +18,9 @@ import Testimonials from "./_components/Testimonials";
 import Contact from "./_components/Contact";
 import Footer from "./_components/Footer";
 import theme from "./theme.module.css";
+import { metadataForRoute } from "@/app/seo";
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: "https://myportfoliowebsite.com/templates/sillage",
-  },
-  title: `${OWNER.name} — Independent Perfumer`,
-  description:
-    "Independent perfumer portfolio — small-batch eau de parfums, bespoke commissions, and a full fragrance collection from Atelier Rousseau in Grasse.",
-  openGraph: {
-    title: `${OWNER.name} — Independent Perfumer`,
-    description:
-      "Independent perfumer portfolio — small-batch eau de parfums, bespoke commissions, and a full fragrance collection from Atelier Rousseau in Grasse.",
-    type: "website",
-  },
-};
+export const metadata = metadataForRoute("/templates/sillage");
 
 export default function SillagePage() {
   return (

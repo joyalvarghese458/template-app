@@ -164,7 +164,7 @@ export const OFFICES = [
 ];
 
 export const SOCIALS = [
-  { label: "LinkedIn", href: "#" },
-  { label: "X / Twitter", href: "#" },
-  { label: "Bloomberg Profile", href: "#" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/eleanor-hart" },
+  { label: "X / Twitter", href: "https://x.com/eleanorhart" },
+  { label: "Bloomberg Profile", href: "https://www.bloomberg.com/profile/person/eleanor-hart" },
 ];

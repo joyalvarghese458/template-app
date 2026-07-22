@@ -131,9 +131,9 @@ export const CONTACT = {
   headline: ['LET\'S CREATE', 'SOMETHING', 'EXTRAORDINARY'],
   sub: 'Available for freelance projects, collaborations, and full-time opportunities.',
   socials: [
-    { label: 'Behance', href: '#' },
-    { label: 'ArtStation', href: '#' },
-    { label: 'Instagram', href: '#' },
-    { label: 'LinkedIn', href: '#' },
+    { label: 'Behance', href: 'https://www.behance.net/arianova' },
+    { label: 'ArtStation', href: 'https://www.artstation.com/arianova' },
+    { label: 'Instagram', href: 'https://www.instagram.com/arianova.design/' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/aria-nova' },
   ],
 }

@@ -34,10 +34,10 @@ const MOMENTS_TABS = {
   travel: {
     copy: (
       <>
-        Lorem ipsum dolor sit amet, <a href="#">consectetuer adipiscing elit</a>. Cum
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cum
         sociis natoque penatibus et magnis dis parturient montes,{" "}
         <strong>nascetur ridiculus</strong> mus. Donec quam felis, ultricies nec,{" "}
-        <a href="#">pellentesque eu</a>, pretium quis, sem. Nulla consequat massa quis
+        Pellentesque eu, pretium quis, sem. Nulla consequat massa quis
         enim.
       </>
     ),

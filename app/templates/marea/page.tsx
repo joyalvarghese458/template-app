@@ -17,21 +17,9 @@ import Testimonials from "./_components/Testimonials";
 import Contact from "./_components/Contact";
 import Footer from "./_components/Footer";
 import theme from "./theme.module.css";
+import { metadataForRoute } from "@/app/seo";
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: "https://myportfoliowebsite.com/templates/marea",
-  },
-  title: `${OWNER.name} — Marine Biology Graduate Student`,
-  description:
-    "Marine biology graduate student portfolio — coral reef resilience, kelp forest monitoring, and acoustic animal tracking from the California coast and beyond.",
-  openGraph: {
-    title: `${OWNER.name} — Marine Biology Graduate Student`,
-    description:
-      "Marine biology graduate student portfolio — coral reef resilience, kelp forest monitoring, and acoustic animal tracking from the California coast and beyond.",
-    type: "website",
-  },
-};
+export const metadata = metadataForRoute("/templates/marea");
 
 export default function MareaPage() {
   return (

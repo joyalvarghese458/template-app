@@ -11,7 +11,7 @@ export const OWNER = {
   email: "layla@haddadchambers.com",
   linkedin: "https://linkedin.com",
   calendly: "https://cal.com",
-  resumeUrl: "#",
+  resumeUrl: "mailto:layla@haddadchambers.com?subject=Resume%20request",
   location: "Dubai, UAE — advising across the GCC",
   availability: "Accepting new instructions for Q4",
   winRate: 96,

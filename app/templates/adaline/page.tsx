@@ -13,21 +13,9 @@ import Contact from "./_components/Contact";
 import Footer from "./_components/Footer";
 import SkipLink from "./_components/SkipLink";
 import theme from "./theme.module.css";
+import { metadataForRoute } from "@/app/seo";
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: "https://myportfoliowebsite.com/templates/adaline",
-  },
-  title: `${OWNER.name} — Full Stack Developer`,
-  description:
-    "Full Stack Developer specializing in React, Next.js, NestJS, and enterprise ERP systems. Building thoughtful digital systems that scale.",
-  openGraph: {
-    title: `${OWNER.name} — Full Stack Developer`,
-    description:
-      "Full Stack Developer specializing in React, Next.js, NestJS, and enterprise ERP systems.",
-    type: "website",
-  },
-};
+export const metadata = metadataForRoute("/templates/adaline");
 export default function AdalinePage() {
   return (
     <div className={theme.root}>

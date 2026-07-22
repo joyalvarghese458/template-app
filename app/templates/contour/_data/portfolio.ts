@@ -9,7 +9,7 @@ export const OWNER = {
   email: "owen@marshfield.studio",
   linkedin: "https://linkedin.com",
   instagram: "https://instagram.com",
-  resumeUrl: "#",
+  resumeUrl: "mailto:owen@marshfield.studio?subject=Resume%20request",
   location: "Portland, OR",
   availability: "Booking site visits for spring 2027",
   coordinates: "45.5152° N, 122.6784° W",

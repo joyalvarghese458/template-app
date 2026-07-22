@@ -18,21 +18,9 @@ import Testimonials from "./_components/Testimonials";
 import Contact from "./_components/Contact";
 import Footer from "./_components/Footer";
 import theme from "./theme.module.css";
+import { metadataForRoute } from "@/app/seo";
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: "https://myportfoliowebsite.com/templates/ledger",
-  },
-  title: `${OWNER.name} — Certified Public Accountant`,
-  description:
-    "Accountant portfolio — tax strategy, bookkeeping & reconciliation, financial reporting, and audit-ready advisory for startups and family businesses.",
-  openGraph: {
-    title: `${OWNER.name} — Certified Public Accountant`,
-    description:
-      "Accountant portfolio — tax strategy, bookkeeping & reconciliation, financial reporting, and audit-ready advisory for startups and family businesses.",
-    type: "website",
-  },
-};
+export const metadata = metadataForRoute("/templates/ledger");
 
 export default function LedgerPage() {
   return (

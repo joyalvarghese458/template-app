@@ -18,21 +18,9 @@ import Testimonials from "./_components/Testimonials";
 import Contact from "./_components/Contact";
 import Footer from "./_components/Footer";
 import theme from "./theme.module.css";
+import { metadataForRoute } from "@/app/seo";
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: "https://myportfoliowebsite.com/templates/parallax",
-  },
-  title: `${OWNER.name} — 3D Animation & VFX Student`,
-  description:
-    "Animation & VFX student portfolio — character animation, lighting, compositing, and a full pipeline breakdown reel.",
-  openGraph: {
-    title: `${OWNER.name} — 3D Animation & VFX Student`,
-    description:
-      "Animation & VFX student portfolio — character animation, lighting, compositing, and a full pipeline breakdown reel.",
-    type: "website",
-  },
-};
+export const metadata = metadataForRoute("/templates/parallax");
 
 export default function ParallaxPage() {
   return (

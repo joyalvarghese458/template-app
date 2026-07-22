@@ -31,10 +31,10 @@ const PROFILE = {
   email:     "hello@alexrivera.co",
   location:  "San Francisco, CA — Available Worldwide",
   availability: "Open to new projects · Starting Aug 2026",
-  linkedin:  "#",
-  twitter:   "#",
-  dribbble:  "#",
-  github:    "#",
+  linkedin:  "https://www.linkedin.com/in/alex-rivera-creative",
+  twitter:   "https://x.com/alexrivera",
+  dribbble:  "https://dribbble.com/alexrivera",
+  github:    "https://github.com/alexrivera",
 };
 
 const STATS = [

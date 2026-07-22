@@ -1,14 +1,8 @@
 import type { Metadata } from "next";
 import SwiftResume from "./swift-resume";
+import { metadataForRoute } from "@/app/seo";
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: "https://myportfoliowebsite.com/templates/swift",
-  },
-  title: "Swift Template",
-  description:
-    "Swift is a premium single-page digital resume template with glassmorphism cards, recruiter-friendly hierarchy, and polished interactions.",
-};
+export const metadata = metadataForRoute("/templates/swift");
 
 export default function SwiftTemplatePage() {
   return <SwiftResume />;

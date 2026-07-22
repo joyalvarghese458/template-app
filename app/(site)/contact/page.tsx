@@ -1,15 +1,9 @@
 import type { Metadata } from "next";
 import ContactForm from "./ContactForm";
 import Footer from "@/components/Footer";
+import { metadataForRoute } from "@/app/seo";
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: "https://myportfoliowebsite.com/contact",
-  },
-  title: "Contact Us",
-  description:
-    "Get in touch with the My Portfolio team. Ask about templates, custom portfolio builds, or anything else — we reply within one business day.",
-};
+export const metadata = metadataForRoute("/contact");
 
 /* ── Contact info ─────────────────────────────────────── */
 const INFO = [

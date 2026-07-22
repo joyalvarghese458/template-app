@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     title: "Minimalist - Creator Portfolio Template",
     description:
       "Five pages of refined creator portfolio content with a minimalist visual language and strong mobile responsiveness.",
-    url: "https://www.myportfoliowebsite.com/templates/minimalist",
+    url: "https://myportfoliowebsite.com/templates/minimalist",
   },
 };
 

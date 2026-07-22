@@ -6,7 +6,7 @@ export const OWNER = {
     "I coach mid-career professionals through resume strategy, interview prep, and salary negotiation — turning job searches into offers, faster.",
   email: "adrian@example.com",
   linkedin: "https://linkedin.com/in/adriancole",
-  calendarUrl: "#",
+  calendarUrl: "mailto:adrian@example.com?subject=Free%20career%20coaching%20call",
   location: "Austin, TX",
   availability: "Now booking June clients",
   stats: [

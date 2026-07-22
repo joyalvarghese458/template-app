@@ -23,10 +23,10 @@ const PROFILE = {
   email: "alex.morgan@email.com",
   phone: "+1 (555) 234-5678",
   location: "San Francisco, CA",
-  resumeUrl: "#",
-  linkedin: "#",
-  github: "#",
-  twitter: "#",
+  resumeUrl: "mailto:alex.morgan@email.com?subject=Resume%20request",
+  linkedin: "https://www.linkedin.com/in/alex-morgan-dev",
+  github: "https://github.com/alexmorgan-dev",
+  twitter: "https://x.com/alexmorgan_dev",
   avatar: "/alex.webp",
 };
 
@@ -80,7 +80,7 @@ const PROJECTS = [
     image:
       "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=900&q=80&auto=format&fit=crop",
     tags: ["Next.js", "TypeScript", "Prisma", "OpenAI"],
-    link: "#",
+    link: "https://github.com/alexmorgan-dev/devflow",
   },
   {
     title: "EcoTrack",
@@ -91,7 +91,7 @@ const PROJECTS = [
     image:
       "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=900&q=80&auto=format&fit=crop",
     tags: ["React Native", "Python", "FastAPI", "D3.js"],
-    link: "#",
+    link: "https://github.com/alexmorgan-dev/ecotrack",
   },
   {
     title: "QueryMind",
@@ -102,7 +102,7 @@ const PROJECTS = [
     image:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&q=80&auto=format&fit=crop",
     tags: ["Python", "PyTorch", "PostgreSQL", "Apache Spark"],
-    link: "#",
+    link: "https://github.com/alexmorgan-dev/querymind",
   },
 ];
 

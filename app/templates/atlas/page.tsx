@@ -18,21 +18,9 @@ import Testimonials from "./_components/Testimonials";
 import Contact from "./_components/Contact";
 import Footer from "./_components/Footer";
 import theme from "./theme.module.css";
+import { metadataForRoute } from "@/app/seo";
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: "https://myportfoliowebsite.com/templates/atlas",
-  },
-  title: `${OWNER.name} — Strategic Business Consultant`,
-  description:
-    "Business strategy and advisory portfolio — growth strategy, M&A advisory, and operating model redesign with measurable results.",
-  openGraph: {
-    title: `${OWNER.name} — Strategic Business Consultant`,
-    description:
-      "Business strategy and advisory portfolio — growth strategy, M&A advisory, and operating model redesign with measurable results.",
-    type: "website",
-  },
-};
+export const metadata = metadataForRoute("/templates/atlas");
 
 export default function AtlasPage() {
   return (

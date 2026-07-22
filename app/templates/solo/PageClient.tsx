@@ -24,13 +24,13 @@ const PROFILE = {
   email: "hello@alexrivera.design",
   phone: "+1 (212) 555-0142",
   whatsapp: "12125550142",
-  instagram: "#",
-  behance: "#",
-  linkedin: "#",
-  dribbble: "#",
+  instagram: "https://www.instagram.com/alexrivera.design/",
+  behance: "https://www.behance.net/alexrivera",
+  linkedin: "https://www.linkedin.com/in/alex-rivera-design",
+  dribbble: "https://dribbble.com/alexrivera",
   avatar:
     "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80&auto=format&fit=crop",
-  resumeUrl: "#",
+  resumeUrl: "mailto:hello@alexrivera.design?subject=Resume%20request",
 };
 
 const BRANDS = [
@@ -572,7 +572,7 @@ export default function SoloPortfolio() {
                     alt="Design reel"
                     loading="lazy"
                   />
-                  <a href="#" className={styles.playBtn} aria-label="Watch showreel">
+                  <a href="/designer-showreel.mp4" className={styles.playBtn} aria-label="Watch showreel">
                     <PlayIcon />
                   </a>
                 </div>
@@ -787,7 +787,7 @@ function WorkCard({ work, index }: { work: (typeof WORKS)[0]; index: number }) {
   return (
     <a
       ref={ref}
-      href="#"
+      href="#contact"
       className={`${styles.workItem} ${work.wide ? styles.workItemWide : ""} ${visible ? styles.revealed : ""}`}
       style={{ "--delay": `${index * 80}ms` } as React.CSSProperties}
     >

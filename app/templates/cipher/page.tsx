@@ -13,21 +13,9 @@ import Certifications from "./_components/Certifications";
 import Contact from "./_components/Contact";
 import Footer from "./_components/Footer";
 import theme from "./theme.module.css";
+import { metadataForRoute } from "@/app/seo";
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: "https://myportfoliowebsite.com/templates/cipher",
-  },
-  title: `${OWNER.name} — Cybersecurity Student`,
-  description:
-    "Cybersecurity student specializing in offensive security, CTFs, and SOC operations — penetration testing, threat hunting, and vulnerability research.",
-  openGraph: {
-    title: `${OWNER.name} — Cybersecurity Student`,
-    description:
-      "Cybersecurity student specializing in offensive security, CTFs, and SOC operations — penetration testing, threat hunting, and vulnerability research.",
-    type: "website",
-  },
-};
+export const metadata = metadataForRoute("/templates/cipher");
 
 export default function CipherPage() {
   return (

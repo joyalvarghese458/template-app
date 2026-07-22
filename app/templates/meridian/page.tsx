@@ -12,21 +12,9 @@ import Departures from "./_components/Departures";
 import BoardingPass from "./_components/BoardingPass";
 import Footer from "./_components/Footer";
 import theme from "./theme.module.css";
+import { metadataForRoute } from "@/app/seo";
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: "https://myportfoliowebsite.com/templates/meridian",
-  },
-  title: `${OWNER.name} — Commercial Airline Pilot`,
-  description:
-    "B787 captain portfolio — flight log, career route chart, licences & ratings, systems panel, and a boarding-pass contact card.",
-  openGraph: {
-    title: `${OWNER.name} — Commercial Airline Pilot`,
-    description:
-      "B787 captain portfolio — flight log, career route chart, licences & ratings, systems panel, and a boarding-pass contact card.",
-    type: "website",
-  },
-};
+export const metadata = metadataForRoute("/templates/meridian");
 
 export default function MeridianPage() {
   return (

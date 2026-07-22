@@ -2,14 +2,9 @@ import Image from "next/image";
 import { CALL_LINK, CONTACT_DETAILS, FAQS, MEDICAL_IMAGES, PROFILE } from "../_data/content";
 import theme from "../_components/theme.module.css";
 import styles from "../page.module.css";
+import { metadataForRoute } from "@/app/seo";
 
-export const metadata = {
-  alternates: {
-    canonical: "https://myportfoliowebsite.com/templates/p2/contact",
-  },
-  title: "Contact | DevHub Doctor Template",
-  description: `A conversion-focused contact page for ${PROFILE.name}'s doctor portfolio template.`,
-};
+export const metadata = metadataForRoute("/templates/p2/contact");
 
 export default function P2ContactPage() {
   return (

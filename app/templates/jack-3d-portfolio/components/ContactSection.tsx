@@ -19,10 +19,10 @@ const SERVICES_LINKS = [
 ];
 
 const SOCIALS = [
-    { label: 'Instagram', href: '#' },
-    { label: 'Behance',   href: '#' },
-    { label: 'LinkedIn',  href: '#' },
-    { label: 'Twitter',   href: '#' },
+    { label: 'Instagram', href: 'https://www.instagram.com/jack3d.design/' },
+    { label: 'Behance',   href: 'https://www.behance.net/jack3d' },
+    { label: 'LinkedIn',  href: 'https://www.linkedin.com/in/jack-3d' },
+    { label: 'Twitter',   href: 'https://x.com/jack3d' },
 ];
 
 function LinkList({ items }: { items: { label: string; href: string }[] }) {

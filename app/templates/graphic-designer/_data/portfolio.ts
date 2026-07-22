@@ -21,12 +21,12 @@ export const PROFILE = {
   email: "hello@elaravoss.design",
   phone: "+49 30 5550 1990",
   whatsapp: "4930555019",
-  instagram: "#",
-  behance: "#",
-  linkedin: "#",
-  dribbble: "#",
-  twitter: "#",
-  resumeUrl: "#",
+  instagram: "https://www.instagram.com/sofiachen.design/",
+  behance: "https://www.behance.net/sofiachen",
+  linkedin: "https://www.linkedin.com/in/sofia-chen-design",
+  dribbble: "https://dribbble.com/sofiachen",
+  twitter: "https://x.com/sofiachendesign",
+  resumeUrl: "mailto:hello@sofiachen.design?subject=Resume%20request",
   avatar:
     "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=800&q=80&auto=format&fit=crop",
   workspaceImage:

@@ -51,10 +51,10 @@ export default function Footer() {
 
         <div className={styles.col}>
           <p className={styles.colLabel}>Channels</p>
-          <a href="#" className={styles.smallLink}>Instagram <span>↗</span></a>
-          <a href="#" className={styles.smallLink}>Behance <span>↗</span></a>
-          <a href="#" className={styles.smallLink}>Vimeo <span>↗</span></a>
-          <a href="#" className={styles.smallLink}>LinkedIn <span>↗</span></a>
+          <a href="https://www.instagram.com/atelier.studio/" className={styles.smallLink}>Instagram <span>↗</span></a>
+          <a href="https://www.behance.net/atelierstudio" className={styles.smallLink}>Behance <span>↗</span></a>
+          <a href="https://vimeo.com/atelier" className={styles.smallLink}>Vimeo <span>↗</span></a>
+          <a href="https://www.linkedin.com/company/atelier-studio/" className={styles.smallLink}>LinkedIn <span>↗</span></a>
         </div>
 
         <div className={styles.col}>

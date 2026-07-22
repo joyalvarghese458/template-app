@@ -8,7 +8,7 @@ export const OWNER = {
   email: "mara.voss@example.com",
   linkedin: "https://linkedin.com/in/maravoss",
   github: "https://github.com/maravoss",
-  resumeUrl: "#",
+  resumeUrl: "mailto:mara.voss@example.com?subject=Resume%20request",
   location: "Flagstaff, AZ",
   university: "Northern Arizona University",
   availability: "Open to field assistant & research roles",

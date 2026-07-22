@@ -9,7 +9,7 @@ export const OWNER = {
   behance: "https://behance.net/theomarsh",
   linkedin: "https://linkedin.com/in/theomarsh",
   instagram: "https://instagram.com/theomarsh.design",
-  resumeUrl: "#",
+  resumeUrl: "mailto:theo.marsh@example.com?subject=Resume%20request",
   location: "Brooklyn, NY",
   availability: "Open to freelance & full-time roles",
   stats: [

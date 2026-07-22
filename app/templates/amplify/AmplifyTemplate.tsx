@@ -19,7 +19,7 @@ const PROFILE = {
   email: "maya@amplifygrowth.me",
   phone: "+971 55 613 8824",
   website: "www.amplifygrowth.me",
-  linkedin: "#",
+  linkedin: "https://www.linkedin.com/in/maya-kareem",
   portfolioCta: "#campaigns",
   focusAreas: ["Paid acquisition", "Lifecycle marketing", "CRO systems"],
 };
@@ -27,18 +27,18 @@ const PROFILE = {
 const CONTACT_METHODS = [
   { label: "Email", value: PROFILE.email, href: `mailto:${PROFILE.email}` },
   { label: "Phone", value: PROFILE.phone, href: `tel:${PROFILE.phone}` },
-  { label: "Location", value: PROFILE.location, href: "#" },
+  { label: "Location", value: PROFILE.location, href: "https://maps.google.com/?q=Dubai%2C%20UAE" },
   { label: "Website", value: PROFILE.website, href: "https://www.amplifygrowth.me" },
-  { label: "Telegram", value: "@mayaamplify", href: "#" },
+  { label: "Telegram", value: "@mayaamplify", href: "https://t.me/mayaamplify" },
 ];
 
 const SOCIAL_LINKS = [
-  { label: "LinkedIn", handle: "@maya-kareem", href: "#" },
-  { label: "Instagram", handle: "@amplify.with.maya", href: "#" },
-  { label: "X / Twitter", handle: "@mayagrowth", href: "#" },
-  { label: "Facebook", handle: "Amplify With Maya", href: "#" },
-  { label: "TikTok", handle: "@maya.growth.lab", href: "#" },
-  { label: "YouTube", handle: "Maya Growth Notes", href: "#" },
+  { label: "LinkedIn", handle: "@maya-kareem", href: PROFILE.linkedin },
+  { label: "Instagram", handle: "@amplify.with.maya", href: "https://www.instagram.com/amplify.with.maya/" },
+  { label: "X / Twitter", handle: "@mayagrowth", href: "https://x.com/mayagrowth" },
+  { label: "Facebook", handle: "Amplify With Maya", href: "https://www.facebook.com/amplifywithmaya" },
+  { label: "TikTok", handle: "@maya.growth.lab", href: "https://www.tiktok.com/@maya.growth.lab" },
+  { label: "YouTube", handle: "Maya Growth Notes", href: "https://www.youtube.com/@MayaGrowthNotes" },
   { label: "WhatsApp", handle: "Quick campaign chats", href: `https://wa.me/971556138824` },
 ];
 

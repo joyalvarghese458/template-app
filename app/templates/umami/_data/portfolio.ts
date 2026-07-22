@@ -18,7 +18,7 @@ export const OWNER = {
     "I run live-fire kitchens that chase flavor over flash — sourcing obsessively, training relentlessly, and sending out plates that taste like where they came from.",
   email: "theo.marchetti@example.com",
   linkedin: "https://linkedin.com/in/theomarchetti",
-  resumeUrl: "#",
+  resumeUrl: "mailto:theo.marchetti@example.com?subject=Resume%20request",
   location: "Charleston, SC",
   availability: "Open to chef residencies & consulting",
   stats: [

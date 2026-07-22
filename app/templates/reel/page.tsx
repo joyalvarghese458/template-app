@@ -19,21 +19,9 @@ import Testimonials from "./_components/Testimonials";
 import Contact from "./_components/Contact";
 import Footer from "./_components/Footer";
 import theme from "./theme.module.css";
+import { metadataForRoute } from "@/app/seo";
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: "https://myportfoliowebsite.com/templates/reel",
-  },
-  title: `${OWNER.name} — Independent Film Director`,
-  description:
-    "Independent film director portfolio — narrative shorts, documentary, and branded film, with a full filmography, screening room breakdown, and festival record.",
-  openGraph: {
-    title: `${OWNER.name} — Independent Film Director`,
-    description:
-      "Independent film director portfolio — narrative shorts, documentary, and branded film, with a full filmography, screening room breakdown, and festival record.",
-    type: "website",
-  },
-};
+export const metadata = metadataForRoute("/templates/reel");
 
 export default function ReelPage() {
   return (

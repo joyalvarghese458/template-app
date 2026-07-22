@@ -35,7 +35,7 @@ export default function FeaturedWork() {
           {WORKS.map((work) => (
             <motion.a
               key={work.id}
-              href="#"
+              href="#contact"
               className={`${styles.workCard} ${work.wide ? styles.workCardWide : ""}`}
               variants={scaleIn}
               aria-label={`${work.title} — ${work.category}`}

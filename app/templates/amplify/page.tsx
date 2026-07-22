@@ -1,21 +1,9 @@
 import type { Metadata } from "next";
 
 import AmplifyTemplate from "./AmplifyTemplate";
+import { metadataForRoute } from "@/app/seo";
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: "https://myportfoliowebsite.com/templates/amplify",
-  },
-  title: "Amplify | Digital Marketer Portfolio Template",
-  description:
-    "A mobile-first career portfolio template for digital marketers, built to spotlight campaign strategy, channel performance, and measurable growth.",
-  openGraph: {
-    title: "Amplify | Digital Marketer Portfolio Template",
-    description:
-      "A mobile-first career portfolio template for digital marketers, built to spotlight campaign strategy, channel performance, and measurable growth.",
-    type: "website",
-  },
-};
+export const metadata = metadataForRoute("/templates/amplify");
 
 export default function AmplifyPage() {
   return <AmplifyTemplate />;

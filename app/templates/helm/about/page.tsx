@@ -7,14 +7,9 @@ import SignatureMark from "../_components/SignatureMark";
 import Arrow from "../_components/Arrow";
 import theme from "../_components/theme.module.css";
 import styles from "./styles.module.css";
+import { metadataForRoute } from "@/app/seo";
 
-export const metadata = {
-  alternates: {
-    canonical: "https://myportfoliowebsite.com/templates/helm/about",
-  },
-  title: "About — Helm",
-  description: `${PROFILE.name}, ${PROFILE.role} of ${PROFILE.company}.`,
-};
+export const metadata = metadataForRoute("/templates/helm/about");
 
 export default function HelmAbout() {
   return (

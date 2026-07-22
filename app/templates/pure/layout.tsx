@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description:
     "Pure is a light editorial creator portfolio template for personal brands, photographers, and modern creators. Clean typography, fast load, and a refined premium aesthetic. Starting at AED 149.",
   openGraph: {
-    url: "https://www.myportfoliowebsite.com/templates/pure",
+    url: "https://myportfoliowebsite.com/templates/pure",
     title: "Pure - Creator Portfolio Template | My Portfolio",
     description:
       "A light editorial creator portfolio template for personal brands, photographers, and modern creators.",

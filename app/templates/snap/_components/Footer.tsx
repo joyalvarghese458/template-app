@@ -20,9 +20,9 @@ const INFO_LINKS = [
 ];
 
 const LEGAL_LINKS = [
-  { href: "#", label: "Privacy Policy" },
-  { href: "#", label: "Terms of Use" },
-  { href: "#", label: "Cookie Policy" },
+  { href: "/privacy-policy", label: "Privacy Policy" },
+  { href: "/terms-of-service", label: "Terms of Use" },
+  { href: "/privacy-policy", label: "Cookie Policy" },
 ];
 
 export default function Footer() {

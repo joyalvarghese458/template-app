@@ -2,14 +2,9 @@ import Image from "next/image";
 import { MEDICAL_IMAGES, PROFILE, STORY_CARDS, TESTIMONIALS } from "../_data/content";
 import theme from "../_components/theme.module.css";
 import styles from "../page.module.css";
+import { metadataForRoute } from "@/app/seo";
 
-export const metadata = {
-  alternates: {
-    canonical: "https://myportfoliowebsite.com/templates/p2/stories",
-  },
-  title: "Stories | DevHub Doctor Template",
-  description: `View patient story and testimonial sections for ${PROFILE.name}'s doctor portfolio template.`,
-};
+export const metadata = metadataForRoute("/templates/p2/stories");
 
 export default function P2StoriesPage() {
   return (

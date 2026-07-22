@@ -23,10 +23,10 @@ export const PROFILE = {
   email: "bonjour@camillemoreau.studio",
   phone: "+33 1 42 86 00 00",
   whatsapp: "33142860000",
-  instagram: "#",
-  behance: "#",
-  linkedin: "#",
-  twitter: "#",
+  instagram: "https://www.instagram.com/camillemoreau.studio/",
+  behance: "https://www.behance.net/camillemoreau",
+  linkedin: "https://www.linkedin.com/in/camille-moreau-photo",
+  twitter: "https://x.com/camillemoreau",
   avatar:
     "https://images.unsplash.com/photo-1554151228-14d9def656e4?w=800&q=80&auto=format&fit=crop",
   studioImage:

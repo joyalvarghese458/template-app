@@ -10,7 +10,7 @@ export const OWNER = {
   email: "meera@vantageadvisory.com",
   linkedin: "https://linkedin.com",
   calendly: "https://cal.com",
-  resumeUrl: "#",
+  resumeUrl: "mailto:meera@vantageadvisory.com?subject=Resume%20request",
   location: "Dubai, UAE — working globally",
   availability: "Taking 2 new engagements for Q4",
   clarityIndex: 92,

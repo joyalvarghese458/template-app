@@ -2195,6 +2195,39 @@ const ARTICLES: Record<string, ArticleMeta> = {
 
 // ── Next.js API ───────────────────────────────────────────────────────────
 
+const ARTICLE_SEO: Record<string, { title: string; description: string }> = {
+  "10-elements-every-professional-portfolio-needs": {
+    title: "Designer Portfolio Guide | My Portfolio",
+    description:
+      "Learn which portfolio sections, proof points, case studies, and contact cues help designers use My Portfolio templates to attract better creative roles.",
+  },
+  "developer-portfolio-website-guide": {
+    title: "Developer Portfolio Guide | My Portfolio",
+    description:
+      "See what developers should include, skip, and refine on a portfolio site to showcase projects, technical judgment, and hiring-ready credibility.",
+  },
+  "agency-website-vs-portfolio-website": {
+    title: "Agency vs Portfolio Sites | My Portfolio",
+    description:
+      "Compare agency websites and portfolio websites so creative studios can choose the structure, proof, and conversion flow that best wins clients.",
+  },
+  "founder-portfolio-website-personal-brand": {
+    title: "Founder Personal Brand Sites | My Portfolio",
+    description:
+      "Discover how startup founders can use a personal portfolio website to build trust, clarify expertise, and strengthen investor or customer credibility.",
+  },
+  "freelancer-portfolio-website-uae": {
+    title: "UAE Freelancer Portfolio Guide | My Portfolio",
+    description:
+      "Learn how UAE freelancers can use a professional portfolio website to stand out in Dubai, Abu Dhabi, and beyond while converting better clients.",
+  },
+  "photography-portfolio-website-essentials": {
+    title: "Photography Portfolio Sites | My Portfolio",
+    description:
+      "Review the essential pages, galleries, proof points, and booking cues photographers need to turn a portfolio website into a client-winning asset.",
+  },
+};
+
 export async function generateStaticParams() {
   return Object.keys(ARTICLES).map((slug) => ({ slug }));
 }
@@ -2209,18 +2242,21 @@ export async function generateMetadata({
   if (!article) return {};
 
   const articleUrl = `${BLOG_URL}/${slug}`;
+  const seo = ARTICLE_SEO[slug];
+  const title = seo?.title ?? article.title;
+  const description = seo?.description ?? article.excerpt;
 
   return {
-    title: article.title,
-    description: article.excerpt,
+    title,
+    description,
     alternates: {
       canonical: `${BLOG_URL}/${slug}`,
     },
     openGraph: {
       type: "article",
       url: articleUrl,
-      title: article.title,
-      description: article.excerpt,
+      title,
+      description,
       images: [
         {
           url: article.heroImage,
@@ -2230,8 +2266,8 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: article.title,
-      description: article.excerpt,
+      title,
+      description,
       images: [article.heroImage],
     },
   };

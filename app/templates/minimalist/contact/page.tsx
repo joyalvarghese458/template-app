@@ -6,13 +6,9 @@ import {
   NotesSection,
   TestimonialBand,
 } from "../blocks";
+import { metadataForRoute } from "@/app/seo";
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: "https://myportfoliowebsite.com/templates/minimalist/contact",
-  },
-  title: "Minimalist - Contact",
-};
+export const metadata = metadataForRoute("/templates/minimalist/contact");
 
 export default function MinimalistContactPage() {
   return (

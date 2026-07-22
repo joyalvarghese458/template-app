@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-const BLOG_URL = "https://www.myportfoliowebsite.com/blog";
+const BLOG_URL = "https://myportfoliowebsite.com/blog";
 
 export const metadata: Metadata = {
   title: "Portfolio Blog",

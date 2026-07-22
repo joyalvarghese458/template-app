@@ -2,14 +2,9 @@ import type { Metadata } from "next";
 
 import CrispTemplate from "./CrispTemplate";
 import { crispTemplateConfig } from "./template.config";
+import { metadataForRoute } from "@/app/seo";
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: "https://myportfoliowebsite.com/templates/crisp",
-  },
-  title: crispTemplateConfig.title,
-  description: crispTemplateConfig.description,
-};
+export const metadata = metadataForRoute("/templates/crisp");
 
 export default function CrispTemplatePage() {
   return <CrispTemplate />;

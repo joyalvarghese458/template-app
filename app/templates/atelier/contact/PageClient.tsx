@@ -70,12 +70,12 @@ const NEXT_STEPS = [
 ];
 
 const CHANNELS = [
-  { label: "Instagram", handle: "@atelier.studio", href: "#" },
-  { label: "Vimeo", handle: "vimeo.com/atelier", href: "#" },
-  { label: "LinkedIn", handle: "/atelier-studio", href: "#" },
-  { label: "Are.na", handle: "/atelier", href: "#" },
-  { label: "Read.cv", handle: "/atelier", href: "#" },
-  { label: "Dribbble", handle: "/atelier", href: "#" },
+  { label: "Instagram", handle: "@atelier.studio", href: "https://www.instagram.com/atelier.studio/" },
+  { label: "Vimeo", handle: "vimeo.com/atelier", href: "https://vimeo.com/atelier" },
+  { label: "LinkedIn", handle: "/atelier-studio", href: "https://www.linkedin.com/company/atelier-studio/" },
+  { label: "Are.na", handle: "/atelier", href: "https://www.are.na/atelier" },
+  { label: "Read.cv", handle: "/atelier", href: "https://read.cv/atelier" },
+  { label: "Dribbble", handle: "/atelier", href: "https://dribbble.com/atelier" },
 ];
 
 const BUDGETS = ["< $25k", "$25k – $75k", "$75k – $200k", "$200k+", "Not sure yet"];

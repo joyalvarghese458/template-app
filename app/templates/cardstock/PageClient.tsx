@@ -12,10 +12,10 @@ const PROFILE = {
   email: "shivamkaushal@gmail.com",
   phone: "+91 95XXXXXX10",
   instagram: "psd_shivam",
-  portfolioUrl: "#",
-  linkedinUrl: "#",
-  behanceUrl: "#",
-  dribbbleUrl: "#",
+  portfolioUrl: "/templates/cardstock",
+  linkedinUrl: "https://www.linkedin.com/in/shivam-kaushal-design",
+  behanceUrl: "https://www.behance.net/shivamkaushal",
+  dribbbleUrl: "https://dribbble.com/shivamkaushal",
 };
 
 const EDUCATION: { degree: string; institution?: string; period: string }[] = [

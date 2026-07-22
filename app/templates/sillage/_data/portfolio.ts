@@ -12,7 +12,7 @@ export const OWNER = {
   email: "camille@atelierrousseau.fr",
   instagram: "https://instagram.com",
   shop: "https://example.com",
-  resumeUrl: "#",
+  resumeUrl: "mailto:camille@atelierrousseau.fr?subject=Resume%20request",
   atelier: "Atelier Rousseau",
   location: "Grasse, France",
   availability: "Bespoke commissions open · Autumn 2026",

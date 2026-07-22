@@ -16,21 +16,9 @@ import Testimonials from "./_components/Testimonials";
 import Contact from "./_components/Contact";
 import Footer from "./_components/Footer";
 import theme from "./theme.module.css";
+import { metadataForRoute } from "@/app/seo";
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: "https://myportfoliowebsite.com/templates/vantage",
-  },
-  title: `${OWNER.name} — Management Consultant`,
-  description:
-    "Independent management consulting portfolio — strategy, operating model, and governance engagements for founders and executive teams, with a proprietary four-stage operating method.",
-  openGraph: {
-    title: `${OWNER.name} — Management Consultant`,
-    description:
-      "Independent management consulting portfolio — strategy, operating model, and governance engagements for founders and executive teams.",
-    type: "website",
-  },
-};
+export const metadata = metadataForRoute("/templates/vantage");
 
 export default function VantagePage() {
   return (

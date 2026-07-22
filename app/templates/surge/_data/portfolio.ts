@@ -6,7 +6,7 @@ export const OWNER = {
     "I'm a digital marketer who blends paid media, SEO, and content into campaigns that actually move the needle — and I'm looking for a team that wants to grow.",
   email: "damon.reid@example.com",
   linkedin: "https://linkedin.com/in/damonreid",
-  resumeUrl: "#",
+  resumeUrl: "mailto:damon.reid@example.com?subject=Resume%20request",
   location: "Chicago, IL",
   availability: "Actively seeking full-time opportunities",
   stats: [

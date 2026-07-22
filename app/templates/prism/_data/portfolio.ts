@@ -9,7 +9,7 @@ export const OWNER = {
   behance: "https://behance.net/miloreyes",
   linkedin: "https://linkedin.com/in/miloreyes",
   twitter: "https://x.com/miloreyes",
-  resumeUrl: "#",
+  resumeUrl: "mailto:milo.reyes@example.com?subject=Resume%20request",
   location: "Los Angeles, CA",
   availability: "Booking new projects for Q3",
   stats: [

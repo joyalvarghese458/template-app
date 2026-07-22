@@ -6,7 +6,7 @@ export const OWNER = {
     "I partner with founders and executive teams to fix what's broken, scale what's working, and close the deals that actually move the business forward.",
   email: "elias.navarro@example.com",
   linkedin: "https://linkedin.com/in/eliasnavarro",
-  resumeUrl: "#",
+  resumeUrl: "mailto:elias.navarro@example.com?subject=Resume%20request",
   location: "New York, NY",
   availability: "Open to new advisory engagements",
   stats: [

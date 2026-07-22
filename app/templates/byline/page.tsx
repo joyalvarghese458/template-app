@@ -13,21 +13,9 @@ import Awards from "./_components/Awards";
 import Contact from "./_components/Contact";
 import Footer from "./_components/Footer";
 import theme from "./theme.module.css";
+import { metadataForRoute } from "@/app/seo";
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: "https://myportfoliowebsite.com/templates/byline",
-  },
-  title: `${OWNER.name} — Investigative Journalist`,
-  description:
-    "Investigative journalist covering policy, public records, and government accountability — stories that move legislatures and courts.",
-  openGraph: {
-    title: `${OWNER.name} — Investigative Journalist`,
-    description:
-      "Investigative journalist covering policy, public records, and government accountability — stories that move legislatures and courts.",
-    type: "website",
-  },
-};
+export const metadata = metadataForRoute("/templates/byline");
 
 export default function BylinePage() {
   return (

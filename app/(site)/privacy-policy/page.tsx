@@ -1,14 +1,8 @@
 import type { Metadata } from "next";
 import Footer from "@/components/Footer";
+import { metadataForRoute } from "@/app/seo";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy",
-  description:
-    "Read how My Portfolio collects, uses, and protects personal information when you browse the site or contact our team.",
-  alternates: {
-    canonical: "https://myportfoliowebsite.com/privacy-policy",
-  },
-};
+export const metadata = metadataForRoute("/privacy-policy");
 
 const SECTIONS = [
   {

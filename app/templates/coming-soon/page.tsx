@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
+import { metadataForRoute } from "@/app/seo";
 
 export const metadata: Metadata = {
-  title: "Coming Soon",
-  description: "This template preview is coming soon.",
+  ...metadataForRoute("/templates/coming-soon"),
   robots: {
     index: false,
     follow: false,

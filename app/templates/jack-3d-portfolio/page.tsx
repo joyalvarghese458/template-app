@@ -1,11 +1,7 @@
 import JackPortfolio from './JackPortfolio';
+import { metadataForRoute } from "@/app/seo";
 
-export const metadata = {
-  alternates: {
-    canonical: "https://myportfoliowebsite.com/templates/jack-3d-portfolio",
-  },
-    title: "Jack -- 3D Creator",
-};
+export const metadata = metadataForRoute("/templates/jack-3d-portfolio");
 
 export default function Page() {
     return <JackPortfolio />;

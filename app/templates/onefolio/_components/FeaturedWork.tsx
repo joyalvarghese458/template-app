@@ -47,7 +47,7 @@ export default function FeaturedWork() {
             return (
               <motion.a
                 key={work.id}
-                href="#"
+                href="#contact"
                 aria-label={`${work.title} — ${work.category}`}
                 className={`${styles.workCard} ${work.wide ? styles.workCardWide : ""} ${accent.card}`}
                 variants={scaleIn}
@@ -84,7 +84,7 @@ export default function FeaturedWork() {
           whileInView="visible"
           viewport={viewport}
         >
-          <a href="#" className={styles.btnGhost}>
+          <a href="#contact" className={styles.btnGhost}>
             View All Projects ↗
           </a>
         </motion.div>

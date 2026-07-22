@@ -1,14 +1,8 @@
 import type { Metadata } from "next";
 import Footer from "@/components/Footer";
+import { metadataForRoute } from "@/app/seo";
 
-export const metadata: Metadata = {
-  title: "Terms of Service",
-  description:
-    "Review the terms that govern your use of the My Portfolio website, digital products, and related services.",
-  alternates: {
-    canonical: "https://myportfoliowebsite.com/terms-of-service",
-  },
-};
+export const metadata = metadataForRoute("/terms-of-service");
 
 const SECTIONS = [
   {

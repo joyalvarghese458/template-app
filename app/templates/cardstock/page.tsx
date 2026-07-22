@@ -1,11 +1,8 @@
 import type { Metadata } from "next";
 import PageClient from "./PageClient";
+import { metadataForRoute } from "@/app/seo";
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: "https://myportfoliowebsite.com/templates/cardstock",
-  },
-};
+export const metadata = metadataForRoute("/templates/cardstock");
 
 export default function Page() {
   return <PageClient />;

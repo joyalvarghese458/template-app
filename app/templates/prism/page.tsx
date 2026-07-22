@@ -13,21 +13,9 @@ import Certifications from "./_components/Certifications";
 import Contact from "./_components/Contact";
 import Footer from "./_components/Footer";
 import theme from "./theme.module.css";
+import { metadataForRoute } from "@/app/seo";
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: "https://myportfoliowebsite.com/templates/prism",
-  },
-  title: `${OWNER.name} — Senior Product Designer`,
-  description:
-    "UI/UX and product design portfolio — product design, design systems, prototyping, and case studies.",
-  openGraph: {
-    title: `${OWNER.name} — Senior Product Designer`,
-    description:
-      "UI/UX and product design portfolio — product design, design systems, prototyping, and case studies.",
-    type: "website",
-  },
-};
+export const metadata = metadataForRoute("/templates/prism");
 
 export default function PrismPage() {
   return (

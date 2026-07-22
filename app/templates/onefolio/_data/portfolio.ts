@@ -19,12 +19,12 @@ export const PROFILE = {
   status:        "Open for Q3 2026",
   email:         "hello@miatorres.design",
   phone:         "+971 50 123 4567",
-  instagram:     "#",
-  behance:       "#",
-  linkedin:      "#",
-  dribbble:      "#",
-  twitter:       "#",
-  resumeUrl:     "#",
+  instagram:     "https://www.instagram.com/alexrivera.design/",
+  behance:       "https://www.behance.net/alexrivera",
+  linkedin:      "https://www.linkedin.com/in/alex-rivera-design",
+  dribbble:      "https://dribbble.com/alexrivera",
+  twitter:       "https://x.com/alexriveradesign",
+  resumeUrl:     "mailto:hello@alexrivera.design?subject=Resume%20request",
   avatar:
     "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&q=80&auto=format&fit=crop",
   workspaceImage:

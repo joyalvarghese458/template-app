@@ -195,16 +195,16 @@ function Hero() {
           </div>
 
           <div className={styles.socials}>
-            <a href="#" aria-label="Facebook">
+            <a href="https://www.facebook.com/purestudio" aria-label="Facebook">
               <svg className={styles.socialIcon} viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg>
             </a>
-            <a href="#" aria-label="Twitter">
+            <a href="https://x.com/purestudio" aria-label="Twitter">
               <svg className={styles.socialIcon} viewBox="0 0 24 24" fill="currentColor"><path d="M22 5.8c-.7.3-1.5.5-2.4.6.9-.5 1.5-1.3 1.8-2.3-.8.5-1.7.8-2.6 1A4.1 4.1 0 0 0 12 9c0 .3 0 .6.1.9A11.7 11.7 0 0 1 3.4 5a4 4 0 0 0 1.3 5.5c-.7 0-1.3-.2-1.9-.5v.1a4.1 4.1 0 0 0 3.3 4 4.2 4.2 0 0 1-1.9.1 4.1 4.1 0 0 0 3.8 2.9A8.3 8.3 0 0 1 2 18.7 11.7 11.7 0 0 0 8.3 20.5c7.6 0 11.7-6.3 11.7-11.7v-.5c.8-.6 1.5-1.3 2-2.1z"/></svg>
             </a>
-            <a href="#" aria-label="Instagram">
+            <a href="https://www.instagram.com/purestudio/" aria-label="Instagram">
               <svg className={styles.socialIcon} viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2 0 1.8.3 2.2.4.5.2 1 .5 1.4 1 .4.4.7.8.9 1.4.2.5.4 1.1.4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c0 1.2-.3 1.8-.4 2.2-.2.5-.5 1-1 1.4-.4.4-.8.7-1.4.9-.5.2-1.1.4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2 0-1.8-.3-2.2-.4-.5-.2-1-.5-1.4-1-.4-.4-.7-.8-.9-1.4-.2-.5-.4-1.1-.4-2.2-.1-1.3-.1-1.7-.1-4.9s0-3.6.1-4.9c0-1.2.3-1.8.4-2.2.2-.5.5-1 1-1.4.4-.4.8-.7 1.4-.9.5-.2 1.1-.4 2.2-.4 1.2 0 1.6-.1 4.8-.1zM12 6.9a5.1 5.1 0 1 1 0 10.2 5.1 5.1 0 0 1 0-10.2zm0 8.4a3.3 3.3 0 1 0 0-6.6 3.3 3.3 0 0 0 0 6.6zm6.5-8.6a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z"/></svg>
             </a>
-            <a href="#" aria-label="Dribbble">
+            <a href="https://dribbble.com/purestudio" aria-label="Dribbble">
               <svg className={styles.socialIcon} viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" strokeWidth="2"/></svg>
             </a>
           </div>

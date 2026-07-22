@@ -53,7 +53,7 @@ export default function Nav() {
       >
         {/* Logo */}
         <a
-          href="#"
+          href="#reel"
           style={{
             display: "flex",
             alignItems: "center",

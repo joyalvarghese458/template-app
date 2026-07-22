@@ -13,21 +13,9 @@ import Certifications from "./_components/Certifications";
 import Contact from "./_components/Contact";
 import Footer from "./_components/Footer";
 import theme from "./theme.module.css";
+import { metadataForRoute } from "@/app/seo";
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: "https://myportfoliowebsite.com/templates/strata",
-  },
-  title: `${OWNER.name} — Civil Engineer, P.E.`,
-  description:
-    "Civil and structural engineering portfolio — bridges, foundations, site development, and licensed P.E. project work.",
-  openGraph: {
-    title: `${OWNER.name} — Civil Engineer, P.E.`,
-    description:
-      "Civil and structural engineering portfolio — bridges, foundations, site development, and licensed P.E. project work.",
-    type: "website",
-  },
-};
+export const metadata = metadataForRoute("/templates/strata");
 
 export default function StrataPage() {
   return (

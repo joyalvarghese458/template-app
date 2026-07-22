@@ -14,12 +14,9 @@ import {
 } from "./_data/content";
 import theme from "./_components/theme.module.css";
 import styles from "./page.module.css";
+import { metadataForRoute } from "@/app/seo";
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: "https://myportfoliowebsite.com/templates/p2",
-  },
-};
+export const metadata = metadataForRoute("/templates/p2");
 
 
 export default function P2HomePage() {

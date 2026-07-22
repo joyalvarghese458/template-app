@@ -18,21 +18,9 @@ import Testimonials from "./_components/Testimonials";
 import Contact from "./_components/Contact";
 import Footer from "./_components/Footer";
 import theme from "./theme.module.css";
+import { metadataForRoute } from "@/app/seo";
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: "https://myportfoliowebsite.com/templates/echelon",
-  },
-  title: `${OWNER.name} — Chief Executive Officer & Board Director`,
-  description:
-    "Chief executive leadership portfolio — enterprise turnarounds, capital allocation, and board governance with a measurable track record.",
-  openGraph: {
-    title: `${OWNER.name} — Chief Executive Officer & Board Director`,
-    description:
-      "Chief executive leadership portfolio — enterprise turnarounds, capital allocation, and board governance with a measurable track record.",
-    type: "website",
-  },
-};
+export const metadata = metadataForRoute("/templates/echelon");
 
 export default function EchelonPage() {
   return (

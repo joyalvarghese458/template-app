@@ -19,21 +19,9 @@ import Testimonials from "./_components/Testimonials";
 import Contact from "./_components/Contact";
 import Footer from "./_components/Footer";
 import theme from "./theme.module.css";
+import { metadataForRoute } from "@/app/seo";
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: "https://myportfoliowebsite.com/templates/kiln",
-  },
-  title: `${OWNER.name} — Studio Ceramicist`,
-  description:
-    "Studio ceramicist portfolio — wheel-thrown stoneware, small-batch glazes, and a full collection of functional pottery, hand-thrown and fired at Studio Solberg on Bornholm, Denmark.",
-  openGraph: {
-    title: `${OWNER.name} — Studio Ceramicist`,
-    description:
-      "Studio ceramicist portfolio — wheel-thrown stoneware, small-batch glazes, and a full collection of functional pottery, hand-thrown and fired at Studio Solberg on Bornholm, Denmark.",
-    type: "website",
-  },
-};
+export const metadata = metadataForRoute("/templates/kiln");
 
 export default function KilnPage() {
   return (

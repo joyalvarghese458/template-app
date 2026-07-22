@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   description:
     "Helm is a five-page, editorial-minimalist portfolio template for CEOs, founders, and group executives. Ivory-and-bronze design system, signature scroll animations, and real photography.",
   openGraph: {
-    url: "https://www.myportfoliowebsite.com/templates/helm",
+    url: "https://myportfoliowebsite.com/templates/helm",
     title: "Helm — Executive Portfolio Template | My Portfolio",
     description:
       "A five-page, editorial-minimalist portfolio template for CEOs, founders, and group executives.",

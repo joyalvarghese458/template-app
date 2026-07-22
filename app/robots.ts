@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/", "/brand-lab"],
     },
-    sitemap: "https://www.myportfoliowebsite.com/sitemap.xml",
+    sitemap: "https://myportfoliowebsite.com/sitemap.xml",
   };
 }

@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description:
     "Onefolio is a creative flow portfolio template for designers, creators, and founders. Fluid scroll experience with bold brand identity. Starting at AED 49.",
   openGraph: {
-    url: "https://www.myportfoliowebsite.com/templates/onefolio",
+    url: "https://myportfoliowebsite.com/templates/onefolio",
     title: "Onefolio — Creative Flow Designer Portfolio Template | My Portfolio",
     description:
       "A creative flow portfolio template for designers, creators, and founders. Fluid scroll experience with bold brand identity.",

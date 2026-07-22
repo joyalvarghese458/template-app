@@ -17,21 +17,9 @@ import Testimonials from "./_components/Testimonials";
 import Contact from "./_components/Contact";
 import Footer from "./_components/Footer";
 import theme from "./theme.module.css";
+import { metadataForRoute } from "@/app/seo";
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: "https://myportfoliowebsite.com/templates/contour",
-  },
-  title: `${OWNER.name} — Landscape Architect`,
-  description:
-    "Landscape architecture portfolio — stormwater-led public parks, campus grounds, and ecological restoration, from site analysis through construction administration.",
-  openGraph: {
-    title: `${OWNER.name} — Landscape Architect`,
-    description:
-      "Landscape architecture portfolio — stormwater-led public parks, campus grounds, and ecological restoration.",
-    type: "website",
-  },
-};
+export const metadata = metadataForRoute("/templates/contour");
 
 export default function ContourPage() {
   return (

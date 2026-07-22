@@ -9,7 +9,7 @@ export const OWNER = {
   twitter: "https://twitter.com/noraquinn",
   linkedin: "https://linkedin.com/in/noraquinn",
   signal: "+1 (555) 010-1234",
-  resumeUrl: "#",
+  resumeUrl: "mailto:nora@example.com?subject=Resume%20request",
   location: "Washington, D.C.",
   availability: "Open to tips & freelance assignments",
   stats: [

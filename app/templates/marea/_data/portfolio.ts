@@ -16,7 +16,7 @@ export const OWNER = {
   email: "marisol.vega@example.com",
   linkedin: "https://linkedin.com/in/marisolvega",
   scholar: "https://scholar.google.com/citations?user=marisolvega",
-  resumeUrl: "#",
+  resumeUrl: "mailto:marisol.vega@example.com?subject=Resume%20request",
   location: "La Jolla, CA",
   university: "Scripps Institution of Oceanography, UC San Diego",
   availability: "Open to research assistant & field technician roles",
