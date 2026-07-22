@@ -20,6 +20,9 @@ import Footer from "./_components/Footer";
 import theme from "./theme.module.css";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://myportfoliowebsite.com/templates/ledger",
+  },
   title: `${OWNER.name} — Certified Public Accountant`,
   description:
     "Accountant portfolio — tax strategy, bookkeeping & reconciliation, financial reporting, and audit-ready advisory for startups and family businesses.",

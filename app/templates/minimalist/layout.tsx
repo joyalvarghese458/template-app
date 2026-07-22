@@ -6,9 +6,6 @@ export const metadata: Metadata = {
   title: "Minimalist - Creator Portfolio Template",
   description:
     "A five-page minimalist creator portfolio template with richer content, smooth scrolling, responsive layouts, and a refined editorial feel.",
-  alternates: {
-    canonical: "/templates/minimalist",
-  },
   openGraph: {
     title: "Minimalist - Creator Portfolio Template",
     description:

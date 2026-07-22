@@ -5,9 +5,6 @@ export const metadata: Metadata = {
   title: "Designer Pro — Dark Animated Creative Portfolio Template",
   description:
     "Designer Pro is a dark, animated single-page portfolio for creatives. Features loading screen, full-viewport hero with mesh gradient, bento grid, parallax gallery, and GSAP scroll animations.",
-  alternates: {
-    canonical: "/templates/designer-pro",
-  },
   openGraph: {
     url: "https://www.myportfoliowebsite.com/templates/designer-pro",
     title: "Designer Pro — Dark Animated Creative Portfolio Template | My Portfolio",

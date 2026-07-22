@@ -6,6 +6,9 @@ import theme from "../_components/theme.module.css";
 import styles from "./styles.module.css";
 
 export const metadata = {
+  alternates: {
+    canonical: "https://myportfoliowebsite.com/templates/helm/contact",
+  },
   title: "Contact — Helm",
   description: `Get in touch with ${PROFILE.name}, ${PROFILE.role} of ${PROFILE.company}.`,
 };

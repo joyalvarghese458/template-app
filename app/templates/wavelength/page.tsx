@@ -14,6 +14,9 @@ import Footer from "./_components/Footer";
 import theme from "./theme.module.css";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://myportfoliowebsite.com/templates/wavelength",
+  },
   title: `${OWNER.name} — Sound Designer & Composer`,
   description:
     "Independent sound design and composition portfolio — reel, credits, and tools for film, games, and advertising.",

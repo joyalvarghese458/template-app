@@ -4,6 +4,9 @@ import CrispTemplate from "./CrispTemplate";
 import { crispTemplateConfig } from "./template.config";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://myportfoliowebsite.com/templates/crisp",
+  },
   title: crispTemplateConfig.title,
   description: crispTemplateConfig.description,
 };

@@ -15,6 +15,9 @@ import Footer from "./_components/Footer";
 import theme from "./theme.module.css";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://myportfoliowebsite.com/templates/strata",
+  },
   title: `${OWNER.name} — Civil Engineer, P.E.`,
   description:
     "Civil and structural engineering portfolio — bridges, foundations, site development, and licensed P.E. project work.",

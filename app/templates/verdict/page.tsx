@@ -18,6 +18,9 @@ import Footer from "./_components/Footer";
 import theme from "./theme.module.css";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://myportfoliowebsite.com/templates/verdict",
+  },
   title: `${OWNER.name} — Corporate & Commercial Litigation Counsel`,
   description:
     "Independent litigation and corporate counsel portfolio — notable matters, practice areas, and case record for founders, family businesses, and enterprises across the UAE and GCC.",

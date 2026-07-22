@@ -20,6 +20,9 @@ import Footer from "./_components/Footer";
 import theme from "./theme.module.css";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://myportfoliowebsite.com/templates/echelon",
+  },
   title: `${OWNER.name} — Chief Executive Officer & Board Director`,
   description:
     "Chief executive leadership portfolio — enterprise turnarounds, capital allocation, and board governance with a measurable track record.",

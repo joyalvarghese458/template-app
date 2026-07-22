@@ -4,6 +4,9 @@ import theme from "../_components/theme.module.css";
 import styles from "../page.module.css";
 
 export const metadata = {
+  alternates: {
+    canonical: "https://myportfoliowebsite.com/templates/p2/about",
+  },
   title: "About | DevHub Doctor Template",
   description: `Learn about ${PROFILE.name} and the care philosophy behind this doctor portfolio template.`,
 };

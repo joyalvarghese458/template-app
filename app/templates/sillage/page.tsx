@@ -20,6 +20,9 @@ import Footer from "./_components/Footer";
 import theme from "./theme.module.css";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://myportfoliowebsite.com/templates/sillage",
+  },
   title: `${OWNER.name} — Independent Perfumer`,
   description:
     "Independent perfumer portfolio — small-batch eau de parfums, bespoke commissions, and a full fragrance collection from Atelier Rousseau in Grasse.",

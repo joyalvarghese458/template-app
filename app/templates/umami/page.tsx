@@ -20,6 +20,9 @@ import Footer from "./_components/Footer";
 import theme from "./theme.module.css";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://myportfoliowebsite.com/templates/umami",
+  },
   title: `${OWNER.name} — Executive Chef & Culinary Director`,
   description:
     "Executive chef portfolio — live-fire tasting menus, restaurant residencies, and a career built on flavor over flash.",

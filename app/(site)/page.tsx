@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description:
     "Browse 30+ premium portfolio templates for designers, developers, photographers & creators. Starting at AED 49. One-time payment, lifetime ownership.",
   alternates: {
-    canonical: "/",
+    canonical: "https://myportfoliowebsite.com",
   },
 };
 

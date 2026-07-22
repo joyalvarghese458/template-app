@@ -4,6 +4,9 @@ import PulseTemplate from "./PulseTemplate";
 import { pulseTemplateConfig } from "./template.config";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://myportfoliowebsite.com/templates/pulse",
+  },
   title: pulseTemplateConfig.title,
   description: pulseTemplateConfig.description,
 };

@@ -7,6 +7,9 @@ import theme from "../_components/theme.module.css";
 import styles from "./styles.module.css";
 
 export const metadata = {
+  alternates: {
+    canonical: "https://myportfoliowebsite.com/templates/helm/ventures",
+  },
   title: "Ventures — Helm",
   description: `The five operating ventures inside ${PROFILE.company}.`,
 };

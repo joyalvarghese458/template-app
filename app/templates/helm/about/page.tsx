@@ -9,6 +9,9 @@ import theme from "../_components/theme.module.css";
 import styles from "./styles.module.css";
 
 export const metadata = {
+  alternates: {
+    canonical: "https://myportfoliowebsite.com/templates/helm/about",
+  },
   title: "About — Helm",
   description: `${PROFILE.name}, ${PROFILE.role} of ${PROFILE.company}.`,
 };

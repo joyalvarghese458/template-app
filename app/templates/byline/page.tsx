@@ -15,6 +15,9 @@ import Footer from "./_components/Footer";
 import theme from "./theme.module.css";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://myportfoliowebsite.com/templates/byline",
+  },
   title: `${OWNER.name} — Investigative Journalist`,
   description:
     "Investigative journalist covering policy, public records, and government accountability — stories that move legislatures and courts.",

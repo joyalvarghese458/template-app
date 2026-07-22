@@ -19,6 +19,9 @@ import Footer from "./_components/Footer";
 import theme from "./theme.module.css";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://myportfoliowebsite.com/templates/surge",
+  },
   title: `${OWNER.name} — Digital Marketing Specialist`,
   description:
     "Digital marketing portfolio — paid social, SEO, email lifecycle, and content campaigns with measurable results.",

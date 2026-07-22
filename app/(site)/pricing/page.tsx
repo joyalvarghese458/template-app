@@ -2,6 +2,9 @@ import PricingContent from "./_components/PricingContent";
 import Footer from "@/components/Footer";
 
 export const metadata = {
+  alternates: {
+    canonical: "https://myportfoliowebsite.com/pricing",
+  },
   title: "Pricing Plans — Portfolio & Resume Packages",
   description:
     "Choose the right portfolio or resume package for your needs. One-time payment, fast delivery, and revision rounds included. Prices in AED and USD.",

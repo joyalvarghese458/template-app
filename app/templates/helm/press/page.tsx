@@ -8,6 +8,9 @@ import theme from "../_components/theme.module.css";
 import styles from "./styles.module.css";
 
 export const metadata = {
+  alternates: {
+    canonical: "https://myportfoliowebsite.com/templates/helm/press",
+  },
   title: "Press & Speaking — Helm",
   description: `Media coverage and speaking engagements featuring ${PROFILE.name}.`,
 };

@@ -15,6 +15,9 @@ import Footer from "./_components/Footer";
 import theme from "./theme.module.css";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://myportfoliowebsite.com/templates/prism",
+  },
   title: `${OWNER.name} — Senior Product Designer`,
   description:
     "UI/UX and product design portfolio — product design, design systems, prototyping, and case studies.",

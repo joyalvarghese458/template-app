@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Review the terms that govern your use of the My Portfolio website, digital products, and related services.",
   alternates: {
-    canonical: "/terms-of-service",
+    canonical: "https://myportfoliowebsite.com/terms-of-service",
   },
 };
 

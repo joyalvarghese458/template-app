@@ -15,6 +15,9 @@ import Footer from "./_components/Footer";
 import theme from "./theme.module.css";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://myportfoliowebsite.com/templates/cipher",
+  },
   title: `${OWNER.name} — Cybersecurity Student`,
   description:
     "Cybersecurity student specializing in offensive security, CTFs, and SOC operations — penetration testing, threat hunting, and vulnerability research.",

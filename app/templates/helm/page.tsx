@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { IMAGES } from "./_data/images";
@@ -9,6 +10,13 @@ import SignatureMark from "./_components/SignatureMark";
 import Arrow from "./_components/Arrow";
 import theme from "./_components/theme.module.css";
 import styles from "./styles.module.css";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://myportfoliowebsite.com/templates/helm",
+  },
+};
+
 
 export default function HelmHome() {
   const preview = VENTURES.slice(0, 3);

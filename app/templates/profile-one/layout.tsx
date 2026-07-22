@@ -4,9 +4,6 @@ export const metadata: Metadata = {
   title: "Profile One — Personal Brand Portfolio Template",
   description:
     "Profile One is a premium personal brand portfolio template with an interactive 3D particle field, smooth animations, and a cinematic dark aesthetic. Perfect for founders, coaches, and creators.",
-  alternates: {
-    canonical: "/templates/profile-one",
-  },
   openGraph: {
     url: "https://www.myportfoliowebsite.com/templates/profile-one",
     title: "Profile One — Personal Brand Portfolio Template | My Portfolio",

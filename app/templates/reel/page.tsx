@@ -21,6 +21,9 @@ import Footer from "./_components/Footer";
 import theme from "./theme.module.css";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://myportfoliowebsite.com/templates/reel",
+  },
   title: `${OWNER.name} — Independent Film Director`,
   description:
     "Independent film director portfolio — narrative shorts, documentary, and branded film, with a full filmography, screening room breakdown, and festival record.",

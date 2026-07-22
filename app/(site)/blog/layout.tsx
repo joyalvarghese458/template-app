@@ -6,9 +6,6 @@ export const metadata: Metadata = {
   title: "Portfolio Blog",
   description:
     "Actionable portfolio guides, personal branding advice, and career insights for professionals building a stronger online presence.",
-  alternates: {
-    canonical: "/blog",
-  },
   openGraph: {
     type: "website",
     url: BLOG_URL,

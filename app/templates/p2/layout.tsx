@@ -7,9 +7,6 @@ export const metadata: Metadata = {
   title: "DevHub | Doctor Portfolio Template",
   description:
     "DevHub is a five-page, mobile-responsive doctor portfolio template with a premium landing page, strong hero image treatment, and warm clinical storytelling.",
-  alternates: {
-    canonical: "/templates/p2",
-  },
   openGraph: {
     url: "https://www.myportfoliowebsite.com/templates/p2",
     title: "DevHub | Doctor Portfolio Template",

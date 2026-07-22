@@ -21,6 +21,9 @@ import Footer from "./_components/Footer";
 import theme from "./theme.module.css";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://myportfoliowebsite.com/templates/kiln",
+  },
   title: `${OWNER.name} — Studio Ceramicist`,
   description:
     "Studio ceramicist portfolio — wheel-thrown stoneware, small-batch glazes, and a full collection of functional pottery, hand-thrown and fired at Studio Solberg on Bornholm, Denmark.",

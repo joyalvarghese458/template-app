@@ -3,6 +3,9 @@ import type { Metadata } from "next";
 import AmplifyTemplate from "./AmplifyTemplate";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://myportfoliowebsite.com/templates/amplify",
+  },
   title: "Amplify | Digital Marketer Portfolio Template",
   description:
     "A mobile-first career portfolio template for digital marketers, built to spotlight campaign strategy, channel performance, and measurable growth.",

@@ -14,6 +14,9 @@ import Footer from "./_components/Footer";
 import theme from "./theme.module.css";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://myportfoliowebsite.com/templates/meridian",
+  },
   title: `${OWNER.name} — Commercial Airline Pilot`,
   description:
     "B787 captain portfolio — flight log, career route chart, licences & ratings, systems panel, and a boarding-pass contact card.",

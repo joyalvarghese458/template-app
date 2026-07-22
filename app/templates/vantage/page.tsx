@@ -18,6 +18,9 @@ import Footer from "./_components/Footer";
 import theme from "./theme.module.css";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://myportfoliowebsite.com/templates/vantage",
+  },
   title: `${OWNER.name} — Management Consultant`,
   description:
     "Independent management consulting portfolio — strategy, operating model, and governance engagements for founders and executive teams, with a proprietary four-stage operating method.",

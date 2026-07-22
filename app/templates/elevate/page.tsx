@@ -4,6 +4,9 @@ import ElevateTemplate from "./ElevateTemplate";
 import { trainer } from "./data/trainer";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://myportfoliowebsite.com/templates/elevate",
+  },
   title: `${trainer.name} | Elevate`,
   description: `${trainer.title} in ${trainer.location}. ${trainer.tagline}`,
   openGraph: {

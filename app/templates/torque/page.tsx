@@ -15,6 +15,9 @@ import Footer from "./_components/Footer";
 import theme from "./theme.module.css";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://myportfoliowebsite.com/templates/torque",
+  },
   title: `${OWNER.name} — Mechanical Design Engineer`,
   description:
     "Mechanical Design Engineer specializing in structural design, FEA validation, and DFM for automotive, robotics, and industrial automation products.",

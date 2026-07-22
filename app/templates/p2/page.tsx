@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -13,6 +14,13 @@ import {
 } from "./_data/content";
 import theme from "./_components/theme.module.css";
 import styles from "./page.module.css";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://myportfoliowebsite.com/templates/p2",
+  },
+};
+
 
 export default function P2HomePage() {
   return (

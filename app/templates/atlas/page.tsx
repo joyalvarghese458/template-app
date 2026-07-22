@@ -20,6 +20,9 @@ import Footer from "./_components/Footer";
 import theme from "./theme.module.css";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://myportfoliowebsite.com/templates/atlas",
+  },
   title: `${OWNER.name} — Strategic Business Consultant`,
   description:
     "Business strategy and advisory portfolio — growth strategy, M&A advisory, and operating model redesign with measurable results.",

@@ -19,6 +19,9 @@ import Footer from "./_components/Footer";
 import theme from "./theme.module.css";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://myportfoliowebsite.com/templates/lithos",
+  },
   title: `${OWNER.name} — Geology Student`,
   description:
     "Geology student portfolio — field mapping, stratigraphy, petrology, and GIS research from the Colorado Plateau and beyond.",

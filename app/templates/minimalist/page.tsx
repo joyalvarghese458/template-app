@@ -10,6 +10,9 @@ import {
 } from "./blocks";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://myportfoliowebsite.com/templates/minimalist",
+  },
   title: "Minimalist - Overview",
 };
 

@@ -3,6 +3,9 @@ import ContactForm from "./ContactForm";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://myportfoliowebsite.com/contact",
+  },
   title: "Contact Us",
   description:
     "Get in touch with the My Portfolio team. Ask about templates, custom portfolio builds, or anything else — we reply within one business day.",

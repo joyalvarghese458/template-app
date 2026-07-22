@@ -15,6 +15,9 @@ import SkipLink from "./_components/SkipLink";
 import theme from "./theme.module.css";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://myportfoliowebsite.com/templates/adaline",
+  },
   title: `${OWNER.name} — Full Stack Developer`,
   description:
     "Full Stack Developer specializing in React, Next.js, NestJS, and enterprise ERP systems. Building thoughtful digital systems that scale.",

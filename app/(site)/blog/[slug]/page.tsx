@@ -4,7 +4,7 @@ import Link from "next/link";
 import Footer from "@/components/Footer";
 import { notFound } from "next/navigation";
 
-const BLOG_URL = "https://www.myportfoliowebsite.com/blog";
+const BLOG_URL = "https://myportfoliowebsite.com/blog";
 
 // ── Types ─────────────────────────────────────────────────────────────────
 
@@ -2214,7 +2214,7 @@ export async function generateMetadata({
     title: article.title,
     description: article.excerpt,
     alternates: {
-      canonical: `/blog/${slug}`,
+      canonical: `${BLOG_URL}/${slug}`,
     },
     openGraph: {
       type: "article",

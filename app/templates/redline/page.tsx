@@ -19,6 +19,9 @@ import Footer from "./_components/Footer";
 import theme from "./theme.module.css";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://myportfoliowebsite.com/templates/redline",
+  },
   title: `${OWNER.name} — Mechanical Engineer`,
   description:
     "Mechanical engineering portfolio — motorsport components, FEA/CFD simulation, production automation, and CAD design work.",

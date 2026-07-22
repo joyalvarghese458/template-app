@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Read how My Portfolio collects, uses, and protects personal information when you browse the site or contact our team.",
   alternates: {
-    canonical: "/privacy-policy",
+    canonical: "https://myportfoliowebsite.com/privacy-policy",
   },
 };
 

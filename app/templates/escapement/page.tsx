@@ -21,6 +21,9 @@ import Footer from "./_components/Footer";
 import theme from "./theme.module.css";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://myportfoliowebsite.com/templates/escapement",
+  },
   title: `${OWNER.name} — Independent Watchmaker`,
   description:
     "Independent watchmaker portfolio — bespoke mechanical timepieces, complications, and restorations, hand-built and hand-finished at Atelier Voss in Le Locle, Switzerland.",

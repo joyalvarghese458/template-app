@@ -12,6 +12,9 @@ import Footer from "./_components/Footer";
 import theme from "./theme.module.css";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://myportfoliowebsite.com/templates/datalab",
+  },
   title: `${OWNER.name} — Data Science & Analytics Student Portfolio`,
   description: `${OWNER.name}'s personal portfolio showcasing predictive modeling, deep learning, and interactive datasets.`,
   openGraph: {

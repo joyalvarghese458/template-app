@@ -15,6 +15,9 @@ import Footer from "./_components/Footer";
 import theme from "./theme.module.css";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://myportfoliowebsite.com/templates/ascend",
+  },
   title: `${OWNER.name} — Career Coach & Job Search Strategist`,
   description:
     "Career coach helping mid-career professionals land their next role through resume strategy, interview prep, and salary negotiation.",

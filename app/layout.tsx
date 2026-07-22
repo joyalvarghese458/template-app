@@ -7,7 +7,7 @@ const geist = Geist({
   subsets: ["latin"],
 });
 
-const SITE_URL = "https://www.myportfoliowebsite.com";
+const SITE_URL = "https://myportfoliowebsite.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

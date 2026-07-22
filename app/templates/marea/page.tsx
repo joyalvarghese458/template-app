@@ -19,6 +19,9 @@ import Footer from "./_components/Footer";
 import theme from "./theme.module.css";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://myportfoliowebsite.com/templates/marea",
+  },
   title: `${OWNER.name} — Marine Biology Graduate Student`,
   description:
     "Marine biology graduate student portfolio — coral reef resilience, kelp forest monitoring, and acoustic animal tracking from the California coast and beyond.",

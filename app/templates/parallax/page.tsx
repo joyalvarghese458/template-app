@@ -20,6 +20,9 @@ import Footer from "./_components/Footer";
 import theme from "./theme.module.css";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://myportfoliowebsite.com/templates/parallax",
+  },
   title: `${OWNER.name} — 3D Animation & VFX Student`,
   description:
     "Animation & VFX student portfolio — character animation, lighting, compositing, and a full pipeline breakdown reel.",

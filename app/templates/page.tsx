@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   description:
     "Browse 30+ hand-crafted portfolio templates. Filter by section, profession, or price. Starting from AED 49.",
   alternates: {
-    canonical: "/templates",
+    canonical: "https://myportfoliowebsite.com/templates",
   },
   openGraph: {
     url: "https://www.myportfoliowebsite.com/templates",
