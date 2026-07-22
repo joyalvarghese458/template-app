@@ -170,7 +170,7 @@ function ContactBody() {
   };
 
   return (
-    <section className={styles.contactSection} ref={ref}>
+    <section id="inquiry" className={styles.contactSection} ref={ref}>
       <div className={`${styles.contactGrid} ${visible ? styles.contactGridVisible : ""}`}>
         {/* ---- Left: Info ---- */}
         <div className={styles.contactInfo}>

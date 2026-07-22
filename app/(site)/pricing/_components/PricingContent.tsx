@@ -231,7 +231,7 @@ export default function PricingContent() {
 
                   {/* CTA */}
                   <Link
-                    href="/#contact"
+                    href="/contact"
                     className={`w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full text-sm font-semibold transition-all duration-200 mb-4 ${plan.popular
                       ? "bg-brand text-white shadow-[0_6px_24px_-6px_rgba(0,119,181,0.6)] hover:-translate-y-0.5 hover:shadow-[0_10px_32px_-6px_rgba(0,119,181,0.7)]"
                       : "bg-ink text-white hover:bg-ink/80 hover:-translate-y-0.5"

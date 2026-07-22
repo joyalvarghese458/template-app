@@ -14,8 +14,8 @@ const WORK_LINKS = [
 
 const INFO_LINKS = [
   { href: "/templates/snap", label: "Home" },
-  { href: "#story", label: "Story" },
-  { href: "#awards", label: "Awards" },
+  { href: "/templates/snap#story", label: "Story" },
+  { href: "/templates/snap#awards", label: "Awards" },
   { href: "/templates/snap/contact", label: "Contact" },
 ];
 

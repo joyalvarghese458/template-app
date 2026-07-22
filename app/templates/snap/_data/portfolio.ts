@@ -369,10 +369,10 @@ export const INSTAGRAM_POSTS = [
 ];
 
 export const NAV_LINKS = [
-  { href: "#categories", label: "Work" },
-  { href: "#story", label: "Story" },
-  { href: "#awards", label: "Awards" },
-  { href: "#gallery", label: "Gallery" },
+  { href: "/templates/snap#categories", label: "Work" },
+  { href: "/templates/snap#story", label: "Story" },
+  { href: "/templates/snap#awards", label: "Awards" },
+  { href: "/templates/snap#gallery", label: "Gallery" },
   { href: "/templates/snap/contact", label: "Contact" },
 ];
 
