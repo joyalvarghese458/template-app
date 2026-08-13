@@ -89,7 +89,16 @@ export default function Growthfolio() {
         </section>
 
         <section className={styles.framework}>
-          <div className={styles.frameworkTitle}><Heading index="03" eyebrow="Method">The Growth<br /><em>Framework.</em></Heading><p>Six connected steps. One accountable growth system.</p></div>
+          <div className={styles.frameworkTitle}>
+            <Heading index="03" eyebrow="Method">The Growth<br /><em>Framework.</em></Heading>
+            <p className={styles.frameworkIntro}>Six connected steps. One accountable growth system.</p>
+            <p className={styles.frameworkDetail}>A practical operating model that turns scattered marketing activity into a clear, measurable path from first signal to sustainable scale.</p>
+            <div className={styles.frameworkSignals} aria-label="Framework outcomes">
+              <div><span>01</span><strong>Clear priorities</strong></div>
+              <div><span>02</span><strong>Better decisions</strong></div>
+              <div><span>03</span><strong>Measurable growth</strong></div>
+            </div>
+          </div>
           <div className={styles.steps}>{data.framework.map(step => <motion.article key={step.number} className={styles.step} {...anim}><span>{step.number}</span><div><h3>{step.title}</h3><p>{step.text}</p></div></motion.article>)}</div>
         </section>
 

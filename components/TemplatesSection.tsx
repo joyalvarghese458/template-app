@@ -89,7 +89,9 @@ function TemplateCard({
   const slug = template.slug ?? template.id;
   const isComingSoon = isComingSoonTemplate(template);
   const fallbackSrc = templateImage(template);
-  const [mode, setMode] = useState<"video" | "img">(isComingSoon ? "img" : "video");
+  const [mode, setMode] = useState<"video" | "img">(
+    isComingSoon || slug === "growthfolio" ? "img" : "video",
+  );
   const [imgSrc, setImgSrc] = useState(
     isComingSoon ? COMING_SOON_IMAGE_SRC : `/previews/${slug}.jpg`,
   );
