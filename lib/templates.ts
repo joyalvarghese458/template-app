@@ -447,6 +447,16 @@ export const TEMPLATES: Template[] = [
     specialties: ["copywriter", "personal-brand", "consultant"],
   },
   {
+    id: "growthfolio",
+    slug: "growthfolio",
+    title: "Growthfolio",
+    tag: "Performance Marketing Specialist · Growth Systems",
+    tier: "pro",
+    section: "career-portfolio",
+    audiences: ["founders", "creators"],
+    specialties: ["consultant", "personal-brand"],
+  },
+  {
     id: "atlas",
     slug: "atlas",
     title: "Atlas",
