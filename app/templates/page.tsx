@@ -149,7 +149,7 @@ export default async function TemplatesPage({
             Can&apos;t find a fit? We custom-build portfolios from scratch.
           </p>
           <a
-            href="https://wa.me/971568450406"
+            href="https://wa.me/971561245854"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-3.5 text-sm font-semibold text-canvas-bg bg-brand hover:bg-brand/90 rounded-md transition-all duration-200 hover:-translate-y-0.5"

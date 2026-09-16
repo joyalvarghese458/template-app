@@ -1003,14 +1003,12 @@ export function isComingSoonTemplate(t: Pick<Template, "id">) {
   return COMING_SOON_TEMPLATE_IDS.has(t.id);
 }
 
-export function templateHref(
-  t: Pick<Template, "id" | "slug" | "externalUrl">,
-) {
+export function templateHref(t: Pick<Template, "id" | "slug" | "externalUrl">) {
   if (isComingSoonTemplate(t)) return "/templates/coming-soon";
   return t.externalUrl ?? `/templates/${t.slug ?? t.id}`;
 }
 
-export const WA_NUMBER = "971568450406";
+export const WA_NUMBER = "971561245854";
 
 export function waLink(tierLabel: string, name: string, price: number) {
   const msg = `Hi! I'd like to order the "${name}" (${tierLabel} tier) portfolio template at AED ${price}.`;

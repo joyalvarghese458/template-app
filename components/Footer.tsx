@@ -40,7 +40,7 @@ export default function Footer() {
             </p>
 
             <a
-              href="https://wa.me/971568450406"
+              href="https://wa.me/971561245854"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-2.5 text-brand bg-canvas-bg hover:bg-canvas-bg/90 text-sm font-semibold rounded-md transition-all duration-200 hover:-translate-y-0.5"
@@ -85,7 +85,7 @@ export default function Footer() {
               <li>UAE Based</li>
               <li>
                 <a
-                  href="https://wa.me/971568450406"
+                  href="https://wa.me/971561245854"
                   className="hover:text-canvas-bg transition-colors"
                 >
                   WhatsApp: +971 56 845 0406
@@ -103,7 +103,7 @@ export default function Footer() {
 
             <div className="flex gap-3 mt-5 justify-center md:justify-start">
               <a
-                href="https://wa.me/971568450406"
+                href="https://wa.me/971561245854"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp"

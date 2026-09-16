@@ -43,20 +43,45 @@ export default function ContactForm() {
         Send a <span className="italic text-brand">message</span>
       </h2>
       <p className="text-sm text-ink-soft mb-7 leading-relaxed">
-        Fill out the form below and we&apos;ll get back to you within one business day.
+        Fill out the form below and we&apos;ll get back to you within one
+        business day.
       </p>
 
-      <form ref={formRef} onSubmit={handleSubmit} noValidate className="space-y-5">
+      <form
+        ref={formRef}
+        onSubmit={handleSubmit}
+        noValidate
+        className="space-y-5"
+      >
         {/* Honeypot — invisible to humans, bots fill it automatically, we reject if non-empty */}
-        <div style={{ position: "absolute", left: "-9999px", top: "-9999px", width: "1px", height: "1px", overflow: "hidden" }} aria-hidden="true">
+        <div
+          style={{
+            position: "absolute",
+            left: "-9999px",
+            top: "-9999px",
+            width: "1px",
+            height: "1px",
+            overflow: "hidden",
+          }}
+          aria-hidden="true"
+        >
           <label htmlFor="website">Website</label>
-          <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+          <input
+            id="website"
+            name="website"
+            type="text"
+            tabIndex={-1}
+            autoComplete="off"
+          />
         </div>
 
         {/* Name row */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
-            <label htmlFor="first_name" className="block text-xs font-semibold text-ink mb-1.5 tracking-wide">
+            <label
+              htmlFor="first_name"
+              className="block text-xs font-semibold text-ink mb-1.5 tracking-wide"
+            >
               First Name
             </label>
             <input
@@ -71,7 +96,10 @@ export default function ContactForm() {
             />
           </div>
           <div>
-            <label htmlFor="last_name" className="block text-xs font-semibold text-ink mb-1.5 tracking-wide">
+            <label
+              htmlFor="last_name"
+              className="block text-xs font-semibold text-ink mb-1.5 tracking-wide"
+            >
               Last Name
             </label>
             <input
@@ -90,7 +118,10 @@ export default function ContactForm() {
         {/* Email + Phone row */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
-            <label htmlFor="email" className="block text-xs font-semibold text-ink mb-1.5 tracking-wide">
+            <label
+              htmlFor="email"
+              className="block text-xs font-semibold text-ink mb-1.5 tracking-wide"
+            >
               Email Address
             </label>
             <input
@@ -105,8 +136,12 @@ export default function ContactForm() {
             />
           </div>
           <div>
-            <label htmlFor="phone" className="block text-xs font-semibold text-ink mb-1.5 tracking-wide">
-              Phone <span className="font-normal text-ink-soft">(optional)</span>
+            <label
+              htmlFor="phone"
+              className="block text-xs font-semibold text-ink mb-1.5 tracking-wide"
+            >
+              Phone{" "}
+              <span className="font-normal text-ink-soft">(optional)</span>
             </label>
             <input
               id="phone"
@@ -122,7 +157,10 @@ export default function ContactForm() {
 
         {/* Service */}
         <div>
-          <label htmlFor="budget" className="block text-xs font-semibold text-ink mb-1.5 tracking-wide">
+          <label
+            htmlFor="budget"
+            className="block text-xs font-semibold text-ink mb-1.5 tracking-wide"
+          >
             How can we help?
           </label>
           <div className="relative">
@@ -135,13 +173,23 @@ export default function ContactForm() {
                          transition-all duration-200 cursor-pointer
                          hover:border-brand/40 focus:border-brand focus:bg-brand/[0.03] focus:ring-3 focus:ring-brand/10"
             >
-              <option value="" disabled>Select a service…</option>
+              <option value="" disabled>
+                Select a service…
+              </option>
               {SERVICES.map((s) => (
-                <option key={s} value={s}>{s}</option>
+                <option key={s} value={s}>
+                  {s}
+                </option>
               ))}
             </select>
-            <svg className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-ink/40"
-              viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round">
+            <svg
+              className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-ink/40"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              strokeLinecap="round"
+            >
               <path d="M6 9l6 6 6-6" />
             </svg>
           </div>
@@ -149,7 +197,10 @@ export default function ContactForm() {
 
         {/* Subject */}
         <div>
-          <label htmlFor="subject" className="block text-xs font-semibold text-ink mb-1.5 tracking-wide">
+          <label
+            htmlFor="subject"
+            className="block text-xs font-semibold text-ink mb-1.5 tracking-wide"
+          >
             Subject
           </label>
           <input
@@ -166,7 +217,10 @@ export default function ContactForm() {
 
         {/* Message */}
         <div>
-          <label htmlFor="message" className="block text-xs font-semibold text-ink mb-1.5 tracking-wide">
+          <label
+            htmlFor="message"
+            className="block text-xs font-semibold text-ink mb-1.5 tracking-wide"
+          >
             Message
           </label>
           <textarea
@@ -198,7 +252,15 @@ export default function ContactForm() {
               </>
             ) : status === "sent" ? (
               <>
-                <svg className="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
+                <svg
+                  className="w-4 h-4 shrink-0"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2.5}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
                 Message Sent!
@@ -206,7 +268,15 @@ export default function ContactForm() {
             ) : (
               <>
                 Send Message
-                <svg className="w-4 h-4 shrink-0 transition-transform duration-200 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
+                <svg
+                  className="w-4 h-4 shrink-0 transition-transform duration-200 group-hover:translate-x-1"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2.5}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
                   <path d="M22 2L11 13M22 2l-7 20-4-9-9-4z" />
                 </svg>
               </>
@@ -216,23 +286,48 @@ export default function ContactForm() {
 
         {status === "sent" && (
           <div className="flex items-start gap-3 p-4 rounded-xl bg-green-50 border border-green-200">
-            <svg className="w-5 h-5 text-green-600 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" />
+            <svg
+              className="w-5 h-5 text-green-600 shrink-0 mt-0.5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+              <polyline points="22 4 12 14.01 9 11.01" />
             </svg>
             <p className="text-sm text-green-800 leading-relaxed">
-              Thanks for reaching out! We&apos;ll reply to your email within one business day.
+              Thanks for reaching out! We&apos;ll reply to your email within one
+              business day.
             </p>
           </div>
         )}
 
         {status === "error" && (
           <div className="flex items-start gap-3 p-4 rounded-xl bg-red-50 border border-red-200">
-            <svg className="w-5 h-5 text-red-500 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" />
+            <svg
+              className="w-5 h-5 text-red-500 shrink-0 mt-0.5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <line x1="12" y1="8" x2="12" y2="12" />
+              <line x1="12" y1="16" x2="12.01" y2="16" />
             </svg>
             <p className="text-sm text-red-700 leading-relaxed">
               Something went wrong. Please try again or{" "}
-              <a href="https://wa.me/971568450406" target="_blank" rel="noopener noreferrer" className="font-semibold underline underline-offset-2">
+              <a
+                href="https://wa.me/971561245854"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold underline underline-offset-2"
+              >
                 message us on WhatsApp
               </a>
               .

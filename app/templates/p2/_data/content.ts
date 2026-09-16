@@ -1,18 +1,18 @@
 export const PROFILE = {
   name: "Dr. Amelia Noor",
   role: "Concierge Internal Medicine Specialist",
-  focus: "Preventive care, executive health, and long-horizon wellness planning.",
+  focus:
+    "Preventive care, executive health, and long-horizon wellness planning.",
   location: "Dubai Healthcare City",
   email: "care@dramelianoor.com",
-  phone: "+971 568450406",
+  phone: "+971 561245854",
   availability: "Accepting a limited number of new private patients",
 };
 
-export const CALL_LINK = "tel:+971568450406";
+export const CALL_LINK = "tel:+971561245854";
 
 export const MEDICAL_IMAGES = {
-  hero:
-    "https://images.unsplash.com/photo-1612349316228-5942a9b489c2?auto=format&fit=crop&w=1400&q=80",
+  hero: "https://images.unsplash.com/photo-1612349316228-5942a9b489c2?auto=format&fit=crop&w=1400&q=80",
   portrait:
     "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1200&q=80",
   clinic:
@@ -56,17 +56,20 @@ export const FEATURED_SERVICES = [
   {
     title: "Executive Health Programs",
     body: "A premium annual model for founders, leaders, and professionals who need proactive care that keeps pace.",
-    detail: "Comprehensive labs, imaging coordination, habit design, and same-week follow-ups.",
+    detail:
+      "Comprehensive labs, imaging coordination, habit design, and same-week follow-ups.",
   },
   {
     title: "Preventive Medicine Visits",
     body: "Full-spectrum internal medicine appointments focused on early detection, resilience, and sustainable health.",
-    detail: "Cardiometabolic risk review, nutrition strategy, sleep care, and clinical monitoring.",
+    detail:
+      "Cardiometabolic risk review, nutrition strategy, sleep care, and clinical monitoring.",
   },
   {
     title: "Women's Wellness Planning",
     body: "A calm, whole-person framework for energy, hormones, longevity, and life-stage transitions.",
-    detail: "Perimenopause support, menstrual health insight, bone health planning, and recovery guidance.",
+    detail:
+      "Perimenopause support, menstrual health insight, bone health planning, and recovery guidance.",
   },
 ];
 

@@ -1,5 +1,11 @@
 import Image from "next/image";
-import { CALL_LINK, CONTACT_DETAILS, FAQS, MEDICAL_IMAGES, PROFILE } from "../_data/content";
+import {
+  CALL_LINK,
+  CONTACT_DETAILS,
+  FAQS,
+  MEDICAL_IMAGES,
+  PROFILE,
+} from "../_data/content";
 import theme from "../_components/theme.module.css";
 import styles from "../page.module.css";
 import { metadataForRoute } from "@/app/seo";
@@ -13,10 +19,13 @@ export default function P2ContactPage() {
         <div className={theme.container}>
           <div className={styles.sectionHeader}>
             <p className={theme.eyebrow}>Contact page</p>
-            <h1 className={theme.displayTitle}>A calm conversion page for inquiries and appointments.</h1>
+            <h1 className={theme.displayTitle}>
+              A calm conversion page for inquiries and appointments.
+            </h1>
             <p className={theme.sectionLead}>
-              This layout gives a doctor room for direct contact details, appointment
-              messaging, and a polished intake form that still feels light on mobile.
+              This layout gives a doctor room for direct contact details,
+              appointment messaging, and a polished intake form that still feels
+              light on mobile.
             </p>
           </div>
 
@@ -31,11 +40,15 @@ export default function P2ContactPage() {
                   </div>
                 ))}
               </div>
-              <p className={`${styles.small} ${styles.stackSpaceMd}`}>{PROFILE.availability}</p>
+              <p className={`${styles.small} ${styles.stackSpaceMd}`}>
+                {PROFILE.availability}
+              </p>
             </article>
 
             <article className={`${theme.card} ${styles.contactCard}`}>
-              <div className={`${styles.photoFrame} ${styles.contactPhotoFrame}`}>
+              <div
+                className={`${styles.photoFrame} ${styles.contactPhotoFrame}`}
+              >
                 <Image
                   src={MEDICAL_IMAGES.contact}
                   alt="Doctor welcoming a patient into a consultation room"
@@ -52,7 +65,12 @@ export default function P2ContactPage() {
                 </div>
                 <div className={styles.field}>
                   <label htmlFor="email">Email</label>
-                  <input id="email" name="email" type="email" placeholder="you@example.com" />
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="you@example.com"
+                  />
                 </div>
                 <div className={styles.field}>
                   <label htmlFor="goal">What would you like help with?</label>
@@ -62,12 +80,15 @@ export default function P2ContactPage() {
                     placeholder="Tell us about your goals, symptoms, or the kind of care you are looking for."
                   />
                 </div>
-                <a href={CALL_LINK} className={`${theme.button} ${theme.buttonPrimary}`}>
-                  Call +971 568450406
+                <a
+                  href={CALL_LINK}
+                  className={`${theme.button} ${theme.buttonPrimary}`}
+                >
+                  Call +971 561245854
                 </a>
                 <p className={styles.small}>
-                  The main booking action now works like a direct call button for quick
-                  mobile conversion.
+                  The main booking action now works like a direct call button
+                  for quick mobile conversion.
                 </p>
               </form>
             </article>
@@ -79,7 +100,10 @@ export default function P2ContactPage() {
         <div className={theme.container}>
           <div className={styles.twoColumn}>
             {FAQS.map((item) => (
-              <article key={item.question} className={`${theme.card} ${styles.storyCard}`}>
+              <article
+                key={item.question}
+                className={`${theme.card} ${styles.storyCard}`}
+              >
                 <h3>{item.question}</h3>
                 <p>{item.answer}</p>
               </article>

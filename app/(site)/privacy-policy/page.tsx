@@ -70,7 +70,10 @@ export default function PrivacyPolicyPage() {
     <>
       <main className="min-h-screen bg-canvas-bg">
         <section className="relative overflow-hidden border-b border-ink/8 px-4 pb-12 pt-28 sm:px-6 sm:pb-16 sm:pt-36 lg:px-8">
-          <div className="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
+          <div
+            className="pointer-events-none absolute inset-0 -z-10"
+            aria-hidden="true"
+          >
             <div className="absolute left-1/2 top-0 h-[360px] w-[640px] -translate-x-1/2 rounded-full bg-brand/8 blur-3xl" />
           </div>
 
@@ -127,7 +130,7 @@ export default function PrivacyPolicyPage() {
                 </a>{" "}
                 or via{" "}
                 <a
-                  href="https://wa.me/971568450406"
+                  href="https://wa.me/971561245854"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-semibold text-brand underline decoration-brand/30 underline-offset-4"

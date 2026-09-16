@@ -6,8 +6,10 @@ import { NextResponse } from "next/server";
    FROM_EMAIL : must be a Resend-verified domain address.
                 During development you can use onboarding@resend.dev
                 but it will only deliver to your Resend account email. */
-const TO_EMAIL = process.env.CONTACT_TO_EMAIL ?? "info.myportfoliowebsiteglobal@gmail.com";
-const FROM_EMAIL = process.env.CONTACT_FROM_EMAIL ?? "contact@myportfoliowebsite.com";
+const TO_EMAIL =
+  process.env.CONTACT_TO_EMAIL ?? "info.myportfoliowebsiteglobal@gmail.com";
+const FROM_EMAIL =
+  process.env.CONTACT_FROM_EMAIL ?? "contact@myportfoliowebsite.com";
 
 /* ── Rate limiter ────────────────────────────────────────────
    Max 5 submissions per IP per hour. Resets on server restart.
@@ -60,7 +62,7 @@ export async function POST(request: Request) {
   if (isRateLimited(ip)) {
     return NextResponse.json(
       { error: "Too many submissions. Please try again later." },
-      { status: 429 }
+      { status: 429 },
     );
   }
 
@@ -70,7 +72,10 @@ export async function POST(request: Request) {
   try {
     body = await request.json();
   } catch {
-    return NextResponse.json({ error: "Invalid request body." }, { status: 400 });
+    return NextResponse.json(
+      { error: "Invalid request body." },
+      { status: 400 },
+    );
   }
 
   // Honeypot check — real users never see or fill this field, bots do
@@ -81,14 +86,26 @@ export async function POST(request: Request) {
   const { first_name, last_name, email, phone, subject, budget, message } =
     body as ContactPayload;
 
-  if (!first_name?.trim() || !last_name?.trim() || !email?.trim() || !subject?.trim() || !message?.trim()) {
-    return NextResponse.json({ error: "Missing required fields." }, { status: 400 });
+  if (
+    !first_name?.trim() ||
+    !last_name?.trim() ||
+    !email?.trim() ||
+    !subject?.trim() ||
+    !message?.trim()
+  ) {
+    return NextResponse.json(
+      { error: "Missing required fields." },
+      { status: 400 },
+    );
   }
 
   // Input length limits
   if (
-    first_name.length > 100 || last_name.length > 100 ||
-    email.length > 254 || subject.length > 300 || message.length > 5000
+    first_name.length > 100 ||
+    last_name.length > 100 ||
+    email.length > 254 ||
+    subject.length > 300 ||
+    message.length > 5000
   ) {
     return NextResponse.json({ error: "Input too long." }, { status: 400 });
   }
@@ -96,12 +113,12 @@ export async function POST(request: Request) {
   // Sanitize all user input for safe HTML rendering
   const s = {
     first_name: esc(first_name.trim()),
-    last_name:  esc(last_name.trim()),
-    email:      esc(email.trim()),
-    phone:      phone ? esc(phone.trim()) : "",
-    subject:    esc(subject.trim()),
-    budget:     esc(budget ?? ""),
-    message:    esc(message.trim()),
+    last_name: esc(last_name.trim()),
+    email: esc(email.trim()),
+    phone: phone ? esc(phone.trim()) : "",
+    subject: esc(subject.trim()),
+    budget: esc(budget ?? ""),
+    message: esc(message.trim()),
   };
 
   const { error } = await resend.emails.send({
@@ -126,11 +143,15 @@ export async function POST(request: Request) {
               <td style="padding:10px 0;border-bottom:1px solid #f0eefb;color:#5a5677;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;">Email</td>
               <td style="padding:10px 0;border-bottom:1px solid #f0eefb;"><a href="mailto:${s.email}" style="color:#ff6b5b;font-size:15px;">${s.email}</a></td>
             </tr>
-            ${s.phone ? `
+            ${
+              s.phone
+                ? `
             <tr>
               <td style="padding:10px 0;border-bottom:1px solid #f0eefb;color:#5a5677;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;">Phone</td>
               <td style="padding:10px 0;border-bottom:1px solid #f0eefb;color:#14112d;font-size:15px;">${s.phone}</td>
-            </tr>` : ""}
+            </tr>`
+                : ""
+            }
             <tr>
               <td style="padding:10px 0;border-bottom:1px solid #f0eefb;color:#5a5677;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;">Subject</td>
               <td style="padding:10px 0;border-bottom:1px solid #f0eefb;color:#14112d;font-size:15px;font-weight:600;">${s.subject}</td>
@@ -156,7 +177,10 @@ export async function POST(request: Request) {
 
   if (error) {
     console.error("Resend error:", error);
-    return NextResponse.json({ error: "Failed to send email." }, { status: 500 });
+    return NextResponse.json(
+      { error: "Failed to send email." },
+      { status: 500 },
+    );
   }
 
   // Auto-reply to the sender
@@ -179,7 +203,7 @@ export async function POST(request: Request) {
             We've received your message and will get back to you within <strong>one business day</strong>.
             In the meantime, feel free to reach us directly on WhatsApp for a faster response.
           </p>
-          <a href="https://wa.me/971568450406"
+          <a href="https://wa.me/971561245854"
              style="display:inline-block;background:#0e0b2a;color:#fff;font-size:14px;font-weight:600;
                     padding:12px 24px;border-radius:8px;text-decoration:none;margin-top:4px;">
             Chat on WhatsApp
