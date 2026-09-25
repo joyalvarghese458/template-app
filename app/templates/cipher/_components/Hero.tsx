@@ -53,17 +53,33 @@ export default function Hero() {
           >
             <motion.div variants={fadeUp} className="cipher-terminal">
               <div className="cipher-terminal-bar">
-                <span className="cipher-dot" style={{ background: "#ff3b5c" }} />
-                <span className="cipher-dot" style={{ background: "#ffb627" }} />
-                <span className="cipher-dot" style={{ background: "#39ff8c" }} />
+                <span
+                  className="cipher-dot"
+                  style={{ background: "#ff3b5c" }}
+                />
+                <span
+                  className="cipher-dot"
+                  style={{ background: "#ffb627" }}
+                />
+                <span
+                  className="cipher-dot"
+                  style={{ background: "#39ff8c" }}
+                />
                 <span className="cipher-terminal-title">recon.sh</span>
               </div>
               <div className="cipher-terminal-body">
                 <TypedLines
                   lines={[
-                    { prefix: "root@cipher:~$", text: "nmap -p- leo-navarro.dev" },
+                    {
+                      prefix: "root@cipher:~$",
+                      text: "nmap -p- leo-navarro.dev",
+                    },
                     { text: "1000 ports scanned in 4.21s" },
-                    { prefix: "[+]", text: "0 critical vulnerabilities found", color: "#39ff8c" },
+                    {
+                      prefix: "[+]",
+                      text: "0 critical vulnerabilities found",
+                      color: "#39ff8c",
+                    },
                   ]}
                   startDelay={350}
                   speed={20}
@@ -84,8 +100,12 @@ export default function Hero() {
             </motion.p>
 
             <motion.div variants={fadeUp} className="cipher-cta-row">
-              <a href="#operations" className="cipher-btn-primary">View Operations</a>
-              <a href="#contact" className="cipher-btn-outline">Get In Touch</a>
+              <a href="#operations" className="cipher-btn-primary">
+                View Operations
+              </a>
+              <a href="#contact" className="cipher-btn-outline">
+                Get In Touch
+              </a>
             </motion.div>
 
             <motion.div variants={fadeUp} className="cipher-stats-row">
@@ -103,18 +123,38 @@ export default function Hero() {
             <motion.div
               initial={{ opacity: 0, scale: 0.92 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.9, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              transition={{
+                duration: 0.9,
+                delay: 0.4,
+                ease: [0.16, 1, 0.3, 1],
+              }}
               className="cipher-photo-wrap"
             >
-              <span className="cipher-bracket cipher-bracket-tl" aria-hidden="true" />
-              <span className="cipher-bracket cipher-bracket-tr" aria-hidden="true" />
-              <span className="cipher-bracket cipher-bracket-bl" aria-hidden="true" />
-              <span className="cipher-bracket cipher-bracket-br" aria-hidden="true" />
+              <span
+                className="cipher-bracket cipher-bracket-tl"
+                aria-hidden="true"
+              />
+              <span
+                className="cipher-bracket cipher-bracket-tr"
+                aria-hidden="true"
+              />
+              <span
+                className="cipher-bracket cipher-bracket-bl"
+                aria-hidden="true"
+              />
+              <span
+                className="cipher-bracket cipher-bracket-br"
+                aria-hidden="true"
+              />
               <span className="cipher-scanbeam" aria-hidden="true" />
 
               <motion.div
                 animate={{ y: [0, -12, 0] }}
-                transition={{ duration: 6.5, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 6.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
                 className="cipher-photo-float"
               >
                 <Image
@@ -142,7 +182,7 @@ export default function Hero() {
                 transition={{ duration: 0.6, delay: 1.3 }}
                 className="cipher-chip cipher-chip-bottom"
               >
-                🎯 Top 2% on HackTheBox
+                🎯 Top 3% on HackTheBox
               </motion.div>
             </motion.div>
           </div>
