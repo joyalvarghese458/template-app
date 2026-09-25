@@ -40,10 +40,10 @@ export default function TemplateCard({
   const isComingSoon = isComingSoonTemplate(template);
   const fallbackSrc = templateImage(template);
   const [mode, setMode] = useState<"video" | "img">(
-    isComingSoon || slug === "growthfolio" ? "img" : "video",
+    isComingSoon || template.id === "bp1" || slug === "growthfolio" ? "img" : "video",
   );
   const [imgSrc, setImgSrc] = useState(
-    isComingSoon ? COMING_SOON_IMAGE_SRC : `/previews/${slug}.jpg`,
+    isComingSoon ? COMING_SOON_IMAGE_SRC : template.image ?? `/previews/${slug}.jpg`,
   );
   const openTemplatePreview = () => {
     window.open(href, "_blank", "noopener,noreferrer");

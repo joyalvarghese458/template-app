@@ -42,7 +42,6 @@ export type TierMeta = {
 };
 
 export const COMING_SOON_TEMPLATE_IDS = new Set([
-  "bp1",
   "bp2",
   "bp3",
   "p4",
@@ -952,6 +951,8 @@ export const TEMPLATES: Template[] = [
   // ── Business Portfolio  (AED 1,599 · tier: elite) ────────────────
   {
     id: "bp1",
+    externalUrl: "https://highrangeflavoursidukki.com/",
+    image: "/previews/highrange.png",
     title: "Venture",
     tag: "Business Portfolio · Founder",
     tier: "elite",
