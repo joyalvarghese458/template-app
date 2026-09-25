@@ -22,7 +22,7 @@ import { metadataForRoute } from "@/app/seo";
 
 export const metadata = metadataForRoute("/templates");
 
-const CREATOR_PORTFOLIO_TEMPLATE_IDS = new Set(["x5", "s1", "x3", "p2"]);
+const CREATOR_PORTFOLIO_TEMPLATE_IDS = new Set(["x5", "s1", "x3", "p2", "ashwin"]);
 
 type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
 

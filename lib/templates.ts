@@ -789,6 +789,17 @@ export const TEMPLATES: Template[] = [
 
   // ── Creator Portfolio  (AED 149 · tier: premium) ─────────────────
   {
+    id: "ashwin",
+    externalUrl: "https://ashwinjames.com",
+    image: "/previews/ashwin.png",
+    title: "Ashwin James",
+    tag: "Creator Portfolio · Personal Brand",
+    tier: "premium",
+    section: "creator-portfolio",
+    audiences: ["creators"],
+    specialties: ["personal-brand"],
+  },
+  {
     id: "x5",
     slug: "helm",
     title: "Helm",

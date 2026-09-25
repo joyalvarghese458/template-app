@@ -59,7 +59,7 @@ const CATEGORIES: Category[] = [
     id: "creator-portfolio",
     label: "Creator Portfolio",
     description: "Express your creative vision with striking artistic layouts.",
-    templateIds: ["s1", "x5", "x3", "p2"],
+    templateIds: ["ashwin", "x5", "x3", "p2"],
     href: "/templates?section=creator-portfolio",
     aed: 149,
   },
@@ -90,7 +90,7 @@ function TemplateCard({
   const isComingSoon = isComingSoonTemplate(template);
   const fallbackSrc = templateImage(template);
   const [mode, setMode] = useState<"video" | "img">(
-    isComingSoon || template.id === "bp1" || slug === "growthfolio" ? "img" : "video",
+    isComingSoon || template.id === "bp1" || template.id === "ashwin" || slug === "growthfolio" ? "img" : "video",
   );
   const [imgSrc, setImgSrc] = useState(
     isComingSoon ? COMING_SOON_IMAGE_SRC : template.image ?? `/previews/${slug}.jpg`,
