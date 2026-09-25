@@ -182,7 +182,7 @@ export default function Hero() {
                 transition={{ duration: 0.6, delay: 1.3 }}
                 className="cipher-chip cipher-chip-bottom"
               >
-                🎯 Top 3% on HackTheBox
+                🎯 Top 2% on HackTheBox
               </motion.div>
             </motion.div>
           </div>
