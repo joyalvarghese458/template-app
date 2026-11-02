@@ -8,8 +8,8 @@ const PLANS = [
     id: "digital-resume",
     name: "Digital Resume",
     tagline: "Digital Resume",
-    priceAED: 49,
-    priceINR: 999,
+    priceAED: 29,
+    priceINR: 799,
     description:
       "ATS-friendly digital resume designed to help professionals stand out and apply smarter.",
     includes: [
@@ -33,8 +33,8 @@ const PLANS = [
     id: "career-portfolio",
     name: "Career Portfolio",
     tagline: "Career Portfolio",
-    priceAED: 99,
-    priceINR: 2499,
+    priceAED: 59,
+    priceINR: 1499,
     description:
       "Perfect for students, job seekers, and professionals building a strong online presence.",
     includes: [
@@ -55,8 +55,8 @@ const PLANS = [
     id: "creator-portfolio",
     name: "Creator Portfolio",
     tagline: "Creator Portfolio",
-    priceAED: 149,
-    priceINR: 3999,
+    priceAED: 99,
+    priceINR: 2499,
     description:
       "Built for creators, photographers, influencers, videographers, and personal brands.",
     includes: [
@@ -78,8 +78,8 @@ const PLANS = [
     id: "business-portfolio",
     name: "Business Portfolio",
     tagline: "Business Portfolio",
-    priceAED: 1599,
-    priceINR: 39999,
+    priceAED: 499,
+    priceINR: 12999,
     description:
       "Designed for freelancers, agencies, consultants, startups, and growing businesses.",
     includes: [

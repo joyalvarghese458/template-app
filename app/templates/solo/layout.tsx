@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Solo — Graphic Designer Single Page Portfolio Template",
   description:
-    "Solo is a single-page portfolio template for graphic and brand designers. Bold personality, minimal clutter, maximum impact. Starting at AED 49.",
+    "Solo is a single-page portfolio template for graphic and brand designers. Bold personality, minimal clutter, maximum impact. Starting at AED 59.",
   openGraph: {
     url: "https://myportfoliowebsite.com/templates/solo",
     title: "Solo — Graphic Designer Single Page Portfolio Template | My Portfolio",

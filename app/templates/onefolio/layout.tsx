@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Onefolio — Creative Flow Designer Portfolio Template",
   description:
-    "Onefolio is a creative flow portfolio template for designers, creators, and founders. Fluid scroll experience with bold brand identity. Starting at AED 49.",
+    "Onefolio is a creative flow portfolio template for designers, creators, and founders. Fluid scroll experience with bold brand identity. Starting at AED 59.",
   openGraph: {
     url: "https://myportfoliowebsite.com/templates/onefolio",
     title: "Onefolio — Creative Flow Designer Portfolio Template | My Portfolio",

@@ -15,10 +15,10 @@ import {
 type Currency = "AED" | "INR";
 
 const INR_MAP: Record<number, number> = {
-  49: 999,
+  29: 799,
+  59: 1499,
   99: 2499,
-  149: 3999,
-  1599: 39999,
+  499: 12999,
 };
 
 function formatPrice(aed: number, currency: Currency): string {

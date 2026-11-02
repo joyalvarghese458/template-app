@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     default: "Portfolio Templates | My Portfolio",
   },
   description:
-    "Hand-crafted portfolio templates for designers, developers, photographers, and creators. Starting from AED 49. One-time payment, lifetime ownership.",
+    "Hand-crafted portfolio templates for designers, developers, photographers, and creators. Starting from AED 29. One-time payment, lifetime ownership.",
   keywords: [
     "portfolio templates",
     "portfolio website",
@@ -47,13 +47,13 @@ export const metadata: Metadata = {
     siteName: "My Portfolio",
     title: "Portfolio Templates | My Portfolio",
     description:
-      "Hand-crafted portfolio templates for designers, developers, photographers, and creators. Starting from AED 49. One-time payment, lifetime ownership.",
+      "Hand-crafted portfolio templates for designers, developers, photographers, and creators. Starting from AED 29. One-time payment, lifetime ownership.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Portfolio Templates | My Portfolio",
     description:
-      "Hand-crafted portfolio templates for designers, developers, photographers, and creators. Starting from AED 49.",
+      "Hand-crafted portfolio templates for designers, developers, photographers, and creators. Starting from AED 29.",
   },
   icons: {
     icon: "/fav-icon.webp",

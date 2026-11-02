@@ -17,10 +17,10 @@ import {
 type Currency = "AED" | "INR";
 
 const INR_MAP: Record<number, number> = {
-  49: 999,
+  29: 799,
+  59: 1499,
   99: 2499,
-  149: 3999,
-  1599: 39999,
+  499: 12999,
 };
 
 function formatPrice(aed: number, currency: Currency): string {
@@ -45,7 +45,7 @@ const CATEGORIES: Category[] = [
     description: "Clean, professional resume templates that get you hired.",
     templateIds: ["dr1", "dr2", "dr3", "dr4"],
     href: "/templates?section=digital-resume",
-    aed: 49,
+    aed: 29,
   },
   {
     id: "career-portfolio",
@@ -53,7 +53,7 @@ const CATEGORIES: Category[] = [
     description: "Showcase your skills and experience to land your next role.",
     templateIds: ["torque", "p11", "cp2", "s8"],
     href: "/templates?section=career-portfolio",
-    aed: 99,
+    aed: 59,
   },
   {
     id: "creator-portfolio",
@@ -61,7 +61,7 @@ const CATEGORIES: Category[] = [
     description: "Express your creative vision with striking artistic layouts.",
     templateIds: ["ashwin", "x5", "x3", "p2"],
     href: "/templates?section=creator-portfolio",
-    aed: 149,
+    aed: 99,
   },
   {
     id: "business-portfolio",
@@ -69,7 +69,7 @@ const CATEGORIES: Category[] = [
     description: "Premium templates built for agencies, studios, and brands.",
     templateIds: ["bp1", "bp2", "bp3"],
     href: "/templates?section=business-portfolio",
-    aed: 1599,
+    aed: 499,
   },
 ];
 

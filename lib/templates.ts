@@ -66,28 +66,28 @@ export const TIERS: TierMeta[] = [
   {
     id: "starter",
     label: "Starter",
-    price: 49,
+    price: 29,
     accent: "from-[#0a1a3f] via-[#06122e] to-[#030814]",
     badgeColor: "bg-brand/10 text-brand-dark border-brand/30",
   },
   {
     id: "pro",
     label: "Pro",
-    price: 99,
+    price: 59,
     accent: "from-[#1e3a8a] via-[#1d4ed8] to-[#1e3a8a]",
     badgeColor: "bg-brand/15 text-brand-dark border-brand/40",
   },
   {
     id: "premium",
     label: "Premium",
-    price: 149,
+    price: 99,
     accent: "from-[#2563eb] via-[#1d4ed8] to-[#1e3a8a]",
     badgeColor: "bg-brand/20 text-brand-dark border-brand/50",
   },
   {
     id: "elite",
     label: "Elite",
-    price: 1599,
+    price: 499,
     accent: "from-[#7c3aed] via-[#6d28d9] to-[#4c1d95]",
     badgeColor: "bg-purple-500/20 text-purple-300 border-purple-500/40",
   },
@@ -99,8 +99,8 @@ export const TIER_BY_ID: Record<TierId, TierMeta> = Object.fromEntries(
 
 // ────────────────────────────────────────────────────────────────────
 // Section taxonomy — primary grouping for the templates grid.
-// Section price: Digital Resume 49 · Career Portfolio 99
-//               Creator Portfolio 149 · Business Portfolio 1599
+// Section price: Digital Resume 29 · Career Portfolio 59
+//               Creator Portfolio 99 · Business Portfolio 499
 // ────────────────────────────────────────────────────────────────────
 
 export type SectionMeta = {
@@ -113,22 +113,22 @@ export const SECTIONS: SectionMeta[] = [
   {
     id: "digital-resume",
     label: "Digital Resume",
-    blurb: "Clean, one-page professional resumes — AED 49",
+    blurb: "Clean, one-page professional resumes — AED 29",
   },
   {
     id: "career-portfolio",
     label: "Career Portfolio",
-    blurb: "Showcase your skills, experience & work history — AED 99",
+    blurb: "Showcase your skills, experience & work history — AED 59",
   },
   {
     id: "creator-portfolio",
     label: "Creator Portfolio",
-    blurb: "Creative portfolios for designers, creators & more — AED 149",
+    blurb: "Creative portfolios for designers, creators & more — AED 99",
   },
   {
     id: "business-portfolio",
     label: "Business Portfolio",
-    blurb: "For founders, agencies & consultants — AED 1,599",
+    blurb: "For founders, agencies & consultants — AED 499",
   },
 ];
 
@@ -254,14 +254,14 @@ export const SPECIALTIES: Record<AudienceId, SpecialtyMeta[]> = {
 // Templates
 //
 // Pricing is section-level — every template inherits its section price:
-//   Digital Resume   → starter  (AED 49)
-//   Career Portfolio → pro      (AED 99)   ← all 14 slugged templates live here
-//   Creator Portfolio→ premium  (AED 149)
-//   Business Portfolio→ elite   (AED 1,599)
+//   Digital Resume   → starter  (AED 29)
+//   Career Portfolio → pro      (AED 59)   ← all 14 slugged templates live here
+//   Creator Portfolio→ premium  (AED 99)
+//   Business Portfolio→ elite   (AED 499)
 // ────────────────────────────────────────────────────────────────────
 
 export const TEMPLATES: Template[] = [
-  // ── Digital Resume  (AED 49 · tier: starter) ─────────────────────
+  // ── Digital Resume  (AED 29 · tier: starter) ─────────────────────
   {
     id: "dr1",
     slug: "swift",
@@ -303,7 +303,7 @@ export const TEMPLATES: Template[] = [
     specialties: ["personal-brand", "speaker", "ai-ml"],
   },
 
-  // ── Career Portfolio  (AED 99 · tier: pro) ───────────────────────
+  // ── Career Portfolio  (AED 59 · tier: pro) ───────────────────────
   // simple cards
   {
     id: "cp2",
@@ -787,7 +787,7 @@ export const TEMPLATES: Template[] = [
     specialties: ["aviation", "personal-brand", "consultant"],
   },
 
-  // ── Creator Portfolio  (AED 149 · tier: premium) ─────────────────
+  // ── Creator Portfolio  (AED 99 · tier: premium) ─────────────────
   {
     id: "ashwin",
     externalUrl: "https://ashwinjames.com",
@@ -959,7 +959,7 @@ export const TEMPLATES: Template[] = [
     specialties: ["writer", "copywriter"],
   },
 
-  // ── Business Portfolio  (AED 1,599 · tier: elite) ────────────────
+  // ── Business Portfolio  (AED 499 · tier: elite) ────────────────
   {
     id: "bp1",
     externalUrl: "https://highrangeflavoursidukki.com/",
